@@ -16,7 +16,7 @@ syntax = "proto3";
 package usermanage;
 
 option java_multiple_files = true;
-option java_package = "com.github.conanchen.yeamore.usermanage.grpc";
+option java_package = "com.github.conanchen.gedit.usermanage.grpc";
 option java_outer_classname = "UserManProto";
 option objc_class_prefix = "USERMAN";
 
