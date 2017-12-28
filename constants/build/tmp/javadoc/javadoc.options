@@ -1,6 +1,0 @@
--classpath '/Users/conanchen/yeamore/yeamore-api/constants/build/classes/java/main:/Users/conanchen/yeamore/yeamore-api/constants/build/resources/main'
--d '/Users/conanchen/yeamore/yeamore-api/constants/build/docs/javadoc'
--doctitle 'constants 0.1.0-SNAPSHOT API'
--quiet 
--windowtitle 'constants 0.1.0-SNAPSHOT API'
-'/Users/conanchen/yeamore/yeamore-api/constants/src/main/java/com/github/conanchen/yeamore/Constants.java'
