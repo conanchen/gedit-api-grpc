@@ -17,7 +17,7 @@ allprojects {
 
 ```gradle
 dependencies {
-    compile 'com.github.conanchen.yeamore:grpc-javalite:master-SNAPSHOT'
+    compile 'com.github.conanchen.gedit-api:grpc-javalite:master-SNAPSHOT'
 }
 ```
 		
@@ -25,7 +25,7 @@ dependencies {
     
 ```gradle
 dependencies {
-    compile 'com.github.conanchen.yeamore:grpc-java:master-SNAPSHOT'
+    compile 'com.github.conanchen.gedit-api:grpc-java:master-SNAPSHOT'
 }
 ```
 	
