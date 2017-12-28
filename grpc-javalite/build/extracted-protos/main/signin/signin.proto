@@ -1,0 +1,50 @@
+syntax = "proto3";
+package signin;
+
+option java_multiple_files = true;
+option java_outer_classname = "SigninProto";
+option java_package = "com.github.conanchen.yeamore.sigin.grpc";
+option objc_class_prefix = "SIGNIN";
+
+import "common/common.proto";
+
+service Signin {
+    rpc QQSignin (QQSigninRequest) returns (SigninResponse) {
+        //qq
+    };
+
+    rpc WXSignin (WXSigninRequest) returns (SigninResponse) {
+        // wechat
+    };
+
+    rpc WBSignin (WBSigninRequest) returns (SigninResponse) {
+        // weibo
+    };
+
+    rpc LocalSignin (LocalSigninRequest) returns (SigninResponse) {
+        // local
+    };
+}
+
+message QQSigninRequest {
+    string accessToken = 1;
+}
+
+message WXSigninRequest {
+    string accessToken = 1;
+}
+
+message WBSigninRequest {
+    string accessToken = 1;
+}
+
+message LocalSigninRequest {
+    string phone = 1;
+    string code = 2;
+}
+
+message SigninResponse {
+    common.Status status = 999;
+    string accessToken = 2;
+    string expiresIn = 3;
+}

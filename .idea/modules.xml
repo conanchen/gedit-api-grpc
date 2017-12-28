@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/constants/constants.iml" filepath="$PROJECT_DIR$/.idea/modules/constants/constants.iml" group="constants" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/constants/constants_main.iml" filepath="$PROJECT_DIR$/.idea/modules/constants/constants_main.iml" group="constants" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/constants/constants_test.iml" filepath="$PROJECT_DIR$/.idea/modules/constants/constants_test.iml" group="constants" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/grpc-java/grpc-java.iml" filepath="$PROJECT_DIR$/.idea/modules/grpc-java/grpc-java.iml" group="grpc-java" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/grpc-java/grpc-java_main.iml" filepath="$PROJECT_DIR$/.idea/modules/grpc-java/grpc-java_main.iml" group="grpc-java" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/grpc-java/grpc-java_test.iml" filepath="$PROJECT_DIR$/.idea/modules/grpc-java/grpc-java_test.iml" group="grpc-java" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/grpc-javalite/grpc-javalite.iml" filepath="$PROJECT_DIR$/.idea/modules/grpc-javalite/grpc-javalite.iml" group="grpc-javalite" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/grpc-javalite/grpc-javalite_main.iml" filepath="$PROJECT_DIR$/.idea/modules/grpc-javalite/grpc-javalite_main.iml" group="grpc-javalite" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/grpc-javalite/grpc-javalite_test.iml" filepath="$PROJECT_DIR$/.idea/modules/grpc-javalite/grpc-javalite_test.iml" group="grpc-javalite" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/proto/proto.iml" filepath="$PROJECT_DIR$/.idea/modules/proto/proto.iml" group="proto" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/proto/proto_main.iml" filepath="$PROJECT_DIR$/.idea/modules/proto/proto_main.iml" group="proto" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/proto/proto_test.iml" filepath="$PROJECT_DIR$/.idea/modules/proto/proto_test.iml" group="proto" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/yemore-api-grpc.iml" filepath="$PROJECT_DIR$/.idea/modules/yemore-api-grpc.iml" />
+    </modules>
+  </component>
+</project>

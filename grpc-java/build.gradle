@@ -1,0 +1,60 @@
+apply plugin: 'idea'
+apply plugin: 'com.google.protobuf'
+
+dependencies {
+    compile project(':constants')
+    protobuf project(':proto')
+    compile "io.grpc:grpc-core:$GRPC_VERSION"
+    compile "io.grpc:grpc-protobuf:$GRPC_VERSION"
+    compile "io.grpc:grpc-stub:$GRPC_VERSION"
+    compile "com.google.protobuf:protobuf-java:$PROTOBUF_JAVA_VERSION"
+    testCompile "junit:junit:4.12"
+    testCompile "io.grpc:grpc-testing:$GRPC_VERSION"
+}
+
+
+protobuf {
+    // Configure the protoc executable
+    protoc {
+        artifact = "com.google.protobuf:protoc:$PROTOC_VERSION"
+    }
+    plugins {
+        grpc {
+            artifact = "io.grpc:protoc-gen-grpc-java:$GRPC_VERSION"
+        }
+        java {
+
+        }
+    }
+
+    generateProtoTasks {
+        all()*.plugins {
+            grpc {
+            }
+        }
+    }
+}
+
+clean {
+    delete protobuf.generatedFilesBaseDir
+}
+
+
+jar{
+    exclude (
+            "/**/google/**",
+            "**/*.proto"
+    )
+}
+
+idea {
+    module {
+        sourceDirs += file("${protobuf.generatedFilesBaseDir}/main/java")
+        sourceDirs += file("${protobuf.generatedFilesBaseDir}/main/grpc")
+        // If you have additional sourceSets and/or codegen plugins, add all of them
+    }
+}
+
+project.logger.lifecycle("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+project.logger.lifecycle("~~~~~~~~~~~~~~~~GRPC-JAVA BUILD DONE!~~~~~~~~~~~~~~~~~");
+project.logger.lifecycle("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");

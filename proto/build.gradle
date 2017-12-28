@@ -1,0 +1,19 @@
+apply plugin: 'java'
+apply plugin: 'com.google.protobuf'
+
+compileJava.enabled = false
+
+dependencies {
+    compile "com.google.protobuf:protobuf-java:$PROTOC_VERSION"
+}
+
+protobuf {
+    // Configure the protoc executable
+    protoc {
+        artifact = "com.google.protobuf:protoc:$PROTOC_VERSION"
+    }
+}
+
+project.logger.lifecycle("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+project.logger.lifecycle("~~~~~~~~~~~~~~~~~~PROTO-PUBLIC BUILD DONE!~~~~~~~~~~~~~~~~~~~");
+project.logger.lifecycle("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");

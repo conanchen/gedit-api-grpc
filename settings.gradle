@@ -1,0 +1,6 @@
+rootProject.name = 'yemore-api-grpc'
+include 'proto'
+include 'grpc-javalite'
+include 'grpc-java'
+include 'constants'
+

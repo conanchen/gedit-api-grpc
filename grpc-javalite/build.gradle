@@ -1,0 +1,69 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'com.google.protobuf'
+
+
+dependencies {
+    compile project(':constants')
+    protobuf project(':proto')
+    compile "io.grpc:grpc-protobuf-lite:$GRPC_VERSION"
+    compile "io.grpc:grpc-stub:$GRPC_VERSION"
+    testCompile "junit:junit:4.12"
+    testCompile "io.grpc:grpc-testing:$GRPC_VERSION"
+}
+
+
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:$PROTOC_VERSION"
+    }
+    plugins {
+        javalite {
+            artifact = "com.google.protobuf:protoc-gen-javalite:$PROTOC_GEN_JAVALITE_VERSION"
+        }
+        grpclite {
+            artifact = "io.grpc:protoc-gen-grpc-java:$GRPC_VERSION"
+        }
+    }
+    generateProtoTasks {
+        all().each { task ->
+            task.plugins {
+                javalite {}
+                grpclite {
+                    // Options added to --grpc_out
+                    option 'lite'
+                }
+            }
+            task.builtins {
+                remove java
+            }
+        }
+    }
+}
+
+
+clean {
+    delete protobuf.generatedFilesBaseDir
+}
+
+
+jar{
+    exclude (
+            "/**/google/**",
+            "**/*.proto"
+    )
+}
+
+
+idea {
+    module {
+        // If you have additional sourceSets and/or codegen plugins, add all of them
+        sourceDirs += file("${protobuf.generatedFilesBaseDir}/main/javalite")
+        sourceDirs += file("${protobuf.generatedFilesBaseDir}/main/grpclite")
+    }
+}
+
+project.logger.lifecycle("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+project.logger.lifecycle("~~~~~~~~~~~~~~GRPC-JAVALITE BUILD DONE!~~~~~~~~~~~~~~~");
+project.logger.lifecycle("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
