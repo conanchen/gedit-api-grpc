@@ -13,39 +13,40 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 syntax = "proto3";
-package usermanage;
+package user;
 
 option java_multiple_files = true;
-option java_package = "com.github.conanchen.gedit.usermanage.grpc";
-option java_outer_classname = "UserManProto";
-option objc_class_prefix = "USERMAN";
+option java_package = "com.github.conanchen.gedit.user.grpc";
+option java_outer_classname = "UserProto";
+option objc_class_prefix = "USER";
 
 import "common/common.proto";
 
 // The hanzi service definition.
-service UserMan {
+service User {
 
     rpc Add (AddRequest) returns (AddResponse) {
-    }
-
-    rpc List (ListRequest) returns (stream UserResponse) {
     }
 
     rpc Get (GetRequest) returns (UserResponse) {
     }
 
-    rpc Upsert (UpsertRequest) returns (UpsertResponse) {
+    rpc Find (FindRequest) returns (UserResponse) {
     }
 
-    rpc Delete (DeleteRequest) returns (DeleteResponse) {
+    rpc List (ListRequest) returns (stream UserResponse) {
     }
+
+    rpc UpdateMyLocation (UpdateMyLocationRequest) returns (UpdateMyLocationResponse) {
+    }
+
+    rpc UpdateMyProfile (UpdateMyProfileRequest) returns (UpdateMyProfileResponse) {
+    }
+
 }
 
 message AddRequest {
-    string id = 1;
-    string name = 2;
-    string desc = 3;
-    bool active = 6;
+    string mobile = 1;
 }
 
 message AddResponse {
@@ -62,32 +63,40 @@ message GetRequest {
     string id = 1;
 }
 
+message FindRequest {
+    string mobile = 1;
+}
+
 message UserResponse {
     common.Status status = 999;
     string id = 1;
-    string name = 2;
-    string desc = 3;
+    string mobile = 2;
+    string name = 3;
+    string desc = 4;
     bool active = 6;
 }
 
-message UpsertRequest {
-    string id = 1;
+message UpdateMyLocationRequest {
+    int64 lat = 4;
+    int64 lon = 5;
+}
+message UpdateMyLocationResponse {
+    common.Status status = 999;
+}
+
+message UpdateMyProfileRequest {
     string name = 2;
-    string desc = 3;
-    bool active = 6;
+    string logo = 3;
+    string desc = 7;
+    bool active = 9;
+
+    bool isNameUpdate = 102;
+    bool isLogoUpdate = 103;
+    bool isDescUpdate = 107;
+
 }
 
-message UpsertResponse {
+message UpdateMyProfileResponse {
     common.Status status = 999;
-    string id = 1;
+    string id = 1; //user id
 }
-
-message DeleteRequest {
-    string id = 1;
-}
-
-message DeleteResponse {
-    common.Status status = 999;
-    string id = 1;
-}
-

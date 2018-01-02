@@ -14,7 +14,7 @@ service Storesearch {
     rpc Delete (DeleteRequest) returns (DeleteResponse) {
     }
     
-    rpc Search (SearchRequest) returns (stream StoreResponse) {
+    rpc Search (SearchRequest) returns (stream SearchResponse) {
     }
 }
 
@@ -55,7 +55,7 @@ message SearchRequest {
 
 }
 
-message StoreResponse {
+message SearchResponse {
     string id = 1; //store id
     string name = 2;
     string logo = 3;

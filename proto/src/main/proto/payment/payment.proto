@@ -13,39 +13,34 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 syntax = "proto3";
-package citymanage;
+package payment;
 
 option java_multiple_files = true;
-option java_package = "com.github.conanchen.gedit.citymanage.grpc";
-option java_outer_classname = "CityManProto";
-option objc_class_prefix = "CITYMAN";
+option java_package = "com.github.conanchen.gedit.payment.grpc";
+option java_outer_classname = "PaymentProto";
+option objc_class_prefix = "PAYMENT";
 
 import "common/common.proto";
 
-// The hanzi service definition.
-service CityMan {
+// The payment service definition.
+service Payment {
 
     rpc Add (AddRequest) returns (AddResponse) {
     }
 
-    rpc List (ListRequest) returns (stream CityResponse) {
+    rpc Get (GetRequest) returns (PaymentResponse) {
     }
 
-    rpc Get (GetRequest) returns (CityResponse) {
+    rpc Find (FindRequest) returns (PaymentResponse) {
     }
 
-    rpc Upsert (UpsertRequest) returns (UpsertResponse) {
+    rpc List (ListRequest) returns (stream PaymentResponse) {
     }
 
-    rpc Delete (DeleteRequest) returns (DeleteResponse) {
-    }
 }
 
 message AddRequest {
-    string id = 1;
-    string name = 2;
-    string desc = 3;
-    bool active = 6;
+    string mobile = 1;
 }
 
 message AddResponse {
@@ -62,32 +57,15 @@ message GetRequest {
     string id = 1;
 }
 
-message CityResponse {
+message FindRequest {
+    string mobile = 1;
+}
+
+message PaymentResponse {
     common.Status status = 999;
     string id = 1;
-    string name = 2;
-    string desc = 3;
+    string mobile = 2;
+    string name = 3;
+    string desc = 4;
     bool active = 6;
 }
-
-message UpsertRequest {
-    string id = 1;
-    string name = 2;
-    string desc = 3;
-    bool active = 6;
-}
-
-message UpsertResponse {
-    common.Status status = 999;
-    string id = 1;
-}
-
-message DeleteRequest {
-    string id = 1;
-}
-
-message DeleteResponse {
-    common.Status status = 999;
-    string id = 1;
-}
-
