@@ -1,0 +1,122 @@
+syntax = "proto3";
+package store;
+
+option java_multiple_files = true;
+option java_package = "com.github.conanchen.gedit.store.grpc";
+option java_outer_classname = "StoreProfileProto";
+option objc_class_prefix = "STPRF";
+
+import "common/common.proto";
+
+// The store service definition.
+service StoreProfile {
+    rpc Create (CreateRequest) returns (CreateResponse) {
+    }
+
+    rpc Delete (DeleteRequest) returns (DeleteResponse) {
+    }
+
+    rpc Update (UpdateRequest) returns (UpdateResponse) {
+    }
+
+    rpc Get (GetRequest) returns (StoreProfileResponse) {
+    }
+
+    rpc List (ListRequest) returns (stream StoreProfileResponse) {
+    }
+
+    rpc FindByName (FindByNameRequest) returns (StoreProfileResponse) {
+    }
+
+    rpc Ban (BanRequest) returns (BanResponse) {
+    }
+
+}
+
+message CreateRequest {
+    string name = 1; //unique
+    string ownerId = 2;
+}
+
+message CreateResponse {
+    common.Status status = 999;
+    string id = 1; //store id
+}
+
+
+message UpdateRequest {
+    string id = 1; //store id
+    string name = 2;
+    string logo = 3;
+    int64 lat = 4;
+    int64 lon = 5;
+    string type = 6;
+    string desc = 7;
+    int32 bonusRate = 8;
+    bool active = 9;
+
+    bool isNameUpdate = 102;
+    bool isLogoUpdate = 103;
+    bool isLatUpdate = 104;
+    bool isLonUpdate = 105;
+    bool isTypeUpdate = 106;
+    bool isDescUpdate = 107;
+    bool isBonusRateUpdate = 108;
+
+}
+
+message UpdateResponse {
+    common.Status status = 999;
+    string id = 1; //store id
+}
+
+
+message GetRequest {
+    string id = 1; //store id
+}
+
+
+message DeleteRequest {
+    string id = 1; //store id
+}
+
+message DeleteResponse {
+    common.Status status = 999;
+    string id = 1; //store id
+}
+
+message ListRequest {
+    string type = 3;
+    int32 from = 100;
+    int32 size = 101;
+}
+
+message FindByNameRequest {
+    string name = 1;
+}
+
+message StoreProfileResponse {
+    common.Status status = 999;
+    string id = 1; //store id
+    string name = 2;
+    string logo = 3;
+    int64 lat = 4;
+    int64 lon = 5;
+    string type = 6;
+    string desc = 7;
+    int32 bonusRate = 8;
+    bool active = 9;
+
+    int32 from = 100;
+}
+
+message BanRequest {
+    string id = 1; //store id
+    bool active = 2;
+}
+
+message BanResponse {
+    common.Status status = 999;
+    string id = 1; //store id
+    bool active = 2;
+}

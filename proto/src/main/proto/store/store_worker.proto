@@ -1,0 +1,88 @@
+syntax = "proto3";
+package store;
+
+option java_multiple_files = true;
+option java_package = "com.github.conanchen.gedit.store.grpc";
+option java_outer_classname = "StoreWorkerProto";
+option objc_class_prefix = "STWRK";
+
+import "common/common.proto";
+
+// The store service definition.
+service StoreWorker {
+    rpc Add (AddRequest) returns (WorkshipResponse) {
+    }
+
+    rpc Update (UpdateRequest) returns (WorkshipResponse) {
+    }
+
+    rpc ListByStore (ListByStoreRequest) returns (stream WorkshipResponse) {
+    }
+
+    rpc ListByWorker (ListByWorkerRequest) returns (stream WorkshipResponse) {
+    }
+
+    rpc Ban (BanRequest) returns (BanResponse) {
+    }
+}
+
+message AddRequest {
+    string storeId = 1;
+    string workerId = 3;
+}
+
+message UpdateRequest {
+    string workerId = 1;
+    string workerType = 3;
+    string storeId = 5;
+    bool active = 7;
+    int64 startTime = 9;
+    int64 endTime = 10;
+
+    bool isWorkerTypeUpdate = 100;
+    bool isActiveUpdate = 101;
+    bool isStartTimeUpdate = 102;
+    bool isEndTimeUpdate = 103;
+
+}
+
+
+message ListByStoreRequest {
+    string storeId = 1;
+    int32 from = 100;
+    int32 size = 101;
+}
+
+
+message ListByWorkerRequest {
+    string workerId = 3;
+    int32 from = 100;
+    int32 size = 101;
+}
+
+message WorkshipResponse {
+    common.Status status = 999;
+    string workerId = 1;
+    string workerType = 3;
+    string storeId = 5;
+    bool active = 7;
+    int64 startTime = 9;
+    int64 endTime = 10;
+
+    int32 from = 100;
+}
+
+
+message BanRequest {
+    string workerId = 1;
+    string storeId = 5;
+    bool active = 7;
+}
+
+message BanResponse {
+    common.Status status = 999;
+    string workerId = 1;
+    string storeId = 5;
+    bool active = 7;
+}
+

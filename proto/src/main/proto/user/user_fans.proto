@@ -17,55 +17,45 @@ package fans;
 
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.fans.grpc";
-option java_outer_classname = "FansProto";
-option objc_class_prefix = "FANS";
+option java_outer_classname = "UserFansProto";
+option objc_class_prefix = "USRFANS";
 
 import "common/common.proto";
 
-// The fans service definition.
-service Fans {
+// The userfans service definition.
+service UserFans {
 
-    rpc Add (AddRequest) returns (AddResponse) {
+    rpc Add (AddRequest) returns (FanshipResponse) {
     }
 
-    rpc Get (GetRequest) returns (BonusResponse) {
+    rpc FindParent (FindParentRequest) returns (FanshipResponse) {
     }
 
-    rpc Find (FindRequest) returns (BonusResponse) {
-    }
-
-    rpc List (ListRequest) returns (stream BonusResponse) {
+    rpc ListChild (ListChildRequest) returns (stream FanshipResponse) {
     }
 
 }
 
 message AddRequest {
-    string mobile = 1;
+    string fanId = 1;
 }
 
-message AddResponse {
+message FindParentRequest {
+    string fanId = 1;
+}
+
+message ListChildRequest {
+    string parentId = 1;
+    int32 from = 100;
+    int32 size = 101;
+
+}
+
+message FanshipResponse {
     common.Status status = 999;
-    string id = 1;
-}
-
-
-message ListRequest {
-    int32 page = 1;
-}
-
-message GetRequest {
-    string id = 1;
-}
-
-message FindRequest {
-    string mobile = 1;
-}
-
-message BonusResponse {
-    common.Status status = 999;
-    string id = 1;
-    string mobile = 2;
+    string parentId = 1;
+    string fanId = 2;
     string name = 3;
-    string desc = 4;
+    int64 created = 4;
     bool active = 6;
 }

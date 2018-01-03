@@ -43,6 +43,8 @@ service User {
     rpc UpdateMyProfile (UpdateMyProfileRequest) returns (UpdateMyProfileResponse) {
     }
 
+    rpc Ban (BanRequest) returns (UserResponse) {
+    }
 }
 
 message AddRequest {
@@ -63,6 +65,16 @@ message GetRequest {
     string id = 1;
 }
 
+message BanRequest {
+    string id = 1;
+    bool active = 2;
+}
+message BanResponse {
+    common.Status status = 999;
+    string id = 1;
+    bool active = 2;
+}
+
 message FindRequest {
     string mobile = 1;
 }
@@ -77,9 +89,10 @@ message UserResponse {
 }
 
 message UpdateMyLocationRequest {
-    int64 lat = 4;
-    int64 lon = 5;
+    double lat = 30;
+    double lon = 31;
 }
+
 message UpdateMyLocationResponse {
     common.Status status = 999;
 }
@@ -88,7 +101,6 @@ message UpdateMyProfileRequest {
     string name = 2;
     string logo = 3;
     string desc = 7;
-    bool active = 9;
 
     bool isNameUpdate = 102;
     bool isLogoUpdate = 103;

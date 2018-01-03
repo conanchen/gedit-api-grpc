@@ -25,47 +25,76 @@ import "common/common.proto";
 // The payment service definition.
 service Payment {
 
-    rpc Add (AddRequest) returns (AddResponse) {
+    rpc Create (CreateRequest) returns (PaymentResponse) {
     }
 
     rpc Get (GetRequest) returns (PaymentResponse) {
     }
 
-    rpc Find (FindRequest) returns (PaymentResponse) {
-    }
-
     rpc List (ListRequest) returns (stream PaymentResponse) {
     }
 
+    rpc ListMy (ListMyRequest) returns (stream PaymentResponse) {
+    }
+
 }
 
-message AddRequest {
-    string mobile = 1;
-}
+message CreateRequest {
+    //only called by myself，即支付人是我
 
-message AddResponse {
-    common.Status status = 999;
-    string id = 1;
-}
+    string payeeId = 12; //收款人
+    string payeeStoreId = 13;
+    string payeeWorkerId = 14;
+    int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
+    int32 actualPay = 16; //实付金额
+    int32 actualBonus = 17; //实付积分代替金额
+    int32 bonus = 18; //返还积分
 
-
-message ListRequest {
-    int32 page = 1;
+    string channel = 26;//支付通道如支付宝、微信、云闪付
+    string channelOrderId = 27;//预付单编号，可能由支付通道返回的或平台产生的
+    double lat = 30;
+    double lon = 31;
+    int64 created = 40;
 }
 
 message GetRequest {
-    string id = 1;
+    string id = 1;    //支付单编号
 }
 
-message FindRequest {
-    string mobile = 1;
+message ListRequest {
+    //only called by manager
+    string payerId = 11; //支付人
+    string payeeId = 12; //收款人
+    int32 from = 100;
+    int32 size = 101;
+}
+
+message ListMyRequest {
+    //only called by myself
+    bool includePayee = 1;
+    bool includePayer = 2;
+    int32 from = 100;
+    int32 size = 101;
 }
 
 message PaymentResponse {
     common.Status status = 999;
-    string id = 1;
-    string mobile = 2;
-    string name = 3;
-    string desc = 4;
-    bool active = 6;
+    string id = 1;    //支付单编号
+
+    string payerId = 11; //支付人
+    string payeeId = 12; //收款人
+    string payeeStoreId = 13;
+    string payeeWorkerId = 14;
+    int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
+    int32 actualPay = 16; //实付金额
+    int32 actualBonus = 17; //实付积分代替金额
+    int32 bonus = 18; //返还积分
+    string bonusTxid = 19; //积分流水id
+
+    string channel = 26;//支付通道如支付宝、微信、云闪付
+    string channelOrderId = 27;//预付单编号，可能由支付通道返回的或平台产生的
+    double lat = 30;
+    double lon = 31;
+    int64 created = 40;
+
 }
