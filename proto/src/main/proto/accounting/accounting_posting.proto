@@ -43,14 +43,21 @@ message UpsertPostingsRequest {
 }
 
 message UpsertPosting {
+    string userId = 11;
+    //accountId+journalId unique
     string accountId = 12;
     string journalId = 13;
+
     int32 amount = 14;
     int64 created = 15;
+    string comment = 16;
 }
 
 message ListPostingRequest {
+    string userId = 11;
+    //accountId+journalId unique
     string accountId = 12;
+    string journalId = 13;
 
     int32 from = 100;
     int32 size = 101;
@@ -67,9 +74,14 @@ message PostingResponse {
 }
 
 message Posting {
-    string uuid = 11;
+    string uuid = 1;
+
+    string userId = 11;
+    //accountId+journalId unique
     string accountId = 12;
     string journalId = 13;
+
     int32 amount = 14;
     int64 created = 15;
+    string comment = 16;
 }

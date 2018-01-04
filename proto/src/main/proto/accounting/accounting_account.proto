@@ -33,7 +33,7 @@ service AccountingAccountApi {
     rpc GetAccount (GetAccountRequest) returns (AccountResponse) {
     }
 
-    rpc FindOneAccountBy (UserAndTypeAccountRequest) returns (AccountResponse) {
+    rpc FindOneAccountBy (UserAndType) returns (AccountResponse) {
     }
 }
 
@@ -48,13 +48,15 @@ message AccountResponse {
 }
 
 message Account {
-    string userId = 11;
-    string uuid = 12;
+    string uuid = 11;
+    string userId = 12;
     int64 created = 13;
     Type type = 14;
     enum Type {
-        CASH = 0;
-        BONUS = 1;
+        CASH = 0;  //现金
+        POINTS = 1; //积分
+        REDPACK = 2; //红包
+        COUPON = 3; //优惠券
     }
 
     int32 balance = 15;
@@ -67,7 +69,7 @@ message GetAccountRequest {
 }
 
 
-message UserAndTypeAccountRequest {
+message UserAndType {
     string userId = 11;
     Account.Type type = 14;
 }

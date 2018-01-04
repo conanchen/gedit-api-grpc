@@ -44,40 +44,10 @@ service AccountingJournalApi {
 
 message UpsertJournalRequest {
     oneof event {
-        PaymentEvent paymentEvent = 1;
-        UserRegisterEvent userRegisterEvent = 2;
-        StoreRegisterEvent storeRegisterEvent = 3;
+        PaymentCreatedEvent paymentCreatedEvent = 1;
+        UserRegisteredEvent userRegisteredEvent = 2;
+        StoreCreatedEvent storeCreatedEvent = 3;
     }
-}
-
-message PaymentEvent {
-    //uuid unique
-    string uuid = 1; //支付单编号 unique
-
-    string payerId = 11; //支付人
-    string payeeId = 12; //收款人
-    string payeeStoreId = 13;
-    string payeeWorkerId = 14;
-    int32 shouldpay = 15; //应付金额 = 实付金额 + 实付积分等价金额
-    int32 actualpay = 16; //实付金额
-    int32 bonuspay = 17; //实付积分代替金额
-
-    string channel = 26; //支付通道如支付宝、微信、云闪付
-}
-
-message UserRegisterEvent {
-    //userId+introducerId unique
-    string userId = 11;
-    string introducerId = 12;
-    int64 created = 14;
-}
-
-message StoreRegisterEvent {
-    //storeId+introducerId unique
-    string storeId = 11;
-    string introducerId = 12;
-    string storeOwnerId = 13;
-    int64 created = 14;
 }
 
 message ListJournalRequest {
@@ -100,11 +70,44 @@ message Journal {
     string uuid = 11;
     int64 created = 12;
     oneof event {
-        PaymentEvent paymentEvent = 1;
-        UserRegisterEvent userRegisterEvent = 2;
-        StoreRegisterEvent storeRegisterEvent = 3;
+        PaymentCreatedEvent paymentCreatedEvent = 1;
+        UserRegisteredEvent userRegisterEvent = 2;
+        StoreCreatedEvent storeRegisterEvent = 3;
     }
 
     repeated string postingIds = 33;
     int64 postingsCreated = 34;
+}
+
+
+
+message PaymentCreatedEvent {
+    //uuid unique
+    string uuid = 1; //支付单编号 unique
+
+    string payerId = 11; //支付人
+    string payeeId = 12; //收款人
+    string payeeStoreId = 13;
+    string payeeWorkerId = 14;
+    int32 shouldpay = 15; //应付金额 = 实付金额 + 实付积分等价金额
+    int32 actualpay = 16; //实付金额
+    int32 bonuspay = 17; //实付积分代替金额
+
+    string channel = 26; //支付通道如支付宝、微信、云闪付
+    int64 created = 27;
+}
+
+message UserRegisteredEvent {
+    //userId+introducerId unique
+    string userId = 11;
+    string introducerId = 12;
+    int64 created = 14;
+}
+
+message StoreCreatedEvent {
+    //storeId+introducerId unique
+    string storeId = 11;
+    string introducerId = 12;
+    string storeOwnerId = 13;
+    int64 created = 14;
 }
