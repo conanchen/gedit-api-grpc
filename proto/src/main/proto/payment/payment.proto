@@ -23,7 +23,7 @@ option objc_class_prefix = "PAYMENT";
 import "common/common.proto";
 
 // The payment service definition.
-service Payment {
+service PaymentApi {
 
     rpc Create (CreateRequest) returns (PaymentResponse) {
     }
