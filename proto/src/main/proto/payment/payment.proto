@@ -58,7 +58,7 @@ message CreateRequest {
 }
 
 message GetRequest {
-    string id = 1; //支付单编号
+    string uuid = 1; //支付单编号
 }
 
 message ListRequest {
@@ -83,7 +83,7 @@ message PaymentResponse {
 }
 
 message Payment {
-    string id = 1; //支付单编号
+    string uuid = 1; //支付单编号
 
     string payerId = 11; //支付人
     string payeeId = 12; //收款人

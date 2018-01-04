@@ -40,12 +40,12 @@ message CreateRequest {
 
 message CreateResponse {
     common.Status status = 999;
-    string id = 1; //store id
+    string uuid = 1; //store uuid
 }
 
 
 message UpdateRequest {
-    string id = 1; //store id
+    string uuid = 1; //store uuid
     string name = 2;
     string logo = 3;
     int64 lat = 4;
@@ -67,22 +67,22 @@ message UpdateRequest {
 
 message UpdateResponse {
     common.Status status = 999;
-    string id = 1; //store id
+    string uuid = 1; //store uuid
 }
 
 
 message GetRequest {
-    string id = 1; //store id
+    string uuid = 1; //store uuid
 }
 
 
 message DeleteRequest {
-    string id = 1; //store id
+    string uuid = 1; //store uuid
 }
 
 message DeleteResponse {
     common.Status status = 999;
-    string id = 1; //store id
+    string uuid = 1; //store uuid
 }
 
 message ListRequest {
@@ -101,7 +101,7 @@ message StoreProfileResponse {
 }
 
 message StoreProfile{
-    string id = 1; //store id
+    string uuid = 1; //store uuid
     string name = 2;
     string logo = 3;
     int64 lat = 4;
@@ -115,12 +115,12 @@ message StoreProfile{
 
 }
 message BanRequest {
-    string id = 1; //store id
+    string uuid = 1; //store uuid
     bool active = 2;
 }
 
 message BanResponse {
     common.Status status = 999;
-    string id = 1; //store id
+    string uuid = 1; //store uuid
     bool active = 2;
 }

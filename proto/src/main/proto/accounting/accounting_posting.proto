@@ -58,7 +58,7 @@ message ListPostingRequest {
 }
 
 message GetPostingRequest {
-    string id = 1;
+    string uuid = 1;
 }
 
 message PostingResponse {
@@ -67,7 +67,7 @@ message PostingResponse {
 }
 
 message Posting {
-    string id = 11;
+    string uuid = 11;
     string accountId = 12;
     string journalId = 13;
     int32 amount = 14;

@@ -53,7 +53,7 @@ message AddRequest {
 
 message AddResponse {
     common.Status status = 999;
-    string id = 1;
+    string uuid = 1;
 }
 
 
@@ -62,16 +62,16 @@ message ListRequest {
 }
 
 message GetRequest {
-    string id = 1;
+    string uuid = 1;
 }
 
 message BanRequest {
-    string id = 1;
+    string uuid = 1;
     bool active = 2;
 }
 message BanResponse {
     common.Status status = 999;
-    string id = 1;
+    string uuid = 1;
     bool active = 2;
 }
 
@@ -85,7 +85,7 @@ message UserProfileResponse {
 }
 
 message UserProfile {
-    string id = 1;
+    string uuid = 1;
     string mobile = 2;
     string name = 3;
     string desc = 4;
@@ -114,5 +114,5 @@ message UpdateMyProfileRequest {
 
 message UpdateMyProfileResponse {
     common.Status status = 999;
-    string id = 1; //user id
+    string uuid = 1; //user uuid
 }

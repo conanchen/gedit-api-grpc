@@ -20,7 +20,7 @@ message HelloRequest {
 
 // The response message containing the greetings
 message HelloReply {
-    int64 id = 1;
+    int64 uuid = 1;
     string message = 2;
     int64 created =3 ;
     int64 lastUpdated = 4;

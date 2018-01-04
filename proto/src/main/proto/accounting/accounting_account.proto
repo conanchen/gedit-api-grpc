@@ -27,7 +27,7 @@ import "common/common.proto";
 //https://medium.com/@RobertKhou/double-entry-accounting-in-a-relational-database-2b7838a5d7f8
 service AccountingAccountApi {
 
-    rpc CreateAccounts (CreateAccountsRequest) returns (stream AccountResponse) {
+    rpc UpsertAccounts (UpsertAccountsRequest) returns (stream AccountResponse) {
     }
 
     rpc GetAccount (GetAccountRequest) returns (AccountResponse) {
@@ -38,7 +38,7 @@ service AccountingAccountApi {
 }
 
 
-message CreateAccountsRequest {
+message UpsertAccountsRequest {
     string userId = 11;
 }
 
@@ -47,21 +47,23 @@ message AccountResponse {
     Account account = 1;
 }
 
-message Account{
+message Account {
     string userId = 11;
-    string id = 12;
+    string uuid = 12;
     int64 created = 13;
     Type type = 14;
-    int32 balance = 15;
-
-    enum Type{
+    enum Type {
         CASH = 0;
         BONUS = 1;
     }
+
+    int32 balance = 15;
+    int32 todayChangedBalance = 16;
+
 }
 
 message GetAccountRequest {
-    string id = 1;
+    string uuid = 1;
 }
 
 

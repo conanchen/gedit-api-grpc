@@ -22,7 +22,7 @@ service StoreSearchApi {
 }
 
 message IndexRequest {
-    string id = 1; //store id
+    string uuid = 1; //store uuid
     string name = 2;
     string logo = 3;
     int64 lat = 4;
@@ -34,18 +34,18 @@ message IndexRequest {
 
 message IndexResponse {
     common.Status status = 999;
-    string id = 1; //store id
+    string uuid = 1; //store uuid
 //    string status = 2;  //refer to elasticsearch e.g. RestStatus.OK
 }
 
 
 message DeleteRequest{
-    string id = 1; //store id
+    string uuid = 1; //store uuid
 }
 
 message DeleteResponse{
     common.Status status = 999;
-    string id = 1; //store id
+    string uuid = 1; //store uuid
 }
 
 message SearchRequest {
@@ -61,7 +61,7 @@ message SearchRequest {
 
 message SearchResponse {
     common.Status status = 999;
-    string id = 1; //store id
+    string uuid = 1; //store uuid
     string name = 2;
     string logo = 3;
     int64 lat = 4;

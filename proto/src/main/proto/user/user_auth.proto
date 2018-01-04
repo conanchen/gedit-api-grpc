@@ -67,7 +67,7 @@ message SmsStep1QuestionResponse {
 }
 
 message Question {
-    string id = 1;
+    string uuid = 1;
     string image = 2;
 }
 

@@ -27,7 +27,7 @@ import "common/common.proto";
 //https://medium.com/@RobertKhou/double-entry-accounting-in-a-relational-database-2b7838a5d7f8
 service AccountingJournalApi {
 
-    rpc AddJournal (AddJournalRequest) returns (JournalResponse) {
+    rpc UpsertJournal (UpsertJournalRequest) returns (JournalResponse) {
     }
 
     rpc UpsertJournalPostings (Journal) returns (JournalResponse) {
@@ -42,16 +42,17 @@ service AccountingJournalApi {
 
 }
 
-message AddJournalRequest {
+message UpsertJournalRequest {
     oneof event {
-        Payment payment = 1;
-        UserRegister userRegister = 2;
-        StoreRegister storeRegister = 3;
+        PaymentEvent paymentEvent = 1;
+        UserRegisterEvent userRegisterEvent = 2;
+        StoreRegisterEvent storeRegisterEvent = 3;
     }
 }
 
-message Payment {
-    string id = 1; //支付单编号
+message PaymentEvent {
+    //uuid unique
+    string uuid = 1; //支付单编号 unique
 
     string payerId = 11; //支付人
     string payeeId = 12; //收款人
@@ -64,13 +65,15 @@ message Payment {
     string channel = 26; //支付通道如支付宝、微信、云闪付
 }
 
-message UserRegister {
+message UserRegisterEvent {
+    //userId+introducerId unique
     string userId = 11;
     string introducerId = 12;
     int64 created = 14;
 }
 
-message StoreRegister {
+message StoreRegisterEvent {
+    //storeId+introducerId unique
     string storeId = 11;
     string introducerId = 12;
     string storeOwnerId = 13;
@@ -78,7 +81,6 @@ message StoreRegister {
 }
 
 message ListJournalRequest {
-    string accountId = 11;
 
     int32 from = 100;
     int32 size = 101;
@@ -86,7 +88,7 @@ message ListJournalRequest {
 }
 
 message GetJournalRequest {
-    string id = 1;
+    string uuid = 1;
 }
 
 message JournalResponse {
@@ -95,13 +97,12 @@ message JournalResponse {
 }
 
 message Journal {
-    string accountId = 10;
-    string id = 11;
+    string uuid = 11;
     int64 created = 12;
     oneof event {
-        Payment payment = 1;
-        UserRegister userRegister = 2;
-        StoreRegister storeRegister = 3;
+        PaymentEvent paymentEvent = 1;
+        UserRegisterEvent userRegisterEvent = 2;
+        StoreRegisterEvent storeRegisterEvent = 3;
     }
 
     repeated string postingIds = 33;
