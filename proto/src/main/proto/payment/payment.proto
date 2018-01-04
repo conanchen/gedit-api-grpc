@@ -50,15 +50,15 @@ message CreateRequest {
     int32 actualBonus = 17; //实付积分代替金额
     int32 bonus = 18; //返还积分
 
-    string channel = 26;//支付通道如支付宝、微信、云闪付
-    string channelOrderId = 27;//预付单编号，可能由支付通道返回的或平台产生的
+    string channel = 26; //支付通道如支付宝、微信、云闪付
+    string channelOrderId = 27; //预付单编号，可能由支付通道返回的或平台产生的
     double lat = 30;
     double lon = 31;
     int64 created = 40;
 }
 
 message GetRequest {
-    string id = 1;    //支付单编号
+    string id = 1; //支付单编号
 }
 
 message ListRequest {
@@ -79,20 +79,19 @@ message ListMyRequest {
 
 message PaymentResponse {
     common.Status status = 999;
-    string id = 1;    //支付单编号
+    string id = 1; //支付单编号
 
     string payerId = 11; //支付人
     string payeeId = 12; //收款人
     string payeeStoreId = 13;
     string payeeWorkerId = 14;
-    int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
-    int32 actualPay = 16; //实付金额
-    int32 actualBonus = 17; //实付积分代替金额
+    int32 shouldpay = 15; //应付金额 = 实付金额 + 实付积分等价金额
+    int32 actualpay = 16; //实付金额
+    int32 bonuspay = 17; //实付积分代替金额
     int32 bonus = 18; //返还积分
-    string bonusTxid = 19; //积分流水id
 
-    string channel = 26;//支付通道如支付宝、微信、云闪付
-    string channelOrderId = 27;//预付单编号，可能由支付通道返回的或平台产生的
+    string channel = 26; //支付通道如支付宝、微信、云闪付
+    string channelOrderId = 27; //预付单编号，可能由支付通道返回的或平台产生的
     double lat = 30;
     double lon = 31;
     int64 created = 40;
