@@ -1,12 +1,12 @@
 syntax = "proto3";
-package store;
+package store.member;
 
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.store.member.grpc";
 option java_outer_classname = "StoreMemberProto";
 option objc_class_prefix = "STMEM";
 
-import "common/common.proto";
+import "/proto/common/common.proto";
 
 // The storemember service definition.
 service StoreMember {

@@ -13,14 +13,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 syntax = "proto3";
-package bonus;
+package accounting.account;
 
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.accounting.journal.grpc";
 option java_outer_classname = "AccountingJournalProto";
 option objc_class_prefix = "ACCJRNL";
 
-import "common/common.proto";
+import "/proto/common/common.proto";
 
 // The bonus service definition.
 //https://accountingexplained.com/financial/cycle/

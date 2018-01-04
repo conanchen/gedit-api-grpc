@@ -1,12 +1,12 @@
 syntax = "proto3";
-package store;
+package store.profile;
 
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.store.profile.grpc";
 option java_outer_classname = "StoreProfileProto";
 option objc_class_prefix = "STPRF";
 
-import "common/common.proto";
+import "/proto/common/common.proto";
 
 // The store service definition.
 service StoreProfile {

@@ -1,5 +1,5 @@
 syntax = "proto3";
-package storesearch;
+package store.search;
 
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.store.search.grpc";
@@ -7,7 +7,7 @@ option java_outer_classname = "StoreSearchProto";
 option objc_class_prefix = "STSCH";
 
 
-import "common/common.proto";
+import "/proto/common/common.proto";
 
 // The storesearch service definition.
 service StoreSearch {

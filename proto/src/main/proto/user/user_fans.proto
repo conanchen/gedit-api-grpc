@@ -13,14 +13,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 syntax = "proto3";
-package fans;
+package user.fans;
 
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.user.fans.grpc";
 option java_outer_classname = "UserFansProto";
 option objc_class_prefix = "USRFANS";
 
-import "common/common.proto";
+import "/proto/common/common.proto";
 
 // The userfans service definition.
 service UserFans {

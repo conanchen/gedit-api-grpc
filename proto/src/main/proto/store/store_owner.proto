@@ -1,12 +1,12 @@
 syntax = "proto3";
-package store;
+package store.owner;
 
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.store.owner.grpc";
 option java_outer_classname = "StoreOwnerProto";
 option objc_class_prefix = "STOWN";
 
-import "common/common.proto";
+import "/proto/common/common.proto";
 
 // The storeowner service definition.
 service StoreOwner {
