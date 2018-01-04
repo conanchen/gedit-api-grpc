@@ -20,7 +20,7 @@ option java_package = "com.github.conanchen.gedit.accounting.journal.grpc";
 option java_outer_classname = "AccountingJournalProto";
 option objc_class_prefix = "ACCJRNL";
 
-import "/proto/common/common.proto";
+import "common/common.proto";
 
 // The bonus service definition.
 //https://accountingexplained.com/financial/cycle/

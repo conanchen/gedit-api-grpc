@@ -6,7 +6,7 @@ option java_package = "com.github.conanchen.gedit.store.owner.grpc";
 option java_outer_classname = "StoreOwnerProto";
 option objc_class_prefix = "STOWN";
 
-import "/proto/common/common.proto";
+import "common/common.proto";
 
 // The storeowner service definition.
 service StoreOwner {

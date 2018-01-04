@@ -6,7 +6,7 @@ option java_package = "com.github.conanchen.gedit.store.worker.grpc";
 option java_outer_classname = "StoreWorkerProto";
 option objc_class_prefix = "STWRK";
 
-import "/proto/common/common.proto";
+import "common/common.proto";
 
 // The store service definition.
 service StoreWorker {

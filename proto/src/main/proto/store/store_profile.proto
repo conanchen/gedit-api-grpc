@@ -6,7 +6,7 @@ option java_package = "com.github.conanchen.gedit.store.profile.grpc";
 option java_outer_classname = "StoreProfileProto";
 option objc_class_prefix = "STPRF";
 
-import "/proto/common/common.proto";
+import "common/common.proto";
 
 // The store service definition.
 service StoreProfile {

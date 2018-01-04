@@ -6,7 +6,7 @@ option java_package = "com.github.conanchen.gedit.store.member.grpc";
 option java_outer_classname = "StoreMemberProto";
 option objc_class_prefix = "STMEM";
 
-import "/proto/common/common.proto";
+import "common/common.proto";
 
 // The storemember service definition.
 service StoreMember {

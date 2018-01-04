@@ -7,7 +7,7 @@ option java_outer_classname = "StoreSearchProto";
 option objc_class_prefix = "STSCH";
 
 
-import "/proto/common/common.proto";
+import "common/common.proto";
 
 // The storesearch service definition.
 service StoreSearch {

@@ -6,7 +6,7 @@ option java_outer_classname = "UserAuthProto";
 option java_package = "com.github.conanchen.gedit.user.auth.grpc";
 option objc_class_prefix = "USRATH";
 
-import "/proto/common/common.proto";
+import "common/common.proto";
 
 service UserAuth {
     rpc SigninQQ (SigninQQRequest) returns (SigninResponse) {

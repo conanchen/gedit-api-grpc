@@ -20,7 +20,7 @@ option java_package = "com.github.conanchen.gedit.user.profile.grpc";
 option java_outer_classname = "UserProfileProto";
 option objc_class_prefix = "USRPROF";
 
-import "/proto/common/common.proto";
+import "common/common.proto";
 
 // The hanzi service definition.
 service User {
