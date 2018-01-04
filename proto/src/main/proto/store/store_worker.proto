@@ -9,7 +9,7 @@ option objc_class_prefix = "STWRK";
 import "common/common.proto";
 
 // The store service definition.
-service StoreWorker {
+service StoreWorkerApi {
     rpc Add (AddRequest) returns (WorkshipResponse) {
     }
 

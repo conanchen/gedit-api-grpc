@@ -9,7 +9,7 @@ option objc_class_prefix = "STOWN";
 import "common/common.proto";
 
 // The storeowner service definition.
-service StoreOwner {
+service StoreOwnerApi {
 
     rpc Transfer (TransferRequest) returns (OwnershipResponse) {
     }

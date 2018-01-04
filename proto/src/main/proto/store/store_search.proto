@@ -10,7 +10,7 @@ option objc_class_prefix = "STSCH";
 import "common/common.proto";
 
 // The storesearch service definition.
-service StoreSearch {
+service StoreSearchApi {
     rpc Index (IndexRequest) returns (IndexResponse) {
     }
     

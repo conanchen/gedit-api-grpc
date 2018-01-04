@@ -9,7 +9,7 @@ option objc_class_prefix = "STPRF";
 import "common/common.proto";
 
 // The store service definition.
-service StoreProfile {
+service StoreProfileApi {
     rpc Create (CreateRequest) returns (CreateResponse) {
     }
 

@@ -9,7 +9,7 @@ option objc_class_prefix = "STMEM";
 import "common/common.proto";
 
 // The storemember service definition.
-service StoreMember {
+service StoreMemberApi {
     rpc Add (AddRequest) returns (MembershipResponse) {
     }
 

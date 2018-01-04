@@ -23,7 +23,7 @@ option objc_class_prefix = "PROM";
 import "common/common.proto";
 
 // The promotion service definition.
-service Promotion {
+service PromotionApi {
 
     rpc Add (AddRequest) returns (AddResponse) {
     }

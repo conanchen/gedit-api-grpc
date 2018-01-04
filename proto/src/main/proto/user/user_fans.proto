@@ -23,7 +23,7 @@ option objc_class_prefix = "USRFANS";
 import "common/common.proto";
 
 // The userfans service definition.
-service UserFans {
+service UserFansApi {
 
     rpc Add (AddRequest) returns (FanshipResponse) {
     }

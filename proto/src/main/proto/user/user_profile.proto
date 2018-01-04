@@ -23,7 +23,7 @@ option objc_class_prefix = "USRPROF";
 import "common/common.proto";
 
 // The hanzi service definition.
-service User {
+service UserProfileApi {
 
     rpc Add (AddRequest) returns (AddResponse) {
     }

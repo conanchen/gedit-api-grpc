@@ -25,7 +25,7 @@ import "common/common.proto";
 // The bonus service definition.
 //https://accountingexplained.com/financial/cycle/
 //https://medium.com/@RobertKhou/double-entry-accounting-in-a-relational-database-2b7838a5d7f8
-service AccountingPosting {
+service AccountingPostingApi {
 
     rpc AddPostings (AddPostingsRequest) returns (stream PostingResponse) {
     }

@@ -23,7 +23,7 @@ option objc_class_prefix = "USRLOC";
 import "common/common.proto";
 
 // The userlocation service definition.
-service UserLocation {
+service UserLocationApi {
 
     rpc UpdateMyLocation (UpdateMyLocationRequest) returns (UpdateMyLocationResponse) {
     }
