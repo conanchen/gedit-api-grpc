@@ -28,13 +28,13 @@ service User {
     rpc Add (AddRequest) returns (AddResponse) {
     }
 
-    rpc Get (GetRequest) returns (UserResponse) {
+    rpc Get (GetRequest) returns (UserProfileResponse) {
     }
 
-    rpc Find (FindRequest) returns (UserResponse) {
+    rpc Find (FindRequest) returns (UserProfileResponse) {
     }
 
-    rpc List (ListRequest) returns (stream UserResponse) {
+    rpc List (ListRequest) returns (stream UserProfileResponse) {
     }
 
     rpc UpdateMyLocation (UpdateMyLocationRequest) returns (UpdateMyLocationResponse) {
@@ -43,7 +43,7 @@ service User {
     rpc UpdateMyProfile (UpdateMyProfileRequest) returns (UpdateMyProfileResponse) {
     }
 
-    rpc Ban (BanRequest) returns (UserResponse) {
+    rpc Ban (BanRequest) returns (UserProfileResponse) {
     }
 }
 
@@ -79,8 +79,12 @@ message FindRequest {
     string mobile = 1;
 }
 
-message UserResponse {
+message UserProfileResponse {
     common.Status status = 999;
+    UserProfile userProfile = 1;
+}
+
+message UserProfile {
     string id = 1;
     string mobile = 2;
     string name = 3;

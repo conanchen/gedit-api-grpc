@@ -97,6 +97,10 @@ message FindByNameRequest {
 
 message StoreProfileResponse {
     common.Status status = 999;
+    StoreProfile storeProfile = 1;
+}
+
+message StoreProfile{
     string id = 1; //store id
     string name = 2;
     string logo = 3;
@@ -108,8 +112,8 @@ message StoreProfileResponse {
     bool active = 9;
 
     int32 from = 100;
-}
 
+}
 message BanRequest {
     string id = 1; //store id
     bool active = 2;

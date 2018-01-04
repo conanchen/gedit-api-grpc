@@ -79,6 +79,10 @@ message ListMyRequest {
 
 message PaymentResponse {
     common.Status status = 999;
+    Payment payment = 1;
+}
+
+message Payment {
     string id = 1; //支付单编号
 
     string payerId = 11; //支付人
