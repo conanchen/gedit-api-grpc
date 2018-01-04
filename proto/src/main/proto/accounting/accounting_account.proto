@@ -27,13 +27,13 @@ import "common/common.proto";
 //https://medium.com/@RobertKhou/double-entry-accounting-in-a-relational-database-2b7838a5d7f8
 service AccountingAccount {
 
-    rpc CreateAccounts (CreateAccountsRequest) returns (stream AccountingAccountResponse) {
+    rpc CreateAccounts (CreateAccountsRequest) returns (stream AccountResponse) {
     }
 
-    rpc GetAccount (GetAccountRequest) returns (AccountingAccountResponse) {
+    rpc GetAccount (GetAccountRequest) returns (AccountResponse) {
     }
 
-    rpc FindOneAccountBy (UserAndTypeAccountRequest) returns (AccountingAccountResponse) {
+    rpc FindOneAccountBy (UserAndTypeAccountRequest) returns (AccountResponse) {
     }
 }
 
@@ -42,12 +42,12 @@ message CreateAccountsRequest {
     string userId = 11;
 }
 
-message AccountingAccountResponse {
+message AccountResponse {
     common.Status status = 999;
-    AccountingAccount account = 1;
+    Account account = 1;
 }
 
-message AccountingAccount{
+message Account{
     string userId = 11;
     string id = 12;
     int64 created = 13;
@@ -67,5 +67,5 @@ message GetAccountRequest {
 
 message UserAndTypeAccountRequest {
     string userId = 11;
-    AccountingAccount.Type type = 14;
+    Account.Type type = 14;
 }
