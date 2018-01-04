@@ -1,0 +1,94 @@
+syntax = "proto3";
+package signin;
+
+option java_multiple_files = true;
+option java_outer_classname = "UserAuthProto";
+option java_package = "com.github.conanchen.gedit.userauth.grpc";
+option objc_class_prefix = "USRATH";
+
+import "common/common.proto";
+
+service UserAuth {
+    rpc SigninQQ (SigninQQRequest) returns (SigninResponse) {
+        //qq
+    };
+
+    rpc SigninWechat (SigninWechatRequest) returns (SigninResponse) {
+        // wechat
+    };
+
+    rpc SigninWeibo (SigninWeiboRequest) returns (SigninResponse) {
+        // weibo
+    };
+
+    rpc SigninWithPassword (SigninWithPasswordRequest) returns (SigninResponse) {
+        // local
+    };
+
+    rpc SmsStep1Question (SmsStep1QuestionRequest) returns (SmsStep1QuestionResponse) {
+        // local
+    };
+
+    rpc SmsStep2Answer (SmsStep2AnswerRequest) returns (SmsStep2AnswerResponse) {
+        // local
+    };
+
+    rpc SmsStep3Signin (SmsStep3SigninRequest) returns (SigninResponse) {
+        // local
+    };
+
+}
+
+message SigninQQRequest {
+    string accessToken = 1;
+}
+
+message SigninWechatRequest {
+    string accessToken = 1;
+}
+
+message SigninWeiboRequest {
+    string accessToken = 1;
+}
+
+message SigninWithPasswordRequest {
+    string mobile = 1; //手机号
+    string password = 2; //密码
+}
+
+message SmsStep1QuestionRequest {
+    string mobile = 1; //手机号
+}
+
+message SmsStep1QuestionResponse {
+    string token = 1;
+    string questionTip = 2;
+    repeated Question question = 3;
+}
+
+message Question {
+    string id = 1;
+    string image = 2;
+}
+
+message SmsStep2AnswerRequest {
+    string mobile = 1;
+    string token = 2;
+    repeated string questionId = 3;
+}
+
+message SmsStep2AnswerResponse {
+    common.Status status = 999;
+    //smscode will be sent from the telecom provider
+}
+
+message SmsStep3SigninRequest {
+    string mobile = 1; //手机号
+    string smscode = 2; //短信验证码
+}
+
+message SigninResponse {
+    common.Status status = 999;
+    string accessToken = 2;
+    string expiresIn = 3;
+}
