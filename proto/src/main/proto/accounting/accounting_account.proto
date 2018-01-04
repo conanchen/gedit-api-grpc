@@ -20,7 +20,7 @@ option java_package = "com.github.conanchen.gedit.accounting.account.grpc";
 option java_outer_classname = "AccountingAccountProto";
 option objc_class_prefix = "ACCANT";
 
-import "/proto/common/common.proto";
+import "proto/common/common.proto";
 
 // The accounting account service definition.
 //https://accountingexplained.com/financial/cycle/
