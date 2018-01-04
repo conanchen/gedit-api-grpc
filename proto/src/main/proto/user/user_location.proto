@@ -16,7 +16,7 @@ syntax = "proto3";
 package user;
 
 option java_multiple_files = true;
-option java_package = "com.github.conanchen.gedit.userlocation.grpc";
+option java_package = "com.github.conanchen.gedit.user.location.grpc";
 option java_outer_classname = "UserLocationProto";
 option objc_class_prefix = "USRLOC";
 

@@ -2,15 +2,15 @@ syntax = "proto3";
 package storesearch;
 
 option java_multiple_files = true;
-option java_package = "com.github.conanchen.gedit.storesearch.grpc";
-option java_outer_classname = "StoresearchProto";
+option java_package = "com.github.conanchen.gedit.store.search.grpc";
+option java_outer_classname = "StoreSearchProto";
 option objc_class_prefix = "STSCH";
 
 
 import "common/common.proto";
 
 // The storesearch service definition.
-service Storesearch {
+service StoreSearch {
     rpc Index (IndexRequest) returns (IndexResponse) {
     }
     
@@ -21,7 +21,7 @@ service Storesearch {
     }
 }
 
-message IndexRequest{
+message IndexRequest {
     string id = 1; //store id
     string name = 2;
     string logo = 3;
@@ -32,7 +32,7 @@ message IndexRequest{
     int32 bonusRate = 8;
 }
 
-message IndexResponse{
+message IndexResponse {
     common.Status status = 999;
     string id = 1; //store id
 //    string status = 2;  //refer to elasticsearch e.g. RestStatus.OK

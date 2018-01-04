@@ -16,7 +16,7 @@ syntax = "proto3";
 package bonus;
 
 option java_multiple_files = true;
-option java_package = "com.github.conanchen.gedit.accounting.grpc";
+option java_package = "com.github.conanchen.gedit.accounting.journal.grpc";
 option java_outer_classname = "AccountingJournalProto";
 option objc_class_prefix = "ACCJRNL";
 
