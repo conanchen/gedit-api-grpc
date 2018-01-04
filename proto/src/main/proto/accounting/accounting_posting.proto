@@ -27,7 +27,7 @@ import "common/common.proto";
 //https://medium.com/@RobertKhou/double-entry-accounting-in-a-relational-database-2b7838a5d7f8
 service AccountingPostingApi {
 
-    rpc AddPostings (AddPostingsRequest) returns (stream PostingResponse) {
+    rpc UpsertPostings (UpsertPostingsRequest) returns (stream PostingResponse) {
     }
 
     rpc GetPosting (GetPostingRequest) returns (PostingResponse) {
@@ -37,15 +37,16 @@ service AccountingPostingApi {
     }
 }
 
-message AddPostingsRequest {
-    repeated NewPosting newPostings = 1;
+message UpsertPostingsRequest {
+    repeated UpsertPosting upsertPostings = 1;
     //must be added in a transaction
 }
 
-message NewPosting {
+message UpsertPosting {
     string accountId = 12;
     string journalId = 13;
     int32 amount = 14;
+    int64 created = 15;
 }
 
 message ListPostingRequest {
