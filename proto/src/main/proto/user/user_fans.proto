@@ -53,9 +53,13 @@ message ListChildRequest {
 
 message FanshipResponse {
     common.Status status = 999;
+    Fanship fanship = 1;
+}
+
+message Fanship{
     string parentId = 1;
+    string parentName = 11;
     string fanId = 2;
     string name = 3;
     int64 created = 4;
-    bool active = 6;
 }

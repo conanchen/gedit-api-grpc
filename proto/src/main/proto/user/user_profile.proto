@@ -37,9 +37,6 @@ service UserProfileApi {
     rpc List (ListRequest) returns (stream UserProfileResponse) {
     }
 
-    rpc UpdateMyLocation (UpdateMyLocationRequest) returns (UpdateMyLocationResponse) {
-    }
-
     rpc UpdateMyProfile (UpdateMyProfileRequest) returns (UpdateMyProfileResponse) {
     }
 

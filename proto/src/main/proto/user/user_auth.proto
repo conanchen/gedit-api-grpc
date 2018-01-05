@@ -25,15 +25,27 @@ service UserAuthApi {
         // local
     };
 
-    rpc SmsStep1Question (SmsStep1QuestionRequest) returns (SmsStep1QuestionResponse) {
+    rpc SigninSmsStep1Question (SmsStep1QuestionRequest) returns (SmsStep1QuestionResponse) {
         // local
     };
 
-    rpc SmsStep2Answer (SmsStep2AnswerRequest) returns (SmsStep2AnswerResponse) {
+    rpc SigninSmsStep2Answer (SmsStep2AnswerRequest) returns (SmsStep2AnswerResponse) {
         // local
     };
 
-    rpc SmsStep3Signin (SmsStep3SigninRequest) returns (SigninResponse) {
+    rpc SigninSmsStep3Signin (SmsStep3SigninRequest) returns (SigninResponse) {
+        // local
+    };
+
+    rpc RegisterSmsStep1Question (SmsStep1QuestionRequest) returns (SmsStep1QuestionResponse) {
+        // local
+    };
+
+    rpc RegisterSmsStep2Answer (SmsStep2AnswerRequest) returns (SmsStep2AnswerResponse) {
+        // local
+    };
+
+    rpc RegisterSmsStep3Signin (SmsStep3SigninRequest) returns (SigninResponse) {
         // local
     };
 
