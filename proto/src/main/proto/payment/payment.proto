@@ -37,7 +37,9 @@ service PaymentApi {
     rpc ListMy (ListMyRequest) returns (stream PaymentResponse) {
     }
 
-    rpc AlipayConfirm (AlipayConfirmRequest) returns (PaymentResponse)
+    rpc AlipayConfirm (AlipayConfirmRequest) returns (PaymentResponse){
+
+    }
 
 }
 
