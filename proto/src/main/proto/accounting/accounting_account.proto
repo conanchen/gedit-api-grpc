@@ -59,8 +59,11 @@ message Account {
         COUPON = 3; //优惠券
     }
 
-    int32 balance = 15;
-    int32 todayChangedBalance = 16;
+    int32 previousBalance = 15;
+    int64 previousDate = 16;
+    int32 currentChanges = 17;
+    int64 currentDate = 18;
+    int32 currentBalance = 19;
 
 }
 

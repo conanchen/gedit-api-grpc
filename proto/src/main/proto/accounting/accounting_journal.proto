@@ -45,8 +45,8 @@ service AccountingJournalApi {
 message UpsertJournalRequest {
     oneof event {
         PaymentCreatedEvent paymentCreatedEvent = 1;
-        UserRegisteredEvent userRegisteredEvent = 2;
-        StoreCreatedEvent storeCreatedEvent = 3;
+        UserVerifiedEvent userRegisteredEvent = 2;
+        StoreVerifiedEvent storeCreatedEvent = 3;
     }
 }
 
@@ -71,8 +71,8 @@ message Journal {
     int64 created = 12;
     oneof event {
         PaymentCreatedEvent paymentCreatedEvent = 1;
-        UserRegisteredEvent userRegisterEvent = 2;
-        StoreCreatedEvent storeRegisterEvent = 3;
+        UserVerifiedEvent userVerifiedEvent = 2;
+        StoreVerifiedEvent storeVerifiedEvent = 3;
     }
 
     repeated string postingIds = 33;
@@ -97,14 +97,14 @@ message PaymentCreatedEvent {
     int64 created = 27;
 }
 
-message UserRegisteredEvent {
+message UserVerifiedEvent {
     //userId+introducerId unique
     string userId = 11;
     string introducerId = 12;
     int64 created = 14;
 }
 
-message StoreCreatedEvent {
+message StoreVerifiedEvent {
     //storeId+introducerId unique
     string storeId = 11;
     string introducerId = 12;
