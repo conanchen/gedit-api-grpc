@@ -53,10 +53,11 @@ message Account {
     int64 created = 13;
     Type type = 14;
     enum Type {
-        CASH = 0;  //现金
-        POINTS = 1; //积分
-        REDPACK = 2; //红包
-        COUPON = 3; //优惠券
+        CASH = 0; //现金
+        CURRENT_POINTS = 1; //活期积分
+        FIXED_POINTS = 2; //定期积分
+        REDPACK = 3; //红包
+        COUPON = 4; //优惠券
     }
 
     int32 previousBalance = 15;

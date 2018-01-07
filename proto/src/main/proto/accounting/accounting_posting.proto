@@ -35,6 +35,9 @@ service AccountingPostingApi {
 
     rpc ListPosting (ListPostingRequest) returns (stream PostingResponse) {
     }
+
+    rpc ListBalance (ListBalanceRequest) returns (stream BalanceResponse) {
+    }
 }
 
 message UpsertPostingsRequest {
@@ -84,4 +87,30 @@ message Posting {
     int32 amount = 14;
     int64 created = 15;
     string comment = 16;
+}
+
+
+
+
+message ListBalanceRequest {
+    string accountUuid = 1;
+
+    int32 from = 100;
+    int32 size = 101;
+
+}
+
+message BalanceResponse {
+    common.Status status = 999;
+    Balance balance = 1;
+}
+
+message Balance {
+    //| 账户编号UUID      | 前期余额  | 前期日期  | 当期变化 | 当期日期  | 当期余额 |  CRC    |
+    string accountUuid = 1;
+    int32 previousBalance = 15;
+    int64 previousDate = 16;
+    int32 currentChanges = 17;
+    int64 currentDate = 18;
+    int32 currentBalance = 19;
 }
