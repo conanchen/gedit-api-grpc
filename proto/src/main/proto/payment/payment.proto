@@ -37,7 +37,8 @@ service PaymentApi {
     rpc ListMy (ListMyRequest) returns (stream PaymentResponse) {
     }
 
-    rpc AlipayConfirm (AlipayConfirmRequest) returns (PaymentResponse){
+    //should be using http url called by alipay
+    rpc UpdateWithAlipayBack (UpdateWithAlipayBackRequest) returns (PaymentResponse){
 
     }
 
@@ -113,6 +114,6 @@ message Payment {
 
 }
 
-message AlipayConfirmRequest {
+message UpdateWithAlipayBackRequest {
     string channelOrderId = 27; //预付单编号，可能由支付通道返回的或平台产生的
 }
