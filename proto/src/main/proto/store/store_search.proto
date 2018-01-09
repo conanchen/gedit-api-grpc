@@ -25,8 +25,8 @@ message IndexRequest {
     string uuid = 1; //store uuid
     string name = 2;
     string logo = 3;
-    int64 lat = 4;
-    int64 lon = 5;
+    double lat = 4;
+    double lon = 5;
     string type = 6;
     string desc = 7;
     int32 bonusRate = 8;
@@ -49,8 +49,8 @@ message DeleteResponse{
 }
 
 message SearchRequest {
-    int64 lat = 1;
-    int64 lon = 2;
+    double lat = 1;
+    double lon = 2;
     string type = 3;
     string keyword = 4;
     //refer to https://www.elastic.co/guide/en/elasticsearch/client/java-rest/6.1/java-rest-high-search.html
@@ -64,8 +64,8 @@ message SearchResponse {
     string uuid = 1; //store uuid
     string name = 2;
     string logo = 3;
-    int64 lat = 4;
-    int64 lon = 5;
+    double lat = 4;
+    double lon = 5;
     string type = 6;
     string desc = 7;
     int32 bonusRate = 8;

@@ -47,8 +47,8 @@ message UpdateRequest {
     string uuid = 1; //store uuid
     string name = 2;
     string logo = 3;
-    int64 lat = 4;
-    int64 lon = 5;
+    double lat = 4;
+    double lon = 5;
     string type = 6;
     string desc = 7;
     int32 bonusRate = 8;
@@ -106,11 +106,11 @@ message StoreProfile{
     string uuid = 1; //store uuid
     string name = 2;
     string logo = 3;
-    int64 lat = 4;
-    int64 lon = 5;
+    double lat = 4;
+    double lon = 5;
     string type = 6;
     string desc = 7;
-    int32 bonusRate = 8;
+    int32 bonusRate = 8; //赠送积分比例
     string address = 9;
     repeated string images = 10;
     bool active = 59;
