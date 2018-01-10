@@ -1,1 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
+/.idea
+/.gradle
+/constants/build
+/grpc-java/build
+/grpc-javalite/build
+/proto/build

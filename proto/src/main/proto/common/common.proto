@@ -24,3 +24,8 @@ message Status {
     string code = 1;
     string details = 2;
 }
+
+message Location{
+    double lat = 1;
+    double lon = 2;
+}

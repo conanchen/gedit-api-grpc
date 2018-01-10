@@ -89,14 +89,7 @@ message UserProfile {
     bool active = 6;
 }
 
-message UpdateMyLocationRequest {
-    double lat = 30;
-    double lon = 31;
-}
 
-message UpdateMyLocationResponse {
-    common.Status status = 999;
-}
 
 message UpdateMyProfileRequest {
     string name = 2;

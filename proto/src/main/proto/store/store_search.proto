@@ -25,8 +25,7 @@ message IndexRequest {
     string uuid = 1; //store uuid
     string name = 2;
     string logo = 3;
-    double lat = 4;
-    double lon = 5;
+    common.Location location = 4;
     string type = 6;
     string desc = 7;
     int32 bonusRate = 8;
@@ -64,8 +63,7 @@ message SearchResponse {
     string uuid = 1; //store uuid
     string name = 2;
     string logo = 3;
-    double lat = 4;
-    double lon = 5;
+    common.Location location = 4;
     string type = 6;
     string desc = 7;
     int32 bonusRate = 8;

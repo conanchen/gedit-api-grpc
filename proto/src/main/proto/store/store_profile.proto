@@ -31,8 +31,11 @@ service StoreProfileApi {
 }
 
 message CreateRequest {
+    //创建店铺需提供名称、地理位置、行政区编号、详细地址，其他内容通过单项修改完善
     string name = 1; //unique
-    string ownerId = 2;
+    common.Location location = 4;
+    string districtId = 9;
+    string detailAddress = 10;
 }
 
 message CreateResponse {
@@ -45,28 +48,24 @@ message CreateResponse {
 
 message UpdateRequest {
     string uuid = 1; //store uuid
-    string name = 2;
-    string logo = 3;
-    double lat = 4;
-    double lon = 5;
-    string type = 6;
-    string desc = 7;
-    int32 bonusRate = 8;
-    string address = 9;
-    repeated string images = 10;
-    bool active = 59;
-
-    bool isNameUpdate = 102;
-    bool isLogoUpdate = 103;
-    bool isLatUpdate = 104;
-    bool isLonUpdate = 105;
-    bool isTypeUpdate = 106;
-    bool isDescUpdate = 107;
-    bool isBonusRateUpdate = 108;
-    bool isAddressUpdate = 109;
+    //只支持单项修改
+    oneof property {
+        string name = 2;
+        string logo = 3;
+        common.Location location = 4;
+        string type = 6;
+        string desc = 7;
+        int32 pointsRate = 8; //积分奖励率
+        string districtId = 9;
+        string detailAddress = 10;
+        ListURL images = 11;
+        bool active = 59;
+    }
 
 }
-
+message ListURL{
+    repeated string urls = 11;
+}
 message UpdateResponse {
     common.Status status = 999;
     string uuid = 1; //store uuid
@@ -102,17 +101,17 @@ message StoreProfileResponse {
     StoreProfile storeProfile = 1;
 }
 
-message StoreProfile{
+message StoreProfile {
     string uuid = 1; //store uuid
     string name = 2;
     string logo = 3;
-    double lat = 4;
-    double lon = 5;
+    common.Location location = 4;
     string type = 6;
     string desc = 7;
-    int32 bonusRate = 8; //赠送积分比例
-    string address = 9;
-    repeated string images = 10;
+    int32 pointsRate = 8; //积分奖励率
+    string districtId = 9;
+    string detailAddress = 10;
+    repeated string images = 11;
     bool active = 59;
 
     int32 from = 100;
