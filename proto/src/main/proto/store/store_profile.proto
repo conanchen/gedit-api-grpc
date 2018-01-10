@@ -34,7 +34,7 @@ message CreateRequest {
     //创建店铺需提供名称、地理位置、行政区编号、详细地址，其他内容通过单项修改完善
     string name = 1; //unique
     common.Location location = 4;
-    string districtId = 9;
+    string districtUuid = 9;
     string detailAddress = 10;
 }
 
@@ -56,7 +56,7 @@ message UpdateRequest {
         string type = 6;
         string desc = 7;
         int32 pointsRate = 8; //积分奖励率
-        string districtId = 9;
+        string districtUuid = 9;
         string detailAddress = 10;
         ListURL images = 11;
         bool active = 59;
@@ -109,7 +109,7 @@ message StoreProfile {
     string type = 6;
     string desc = 7;
     int32 pointsRate = 8; //积分奖励率
-    string districtId = 9;
+    string districtUuid = 9;
     string detailAddress = 10;
     repeated string images = 11;
     bool active = 59;
