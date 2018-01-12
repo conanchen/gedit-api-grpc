@@ -13,14 +13,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 syntax = "proto3";
-package user.fans;
+package user_fans;
 
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.user.fans.grpc";
 option java_outer_classname = "UserFansProto";
 option objc_class_prefix = "USRFANS";
 
-import "common/common.proto";
+import "common.proto";
 
 // The userfans service definition.
 service UserFansApi {
@@ -52,7 +52,7 @@ message ListChildRequest {
 }
 
 message FanshipResponse {
-    common.Status status = 999;
+    Status status = 999;
     Fanship fanship = 1;
 }
 

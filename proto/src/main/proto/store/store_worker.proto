@@ -1,12 +1,12 @@
 syntax = "proto3";
-package store.worker;
+package store_worker;
 
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.store.worker.grpc";
 option java_outer_classname = "StoreWorkerProto";
 option objc_class_prefix = "STWRK";
 
-import "common/common.proto";
+import "common.proto";
 
 // The store service definition.
 service StoreWorkerApi {
@@ -42,7 +42,7 @@ message ListByWorkerRequest {
 }
 
 message WorkshipResponse {
-    common.Status status = 999;
+    Status status = 999;
     string workerId = 1;
     string storeId = 5;
     bool active = 7;

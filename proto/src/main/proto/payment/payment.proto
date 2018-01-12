@@ -20,7 +20,7 @@ option java_package = "com.github.conanchen.gedit.payment.grpc";
 option java_outer_classname = "PaymentProto";
 option objc_class_prefix = "PAYMENT";
 
-import "common/common.proto";
+import "common.proto";
 
 // The payment service definition.
 service PaymentApi {
@@ -83,7 +83,7 @@ message ListMyRequest {
 }
 
 message PaymentResponse {
-    common.Status status = 999;
+    Status status = 999;
     Payment payment = 1;
 }
 
