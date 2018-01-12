@@ -69,6 +69,7 @@ message ListURL{
 message UpdateResponse {
     Status status = 999;
     string uuid = 1; //store uuid
+    int64 lastUpdated = 2; //store update timestamp
 }
 
 
@@ -76,15 +77,6 @@ message GetRequest {
     string uuid = 1; //store uuid
 }
 
-
-message DeleteRequest {
-    string uuid = 1; //store uuid
-}
-
-message DeleteResponse {
-    Status status = 999;
-    string uuid = 1; //store uuid
-}
 
 message ListRequest {
     string type = 3;
