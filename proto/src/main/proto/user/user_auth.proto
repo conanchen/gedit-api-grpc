@@ -86,7 +86,7 @@ message Question {
 message SmsStep2AnswerRequest {
     string mobile = 1;
     string token = 2;
-    repeated string questionId = 3;
+    repeated string questionUuid = 3;
 }
 
 message SmsStep2AnswerResponse {
