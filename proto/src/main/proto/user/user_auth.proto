@@ -7,6 +7,7 @@ option java_package = "com.github.conanchen.gedit.user.auth.grpc";
 option objc_class_prefix = "USRATH";
 
 import "common/common.proto";
+import "google/protobuf/empty.proto";
 
 service UserAuthApi {
     rpc SigninQQ (SigninQQRequest) returns (SigninResponse) {
@@ -25,7 +26,7 @@ service UserAuthApi {
         // local
     };
 
-    rpc SigninSmsStep1Question (SmsStep1QuestionRequest) returns (SmsStep1QuestionResponse) {
+    rpc SigninSmsStep1Question (Empty) returns (SmsStep1QuestionResponse) {
         // local
     };
 
@@ -37,7 +38,7 @@ service UserAuthApi {
         // local
     };
 
-    rpc RegisterSmsStep1Question (SmsStep1QuestionRequest) returns (SmsStep1QuestionResponse) {
+    rpc RegisterSmsStep1Question (Empty) returns (SmsStep1QuestionResponse) {
         // local
     };
 
@@ -68,9 +69,9 @@ message SigninWithPasswordRequest {
     string password = 2; //密码
 }
 
-message SmsStep1QuestionRequest {
+/*message SmsStep1QuestionRequest {
     string mobile = 1; //手机号
-}
+}*/
 
 message SmsStep1QuestionResponse {
     string token = 1;
