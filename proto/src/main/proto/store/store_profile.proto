@@ -1,12 +1,12 @@
 syntax = "proto3";
-package store.profile;
+package store_profile;
 
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.store.profile.grpc";
 option java_outer_classname = "StoreProfileProto";
 option objc_class_prefix = "STPRF";
 
-import "common/common.proto";
+import "common.proto";
 
 // The store service definition.
 service StoreProfileApi {
@@ -33,13 +33,13 @@ service StoreProfileApi {
 message CreateRequest {
     //创建店铺需提供名称、地理位置、行政区编号、详细地址，其他内容通过单项修改完善
     string name = 1; //unique
-    common.Location location = 4;
+    Location location = 4;
     string districtUuid = 9;
     string detailAddress = 10;
 }
 
 message CreateResponse {
-    common.Status status = 999;
+    Status status = 999;
     string uuid = 1; //store uuid
     string name = 2;
     string ownerId = 3;
@@ -52,7 +52,7 @@ message UpdateRequest {
     oneof property {
         string name = 2;
         string logo = 3;
-        common.Location location = 4;
+        Location location = 4;
         string type = 6;
         string desc = 7;
         int32 pointsRate = 8; //积分奖励率
@@ -67,7 +67,7 @@ message ListURL{
     repeated string urls = 11;
 }
 message UpdateResponse {
-    common.Status status = 999;
+    Status status = 999;
     string uuid = 1; //store uuid
 }
 
@@ -82,7 +82,7 @@ message DeleteRequest {
 }
 
 message DeleteResponse {
-    common.Status status = 999;
+    Status status = 999;
     string uuid = 1; //store uuid
 }
 
@@ -97,7 +97,7 @@ message FindByNameRequest {
 }
 
 message StoreProfileResponse {
-    common.Status status = 999;
+    Status status = 999;
     StoreProfile storeProfile = 1;
 }
 
@@ -105,7 +105,7 @@ message StoreProfile {
     string uuid = 1; //store uuid
     string name = 2;
     string logo = 3;
-    common.Location location = 4;
+    Location location = 4;
     string type = 6;
     string desc = 7;
     int32 pointsRate = 8; //积分奖励率
@@ -123,7 +123,7 @@ message BanRequest {
 }
 
 message BanResponse {
-    common.Status status = 999;
+    Status status = 999;
     string uuid = 1; //store uuid
     bool active = 2;
 }

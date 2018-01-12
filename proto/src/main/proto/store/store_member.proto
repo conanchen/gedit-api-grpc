@@ -1,12 +1,12 @@
 syntax = "proto3";
-package store.member;
+package store_member;
 
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.store.member.grpc";
 option java_outer_classname = "StoreMemberProto";
 option objc_class_prefix = "STMEM";
 
-import "common/common.proto";
+import "common.proto";
 
 // The storemember service definition.
 service StoreMemberApi {
@@ -61,7 +61,7 @@ message ListByMemberRequest {
 }
 
 message MembershipResponse {
-    common.Status status = 999;
+    Status status = 999;
     string memberId = 1;
     string memberType = 3;
     string storeId = 5;
@@ -78,7 +78,7 @@ message BanRequest {
     bool active = 7;
 }
 message BanResponse {
-    common.Status status = 999;
+    Status status = 999;
     string memberId = 1;
     string storeId = 5;
     bool active = 7;
