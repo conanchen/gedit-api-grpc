@@ -90,7 +90,7 @@ message SmsStep2AnswerRequest {
 }
 
 message SmsStep2AnswerResponse {
-    Status status = 999;
+    common.Status status = 999;
     //smscode will be sent from the telecom provider
 }
 
@@ -100,7 +100,7 @@ message SmsStep3SigninRequest {
 }
 
 message SigninResponse {
-    Status status = 999;
+    common.Status status = 999;
     string accessToken = 2;
     string expiresIn = 3;
 }

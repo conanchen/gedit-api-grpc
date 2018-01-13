@@ -68,7 +68,7 @@ message GetJournalRequest {
 }
 
 message JournalResponse {
-    Status status = 999;
+    common.Status status = 999;
     Journal journal = 1;
 }
 
@@ -135,7 +135,7 @@ message GetPostingRequest {
 }
 
 message PostingResponse {
-    Status status = 999;
+    common.Status status = 999;
     Posting posting = 1;
 }
 
@@ -164,7 +164,7 @@ message ListBalanceRequest {
 }
 
 message BalanceResponse {
-    Status status = 999;
+    common.Status status = 999;
     Balance balance = 1;
 }
 

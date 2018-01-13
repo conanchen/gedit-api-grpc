@@ -42,7 +42,7 @@ message ListByWorkerRequest {
 }
 
 message WorkshipResponse {
-    Status status = 999;
+    common.Status status = 999;
     string workerId = 1;
     string storeId = 5;
     bool active = 7;
