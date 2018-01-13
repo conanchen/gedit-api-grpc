@@ -13,14 +13,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 syntax = "proto3";
-package accounting_tx;
+package gedit.accounting;
 
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.accounting.tx.grpc";
 option java_outer_classname = "AccountingTxProto";
 option objc_class_prefix = "ACCTX";
 
-import "common.proto";
+import "gedit/common.proto";
 
 // The bonus service definition.
 //https://accountingexplained.com/financial/cycle/
@@ -68,7 +68,7 @@ message GetJournalRequest {
 }
 
 message JournalResponse {
-    common.Status status = 999;
+    Status status = 999;
     Journal journal = 1;
 }
 
@@ -135,7 +135,7 @@ message GetPostingRequest {
 }
 
 message PostingResponse {
-    common.Status status = 999;
+    Status status = 999;
     Posting posting = 1;
 }
 
@@ -164,7 +164,7 @@ message ListBalanceRequest {
 }
 
 message BalanceResponse {
-    common.Status status = 999;
+    Status status = 999;
     Balance balance = 1;
 }
 

@@ -13,19 +13,28 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 syntax = "proto3";
-package common;
+package gedit.user;
 
 option java_multiple_files = true;
-option java_package = "com.github.conanchen.gedit.common.grpc";
-option java_outer_classname = "CommonProto";
-option objc_class_prefix = "COMMON";
+option java_package = "com.github.conanchen.gedit.user.location.grpc";
+option java_outer_classname = "UserLocationProto";
+option objc_class_prefix = "USRLOC";
 
-message Status {
-    string code = 1;
-    string details = 2;
+import "gedit/common.proto";
+
+// The userlocation service definition.
+service UserLocationApi {
+
+    rpc UpdateMyLocation (UpdateMyLocationRequest) returns (UpdateMyLocationResponse) {
+    }
+
 }
 
-message Location{
-    double lat = 1;
-    double lon = 2;
+message UpdateMyLocationRequest {
+    double lat = 30;
+    double lon = 31;
+}
+
+message UpdateMyLocationResponse {
+    Status status = 999;
 }

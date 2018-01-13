@@ -1,39 +1,39 @@
 syntax = "proto3";
-package store_member;
+package gedit.store;
 
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.store.member.grpc";
 option java_outer_classname = "StoreMemberProto";
 option objc_class_prefix = "STMEM";
 
-import "common.proto";
+import "gedit/common.proto";
 
 // The storemember service definition.
 service StoreMemberApi {
-    rpc Add (AddRequest) returns (MembershipResponse) {
+    rpc Add (AddMembershipRequest) returns (MembershipResponse) {
     }
 
-    rpc Update (UpdateRequest) returns (MembershipResponse) {
+    rpc Update (UpdateMembershipRequest) returns (MembershipResponse) {
     }
 
-    rpc ListByStore (ListByStoreRequest) returns (stream MembershipResponse) {
+    rpc ListByStore (ListMembershipByStoreRequest) returns (stream MembershipResponse) {
     }
 
-    rpc ListByMember (ListByMemberRequest) returns (stream MembershipResponse) {
+    rpc ListByMember (ListMembershipByMemberRequest) returns (stream MembershipResponse) {
     }
 
 
-    rpc Ban (BanRequest) returns (BanResponse) {
+    rpc Ban (BanMembershipRequest) returns (BanMembershipResponse) {
     }
 
 }
 
-message AddRequest {
+message AddMembershipRequest {
     string storeId = 1;
     string memberId = 3;
 }
 
-message UpdateRequest {
+message UpdateMembershipRequest {
     string memberId = 1;
     string memberType = 3;
     string storeId = 5;
@@ -47,21 +47,21 @@ message UpdateRequest {
 }
 
 
-message ListByStoreRequest {
+message ListMembershipByStoreRequest {
     string storeId = 1;
     int32 from = 100;
     int32 size = 101;
 }
 
 
-message ListByMemberRequest {
+message ListMembershipByMemberRequest {
     string memberId = 3;
     int32 from = 100;
     int32 size = 101;
 }
 
 message MembershipResponse {
-    common.Status status = 999;
+    Status status = 999;
     string memberId = 1;
     string memberType = 3;
     string storeId = 5;
@@ -72,13 +72,13 @@ message MembershipResponse {
     int32 from = 100;
 }
 
-message BanRequest {
+message BanMembershipRequest {
     string memberId = 1;
     string storeId = 5;
     bool active = 7;
 }
-message BanResponse {
-    common.Status status = 999;
+message BanMembershipResponse {
+    Status status = 999;
     string memberId = 1;
     string storeId = 5;
     bool active = 7;

@@ -1,12 +1,13 @@
 syntax = "proto3";
-package hello;
+package gedit.hello;
+
 
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.hello.grpc";
 option java_outer_classname = "HelloProto";
 option objc_class_prefix = "HELLO";
 
-import "common.proto";
+import "gedit/common.proto";
 
 // The greeter service definition.
 service Hello {
@@ -22,7 +23,7 @@ message HelloRequest {
 
 // The response message containing the greetings
 message HelloReply {
-    common.Status status = 999;
+    Status status = 999;
     string uuid = 1;
     string message = 2;
     int64 created =3 ;

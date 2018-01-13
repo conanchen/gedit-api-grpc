@@ -1,22 +1,22 @@
 syntax = "proto3";
-package store_profile;
+package gedit.store;
 
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.store.profile.grpc";
 option java_outer_classname = "StoreProfileProto";
 option objc_class_prefix = "STPRF";
 
-import "common.proto";
+import "gedit/common.proto";
 
 // The store service definition.
 service StoreProfileApi {
-    rpc Create (CreateRequest) returns (CreateResponse) {
+    rpc Create (CreateStoreRequest) returns (CreateStoreResponse) {
     }
 
-    rpc Update (UpdateRequest) returns (UpdateResponse) {
+    rpc Update (UpdateStoreRequest) returns (UpdateStoreResponse) {
     }
 
-    rpc Get (GetRequest) returns (StoreProfileResponse) {
+    rpc Get (GetStoreRequest) returns (StoreProfileResponse) {
     }
 
     rpc List (ListRequest) returns (stream StoreProfileResponse) {
@@ -25,34 +25,34 @@ service StoreProfileApi {
     rpc FindByName (FindByNameRequest) returns (StoreProfileResponse) {
     }
 
-    rpc Ban (BanRequest) returns (BanResponse) {
+    rpc Ban (BanStoreRequest) returns (BanStoreResponse) {
     }
 
 }
 
-message CreateRequest {
+message CreateStoreRequest {
     //创建店铺需提供名称、地理位置、行政区编号、详细地址，其他内容通过单项修改完善
     string name = 1; //unique
-    common.Location location = 4;
+    Location location = 4;
     string districtUuid = 9;
     string detailAddress = 10;
 }
 
-message CreateResponse {
-    common.Status status = 999;
+message CreateStoreResponse {
+    Status status = 999;
     string uuid = 1; //store uuid
     string name = 2;
     string ownerId = 3;
 }
 
 
-message UpdateRequest {
+message UpdateStoreRequest {
     string uuid = 1; //store uuid
     //只支持单项修改
     oneof property {
         string name = 2;
         string logo = 3;
-        common.Location location = 4;
+        Location location = 4;
         string type = 6;
         string desc = 7;
         int32 pointsRate = 8; //积分奖励率
@@ -66,14 +66,14 @@ message UpdateRequest {
 message ListURL{
     repeated string urls = 11;
 }
-message UpdateResponse {
-    common.Status status = 999;
+message UpdateStoreResponse {
+    Status status = 999;
     string uuid = 1; //store uuid
     int64 lastUpdated = 2; //store update timestamp
 }
 
 
-message GetRequest {
+message GetStoreRequest {
     string uuid = 1; //store uuid
 }
 
@@ -89,7 +89,7 @@ message FindByNameRequest {
 }
 
 message StoreProfileResponse {
-    common.Status status = 999;
+    Status status = 999;
     StoreProfile storeProfile = 1;
 }
 
@@ -97,7 +97,7 @@ message StoreProfile {
     string uuid = 1; //store uuid
     string name = 2;
     string logo = 3;
-    common.Location location = 4;
+    Location location = 4;
     string type = 6;
     string desc = 7;
     int32 pointsRate = 8; //积分奖励率
@@ -109,13 +109,13 @@ message StoreProfile {
     int32 from = 100;
 
 }
-message BanRequest {
+message BanStoreRequest {
     string uuid = 1; //store uuid
     bool active = 2;
 }
 
-message BanResponse {
-    common.Status status = 999;
+message BanStoreResponse {
+    Status status = 999;
     string uuid = 1; //store uuid
     bool active = 2;
 }

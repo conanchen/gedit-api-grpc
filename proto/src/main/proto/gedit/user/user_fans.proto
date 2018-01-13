@@ -13,38 +13,38 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 syntax = "proto3";
-package user_fans;
+package gedit.user;
 
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.user.fans.grpc";
 option java_outer_classname = "UserFansProto";
 option objc_class_prefix = "USRFANS";
 
-import "common.proto";
+import "gedit/common.proto";
 
 // The userfans service definition.
 service UserFansApi {
 
-    rpc Add (AddRequest) returns (FanshipResponse) {
+    rpc Add (AddFanshipRequest) returns (FanshipResponse) {
     }
 
-    rpc FindParent (FindParentRequest) returns (FanshipResponse) {
+    rpc FindParent (FindParentFanshipRequest) returns (FanshipResponse) {
     }
 
-    rpc ListChild (ListChildRequest) returns (stream FanshipResponse) {
+    rpc ListChild (ListChildFanshipRequest) returns (stream FanshipResponse) {
     }
 
 }
 
-message AddRequest {
+message AddFanshipRequest {
     string fanId = 1;
 }
 
-message FindParentRequest {
+message FindParentFanshipRequest {
     string fanId = 1;
 }
 
-message ListChildRequest {
+message ListChildFanshipRequest {
     string parentId = 1;
     int32 from = 100;
     int32 size = 101;
@@ -52,7 +52,7 @@ message ListChildRequest {
 }
 
 message FanshipResponse {
-    common.Status status = 999;
+    Status status = 999;
     Fanship fanship = 1;
 }
 

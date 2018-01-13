@@ -1,12 +1,12 @@
 syntax = "proto3";
-package user_auth;
+package gedit.user;
 
 option java_multiple_files = true;
 option java_outer_classname = "UserAuthProto";
 option java_package = "com.github.conanchen.gedit.user.auth.grpc";
 option objc_class_prefix = "USRATH";
 
-import "common.proto";
+import "gedit/common.proto";
 
 service UserAuthApi {
     rpc SigninQQ (SigninQQRequest) returns (SigninResponse) {
@@ -90,7 +90,7 @@ message SmsStep2AnswerRequest {
 }
 
 message SmsStep2AnswerResponse {
-    common.Status status = 999;
+    Status status = 999;
     //smscode will be sent from the telecom provider
 }
 
@@ -106,7 +106,7 @@ message SmsStep3RegisterRequest {
 }
 
 message SigninResponse {
-    common.Status status = 999;
+    Status status = 999;
     string accessToken = 2;
     string expiresIn = 3;
 }

@@ -1,5 +1,5 @@
 syntax = "proto3";
-package store_search;
+package gedit.store;
 
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.store.search.grpc";
@@ -7,7 +7,7 @@ option java_outer_classname = "StoreSearchProto";
 option objc_class_prefix = "STSCH";
 
 
-import "common.proto";
+import "gedit/common.proto";
 
 // The storesearch service definition.
 service StoreSearchApi {
@@ -25,14 +25,14 @@ message IndexRequest {
     string uuid = 1; //store uuid
     string name = 2;
     string logo = 3;
-    common.Location location = 4;
+    Location location = 4;
     string type = 6;
     string desc = 7;
     int32 bonusRate = 8;
 }
 
 message IndexResponse {
-    common.Status status = 999;
+    Status status = 999;
     string uuid = 1; //store uuid
 //    string status = 2;  //refer to elasticsearch e.g. RestStatus.OK
 }
@@ -43,7 +43,7 @@ message DeleteRequest{
 }
 
 message DeleteResponse{
-    common.Status status = 999;
+    Status status = 999;
     string uuid = 1; //store uuid
 }
 
@@ -59,11 +59,11 @@ message SearchRequest {
 }
 
 message SearchResponse {
-    common.Status status = 999;
+    Status status = 999;
     string uuid = 1; //store uuid
     string name = 2;
     string logo = 3;
-    common.Location location = 4;
+    Location location = 4;
     string type = 6;
     string desc = 7;
     int32 bonusRate = 8;

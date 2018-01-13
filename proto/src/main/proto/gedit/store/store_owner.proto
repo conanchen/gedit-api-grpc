@@ -1,12 +1,12 @@
 syntax = "proto3";
-package store_owner;
+package gedit.store;
 
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.store.owner.grpc";
 option java_outer_classname = "StoreOwnerProto";
 option objc_class_prefix = "STOWN";
 
-import "common.proto";
+import "gedit/common.proto";
 
 // The storeowner service definition.
 service StoreOwnerApi {
@@ -32,7 +32,7 @@ message ListByOwnerRequest {
 
 
 message OwnershipResponse {
-    common.Status status = 999;
+    Status status = 999;
     string ownerId = 1;
     string storeId = 5;
     bool active = 7;

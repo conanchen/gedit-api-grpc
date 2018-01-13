@@ -13,14 +13,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 syntax = "proto3";
-package user_profile;
+package gedit.user;
 
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.user.profile.grpc";
 option java_outer_classname = "UserProfileProto";
 option objc_class_prefix = "USRPROF";
 
-import "common.proto";
+import "gedit/common.proto";
 
 // The hanzi service definition.
 service UserProfileApi {
@@ -49,7 +49,7 @@ message AddRequest {
 }
 
 message AddResponse {
-    common.Status status = 999;
+    Status status = 999;
     string uuid = 1;
 }
 
@@ -67,7 +67,7 @@ message BanRequest {
     bool active = 2;
 }
 message BanResponse {
-    common.Status status = 999;
+    Status status = 999;
     string uuid = 1;
     bool active = 2;
 }
@@ -77,7 +77,7 @@ message FindRequest {
 }
 
 message UserProfileResponse {
-    common.Status status = 999;
+    Status status = 999;
     UserProfile userProfile = 1;
 }
 
@@ -103,6 +103,6 @@ message UpdateMyProfileRequest {
 }
 
 message UpdateMyProfileResponse {
-    common.Status status = 999;
+    Status status = 999;
     string uuid = 1; //user uuid
 }
