@@ -22,7 +22,7 @@ message HelloRequest {
 
 // The response message containing the greetings
 message HelloReply {
-    Status status = 999;
+    common.Status status = 999;
     string uuid = 1;
     string message = 2;
     int64 created =3 ;

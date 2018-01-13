@@ -52,7 +52,7 @@ message ListChildRequest {
 }
 
 message FanshipResponse {
-    Status status = 999;
+    common.Status status = 999;
     Fanship fanship = 1;
 }
 

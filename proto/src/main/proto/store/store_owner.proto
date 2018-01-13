@@ -32,7 +32,7 @@ message ListByOwnerRequest {
 
 
 message OwnershipResponse {
-    Status status = 999;
+    common.Status status = 999;
     string ownerId = 1;
     string storeId = 5;
     bool active = 7;

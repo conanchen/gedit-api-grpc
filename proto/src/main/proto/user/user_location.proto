@@ -36,5 +36,5 @@ message UpdateMyLocationRequest {
 }
 
 message UpdateMyLocationResponse {
-    Status status = 999;
+    common.Status status = 999;
 }

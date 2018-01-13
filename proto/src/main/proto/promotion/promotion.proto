@@ -44,7 +44,7 @@ message AddRequest {
 }
 
 message AddResponse {
-    Status status = 999;
+    common.Status status = 999;
     string uuid = 1;
 }
 
@@ -62,7 +62,7 @@ message FindRequest {
 }
 
 message PromotionResponse {
-    Status status = 999;
+    common.Status status = 999;
     string uuid = 1;
     string mobile = 2;
     string name = 3;

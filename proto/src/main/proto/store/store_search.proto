@@ -25,14 +25,14 @@ message IndexRequest {
     string uuid = 1; //store uuid
     string name = 2;
     string logo = 3;
-    Location location = 4;
+    common.Location location = 4;
     string type = 6;
     string desc = 7;
     int32 bonusRate = 8;
 }
 
 message IndexResponse {
-    Status status = 999;
+    common.Status status = 999;
     string uuid = 1; //store uuid
 //    string status = 2;  //refer to elasticsearch e.g. RestStatus.OK
 }
@@ -43,7 +43,7 @@ message DeleteRequest{
 }
 
 message DeleteResponse{
-    Status status = 999;
+    common.Status status = 999;
     string uuid = 1; //store uuid
 }
 
@@ -59,11 +59,11 @@ message SearchRequest {
 }
 
 message SearchResponse {
-    Status status = 999;
+    common.Status status = 999;
     string uuid = 1; //store uuid
     string name = 2;
     string logo = 3;
-    Location location = 4;
+    common.Location location = 4;
     string type = 6;
     string desc = 7;
     int32 bonusRate = 8;

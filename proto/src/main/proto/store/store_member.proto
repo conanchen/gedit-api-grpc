@@ -61,7 +61,7 @@ message ListByMemberRequest {
 }
 
 message MembershipResponse {
-    Status status = 999;
+    common.Status status = 999;
     string memberId = 1;
     string memberType = 3;
     string storeId = 5;
@@ -78,7 +78,7 @@ message BanRequest {
     bool active = 7;
 }
 message BanResponse {
-    Status status = 999;
+    common.Status status = 999;
     string memberId = 1;
     string storeId = 5;
     bool active = 7;
