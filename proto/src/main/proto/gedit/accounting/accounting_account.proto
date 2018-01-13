@@ -39,7 +39,7 @@ service AccountingAccountApi {
 
 
 message UpsertAccountsRequest {
-    string userId = 11;
+    string userUuid = 11;
 }
 
 message AccountResponse {
@@ -49,7 +49,7 @@ message AccountResponse {
 
 message Account {
     string uuid = 11;
-    string userId = 12;
+    string userUuid = 12;
     int64 created = 13;
     Type type = 14;
     enum Type {
@@ -74,6 +74,6 @@ message GetAccountRequest {
 
 
 message UserAndType {
-    string userId = 11;
+    string userUuid = 11;
     Account.Type type = 14;
 }

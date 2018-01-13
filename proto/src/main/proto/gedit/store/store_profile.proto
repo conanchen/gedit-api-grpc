@@ -36,13 +36,14 @@ message CreateStoreRequest {
     Location location = 4;
     string districtUuid = 9;
     string detailAddress = 10;
+    string introducerUuid = 12;
 }
 
 message CreateStoreResponse {
     Status status = 999;
     string uuid = 1; //store uuid
     string name = 2;
-    string ownerId = 3;
+    string ownerUuid = 3;
 }
 
 
@@ -104,6 +105,7 @@ message StoreProfile {
     string districtUuid = 9;
     string detailAddress = 10;
     repeated string images = 11;
+    string introducerUuid = 12;
     bool active = 59;
 
     int32 from = 100;

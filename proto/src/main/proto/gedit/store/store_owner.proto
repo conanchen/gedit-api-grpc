@@ -11,21 +11,21 @@ import "gedit/common.proto";
 // The storeowner service definition.
 service StoreOwnerApi {
 
-    rpc Transfer (TransferRequest) returns (OwnershipResponse) {
+    rpc Transfer (TransferOwnershipRequest) returns (OwnershipResponse) {
     }
 
-    rpc ListByOwner (ListByOwnerRequest) returns (stream OwnershipResponse) {
+    rpc ListByOwner (ListOwnershipByOwnerRequest) returns (stream OwnershipResponse) {
     }
 }
 
 
-message TransferRequest {
-    string storeId = 1;
-    string userId = 3;
+message TransferOwnershipRequest {
+    string storeUuid = 1;
+    string userUuid = 3;
 }
 
-message ListByOwnerRequest {
-    string ownerId = 3;
+message ListOwnershipByOwnerRequest {
+    string ownerUuid = 3;
     int32 from = 100;
     int32 size = 101;
 }
@@ -33,12 +33,15 @@ message ListByOwnerRequest {
 
 message OwnershipResponse {
     Status status = 999;
-    string ownerId = 1;
-    string storeId = 5;
+    Ownership ownership = 1;
+    int32 from = 100;
+}
+
+message Ownership{
+    string userUuid = 1;
+    string storeUuid = 5;
     bool active = 7;
     int64 startTime = 9;
     int64 endTime = 10;
 
-    int32 from = 100;
 }
-

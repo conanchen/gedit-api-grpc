@@ -37,15 +37,15 @@ service UserFansApi {
 }
 
 message AddFanshipRequest {
-    string fanId = 1;
+    string fanUuid = 1;
 }
 
 message FindParentFanshipRequest {
-    string fanId = 1;
+    string fanUuid = 1;
 }
 
 message ListChildFanshipRequest {
-    string parentId = 1;
+    string parentUuid = 1;
     int32 from = 100;
     int32 size = 101;
 
@@ -57,9 +57,9 @@ message FanshipResponse {
 }
 
 message Fanship{
-    string parentId = 1;
+    string parentUuid = 1;
     string parentName = 11;
-    string fanId = 2;
+    string fanUuid = 2;
     string name = 3;
     int64 created = 4;
 }

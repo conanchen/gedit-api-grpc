@@ -52,10 +52,10 @@ enum Channel {
 
 message CreateRequest {
     //only called by myself，即支付人是我
-    //payerId
-    string payeeId = 12; //收款人
-    string payeeStoreId = 13;
-    string payeeWorkerId = 14;
+    //payerUuid
+    string payeeUuid = 12; //收款人
+    string payeeStoreUuid = 13;
+    string payeeWorkerUuid = 14;
     int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
     int32 actualPay = 16; //实付金额
     int32 pointsPay = 17; //实付积分代替金额
@@ -67,9 +67,9 @@ message GetRequest {
 
 message ListRequest {
     //only called by manager
-    string payerId = 11; //支付人
-    string payeeId = 12; //收款人
-    string payeeStoreId = 13; //收款店铺
+    string payerUuid = 11; //支付人
+    string payeeUuid = 12; //收款人
+    string payeeStoreUuid = 13; //收款店铺
     int32 from = 100;
     int32 size = 101;
 }
@@ -90,10 +90,10 @@ message PaymentResponse {
 message Payment {
     string uuid = 1; //支付单编号
 
-    string payerId = 11; //支付人
-    string payeeId = 12; //收款人
-    string payeeStoreId = 13;
-    string payeeWorkerId = 14;
+    string payerUuid = 11; //支付人
+    string payeeUuid = 12; //收款人
+    string payeeStoreUuid = 13;
+    string payeeWorkerUuid = 14;
     //create following info when return from Channel支付宝、微信等返回时
     int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
     int32 actualPay = 16; //实付金额
@@ -107,12 +107,12 @@ message Payment {
     }
 
     Channel channel = 26; //支付通道如支付宝、微信、云闪付
-    string channelOrderId = 27; //预付单编号，可能由支付通道返回的或平台产生的
+    string channelOrderUuid = 27; //预付单编号，可能由支付通道返回的或平台产生的
 
     int64 created = 40;
 
 }
 
 message UpdateWithAlipayBackRequest {
-    string channelOrderId = 27; //预付单编号，可能由支付通道返回的或平台产生的
+    string channelOrderUuid = 27; //预付单编号，可能由支付通道返回的或平台产生的
 }

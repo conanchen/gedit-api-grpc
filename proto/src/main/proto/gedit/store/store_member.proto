@@ -29,58 +29,56 @@ service StoreMemberApi {
 }
 
 message AddMembershipRequest {
-    string storeId = 1;
-    string memberId = 3;
+    string storeUuid = 1;
+    string userUuid = 3;
 }
 
 message UpdateMembershipRequest {
-    string memberId = 1;
-    string memberType = 3;
-    string storeId = 5;
-    int64 startTime = 9;
-    int64 endTime = 10;
-
-    bool isMemberTypeUpdate = 100;
-    bool isStartTimeUpdate = 102;
-    bool isEndTimeUpdate = 103;
-
+    string userUuid = 1;
+    string storeUuid = 5;
+    oneof property {
+        string memberType = 3;
+        int64 startTime = 9;
+        int64 endTime = 10;
+    }
 }
 
 
 message ListMembershipByStoreRequest {
-    string storeId = 1;
+    string storeUuid = 1;
     int32 from = 100;
     int32 size = 101;
 }
 
 
 message ListMembershipByMemberRequest {
-    string memberId = 3;
+    string userUuid = 3;
     int32 from = 100;
     int32 size = 101;
 }
 
 message MembershipResponse {
     Status status = 999;
-    string memberId = 1;
-    string memberType = 3;
-    string storeId = 5;
-    bool active = 7;
-    int64 startTime = 9;
-    int64 endTime = 10;
-
+    Membership membership = 1;
     int32 from = 100;
 }
 
 message BanMembershipRequest {
-    string memberId = 1;
-    string storeId = 5;
+    string userUuid = 1;
+    string storeUuid = 5;
     bool active = 7;
 }
 message BanMembershipResponse {
     Status status = 999;
-    string memberId = 1;
-    string storeId = 5;
-    bool active = 7;
+    Membership membership = 1;
 }
 
+
+message Membership {
+    string userUuid = 1;
+    string memberType = 3;
+    string storeUuid = 5;
+    bool active = 7;
+    int64 startTime = 9;
+    int64 endTime = 10;
+}

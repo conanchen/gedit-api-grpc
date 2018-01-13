@@ -91,10 +91,10 @@ message PaymentCreatedEvent {
     //uuid unique
     string uuid = 1; //支付单编号 unique
 
-    string payerId = 11; //支付人
-    string payeeId = 12; //收款人
-    string payeeStoreId = 13;
-    string payeeWorkerId = 14;
+    string payerUuid = 11; //支付人
+    string payeeUuid = 12; //收款人
+    string payeeStoreUuid = 13;
+    string payeeWorkerUuid = 14;
     int32 shouldpay = 15; //应付金额 = 实付金额 + 实付积分等价金额
     int32 actualpay = 16; //实付金额
     int32 bonuspay = 17; //实付积分代替金额
@@ -104,26 +104,26 @@ message PaymentCreatedEvent {
 }
 
 message UserVerifiedEvent {
-    //userId+introducerId unique
-    string userId = 11;
-    string introducerId = 12;
+    //userUuid+introducerUuid unique
+    string userUuid = 11;
+    string introducerUuid = 12;
     int64 created = 14;
 }
 
 message StoreVerifiedEvent {
-    //storeId+introducerId unique
-    string storeId = 11;
-    string introducerId = 12;
-    string storeOwnerId = 13;
+    //storeUuid+introducerUuid unique
+    string storeUuid = 11;
+    string introducerUuid = 12;
+    string storeOwnerUuid = 13;
     int64 created = 14;
 }
 
 
 message ListPostingRequest {
-    string userId = 11;
-    //accountId+journalId unique
-    string accountId = 12; //optional
-    string journalId = 13; //optional
+    string userUuid = 11;
+    //accountUuid+journalUuid unique
+    string accountUuid = 12; //optional
+    string journalUuid = 13; //optional
 
     int32 from = 100;
     int32 size = 101;
@@ -142,10 +142,10 @@ message PostingResponse {
 message Posting {
     string uuid = 1;
 
-    string userId = 11;
-    //accountId+journalId unique
-    string accountId = 12;
-    string journalId = 13;
+    string userUuid = 11;
+    //accountUuid+journalUuid unique
+    string accountUuid = 12;
+    string journalUuid = 13;
 
     int32 amount = 14;
     int64 created = 15;
