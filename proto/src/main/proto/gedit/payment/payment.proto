@@ -59,6 +59,7 @@ message CreateRequest {
     int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
     int32 actualPay = 16; //实付金额
     int32 pointsPay = 17; //实付积分代替金额
+    Channel channel = 25;//支付类型
 }
 
 message GetRequest {
