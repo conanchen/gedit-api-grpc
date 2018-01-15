@@ -16,8 +16,8 @@ syntax = "proto3";
 package gedit.user;
 
 option java_multiple_files = true;
-option java_package = "com.github.conanchen.gedit.user.location.grpc";
-option java_outer_classname = "UserLocationProto";
+option java_package = "com.github.conanchen.gedit.user.logout.grpc";
+option java_outer_classname = "UserLogoutProto";
 option objc_class_prefix = "USRLOC";
 
 import "gedit/common.proto";
