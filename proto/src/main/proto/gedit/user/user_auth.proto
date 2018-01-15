@@ -48,10 +48,6 @@ service UserAuthApi {
     rpc RegisterSmsStep3Signin (SmsStep3RegisterRequest) returns (SigninResponse) {
         // local
     };
-
-    rpc Logout (LogoutRequest) returns (LogoutResponse) {
-        // local
-    };
 }
 
 message SigninQQRequest {
@@ -112,11 +108,4 @@ message SigninResponse {
     Status status = 999;
     string accessToken = 2;
     string expiresIn = 3;
-}
-message LogoutRequest{
-
-}
-
-message LogoutResponse{
-    Status status = 999;
 }
