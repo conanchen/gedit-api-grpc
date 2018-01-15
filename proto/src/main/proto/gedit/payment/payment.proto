@@ -28,22 +28,18 @@ service PaymentApi {
     rpc Prepare (PreparPaymentRequest) returns (PreparePaymentResponse) {
     }
 
-    rpc Create (CreateRequest) returns (PaymentResponse) {
+    rpc Create (CreatePaymentRequest) returns (PaymentResponse) {
     }
 
-    rpc Get (GetRequest) returns (PaymentResponse) {
+    rpc Get (GetPaymentRequest) returns (PaymentResponse) {
     }
 
-    rpc List (ListRequest) returns (stream PaymentResponse) {
+    rpc List (ListPaymentRequest) returns (stream PaymentResponse) {
     }
 
-    rpc ListMy (ListMyRequest) returns (stream PaymentResponse) {
+    rpc ListMy (ListMyPaymentRequest) returns (stream PaymentResponse) {
     }
 
-    //should be using http url called by alipay
-    rpc UpdateWithAlipayBack (UpdateWithAlipayBackRequest) returns (PaymentResponse){
-
-    }
 }
 
 enum Channel {
@@ -71,7 +67,7 @@ message PreparePayment{
     int32 points = 18; //返还积分
 }
 
-message CreateRequest {
+message CreatePaymentRequest {
     //only called by myself，即支付人是我
     //payerUuid
     string payeeUuid = 12; //收款人
@@ -83,11 +79,11 @@ message CreateRequest {
     Channel channel = 25;//支付类型
 }
 
-message GetRequest {
+message GetPaymentRequest {
     string uuid = 1; //支付单编号
 }
 
-message ListRequest {
+message ListPaymentRequest {
     //only called by manager
     string payerUuid = 11; //支付人
     string payeeUuid = 12; //收款人
@@ -96,7 +92,7 @@ message ListRequest {
     int32 size = 101;
 }
 
-message ListMyRequest {
+message ListMyPaymentRequest {
     //only called by myself
     bool includePayee = 1;
     bool includePayer = 2;
