@@ -18,7 +18,7 @@ package gedit.user;
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.user.logout.grpc";
 option java_outer_classname = "UserLogoutProto";
-option objc_class_prefix = "USRLOC";
+option objc_class_prefix = "USRLOGOUT";
 
 import "gedit/common.proto";
 
