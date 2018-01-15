@@ -85,6 +85,7 @@ message ListMyRequest {
 
 message PaymentResponse {
     Status status = 999;
+
     Payment payment = 1;
 }
 
