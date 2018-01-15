@@ -25,6 +25,9 @@ import "gedit/common.proto";
 // The payment service definition.
 service PaymentApi {
 
+    rpc Prepare (PreparPaymentRequest) returns (PreparePaymentResponse) {
+    }
+
     rpc Create (CreateRequest) returns (PaymentResponse) {
     }
 
@@ -41,13 +44,31 @@ service PaymentApi {
     rpc UpdateWithAlipayBack (UpdateWithAlipayBackRequest) returns (PaymentResponse){
 
     }
-
 }
 
 enum Channel {
     ALIPAY = 0;
     WXPAY = 1;
     YSPAY = 2;
+}
+
+message PreparPaymentRequest{
+    string payeeStoreUuid = 13;
+    int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
+}
+
+message PreparePaymentResponse{
+    Status status = 999;
+
+    PreparePayment preparePayment = 1;
+
+}
+
+message PreparePayment{
+    int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
+    int32 actualPay = 16; //实付金额
+    int32 pointsPay = 17; //实付积分代替金额
+    int32 points = 18; //返还积分
 }
 
 message CreateRequest {
