@@ -23,7 +23,7 @@ option objc_class_prefix = "USRLOC";
 import "gedit/common.proto";
 
 // The userlocation service definition.
-service UserLocationApi {
+service UserLogoutApi {
 
     rpc Logout (LogoutRequest) returns (LogoutResponse) {
         // local
