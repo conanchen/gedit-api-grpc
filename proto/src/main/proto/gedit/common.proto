@@ -29,3 +29,10 @@ message Location{
     double lat = 1;
     double lon = 2;
 }
+
+enum PaymentChannel {
+    ALIPAY = 0;
+    WXPAY = 1;
+    YSPAY = 2;
+}
+

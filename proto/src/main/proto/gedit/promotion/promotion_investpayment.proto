@@ -1,0 +1,97 @@
+// Copyright 2015, gRPC Authors
+// All rights reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+syntax = "proto3";
+package gedit.promotion;
+
+option java_multiple_files = true;
+option java_package = "com.github.conanchen.gedit.promotion.investpayment.grpc";
+option java_outer_classname = "InvestPaymentProto";
+option objc_class_prefix = "IVSTPRM";
+
+import "gedit/common.proto";
+
+// The promotion inveestpayment service definition.
+service InvestPaymentApi {
+
+    rpc Prepare (PreparInvestPaymentRequest) returns (PrepareInvestPaymentResponse) {
+    }
+    
+    rpc Add (AddInvestPaymentRequest) returns (InvestPaymentResponse) {
+    }
+
+    rpc Get (GetInvestPaymentRequest) returns (InvestPaymentResponse) {
+    }
+
+    rpc Search (SearchInvestPaymentRequest) returns (stream InvestPaymentResponse) {
+    }
+
+    rpc List (ListInvestPaymentRequest) returns (stream InvestPaymentResponse) {
+    }
+
+}
+
+message PreparInvestPaymentRequest{
+    string payeeUuid = 4;
+    string payeeStoreUuid = 7;
+    PaymentChannel channel = 26; //支付通道如支付宝、微信、云闪付
+}
+
+message PrepareInvestPaymentResponse{
+    Status status = 999;
+    string channelOrderUuid = 27; //预付单编号，可能由支付通道返回的或平台产生的
+}
+
+message AddInvestPaymentRequest {
+    string payeeUuid = 4;
+    string payeeStoreUuid = 7;
+    int32 shouldPay = 10;
+    int32 discount = 13;
+    int32 actualPay = 16;
+
+    PaymentChannel channel = 26; //支付通道如支付宝、微信、云闪付
+    string channelOrderUuid = 27; //预付单编号，可能由支付通道返回的或平台产生的
+}
+
+message InvestPaymentResponse {
+    Status status = 999;
+    InvestPayment recordPayment = 1;
+}
+
+message InvestPayment{
+    string uuid = 1;
+    string payeeUuid = 4;
+    string payeeStoreUuid = 7;
+    int32 shouldPay = 10;
+    int32 discount = 13;
+    int32 actualPay = 16;
+
+    PaymentChannel channel = 26; //支付通道如支付宝、微信、云闪付
+    string channelOrderUuid = 27; //预付单编号，可能由支付通道返回的或平台产生的
+    
+    int64 created = 60;
+}
+
+
+message ListInvestPaymentRequest {
+    int32 page = 1;
+}
+
+message GetInvestPaymentRequest {
+    string uuid = 1;
+}
+
+message SearchInvestPaymentRequest {
+    string mobile = 1;
+}

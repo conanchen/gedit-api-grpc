@@ -42,12 +42,6 @@ service PaymentApi {
 
 }
 
-enum Channel {
-    ALIPAY = 0;
-    WXPAY = 1;
-    YSPAY = 2;
-}
-
 message PreparPaymentRequest{
     string payeeStoreUuid = 13;
     int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
@@ -76,7 +70,7 @@ message CreatePaymentRequest {
     int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
     int32 actualPay = 16; //实付金额
     int32 pointsPay = 17; //实付积分代替金额
-    Channel channel = 25;//支付类型
+    PaymentChannel channel = 25;//支付类型
 }
 
 message GetPaymentRequest {
@@ -113,7 +107,7 @@ message Payment {
     string payeeUuid = 12; //收款人
     string payeeStoreUuid = 13;
     string payeeWorkerUuid = 14;
-    //create following info when return from Channel支付宝、微信等返回时
+    //create following info when return from PaymentChannel支付宝、微信等返回时
     int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
     int32 actualPay = 16; //实付金额
     int32 pointsPay = 17; //实付积分代替金额
@@ -125,13 +119,9 @@ message Payment {
         OK = 52;
     }
 
-    Channel channel = 26; //支付通道如支付宝、微信、云闪付
+    PaymentChannel channel = 26; //支付通道如支付宝、微信、云闪付
     string channelOrderUuid = 27; //预付单编号，可能由支付通道返回的或平台产生的
 
     int64 created = 40;
 
-}
-
-message UpdateWithAlipayBackRequest {
-    string channelOrderUuid = 27; //预付单编号，可能由支付通道返回的或平台产生的
 }
