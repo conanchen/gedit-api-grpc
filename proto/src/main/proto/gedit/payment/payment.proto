@@ -70,6 +70,7 @@ message CreatePaymentRequest {
     int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
     int32 actualPay = 16; //实付金额
     int32 pointsPay = 17; //实付积分代替金额
+    string spbillCreateIp = 18;//客户端的实际ip地址
     PaymentChannel channel = 25;//支付类型
 }
 
@@ -96,7 +97,6 @@ message ListMyPaymentRequest {
 
 message PaymentResponse {
     Status status = 999;
-
     Payment payment = 1;
 }
 
@@ -123,5 +123,7 @@ message Payment {
     string channelOrderUuid = 27; //预付单编号，可能由支付通道返回的或平台产生的
 
     int64 created = 40;
+
+    string sign = 45;//微信或支付宝预定单签名，使用该签名可以直接调起支付.
 
 }
