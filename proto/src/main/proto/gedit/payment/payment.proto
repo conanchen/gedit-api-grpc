@@ -83,6 +83,7 @@ message ListPaymentRequest {
     string payerUuid = 11; //支付人
     string payeeUuid = 12; //收款人
     string payeeStoreUuid = 13; //收款店铺
+    bool isAnd = 14;
     int32 from = 100;
     int32 size = 101;
 }

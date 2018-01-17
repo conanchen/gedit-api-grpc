@@ -12,10 +12,17 @@ import "gedit/common.proto";
 service StoreOwnerApi {
 
     rpc Transfer (TransferOwnershipRequest) returns (OwnershipResponse) {
+        //should be only used by me or authorized users(e.g. administrator)
     }
 
     rpc ListByOwner (ListOwnershipByOwnerRequest) returns (stream OwnershipResponse) {
+        //should be only used by authorized users(e.g. administrator)
     }
+
+    rpc ListMyStore (ListMyStoreRequest) returns (stream OwnershipResponse) {
+        //should be only used by me
+    }
+
 }
 
 
@@ -31,6 +38,10 @@ message ListOwnershipByOwnerRequest {
 }
 
 
+message ListMyStoreRequest {
+}
+
+
 message OwnershipResponse {
     Status status = 999;
     Ownership ownership = 1;
@@ -40,8 +51,13 @@ message OwnershipResponse {
 message Ownership{
     string userUuid = 1;
     string storeUuid = 5;
-    bool active = 7;
-    int64 startTime = 9;
-    int64 endTime = 10;
+
+    string storeName = 7;
+    string storeLogo = 9;
+    Location location = 11;
+
+    bool active = 27;
+    int64 created = 29;
+    int64 lastUpdated = 30;
 
 }
