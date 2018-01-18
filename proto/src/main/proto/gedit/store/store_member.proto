@@ -23,6 +23,11 @@ service StoreMemberApi {
     }
 
 
+    rpc ListMyMemberStore (ListMyMemberStoreRequest) returns (stream MembershipResponse) {
+        //should be only used by me
+    }
+
+
     rpc Ban (BanMembershipRequest) returns (BanMembershipResponse) {
     }
 
@@ -41,6 +46,11 @@ message UpdateMembershipRequest {
         int64 startTime = 9;
         int64 endTime = 10;
     }
+}
+
+
+message ListMyMemberStoreRequest {
+    int64 lastUpdated = 1;
 }
 
 

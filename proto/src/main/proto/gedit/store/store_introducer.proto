@@ -1,0 +1,80 @@
+syntax = "proto3";
+package gedit.store;
+
+option java_multiple_files = true;
+option java_package = "com.github.conanchen.gedit.store.introducer.grpc";
+option java_outer_classname = "StoreIntroducerProto";
+option objc_class_prefix = "STIDC";
+
+import "gedit/common.proto";
+
+// The store service definition.
+service StoreIntroducerApi {
+    rpc Add (AddIntroducershipRequest) returns (IntroducershipResponse) {
+    }
+
+    rpc ListByStore (ListIntroducershipByStoreRequest) returns (stream IntroducershipResponse) {
+    }
+
+    rpc ListByIntroducer (ListIntroducershipByIntroducerRequest) returns (stream IntroducershipResponse) {
+    }
+
+    rpc ListMyIntroducedStore (ListMyIntroducedStoreRequest) returns (stream IntroducershipResponse) {
+        //should be only used by me
+    }
+
+    rpc Ban (BanIntroducershipRequest) returns (IntroducershipResponse) {
+    }
+}
+
+message AddIntroducershipRequest {
+    string storeUuid = 1;
+    string introducerUuid = 3;
+}
+
+message ListIntroducershipByStoreRequest {
+    string storeUuid = 1;
+    int32 from = 100;
+    int32 size = 101;
+}
+
+
+message ListMyIntroducedStoreRequest {
+    int64 lastUpdated = 1;
+}
+
+
+message ListIntroducershipByIntroducerRequest {
+    string introducerUuid = 3;
+    int32 from = 100;
+    int32 size = 101;
+}
+
+message IntroducershipResponse {
+    Status status = 999;
+
+    Introducership ownership = 1;
+
+    int32 from = 100;
+}
+
+
+message BanIntroducershipRequest {
+    string introducerUuid = 1;
+    string storeUuid = 5;
+    bool active = 7;
+}
+
+message Introducership{
+    string userUuid = 1;
+    string storeUuid = 5;
+
+    string storeName = 7;
+    string storeLogo = 9;
+    Location location = 11;
+
+    bool active = 27;
+    int64 created = 29;
+    int64 lastUpdated = 30;
+
+}

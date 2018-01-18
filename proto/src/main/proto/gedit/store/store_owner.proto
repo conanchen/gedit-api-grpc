@@ -39,6 +39,7 @@ message ListOwnershipByOwnerRequest {
 
 
 message ListMyStoreRequest {
+    int64 lastUpdated = 1;
 }
 
 

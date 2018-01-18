@@ -19,7 +19,7 @@ service StoreProfileApi {
     rpc Get (GetStoreRequest) returns (StoreProfileResponse) {
     }
 
-    rpc List (ListRequest) returns (stream StoreProfileResponse) {
+    rpc List (ListStoreRequest) returns (stream StoreProfileResponse) {
     }
 
     rpc FindByName (FindByNameRequest) returns (StoreProfileResponse) {
@@ -80,7 +80,7 @@ message GetStoreRequest {
 }
 
 
-message ListRequest {
+message ListStoreRequest {
     string type = 3;
     int32 from = 100;
     int32 size = 101;

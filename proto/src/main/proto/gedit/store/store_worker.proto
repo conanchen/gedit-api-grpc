@@ -40,6 +40,7 @@ message ListWorkshipByStoreRequest {
 
 
 message ListMyWorkinStoreRequest {
+    int64 lastUpdated = 1;
 }
 
 
