@@ -36,3 +36,11 @@ enum PaymentChannel {
     YSPAY = 2;
 }
 
+enum AccountType {
+    CASH = 0; //现金
+    CURRENT_POINTS = 1; //活期积分
+    FIXED_POINTS = 2; //定期积分
+    REDPACK = 3; //红包
+    COUPON = 4; //优惠券
+}
+
