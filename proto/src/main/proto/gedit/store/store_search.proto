@@ -11,17 +11,17 @@ import "gedit/common.proto";
 
 // The storesearch service definition.
 service StoreSearchApi {
-    rpc Index (IndexRequest) returns (IndexResponse) {
+    rpc Index (IndexStoreRequest) returns (IndexStoreResponse) {
     }
     
-    rpc Delete (DeleteRequest) returns (DeleteResponse) {
+    rpc Delete (DeleteStoreRequest) returns (DeleteStoreResponse) {
     }
     
-    rpc Search (SearchRequest) returns (stream SearchResponse) {
+    rpc Search (SearchStoreRequest) returns (stream SearchStoreResponse) {
     }
 }
 
-message IndexRequest {
+message IndexStoreRequest {
     string uuid = 1; //store uuid
     string name = 2;
     string logo = 3;
@@ -31,23 +31,23 @@ message IndexRequest {
     int32 bonusRate = 8;
 }
 
-message IndexResponse {
+message IndexStoreResponse {
     Status status = 999;
     string uuid = 1; //store uuid
 //    string status = 2;  //refer to elasticsearch e.g. RestStatus.OK
 }
 
 
-message DeleteRequest{
+message DeleteStoreRequest{
     string uuid = 1; //store uuid
 }
 
-message DeleteResponse{
+message DeleteStoreResponse{
     Status status = 999;
     string uuid = 1; //store uuid
 }
 
-message SearchRequest {
+message SearchStoreRequest {
     double lat = 1;
     double lon = 2;
     string type = 3;
@@ -58,7 +58,7 @@ message SearchRequest {
 
 }
 
-message SearchResponse {
+message SearchStoreResponse {
     Status status = 999;
     string uuid = 1; //store uuid
     string name = 2;
