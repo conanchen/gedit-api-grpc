@@ -45,7 +45,7 @@ service UserAuthApi {
         // local
     };
 
-    rpc RegisterSmsStep3Signin (SmsStep3RegisterRequest) returns (SigninResponse) {
+    rpc RegisterSmsStep3Register (SmsStep3RegisterRequest) returns (RegisterResponse) {
         // local
     };
 }
@@ -105,6 +105,12 @@ message SmsStep3RegisterRequest {
 }
 
 message SigninResponse {
+    Status status = 999;
+    string accessToken = 2;
+    string expiresIn = 3;
+}
+
+message RegisterResponse {
     Status status = 999;
     string accessToken = 2;
     string expiresIn = 3;
