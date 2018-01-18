@@ -76,6 +76,7 @@ message UpdateStoreResponse {
 
 message GetStoreRequest {
     string uuid = 1; //store uuid
+    int64 lastUpdated = 2;
 }
 
 
