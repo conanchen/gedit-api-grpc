@@ -34,6 +34,9 @@ service UserFansApi {
     rpc ListChild (ListChildFanshipRequest) returns (stream FanshipResponse) {
     }
 
+    rpc ListMyFan (ListMyFanRequest) returns (stream FanshipResponse) {
+        //should be only used by me
+    }
 }
 
 message AddFanshipRequest {
@@ -48,15 +51,17 @@ message ListChildFanshipRequest {
     string parentUuid = 1;
     int32 from = 100;
     int32 size = 101;
-
 }
 
+message ListMyFanRequest {
+    int64 lastUpdated = 1;
+}
 message FanshipResponse {
     Status status = 999;
     Fanship fanship = 1;
 }
 
-message Fanship{
+message Fanship {
     string parentUuid = 1;
     string parentName = 11;
     string fanUuid = 2;
