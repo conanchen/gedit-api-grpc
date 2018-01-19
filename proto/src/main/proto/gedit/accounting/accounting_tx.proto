@@ -27,6 +27,10 @@ import "gedit/common.proto";
 //https://medium.com/@RobertKhou/double-entry-accounting-in-a-relational-database-2b7838a5d7f8
 service AccountingTXApi {
 
+    rpc QueryPostingsIfEvent(QueryPostingsIfEventRequest) returns (stream PostingResponse){
+        //查询如果发生某种时间将会创建的postings，如用于在下单支付时候提示用户可以获取多少积分
+    }
+
     rpc UpsertJournal (UpsertJournalRequest) returns (JournalResponse) {
         //will compute postings at the same time when save Journal
     }
@@ -46,6 +50,14 @@ service AccountingTXApi {
     rpc ListBalance (ListBalanceRequest) returns (stream BalanceResponse) {
     }
 
+}
+
+message QueryPostingsIfEventRequest {
+    oneof event {
+        PaymentCreatedEvent paymentCreatedEvent = 1;
+        UserVerifiedEvent userVerifiedEvent = 2;
+        StoreVerifiedEvent storeCreatedEvent = 3;
+    }
 }
 
 message UpsertJournalRequest {

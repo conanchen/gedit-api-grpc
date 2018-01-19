@@ -53,7 +53,7 @@ message ListIntroducershipByIntroducerRequest {
 message IntroducershipResponse {
     Status status = 999;
 
-    Introducership ownership = 1;
+    Introducership introducership = 1;
 
     int32 from = 100;
 }
