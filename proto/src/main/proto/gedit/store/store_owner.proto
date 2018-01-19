@@ -50,6 +50,7 @@ message OwnershipResponse {
 }
 
 message Ownership{
+    //我的
     string userUuid = 1;
     string storeUuid = 5;
 

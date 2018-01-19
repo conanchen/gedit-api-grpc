@@ -65,6 +65,6 @@ message Fanship {
     string parentUuid = 1;
     string parentName = 11;
     string fanUuid = 2;
-    string name = 3;
+    string fanName = 3;
     int64 created = 4;
 }
