@@ -22,7 +22,7 @@ service StoreProfileApi {
     rpc List (ListStoreRequest) returns (stream StoreProfileResponse) {
     }
 
-    rpc FindByName (FindByNameRequest) returns (StoreProfileResponse) {
+    rpc FindByName (stream FindByNameRequest) returns (StoreProfileResponse) {
     }
 
     rpc Ban (BanStoreRequest) returns (BanStoreResponse) {
