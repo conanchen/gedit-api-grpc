@@ -1,5 +1,12 @@
-apply plugin: 'java'
-apply plugin: 'com.google.protobuf'
+plugins {
+    id 'com.google.protobuf'
+    id 'java'
+    id 'idea'
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
 
 compileJava.enabled = false
 
