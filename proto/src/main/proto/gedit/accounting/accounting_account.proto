@@ -33,13 +33,21 @@ service AccountingAccountApi {
     rpc GetAccount (GetAccountRequest) returns (AccountResponse) {
     }
 
-    rpc FindOneAccountBy (UserAndAccountType) returns (AccountResponse) {
+    rpc FindAccountBy (FindAccountRequest) returns (AccountResponse) {
     }
+
+    rpc ListMyAccount (ListMyAccountRequest) returns (stream AccountResponse) {
+    }
+
 }
 
 
 message UpsertAccountsRequest {
     string userUuid = 11;
+}
+
+message ListMyAccountRequest {
+    int64 lastUpdated = 1;
 }
 
 message AccountResponse {
@@ -64,6 +72,11 @@ message GetAccountRequest {
     string uuid = 1;
 }
 
+message FindAccountRequest {
+    oneof value {
+        UserAndAccountType userAndAccountType = 1;
+    }
+}
 
 message UserAndAccountType {
     string userUuid = 11;
