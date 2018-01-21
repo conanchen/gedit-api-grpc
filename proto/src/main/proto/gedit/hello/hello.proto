@@ -26,6 +26,7 @@ message HelloRequest {
 
 message ListHelloRequest {
     string lastUpdated = 1;
+    int32 size = 2;
 }
 
 // The response message containing the greetings
