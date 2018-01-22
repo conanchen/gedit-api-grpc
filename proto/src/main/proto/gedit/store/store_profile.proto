@@ -52,14 +52,24 @@ message UpdateStoreRequest {
         string logo = 3;
         Location location = 4;
         string type = 6;
-        string desc = 7;
+        string desc = 7;//详细描述
         int32 pointsRate = 8; //积分奖励率
         string districtUuid = 9;
         string detailAddress = 10;
         ListURL images = 11;
+        ListTel tels = 12;
+        WorkingTime workingTime = 13;
         bool active = 59;
     }
 
+}
+
+message WorkingTime{
+    int64 start = 1;
+    int64 end = 2;
+}
+message ListTel{
+    repeated string urls = 11;
 }
 message ListURL{
     repeated string urls = 11;
