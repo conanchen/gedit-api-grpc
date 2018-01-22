@@ -16,43 +16,28 @@ syntax = "proto3";
 package gedit.payment;
 
 option java_multiple_files = true;
-option java_package = "com.github.conanchen.gedit.payment.grpc";
+option java_package = "com.github.conanchen.gedit.payment.inapp.grpc";
 option java_outer_classname = "PaymentProto";
-option objc_class_prefix = "PAYMENT";
+option objc_class_prefix = "PMINAPP";
 
 import "gedit/common.proto";
+import "gedit/payment/payment_common.proto";
 
 // The payment service definition.
-service PaymentApi {
-
+service PaymentInappApi {
+    //----START 店员/收银员收款出示二维码    <------------> 顾客扫码付款 交互API
     rpc GetMyReceiptCode (GetMyReceiptCodeRequest) returns (GetMyReceiptCodeResponse) {
         //only called by me,例如店员/收银员app调用本api生成收款码供顾客扫码支付
     }
     rpc GetReceiptCode (GetReceiptCodeRequest) returns (GetReceiptCodeResponse) {
     }
-
     rpc PrepareMyPayment (PreparMyPaymentRequest) returns (PrepareMyPaymentResponse) {
         //only called by me, 顾客扫码店员/收银员的收款码后获取如果支付一定金额
     }
-
     rpc Create (CreatePaymentRequest) returns (PaymentResponse) {
         //only called by me, 顾客确定付款
     }
-
-    rpc Get (GetPaymentRequest) returns (PaymentResponse) {
-    }
-
-    rpc List (ListPaymentRequest) returns (stream PaymentResponse) {
-    }
-
-    rpc ListMyPayment (ListMyPaymentRequest) returns (stream PaymentResponse) {
-        //only called by me，获取我的付款单
-    }
-
-    rpc ListMyReceipt (ListMyReceiptRequest) returns (stream PaymentResponse) {
-        //only called by me，获取我的收款单
-    }
-
+    //----END 店员/收银员收款出示二维码    <------------> 顾客扫码付款 交互API
 }
 
 message GetMyReceiptCodeRequest {
@@ -122,65 +107,4 @@ message CreatePaymentRequest {
     int32 pointsPay = 17; //实付积分代替金额
     string payerIp = 18; //付款人客户端的实际ip地址
     PaymentChannel channel = 25; //支付类型
-}
-
-message GetPaymentRequest {
-    string uuid = 1; //支付单编号
-}
-
-message ListPaymentRequest {
-    //only called by manager
-    string payerUuid = 10; //支付人
-    string payeeReceiptCode = 11; //收款码
-    string payeeUuid = 12; //收款人（其实是店主）
-    string payeeStoreUuid = 13; //收款店铺
-    string payeeWorkerUuid = 14; //收款员工
-    bool isAnd = 24;
-    int32 from = 100;
-    int32 size = 101;
-}
-
-message ListMyPaymentRequest {
-    //only called by myself
-    int32 from = 100;
-    int32 size = 101;
-}
-
-message ListMyReceiptRequest {
-    //only called by myself
-    int32 from = 100;
-    int32 size = 101;
-}
-
-message PaymentResponse {
-    Status status = 999;
-    Payment payment = 1;
-}
-
-message Payment {
-    string uuid = 1; //支付单编号
-
-    string payerUuid = 10; //支付人
-    string payeeReceiptCode = 11; //收款码
-    string payeeUuid = 12; //收款人（其实是店主）
-    string payeeStoreUuid = 13; //收款店铺
-    string payeeWorkerUuid = 14; //收款员工
-    //create following info when return from PaymentChannel支付宝、微信等返回时
-    int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
-    int32 actualPay = 16; //实付金额
-    int32 pointsPay = 17; //实付积分代替金额
-    int32 pointsRepay = 18; //返还积分
-    enum Status {
-        NEW = 0;
-        INPROGRESS = 50;
-        FAILED = 51;
-        OK = 52;
-    }
-
-    PaymentChannel channel = 26; //支付通道如支付宝、微信、云闪付
-    string channelOrderUuid = 27; //预付单编号，可能由支付通道返回的或平台产生的
-
-    string signature = 35; //微信或支付宝预定单签名，使用该签名可以直接调起支付.
-
-    int64 created = 40;
 }
