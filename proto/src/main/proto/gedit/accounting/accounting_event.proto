@@ -1,0 +1,60 @@
+// Copyright 2015, gRPC Authors
+// All rights reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+syntax = "proto3";
+package gedit.accounting;
+
+option java_multiple_files = true;
+option java_package = "com.github.conanchen.gedit.accounting.event.grpc";
+option java_outer_classname = "AccountingEventProto";
+option objc_class_prefix = "ACCEVT";
+
+import "gedit/common.proto";
+
+// The bonus service definition.
+//https://accountingexplained.com/financial/cycle/
+//https://medium.com/@RobertKhou/double-entry-accounting-in-a-relational-database-2b7838a5d7f8
+service AccountingEventApi {
+}
+
+message PaymentCreatedEvent {
+    //uuid unique
+    string uuid = 1; //支付单编号 unique
+
+    string payerUuid = 11; //支付人
+    string payeeUuid = 12; //收款人
+    string payeeStoreUuid = 13;
+    string payeeWorkerUuid = 14;
+    int32 shouldpay = 15; //应付金额 = 实付金额 + 实付积分等价金额
+    int32 actualpay = 16; //实付金额
+    int32 bonuspay = 17; //实付积分代替金额
+
+    string channel = 26; //支付通道如支付宝、微信、云闪付
+    int64 created = 27;
+}
+
+message UserVerifiedEvent {
+    //userUuid+introducerUuid unique
+    string userUuid = 11;
+    string introducerUuid = 12;
+    int64 created = 14;
+}
+
+message StoreVerifiedEvent {
+    //storeUuid+introducerUuid unique
+    string storeUuid = 11;
+    string introducerUuid = 12;
+    string storeOwnerUuid = 13;
+    int64 created = 14;
+}
