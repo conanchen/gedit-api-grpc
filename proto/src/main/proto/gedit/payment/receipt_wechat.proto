@@ -1,0 +1,66 @@
+// Copyright 2015, gRPC Authors
+// All rights reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+syntax = "proto3";
+package gedit.payment;
+
+option java_multiple_files = true;
+option java_package = "com.github.conanchen.gedit.receipt.wechat.grpc";
+option java_outer_classname = "ReceiptProto";
+option objc_class_prefix = "RCTWECHAT";
+
+import "gedit/common.proto";
+import "gedit/payment/payment_common.proto";
+
+// The receipt wechat definition.
+service ReceiptWechatApi {
+    //----START 店员/收银员打开扫一扫    <------------> 顾客出示微信付款二维码 交互API
+
+    rpc Prepare (PreparWechatReceiptRequest) returns (PrepareWechatReceiptResponse) {
+        //only called by me, 顾客扫码店员/收银员的收款码后获取如果支付一定金额
+    }
+    rpc Create (CreateWechatReceiptRequest) returns (PaymentResponse) {
+        //only called by me, 顾客确定付款
+    }
+    //----END 店员/收银员打开扫一扫    <------------> 顾客出示微信付款二维码 交互API
+}
+
+
+
+message PreparWechatReceiptRequest {
+    string payeeReceiptCode = 13;
+    int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
+}
+
+message PrepareWechatReceiptResponse {
+    Status status = 999;
+
+    PrepareReceipt prepareReceipt = 1;
+
+}
+
+message CreateWechatReceiptRequest {
+    //only called by myself，即收款人是我
+    //payerUuid
+    string payerPaymentCode = 11; //顾客的付款码
+    string payeeUuid = 12; //收款人（其实是店主）
+    string payeeStoreUuid = 13; //收款店铺
+    string payeeWorkerUuid = 14; //收款员工
+
+    int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
+    int32 actualPay = 16; //实付金额
+    int32 pointsPay = 17; //实付积分代替金额
+    string payerIp = 18; //付款人客户端的实际ip地址
+    PaymentChannel channel = 25; //支付类型
+}
