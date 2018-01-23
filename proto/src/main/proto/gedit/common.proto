@@ -32,8 +32,8 @@ message Location{
 
 enum PaymentChannel {
     ALIPAY = 0;
-    WXPAY = 1;
-    YSPAY = 2;
+    WECHAT = 1;
+    UNIONPAY = 2;
 }
 
 enum AccountType {
