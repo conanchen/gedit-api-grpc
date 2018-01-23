@@ -40,6 +40,9 @@ service UserProfileApi {
     rpc UpdateMyProfile (UpdateMyProfileRequest) returns (UpdateMyProfileResponse) {
     }
 
+    rpc GetMyProfile (GetMyProfileRequest) returns (UserProfileResponse) {
+    }
+
     rpc Ban (BanRequest) returns (UserProfileResponse) {
     }
 }
@@ -53,6 +56,9 @@ message AddResponse {
     string uuid = 1;
 }
 
+message GetMyProfileRequest{
+
+}
 
 message ListRequest {
     int32 page = 1;
@@ -86,6 +92,7 @@ message UserProfile {
     string mobile = 2;
     string name = 3;
     string desc = 4;
+    string logo = 5;
     bool active = 6;
 }
 

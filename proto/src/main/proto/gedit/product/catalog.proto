@@ -1,0 +1,38 @@
+syntax = "proto3";
+package gedit.product;
+
+option java_multiple_files = true;
+option java_package = "com.github.conanchen.gedit.product.catalog.grpc";
+option java_outer_classname = "ProductCatalogProto";
+option objc_class_prefix = "PRDCTG";
+
+import "gedit/common.proto";
+
+// The store service definition.
+service CatalogApi {
+    rpc Get (GetCatalogRequest) returns (CatalogResponse) {
+    }
+
+    rpc List (ListCatalogRequest) returns (stream CatalogResponse) {
+    }
+}
+
+message GetCatalogRequest{
+    string uuid = 1;
+}
+
+message ListCatalogRequest{
+    string parentUuid = 1;
+}
+
+message CatalogResponse{
+    Status status = 999;
+    Catalog catalog = 1;
+}
+
+message Catalog{
+    string uuid = 1;
+    string name = 2;
+    string parentUuid = 3;
+    string iconUrl = 4;
+}

@@ -1,0 +1,36 @@
+syntax = "proto3";
+package gedit.product;
+
+option java_multiple_files = true;
+option java_package = "com.github.conanchen.gedit.product.catalog.grpc";
+option java_outer_classname = "CatalogMemberProto";
+option objc_class_prefix = "CTGMMB";
+
+import "gedit/common.proto";
+
+// The store service definition.
+service CatalogMemberApi {
+    rpc Get (GetCatalogMemberRequest) returns (CatalogMemberResponse) {
+    }
+
+    rpc List (ListCatalogMemberRequest) returns (stream CatalogMemberResponse) {
+    }
+}
+
+message GetCatalogMemberRequest{
+    string uuid = 1;
+}
+
+message ListCatalogMemberRequest{
+    string catalogUuid = 1;
+}
+
+message CatalogMemberResponse{
+    Status status = 999;
+    CatalogMember catalogMember = 1;
+}
+
+message CatalogMember{
+    string catalogUuid = 1;
+    string productUuid = 2;
+}
