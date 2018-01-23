@@ -17,15 +17,15 @@ package gedit.payment;
 
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.receipt.unionpay.grpc";
-option java_outer_classname = "ReceiptProto";
-option objc_class_prefix = "RCTWECHAT";
+option java_outer_classname = "ReceiptUnionpayProto";
+option objc_class_prefix = "RCTUNPAY";
 
 import "gedit/common.proto";
 import "gedit/payment/payment_common.proto";
 
 // The receipt wechat definition.
 service ReceiptUnionpayApi {
-    //----START 店员/收银员打开扫一扫    <------------> 顾客出示微信付款二维码 交互API
+    //----START 店员/收银员打开扫一扫    <------------> 顾客出示银联付款二维码 交互API
 
     rpc Prepare (PreparUnionpayReceiptRequest) returns (PrepareUnionpayReceiptResponse) {
         //only called by me, 顾客扫码店员/收银员的收款码后获取如果支付一定金额
@@ -33,7 +33,7 @@ service ReceiptUnionpayApi {
     rpc Create (CreateUnionpayReceiptRequest) returns (PaymentResponse) {
         //only called by me, 顾客确定付款
     }
-    //----END 店员/收银员打开扫一扫    <------------> 顾客出示微信付款二维码 交互API
+    //----END 店员/收银员打开扫一扫    <------------> 顾客出示银联付款二维码 交互API
 }
 
 
@@ -62,5 +62,4 @@ message CreateUnionpayReceiptRequest {
     int32 actualPay = 16; //实付金额
     int32 pointsPay = 17; //实付积分代替金额
     string payerIp = 18; //付款人客户端的实际ip地址
-    PaymentChannel channel = 25; //支付类型
 }

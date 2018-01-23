@@ -17,7 +17,7 @@ package gedit.payment;
 
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.receipt.wechat.grpc";
-option java_outer_classname = "ReceiptProto";
+option java_outer_classname = "ReceiptWechatProto";
 option objc_class_prefix = "RCTWECHAT";
 
 import "gedit/common.proto";
@@ -62,5 +62,4 @@ message CreateWechatReceiptRequest {
     int32 actualPay = 16; //实付金额
     int32 pointsPay = 17; //实付积分代替金额
     string payerIp = 18; //付款人客户端的实际ip地址
-    PaymentChannel channel = 25; //支付类型
 }
