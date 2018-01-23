@@ -70,9 +70,12 @@ message Workship{
     string userUuid = 3;
     string storeUuid = 5;
 
-    string storeName = 7;
-    string storeLogo = 9;
-    Location location = 11;
+    string userName = 7;
+    string userLogo = 9;
+
+    string storeName = 12;
+    string storeLogo = 15;
+    Location location = 18;
 
     bool active = 27;
     int64 created = 29;
