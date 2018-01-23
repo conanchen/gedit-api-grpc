@@ -38,8 +38,8 @@ enum PaymentChannel {
 
 enum AccountType {
     CASH = 0; //现金
-    CURRENT_POINTS = 1; //活期积分
-    FIXED_POINTS = 2; //定期积分
+    CURRENT_POINTS = 1; //可消费积分账户
+    FIXED_POINTS = 2; //可兑换积分账户
     REDPACK = 3; //红包
     COUPON = 4; //优惠券
 }
