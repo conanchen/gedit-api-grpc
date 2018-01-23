@@ -30,6 +30,7 @@ service PaymentInappApi {
         //only called by me,例如店员/收银员app调用本api生成收款码供顾客扫码支付
     }
     rpc GetReceiptCode (GetReceiptCodeRequest) returns (GetReceiptCodeResponse) {
+        //顾客端调用获取店员/收银员收款码相关信息
     }
     rpc PrepareMyPayment (PreparMyPaymentRequest) returns (PrepareMyPaymentResponse) {
         //only called by me, 顾客扫码店员/收银员的收款码后获取如果支付一定金额
