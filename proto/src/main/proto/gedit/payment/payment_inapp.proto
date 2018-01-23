@@ -33,7 +33,7 @@ service PaymentInappApi {
         //顾客端调用获取店员/收银员收款码相关信息
     }
     rpc PrepareMyPayment (PreparMyPaymentRequest) returns (PrepareMyPaymentResponse) {
-        //only called by me, 顾客扫码店员/收银员的收款码后获取如果支付一定金额
+        //only called by me, 顾客扫码店员/收银员的收款码后，如果支付一定金额将会获取多少积分返还等信息
     }
     rpc Create (CreatePaymentRequest) returns (PaymentResponse) {
         //only called by me, 顾客确定付款
