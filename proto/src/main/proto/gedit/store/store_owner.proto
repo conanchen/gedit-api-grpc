@@ -23,6 +23,9 @@ service StoreOwnerApi {
         //should be only used by me
     }
 
+    rpc FindOwnerByStore(FindOwnerByStoreRequest) returns (OwnershipResponse){
+        //根据storeUuid找到店主的uuid
+    }
 }
 
 
@@ -40,6 +43,10 @@ message ListOwnershipByOwnerRequest {
 
 message ListMyStoreRequest {
     int64 lastUpdated = 1;
+}
+
+message FindOwnerByStoreRequest {
+    string storeUuid = 1;
 }
 
 
