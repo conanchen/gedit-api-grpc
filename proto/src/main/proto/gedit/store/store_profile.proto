@@ -34,6 +34,19 @@ message CreateStoreRequest {
     string districtUuid = 9;
     string detailAddress = 10;
     string introducerUuid = 12;
+
+    // 参照AMapLocation.java, 一下amapXXX字段与location配合做附近搜索使用
+    //    AdCode:510107, AoiName=心族宾馆, BuildingId=, Street=人民南路四段, StreetNum=34号, District=武侯区, CityCode=028, City=成都市, Province=四川省, Country=中国
+    string amapAdCode = 20;
+    string amapAoiName = 21;
+    string amapBuildingId = 22;
+    string amapStreet = 23;
+    string amapStreetNum = 24;
+    string amapDistrict = 25;
+    string amapCityCode = 26;
+    string amapCity = 27;
+    string amapProvince = 28;
+    string amapCountry = 29;
 }
 
 message CreateStoreResponse {
@@ -52,7 +65,7 @@ message UpdateStoreRequest {
         string logo = 3;
         Location location = 4;
         string type = 6;
-        string desc = 7;//详细描述
+        string desc = 7; //详细描述
         int32 pointsRate = 8; //积分奖励率
         string districtUuid = 9;
         string detailAddress = 10;
@@ -64,14 +77,14 @@ message UpdateStoreRequest {
 
 }
 
-message WorkingTime{
+message WorkingTime {
     int64 start = 1;
     int64 end = 2;
 }
-message ListTel{
+message ListTel {
     repeated string urls = 11;
 }
-message ListURL{
+message ListURL {
     repeated string urls = 11;
 }
 message UpdateStoreResponse {
@@ -116,6 +129,20 @@ message StoreProfile {
     string detailAddress = 10;
     repeated string images = 11;
     string introducerUuid = 12;
+
+    // 参照AMapLocation.java, 一下amapXXX字段与location配合做附近搜索使用
+    //    AdCode:510107, AoiName=心族宾馆, BuildingId=, Street=人民南路四段, StreetNum=34号, District=武侯区, CityCode=028, City=成都市, Province=四川省, Country=中国
+    string amapAdCode = 20;
+    string amapAoiName = 21;
+    string amapBuildingId = 22;
+    string amapStreet = 23;
+    string amapStreetNum = 24;
+    string amapDistrict = 25;
+    string amapCityCode = 26;
+    string amapCity = 27;
+    string amapProvince = 28;
+    string amapCountry = 29;
+
     bool active = 59;
 
     int32 from = 100;
