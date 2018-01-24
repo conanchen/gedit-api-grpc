@@ -16,21 +16,21 @@ syntax = "proto3";
 package gedit.payment;
 
 option java_multiple_files = true;
-option java_package = "com.github.conanchen.gedit.receipt.alipay.grpc";
-option java_outer_classname = "ReceiptAlipayProto";
-option objc_class_prefix = "RCTALIPAY";
+option java_package = "com.github.conanchen.gedit.payment.alipay.grpc";
+option java_outer_classname = "PaymentAlipayProto";
+option objc_class_prefix = "PMALIPAY";
 
 import "gedit/common.proto";
 import "gedit/payment/payment_common.proto";
 
-// The receipt wechat definition.
-service ReceiptAlipayApi {
+// The payment wechat definition.
+service PaymentAlipayApi {
     //----START 店员/收银员打开扫一扫    <------------> 顾客出示支付宝付款二维码 交互API
 
-    rpc Prepare (PreparAlipayReceiptRequest) returns (PrepareAlipayReceiptResponse) {
+    rpc Prepare (PreparAlipayPaymentRequest) returns (PrepareAlipayPaymentResponse) {
         //only called by me, 顾客扫码店员/收银员的收款码后获取如果支付一定金额
     }
-    rpc Create (CreateAlipayReceiptRequest) returns (PaymentResponse) {
+    rpc Create (CreateAlipayPaymentRequest) returns (PaymentResponse) {
         //only called by me, 顾客确定付款
     }
     //----END 店员/收银员打开扫一扫    <------------> 顾客出示支付宝付款二维码 交互API
@@ -38,19 +38,19 @@ service ReceiptAlipayApi {
 
 
 
-message PreparAlipayReceiptRequest {
-    string payeeReceiptCode = 13;
+message PreparAlipayPaymentRequest {
+    string payeePaymentCode = 13;
     int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
 }
 
-message PrepareAlipayReceiptResponse {
+message PrepareAlipayPaymentResponse {
     Status status = 999;
 
-    PrepareReceipt prepareReceipt = 1;
+    PreparePayment preparePayment = 1;
 
 }
 
-message CreateAlipayReceiptRequest {
+message CreateAlipayPaymentRequest {
     //only called by myself，即收款人是我
     //payerUuid
     string payerPaymentCode = 11; //顾客的付款码

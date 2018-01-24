@@ -32,11 +32,11 @@ service PaymentQueryApi {
     rpc List (ListPaymentRequest) returns (stream PaymentResponse) {
     }
 
-    rpc ListMyPayment (ListMyPaymentRequest) returns (stream PaymentResponse) {
+    rpc ListMyPayerPayment (ListMyPayerPaymentRequest) returns (stream PaymentResponse) {
         //only called by me，获取我的付款单
     }
 
-    rpc ListMyReceipt (ListMyReceiptRequest) returns (stream PaymentResponse) {
+    rpc ListMyPayeePayment (ListMyPayeePaymentRequest) returns (stream PaymentResponse) {
         //only called by me，获取我的收款单
     }
 
@@ -50,7 +50,7 @@ message GetPaymentRequest {
 message ListPaymentRequest {
     //only called by manager
     string payerUuid = 10; //支付人
-    string payeeReceiptCode = 11; //收款码
+    string payeePaymentCode = 11; //收款码
     string payeeUuid = 12; //收款人（其实是店主）
     string payeeStoreUuid = 13; //收款店铺
     string payeeWorkerUuid = 14; //收款员工
@@ -59,13 +59,13 @@ message ListPaymentRequest {
     int32 size = 101;
 }
 
-message ListMyPaymentRequest {
+message ListMyPayerPaymentRequest {
     //only called by myself
     int32 from = 100;
     int32 size = 101;
 }
 
-message ListMyReceiptRequest {
+message ListMyPayeePaymentRequest {
     //only called by myself
     int32 from = 100;
     int32 size = 101;

@@ -26,31 +26,32 @@ import "gedit/payment/payment_common.proto";
 // The payment service definition.
 service PaymentInappApi {
     //----START 店员/收银员收款出示二维码    <------------> 顾客扫码付款 交互API
-    rpc GetMyReceiptCode (GetMyReceiptCodeRequest) returns (GetMyReceiptCodeResponse) {
+    rpc GetMyPayeeCode (GetMyPayeeCodeRequest) returns (GetMyPayeeCodeResponse) {
         //only called by me,例如店员/收银员app调用本api生成收款码供顾客扫码支付
     }
-    rpc GetReceiptCode (GetReceiptCodeRequest) returns (GetReceiptCodeResponse) {
+    rpc GetPayeeCode (GetPayeeCodeRequest) returns (GetPayeeCodeResponse) {
         //顾客端调用获取店员/收银员收款码相关信息
     }
-    rpc PrepareMyPayment (PreparMyPaymentRequest) returns (PrepareMyPaymentResponse) {
+
+    rpc Prepare (PreparInappPaymentRequest) returns (PreparInappPaymentResponse) {
         //only called by me, 顾客扫码店员/收银员的收款码后，如果支付一定金额将会获取多少积分返还等信息
     }
-    rpc Create (CreatePaymentRequest) returns (PaymentResponse) {
+    rpc Create (CreateInappPaymentRequest) returns (PaymentResponse) {
         //only called by me, 顾客确定付款
     }
     //----END 店员/收银员收款出示二维码    <------------> 顾客扫码付款 交互API
 }
 
-message GetMyReceiptCodeRequest {
+message GetMyPayeeCodeRequest {
     string payeeStoreUuid = 1; //收款人工作的店铺
 }
 
-message GetMyReceiptCodeResponse {
+message GetMyPayeeCodeResponse {
     Status status = 999;
-    ReceiptCode receiptCode = 1;
+    PayeeCode paymentCode = 1;
 }
 
-message ReceiptCode {
+message PayeeCode {
     string code = 1; //店员/收银员客户端使用这个代码生成收款码QRCode
     int64 expiresIn = 3; //code的过期时间
     //以下为QRCode界面可能用到的提示用信息
@@ -65,47 +66,34 @@ message ReceiptCode {
     string payeeWorkerName = 29; //店员/收银员昵称
 }
 
-message GetReceiptCodeRequest {
+message GetPayeeCodeRequest {
     string code = 1; //店员/收银员客户端使用这个代码生成QRCode
 }
 
-message GetReceiptCodeResponse {
+message GetPayeeCodeResponse {
     Status status = 999;
-    ReceiptCode receiptCode = 1;
+    PayeeCode paymentCode = 1;
 }
 
-message PreparMyPaymentRequest {
-    string payeeReceiptCode = 13;
+message PreparInappPaymentRequest {
+    string payeePayeeCode = 13;
     int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
 }
 
-message PrepareMyPaymentResponse {
+message PreparInappPaymentResponse {
     Status status = 999;
 
     PreparePayment preparePayment = 1;
 
 }
 
-message PreparePayment {
-    string payeeReceiptCode = 11; //收款码
-    string payeeUuid = 12; //收款人（其实是店主）
-    string payeeStoreUuid = 13; //收款店铺
-    string payeeWorkerUuid = 14; //收款员工
 
-    int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
-    int32 actualPay = 16; //实付金额
-    int32 pointsPay = 17; //实付积分代替金额
-    int32 pointsRepay = 18; //返还积分
-
-}
-
-message CreatePaymentRequest {
+message CreateInappPaymentRequest {
     //only called by myself，即支付人是我
     //payerUuid
-    string payeeReceiptCode = 13; //店员、收银员的收款码
+    string payeePayeeCode = 13; //店员、收银员的收款码
     int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
     int32 actualPay = 16; //实付金额
     int32 pointsPay = 17; //实付积分代替金额
     string payerIp = 18; //付款人客户端的实际ip地址
-    PaymentChannel channel = 25; //支付类型
 }

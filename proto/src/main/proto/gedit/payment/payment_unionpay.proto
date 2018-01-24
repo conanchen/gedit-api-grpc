@@ -16,41 +16,41 @@ syntax = "proto3";
 package gedit.payment;
 
 option java_multiple_files = true;
-option java_package = "com.github.conanchen.gedit.receipt.wechat.grpc";
-option java_outer_classname = "ReceiptWechatProto";
-option objc_class_prefix = "RCTWECHAT";
+option java_package = "com.github.conanchen.gedit.payment.unionpay.grpc";
+option java_outer_classname = "PaymentUnionpayProto";
+option objc_class_prefix = "PMUNPAY";
 
 import "gedit/common.proto";
 import "gedit/payment/payment_common.proto";
 
-// The receipt wechat definition.
-service ReceiptWechatApi {
-    //----START 店员/收银员打开扫一扫    <------------> 顾客出示微信付款二维码 交互API
+// The payment wechat definition.
+service PaymentUnionpayApi {
+    //----START 店员/收银员打开扫一扫    <------------> 顾客出示银联付款二维码 交互API
 
-    rpc Prepare (PreparWechatReceiptRequest) returns (PrepareWechatReceiptResponse) {
+    rpc Prepare (PreparUnionpayPaymentRequest) returns (PrepareUnionpayPaymentResponse) {
         //only called by me, 顾客扫码店员/收银员的收款码后获取如果支付一定金额
     }
-    rpc Create (CreateWechatReceiptRequest) returns (PaymentResponse) {
+    rpc Create (CreateUnionpayPaymentRequest) returns (PaymentResponse) {
         //only called by me, 顾客确定付款
     }
-    //----END 店员/收银员打开扫一扫    <------------> 顾客出示微信付款二维码 交互API
+    //----END 店员/收银员打开扫一扫    <------------> 顾客出示银联付款二维码 交互API
 }
 
 
 
-message PreparWechatReceiptRequest {
-    string payeeReceiptCode = 13;
+message PreparUnionpayPaymentRequest {
+    string payeePaymentCode = 13;
     int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
 }
 
-message PrepareWechatReceiptResponse {
+message PrepareUnionpayPaymentResponse {
     Status status = 999;
 
-    PrepareReceipt prepareReceipt = 1;
+    PreparePayment preparePayment = 1;
 
 }
 
-message CreateWechatReceiptRequest {
+message CreateUnionpayPaymentRequest {
     //only called by myself，即收款人是我
     //payerUuid
     string payerPaymentCode = 11; //顾客的付款码
