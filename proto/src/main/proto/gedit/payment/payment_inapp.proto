@@ -78,6 +78,7 @@ message GetPayeeCodeResponse {
 message PrepareInappPaymentRequest {
     string payeePayeeCode = 13;
     int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
+    bool isPointsPay = 19; //是否使用积分抵扣一定金额
 }
 
 message PrepareInappPaymentResponse {
@@ -96,6 +97,7 @@ message CreateInappPaymentRequest {
     int32 actualPay = 16; //实付金额
     int32 pointsPay = 17; //实付积分代替金额
     string payerIp = 18; //付款人客户端的实际ip地址
+    bool isPointsPay = 19; //是否使用积分抵扣一定金额
     PaymentChannel channel = 26; //支付通道如支付宝、微信、云闪付
 
 }
