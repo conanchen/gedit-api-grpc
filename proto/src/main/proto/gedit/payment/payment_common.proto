@@ -31,8 +31,10 @@ message PaymentResponse {
 message Payment {
     string uuid = 1; //支付单编号
 
+    string payerCode = 9; //支付人的付款码
     string payerUuid = 10; //支付人
-    string payeePaymentCode = 11; //收款码
+
+    string payeeCode = 11; //店员、收银员的收款码
     string payeeUuid = 12; //收款人（其实是店主）
     string payeeStoreUuid = 13; //收款店铺
     string payeeWorkerUuid = 14; //收款员工
@@ -57,7 +59,7 @@ message Payment {
 
 
 message PreparePayment {
-    string payerPaymentCode = 11; //顾客的付款码
+    string payerCode = 11; //顾客的付款码
     string payeeUuid = 12; //收款人（其实是店主）
     string payeeStoreUuid = 13; //收款店铺
     string payeeWorkerUuid = 14; //收款员工

@@ -53,7 +53,7 @@ message PrepareUnionpayPaymentResponse {
 message CreateUnionpayPaymentRequest {
     //only called by myself，即收款人是我
     //payerUuid
-    string payerPaymentCode = 11; //顾客的付款码
+    string payerCode = 11; //顾客的付款码
     string payeeUuid = 12; //收款人（其实是店主）
     string payeeStoreUuid = 13; //收款店铺
     string payeeWorkerUuid = 14; //收款员工
