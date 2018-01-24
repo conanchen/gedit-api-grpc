@@ -27,7 +27,7 @@ import "gedit/payment/payment_common.proto";
 service PaymentWechatApi {
     //----START 店员/收银员打开扫一扫    <------------> 顾客出示微信付款二维码 交互API
 
-    rpc Prepare (PreparWechatPaymentRequest) returns (PrepareWechatPaymentResponse) {
+    rpc Prepare (PrepareWechatPaymentRequest) returns (PrepareWechatPaymentResponse) {
         //only called by me, 顾客扫码店员/收银员的收款码后获取如果支付一定金额
     }
     rpc Create (CreateWechatPaymentRequest) returns (PaymentResponse) {
@@ -38,7 +38,7 @@ service PaymentWechatApi {
 
 
 
-message PreparWechatPaymentRequest {
+message PrepareWechatPaymentRequest {
     string payeePaymentCode = 13;
     int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
 }

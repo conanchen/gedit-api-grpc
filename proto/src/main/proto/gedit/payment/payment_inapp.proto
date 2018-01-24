@@ -33,7 +33,7 @@ service PaymentInappApi {
         //顾客端调用获取店员/收银员收款码相关信息
     }
 
-    rpc Prepare (PreparInappPaymentRequest) returns (PreparInappPaymentResponse) {
+    rpc Prepare (PrepareInappPaymentRequest) returns (PrepareInappPaymentResponse) {
         //only called by me, 顾客扫码店员/收银员的收款码后，如果支付一定金额将会获取多少积分返还等信息
     }
     rpc Create (CreateInappPaymentRequest) returns (PaymentResponse) {
@@ -75,12 +75,12 @@ message GetPayeeCodeResponse {
     PayeeCode paymentCode = 1;
 }
 
-message PreparInappPaymentRequest {
+message PrepareInappPaymentRequest {
     string payeePayeeCode = 13;
     int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
 }
 
-message PreparInappPaymentResponse {
+message PrepareInappPaymentResponse {
     Status status = 999;
 
     PreparePayment preparePayment = 1;
