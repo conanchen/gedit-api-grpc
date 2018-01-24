@@ -96,4 +96,6 @@ message CreateInappPaymentRequest {
     int32 actualPay = 16; //实付金额
     int32 pointsPay = 17; //实付积分代替金额
     string payerIp = 18; //付款人客户端的实际ip地址
+    PaymentChannel channel = 26; //支付通道如支付宝、微信、云闪付
+
 }
