@@ -49,10 +49,8 @@ message Payment {
         OK = 52;
     }
 
-    PaymentChannel channel = 26; //支付通道如支付宝、微信、云闪付
-    string channelOrderUuid = 27; //预付单编号，可能由支付通道返回的或平台产生的
-
-    string signature = 35; //微信或支付宝预定单签名，使用该签名可以直接调起支付.
+    PaymentChannel paymentChannel = 26; //支付通道如支付宝、微信、云闪付
+    string paymentChannelSignature = 27; //微信或支付宝预定单签名，使用该签名可以直接调起支付.
 
     int64 created = 40;
 }
