@@ -23,6 +23,10 @@ service StoreWorkerApi {
         //should be only used by me
     }
 
+    rpc GetMyCurrentWorkinStore(GetMyCurrentWorkinStoreRequest) returns(WorkshipResponse){
+        //店员、收银员app端调用
+    }
+
     rpc Ban (BanWorkshipRequest) returns (WorkshipResponse) {
     }
 }
@@ -43,6 +47,9 @@ message ListMyWorkinStoreRequest {
     int64 lastUpdated = 1;
 }
 
+message GetMyCurrentWorkinStoreRequest{
+
+}
 
 message ListWorkshipByWorkerRequest {
     string workerUuid = 3;
