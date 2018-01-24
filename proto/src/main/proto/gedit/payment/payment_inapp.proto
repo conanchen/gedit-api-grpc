@@ -47,6 +47,7 @@ message GetMyPayeeCodeRequest {
 }
 
 message GetMyPayeeCodeResponse {
+    //如果我不在这个店GetMyPayeeCodeRequest.payeeStoreUuid工作，status应说明错误原因
     Status status = 999;
     PayeeCode payeeCode = 1;
 }
