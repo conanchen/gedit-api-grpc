@@ -31,30 +31,32 @@ message PaymentResponse {
 message Payment {
     string uuid = 1; //支付单编号
 
-    string payerCode = 9; //支付人的付款码
-    string payerUuid = 10; //支付人
+    string payerCode = 10; //支付人的付款码
+    string payerUuid = 11; //支付人
 
-    string payeeCode = 11; //店员、收银员的收款码
-    string payeeUuid = 12; //收款人（其实是店主）
-    string payeeStoreUuid = 13; //收款店铺
-    string payeeWorkerUuid = 14; //收款员工
+    string payeeCode = 21; //店员、收银员的收款码
+    string payeeUuid = 22; //收款人（其实是店主）
+    string payeeStoreUuid = 23; //收款店铺
+    string payeeWorkerUuid = 24; //收款员工
     //create following info when return from PaymentChannel支付宝、微信等返回时
-    int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
-    int32 actualPay = 16; //实付金额
-    int32 pointsPay = 17; //实付积分代替金额
-    int32 pointsRepay = 18; //返还积分
-    bool isPointsPay = 19; //是否使用积分抵扣一定金额
-    enum Status {
+    int32 shouldPay = 30; //应付金额 = 实付金额 + 实付积分等价金额
+    int32 actualPay = 31; //实付金额
+    int32 pointsPay = 32; //实付积分代替金额
+    int32 pointsRepay = 33; //返还积分
+    bool isPointsPay = 34; //是否使用积分抵扣一定金额
+
+    PaymentChannel paymentChannel = 40; //支付通道如支付宝、微信、云闪付
+    string paymentChannelSignature = 41; //微信或支付宝预定单签名，使用该签名可以直接调起支付.
+
+    PaymentStatus paymentStatus = 50;
+    int64 created = 51;
+
+    enum PaymentStatus {
         NEW = 0;
-        INPROGRESS = 50;
-        FAILED = 51;
-        OK = 52;
+        INPROGRESS = 60;
+        FAILED = 61;
+        OK = 62;
     }
-
-    PaymentChannel paymentChannel = 26; //支付通道如支付宝、微信、云闪付
-    string paymentChannelSignature = 27; //微信或支付宝预定单签名，使用该签名可以直接调起支付.
-
-    int64 created = 40;
 }
 
 
