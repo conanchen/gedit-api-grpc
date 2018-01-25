@@ -1,0 +1,52 @@
+syntax = "proto3";
+package gedit.district;
+
+
+option java_multiple_files = true;
+option java_package = "com.github.conanchen.gedit.district.grpc";
+option java_outer_classname = "DistrictProto";
+option objc_class_prefix = "DISTRICT";
+
+
+import "gedit/common.proto";
+
+// The district service definition.
+service DistrictApi {
+    // Sends a greeting
+    rpc Upsert (UpsertDistrictRequest) returns (DistrictResponse) {
+    }
+
+    rpc GetTop (GetTopDistrictRequest) returns (stream DistrictResponse) {
+    }
+
+    rpc ListChild (ListChildDistrictRequest) returns (stream DistrictResponse) {
+    }
+
+    rpc List (ListDistrictRequest) returns (stream DistrictResponse) {
+    }
+}
+
+// The request message containing the user's name.
+message UpsertDistrictRequest {
+    District district = 1;
+}
+
+message GetTopDistrictRequest{
+    
+}
+
+message ListChildDistrictRequest {
+    int64 parentId = 1;
+    int32 size = 2;
+}
+
+message ListDistrictRequest {
+    int64 page = 1;
+    int32 size = 2;
+}
+
+// The response message containing the greetings
+message DistrictResponse {
+    Status status = 999;
+    District district = 1;
+}

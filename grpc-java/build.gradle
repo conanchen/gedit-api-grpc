@@ -8,7 +8,6 @@ sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
 dependencies {
-    compile project(':constants')
     protobuf project(':proto')
     compile "io.grpc:grpc-core:$GRPC_VERSION"
     compile "io.grpc:grpc-protobuf:$GRPC_VERSION"

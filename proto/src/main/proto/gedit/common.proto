@@ -21,11 +21,160 @@ option java_outer_classname = "CommonProto";
 option objc_class_prefix = "COMMON";
 
 message Status {
-    string code = 1;
+    //copy from io.grpc.Status.Code
+    Code code = 1;
     string details = 2;
+
+    /**
+     * The set of canonical status codes. If new codes are added over time they must choose
+     * a numerical value that does not collide with any previously used value.
+     */
+    enum Code {
+        /**
+         * The operation completed successfully.
+         */
+        OK = 0; //(0),
+
+        /**
+         * The operation was cancelled (typically by the caller).
+         */
+        CANCELLED = 1; //(1),
+
+        /**
+         * Unknown error.  An example of where this error may be returned is
+         * if a Status value received from another address space belongs to
+         * an error-space that is not known in this address space.  Also
+         * errors raised by APIs that do not return enough error information
+         * may be converted to this error.
+         */
+        UNKNOWN = 2; //(2),
+
+        /**
+         * Client specified an invalid argument.  Note that this differs
+         * from FAILED_PRECONDITION.  INVALID_ARGUMENT indicates arguments
+         * that are problematic regardless of the state of the system
+         * (e.g., a malformed file name).
+         */
+        INVALID_ARGUMENT = 3; //(3),
+
+        /**
+         * Deadline expired before operation could complete.  For operations
+         * that change the state of the system, this error may be returned
+         * even if the operation has completed successfully.  For example, a
+         * successful response from a server could have been delayed long
+         * enough for the deadline to expire.
+         */
+        DEADLINE_EXCEEDED = 4; //(4),
+
+        /**
+         * Some requested entity (e.g., file or directory) was not found.
+         */
+        NOT_FOUND = 5; //(5),
+
+        /**
+         * Some entity that we attempted to create (e.g., file or directory) already exists.
+         */
+        ALREADY_EXISTS = 6; //(6),
+
+        /**
+         * The caller does not have permission to execute the specified
+         * operation.  PERMISSION_DENIED must not be used for rejections
+         * caused by exhausting some resource (use RESOURCE_EXHAUSTED
+         * instead for those errors).  PERMISSION_DENIED must not be
+         * used if the caller cannot be identified (use UNAUTHENTICATED
+         * instead for those errors).
+         */
+        PERMISSION_DENIED = 7; //(7),
+
+        /**
+         * Some resource has been exhausted, perhaps a per-user quota, or
+         * perhaps the entire file system is out of space.
+         */
+        RESOURCE_EXHAUSTED = 8; //(8),
+
+        /**
+         * Operation was rejected because the system is not in a state
+         * required for the operation's execution.  For example, directory
+         * to be deleted may be non-empty, an rmdir operation is applied to
+         * a non-directory, etc.
+         *
+         * <p>A litmus test that may help a service implementor in deciding
+         * between FAILED_PRECONDITION, ABORTED, and UNAVAILABLE:
+         * (a) Use UNAVAILABLE if the client can retry just the failing call.
+         * (b) Use ABORTED if the client should retry at a higher-level
+         * (e.g., restarting a read-modify-write sequence).
+         * (c) Use FAILED_PRECONDITION if the client should not retry until
+         * the system state has been explicitly fixed.  E.g., if an "rmdir"
+         * fails because the directory is non-empty, FAILED_PRECONDITION
+         * should be returned since the client should not retry unless
+         * they have first fixed up the directory by deleting files from it.
+         */
+        FAILED_PRECONDITION = 9; //(9),
+
+        /**
+         * The operation was aborted, typically due to a concurrency issue
+         * like sequencer check failures, transaction aborts, etc.
+         *
+         * <p>See litmus test above for deciding between FAILED_PRECONDITION,
+         * ABORTED, and UNAVAILABLE.
+         */
+        ABORTED = 10; //(10),
+
+        /**
+         * Operation was attempted past the valid range.  E.g., seeking or
+         * reading past end of file.
+         *
+         * <p>Unlike INVALID_ARGUMENT, this error indicates a problem that may
+         * be fixed if the system state changes. For example, a 32-bit file
+         * system will generate INVALID_ARGUMENT if asked to read at an
+         * offset that is not in the range [0,2^32-1], but it will generate
+         * OUT_OF_RANGE if asked to read from an offset past the current
+         * file size.
+         *
+         * <p>There is a fair bit of overlap between FAILED_PRECONDITION and OUT_OF_RANGE.
+         * We recommend using OUT_OF_RANGE (the more specific error) when it applies
+         * so that callers who are iterating through
+         * a space can easily look for an OUT_OF_RANGE error to detect when they are done.
+         */
+        OUT_OF_RANGE = 11; //(11),
+
+        /**
+         * Operation is not implemented or not supported/enabled in this service.
+         */
+        UNIMPLEMENTED = 12; //(12),
+
+        /**
+         * Internal errors.  Means some invariants expected by underlying
+         * system has been broken.  If you see one of these errors,
+         * something is very broken.
+         */
+        INTERNAL = 13; //(13),
+
+        /**
+         * The service is currently unavailable.  This is a most likely a
+         * transient condition and may be corrected by retrying with
+         * a backoff.
+         *
+         * <p>See litmus test above for deciding between FAILED_PRECONDITION,
+         * ABORTED, and UNAVAILABLE.
+         */
+        UNAVAILABLE = 14; //(14),
+
+        /**
+         * Unrecoverable data loss or corruption.
+         */
+        DATA_LOSS = 15; //(15),
+
+        /**
+         * The request does not have valid authentication credentials for the
+         * operation.
+         */
+        UNAUTHENTICATED = 16; //(16);
+    }
+
 }
 
-message Location{
+message Location {
     double lat = 1;
     double lon = 2;
 }
@@ -44,3 +193,22 @@ enum AccountType {
     COUPON = 4; //优惠券
 }
 
+//行政区信息,参考http://lbs.amap.com/api/webservice/guide/api/district
+message District {
+    string id = 1; //自定义编号，如100000表示中国,110000表示北京，尽量使用adcode的值来填充。
+    string pid = 2; //上级编号，如北京110000的上级是中国100000
+
+    string name = 13; //行政区名称
+    string citycode = 11; //城市编码
+    string adcode = 12; //区域编码,街道没有独有的adcode，均继承父类（区县）的adcode
+    string center = 15; //城市中心点, 必须说明,在区县级别，有28个区县不能返回中心点,在乡镇/街道界别，有9262个乡镇/街道不能返回中心点
+    string level = 16; //行政区划级别
+    //    string polyline = 14; //行政区边界坐标点,当一个行政区范围，由完全分隔两块或者多块的地块组成，每块地的 polyline 坐标串以 | 分隔 。如北京 的 朝阳区
+    //    string country = 7; //:国家
+    //    province:省份（直辖市会在
+    //    province和city显示）
+    //    city:市（直辖市会在
+    //    province和city显示）
+    //    district:区县
+    //    street:街道
+}

@@ -62,8 +62,7 @@ message DeleteStoreResponse{
 }
 
 message SearchStoreRequest {
-    double lat = 1;
-    double lon = 2;
+    Location location = 1;
     string type = 3;
     string keyword = 4;
     //refer to https://www.elastic.co/guide/en/elasticsearch/client/java-rest/6.1/java-rest-high-search.html
