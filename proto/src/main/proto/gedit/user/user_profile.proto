@@ -22,7 +22,7 @@ option objc_class_prefix = "USRPROF";
 
 import "gedit/common.proto";
 
-// The hanzi service definition.
+// The UserProfile service definition.
 service UserProfileApi {
 
     rpc Add (AddUserRequest) returns (AddUserResponse) {
