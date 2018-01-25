@@ -28,7 +28,7 @@ message IndexStoreRequest {
     Location location = 4;
     string type = 6;
     string desc = 7;
-    int32 bonusRate = 8;
+    double pointsRate = 8;
 
     // 参照AMapLocation.java, 一下amapXXX字段与location配合做附近搜索使用
     //    AdCode:510107, AoiName=心族宾馆, BuildingId=, Street=人民南路四段, StreetNum=34号, District=武侯区, CityCode=028, City=成都市, Province=四川省, Country=中国
@@ -80,8 +80,11 @@ message SearchStoreResponse {
     Location location = 4;
     string type = 6;
     string desc = 7;
-    int32 bonusRate = 8;
+    double pointsRate = 8;
 
+    string amapStreet = 23;
+    string amapDistrict = 25;
+    string amapCity = 27;
     //refer to https://www.elastic.co/guide/en/elasticsearch/client/java-rest/6.1/java-rest-high-search.html
     int32 from = 100;
 }
