@@ -25,9 +25,6 @@ import "gedit/common.proto";
 // The UserProfile service definition.
 service UserProfileApi {
 
-    rpc Add (AddUserRequest) returns (AddUserResponse) {
-    }
-
     rpc Get (GetRequest) returns (UserProfileResponse) {
     }
 
@@ -47,14 +44,6 @@ service UserProfileApi {
     }
 }
 
-message AddUserRequest {
-    string mobile = 1;
-}
-
-message AddUserResponse {
-    Status status = 999;
-    string uuid = 1;
-}
 
 message BanUserResponse {
     Status status = 999;
