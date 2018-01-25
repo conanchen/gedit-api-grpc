@@ -84,9 +84,7 @@ message WorkingTime {
 message ListTel {
     repeated string urls = 11;
 }
-message ListURL {
-    repeated string urls = 11;
-}
+
 message UpdateStoreResponse {
     Status status = 999;
     string uuid = 1; //store uuid

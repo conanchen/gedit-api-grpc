@@ -25,13 +25,13 @@ import "gedit/common.proto";
 // The hanzi service definition.
 service UserProfileApi {
 
-    rpc Add (AddRequest) returns (AddResponse) {
+    rpc Add (AddUserRequest) returns (AddUserResponse) {
     }
 
     rpc Get (GetRequest) returns (UserProfileResponse) {
     }
 
-    rpc Find (FindRequest) returns (UserProfileResponse) {
+    rpc FindByMobile (FindByMobileRequest) returns (UserProfileResponse) {
     }
 
     rpc List (ListRequest) returns (stream UserProfileResponse) {
@@ -43,15 +43,20 @@ service UserProfileApi {
     rpc GetMyProfile (GetMyProfileRequest) returns (UserProfileResponse) {
     }
 
-    rpc Ban (BanRequest) returns (UserProfileResponse) {
+    rpc Ban (BanUserRequest) returns (BanUserResponse) {
     }
 }
 
-message AddRequest {
+message AddUserRequest {
     string mobile = 1;
 }
 
-message AddResponse {
+message AddUserResponse {
+    Status status = 999;
+    string uuid = 1;
+}
+
+message BanUserResponse {
     Status status = 999;
     string uuid = 1;
 }
@@ -68,7 +73,7 @@ message GetRequest {
     string uuid = 1;
 }
 
-message BanRequest {
+message BanUserRequest {
     string uuid = 1;
     bool active = 2;
 }
@@ -78,7 +83,7 @@ message BanResponse {
     bool active = 2;
 }
 
-message FindRequest {
+message FindByMobileRequest {
     string mobile = 1;
 }
 
@@ -93,23 +98,25 @@ message UserProfile {
     string name = 3;
     string desc = 4;
     string logo = 5;
-    bool active = 6;
+    string districtId = 9;
+    ListURL images = 11;
+    bool active = 59;
 }
 
 
-
 message UpdateMyProfileRequest {
-    string name = 2;
-    string logo = 3;
-    string desc = 7;
-
-    bool isNameUpdate = 102;
-    bool isLogoUpdate = 103;
-    bool isDescUpdate = 107;
-
+    //只支持单项修改
+    oneof property {
+        string mobile = 2;
+        string name = 3;
+        string desc = 4;
+        string logo = 5;
+        string districtId = 9;
+        ListURL images = 11;
+        bool active = 59;
+    }
 }
 
 message UpdateMyProfileResponse {
     Status status = 999;
-    string uuid = 1; //user uuid
 }

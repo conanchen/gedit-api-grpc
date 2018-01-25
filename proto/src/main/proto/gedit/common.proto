@@ -193,6 +193,11 @@ enum AccountType {
     COUPON = 4; //优惠券
 }
 
+message ListURL {
+    repeated string urls = 11;
+}
+
+
 //行政区信息,参考http://lbs.amap.com/api/webservice/guide/api/district
 message District {
     string id = 1; //自定义编号，如100000表示中国,110000表示北京，尽量使用adcode的值来填充。
