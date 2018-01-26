@@ -48,7 +48,7 @@ message GetPaymentRequest {
 
 message ListPaymentRequest {
     //only called by manager
-    string payerUuid = 10; //支付人
+    string payerUuid = 10; //顾客
     string payeePaymentCode = 11; //收款码
     string payeeUuid = 12; //收款人（其实是店主）
     string payeeStoreUuid = 13; //收款店铺

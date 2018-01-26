@@ -104,7 +104,7 @@ message PreparePayerInappPaymentResponse {
 
 
 message CreatePayerInappPaymentRequest {
-    //only called by myself，即支付人是我
+    //only called by myself，即顾客是我
 
     string payeeCode = 13; //收银员的收款码
 

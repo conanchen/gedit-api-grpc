@@ -30,7 +30,7 @@ message PaymentCreatedEvent {
     //uuid unique
     string uuid = 1; //支付单编号 unique
 
-    string payerUuid = 11; //支付人
+    string payerUuid = 11; //顾客
     string payeeUuid = 12; //收款人
     string payeeStoreUuid = 13;
     string payeeWorkerUuid = 14;

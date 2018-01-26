@@ -1,0 +1,103 @@
+// Copyright 2015, gRPC Authors
+// All rights reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+syntax = "proto3";
+package gedit.payment;
+
+option java_multiple_files = true;
+option java_package = "com.github.conanchen.gedit.payee.inapp.grpc";
+option java_outer_classname = "PayeeInappProto";
+option objc_class_prefix = "PAYEEINAPP";
+
+import "gedit/common.proto";
+import "gedit/payment/payment_common.proto";
+
+// The payment payee service definition.
+// 顾客被扫模式支付，还未确定如何做？可能需要顾客在积分铺子中账户中充值才能做
+service PayeeInappApi {
+    //顾客被扫模式----START 收银员打开扫一扫    <------------> 顾客出示付款码 交互API
+    rpc GetMyPayerCode (GetMyPayerCodeRequest) returns (GetMyPayerCodeResponse) {
+        //only called by me,例如顾客app调用本api生成付款码供收银员扫码收款
+    }
+
+    rpc GetPayerCode (GetPayerCodeRequest) returns (GetPayerCodeResponse) {
+        //收银员端调用获取顾客付款码相关信息
+    }
+
+    rpc Prepare (PreparePayeeInappPaymentRequest) returns (PreparePayeeInappPaymentResponse) {
+        //only called by me, 收银员扫描顾客付款码后，如果收到一定金额将会获取多少积分返还、邀请顾客获取返还积分等信息
+    }
+
+    rpc Create (CreatePayeeInappPaymentRequest) returns (PaymentResponse) {
+        //only called by me, 收银员确定收款
+    }
+    //顾客被扫模式----END 收银员打开扫一扫    <------------> 顾客出示付款码 交互API
+}
+
+message GetMyPayerCodeRequest {
+}
+
+message GetMyPayerCodeResponse {
+    Status status = 999;
+    PayerCode payerCode = 1;
+}
+
+message PayerCode {
+    string payerCode = 1; //顾客付款码
+    int64 expiresIn = 3; //code的过期时间
+
+    string payerLogo = 7; //顾客logo
+    string payerName = 9; //顾客昵称
+
+}
+
+message GetPayerCodeRequest {
+    string payerCode = 13; //顾客付款码
+}
+
+message GetPayerCodeResponse {
+    Status status = 999;
+    PayerCode payerCode = 1;
+}
+
+message PreparePayeeInappPaymentRequest {
+    string payerCode = 13; //顾客付款码
+    int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
+    bool isPointsPay = 19; //是否使用积分抵扣一定金额
+}
+
+message PreparePayeeInappPaymentResponse {
+    Status status = 999;
+
+    string payerCode = 12; //顾客付款码
+    string payerName = 13; //顾客昵称
+
+    int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
+    int32 actualPay = 16; //实付金额
+    int32 pointsPay = 17; //实付积分代替金额
+    int32 pointsRepay = 18; //返还积分
+    bool isPointsPay = 19; //是否使用积分抵扣一定金额
+}
+
+message CreatePayeeInappPaymentRequest {
+    //only called by myself，即收款工作人员是我
+    string payerCode = 13; //顾客付款码
+
+    int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
+    int32 actualPay = 16; //实付金额
+    int32 pointsPay = 17; //实付积分代替金额
+    string payerIp = 18; //顾客客户端的实际ip地址
+    bool isPointsPay = 19; //是否使用积分抵扣一定金额
+
+}
