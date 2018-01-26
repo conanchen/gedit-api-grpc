@@ -24,7 +24,7 @@ import "gedit/common.proto";
 import "gedit/payment/payment_common.proto";
 
 // The payment payee service definition.
-// 顾客被扫模式支付，还未确定如何做？可能需要顾客在积分铺子中账户中充值才能做
+// 顾客被扫模式支付，还未确定如何做？可能需要顾客在积分铺子账户中充值才能做
 service PayeeInappApi {
     //顾客被扫模式----START 收银员打开扫一扫    <------------> 顾客出示付款码 交互API
     rpc GetMyPayerCode (GetMyPayerCodeRequest) returns (GetMyPayerCodeResponse) {
