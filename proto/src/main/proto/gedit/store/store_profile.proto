@@ -160,6 +160,8 @@ message StoreProfile {
     string detailAddress = 10;
     ListString photos = 11;
     string introducerUuid = 12;
+    ListString tels = 13;
+
 
     // 参照AMapLocation.java, 一下amapXXX字段与location配合做附近搜索使用
     //    AdCode:510107, AoiName=心族宾馆, BuildingId=, Street=人民南路四段, StreetNum=34号, District=武侯区, CityCode=028, City=成都市, Province=四川省, Country=中国
