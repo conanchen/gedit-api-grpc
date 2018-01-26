@@ -16,16 +16,16 @@ syntax = "proto3";
 package gedit.payment;
 
 option java_multiple_files = true;
-option java_package = "com.github.conanchen.gedit.payee.inapp.grpc";
-option java_outer_classname = "PayeeInappProto";
-option objc_class_prefix = "PAYEEINAPP";
+option java_package = "com.github.conanchen.gedit.payer.passiveinapp.grpc";
+option java_outer_classname = "PayerPassiveInappProto";
+option objc_class_prefix = "PayerPassiveInapp";
 
 import "gedit/common.proto";
 import "gedit/payment/payment_common.proto";
 
 // The payment payee service definition.
 // 顾客被扫模式支付，还未确定如何做？可能需要顾客在积分铺子账户中充值才能做
-service PayeeInappApi {
+service PayerPassiveInappApi {
     //顾客被扫模式----START 收银员打开扫一扫    <------------> 顾客出示付款码 交互API
     rpc GetMyPayerCode (GetMyPayerCodeRequest) returns (GetMyPayerCodeResponse) {
         //only called by me,例如顾客app调用本api生成付款码供收银员扫码收款

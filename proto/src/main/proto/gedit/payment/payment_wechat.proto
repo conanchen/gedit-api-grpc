@@ -16,15 +16,15 @@ syntax = "proto3";
 package gedit.payment;
 
 option java_multiple_files = true;
-option java_package = "com.github.conanchen.gedit.payment.wechat.grpc";
-option java_outer_classname = "PaymentWechatProto";
+option java_package = "com.github.conanchen.gedit.payer.wechat.grpc";
+option java_outer_classname = "PayerWechatProto";
 option objc_class_prefix = "PMWECHAT";
 
 import "gedit/common.proto";
 import "gedit/payment/payment_common.proto";
 
 // The payment wechat definition.
-service PaymentWechatApi {
+service PayerInWechatApi {
     //----START 收银员打开扫一扫    <------------> 顾客出示微信付款二维码 交互API
 
     rpc Prepare (PrepareWechatPaymentRequest) returns (PrepareWechatPaymentResponse) {

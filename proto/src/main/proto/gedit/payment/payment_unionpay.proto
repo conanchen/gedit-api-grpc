@@ -16,15 +16,15 @@ syntax = "proto3";
 package gedit.payment;
 
 option java_multiple_files = true;
-option java_package = "com.github.conanchen.gedit.payment.unionpay.grpc";
-option java_outer_classname = "PaymentUnionpayProto";
+option java_package = "com.github.conanchen.gedit.payer.unionpay.grpc";
+option java_outer_classname = "PayerUnionpayProto";
 option objc_class_prefix = "PMUNPAY";
 
 import "gedit/common.proto";
 import "gedit/payment/payment_common.proto";
 
 // The payment wechat definition.
-service PaymentUnionpayApi {
+service PayerInUnionpayApi {
     //----START 收银员打开扫一扫    <------------> 顾客出示银联付款二维码 交互API
 
     rpc Prepare (PrepareUnionpayPaymentRequest) returns (PrepareUnionpayPaymentResponse) {
