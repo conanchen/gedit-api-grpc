@@ -40,4 +40,6 @@ Content type: application/json
 
 The webhook will trigger a build for branches that you have previously used with JitPack. So make sure you have requested master-SNAPSHOT from JitPack before adding a webhook.
 
-					
+#objectc install
+$ git config --global http.proxy http://127.0.0.1:50312
+$ pod install
