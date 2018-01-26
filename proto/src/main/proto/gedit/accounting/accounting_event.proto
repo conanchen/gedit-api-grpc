@@ -20,8 +20,6 @@ option java_package = "com.github.conanchen.gedit.accounting.event.grpc";
 option java_outer_classname = "AccountingEventProto";
 option objc_class_prefix = "ACCEVT";
 
-import "gedit/common.proto";
-
 // The bonus service definition.
 //https://accountingexplained.com/financial/cycle/
 //https://medium.com/@RobertKhou/double-entry-accounting-in-a-relational-database-2b7838a5d7f8

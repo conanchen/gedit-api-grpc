@@ -24,7 +24,7 @@ service StoreWorkerApi {
     }
 
     rpc GetMyCurrentWorkinStore(GetMyCurrentWorkinStoreRequest) returns(WorkshipResponse){
-        //店员、收银员app端调用
+        //收银员app端调用
     }
 
     rpc Ban (BanWorkshipRequest) returns (WorkshipResponse) {

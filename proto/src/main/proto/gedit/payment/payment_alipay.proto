@@ -25,41 +25,47 @@ import "gedit/payment/payment_common.proto";
 
 // The payment wechat definition.
 service PaymentAlipayApi {
-    //----START 店员/收银员打开扫一扫    <------------> 顾客出示支付宝付款二维码 交互API
+    //----START 收银员打开扫一扫    <------------> 顾客出示支付宝付款二维码 交互API
 
     rpc Prepare (PreparAlipayPaymentRequest) returns (PrepareAlipayPaymentResponse) {
-        //only called by me, 顾客扫码店员/收银员的收款码后获取如果支付一定金额
+        //only called by me, 顾客扫码收银员的收款码后获取如果支付一定金额
     }
     rpc Create (CreateAlipayPaymentRequest) returns (PaymentResponse) {
         //only called by me, 顾客确定付款
     }
-    //----END 店员/收银员打开扫一扫    <------------> 顾客出示支付宝付款二维码 交互API
+    //----END 收银员打开扫一扫    <------------> 顾客出示支付宝付款二维码 交互API
 }
 
 
 
 message PreparAlipayPaymentRequest {
-    string payeePaymentCode = 13;
+    string payerCode = 11; //顾客的支付宝付款码
+    string payerMobile = 12;//顾客手机号
+
     int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
 }
 
 message PrepareAlipayPaymentResponse {
     Status status = 999;
 
-    PreparePayment preparePayment = 1;
-
-}
-
-message CreateAlipayPaymentRequest {
-    //only called by myself，即收款人是我
-    //payerUuid
-    string payerCode = 11; //顾客的付款码
-    string payeeUuid = 12; //收款人（其实是店主）
-    string payeeStoreUuid = 13; //收款店铺
-    string payeeWorkerUuid = 14; //收款员工
+    string payerCode = 11; //顾客的支付宝付款码
+    string payerMobile = 12;//顾客手机号
 
     int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
     int32 actualPay = 16; //实付金额
     int32 pointsPay = 17; //实付积分代替金额
-    string payerIp = 18; //付款人客户端的实际ip地址
+
+}
+
+message CreateAlipayPaymentRequest {
+    //only called by myself，即收银员是我
+
+    string payerCode = 11; //顾客的付款码
+    string payerMobile = 12;//顾客手机号
+
+    int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
+    int32 actualPay = 16; //实付金额
+    int32 pointsPay = 17; //实付积分代替金额
+
+    string payeeIp = 18; //收银员客户端的实际ip地址
 }

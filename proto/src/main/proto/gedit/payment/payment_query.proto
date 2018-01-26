@@ -20,7 +20,6 @@ option java_package = "com.github.conanchen.gedit.payment.query.grpc";
 option java_outer_classname = "PaymentQueryProto";
 option objc_class_prefix = "PMQRY";
 
-import "gedit/common.proto";
 import "gedit/payment/payment_common.proto";
 
 // The payment query service definition.
@@ -53,7 +52,7 @@ message ListPaymentRequest {
     string payeePaymentCode = 11; //收款码
     string payeeUuid = 12; //收款人（其实是店主）
     string payeeStoreUuid = 13; //收款店铺
-    string payeeWorkerUuid = 14; //收款员工
+    string payeeWorkerUuid = 14; //收银员
     bool isAnd = 24;
     int32 from = 100;
     int32 size = 101;

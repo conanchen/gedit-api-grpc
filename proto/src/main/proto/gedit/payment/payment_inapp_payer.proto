@@ -1,0 +1,119 @@
+// Copyright 2015, gRPC Authors
+// All rights reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+syntax = "proto3";
+package gedit.payment;
+
+option java_multiple_files = true;
+option java_package = "com.github.conanchen.gedit.payer.inapp.grpc";
+option java_outer_classname = "PayerInappProto";
+option objc_class_prefix = "PAYERINAPP";
+
+import "gedit/common.proto";
+import "gedit/payment/payment_common.proto";
+
+// The payment payer service definition.
+// 顾客主扫模式支付
+service PayerInappApi {
+    //顾客主扫模式----START 收银员收款出示二维码    <------------> 顾客扫码付款 交互API
+    rpc GetMyPayeeCode (GetMyPayeeCodeRequest) returns (GetMyPayeeCodeResponse) {
+        //only called by me,例如收银员app调用本api生成收款码供顾客扫码支付
+    }
+    rpc GetPayeeCode (GetPayeeCodeRequest) returns (GetPayeeCodeResponse) {
+        //顾客端调用获取收银员收款码相关信息
+    }
+
+    rpc Prepare (PreparePayerInappPaymentRequest) returns (PreparePayerInappPaymentResponse) {
+        //only called by me, 顾客扫码收银员的收款码后，如果支付一定金额将会获取多少积分返还等信息
+    }
+    rpc Create (CreatePayerInappPaymentRequest) returns (PaymentResponse) {
+        //only called by me, 顾客确定付款
+    }
+    //顾客主扫模式----END 收银员收款出示二维码    <------------> 顾客扫码付款 交互API
+}
+
+message GetMyPayeeCodeRequest {
+    string payeeStoreUuid = 1; //收款人工作的店铺
+}
+
+message GetMyPayeeCodeResponse {
+    //如果我不在这个店GetMyPayeeCodeRequest.payeeStoreUuid工作，status应说明错误原因
+    Status status = 999;
+    PayeeCode payeeCode = 1;
+}
+
+message PayeeCode {
+    string payeeCode = 1; //收银员的收款码
+    int64 expiresIn = 3; //code的过期时间
+
+    //以下为QRCode界面可能用到的提示用信息
+    string payeeUuid = 5; //收款人店主uuid
+    string payeeLogo = 7; //收款人店主logo
+    string payeeName = 9; //收款人店主昵称
+
+    string payeeStoreUuid = 13; //收银员工作店铺的uuid
+    string payeeStoreLogo = 15; //收银员工作店铺的logo
+    string payeeStoreNamee = 17; //收银员工作店铺的名称
+
+    string payeeWorkerUuid = 25; //收银员uuid
+    string payeeWorkerLogo = 27; //收银员logo
+    string payeeWorkerName = 29; //收银员昵称
+}
+
+message GetPayeeCodeRequest {
+    string payeeCode = 13; //收银员的收款码
+}
+
+message GetPayeeCodeResponse {
+    Status status = 999;
+    PayeeCode payeeCode = 1;
+}
+
+message PreparePayerInappPaymentRequest {
+    string payeeCode = 13; //收银员的收款码
+    int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
+    bool isPointsPay = 19; //是否使用积分抵扣一定金额
+}
+
+message PreparePayerInappPaymentResponse {
+    Status status = 999;
+
+    string payeeCode = 11; //收银员的收款码
+    string payeeName = 12; //收款人（其实是店主）昵称
+    string payeeStoreName = 13; //收款店铺名称
+    string payeeWorkerName = 14; //收银员昵称
+
+    int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
+    int32 actualPay = 16; //实付金额
+    int32 pointsPay = 17; //实付积分代替金额
+    int32 pointsRepay = 18; //返还积分
+    bool isPointsPay = 19; //是否使用积分抵扣一定金额
+
+}
+
+
+message CreatePayerInappPaymentRequest {
+    //only called by myself，即支付人是我
+
+    string payeeCode = 13; //收银员的收款码
+
+    int32 shouldPay = 15; //应付金额 = 实付金额 + 实付积分等价金额
+    int32 actualPay = 16; //实付金额
+    int32 pointsPay = 17; //实付积分代替金额
+    bool isPointsPay = 19; //是否使用积分抵扣一定金额
+
+    PaymentChannel paymentChannel = 26; //支付通道如支付宝、微信、云闪付
+    string payerIp = 30; //顾客客户端的实际ip地址
+
+}
