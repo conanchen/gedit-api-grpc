@@ -16,6 +16,9 @@ service StoreProfileApi {
     rpc Update (UpdateStoreRequest) returns (UpdateStoreResponse) {
     }
 
+    rpc UpsertWithAampPoi (UpsertWithAampPoiRequest) returns (UpsertWithAampPoiResponse) {
+    }
+
     rpc Get (GetStoreRequest) returns (StoreProfileResponse) {
     }
 
@@ -56,6 +59,38 @@ message CreateStoreResponse {
     string ownerUuid = 3;
 }
 
+message UpsertWithAampPoiRequest {
+    string id = 1; //e.g. "id": "B000A7I1TH", 对应StoreProfile.amapPoiId
+    string name = 2; //"name": "静园川菜",
+    string address = 3; //"address": "正义路东交民巷28号楼A座(首都宾馆北门)",
+    Location location = 4; //高德经纬度：e.g."location": "116.408056,39.902387",
+    //location.lat=39.902387 locatino.lon=116.408056
+    string tel = 5; //"tel": "010-65244156",
+    string adcode = 6; //"adcode": "110101",
+
+    //    "id": "B000A7I1TH",
+    //    "tag": "水煮肉,夫妻肺片,鱼香茄子,麻婆豆腐,樟茶鸭,毛血旺,宫保鸡丁,回锅肉,鱼头泡饼,土豆红烧肉,重庆口水鸡,蒜泥白肉,麻团,干煸红烧肉,腰肝合炒,牛蛙,干锅鲜茶树菇,水煮鱼,酱香鱼,四川冰粉,水煮鲶鱼,酸汤牛蛙,清蒸桂鱼,干烧魭鱼,醪糟汤圆",
+    //    "name": "静园川菜",
+    //    "type": "餐饮服务;中餐厅;四川菜(川菜)",
+    //    "typecode": "050102",
+    //    "biz_type": "diner",
+    //    "address": "正义路东交民巷28号楼A座(首都宾馆北门)",
+    //    "location": "116.408056,39.902387",
+    //    "tel": "010-65244156",
+    //    "postcode": [],
+    //    "website": [],
+    //    "email": [],
+    //    "pcode": "110000",
+    //    "pname": "北京市",
+    //    "citycode": "010",
+    //    "cityname": "北京市",
+    //    "adcode": "110101",
+    //    "adname": "东城区",
+}
+message UpsertWithAampPoiResponse {
+    Status status = 999;
+    string uuid = 1; //store uuid
+}
 
 message UpdateStoreRequest {
     string uuid = 1; //store uuid
@@ -72,6 +107,7 @@ message UpdateStoreRequest {
         ListURL images = 11;
         ListTel tels = 12;
         WorkingTime workingTime = 13;
+
         bool active = 59;
     }
 
@@ -130,6 +166,7 @@ message StoreProfile {
 
     // 参照AMapLocation.java, 一下amapXXX字段与location配合做附近搜索使用
     //    AdCode:510107, AoiName=心族宾馆, BuildingId=, Street=人民南路四段, StreetNum=34号, District=武侯区, CityCode=028, City=成都市, Province=四川省, Country=中国
+
     string amapAdCode = 20;
     string amapAoiName = 21;
     string amapBuildingId = 22;
@@ -140,12 +177,14 @@ message StoreProfile {
     string amapCity = 27;
     string amapProvince = 28;
     string amapCountry = 29;
+    string amapPoiId = 30; //amap poi id, 如"id": "B000A7I1TH",参照gedit-cloud-district微服务的poi样例poi110000.json
 
     bool active = 59;
 
     int32 from = 100;
 
 }
+
 message BanStoreRequest {
     string uuid = 1; //store uuid
     bool active = 2;
