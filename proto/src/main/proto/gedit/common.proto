@@ -193,10 +193,10 @@ enum AccountType {
     COUPON = 4; //优惠券
 }
 
-message ListURL {
-    repeated string urls = 11;
+message ListString {
+    //可以用来保存多个图片url、多个电话号码等
+    repeated string strs = 11;
 }
-
 
 //行政区信息,参考http://lbs.amap.com/api/webservice/guide/api/district
 message District {

@@ -104,8 +104,8 @@ message UpdateStoreRequest {
         double pointsRate = 8; //积分奖励率
         string districtUuid = 9;
         string detailAddress = 10;
-        ListURL images = 11;
-        ListTel tels = 12;
+        ListString photos = 11;
+        ListString tels = 12;
         WorkingTime workingTime = 13;
 
         bool active = 59;
@@ -116,9 +116,6 @@ message UpdateStoreRequest {
 message WorkingTime {
     int64 start = 1;
     int64 end = 2;
-}
-message ListTel {
-    repeated string urls = 11;
 }
 
 message UpdateStoreResponse {
@@ -161,7 +158,7 @@ message StoreProfile {
     double pointsRate = 8; //积分奖励率
     string districtUuid = 9;
     string detailAddress = 10;
-    repeated string images = 11;
+    ListString photos = 11;
     string introducerUuid = 12;
 
     // 参照AMapLocation.java, 一下amapXXX字段与location配合做附近搜索使用

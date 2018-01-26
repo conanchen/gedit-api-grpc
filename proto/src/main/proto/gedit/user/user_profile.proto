@@ -88,7 +88,7 @@ message UserProfile {
     string desc = 4;
     string logo = 5;
     string districtId = 9;
-    ListURL images = 11;
+    ListString photos = 11;
     bool active = 59;
 }
 
@@ -101,7 +101,7 @@ message UpdateMyProfileRequest {
         string desc = 4;
         string logo = 5;
         string districtId = 9;
-        ListURL images = 11;
+        ListString photos = 11;
         bool active = 59;
     }
 }
