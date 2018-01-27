@@ -84,7 +84,7 @@ message UserProfileResponse {
 message UserProfile {
     string uuid = 1;
     string mobile = 2;
-    string name = 3;
+    string username = 3;
     string desc = 4;
     string logo = 5;
     string districtId = 9;
@@ -97,7 +97,7 @@ message UpdateMyProfileRequest {
     //只支持单项修改
     oneof property {
         string mobile = 2;
-        string name = 3;
+        string username = 3;
         string desc = 4;
         string logo = 5;
         string districtId = 9;
