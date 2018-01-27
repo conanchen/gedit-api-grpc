@@ -100,7 +100,7 @@ message UpdateMyProfileRequest {
         string username = 3;
         string desc = 4;
         string logo = 5;
-        string districtId = 9;
+        string districtUuId = 9;
         ListString photos = 11;
         bool active = 59;
     }
