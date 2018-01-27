@@ -56,7 +56,7 @@ message RewardIfEvent {
     int32 pointsRepay = 12; //奖励项2：可获取多少积分返还
     //int32 xxxxRepay = 13; //奖励项3：xxxxxx
 
-    string comment = 18;
+    string comment = 20;
 }
 
 message IfPaymentCreatedEvent {
