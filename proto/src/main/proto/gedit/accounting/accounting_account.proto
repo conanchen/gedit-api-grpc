@@ -18,7 +18,7 @@ package gedit.accounting;
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.accounting.account.grpc";
 option java_outer_classname = "AccountingAccountProto";
-option objc_class_prefix = "ACCANT";
+option objc_class_prefix = "ACCNT";
 
 import "gedit/common.proto";
 

@@ -18,7 +18,7 @@ package gedit.accounting;
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.accounting.posting.grpc";
 option java_outer_classname = "AccountingPostingProto";
-option objc_class_prefix = "ACCPST";
+option objc_class_prefix = "ACCNT";
 
 import "gedit/common.proto";
 import "gedit/accounting/accounting_event.proto";
@@ -27,10 +27,6 @@ import "gedit/accounting/accounting_event.proto";
 //https://accountingexplained.com/financial/cycle/
 //https://medium.com/@RobertKhou/double-entry-accounting-in-a-relational-database-2b7838a5d7f8
 service AccountingPostingApi {
-
-    rpc QueryPostingsIfEvent (QueryPostingsIfEventRequest) returns (stream PostingIfEventResponse) {
-        //查询如果发生某种时间将会创建的postings，如用于在下单支付时候提示用户可以获取多少积分
-    }
 
     rpc GetPosting (GetPostingRequest) returns (PostingResponse) {
     }
@@ -43,16 +39,6 @@ service AccountingPostingApi {
     }
 
 }
-
-message QueryPostingsIfEventRequest {
-    oneof event {
-        PaymentCreatedEvent paymentCreatedEvent = 1;
-        UserVerifiedEvent userVerifiedEvent = 2;
-        StoreVerifiedEvent storeCreatedEvent = 3;
-    }
-}
-
-
 message ListPostingRequest {
     string userUuid = 11;
     //accountUuid+journalUuid unique
@@ -95,14 +81,3 @@ message Posting {
     int64 created = 15;
     string comment = 16;
 }
-
-message PostingIfEventResponse {
-    Status status = 999;
-
-    //查询如果发生某种事件将会创建的postings，如用于在下单支付时候提示用户可以获取多少积分
-    //表示如果event发生后，将在相应账户中产生对应的Posting如积分扣减、奖励、返还
-    string accountUuid = 12;
-    int32 amount = 14;
-    string comment = 16;
-}
-

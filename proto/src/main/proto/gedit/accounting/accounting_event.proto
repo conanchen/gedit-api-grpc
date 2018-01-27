@@ -18,7 +18,7 @@ package gedit.accounting;
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.accounting.event.grpc";
 option java_outer_classname = "AccountingEventProto";
-option objc_class_prefix = "ACCEVT";
+option objc_class_prefix = "ACCNT";
 
 // The bonus service definition.
 //https://accountingexplained.com/financial/cycle/
