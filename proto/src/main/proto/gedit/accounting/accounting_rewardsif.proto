@@ -67,7 +67,7 @@ message IfPaymentCreatedEvent {
     string payeeWorkerUuid = 14;
     int32 shouldpay = 15; //应付金额
 
-    string channel = 26; //支付通道如支付宝、微信、云闪付
+    PaymentChannel channel = 26; //支付通道如支付宝、微信、云闪付
 }
 
 message IfUserVerifiedEvent {
