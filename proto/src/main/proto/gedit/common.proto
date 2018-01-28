@@ -186,11 +186,11 @@ enum PaymentChannel {
 }
 
 enum AccountType {
-    CASH = 0; //现金
+    CASH = 0; //现金账户
     CURRENT_POINTS = 1; //可消费积分账户
     FIXED_POINTS = 2; //可兑换积分账户
-    REDPACK = 3; //红包
-    COUPON = 4; //优惠券
+    REDPACK = 3; //红包账户
+    COUPON = 4; //优惠券账户
 }
 
 message ListString {
