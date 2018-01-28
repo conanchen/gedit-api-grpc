@@ -140,3 +140,72 @@ pod install
 Test your example is working or not.
 
 ## Step7: Make your Pod [GDApiLibrary] Available in Public
+### Step 7a: Tagging
+```
+cd ~/gedit/gedit-api-grpc/grpc-objectivec/GDApiLibrary
+git tag ‘0.0.1’
+git push origin 0.0.1
+```
+The name of the tag should match s.version in your .podspec file. The next step will validate this.
+```
+Pod::Spec.new do |s|
+  s.name             = 'GDApiLibrary'
+  s.version          = '0.0.1'
+  s.summary          = 'Gedit API GDApiLibrary.'
+
+```
+
+Validate again with pod spec lint.
+```
+ConandeMacBook-Pro:GDApiLibrary conanchen$ pod spec lint GDApiLibrary.podspec
+
+ -> GDApiLibrary (0.0.1)
+
+Analyzed 1 podspec.
+
+GDApiLibrary.podspec passed validation.
+
+ConandeMacBook-Pro:GDApiLibrary conanchen$
+```
+### Step 7b: Push to Spec Repo, refer to step 1
+```
+ConandeMacBook-Pro:GDApiLibrary conanchen$ pod repo push gedit-specs GDApiLibrary.podspec
+
+Validating spec
+ -> GDApiLibrary (0.0.1)
+
+Updating the `gedit-specs' repo
+
+Already up to date.
+
+Adding the spec to the `gedit-specs' repo
+
+ - [Add] GDApiLibrary (0.0.1)
+
+Pushing the `gedit-specs' repo
+
+ConandeMacBook-Pro:GDApiLibrary conanchen$
+```
+### Step 7c: Now you can see that this pod repo is referenced in your spec repo (as shown below).
+```
+ConandeMacBook-Pro:GDApiLibrary conanchen$ cd ~/.cocoapods/repos/gedit-specs/GDApiLibrary/
+ConandeMacBook-Pro:GDApiLibrary conanchen$ ls
+0.0.1
+ConandeMacBook-Pro:GDApiLibrary conanchen$
+```
+## Step 8: Share It with Your Team
+### Step 8a: Ask teammembers to add the private repo [gedit-specs] to their local Cocoapods installation with the command:
+
+```
+pod repo add gedit-specs https://github.com/conanchen/gedit-specs.git
+
+```
+### Step 8b: edit Podfile
+```
+source 'https://github.com/conanchen/gedit-specs.git'
+
+target 'GDApiLibrary_Example' do
+    pod 'GDApiLibrary', '~> 0.0.1' 
+...
+```
+# Congratulations!
