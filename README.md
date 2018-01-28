@@ -55,7 +55,7 @@ $ pod install
   git config --global --unset https.proxy
   
   
-# https://medium.com/@shahabejaz/create-and-distribute-private-libraries-with-cocoapods-5b6507b57a03
+# [Create and Distribute Private Libraries with Cocoapods](https://medium.com/@shahabejaz/create-and-distribute-private-libraries-with-cocoapods-5b6507b57a03)
 ## Step 1: Create your [gedit-specs](https://github.com/conanchen/gedit-specs.git) Podspec Repository on Github  
 ```
  echo “# gedit-specs” >> README.md
