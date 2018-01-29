@@ -4,4 +4,5 @@
 /constants/build
 /grpc-java/build
 /grpc-javalite/build
-/proto/build
+/protos/build
+/helloworld

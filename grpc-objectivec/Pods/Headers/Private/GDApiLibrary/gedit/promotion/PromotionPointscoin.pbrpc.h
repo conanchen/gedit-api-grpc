@@ -1,0 +1,1 @@
+../../../../../GDApiLibrary/gedit/promotion/PromotionPointscoin.pbrpc.h

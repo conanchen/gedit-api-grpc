@@ -1,0 +1,1 @@
+../../../../../GDApiLibrary/gedit/product/CatalogMember.pbobjc.h

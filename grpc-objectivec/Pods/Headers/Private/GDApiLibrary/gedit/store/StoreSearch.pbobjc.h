@@ -1,0 +1,1 @@
+../../../../../GDApiLibrary/gedit/store/StoreSearch.pbobjc.h

@@ -1,5 +1,5 @@
 rootProject.name = 'gedit-api-grpc'
-include 'proto'
+include 'protos'
 include 'grpc-javalite'
 include 'grpc-java'
 

@@ -9,7 +9,7 @@ targetCompatibility = JavaVersion.VERSION_1_8
 
 
 dependencies {
-    protobuf project(':proto')
+    protobuf project(':protos')
     compile "io.grpc:grpc-protobuf-lite:$GRPC_VERSION"
     compile "io.grpc:grpc-stub:$GRPC_VERSION"
     testCompile "junit:junit:4.12"

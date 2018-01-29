@@ -1,0 +1,1 @@
+../../../../../GDApiLibrary/gedit/payment/PaymentAlipay.pbrpc.h

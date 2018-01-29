@@ -1,0 +1,1 @@
+../../../../../GDApiLibrary/gedit/payment/PaymentWechat.pbobjc.h

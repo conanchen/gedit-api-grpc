@@ -1,0 +1,1 @@
+../../../../../GDApiLibrary/gedit/promotion/PromotionInvestpayment.pbobjc.h

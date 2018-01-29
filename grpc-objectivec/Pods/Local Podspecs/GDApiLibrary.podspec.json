@@ -1,0 +1,60 @@
+{
+  "name": "GDApiLibrary",
+  "version": "0.0.1",
+  "license": "Apache License, Version 2.0",
+  "authors": {
+    "gRPC contributors": "grpc-io@googlegroups.com"
+  },
+  "homepage": "https://grpc.io/",
+  "summary": "HelloGDApi example",
+  "source": {
+    "git": "https://github.com/grpc/grpc.git"
+  },
+  "platforms": {
+    "ios": "7.1",
+    "osx": "10.9"
+  },
+  "dependencies": {
+    "!ProtoCompiler-gRPCPlugin": [
+      "~> 1.0"
+    ]
+  },
+  "prepare_command": "mkdir -p Pods/GDApiLibrary\nPods/!ProtoCompiler/protoc         --plugin=protoc-gen-grpc=Pods/!ProtoCompiler-gRPCPlugin/grpc_objective_c_plugin         --objc_out=Pods/GDApiLibrary         --grpc_out=Pods/GDApiLibrary         -I ../proto/src/main/proto         -I Pods/!ProtoCompiler         ../proto/src/main/proto/gedit/helloworld.proto         ../proto/src/main/proto/gedit/common.proto         ../proto/src/main/proto/gedit/**/*.proto",
+  "pod_target_xcconfig": {
+    "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1",
+    "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES": "YES"
+  },
+  "subspecs": [
+    {
+      "name": "Messages",
+      "source_files": [
+        "Pods/GDApiLibrary/*.pbobjc.{h,m}",
+        "Pods/GDApiLibrary/**/*.pbobjc.{h,m}"
+      ],
+      "header_mappings_dir": "Pods/GDApiLibrary",
+      "requires_arc": false,
+      "dependencies": {
+        "Protobuf": [
+
+        ]
+      }
+    },
+    {
+      "name": "Services",
+      "source_files": [
+        "Pods/GDApiLibrary/*.pbrpc.{h,m}",
+        "Pods/GDApiLibrary/**/*.pbrpc.{h,m}"
+      ],
+      "header_mappings_dir": "Pods/GDApiLibrary",
+      "requires_arc": true,
+      "dependencies": {
+        "gRPC-ProtoRPC": [
+
+        ],
+        "GDApiLibrary/Messages": [
+
+        ]
+      }
+    }
+  ]
+}
