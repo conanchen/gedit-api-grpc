@@ -62,6 +62,7 @@ message FanshipResponse {
 }
 
 message Fanship {
+    int32 from = 100;
     string parentUuid = 1;
     string parentName = 11;
     string fanUuid = 2;
