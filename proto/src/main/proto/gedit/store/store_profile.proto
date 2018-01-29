@@ -31,11 +31,11 @@ service StoreProfileApi {
 }
 
 message CreateStoreRequest {
-    //创建店铺需提供名称、地理位置、行政区编号、详细地址，其他内容通过单项修改完善
+    //创建店铺需提供 名称、详细地址、店推手机号、地理位置，其他内容通过单项修改完善
     string name = 1; //unique
     string detailAddress = 2;
     string introducerMobile = 4; //服务器会验证手机号存不存在，如果验证成功，将设置storeprofile.introducerUuid为手机号对应的人的uuid
-    Location location = 6;
+    Location location = 6; //调用高德sdk自动获取
 
     // 参照AMapLocation.java, 一下amapXXX字段与location配合做附近搜索使用
     //    AdCode:510107, AoiName=心族宾馆, BuildingId=, Street=人民南路四段, StreetNum=34号, District=武侯区, CityCode=028, City=成都市, Province=四川省, Country=中国
