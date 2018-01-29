@@ -8,10 +8,10 @@
 #import <RxLibrary/GRXWriter.h>
 
 #if GPB_GRPC_FORWARD_DECLARE_MESSAGE_PROTO
-  @class PMCOMMPaymentResponse;
-  @class PMUNPAYCreateUnionpayPaymentRequest;
-  @class PMUNPAYPrepareUnionpayPaymentRequest;
-  @class PMUNPAYPrepareUnionpayPaymentResponse;
+  @class GDACreateUnionpayPaymentRequest;
+  @class GDAPaymentResponse;
+  @class GDAPrepareUnionpayPaymentRequest;
+  @class GDAPrepareUnionpayPaymentResponse;
 #else
   #import "gedit/Common.pbobjc.h"
   #import "gedit/payment/PaymentCommon.pbobjc.h"
@@ -20,19 +20,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol PMUNPAYPayerInUnionpayApi <NSObject>
+@protocol GDAPayerInUnionpayApi <NSObject>
 
 #pragma mark Prepare(PrepareUnionpayPaymentRequest) returns (PrepareUnionpayPaymentResponse)
 
 /**
  * only called by me, 顾客扫码收银员的收款码后获取如果支付一定金额
  */
-- (void)prepareWithRequest:(PMUNPAYPrepareUnionpayPaymentRequest *)request handler:(void(^)(PMUNPAYPrepareUnionpayPaymentResponse *_Nullable response, NSError *_Nullable error))handler;
+- (void)prepareWithRequest:(GDAPrepareUnionpayPaymentRequest *)request handler:(void(^)(GDAPrepareUnionpayPaymentResponse *_Nullable response, NSError *_Nullable error))handler;
 
 /**
  * only called by me, 顾客扫码收银员的收款码后获取如果支付一定金额
  */
-- (GRPCProtoCall *)RPCToPrepareWithRequest:(PMUNPAYPrepareUnionpayPaymentRequest *)request handler:(void(^)(PMUNPAYPrepareUnionpayPaymentResponse *_Nullable response, NSError *_Nullable error))handler;
+- (GRPCProtoCall *)RPCToPrepareWithRequest:(GDAPrepareUnionpayPaymentRequest *)request handler:(void(^)(GDAPrepareUnionpayPaymentResponse *_Nullable response, NSError *_Nullable error))handler;
 
 
 #pragma mark Create(CreateUnionpayPaymentRequest) returns (PaymentResponse)
@@ -40,12 +40,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * only called by me, 顾客确定付款
  */
-- (void)createWithRequest:(PMUNPAYCreateUnionpayPaymentRequest *)request handler:(void(^)(PMCOMMPaymentResponse *_Nullable response, NSError *_Nullable error))handler;
+- (void)createWithRequest:(GDACreateUnionpayPaymentRequest *)request handler:(void(^)(GDAPaymentResponse *_Nullable response, NSError *_Nullable error))handler;
 
 /**
  * only called by me, 顾客确定付款
  */
-- (GRPCProtoCall *)RPCToCreateWithRequest:(PMUNPAYCreateUnionpayPaymentRequest *)request handler:(void(^)(PMCOMMPaymentResponse *_Nullable response, NSError *_Nullable error))handler;
+- (GRPCProtoCall *)RPCToCreateWithRequest:(GDACreateUnionpayPaymentRequest *)request handler:(void(^)(GDAPaymentResponse *_Nullable response, NSError *_Nullable error))handler;
 
 
 @end
@@ -54,7 +54,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Basic service implementation, over gRPC, that only does
  * marshalling and parsing.
  */
-@interface PMUNPAYPayerInUnionpayApi : GRPCProtoService<PMUNPAYPayerInUnionpayApi>
+@interface GDAPayerInUnionpayApi : GRPCProtoService<GDAPayerInUnionpayApi>
 - (instancetype)initWithHost:(NSString *)host NS_DESIGNATED_INITIALIZER;
 + (instancetype)serviceWithHost:(NSString *)host;
 @end

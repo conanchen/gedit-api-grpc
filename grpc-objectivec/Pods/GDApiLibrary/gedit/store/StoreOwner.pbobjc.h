@@ -27,13 +27,13 @@
 
 CF_EXTERN_C_BEGIN
 
-@class COMMONLocation;
-@class COMMONStatus;
-@class STOWNOwnership;
+@class GDALocation;
+@class GDAOwnership;
+@class GDAStatus;
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - STOWNStoreOwnerRoot
+#pragma mark - GDAStoreOwnerRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -45,17 +45,17 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface STOWNStoreOwnerRoot : GPBRootObject
+@interface GDAStoreOwnerRoot : GPBRootObject
 @end
 
-#pragma mark - STOWNTransferOwnershipRequest
+#pragma mark - GDATransferOwnershipRequest
 
-typedef GPB_ENUM(STOWNTransferOwnershipRequest_FieldNumber) {
-  STOWNTransferOwnershipRequest_FieldNumber_StoreUuid = 1,
-  STOWNTransferOwnershipRequest_FieldNumber_UserUuid = 3,
+typedef GPB_ENUM(GDATransferOwnershipRequest_FieldNumber) {
+  GDATransferOwnershipRequest_FieldNumber_StoreUuid = 1,
+  GDATransferOwnershipRequest_FieldNumber_UserUuid = 3,
 };
 
-@interface STOWNTransferOwnershipRequest : GPBMessage
+@interface GDATransferOwnershipRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *storeUuid;
 
@@ -63,15 +63,15 @@ typedef GPB_ENUM(STOWNTransferOwnershipRequest_FieldNumber) {
 
 @end
 
-#pragma mark - STOWNListOwnershipByOwnerRequest
+#pragma mark - GDAListOwnershipByOwnerRequest
 
-typedef GPB_ENUM(STOWNListOwnershipByOwnerRequest_FieldNumber) {
-  STOWNListOwnershipByOwnerRequest_FieldNumber_OwnerUuid = 3,
-  STOWNListOwnershipByOwnerRequest_FieldNumber_From = 100,
-  STOWNListOwnershipByOwnerRequest_FieldNumber_Size = 101,
+typedef GPB_ENUM(GDAListOwnershipByOwnerRequest_FieldNumber) {
+  GDAListOwnershipByOwnerRequest_FieldNumber_OwnerUuid = 3,
+  GDAListOwnershipByOwnerRequest_FieldNumber_From = 100,
+  GDAListOwnershipByOwnerRequest_FieldNumber_Size = 101,
 };
 
-@interface STOWNListOwnershipByOwnerRequest : GPBMessage
+@interface GDAListOwnershipByOwnerRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *ownerUuid;
 
@@ -81,45 +81,45 @@ typedef GPB_ENUM(STOWNListOwnershipByOwnerRequest_FieldNumber) {
 
 @end
 
-#pragma mark - STOWNListMyStoreRequest
+#pragma mark - GDAListMyStoreRequest
 
-typedef GPB_ENUM(STOWNListMyStoreRequest_FieldNumber) {
-  STOWNListMyStoreRequest_FieldNumber_LastUpdated = 1,
+typedef GPB_ENUM(GDAListMyStoreRequest_FieldNumber) {
+  GDAListMyStoreRequest_FieldNumber_LastUpdated = 1,
 };
 
-@interface STOWNListMyStoreRequest : GPBMessage
+@interface GDAListMyStoreRequest : GPBMessage
 
 @property(nonatomic, readwrite) int64_t lastUpdated;
 
 @end
 
-#pragma mark - STOWNFindOwnerByStoreRequest
+#pragma mark - GDAFindOwnerByStoreRequest
 
-typedef GPB_ENUM(STOWNFindOwnerByStoreRequest_FieldNumber) {
-  STOWNFindOwnerByStoreRequest_FieldNumber_StoreUuid = 1,
+typedef GPB_ENUM(GDAFindOwnerByStoreRequest_FieldNumber) {
+  GDAFindOwnerByStoreRequest_FieldNumber_StoreUuid = 1,
 };
 
-@interface STOWNFindOwnerByStoreRequest : GPBMessage
+@interface GDAFindOwnerByStoreRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *storeUuid;
 
 @end
 
-#pragma mark - STOWNOwnershipResponse
+#pragma mark - GDAOwnershipResponse
 
-typedef GPB_ENUM(STOWNOwnershipResponse_FieldNumber) {
-  STOWNOwnershipResponse_FieldNumber_Ownership = 1,
-  STOWNOwnershipResponse_FieldNumber_From = 100,
-  STOWNOwnershipResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAOwnershipResponse_FieldNumber) {
+  GDAOwnershipResponse_FieldNumber_Ownership = 1,
+  GDAOwnershipResponse_FieldNumber_From = 100,
+  GDAOwnershipResponse_FieldNumber_Status = 999,
 };
 
-@interface STOWNOwnershipResponse : GPBMessage
+@interface GDAOwnershipResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
-@property(nonatomic, readwrite, strong, null_resettable) STOWNOwnership *ownership;
+@property(nonatomic, readwrite, strong, null_resettable) GDAOwnership *ownership;
 /** Test to see if @c ownership has been set. */
 @property(nonatomic, readwrite) BOOL hasOwnership;
 
@@ -127,20 +127,20 @@ typedef GPB_ENUM(STOWNOwnershipResponse_FieldNumber) {
 
 @end
 
-#pragma mark - STOWNOwnership
+#pragma mark - GDAOwnership
 
-typedef GPB_ENUM(STOWNOwnership_FieldNumber) {
-  STOWNOwnership_FieldNumber_UserUuid = 1,
-  STOWNOwnership_FieldNumber_StoreUuid = 5,
-  STOWNOwnership_FieldNumber_StoreName = 7,
-  STOWNOwnership_FieldNumber_StoreLogo = 9,
-  STOWNOwnership_FieldNumber_Location = 11,
-  STOWNOwnership_FieldNumber_Active = 27,
-  STOWNOwnership_FieldNumber_Created = 29,
-  STOWNOwnership_FieldNumber_LastUpdated = 30,
+typedef GPB_ENUM(GDAOwnership_FieldNumber) {
+  GDAOwnership_FieldNumber_UserUuid = 1,
+  GDAOwnership_FieldNumber_StoreUuid = 5,
+  GDAOwnership_FieldNumber_StoreName = 7,
+  GDAOwnership_FieldNumber_StoreLogo = 9,
+  GDAOwnership_FieldNumber_Location = 11,
+  GDAOwnership_FieldNumber_Active = 27,
+  GDAOwnership_FieldNumber_Created = 29,
+  GDAOwnership_FieldNumber_LastUpdated = 30,
 };
 
-@interface STOWNOwnership : GPBMessage
+@interface GDAOwnership : GPBMessage
 
 /** 我的 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *userUuid;
@@ -151,7 +151,7 @@ typedef GPB_ENUM(STOWNOwnership_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *storeLogo;
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONLocation *location;
+@property(nonatomic, readwrite, strong, null_resettable) GDALocation *location;
 /** Test to see if @c location has been set. */
 @property(nonatomic, readwrite) BOOL hasLocation;
 

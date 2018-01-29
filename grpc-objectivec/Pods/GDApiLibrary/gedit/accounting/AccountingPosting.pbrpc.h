@@ -8,10 +8,10 @@
 #import <RxLibrary/GRXWriter.h>
 
 #if GPB_GRPC_FORWARD_DECLARE_MESSAGE_PROTO
-  @class ACCNTGetPostingRequest;
-  @class ACCNTListMyPostingRequest;
-  @class ACCNTListPostingRequest;
-  @class ACCNTPostingResponse;
+  @class GDAGetPostingRequest;
+  @class GDAListMyPostingRequest;
+  @class GDAListPostingRequest;
+  @class GDAPostingResponse;
 #else
   #import "gedit/Common.pbobjc.h"
   #import "gedit/accounting/AccountingEvent.pbobjc.h"
@@ -20,27 +20,27 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol ACCNTAccountingPostingApi <NSObject>
+@protocol GDAAccountingPostingApi <NSObject>
 
 #pragma mark GetPosting(GetPostingRequest) returns (PostingResponse)
 
-- (void)getPostingWithRequest:(ACCNTGetPostingRequest *)request handler:(void(^)(ACCNTPostingResponse *_Nullable response, NSError *_Nullable error))handler;
+- (void)getPostingWithRequest:(GDAGetPostingRequest *)request handler:(void(^)(GDAPostingResponse *_Nullable response, NSError *_Nullable error))handler;
 
-- (GRPCProtoCall *)RPCToGetPostingWithRequest:(ACCNTGetPostingRequest *)request handler:(void(^)(ACCNTPostingResponse *_Nullable response, NSError *_Nullable error))handler;
+- (GRPCProtoCall *)RPCToGetPostingWithRequest:(GDAGetPostingRequest *)request handler:(void(^)(GDAPostingResponse *_Nullable response, NSError *_Nullable error))handler;
 
 
 #pragma mark ListPosting(ListPostingRequest) returns (stream PostingResponse)
 
-- (void)listPostingWithRequest:(ACCNTListPostingRequest *)request eventHandler:(void(^)(BOOL done, ACCNTPostingResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (void)listPostingWithRequest:(GDAListPostingRequest *)request eventHandler:(void(^)(BOOL done, GDAPostingResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
-- (GRPCProtoCall *)RPCToListPostingWithRequest:(ACCNTListPostingRequest *)request eventHandler:(void(^)(BOOL done, ACCNTPostingResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (GRPCProtoCall *)RPCToListPostingWithRequest:(GDAListPostingRequest *)request eventHandler:(void(^)(BOOL done, GDAPostingResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
 
 #pragma mark ListMyPosting(ListMyPostingRequest) returns (stream PostingResponse)
 
-- (void)listMyPostingWithRequest:(ACCNTListMyPostingRequest *)request eventHandler:(void(^)(BOOL done, ACCNTPostingResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (void)listMyPostingWithRequest:(GDAListMyPostingRequest *)request eventHandler:(void(^)(BOOL done, GDAPostingResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
-- (GRPCProtoCall *)RPCToListMyPostingWithRequest:(ACCNTListMyPostingRequest *)request eventHandler:(void(^)(BOOL done, ACCNTPostingResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (GRPCProtoCall *)RPCToListMyPostingWithRequest:(GDAListMyPostingRequest *)request eventHandler:(void(^)(BOOL done, GDAPostingResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
 
 @end
@@ -49,7 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Basic service implementation, over gRPC, that only does
  * marshalling and parsing.
  */
-@interface ACCNTAccountingPostingApi : GRPCProtoService<ACCNTAccountingPostingApi>
+@interface GDAAccountingPostingApi : GRPCProtoService<GDAAccountingPostingApi>
 - (instancetype)initWithHost:(NSString *)host NS_DESIGNATED_INITIALIZER;
 + (instancetype)serviceWithHost:(NSString *)host;
 @end

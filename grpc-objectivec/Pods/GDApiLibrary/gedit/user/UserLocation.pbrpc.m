@@ -5,7 +5,7 @@
 #import <RxLibrary/GRXWriter+Immediate.h>
 #import "gedit/Common.pbobjc.h"
 
-@implementation USRLOCUserLocationApi
+@implementation GDAUserLocationApi
 
 // Designated initializer
 - (instancetype)initWithHost:(NSString *)host {
@@ -26,14 +26,14 @@
 
 #pragma mark UpdateMyLocation(UpdateMyLocationRequest) returns (UpdateMyLocationResponse)
 
-- (void)updateMyLocationWithRequest:(USRLOCUpdateMyLocationRequest *)request handler:(void(^)(USRLOCUpdateMyLocationResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)updateMyLocationWithRequest:(GDAUpdateMyLocationRequest *)request handler:(void(^)(GDAUpdateMyLocationResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToUpdateMyLocationWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToUpdateMyLocationWithRequest:(USRLOCUpdateMyLocationRequest *)request handler:(void(^)(USRLOCUpdateMyLocationResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToUpdateMyLocationWithRequest:(GDAUpdateMyLocationRequest *)request handler:(void(^)(GDAUpdateMyLocationResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"UpdateMyLocation"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[USRLOCUpdateMyLocationResponse class]
+             responseClass:[GDAUpdateMyLocationResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 @end

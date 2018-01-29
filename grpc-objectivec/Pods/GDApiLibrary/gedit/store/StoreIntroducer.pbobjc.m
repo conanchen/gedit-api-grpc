@@ -20,42 +20,42 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-#pragma mark - STIDCStoreIntroducerRoot
+#pragma mark - GDAStoreIntroducerRoot
 
-@implementation STIDCStoreIntroducerRoot
+@implementation GDAStoreIntroducerRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - STIDCStoreIntroducerRoot_FileDescriptor
+#pragma mark - GDAStoreIntroducerRoot_FileDescriptor
 
-static GPBFileDescriptor *STIDCStoreIntroducerRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDAStoreIntroducerRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.store"
-                                                 objcPrefix:@"STIDC"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - STIDCAddIntroducershipRequest
+#pragma mark - GDAAddIntroducershipRequest
 
-@implementation STIDCAddIntroducershipRequest
+@implementation GDAAddIntroducershipRequest
 
 @dynamic storeUuid;
 @dynamic introducerUuid;
 
-typedef struct STIDCAddIntroducershipRequest__storage_ {
+typedef struct GDAAddIntroducershipRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *storeUuid;
   NSString *introducerUuid;
-} STIDCAddIntroducershipRequest__storage_;
+} GDAAddIntroducershipRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -66,29 +66,29 @@ typedef struct STIDCAddIntroducershipRequest__storage_ {
       {
         .name = "storeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STIDCAddIntroducershipRequest_FieldNumber_StoreUuid,
+        .number = GDAAddIntroducershipRequest_FieldNumber_StoreUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STIDCAddIntroducershipRequest__storage_, storeUuid),
+        .offset = (uint32_t)offsetof(GDAAddIntroducershipRequest__storage_, storeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "introducerUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STIDCAddIntroducershipRequest_FieldNumber_IntroducerUuid,
+        .number = GDAAddIntroducershipRequest_FieldNumber_IntroducerUuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STIDCAddIntroducershipRequest__storage_, introducerUuid),
+        .offset = (uint32_t)offsetof(GDAAddIntroducershipRequest__storage_, introducerUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STIDCAddIntroducershipRequest class]
-                                     rootClass:[STIDCStoreIntroducerRoot class]
-                                          file:STIDCStoreIntroducerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAAddIntroducershipRequest class]
+                                     rootClass:[GDAStoreIntroducerRoot class]
+                                          file:GDAStoreIntroducerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STIDCAddIntroducershipRequest__storage_)
+                                   storageSize:sizeof(GDAAddIntroducershipRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -103,20 +103,20 @@ typedef struct STIDCAddIntroducershipRequest__storage_ {
 
 @end
 
-#pragma mark - STIDCListIntroducershipByStoreRequest
+#pragma mark - GDAListIntroducershipByStoreRequest
 
-@implementation STIDCListIntroducershipByStoreRequest
+@implementation GDAListIntroducershipByStoreRequest
 
 @dynamic storeUuid;
 @dynamic from;
 @dynamic size;
 
-typedef struct STIDCListIntroducershipByStoreRequest__storage_ {
+typedef struct GDAListIntroducershipByStoreRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t from;
   int32_t size;
   NSString *storeUuid;
-} STIDCListIntroducershipByStoreRequest__storage_;
+} GDAListIntroducershipByStoreRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -127,38 +127,38 @@ typedef struct STIDCListIntroducershipByStoreRequest__storage_ {
       {
         .name = "storeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STIDCListIntroducershipByStoreRequest_FieldNumber_StoreUuid,
+        .number = GDAListIntroducershipByStoreRequest_FieldNumber_StoreUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STIDCListIntroducershipByStoreRequest__storage_, storeUuid),
+        .offset = (uint32_t)offsetof(GDAListIntroducershipByStoreRequest__storage_, storeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "from",
         .dataTypeSpecific.className = NULL,
-        .number = STIDCListIntroducershipByStoreRequest_FieldNumber_From,
+        .number = GDAListIntroducershipByStoreRequest_FieldNumber_From,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STIDCListIntroducershipByStoreRequest__storage_, from),
+        .offset = (uint32_t)offsetof(GDAListIntroducershipByStoreRequest__storage_, from),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "size",
         .dataTypeSpecific.className = NULL,
-        .number = STIDCListIntroducershipByStoreRequest_FieldNumber_Size,
+        .number = GDAListIntroducershipByStoreRequest_FieldNumber_Size,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(STIDCListIntroducershipByStoreRequest__storage_, size),
+        .offset = (uint32_t)offsetof(GDAListIntroducershipByStoreRequest__storage_, size),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STIDCListIntroducershipByStoreRequest class]
-                                     rootClass:[STIDCStoreIntroducerRoot class]
-                                          file:STIDCStoreIntroducerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListIntroducershipByStoreRequest class]
+                                     rootClass:[GDAStoreIntroducerRoot class]
+                                          file:GDAStoreIntroducerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STIDCListIntroducershipByStoreRequest__storage_)
+                                   storageSize:sizeof(GDAListIntroducershipByStoreRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -173,16 +173,16 @@ typedef struct STIDCListIntroducershipByStoreRequest__storage_ {
 
 @end
 
-#pragma mark - STIDCListMyIntroducedStoreRequest
+#pragma mark - GDAListMyIntroducedStoreRequest
 
-@implementation STIDCListMyIntroducedStoreRequest
+@implementation GDAListMyIntroducedStoreRequest
 
 @dynamic lastUpdated;
 
-typedef struct STIDCListMyIntroducedStoreRequest__storage_ {
+typedef struct GDAListMyIntroducedStoreRequest__storage_ {
   uint32_t _has_storage_[1];
   int64_t lastUpdated;
-} STIDCListMyIntroducedStoreRequest__storage_;
+} GDAListMyIntroducedStoreRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -193,20 +193,20 @@ typedef struct STIDCListMyIntroducedStoreRequest__storage_ {
       {
         .name = "lastUpdated",
         .dataTypeSpecific.className = NULL,
-        .number = STIDCListMyIntroducedStoreRequest_FieldNumber_LastUpdated,
+        .number = GDAListMyIntroducedStoreRequest_FieldNumber_LastUpdated,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STIDCListMyIntroducedStoreRequest__storage_, lastUpdated),
+        .offset = (uint32_t)offsetof(GDAListMyIntroducedStoreRequest__storage_, lastUpdated),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STIDCListMyIntroducedStoreRequest class]
-                                     rootClass:[STIDCStoreIntroducerRoot class]
-                                          file:STIDCStoreIntroducerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListMyIntroducedStoreRequest class]
+                                     rootClass:[GDAStoreIntroducerRoot class]
+                                          file:GDAStoreIntroducerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STIDCListMyIntroducedStoreRequest__storage_)
+                                   storageSize:sizeof(GDAListMyIntroducedStoreRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -221,20 +221,20 @@ typedef struct STIDCListMyIntroducedStoreRequest__storage_ {
 
 @end
 
-#pragma mark - STIDCListIntroducershipByIntroducerRequest
+#pragma mark - GDAListIntroducershipByIntroducerRequest
 
-@implementation STIDCListIntroducershipByIntroducerRequest
+@implementation GDAListIntroducershipByIntroducerRequest
 
 @dynamic introducerUuid;
 @dynamic from;
 @dynamic size;
 
-typedef struct STIDCListIntroducershipByIntroducerRequest__storage_ {
+typedef struct GDAListIntroducershipByIntroducerRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t from;
   int32_t size;
   NSString *introducerUuid;
-} STIDCListIntroducershipByIntroducerRequest__storage_;
+} GDAListIntroducershipByIntroducerRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -245,38 +245,38 @@ typedef struct STIDCListIntroducershipByIntroducerRequest__storage_ {
       {
         .name = "introducerUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STIDCListIntroducershipByIntroducerRequest_FieldNumber_IntroducerUuid,
+        .number = GDAListIntroducershipByIntroducerRequest_FieldNumber_IntroducerUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STIDCListIntroducershipByIntroducerRequest__storage_, introducerUuid),
+        .offset = (uint32_t)offsetof(GDAListIntroducershipByIntroducerRequest__storage_, introducerUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "from",
         .dataTypeSpecific.className = NULL,
-        .number = STIDCListIntroducershipByIntroducerRequest_FieldNumber_From,
+        .number = GDAListIntroducershipByIntroducerRequest_FieldNumber_From,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STIDCListIntroducershipByIntroducerRequest__storage_, from),
+        .offset = (uint32_t)offsetof(GDAListIntroducershipByIntroducerRequest__storage_, from),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "size",
         .dataTypeSpecific.className = NULL,
-        .number = STIDCListIntroducershipByIntroducerRequest_FieldNumber_Size,
+        .number = GDAListIntroducershipByIntroducerRequest_FieldNumber_Size,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(STIDCListIntroducershipByIntroducerRequest__storage_, size),
+        .offset = (uint32_t)offsetof(GDAListIntroducershipByIntroducerRequest__storage_, size),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STIDCListIntroducershipByIntroducerRequest class]
-                                     rootClass:[STIDCStoreIntroducerRoot class]
-                                          file:STIDCStoreIntroducerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListIntroducershipByIntroducerRequest class]
+                                     rootClass:[GDAStoreIntroducerRoot class]
+                                          file:GDAStoreIntroducerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STIDCListIntroducershipByIntroducerRequest__storage_)
+                                   storageSize:sizeof(GDAListIntroducershipByIntroducerRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -291,20 +291,20 @@ typedef struct STIDCListIntroducershipByIntroducerRequest__storage_ {
 
 @end
 
-#pragma mark - STIDCIntroducershipResponse
+#pragma mark - GDAIntroducershipResponse
 
-@implementation STIDCIntroducershipResponse
+@implementation GDAIntroducershipResponse
 
 @dynamic hasStatus, status;
 @dynamic hasIntroducership, introducership;
 @dynamic from;
 
-typedef struct STIDCIntroducershipResponse__storage_ {
+typedef struct GDAIntroducershipResponse__storage_ {
   uint32_t _has_storage_[1];
   int32_t from;
-  STIDCIntroducership *introducership;
-  COMMONStatus *status;
-} STIDCIntroducershipResponse__storage_;
+  GDAIntroducership *introducership;
+  GDAStatus *status;
+} GDAIntroducershipResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -314,39 +314,39 @@ typedef struct STIDCIntroducershipResponse__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "introducership",
-        .dataTypeSpecific.className = GPBStringifySymbol(STIDCIntroducership),
-        .number = STIDCIntroducershipResponse_FieldNumber_Introducership,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAIntroducership),
+        .number = GDAIntroducershipResponse_FieldNumber_Introducership,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STIDCIntroducershipResponse__storage_, introducership),
+        .offset = (uint32_t)offsetof(GDAIntroducershipResponse__storage_, introducership),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "from",
         .dataTypeSpecific.className = NULL,
-        .number = STIDCIntroducershipResponse_FieldNumber_From,
+        .number = GDAIntroducershipResponse_FieldNumber_From,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(STIDCIntroducershipResponse__storage_, from),
+        .offset = (uint32_t)offsetof(GDAIntroducershipResponse__storage_, from),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = STIDCIntroducershipResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDAIntroducershipResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STIDCIntroducershipResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDAIntroducershipResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STIDCIntroducershipResponse class]
-                                     rootClass:[STIDCStoreIntroducerRoot class]
-                                          file:STIDCStoreIntroducerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAIntroducershipResponse class]
+                                     rootClass:[GDAStoreIntroducerRoot class]
+                                          file:GDAStoreIntroducerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STIDCIntroducershipResponse__storage_)
+                                   storageSize:sizeof(GDAIntroducershipResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -356,19 +356,19 @@ typedef struct STIDCIntroducershipResponse__storage_ {
 
 @end
 
-#pragma mark - STIDCBanIntroducershipRequest
+#pragma mark - GDABanIntroducershipRequest
 
-@implementation STIDCBanIntroducershipRequest
+@implementation GDABanIntroducershipRequest
 
 @dynamic introducerUuid;
 @dynamic storeUuid;
 @dynamic active;
 
-typedef struct STIDCBanIntroducershipRequest__storage_ {
+typedef struct GDABanIntroducershipRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *introducerUuid;
   NSString *storeUuid;
-} STIDCBanIntroducershipRequest__storage_;
+} GDABanIntroducershipRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -379,25 +379,25 @@ typedef struct STIDCBanIntroducershipRequest__storage_ {
       {
         .name = "introducerUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STIDCBanIntroducershipRequest_FieldNumber_IntroducerUuid,
+        .number = GDABanIntroducershipRequest_FieldNumber_IntroducerUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STIDCBanIntroducershipRequest__storage_, introducerUuid),
+        .offset = (uint32_t)offsetof(GDABanIntroducershipRequest__storage_, introducerUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "storeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STIDCBanIntroducershipRequest_FieldNumber_StoreUuid,
+        .number = GDABanIntroducershipRequest_FieldNumber_StoreUuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STIDCBanIntroducershipRequest__storage_, storeUuid),
+        .offset = (uint32_t)offsetof(GDABanIntroducershipRequest__storage_, storeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "active",
         .dataTypeSpecific.className = NULL,
-        .number = STIDCBanIntroducershipRequest_FieldNumber_Active,
+        .number = GDABanIntroducershipRequest_FieldNumber_Active,
         .hasIndex = 2,
         .offset = 3,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
@@ -405,12 +405,12 @@ typedef struct STIDCBanIntroducershipRequest__storage_ {
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STIDCBanIntroducershipRequest class]
-                                     rootClass:[STIDCStoreIntroducerRoot class]
-                                          file:STIDCStoreIntroducerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDABanIntroducershipRequest class]
+                                     rootClass:[GDAStoreIntroducerRoot class]
+                                          file:GDAStoreIntroducerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STIDCBanIntroducershipRequest__storage_)
+                                   storageSize:sizeof(GDABanIntroducershipRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -425,9 +425,9 @@ typedef struct STIDCBanIntroducershipRequest__storage_ {
 
 @end
 
-#pragma mark - STIDCIntroducership
+#pragma mark - GDAIntroducership
 
-@implementation STIDCIntroducership
+@implementation GDAIntroducership
 
 @dynamic userUuid;
 @dynamic storeUuid;
@@ -438,16 +438,16 @@ typedef struct STIDCBanIntroducershipRequest__storage_ {
 @dynamic created;
 @dynamic lastUpdated;
 
-typedef struct STIDCIntroducership__storage_ {
+typedef struct GDAIntroducership__storage_ {
   uint32_t _has_storage_[1];
   NSString *userUuid;
   NSString *storeUuid;
   NSString *storeName;
   NSString *storeLogo;
-  COMMONLocation *location;
+  GDALocation *location;
   int64_t created;
   int64_t lastUpdated;
-} STIDCIntroducership__storage_;
+} GDAIntroducership__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -458,52 +458,52 @@ typedef struct STIDCIntroducership__storage_ {
       {
         .name = "userUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STIDCIntroducership_FieldNumber_UserUuid,
+        .number = GDAIntroducership_FieldNumber_UserUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STIDCIntroducership__storage_, userUuid),
+        .offset = (uint32_t)offsetof(GDAIntroducership__storage_, userUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "storeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STIDCIntroducership_FieldNumber_StoreUuid,
+        .number = GDAIntroducership_FieldNumber_StoreUuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STIDCIntroducership__storage_, storeUuid),
+        .offset = (uint32_t)offsetof(GDAIntroducership__storage_, storeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "storeName",
         .dataTypeSpecific.className = NULL,
-        .number = STIDCIntroducership_FieldNumber_StoreName,
+        .number = GDAIntroducership_FieldNumber_StoreName,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(STIDCIntroducership__storage_, storeName),
+        .offset = (uint32_t)offsetof(GDAIntroducership__storage_, storeName),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "storeLogo",
         .dataTypeSpecific.className = NULL,
-        .number = STIDCIntroducership_FieldNumber_StoreLogo,
+        .number = GDAIntroducership_FieldNumber_StoreLogo,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(STIDCIntroducership__storage_, storeLogo),
+        .offset = (uint32_t)offsetof(GDAIntroducership__storage_, storeLogo),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "location",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONLocation),
-        .number = STIDCIntroducership_FieldNumber_Location,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDALocation),
+        .number = GDAIntroducership_FieldNumber_Location,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(STIDCIntroducership__storage_, location),
+        .offset = (uint32_t)offsetof(GDAIntroducership__storage_, location),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "active",
         .dataTypeSpecific.className = NULL,
-        .number = STIDCIntroducership_FieldNumber_Active,
+        .number = GDAIntroducership_FieldNumber_Active,
         .hasIndex = 5,
         .offset = 6,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
@@ -512,29 +512,29 @@ typedef struct STIDCIntroducership__storage_ {
       {
         .name = "created",
         .dataTypeSpecific.className = NULL,
-        .number = STIDCIntroducership_FieldNumber_Created,
+        .number = GDAIntroducership_FieldNumber_Created,
         .hasIndex = 7,
-        .offset = (uint32_t)offsetof(STIDCIntroducership__storage_, created),
+        .offset = (uint32_t)offsetof(GDAIntroducership__storage_, created),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
       },
       {
         .name = "lastUpdated",
         .dataTypeSpecific.className = NULL,
-        .number = STIDCIntroducership_FieldNumber_LastUpdated,
+        .number = GDAIntroducership_FieldNumber_LastUpdated,
         .hasIndex = 8,
-        .offset = (uint32_t)offsetof(STIDCIntroducership__storage_, lastUpdated),
+        .offset = (uint32_t)offsetof(GDAIntroducership__storage_, lastUpdated),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STIDCIntroducership class]
-                                     rootClass:[STIDCStoreIntroducerRoot class]
-                                          file:STIDCStoreIntroducerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAIntroducership class]
+                                     rootClass:[GDAStoreIntroducerRoot class]
+                                          file:GDAStoreIntroducerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STIDCIntroducership__storage_)
+                                   storageSize:sizeof(GDAIntroducership__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =

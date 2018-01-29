@@ -8,13 +8,13 @@
 #import <RxLibrary/GRXWriter.h>
 
 #if GPB_GRPC_FORWARD_DECLARE_MESSAGE_PROTO
-  @class PNTCPRMBuyPointsCoinRequest;
-  @class PNTCPRMGetPointsCoinRequest;
-  @class PNTCPRMListPointsCoinRequest;
-  @class PNTCPRMPointsCoinResponse;
-  @class PNTCPRMPreparePointsCoinRequest;
-  @class PNTCPRMPreparePointsCoinResponse;
-  @class PNTCPRMSearchPointsCoinRequest;
+  @class GDABuyPointsCoinRequest;
+  @class GDAGetPointsCoinRequest;
+  @class GDAListPointsCoinRequest;
+  @class GDAPointsCoinResponse;
+  @class GDAPreparePointsCoinRequest;
+  @class GDAPreparePointsCoinResponse;
+  @class GDASearchPointsCoinRequest;
 #else
   #import "gedit/Common.pbobjc.h"
 #endif
@@ -22,41 +22,41 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol PNTCPRMPointsCoinApi <NSObject>
+@protocol GDAPointsCoinApi <NSObject>
 
 #pragma mark Prepare(PreparePointsCoinRequest) returns (PreparePointsCoinResponse)
 
-- (void)prepareWithRequest:(PNTCPRMPreparePointsCoinRequest *)request handler:(void(^)(PNTCPRMPreparePointsCoinResponse *_Nullable response, NSError *_Nullable error))handler;
+- (void)prepareWithRequest:(GDAPreparePointsCoinRequest *)request handler:(void(^)(GDAPreparePointsCoinResponse *_Nullable response, NSError *_Nullable error))handler;
 
-- (GRPCProtoCall *)RPCToPrepareWithRequest:(PNTCPRMPreparePointsCoinRequest *)request handler:(void(^)(PNTCPRMPreparePointsCoinResponse *_Nullable response, NSError *_Nullable error))handler;
+- (GRPCProtoCall *)RPCToPrepareWithRequest:(GDAPreparePointsCoinRequest *)request handler:(void(^)(GDAPreparePointsCoinResponse *_Nullable response, NSError *_Nullable error))handler;
 
 
 #pragma mark Buy(BuyPointsCoinRequest) returns (PointsCoinResponse)
 
-- (void)buyWithRequest:(PNTCPRMBuyPointsCoinRequest *)request handler:(void(^)(PNTCPRMPointsCoinResponse *_Nullable response, NSError *_Nullable error))handler;
+- (void)buyWithRequest:(GDABuyPointsCoinRequest *)request handler:(void(^)(GDAPointsCoinResponse *_Nullable response, NSError *_Nullable error))handler;
 
-- (GRPCProtoCall *)RPCToBuyWithRequest:(PNTCPRMBuyPointsCoinRequest *)request handler:(void(^)(PNTCPRMPointsCoinResponse *_Nullable response, NSError *_Nullable error))handler;
+- (GRPCProtoCall *)RPCToBuyWithRequest:(GDABuyPointsCoinRequest *)request handler:(void(^)(GDAPointsCoinResponse *_Nullable response, NSError *_Nullable error))handler;
 
 
 #pragma mark Get(GetPointsCoinRequest) returns (PointsCoinResponse)
 
-- (void)getWithRequest:(PNTCPRMGetPointsCoinRequest *)request handler:(void(^)(PNTCPRMPointsCoinResponse *_Nullable response, NSError *_Nullable error))handler;
+- (void)getWithRequest:(GDAGetPointsCoinRequest *)request handler:(void(^)(GDAPointsCoinResponse *_Nullable response, NSError *_Nullable error))handler;
 
-- (GRPCProtoCall *)RPCToGetWithRequest:(PNTCPRMGetPointsCoinRequest *)request handler:(void(^)(PNTCPRMPointsCoinResponse *_Nullable response, NSError *_Nullable error))handler;
+- (GRPCProtoCall *)RPCToGetWithRequest:(GDAGetPointsCoinRequest *)request handler:(void(^)(GDAPointsCoinResponse *_Nullable response, NSError *_Nullable error))handler;
 
 
 #pragma mark Search(SearchPointsCoinRequest) returns (stream PointsCoinResponse)
 
-- (void)searchWithRequest:(PNTCPRMSearchPointsCoinRequest *)request eventHandler:(void(^)(BOOL done, PNTCPRMPointsCoinResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (void)searchWithRequest:(GDASearchPointsCoinRequest *)request eventHandler:(void(^)(BOOL done, GDAPointsCoinResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
-- (GRPCProtoCall *)RPCToSearchWithRequest:(PNTCPRMSearchPointsCoinRequest *)request eventHandler:(void(^)(BOOL done, PNTCPRMPointsCoinResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (GRPCProtoCall *)RPCToSearchWithRequest:(GDASearchPointsCoinRequest *)request eventHandler:(void(^)(BOOL done, GDAPointsCoinResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
 
 #pragma mark List(ListPointsCoinRequest) returns (stream PointsCoinResponse)
 
-- (void)listWithRequest:(PNTCPRMListPointsCoinRequest *)request eventHandler:(void(^)(BOOL done, PNTCPRMPointsCoinResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (void)listWithRequest:(GDAListPointsCoinRequest *)request eventHandler:(void(^)(BOOL done, GDAPointsCoinResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
-- (GRPCProtoCall *)RPCToListWithRequest:(PNTCPRMListPointsCoinRequest *)request eventHandler:(void(^)(BOOL done, PNTCPRMPointsCoinResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (GRPCProtoCall *)RPCToListWithRequest:(GDAListPointsCoinRequest *)request eventHandler:(void(^)(BOOL done, GDAPointsCoinResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
 
 @end
@@ -65,7 +65,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Basic service implementation, over gRPC, that only does
  * marshalling and parsing.
  */
-@interface PNTCPRMPointsCoinApi : GRPCProtoService<PNTCPRMPointsCoinApi>
+@interface GDAPointsCoinApi : GRPCProtoService<GDAPointsCoinApi>
 - (instancetype)initWithHost:(NSString *)host NS_DESIGNATED_INITIALIZER;
 + (instancetype)serviceWithHost:(NSString *)host;
 @end

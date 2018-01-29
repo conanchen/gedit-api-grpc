@@ -4,7 +4,7 @@
 #import <ProtoRPC/ProtoRPC.h>
 #import <RxLibrary/GRXWriter+Immediate.h>
 
-@implementation ACCNTAccountingEventApi
+@implementation GDAAccountingEventApi
 
 // Designated initializer
 - (instancetype)initWithHost:(NSString *)host {

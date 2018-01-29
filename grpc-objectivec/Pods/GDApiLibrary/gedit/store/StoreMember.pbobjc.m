@@ -21,42 +21,42 @@
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 #pragma clang diagnostic ignored "-Wdirect-ivar-access"
 
-#pragma mark - STMEMStoreMemberRoot
+#pragma mark - GDAStoreMemberRoot
 
-@implementation STMEMStoreMemberRoot
+@implementation GDAStoreMemberRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - STMEMStoreMemberRoot_FileDescriptor
+#pragma mark - GDAStoreMemberRoot_FileDescriptor
 
-static GPBFileDescriptor *STMEMStoreMemberRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDAStoreMemberRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.store"
-                                                 objcPrefix:@"STMEM"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - STMEMAddMembershipRequest
+#pragma mark - GDAAddMembershipRequest
 
-@implementation STMEMAddMembershipRequest
+@implementation GDAAddMembershipRequest
 
 @dynamic storeUuid;
 @dynamic userUuid;
 
-typedef struct STMEMAddMembershipRequest__storage_ {
+typedef struct GDAAddMembershipRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *storeUuid;
   NSString *userUuid;
-} STMEMAddMembershipRequest__storage_;
+} GDAAddMembershipRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -67,29 +67,29 @@ typedef struct STMEMAddMembershipRequest__storage_ {
       {
         .name = "storeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMAddMembershipRequest_FieldNumber_StoreUuid,
+        .number = GDAAddMembershipRequest_FieldNumber_StoreUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STMEMAddMembershipRequest__storage_, storeUuid),
+        .offset = (uint32_t)offsetof(GDAAddMembershipRequest__storage_, storeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "userUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMAddMembershipRequest_FieldNumber_UserUuid,
+        .number = GDAAddMembershipRequest_FieldNumber_UserUuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STMEMAddMembershipRequest__storage_, userUuid),
+        .offset = (uint32_t)offsetof(GDAAddMembershipRequest__storage_, userUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STMEMAddMembershipRequest class]
-                                     rootClass:[STMEMStoreMemberRoot class]
-                                          file:STMEMStoreMemberRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAAddMembershipRequest class]
+                                     rootClass:[GDAStoreMemberRoot class]
+                                          file:GDAStoreMemberRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STMEMAddMembershipRequest__storage_)
+                                   storageSize:sizeof(GDAAddMembershipRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -104,9 +104,9 @@ typedef struct STMEMAddMembershipRequest__storage_ {
 
 @end
 
-#pragma mark - STMEMUpdateMembershipRequest
+#pragma mark - GDAUpdateMembershipRequest
 
-@implementation STMEMUpdateMembershipRequest
+@implementation GDAUpdateMembershipRequest
 
 @dynamic propertyOneOfCase;
 @dynamic userUuid;
@@ -115,14 +115,14 @@ typedef struct STMEMAddMembershipRequest__storage_ {
 @dynamic startTime;
 @dynamic endTime;
 
-typedef struct STMEMUpdateMembershipRequest__storage_ {
+typedef struct GDAUpdateMembershipRequest__storage_ {
   uint32_t _has_storage_[2];
   NSString *userUuid;
   NSString *memberType;
   NSString *storeUuid;
   int64_t startTime;
   int64_t endTime;
-} STMEMUpdateMembershipRequest__storage_;
+} GDAUpdateMembershipRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -133,56 +133,56 @@ typedef struct STMEMUpdateMembershipRequest__storage_ {
       {
         .name = "userUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMUpdateMembershipRequest_FieldNumber_UserUuid,
+        .number = GDAUpdateMembershipRequest_FieldNumber_UserUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STMEMUpdateMembershipRequest__storage_, userUuid),
+        .offset = (uint32_t)offsetof(GDAUpdateMembershipRequest__storage_, userUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "memberType",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMUpdateMembershipRequest_FieldNumber_MemberType,
+        .number = GDAUpdateMembershipRequest_FieldNumber_MemberType,
         .hasIndex = -1,
-        .offset = (uint32_t)offsetof(STMEMUpdateMembershipRequest__storage_, memberType),
+        .offset = (uint32_t)offsetof(GDAUpdateMembershipRequest__storage_, memberType),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "storeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMUpdateMembershipRequest_FieldNumber_StoreUuid,
+        .number = GDAUpdateMembershipRequest_FieldNumber_StoreUuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STMEMUpdateMembershipRequest__storage_, storeUuid),
+        .offset = (uint32_t)offsetof(GDAUpdateMembershipRequest__storage_, storeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "startTime",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMUpdateMembershipRequest_FieldNumber_StartTime,
+        .number = GDAUpdateMembershipRequest_FieldNumber_StartTime,
         .hasIndex = -1,
-        .offset = (uint32_t)offsetof(STMEMUpdateMembershipRequest__storage_, startTime),
+        .offset = (uint32_t)offsetof(GDAUpdateMembershipRequest__storage_, startTime),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
       {
         .name = "endTime",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMUpdateMembershipRequest_FieldNumber_EndTime,
+        .number = GDAUpdateMembershipRequest_FieldNumber_EndTime,
         .hasIndex = -1,
-        .offset = (uint32_t)offsetof(STMEMUpdateMembershipRequest__storage_, endTime),
+        .offset = (uint32_t)offsetof(GDAUpdateMembershipRequest__storage_, endTime),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STMEMUpdateMembershipRequest class]
-                                     rootClass:[STMEMStoreMemberRoot class]
-                                          file:STMEMStoreMemberRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAUpdateMembershipRequest class]
+                                     rootClass:[GDAStoreMemberRoot class]
+                                          file:GDAStoreMemberRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STMEMUpdateMembershipRequest__storage_)
+                                   storageSize:sizeof(GDAUpdateMembershipRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     static const char *oneofs[] = {
       "property",
@@ -203,21 +203,21 @@ typedef struct STMEMUpdateMembershipRequest__storage_ {
 
 @end
 
-void STMEMUpdateMembershipRequest_ClearPropertyOneOfCase(STMEMUpdateMembershipRequest *message) {
+void GDAUpdateMembershipRequest_ClearPropertyOneOfCase(GDAUpdateMembershipRequest *message) {
   GPBDescriptor *descriptor = [message descriptor];
   GPBOneofDescriptor *oneof = [descriptor.oneofs objectAtIndex:0];
   GPBMaybeClearOneof(message, oneof, -1, 0);
 }
-#pragma mark - STMEMListMyMemberStoreRequest
+#pragma mark - GDAListMyMemberStoreRequest
 
-@implementation STMEMListMyMemberStoreRequest
+@implementation GDAListMyMemberStoreRequest
 
 @dynamic lastUpdated;
 
-typedef struct STMEMListMyMemberStoreRequest__storage_ {
+typedef struct GDAListMyMemberStoreRequest__storage_ {
   uint32_t _has_storage_[1];
   int64_t lastUpdated;
-} STMEMListMyMemberStoreRequest__storage_;
+} GDAListMyMemberStoreRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -228,20 +228,20 @@ typedef struct STMEMListMyMemberStoreRequest__storage_ {
       {
         .name = "lastUpdated",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMListMyMemberStoreRequest_FieldNumber_LastUpdated,
+        .number = GDAListMyMemberStoreRequest_FieldNumber_LastUpdated,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STMEMListMyMemberStoreRequest__storage_, lastUpdated),
+        .offset = (uint32_t)offsetof(GDAListMyMemberStoreRequest__storage_, lastUpdated),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STMEMListMyMemberStoreRequest class]
-                                     rootClass:[STMEMStoreMemberRoot class]
-                                          file:STMEMStoreMemberRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListMyMemberStoreRequest class]
+                                     rootClass:[GDAStoreMemberRoot class]
+                                          file:GDAStoreMemberRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STMEMListMyMemberStoreRequest__storage_)
+                                   storageSize:sizeof(GDAListMyMemberStoreRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -256,20 +256,20 @@ typedef struct STMEMListMyMemberStoreRequest__storage_ {
 
 @end
 
-#pragma mark - STMEMListMembershipByStoreRequest
+#pragma mark - GDAListMembershipByStoreRequest
 
-@implementation STMEMListMembershipByStoreRequest
+@implementation GDAListMembershipByStoreRequest
 
 @dynamic storeUuid;
 @dynamic from;
 @dynamic size;
 
-typedef struct STMEMListMembershipByStoreRequest__storage_ {
+typedef struct GDAListMembershipByStoreRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t from;
   int32_t size;
   NSString *storeUuid;
-} STMEMListMembershipByStoreRequest__storage_;
+} GDAListMembershipByStoreRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -280,38 +280,38 @@ typedef struct STMEMListMembershipByStoreRequest__storage_ {
       {
         .name = "storeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMListMembershipByStoreRequest_FieldNumber_StoreUuid,
+        .number = GDAListMembershipByStoreRequest_FieldNumber_StoreUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STMEMListMembershipByStoreRequest__storage_, storeUuid),
+        .offset = (uint32_t)offsetof(GDAListMembershipByStoreRequest__storage_, storeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "from",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMListMembershipByStoreRequest_FieldNumber_From,
+        .number = GDAListMembershipByStoreRequest_FieldNumber_From,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STMEMListMembershipByStoreRequest__storage_, from),
+        .offset = (uint32_t)offsetof(GDAListMembershipByStoreRequest__storage_, from),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "size",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMListMembershipByStoreRequest_FieldNumber_Size,
+        .number = GDAListMembershipByStoreRequest_FieldNumber_Size,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(STMEMListMembershipByStoreRequest__storage_, size),
+        .offset = (uint32_t)offsetof(GDAListMembershipByStoreRequest__storage_, size),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STMEMListMembershipByStoreRequest class]
-                                     rootClass:[STMEMStoreMemberRoot class]
-                                          file:STMEMStoreMemberRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListMembershipByStoreRequest class]
+                                     rootClass:[GDAStoreMemberRoot class]
+                                          file:GDAStoreMemberRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STMEMListMembershipByStoreRequest__storage_)
+                                   storageSize:sizeof(GDAListMembershipByStoreRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -326,20 +326,20 @@ typedef struct STMEMListMembershipByStoreRequest__storage_ {
 
 @end
 
-#pragma mark - STMEMListMembershipByMemberRequest
+#pragma mark - GDAListMembershipByMemberRequest
 
-@implementation STMEMListMembershipByMemberRequest
+@implementation GDAListMembershipByMemberRequest
 
 @dynamic userUuid;
 @dynamic from;
 @dynamic size;
 
-typedef struct STMEMListMembershipByMemberRequest__storage_ {
+typedef struct GDAListMembershipByMemberRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t from;
   int32_t size;
   NSString *userUuid;
-} STMEMListMembershipByMemberRequest__storage_;
+} GDAListMembershipByMemberRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -350,38 +350,38 @@ typedef struct STMEMListMembershipByMemberRequest__storage_ {
       {
         .name = "userUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMListMembershipByMemberRequest_FieldNumber_UserUuid,
+        .number = GDAListMembershipByMemberRequest_FieldNumber_UserUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STMEMListMembershipByMemberRequest__storage_, userUuid),
+        .offset = (uint32_t)offsetof(GDAListMembershipByMemberRequest__storage_, userUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "from",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMListMembershipByMemberRequest_FieldNumber_From,
+        .number = GDAListMembershipByMemberRequest_FieldNumber_From,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STMEMListMembershipByMemberRequest__storage_, from),
+        .offset = (uint32_t)offsetof(GDAListMembershipByMemberRequest__storage_, from),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "size",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMListMembershipByMemberRequest_FieldNumber_Size,
+        .number = GDAListMembershipByMemberRequest_FieldNumber_Size,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(STMEMListMembershipByMemberRequest__storage_, size),
+        .offset = (uint32_t)offsetof(GDAListMembershipByMemberRequest__storage_, size),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STMEMListMembershipByMemberRequest class]
-                                     rootClass:[STMEMStoreMemberRoot class]
-                                          file:STMEMStoreMemberRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListMembershipByMemberRequest class]
+                                     rootClass:[GDAStoreMemberRoot class]
+                                          file:GDAStoreMemberRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STMEMListMembershipByMemberRequest__storage_)
+                                   storageSize:sizeof(GDAListMembershipByMemberRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -396,20 +396,20 @@ typedef struct STMEMListMembershipByMemberRequest__storage_ {
 
 @end
 
-#pragma mark - STMEMMembershipResponse
+#pragma mark - GDAMembershipResponse
 
-@implementation STMEMMembershipResponse
+@implementation GDAMembershipResponse
 
 @dynamic hasStatus, status;
 @dynamic hasMembership, membership;
 @dynamic from;
 
-typedef struct STMEMMembershipResponse__storage_ {
+typedef struct GDAMembershipResponse__storage_ {
   uint32_t _has_storage_[1];
   int32_t from;
-  STMEMMembership *membership;
-  COMMONStatus *status;
-} STMEMMembershipResponse__storage_;
+  GDAMembership *membership;
+  GDAStatus *status;
+} GDAMembershipResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -419,39 +419,39 @@ typedef struct STMEMMembershipResponse__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "membership",
-        .dataTypeSpecific.className = GPBStringifySymbol(STMEMMembership),
-        .number = STMEMMembershipResponse_FieldNumber_Membership,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAMembership),
+        .number = GDAMembershipResponse_FieldNumber_Membership,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STMEMMembershipResponse__storage_, membership),
+        .offset = (uint32_t)offsetof(GDAMembershipResponse__storage_, membership),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "from",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMMembershipResponse_FieldNumber_From,
+        .number = GDAMembershipResponse_FieldNumber_From,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(STMEMMembershipResponse__storage_, from),
+        .offset = (uint32_t)offsetof(GDAMembershipResponse__storage_, from),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = STMEMMembershipResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDAMembershipResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STMEMMembershipResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDAMembershipResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STMEMMembershipResponse class]
-                                     rootClass:[STMEMStoreMemberRoot class]
-                                          file:STMEMStoreMemberRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAMembershipResponse class]
+                                     rootClass:[GDAStoreMemberRoot class]
+                                          file:GDAStoreMemberRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STMEMMembershipResponse__storage_)
+                                   storageSize:sizeof(GDAMembershipResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -461,19 +461,19 @@ typedef struct STMEMMembershipResponse__storage_ {
 
 @end
 
-#pragma mark - STMEMBanMembershipRequest
+#pragma mark - GDABanMembershipRequest
 
-@implementation STMEMBanMembershipRequest
+@implementation GDABanMembershipRequest
 
 @dynamic userUuid;
 @dynamic storeUuid;
 @dynamic active;
 
-typedef struct STMEMBanMembershipRequest__storage_ {
+typedef struct GDABanMembershipRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *userUuid;
   NSString *storeUuid;
-} STMEMBanMembershipRequest__storage_;
+} GDABanMembershipRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -484,25 +484,25 @@ typedef struct STMEMBanMembershipRequest__storage_ {
       {
         .name = "userUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMBanMembershipRequest_FieldNumber_UserUuid,
+        .number = GDABanMembershipRequest_FieldNumber_UserUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STMEMBanMembershipRequest__storage_, userUuid),
+        .offset = (uint32_t)offsetof(GDABanMembershipRequest__storage_, userUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "storeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMBanMembershipRequest_FieldNumber_StoreUuid,
+        .number = GDABanMembershipRequest_FieldNumber_StoreUuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STMEMBanMembershipRequest__storage_, storeUuid),
+        .offset = (uint32_t)offsetof(GDABanMembershipRequest__storage_, storeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "active",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMBanMembershipRequest_FieldNumber_Active,
+        .number = GDABanMembershipRequest_FieldNumber_Active,
         .hasIndex = 2,
         .offset = 3,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
@@ -510,12 +510,12 @@ typedef struct STMEMBanMembershipRequest__storage_ {
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STMEMBanMembershipRequest class]
-                                     rootClass:[STMEMStoreMemberRoot class]
-                                          file:STMEMStoreMemberRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDABanMembershipRequest class]
+                                     rootClass:[GDAStoreMemberRoot class]
+                                          file:GDAStoreMemberRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STMEMBanMembershipRequest__storage_)
+                                   storageSize:sizeof(GDABanMembershipRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -530,18 +530,18 @@ typedef struct STMEMBanMembershipRequest__storage_ {
 
 @end
 
-#pragma mark - STMEMBanMembershipResponse
+#pragma mark - GDABanMembershipResponse
 
-@implementation STMEMBanMembershipResponse
+@implementation GDABanMembershipResponse
 
 @dynamic hasStatus, status;
 @dynamic hasMembership, membership;
 
-typedef struct STMEMBanMembershipResponse__storage_ {
+typedef struct GDABanMembershipResponse__storage_ {
   uint32_t _has_storage_[1];
-  STMEMMembership *membership;
-  COMMONStatus *status;
-} STMEMBanMembershipResponse__storage_;
+  GDAMembership *membership;
+  GDAStatus *status;
+} GDABanMembershipResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -551,30 +551,30 @@ typedef struct STMEMBanMembershipResponse__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "membership",
-        .dataTypeSpecific.className = GPBStringifySymbol(STMEMMembership),
-        .number = STMEMBanMembershipResponse_FieldNumber_Membership,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAMembership),
+        .number = GDABanMembershipResponse_FieldNumber_Membership,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STMEMBanMembershipResponse__storage_, membership),
+        .offset = (uint32_t)offsetof(GDABanMembershipResponse__storage_, membership),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = STMEMBanMembershipResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDABanMembershipResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STMEMBanMembershipResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDABanMembershipResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STMEMBanMembershipResponse class]
-                                     rootClass:[STMEMStoreMemberRoot class]
-                                          file:STMEMStoreMemberRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDABanMembershipResponse class]
+                                     rootClass:[GDAStoreMemberRoot class]
+                                          file:GDAStoreMemberRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STMEMBanMembershipResponse__storage_)
+                                   storageSize:sizeof(GDABanMembershipResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -584,9 +584,9 @@ typedef struct STMEMBanMembershipResponse__storage_ {
 
 @end
 
-#pragma mark - STMEMMembership
+#pragma mark - GDAMembership
 
-@implementation STMEMMembership
+@implementation GDAMembership
 
 @dynamic userUuid;
 @dynamic memberType;
@@ -598,17 +598,17 @@ typedef struct STMEMBanMembershipResponse__storage_ {
 @dynamic created;
 @dynamic lastUpdated;
 
-typedef struct STMEMMembership__storage_ {
+typedef struct GDAMembership__storage_ {
   uint32_t _has_storage_[1];
   NSString *userUuid;
   NSString *memberType;
   NSString *storeUuid;
   NSString *storeName;
   NSString *storeLogo;
-  COMMONLocation *location;
+  GDALocation *location;
   int64_t created;
   int64_t lastUpdated;
-} STMEMMembership__storage_;
+} GDAMembership__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -619,61 +619,61 @@ typedef struct STMEMMembership__storage_ {
       {
         .name = "userUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMMembership_FieldNumber_UserUuid,
+        .number = GDAMembership_FieldNumber_UserUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STMEMMembership__storage_, userUuid),
+        .offset = (uint32_t)offsetof(GDAMembership__storage_, userUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "memberType",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMMembership_FieldNumber_MemberType,
+        .number = GDAMembership_FieldNumber_MemberType,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STMEMMembership__storage_, memberType),
+        .offset = (uint32_t)offsetof(GDAMembership__storage_, memberType),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "storeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMMembership_FieldNumber_StoreUuid,
+        .number = GDAMembership_FieldNumber_StoreUuid,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(STMEMMembership__storage_, storeUuid),
+        .offset = (uint32_t)offsetof(GDAMembership__storage_, storeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "storeName",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMMembership_FieldNumber_StoreName,
+        .number = GDAMembership_FieldNumber_StoreName,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(STMEMMembership__storage_, storeName),
+        .offset = (uint32_t)offsetof(GDAMembership__storage_, storeName),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "storeLogo",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMMembership_FieldNumber_StoreLogo,
+        .number = GDAMembership_FieldNumber_StoreLogo,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(STMEMMembership__storage_, storeLogo),
+        .offset = (uint32_t)offsetof(GDAMembership__storage_, storeLogo),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "location",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONLocation),
-        .number = STMEMMembership_FieldNumber_Location,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDALocation),
+        .number = GDAMembership_FieldNumber_Location,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(STMEMMembership__storage_, location),
+        .offset = (uint32_t)offsetof(GDAMembership__storage_, location),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "active",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMMembership_FieldNumber_Active,
+        .number = GDAMembership_FieldNumber_Active,
         .hasIndex = 6,
         .offset = 7,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
@@ -682,29 +682,29 @@ typedef struct STMEMMembership__storage_ {
       {
         .name = "created",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMMembership_FieldNumber_Created,
+        .number = GDAMembership_FieldNumber_Created,
         .hasIndex = 8,
-        .offset = (uint32_t)offsetof(STMEMMembership__storage_, created),
+        .offset = (uint32_t)offsetof(GDAMembership__storage_, created),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
       },
       {
         .name = "lastUpdated",
         .dataTypeSpecific.className = NULL,
-        .number = STMEMMembership_FieldNumber_LastUpdated,
+        .number = GDAMembership_FieldNumber_LastUpdated,
         .hasIndex = 9,
-        .offset = (uint32_t)offsetof(STMEMMembership__storage_, lastUpdated),
+        .offset = (uint32_t)offsetof(GDAMembership__storage_, lastUpdated),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STMEMMembership class]
-                                     rootClass:[STMEMStoreMemberRoot class]
-                                          file:STMEMStoreMemberRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAMembership class]
+                                     rootClass:[GDAStoreMemberRoot class]
+                                          file:GDAStoreMemberRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STMEMMembership__storage_)
+                                   storageSize:sizeof(GDAMembership__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =

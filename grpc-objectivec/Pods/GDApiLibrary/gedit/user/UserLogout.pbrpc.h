@@ -8,8 +8,8 @@
 #import <RxLibrary/GRXWriter.h>
 
 #if GPB_GRPC_FORWARD_DECLARE_MESSAGE_PROTO
-  @class USRLOGOUTLogoutRequest;
-  @class USRLOGOUTLogoutResponse;
+  @class GDALogoutRequest;
+  @class GDALogoutResponse;
 #else
   #import "gedit/Common.pbobjc.h"
 #endif
@@ -17,19 +17,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol USRLOGOUTUserLogoutApi <NSObject>
+@protocol GDAUserLogoutApi <NSObject>
 
 #pragma mark Logout(LogoutRequest) returns (LogoutResponse)
 
 /**
  * local
  */
-- (void)logoutWithRequest:(USRLOGOUTLogoutRequest *)request handler:(void(^)(USRLOGOUTLogoutResponse *_Nullable response, NSError *_Nullable error))handler;
+- (void)logoutWithRequest:(GDALogoutRequest *)request handler:(void(^)(GDALogoutResponse *_Nullable response, NSError *_Nullable error))handler;
 
 /**
  * local
  */
-- (GRPCProtoCall *)RPCToLogoutWithRequest:(USRLOGOUTLogoutRequest *)request handler:(void(^)(USRLOGOUTLogoutResponse *_Nullable response, NSError *_Nullable error))handler;
+- (GRPCProtoCall *)RPCToLogoutWithRequest:(GDALogoutRequest *)request handler:(void(^)(GDALogoutResponse *_Nullable response, NSError *_Nullable error))handler;
 
 
 @end
@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Basic service implementation, over gRPC, that only does
  * marshalling and parsing.
  */
-@interface USRLOGOUTUserLogoutApi : GRPCProtoService<USRLOGOUTUserLogoutApi>
+@interface GDAUserLogoutApi : GRPCProtoService<GDAUserLogoutApi>
 - (instancetype)initWithHost:(NSString *)host NS_DESIGNATED_INITIALIZER;
 + (instancetype)serviceWithHost:(NSString *)host;
 @end

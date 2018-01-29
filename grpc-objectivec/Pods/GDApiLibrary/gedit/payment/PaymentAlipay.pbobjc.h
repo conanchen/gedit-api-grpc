@@ -27,11 +27,11 @@
 
 CF_EXTERN_C_BEGIN
 
-@class COMMONStatus;
+@class GDAStatus;
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - PMALIPAYPaymentAlipayRoot
+#pragma mark - GDAPaymentAlipayRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -43,18 +43,18 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface PMALIPAYPaymentAlipayRoot : GPBRootObject
+@interface GDAPaymentAlipayRoot : GPBRootObject
 @end
 
-#pragma mark - PMALIPAYPreparAlipayPaymentRequest
+#pragma mark - GDAPreparAlipayPaymentRequest
 
-typedef GPB_ENUM(PMALIPAYPreparAlipayPaymentRequest_FieldNumber) {
-  PMALIPAYPreparAlipayPaymentRequest_FieldNumber_PayerCode = 11,
-  PMALIPAYPreparAlipayPaymentRequest_FieldNumber_PayerMobile = 12,
-  PMALIPAYPreparAlipayPaymentRequest_FieldNumber_ShouldPay = 15,
+typedef GPB_ENUM(GDAPreparAlipayPaymentRequest_FieldNumber) {
+  GDAPreparAlipayPaymentRequest_FieldNumber_PayerCode = 11,
+  GDAPreparAlipayPaymentRequest_FieldNumber_PayerMobile = 12,
+  GDAPreparAlipayPaymentRequest_FieldNumber_ShouldPay = 15,
 };
 
-@interface PMALIPAYPreparAlipayPaymentRequest : GPBMessage
+@interface GDAPreparAlipayPaymentRequest : GPBMessage
 
 /** 顾客的支付宝付款码 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *payerCode;
@@ -67,20 +67,20 @@ typedef GPB_ENUM(PMALIPAYPreparAlipayPaymentRequest_FieldNumber) {
 
 @end
 
-#pragma mark - PMALIPAYPrepareAlipayPaymentResponse
+#pragma mark - GDAPrepareAlipayPaymentResponse
 
-typedef GPB_ENUM(PMALIPAYPrepareAlipayPaymentResponse_FieldNumber) {
-  PMALIPAYPrepareAlipayPaymentResponse_FieldNumber_PayerCode = 11,
-  PMALIPAYPrepareAlipayPaymentResponse_FieldNumber_PayerMobile = 12,
-  PMALIPAYPrepareAlipayPaymentResponse_FieldNumber_ShouldPay = 15,
-  PMALIPAYPrepareAlipayPaymentResponse_FieldNumber_ActualPay = 16,
-  PMALIPAYPrepareAlipayPaymentResponse_FieldNumber_PointsPay = 17,
-  PMALIPAYPrepareAlipayPaymentResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAPrepareAlipayPaymentResponse_FieldNumber) {
+  GDAPrepareAlipayPaymentResponse_FieldNumber_PayerCode = 11,
+  GDAPrepareAlipayPaymentResponse_FieldNumber_PayerMobile = 12,
+  GDAPrepareAlipayPaymentResponse_FieldNumber_ShouldPay = 15,
+  GDAPrepareAlipayPaymentResponse_FieldNumber_ActualPay = 16,
+  GDAPrepareAlipayPaymentResponse_FieldNumber_PointsPay = 17,
+  GDAPrepareAlipayPaymentResponse_FieldNumber_Status = 999,
 };
 
-@interface PMALIPAYPrepareAlipayPaymentResponse : GPBMessage
+@interface GDAPrepareAlipayPaymentResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
@@ -101,21 +101,21 @@ typedef GPB_ENUM(PMALIPAYPrepareAlipayPaymentResponse_FieldNumber) {
 
 @end
 
-#pragma mark - PMALIPAYCreateAlipayPaymentRequest
+#pragma mark - GDACreateAlipayPaymentRequest
 
-typedef GPB_ENUM(PMALIPAYCreateAlipayPaymentRequest_FieldNumber) {
-  PMALIPAYCreateAlipayPaymentRequest_FieldNumber_PayerCode = 11,
-  PMALIPAYCreateAlipayPaymentRequest_FieldNumber_PayerMobile = 12,
-  PMALIPAYCreateAlipayPaymentRequest_FieldNumber_ShouldPay = 15,
-  PMALIPAYCreateAlipayPaymentRequest_FieldNumber_ActualPay = 16,
-  PMALIPAYCreateAlipayPaymentRequest_FieldNumber_PointsPay = 17,
-  PMALIPAYCreateAlipayPaymentRequest_FieldNumber_PayeeIp = 18,
+typedef GPB_ENUM(GDACreateAlipayPaymentRequest_FieldNumber) {
+  GDACreateAlipayPaymentRequest_FieldNumber_PayerCode = 11,
+  GDACreateAlipayPaymentRequest_FieldNumber_PayerMobile = 12,
+  GDACreateAlipayPaymentRequest_FieldNumber_ShouldPay = 15,
+  GDACreateAlipayPaymentRequest_FieldNumber_ActualPay = 16,
+  GDACreateAlipayPaymentRequest_FieldNumber_PointsPay = 17,
+  GDACreateAlipayPaymentRequest_FieldNumber_PayeeIp = 18,
 };
 
 /**
  * only called by myself，即收银员是我
  **/
-@interface PMALIPAYCreateAlipayPaymentRequest : GPBMessage
+@interface GDACreateAlipayPaymentRequest : GPBMessage
 
 /** 顾客的付款码 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *payerCode;

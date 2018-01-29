@@ -27,13 +27,13 @@
 
 CF_EXTERN_C_BEGIN
 
-@class COMMONStatus;
-@class PayerActiveInappPayeeCode;
-GPB_ENUM_FWD_DECLARE(COMMONPaymentChannel);
+@class GDAPayeeCode;
+@class GDAStatus;
+GPB_ENUM_FWD_DECLARE(GDAPaymentChannel);
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - PayerActiveInappPaymentInappPayerRoot
+#pragma mark - GDAPaymentInappPayerRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -45,59 +45,59 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface PayerActiveInappPaymentInappPayerRoot : GPBRootObject
+@interface GDAPaymentInappPayerRoot : GPBRootObject
 @end
 
-#pragma mark - PayerActiveInappGetMyPayeeCodeRequest
+#pragma mark - GDAGetMyPayeeCodeRequest
 
-typedef GPB_ENUM(PayerActiveInappGetMyPayeeCodeRequest_FieldNumber) {
-  PayerActiveInappGetMyPayeeCodeRequest_FieldNumber_PayeeStoreUuid = 1,
+typedef GPB_ENUM(GDAGetMyPayeeCodeRequest_FieldNumber) {
+  GDAGetMyPayeeCodeRequest_FieldNumber_PayeeStoreUuid = 1,
 };
 
-@interface PayerActiveInappGetMyPayeeCodeRequest : GPBMessage
+@interface GDAGetMyPayeeCodeRequest : GPBMessage
 
 /** 收款人工作的店铺 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *payeeStoreUuid;
 
 @end
 
-#pragma mark - PayerActiveInappGetMyPayeeCodeResponse
+#pragma mark - GDAGetMyPayeeCodeResponse
 
-typedef GPB_ENUM(PayerActiveInappGetMyPayeeCodeResponse_FieldNumber) {
-  PayerActiveInappGetMyPayeeCodeResponse_FieldNumber_PayeeCode = 1,
-  PayerActiveInappGetMyPayeeCodeResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAGetMyPayeeCodeResponse_FieldNumber) {
+  GDAGetMyPayeeCodeResponse_FieldNumber_PayeeCode = 1,
+  GDAGetMyPayeeCodeResponse_FieldNumber_Status = 999,
 };
 
-@interface PayerActiveInappGetMyPayeeCodeResponse : GPBMessage
+@interface GDAGetMyPayeeCodeResponse : GPBMessage
 
 /** 如果我不在这个店GetMyPayeeCodeRequest.payeeStoreUuid工作，status应说明错误原因 */
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
-@property(nonatomic, readwrite, strong, null_resettable) PayerActiveInappPayeeCode *payeeCode;
+@property(nonatomic, readwrite, strong, null_resettable) GDAPayeeCode *payeeCode;
 /** Test to see if @c payeeCode has been set. */
 @property(nonatomic, readwrite) BOOL hasPayeeCode;
 
 @end
 
-#pragma mark - PayerActiveInappPayeeCode
+#pragma mark - GDAPayeeCode
 
-typedef GPB_ENUM(PayerActiveInappPayeeCode_FieldNumber) {
-  PayerActiveInappPayeeCode_FieldNumber_PayeeCode = 1,
-  PayerActiveInappPayeeCode_FieldNumber_ExpiresIn = 3,
-  PayerActiveInappPayeeCode_FieldNumber_PayeeUuid = 5,
-  PayerActiveInappPayeeCode_FieldNumber_PayeeLogo = 7,
-  PayerActiveInappPayeeCode_FieldNumber_PayeeName = 9,
-  PayerActiveInappPayeeCode_FieldNumber_PayeeStoreUuid = 13,
-  PayerActiveInappPayeeCode_FieldNumber_PayeeStoreLogo = 15,
-  PayerActiveInappPayeeCode_FieldNumber_PayeeStoreNamee = 17,
-  PayerActiveInappPayeeCode_FieldNumber_PayeeWorkerUuid = 25,
-  PayerActiveInappPayeeCode_FieldNumber_PayeeWorkerLogo = 27,
-  PayerActiveInappPayeeCode_FieldNumber_PayeeWorkerName = 29,
+typedef GPB_ENUM(GDAPayeeCode_FieldNumber) {
+  GDAPayeeCode_FieldNumber_PayeeCode = 1,
+  GDAPayeeCode_FieldNumber_ExpiresIn = 3,
+  GDAPayeeCode_FieldNumber_PayeeUuid = 5,
+  GDAPayeeCode_FieldNumber_PayeeLogo = 7,
+  GDAPayeeCode_FieldNumber_PayeeName = 9,
+  GDAPayeeCode_FieldNumber_PayeeStoreUuid = 13,
+  GDAPayeeCode_FieldNumber_PayeeStoreLogo = 15,
+  GDAPayeeCode_FieldNumber_PayeeStoreNamee = 17,
+  GDAPayeeCode_FieldNumber_PayeeWorkerUuid = 25,
+  GDAPayeeCode_FieldNumber_PayeeWorkerLogo = 27,
+  GDAPayeeCode_FieldNumber_PayeeWorkerName = 29,
 };
 
-@interface PayerActiveInappPayeeCode : GPBMessage
+@interface GDAPayeeCode : GPBMessage
 
 /** 收银员的收款码 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *payeeCode;
@@ -134,46 +134,46 @@ typedef GPB_ENUM(PayerActiveInappPayeeCode_FieldNumber) {
 
 @end
 
-#pragma mark - PayerActiveInappGetPayeeCodeRequest
+#pragma mark - GDAGetPayeeCodeRequest
 
-typedef GPB_ENUM(PayerActiveInappGetPayeeCodeRequest_FieldNumber) {
-  PayerActiveInappGetPayeeCodeRequest_FieldNumber_PayeeCode = 13,
+typedef GPB_ENUM(GDAGetPayeeCodeRequest_FieldNumber) {
+  GDAGetPayeeCodeRequest_FieldNumber_PayeeCode = 13,
 };
 
-@interface PayerActiveInappGetPayeeCodeRequest : GPBMessage
+@interface GDAGetPayeeCodeRequest : GPBMessage
 
 /** 收银员的收款码 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *payeeCode;
 
 @end
 
-#pragma mark - PayerActiveInappGetPayeeCodeResponse
+#pragma mark - GDAGetPayeeCodeResponse
 
-typedef GPB_ENUM(PayerActiveInappGetPayeeCodeResponse_FieldNumber) {
-  PayerActiveInappGetPayeeCodeResponse_FieldNumber_PayeeCode = 1,
-  PayerActiveInappGetPayeeCodeResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAGetPayeeCodeResponse_FieldNumber) {
+  GDAGetPayeeCodeResponse_FieldNumber_PayeeCode = 1,
+  GDAGetPayeeCodeResponse_FieldNumber_Status = 999,
 };
 
-@interface PayerActiveInappGetPayeeCodeResponse : GPBMessage
+@interface GDAGetPayeeCodeResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
-@property(nonatomic, readwrite, strong, null_resettable) PayerActiveInappPayeeCode *payeeCode;
+@property(nonatomic, readwrite, strong, null_resettable) GDAPayeeCode *payeeCode;
 /** Test to see if @c payeeCode has been set. */
 @property(nonatomic, readwrite) BOOL hasPayeeCode;
 
 @end
 
-#pragma mark - PayerActiveInappPreparePayerInappPaymentRequest
+#pragma mark - GDAPreparePayerInappPaymentRequest
 
-typedef GPB_ENUM(PayerActiveInappPreparePayerInappPaymentRequest_FieldNumber) {
-  PayerActiveInappPreparePayerInappPaymentRequest_FieldNumber_PayeeCode = 13,
-  PayerActiveInappPreparePayerInappPaymentRequest_FieldNumber_ShouldPay = 15,
+typedef GPB_ENUM(GDAPreparePayerInappPaymentRequest_FieldNumber) {
+  GDAPreparePayerInappPaymentRequest_FieldNumber_PayeeCode = 13,
+  GDAPreparePayerInappPaymentRequest_FieldNumber_ShouldPay = 15,
 };
 
-@interface PayerActiveInappPreparePayerInappPaymentRequest : GPBMessage
+@interface GDAPreparePayerInappPaymentRequest : GPBMessage
 
 /** 收银员的收款码 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *payeeCode;
@@ -183,25 +183,25 @@ typedef GPB_ENUM(PayerActiveInappPreparePayerInappPaymentRequest_FieldNumber) {
 
 @end
 
-#pragma mark - PayerActiveInappPreparePayerInappPaymentResponse
+#pragma mark - GDAPreparePayerInappPaymentResponse
 
-typedef GPB_ENUM(PayerActiveInappPreparePayerInappPaymentResponse_FieldNumber) {
-  PayerActiveInappPreparePayerInappPaymentResponse_FieldNumber_PayeeCode = 11,
-  PayerActiveInappPreparePayerInappPaymentResponse_FieldNumber_PayeeName = 12,
-  PayerActiveInappPreparePayerInappPaymentResponse_FieldNumber_PayeeStoreName = 13,
-  PayerActiveInappPreparePayerInappPaymentResponse_FieldNumber_PayeeWorkerName = 14,
-  PayerActiveInappPreparePayerInappPaymentResponse_FieldNumber_ShouldPay = 15,
-  PayerActiveInappPreparePayerInappPaymentResponse_FieldNumber_ActualPay = 16,
-  PayerActiveInappPreparePayerInappPaymentResponse_FieldNumber_PointsPay = 17,
-  PayerActiveInappPreparePayerInappPaymentResponse_FieldNumber_PointsRepay = 18,
-  PayerActiveInappPreparePayerInappPaymentResponse_FieldNumber_PointsPayComment = 20,
-  PayerActiveInappPreparePayerInappPaymentResponse_FieldNumber_PointsRepayComment = 21,
-  PayerActiveInappPreparePayerInappPaymentResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAPreparePayerInappPaymentResponse_FieldNumber) {
+  GDAPreparePayerInappPaymentResponse_FieldNumber_PayeeCode = 11,
+  GDAPreparePayerInappPaymentResponse_FieldNumber_PayeeName = 12,
+  GDAPreparePayerInappPaymentResponse_FieldNumber_PayeeStoreName = 13,
+  GDAPreparePayerInappPaymentResponse_FieldNumber_PayeeWorkerName = 14,
+  GDAPreparePayerInappPaymentResponse_FieldNumber_ShouldPay = 15,
+  GDAPreparePayerInappPaymentResponse_FieldNumber_ActualPay = 16,
+  GDAPreparePayerInappPaymentResponse_FieldNumber_PointsPay = 17,
+  GDAPreparePayerInappPaymentResponse_FieldNumber_PointsRepay = 18,
+  GDAPreparePayerInappPaymentResponse_FieldNumber_PointsPayComment = 20,
+  GDAPreparePayerInappPaymentResponse_FieldNumber_PointsRepayComment = 21,
+  GDAPreparePayerInappPaymentResponse_FieldNumber_Status = 999,
 };
 
-@interface PayerActiveInappPreparePayerInappPaymentResponse : GPBMessage
+@interface GDAPreparePayerInappPaymentResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
@@ -235,28 +235,28 @@ typedef GPB_ENUM(PayerActiveInappPreparePayerInappPaymentResponse_FieldNumber) {
 
 @end
 
-#pragma mark - PayerActiveInappCreatePayerInappPaymentRequest
+#pragma mark - GDACreatePayerInappPaymentRequest
 
-typedef GPB_ENUM(PayerActiveInappCreatePayerInappPaymentRequest_FieldNumber) {
-  PayerActiveInappCreatePayerInappPaymentRequest_FieldNumber_PayeeCode = 13,
-  PayerActiveInappCreatePayerInappPaymentRequest_FieldNumber_ShouldPay = 15,
-  PayerActiveInappCreatePayerInappPaymentRequest_FieldNumber_ActualPay = 16,
-  PayerActiveInappCreatePayerInappPaymentRequest_FieldNumber_PointsPay = 17,
-  PayerActiveInappCreatePayerInappPaymentRequest_FieldNumber_PointsRepay = 18,
-  PayerActiveInappCreatePayerInappPaymentRequest_FieldNumber_PaymentChannel = 26,
-  PayerActiveInappCreatePayerInappPaymentRequest_FieldNumber_PayerIp = 30,
+typedef GPB_ENUM(GDACreatePayerInappPaymentRequest_FieldNumber) {
+  GDACreatePayerInappPaymentRequest_FieldNumber_PayeeCode = 13,
+  GDACreatePayerInappPaymentRequest_FieldNumber_ShouldPay = 15,
+  GDACreatePayerInappPaymentRequest_FieldNumber_ActualPay = 16,
+  GDACreatePayerInappPaymentRequest_FieldNumber_PointsPay = 17,
+  GDACreatePayerInappPaymentRequest_FieldNumber_PointsRepay = 18,
+  GDACreatePayerInappPaymentRequest_FieldNumber_PaymentChannel = 26,
+  GDACreatePayerInappPaymentRequest_FieldNumber_PayerIp = 30,
 };
 
-typedef GPB_ENUM(PayerActiveInappCreatePayerInappPaymentRequest_Points_OneOfCase) {
-  PayerActiveInappCreatePayerInappPaymentRequest_Points_OneOfCase_GPBUnsetOneOfCase = 0,
-  PayerActiveInappCreatePayerInappPaymentRequest_Points_OneOfCase_PointsPay = 17,
-  PayerActiveInappCreatePayerInappPaymentRequest_Points_OneOfCase_PointsRepay = 18,
+typedef GPB_ENUM(GDACreatePayerInappPaymentRequest_Points_OneOfCase) {
+  GDACreatePayerInappPaymentRequest_Points_OneOfCase_GPBUnsetOneOfCase = 0,
+  GDACreatePayerInappPaymentRequest_Points_OneOfCase_PointsPay = 17,
+  GDACreatePayerInappPaymentRequest_Points_OneOfCase_PointsRepay = 18,
 };
 
 /**
  * only called by myself，即顾客是我
  **/
-@interface PayerActiveInappCreatePayerInappPaymentRequest : GPBMessage
+@interface GDACreatePayerInappPaymentRequest : GPBMessage
 
 /** 收银员的收款码 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *payeeCode;
@@ -267,7 +267,7 @@ typedef GPB_ENUM(PayerActiveInappCreatePayerInappPaymentRequest_Points_OneOfCase
 /** 实付金额 */
 @property(nonatomic, readwrite) int32_t actualPay;
 
-@property(nonatomic, readonly) PayerActiveInappCreatePayerInappPaymentRequest_Points_OneOfCase pointsOneOfCase;
+@property(nonatomic, readonly) GDACreatePayerInappPaymentRequest_Points_OneOfCase pointsOneOfCase;
 
 /** 实付积分代替金额 */
 @property(nonatomic, readwrite) int32_t pointsPay;
@@ -276,7 +276,7 @@ typedef GPB_ENUM(PayerActiveInappCreatePayerInappPaymentRequest_Points_OneOfCase
 @property(nonatomic, readwrite) int32_t pointsRepay;
 
 /** 支付通道如支付宝、微信、云闪付 */
-@property(nonatomic, readwrite) enum COMMONPaymentChannel paymentChannel;
+@property(nonatomic, readwrite) enum GDAPaymentChannel paymentChannel;
 
 /** 顾客客户端的实际ip地址 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *payerIp;
@@ -284,21 +284,21 @@ typedef GPB_ENUM(PayerActiveInappCreatePayerInappPaymentRequest_Points_OneOfCase
 @end
 
 /**
- * Fetches the raw value of a @c PayerActiveInappCreatePayerInappPaymentRequest's @c paymentChannel property, even
+ * Fetches the raw value of a @c GDACreatePayerInappPaymentRequest's @c paymentChannel property, even
  * if the value was not defined by the enum at the time the code was generated.
  **/
-int32_t PayerActiveInappCreatePayerInappPaymentRequest_PaymentChannel_RawValue(PayerActiveInappCreatePayerInappPaymentRequest *message);
+int32_t GDACreatePayerInappPaymentRequest_PaymentChannel_RawValue(GDACreatePayerInappPaymentRequest *message);
 /**
- * Sets the raw value of an @c PayerActiveInappCreatePayerInappPaymentRequest's @c paymentChannel property, allowing
+ * Sets the raw value of an @c GDACreatePayerInappPaymentRequest's @c paymentChannel property, allowing
  * it to be set to a value that was not defined by the enum at the time the code
  * was generated.
  **/
-void SetPayerActiveInappCreatePayerInappPaymentRequest_PaymentChannel_RawValue(PayerActiveInappCreatePayerInappPaymentRequest *message, int32_t value);
+void SetGDACreatePayerInappPaymentRequest_PaymentChannel_RawValue(GDACreatePayerInappPaymentRequest *message, int32_t value);
 
 /**
  * Clears whatever value was set for the oneof 'points'.
  **/
-void PayerActiveInappCreatePayerInappPaymentRequest_ClearPointsOneOfCase(PayerActiveInappCreatePayerInappPaymentRequest *message);
+void GDACreatePayerInappPaymentRequest_ClearPointsOneOfCase(GDACreatePayerInappPaymentRequest *message);
 
 NS_ASSUME_NONNULL_END
 

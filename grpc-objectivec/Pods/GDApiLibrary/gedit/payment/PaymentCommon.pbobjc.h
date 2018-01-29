@@ -27,36 +27,36 @@
 
 CF_EXTERN_C_BEGIN
 
-@class COMMONStatus;
-@class PMCOMMPayment;
-GPB_ENUM_FWD_DECLARE(COMMONPaymentChannel);
+@class GDAPayment;
+@class GDAStatus;
+GPB_ENUM_FWD_DECLARE(GDAPaymentChannel);
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - Enum PMCOMMPayment_PaymentStatus
+#pragma mark - Enum GDAPayment_PaymentStatus
 
-typedef GPB_ENUM(PMCOMMPayment_PaymentStatus) {
+typedef GPB_ENUM(GDAPayment_PaymentStatus) {
   /**
    * Value used if any message's field encounters a value that is not defined
    * by this enum. The message will also have C functions to get/set the rawValue
    * of the field.
    **/
-  PMCOMMPayment_PaymentStatus_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
-  PMCOMMPayment_PaymentStatus_New = 0,
-  PMCOMMPayment_PaymentStatus_Inprogress = 60,
-  PMCOMMPayment_PaymentStatus_Failed = 61,
-  PMCOMMPayment_PaymentStatus_Ok = 62,
+  GDAPayment_PaymentStatus_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
+  GDAPayment_PaymentStatus_New = 0,
+  GDAPayment_PaymentStatus_Inprogress = 60,
+  GDAPayment_PaymentStatus_Failed = 61,
+  GDAPayment_PaymentStatus_Ok = 62,
 };
 
-GPBEnumDescriptor *PMCOMMPayment_PaymentStatus_EnumDescriptor(void);
+GPBEnumDescriptor *GDAPayment_PaymentStatus_EnumDescriptor(void);
 
 /**
  * Checks to see if the given value is defined by the enum or was not known at
  * the time this source was generated.
  **/
-BOOL PMCOMMPayment_PaymentStatus_IsValidValue(int32_t value);
+BOOL GDAPayment_PaymentStatus_IsValidValue(int32_t value);
 
-#pragma mark - PMCOMMPaymentCommonRoot
+#pragma mark - GDAPaymentCommonRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -68,50 +68,50 @@ BOOL PMCOMMPayment_PaymentStatus_IsValidValue(int32_t value);
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface PMCOMMPaymentCommonRoot : GPBRootObject
+@interface GDAPaymentCommonRoot : GPBRootObject
 @end
 
-#pragma mark - PMCOMMPaymentResponse
+#pragma mark - GDAPaymentResponse
 
-typedef GPB_ENUM(PMCOMMPaymentResponse_FieldNumber) {
-  PMCOMMPaymentResponse_FieldNumber_Payment = 1,
-  PMCOMMPaymentResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAPaymentResponse_FieldNumber) {
+  GDAPaymentResponse_FieldNumber_Payment = 1,
+  GDAPaymentResponse_FieldNumber_Status = 999,
 };
 
-@interface PMCOMMPaymentResponse : GPBMessage
+@interface GDAPaymentResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
-@property(nonatomic, readwrite, strong, null_resettable) PMCOMMPayment *payment;
+@property(nonatomic, readwrite, strong, null_resettable) GDAPayment *payment;
 /** Test to see if @c payment has been set. */
 @property(nonatomic, readwrite) BOOL hasPayment;
 
 @end
 
-#pragma mark - PMCOMMPayment
+#pragma mark - GDAPayment
 
-typedef GPB_ENUM(PMCOMMPayment_FieldNumber) {
-  PMCOMMPayment_FieldNumber_Uuid = 1,
-  PMCOMMPayment_FieldNumber_PayerCode = 10,
-  PMCOMMPayment_FieldNumber_PayerUuid = 11,
-  PMCOMMPayment_FieldNumber_PayeeCode = 21,
-  PMCOMMPayment_FieldNumber_PayeeUuid = 22,
-  PMCOMMPayment_FieldNumber_PayeeStoreUuid = 23,
-  PMCOMMPayment_FieldNumber_PayeeWorkerUuid = 24,
-  PMCOMMPayment_FieldNumber_ShouldPay = 30,
-  PMCOMMPayment_FieldNumber_ActualPay = 31,
-  PMCOMMPayment_FieldNumber_PointsPay = 32,
-  PMCOMMPayment_FieldNumber_PointsRepay = 33,
-  PMCOMMPayment_FieldNumber_IsPointsPay = 34,
-  PMCOMMPayment_FieldNumber_PaymentChannel = 40,
-  PMCOMMPayment_FieldNumber_PaymentChannelSignature = 41,
-  PMCOMMPayment_FieldNumber_PaymentStatus = 50,
-  PMCOMMPayment_FieldNumber_Created = 51,
+typedef GPB_ENUM(GDAPayment_FieldNumber) {
+  GDAPayment_FieldNumber_Uuid = 1,
+  GDAPayment_FieldNumber_PayerCode = 10,
+  GDAPayment_FieldNumber_PayerUuid = 11,
+  GDAPayment_FieldNumber_PayeeCode = 21,
+  GDAPayment_FieldNumber_PayeeUuid = 22,
+  GDAPayment_FieldNumber_PayeeStoreUuid = 23,
+  GDAPayment_FieldNumber_PayeeWorkerUuid = 24,
+  GDAPayment_FieldNumber_ShouldPay = 30,
+  GDAPayment_FieldNumber_ActualPay = 31,
+  GDAPayment_FieldNumber_PointsPay = 32,
+  GDAPayment_FieldNumber_PointsRepay = 33,
+  GDAPayment_FieldNumber_IsPointsPay = 34,
+  GDAPayment_FieldNumber_PaymentChannel = 40,
+  GDAPayment_FieldNumber_PaymentChannelSignature = 41,
+  GDAPayment_FieldNumber_PaymentStatus = 50,
+  GDAPayment_FieldNumber_Created = 51,
 };
 
-@interface PMCOMMPayment : GPBMessage
+@interface GDAPayment : GPBMessage
 
 /** 支付单编号 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
@@ -150,40 +150,40 @@ typedef GPB_ENUM(PMCOMMPayment_FieldNumber) {
 @property(nonatomic, readwrite) BOOL isPointsPay;
 
 /** 支付通道如支付宝、微信、云闪付 */
-@property(nonatomic, readwrite) enum COMMONPaymentChannel paymentChannel;
+@property(nonatomic, readwrite) enum GDAPaymentChannel paymentChannel;
 
 /** 微信或支付宝预定单签名，使用该签名可以直接调起支付. */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *paymentChannelSignature;
 
-@property(nonatomic, readwrite) PMCOMMPayment_PaymentStatus paymentStatus;
+@property(nonatomic, readwrite) GDAPayment_PaymentStatus paymentStatus;
 
 @property(nonatomic, readwrite) int64_t created;
 
 @end
 
 /**
- * Fetches the raw value of a @c PMCOMMPayment's @c paymentChannel property, even
+ * Fetches the raw value of a @c GDAPayment's @c paymentChannel property, even
  * if the value was not defined by the enum at the time the code was generated.
  **/
-int32_t PMCOMMPayment_PaymentChannel_RawValue(PMCOMMPayment *message);
+int32_t GDAPayment_PaymentChannel_RawValue(GDAPayment *message);
 /**
- * Sets the raw value of an @c PMCOMMPayment's @c paymentChannel property, allowing
+ * Sets the raw value of an @c GDAPayment's @c paymentChannel property, allowing
  * it to be set to a value that was not defined by the enum at the time the code
  * was generated.
  **/
-void SetPMCOMMPayment_PaymentChannel_RawValue(PMCOMMPayment *message, int32_t value);
+void SetGDAPayment_PaymentChannel_RawValue(GDAPayment *message, int32_t value);
 
 /**
- * Fetches the raw value of a @c PMCOMMPayment's @c paymentStatus property, even
+ * Fetches the raw value of a @c GDAPayment's @c paymentStatus property, even
  * if the value was not defined by the enum at the time the code was generated.
  **/
-int32_t PMCOMMPayment_PaymentStatus_RawValue(PMCOMMPayment *message);
+int32_t GDAPayment_PaymentStatus_RawValue(GDAPayment *message);
 /**
- * Sets the raw value of an @c PMCOMMPayment's @c paymentStatus property, allowing
+ * Sets the raw value of an @c GDAPayment's @c paymentStatus property, allowing
  * it to be set to a value that was not defined by the enum at the time the code
  * was generated.
  **/
-void SetPMCOMMPayment_PaymentStatus_RawValue(PMCOMMPayment *message, int32_t value);
+void SetGDAPayment_PaymentStatus_RawValue(GDAPayment *message, int32_t value);
 
 NS_ASSUME_NONNULL_END
 

@@ -27,11 +27,11 @@
 
 CF_EXTERN_C_BEGIN
 
-@class COMMONStatus;
+@class GDAStatus;
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - USRLOCUserLocationRoot
+#pragma mark - GDAUserLocationRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -43,17 +43,17 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface USRLOCUserLocationRoot : GPBRootObject
+@interface GDAUserLocationRoot : GPBRootObject
 @end
 
-#pragma mark - USRLOCUpdateMyLocationRequest
+#pragma mark - GDAUpdateMyLocationRequest
 
-typedef GPB_ENUM(USRLOCUpdateMyLocationRequest_FieldNumber) {
-  USRLOCUpdateMyLocationRequest_FieldNumber_Lat = 30,
-  USRLOCUpdateMyLocationRequest_FieldNumber_Lon = 31,
+typedef GPB_ENUM(GDAUpdateMyLocationRequest_FieldNumber) {
+  GDAUpdateMyLocationRequest_FieldNumber_Lat = 30,
+  GDAUpdateMyLocationRequest_FieldNumber_Lon = 31,
 };
 
-@interface USRLOCUpdateMyLocationRequest : GPBMessage
+@interface GDAUpdateMyLocationRequest : GPBMessage
 
 @property(nonatomic, readwrite) double lat;
 
@@ -61,15 +61,15 @@ typedef GPB_ENUM(USRLOCUpdateMyLocationRequest_FieldNumber) {
 
 @end
 
-#pragma mark - USRLOCUpdateMyLocationResponse
+#pragma mark - GDAUpdateMyLocationResponse
 
-typedef GPB_ENUM(USRLOCUpdateMyLocationResponse_FieldNumber) {
-  USRLOCUpdateMyLocationResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAUpdateMyLocationResponse_FieldNumber) {
+  GDAUpdateMyLocationResponse_FieldNumber_Status = 999,
 };
 
-@interface USRLOCUpdateMyLocationResponse : GPBMessage
+@interface GDAUpdateMyLocationResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 

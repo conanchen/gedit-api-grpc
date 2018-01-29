@@ -20,38 +20,38 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-#pragma mark - USRLOGOUTUserLogoutRoot
+#pragma mark - GDAUserLogoutRoot
 
-@implementation USRLOGOUTUserLogoutRoot
+@implementation GDAUserLogoutRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - USRLOGOUTUserLogoutRoot_FileDescriptor
+#pragma mark - GDAUserLogoutRoot_FileDescriptor
 
-static GPBFileDescriptor *USRLOGOUTUserLogoutRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDAUserLogoutRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.user"
-                                                 objcPrefix:@"USRLOGOUT"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - USRLOGOUTLogoutRequest
+#pragma mark - GDALogoutRequest
 
-@implementation USRLOGOUTLogoutRequest
+@implementation GDALogoutRequest
 
 
-typedef struct USRLOGOUTLogoutRequest__storage_ {
+typedef struct GDALogoutRequest__storage_ {
   uint32_t _has_storage_[1];
-} USRLOGOUTLogoutRequest__storage_;
+} GDALogoutRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -59,12 +59,12 @@ typedef struct USRLOGOUTLogoutRequest__storage_ {
   static GPBDescriptor *descriptor = nil;
   if (!descriptor) {
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRLOGOUTLogoutRequest class]
-                                     rootClass:[USRLOGOUTUserLogoutRoot class]
-                                          file:USRLOGOUTUserLogoutRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDALogoutRequest class]
+                                     rootClass:[GDAUserLogoutRoot class]
+                                          file:GDAUserLogoutRoot_FileDescriptor()
                                         fields:NULL
                                     fieldCount:0
-                                   storageSize:sizeof(USRLOGOUTLogoutRequest__storage_)
+                                   storageSize:sizeof(GDALogoutRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -74,16 +74,16 @@ typedef struct USRLOGOUTLogoutRequest__storage_ {
 
 @end
 
-#pragma mark - USRLOGOUTLogoutResponse
+#pragma mark - GDALogoutResponse
 
-@implementation USRLOGOUTLogoutResponse
+@implementation GDALogoutResponse
 
 @dynamic hasStatus, status;
 
-typedef struct USRLOGOUTLogoutResponse__storage_ {
+typedef struct GDALogoutResponse__storage_ {
   uint32_t _has_storage_[1];
-  COMMONStatus *status;
-} USRLOGOUTLogoutResponse__storage_;
+  GDAStatus *status;
+} GDALogoutResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -93,21 +93,21 @@ typedef struct USRLOGOUTLogoutResponse__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = USRLOGOUTLogoutResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDALogoutResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(USRLOGOUTLogoutResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDALogoutResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRLOGOUTLogoutResponse class]
-                                     rootClass:[USRLOGOUTUserLogoutRoot class]
-                                          file:USRLOGOUTUserLogoutRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDALogoutResponse class]
+                                     rootClass:[GDAUserLogoutRoot class]
+                                          file:GDAUserLogoutRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(USRLOGOUTLogoutResponse__storage_)
+                                   storageSize:sizeof(GDALogoutResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;

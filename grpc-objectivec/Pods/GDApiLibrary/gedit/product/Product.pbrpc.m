@@ -5,7 +5,7 @@
 #import <RxLibrary/GRXWriter+Immediate.h>
 #import "gedit/Common.pbobjc.h"
 
-@implementation PRDPRDProductApi
+@implementation GDAProductApi
 
 // Designated initializer
 - (instancetype)initWithHost:(NSString *)host {
@@ -26,26 +26,26 @@
 
 #pragma mark Get(GetProductRequest) returns (ProductResponse)
 
-- (void)getWithRequest:(PRDPRDGetProductRequest *)request handler:(void(^)(PRDPRDProductResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)getWithRequest:(GDAGetProductRequest *)request handler:(void(^)(GDAProductResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToGetWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToGetWithRequest:(PRDPRDGetProductRequest *)request handler:(void(^)(PRDPRDProductResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToGetWithRequest:(GDAGetProductRequest *)request handler:(void(^)(GDAProductResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"Get"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[PRDPRDProductResponse class]
+             responseClass:[GDAProductResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 #pragma mark List(ListProductRequest) returns (stream ProductResponse)
 
-- (void)listWithRequest:(PRDPRDListProductRequest *)request eventHandler:(void(^)(BOOL done, PRDPRDProductResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (void)listWithRequest:(GDAListProductRequest *)request eventHandler:(void(^)(BOOL done, GDAProductResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   [[self RPCToListWithRequest:request eventHandler:eventHandler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToListWithRequest:(PRDPRDListProductRequest *)request eventHandler:(void(^)(BOOL done, PRDPRDProductResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (GRPCProtoCall *)RPCToListWithRequest:(GDAListProductRequest *)request eventHandler:(void(^)(BOOL done, GDAProductResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   return [self RPCToMethod:@"List"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[PRDPRDProductResponse class]
+             responseClass:[GDAProductResponse class]
         responsesWriteable:[GRXWriteable writeableWithEventHandler:eventHandler]];
 }
 @end

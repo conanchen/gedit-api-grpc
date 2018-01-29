@@ -20,40 +20,40 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-#pragma mark - PRDPRDProductRoot
+#pragma mark - GDAProductRoot
 
-@implementation PRDPRDProductRoot
+@implementation GDAProductRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - PRDPRDProductRoot_FileDescriptor
+#pragma mark - GDAProductRoot_FileDescriptor
 
-static GPBFileDescriptor *PRDPRDProductRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDAProductRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.product"
-                                                 objcPrefix:@"PRDPRD"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - PRDPRDGetProductRequest
+#pragma mark - GDAGetProductRequest
 
-@implementation PRDPRDGetProductRequest
+@implementation GDAGetProductRequest
 
 @dynamic uuid;
 
-typedef struct PRDPRDGetProductRequest__storage_ {
+typedef struct GDAGetProductRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *uuid;
-} PRDPRDGetProductRequest__storage_;
+} GDAGetProductRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -64,20 +64,20 @@ typedef struct PRDPRDGetProductRequest__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = PRDPRDGetProductRequest_FieldNumber_Uuid,
+        .number = GDAGetProductRequest_FieldNumber_Uuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PRDPRDGetProductRequest__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDAGetProductRequest__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PRDPRDGetProductRequest class]
-                                     rootClass:[PRDPRDProductRoot class]
-                                          file:PRDPRDProductRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAGetProductRequest class]
+                                     rootClass:[GDAProductRoot class]
+                                          file:GDAProductRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PRDPRDGetProductRequest__storage_)
+                                   storageSize:sizeof(GDAGetProductRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -87,16 +87,16 @@ typedef struct PRDPRDGetProductRequest__storage_ {
 
 @end
 
-#pragma mark - PRDPRDListProductRequest
+#pragma mark - GDAListProductRequest
 
-@implementation PRDPRDListProductRequest
+@implementation GDAListProductRequest
 
 @dynamic parentUuid;
 
-typedef struct PRDPRDListProductRequest__storage_ {
+typedef struct GDAListProductRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *parentUuid;
-} PRDPRDListProductRequest__storage_;
+} GDAListProductRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -107,20 +107,20 @@ typedef struct PRDPRDListProductRequest__storage_ {
       {
         .name = "parentUuid",
         .dataTypeSpecific.className = NULL,
-        .number = PRDPRDListProductRequest_FieldNumber_ParentUuid,
+        .number = GDAListProductRequest_FieldNumber_ParentUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PRDPRDListProductRequest__storage_, parentUuid),
+        .offset = (uint32_t)offsetof(GDAListProductRequest__storage_, parentUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PRDPRDListProductRequest class]
-                                     rootClass:[PRDPRDProductRoot class]
-                                          file:PRDPRDProductRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListProductRequest class]
+                                     rootClass:[GDAProductRoot class]
+                                          file:GDAProductRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PRDPRDListProductRequest__storage_)
+                                   storageSize:sizeof(GDAListProductRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -135,18 +135,18 @@ typedef struct PRDPRDListProductRequest__storage_ {
 
 @end
 
-#pragma mark - PRDPRDProductResponse
+#pragma mark - GDAProductResponse
 
-@implementation PRDPRDProductResponse
+@implementation GDAProductResponse
 
 @dynamic hasStatus, status;
 @dynamic hasProduct, product;
 
-typedef struct PRDPRDProductResponse__storage_ {
+typedef struct GDAProductResponse__storage_ {
   uint32_t _has_storage_[1];
-  PRDPRDProduct *product;
-  COMMONStatus *status;
-} PRDPRDProductResponse__storage_;
+  GDAProduct *product;
+  GDAStatus *status;
+} GDAProductResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -156,30 +156,30 @@ typedef struct PRDPRDProductResponse__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "product",
-        .dataTypeSpecific.className = GPBStringifySymbol(PRDPRDProduct),
-        .number = PRDPRDProductResponse_FieldNumber_Product,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAProduct),
+        .number = GDAProductResponse_FieldNumber_Product,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PRDPRDProductResponse__storage_, product),
+        .offset = (uint32_t)offsetof(GDAProductResponse__storage_, product),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = PRDPRDProductResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDAProductResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PRDPRDProductResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDAProductResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PRDPRDProductResponse class]
-                                     rootClass:[PRDPRDProductRoot class]
-                                          file:PRDPRDProductRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAProductResponse class]
+                                     rootClass:[GDAProductRoot class]
+                                          file:GDAProductRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PRDPRDProductResponse__storage_)
+                                   storageSize:sizeof(GDAProductResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -189,20 +189,20 @@ typedef struct PRDPRDProductResponse__storage_ {
 
 @end
 
-#pragma mark - PRDPRDProduct
+#pragma mark - GDAProduct
 
-@implementation PRDPRDProduct
+@implementation GDAProduct
 
 @dynamic uuid;
 @dynamic name;
 @dynamic iconURL;
 
-typedef struct PRDPRDProduct__storage_ {
+typedef struct GDAProduct__storage_ {
   uint32_t _has_storage_[1];
   NSString *uuid;
   NSString *name;
   NSString *iconURL;
-} PRDPRDProduct__storage_;
+} GDAProduct__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -213,38 +213,38 @@ typedef struct PRDPRDProduct__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = PRDPRDProduct_FieldNumber_Uuid,
+        .number = GDAProduct_FieldNumber_Uuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PRDPRDProduct__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDAProduct__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "name",
         .dataTypeSpecific.className = NULL,
-        .number = PRDPRDProduct_FieldNumber_Name,
+        .number = GDAProduct_FieldNumber_Name,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PRDPRDProduct__storage_, name),
+        .offset = (uint32_t)offsetof(GDAProduct__storage_, name),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "iconURL",
         .dataTypeSpecific.className = NULL,
-        .number = PRDPRDProduct_FieldNumber_IconURL,
+        .number = GDAProduct_FieldNumber_IconURL,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(PRDPRDProduct__storage_, iconURL),
+        .offset = (uint32_t)offsetof(GDAProduct__storage_, iconURL),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PRDPRDProduct class]
-                                     rootClass:[PRDPRDProductRoot class]
-                                          file:PRDPRDProductRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAProduct class]
+                                     rootClass:[GDAProductRoot class]
+                                          file:GDAProductRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PRDPRDProduct__storage_)
+                                   storageSize:sizeof(GDAProduct__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =

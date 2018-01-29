@@ -18,7 +18,7 @@ package gedit.user;
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.user.fans.grpc";
 option java_outer_classname = "UserFansProto";
-option objc_class_prefix = "USRFANS";
+option objc_class_prefix = "GDA";
 
 import "gedit/common.proto";
 

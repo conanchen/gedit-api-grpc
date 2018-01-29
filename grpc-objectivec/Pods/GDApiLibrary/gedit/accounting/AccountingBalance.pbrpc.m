@@ -5,7 +5,7 @@
 #import <RxLibrary/GRXWriter+Immediate.h>
 #import "gedit/Common.pbobjc.h"
 
-@implementation ACCNTAccountingBalanceApi
+@implementation GDAAccountingBalanceApi
 
 // Designated initializer
 - (instancetype)initWithHost:(NSString *)host {
@@ -26,14 +26,14 @@
 
 #pragma mark ListBalance(ListBalanceRequest) returns (stream BalanceResponse)
 
-- (void)listBalanceWithRequest:(ACCNTListBalanceRequest *)request eventHandler:(void(^)(BOOL done, ACCNTBalanceResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (void)listBalanceWithRequest:(GDAListBalanceRequest *)request eventHandler:(void(^)(BOOL done, GDABalanceResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   [[self RPCToListBalanceWithRequest:request eventHandler:eventHandler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToListBalanceWithRequest:(ACCNTListBalanceRequest *)request eventHandler:(void(^)(BOOL done, ACCNTBalanceResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (GRPCProtoCall *)RPCToListBalanceWithRequest:(GDAListBalanceRequest *)request eventHandler:(void(^)(BOOL done, GDABalanceResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   return [self RPCToMethod:@"ListBalance"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[ACCNTBalanceResponse class]
+             responseClass:[GDABalanceResponse class]
         responsesWriteable:[GRXWriteable writeableWithEventHandler:eventHandler]];
 }
 @end

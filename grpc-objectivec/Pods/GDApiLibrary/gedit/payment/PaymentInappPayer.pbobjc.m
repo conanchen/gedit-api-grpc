@@ -22,40 +22,40 @@
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 #pragma clang diagnostic ignored "-Wdirect-ivar-access"
 
-#pragma mark - PayerActiveInappPaymentInappPayerRoot
+#pragma mark - GDAPaymentInappPayerRoot
 
-@implementation PayerActiveInappPaymentInappPayerRoot
+@implementation GDAPaymentInappPayerRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - PayerActiveInappPaymentInappPayerRoot_FileDescriptor
+#pragma mark - GDAPaymentInappPayerRoot_FileDescriptor
 
-static GPBFileDescriptor *PayerActiveInappPaymentInappPayerRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDAPaymentInappPayerRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.payment"
-                                                 objcPrefix:@"PayerActiveInapp"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - PayerActiveInappGetMyPayeeCodeRequest
+#pragma mark - GDAGetMyPayeeCodeRequest
 
-@implementation PayerActiveInappGetMyPayeeCodeRequest
+@implementation GDAGetMyPayeeCodeRequest
 
 @dynamic payeeStoreUuid;
 
-typedef struct PayerActiveInappGetMyPayeeCodeRequest__storage_ {
+typedef struct GDAGetMyPayeeCodeRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *payeeStoreUuid;
-} PayerActiveInappGetMyPayeeCodeRequest__storage_;
+} GDAGetMyPayeeCodeRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -66,20 +66,20 @@ typedef struct PayerActiveInappGetMyPayeeCodeRequest__storage_ {
       {
         .name = "payeeStoreUuid",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappGetMyPayeeCodeRequest_FieldNumber_PayeeStoreUuid,
+        .number = GDAGetMyPayeeCodeRequest_FieldNumber_PayeeStoreUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PayerActiveInappGetMyPayeeCodeRequest__storage_, payeeStoreUuid),
+        .offset = (uint32_t)offsetof(GDAGetMyPayeeCodeRequest__storage_, payeeStoreUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PayerActiveInappGetMyPayeeCodeRequest class]
-                                     rootClass:[PayerActiveInappPaymentInappPayerRoot class]
-                                          file:PayerActiveInappPaymentInappPayerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAGetMyPayeeCodeRequest class]
+                                     rootClass:[GDAPaymentInappPayerRoot class]
+                                          file:GDAPaymentInappPayerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PayerActiveInappGetMyPayeeCodeRequest__storage_)
+                                   storageSize:sizeof(GDAGetMyPayeeCodeRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -94,18 +94,18 @@ typedef struct PayerActiveInappGetMyPayeeCodeRequest__storage_ {
 
 @end
 
-#pragma mark - PayerActiveInappGetMyPayeeCodeResponse
+#pragma mark - GDAGetMyPayeeCodeResponse
 
-@implementation PayerActiveInappGetMyPayeeCodeResponse
+@implementation GDAGetMyPayeeCodeResponse
 
 @dynamic hasStatus, status;
 @dynamic hasPayeeCode, payeeCode;
 
-typedef struct PayerActiveInappGetMyPayeeCodeResponse__storage_ {
+typedef struct GDAGetMyPayeeCodeResponse__storage_ {
   uint32_t _has_storage_[1];
-  PayerActiveInappPayeeCode *payeeCode;
-  COMMONStatus *status;
-} PayerActiveInappGetMyPayeeCodeResponse__storage_;
+  GDAPayeeCode *payeeCode;
+  GDAStatus *status;
+} GDAGetMyPayeeCodeResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -115,30 +115,30 @@ typedef struct PayerActiveInappGetMyPayeeCodeResponse__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "payeeCode",
-        .dataTypeSpecific.className = GPBStringifySymbol(PayerActiveInappPayeeCode),
-        .number = PayerActiveInappGetMyPayeeCodeResponse_FieldNumber_PayeeCode,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAPayeeCode),
+        .number = GDAGetMyPayeeCodeResponse_FieldNumber_PayeeCode,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PayerActiveInappGetMyPayeeCodeResponse__storage_, payeeCode),
+        .offset = (uint32_t)offsetof(GDAGetMyPayeeCodeResponse__storage_, payeeCode),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = PayerActiveInappGetMyPayeeCodeResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDAGetMyPayeeCodeResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PayerActiveInappGetMyPayeeCodeResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDAGetMyPayeeCodeResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PayerActiveInappGetMyPayeeCodeResponse class]
-                                     rootClass:[PayerActiveInappPaymentInappPayerRoot class]
-                                          file:PayerActiveInappPaymentInappPayerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAGetMyPayeeCodeResponse class]
+                                     rootClass:[GDAPaymentInappPayerRoot class]
+                                          file:GDAPaymentInappPayerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PayerActiveInappGetMyPayeeCodeResponse__storage_)
+                                   storageSize:sizeof(GDAGetMyPayeeCodeResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -153,9 +153,9 @@ typedef struct PayerActiveInappGetMyPayeeCodeResponse__storage_ {
 
 @end
 
-#pragma mark - PayerActiveInappPayeeCode
+#pragma mark - GDAPayeeCode
 
-@implementation PayerActiveInappPayeeCode
+@implementation GDAPayeeCode
 
 @dynamic payeeCode;
 @dynamic expiresIn;
@@ -169,7 +169,7 @@ typedef struct PayerActiveInappGetMyPayeeCodeResponse__storage_ {
 @dynamic payeeWorkerLogo;
 @dynamic payeeWorkerName;
 
-typedef struct PayerActiveInappPayeeCode__storage_ {
+typedef struct GDAPayeeCode__storage_ {
   uint32_t _has_storage_[1];
   NSString *payeeCode;
   NSString *payeeUuid;
@@ -182,7 +182,7 @@ typedef struct PayerActiveInappPayeeCode__storage_ {
   NSString *payeeWorkerLogo;
   NSString *payeeWorkerName;
   int64_t expiresIn;
-} PayerActiveInappPayeeCode__storage_;
+} GDAPayeeCode__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -193,110 +193,110 @@ typedef struct PayerActiveInappPayeeCode__storage_ {
       {
         .name = "payeeCode",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappPayeeCode_FieldNumber_PayeeCode,
+        .number = GDAPayeeCode_FieldNumber_PayeeCode,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PayerActiveInappPayeeCode__storage_, payeeCode),
+        .offset = (uint32_t)offsetof(GDAPayeeCode__storage_, payeeCode),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "expiresIn",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappPayeeCode_FieldNumber_ExpiresIn,
+        .number = GDAPayeeCode_FieldNumber_ExpiresIn,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PayerActiveInappPayeeCode__storage_, expiresIn),
+        .offset = (uint32_t)offsetof(GDAPayeeCode__storage_, expiresIn),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
       {
         .name = "payeeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappPayeeCode_FieldNumber_PayeeUuid,
+        .number = GDAPayeeCode_FieldNumber_PayeeUuid,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(PayerActiveInappPayeeCode__storage_, payeeUuid),
+        .offset = (uint32_t)offsetof(GDAPayeeCode__storage_, payeeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeLogo",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappPayeeCode_FieldNumber_PayeeLogo,
+        .number = GDAPayeeCode_FieldNumber_PayeeLogo,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(PayerActiveInappPayeeCode__storage_, payeeLogo),
+        .offset = (uint32_t)offsetof(GDAPayeeCode__storage_, payeeLogo),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeName",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappPayeeCode_FieldNumber_PayeeName,
+        .number = GDAPayeeCode_FieldNumber_PayeeName,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(PayerActiveInappPayeeCode__storage_, payeeName),
+        .offset = (uint32_t)offsetof(GDAPayeeCode__storage_, payeeName),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeStoreUuid",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappPayeeCode_FieldNumber_PayeeStoreUuid,
+        .number = GDAPayeeCode_FieldNumber_PayeeStoreUuid,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(PayerActiveInappPayeeCode__storage_, payeeStoreUuid),
+        .offset = (uint32_t)offsetof(GDAPayeeCode__storage_, payeeStoreUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeStoreLogo",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappPayeeCode_FieldNumber_PayeeStoreLogo,
+        .number = GDAPayeeCode_FieldNumber_PayeeStoreLogo,
         .hasIndex = 6,
-        .offset = (uint32_t)offsetof(PayerActiveInappPayeeCode__storage_, payeeStoreLogo),
+        .offset = (uint32_t)offsetof(GDAPayeeCode__storage_, payeeStoreLogo),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeStoreNamee",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappPayeeCode_FieldNumber_PayeeStoreNamee,
+        .number = GDAPayeeCode_FieldNumber_PayeeStoreNamee,
         .hasIndex = 7,
-        .offset = (uint32_t)offsetof(PayerActiveInappPayeeCode__storage_, payeeStoreNamee),
+        .offset = (uint32_t)offsetof(GDAPayeeCode__storage_, payeeStoreNamee),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeWorkerUuid",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappPayeeCode_FieldNumber_PayeeWorkerUuid,
+        .number = GDAPayeeCode_FieldNumber_PayeeWorkerUuid,
         .hasIndex = 8,
-        .offset = (uint32_t)offsetof(PayerActiveInappPayeeCode__storage_, payeeWorkerUuid),
+        .offset = (uint32_t)offsetof(GDAPayeeCode__storage_, payeeWorkerUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeWorkerLogo",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappPayeeCode_FieldNumber_PayeeWorkerLogo,
+        .number = GDAPayeeCode_FieldNumber_PayeeWorkerLogo,
         .hasIndex = 9,
-        .offset = (uint32_t)offsetof(PayerActiveInappPayeeCode__storage_, payeeWorkerLogo),
+        .offset = (uint32_t)offsetof(GDAPayeeCode__storage_, payeeWorkerLogo),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeWorkerName",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappPayeeCode_FieldNumber_PayeeWorkerName,
+        .number = GDAPayeeCode_FieldNumber_PayeeWorkerName,
         .hasIndex = 10,
-        .offset = (uint32_t)offsetof(PayerActiveInappPayeeCode__storage_, payeeWorkerName),
+        .offset = (uint32_t)offsetof(GDAPayeeCode__storage_, payeeWorkerName),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PayerActiveInappPayeeCode class]
-                                     rootClass:[PayerActiveInappPaymentInappPayerRoot class]
-                                          file:PayerActiveInappPaymentInappPayerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAPayeeCode class]
+                                     rootClass:[GDAPaymentInappPayerRoot class]
+                                          file:GDAPaymentInappPayerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PayerActiveInappPayeeCode__storage_)
+                                   storageSize:sizeof(GDAPayeeCode__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -311,16 +311,16 @@ typedef struct PayerActiveInappPayeeCode__storage_ {
 
 @end
 
-#pragma mark - PayerActiveInappGetPayeeCodeRequest
+#pragma mark - GDAGetPayeeCodeRequest
 
-@implementation PayerActiveInappGetPayeeCodeRequest
+@implementation GDAGetPayeeCodeRequest
 
 @dynamic payeeCode;
 
-typedef struct PayerActiveInappGetPayeeCodeRequest__storage_ {
+typedef struct GDAGetPayeeCodeRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *payeeCode;
-} PayerActiveInappGetPayeeCodeRequest__storage_;
+} GDAGetPayeeCodeRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -331,20 +331,20 @@ typedef struct PayerActiveInappGetPayeeCodeRequest__storage_ {
       {
         .name = "payeeCode",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappGetPayeeCodeRequest_FieldNumber_PayeeCode,
+        .number = GDAGetPayeeCodeRequest_FieldNumber_PayeeCode,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PayerActiveInappGetPayeeCodeRequest__storage_, payeeCode),
+        .offset = (uint32_t)offsetof(GDAGetPayeeCodeRequest__storage_, payeeCode),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PayerActiveInappGetPayeeCodeRequest class]
-                                     rootClass:[PayerActiveInappPaymentInappPayerRoot class]
-                                          file:PayerActiveInappPaymentInappPayerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAGetPayeeCodeRequest class]
+                                     rootClass:[GDAPaymentInappPayerRoot class]
+                                          file:GDAPaymentInappPayerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PayerActiveInappGetPayeeCodeRequest__storage_)
+                                   storageSize:sizeof(GDAGetPayeeCodeRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -359,18 +359,18 @@ typedef struct PayerActiveInappGetPayeeCodeRequest__storage_ {
 
 @end
 
-#pragma mark - PayerActiveInappGetPayeeCodeResponse
+#pragma mark - GDAGetPayeeCodeResponse
 
-@implementation PayerActiveInappGetPayeeCodeResponse
+@implementation GDAGetPayeeCodeResponse
 
 @dynamic hasStatus, status;
 @dynamic hasPayeeCode, payeeCode;
 
-typedef struct PayerActiveInappGetPayeeCodeResponse__storage_ {
+typedef struct GDAGetPayeeCodeResponse__storage_ {
   uint32_t _has_storage_[1];
-  PayerActiveInappPayeeCode *payeeCode;
-  COMMONStatus *status;
-} PayerActiveInappGetPayeeCodeResponse__storage_;
+  GDAPayeeCode *payeeCode;
+  GDAStatus *status;
+} GDAGetPayeeCodeResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -380,30 +380,30 @@ typedef struct PayerActiveInappGetPayeeCodeResponse__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "payeeCode",
-        .dataTypeSpecific.className = GPBStringifySymbol(PayerActiveInappPayeeCode),
-        .number = PayerActiveInappGetPayeeCodeResponse_FieldNumber_PayeeCode,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAPayeeCode),
+        .number = GDAGetPayeeCodeResponse_FieldNumber_PayeeCode,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PayerActiveInappGetPayeeCodeResponse__storage_, payeeCode),
+        .offset = (uint32_t)offsetof(GDAGetPayeeCodeResponse__storage_, payeeCode),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = PayerActiveInappGetPayeeCodeResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDAGetPayeeCodeResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PayerActiveInappGetPayeeCodeResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDAGetPayeeCodeResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PayerActiveInappGetPayeeCodeResponse class]
-                                     rootClass:[PayerActiveInappPaymentInappPayerRoot class]
-                                          file:PayerActiveInappPaymentInappPayerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAGetPayeeCodeResponse class]
+                                     rootClass:[GDAPaymentInappPayerRoot class]
+                                          file:GDAPaymentInappPayerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PayerActiveInappGetPayeeCodeResponse__storage_)
+                                   storageSize:sizeof(GDAGetPayeeCodeResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -418,18 +418,18 @@ typedef struct PayerActiveInappGetPayeeCodeResponse__storage_ {
 
 @end
 
-#pragma mark - PayerActiveInappPreparePayerInappPaymentRequest
+#pragma mark - GDAPreparePayerInappPaymentRequest
 
-@implementation PayerActiveInappPreparePayerInappPaymentRequest
+@implementation GDAPreparePayerInappPaymentRequest
 
 @dynamic payeeCode;
 @dynamic shouldPay;
 
-typedef struct PayerActiveInappPreparePayerInappPaymentRequest__storage_ {
+typedef struct GDAPreparePayerInappPaymentRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t shouldPay;
   NSString *payeeCode;
-} PayerActiveInappPreparePayerInappPaymentRequest__storage_;
+} GDAPreparePayerInappPaymentRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -440,29 +440,29 @@ typedef struct PayerActiveInappPreparePayerInappPaymentRequest__storage_ {
       {
         .name = "payeeCode",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappPreparePayerInappPaymentRequest_FieldNumber_PayeeCode,
+        .number = GDAPreparePayerInappPaymentRequest_FieldNumber_PayeeCode,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PayerActiveInappPreparePayerInappPaymentRequest__storage_, payeeCode),
+        .offset = (uint32_t)offsetof(GDAPreparePayerInappPaymentRequest__storage_, payeeCode),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "shouldPay",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappPreparePayerInappPaymentRequest_FieldNumber_ShouldPay,
+        .number = GDAPreparePayerInappPaymentRequest_FieldNumber_ShouldPay,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PayerActiveInappPreparePayerInappPaymentRequest__storage_, shouldPay),
+        .offset = (uint32_t)offsetof(GDAPreparePayerInappPaymentRequest__storage_, shouldPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PayerActiveInappPreparePayerInappPaymentRequest class]
-                                     rootClass:[PayerActiveInappPaymentInappPayerRoot class]
-                                          file:PayerActiveInappPaymentInappPayerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAPreparePayerInappPaymentRequest class]
+                                     rootClass:[GDAPaymentInappPayerRoot class]
+                                          file:GDAPaymentInappPayerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PayerActiveInappPreparePayerInappPaymentRequest__storage_)
+                                   storageSize:sizeof(GDAPreparePayerInappPaymentRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -477,9 +477,9 @@ typedef struct PayerActiveInappPreparePayerInappPaymentRequest__storage_ {
 
 @end
 
-#pragma mark - PayerActiveInappPreparePayerInappPaymentResponse
+#pragma mark - GDAPreparePayerInappPaymentResponse
 
-@implementation PayerActiveInappPreparePayerInappPaymentResponse
+@implementation GDAPreparePayerInappPaymentResponse
 
 @dynamic hasStatus, status;
 @dynamic payeeCode;
@@ -493,7 +493,7 @@ typedef struct PayerActiveInappPreparePayerInappPaymentRequest__storage_ {
 @dynamic pointsPayComment;
 @dynamic pointsRepayComment;
 
-typedef struct PayerActiveInappPreparePayerInappPaymentResponse__storage_ {
+typedef struct GDAPreparePayerInappPaymentResponse__storage_ {
   uint32_t _has_storage_[1];
   int32_t shouldPay;
   int32_t actualPay;
@@ -505,8 +505,8 @@ typedef struct PayerActiveInappPreparePayerInappPaymentResponse__storage_ {
   NSString *payeeWorkerName;
   NSString *pointsPayComment;
   NSString *pointsRepayComment;
-  COMMONStatus *status;
-} PayerActiveInappPreparePayerInappPaymentResponse__storage_;
+  GDAStatus *status;
+} GDAPreparePayerInappPaymentResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -517,110 +517,110 @@ typedef struct PayerActiveInappPreparePayerInappPaymentResponse__storage_ {
       {
         .name = "payeeCode",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappPreparePayerInappPaymentResponse_FieldNumber_PayeeCode,
+        .number = GDAPreparePayerInappPaymentResponse_FieldNumber_PayeeCode,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PayerActiveInappPreparePayerInappPaymentResponse__storage_, payeeCode),
+        .offset = (uint32_t)offsetof(GDAPreparePayerInappPaymentResponse__storage_, payeeCode),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeName",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappPreparePayerInappPaymentResponse_FieldNumber_PayeeName,
+        .number = GDAPreparePayerInappPaymentResponse_FieldNumber_PayeeName,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(PayerActiveInappPreparePayerInappPaymentResponse__storage_, payeeName),
+        .offset = (uint32_t)offsetof(GDAPreparePayerInappPaymentResponse__storage_, payeeName),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeStoreName",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappPreparePayerInappPaymentResponse_FieldNumber_PayeeStoreName,
+        .number = GDAPreparePayerInappPaymentResponse_FieldNumber_PayeeStoreName,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(PayerActiveInappPreparePayerInappPaymentResponse__storage_, payeeStoreName),
+        .offset = (uint32_t)offsetof(GDAPreparePayerInappPaymentResponse__storage_, payeeStoreName),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeWorkerName",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappPreparePayerInappPaymentResponse_FieldNumber_PayeeWorkerName,
+        .number = GDAPreparePayerInappPaymentResponse_FieldNumber_PayeeWorkerName,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(PayerActiveInappPreparePayerInappPaymentResponse__storage_, payeeWorkerName),
+        .offset = (uint32_t)offsetof(GDAPreparePayerInappPaymentResponse__storage_, payeeWorkerName),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "shouldPay",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappPreparePayerInappPaymentResponse_FieldNumber_ShouldPay,
+        .number = GDAPreparePayerInappPaymentResponse_FieldNumber_ShouldPay,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(PayerActiveInappPreparePayerInappPaymentResponse__storage_, shouldPay),
+        .offset = (uint32_t)offsetof(GDAPreparePayerInappPaymentResponse__storage_, shouldPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "actualPay",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappPreparePayerInappPaymentResponse_FieldNumber_ActualPay,
+        .number = GDAPreparePayerInappPaymentResponse_FieldNumber_ActualPay,
         .hasIndex = 6,
-        .offset = (uint32_t)offsetof(PayerActiveInappPreparePayerInappPaymentResponse__storage_, actualPay),
+        .offset = (uint32_t)offsetof(GDAPreparePayerInappPaymentResponse__storage_, actualPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "pointsPay",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappPreparePayerInappPaymentResponse_FieldNumber_PointsPay,
+        .number = GDAPreparePayerInappPaymentResponse_FieldNumber_PointsPay,
         .hasIndex = 7,
-        .offset = (uint32_t)offsetof(PayerActiveInappPreparePayerInappPaymentResponse__storage_, pointsPay),
+        .offset = (uint32_t)offsetof(GDAPreparePayerInappPaymentResponse__storage_, pointsPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "pointsRepay",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappPreparePayerInappPaymentResponse_FieldNumber_PointsRepay,
+        .number = GDAPreparePayerInappPaymentResponse_FieldNumber_PointsRepay,
         .hasIndex = 8,
-        .offset = (uint32_t)offsetof(PayerActiveInappPreparePayerInappPaymentResponse__storage_, pointsRepay),
+        .offset = (uint32_t)offsetof(GDAPreparePayerInappPaymentResponse__storage_, pointsRepay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "pointsPayComment",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappPreparePayerInappPaymentResponse_FieldNumber_PointsPayComment,
+        .number = GDAPreparePayerInappPaymentResponse_FieldNumber_PointsPayComment,
         .hasIndex = 9,
-        .offset = (uint32_t)offsetof(PayerActiveInappPreparePayerInappPaymentResponse__storage_, pointsPayComment),
+        .offset = (uint32_t)offsetof(GDAPreparePayerInappPaymentResponse__storage_, pointsPayComment),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "pointsRepayComment",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappPreparePayerInappPaymentResponse_FieldNumber_PointsRepayComment,
+        .number = GDAPreparePayerInappPaymentResponse_FieldNumber_PointsRepayComment,
         .hasIndex = 10,
-        .offset = (uint32_t)offsetof(PayerActiveInappPreparePayerInappPaymentResponse__storage_, pointsRepayComment),
+        .offset = (uint32_t)offsetof(GDAPreparePayerInappPaymentResponse__storage_, pointsRepayComment),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = PayerActiveInappPreparePayerInappPaymentResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDAPreparePayerInappPaymentResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PayerActiveInappPreparePayerInappPaymentResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDAPreparePayerInappPaymentResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PayerActiveInappPreparePayerInappPaymentResponse class]
-                                     rootClass:[PayerActiveInappPaymentInappPayerRoot class]
-                                          file:PayerActiveInappPaymentInappPayerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAPreparePayerInappPaymentResponse class]
+                                     rootClass:[GDAPaymentInappPayerRoot class]
+                                          file:GDAPaymentInappPayerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PayerActiveInappPreparePayerInappPaymentResponse__storage_)
+                                   storageSize:sizeof(GDAPreparePayerInappPaymentResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -635,9 +635,9 @@ typedef struct PayerActiveInappPreparePayerInappPaymentResponse__storage_ {
 
 @end
 
-#pragma mark - PayerActiveInappCreatePayerInappPaymentRequest
+#pragma mark - GDACreatePayerInappPaymentRequest
 
-@implementation PayerActiveInappCreatePayerInappPaymentRequest
+@implementation GDACreatePayerInappPaymentRequest
 
 @dynamic pointsOneOfCase;
 @dynamic payeeCode;
@@ -648,16 +648,16 @@ typedef struct PayerActiveInappPreparePayerInappPaymentResponse__storage_ {
 @dynamic paymentChannel;
 @dynamic payerIp;
 
-typedef struct PayerActiveInappCreatePayerInappPaymentRequest__storage_ {
+typedef struct GDACreatePayerInappPaymentRequest__storage_ {
   uint32_t _has_storage_[2];
   int32_t shouldPay;
   int32_t actualPay;
   int32_t pointsPay;
   int32_t pointsRepay;
-  COMMONPaymentChannel paymentChannel;
+  GDAPaymentChannel paymentChannel;
   NSString *payeeCode;
   NSString *payerIp;
-} PayerActiveInappCreatePayerInappPaymentRequest__storage_;
+} GDACreatePayerInappPaymentRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -668,74 +668,74 @@ typedef struct PayerActiveInappCreatePayerInappPaymentRequest__storage_ {
       {
         .name = "payeeCode",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappCreatePayerInappPaymentRequest_FieldNumber_PayeeCode,
+        .number = GDACreatePayerInappPaymentRequest_FieldNumber_PayeeCode,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PayerActiveInappCreatePayerInappPaymentRequest__storage_, payeeCode),
+        .offset = (uint32_t)offsetof(GDACreatePayerInappPaymentRequest__storage_, payeeCode),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "shouldPay",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappCreatePayerInappPaymentRequest_FieldNumber_ShouldPay,
+        .number = GDACreatePayerInappPaymentRequest_FieldNumber_ShouldPay,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PayerActiveInappCreatePayerInappPaymentRequest__storage_, shouldPay),
+        .offset = (uint32_t)offsetof(GDACreatePayerInappPaymentRequest__storage_, shouldPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "actualPay",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappCreatePayerInappPaymentRequest_FieldNumber_ActualPay,
+        .number = GDACreatePayerInappPaymentRequest_FieldNumber_ActualPay,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(PayerActiveInappCreatePayerInappPaymentRequest__storage_, actualPay),
+        .offset = (uint32_t)offsetof(GDACreatePayerInappPaymentRequest__storage_, actualPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "pointsPay",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappCreatePayerInappPaymentRequest_FieldNumber_PointsPay,
+        .number = GDACreatePayerInappPaymentRequest_FieldNumber_PointsPay,
         .hasIndex = -1,
-        .offset = (uint32_t)offsetof(PayerActiveInappCreatePayerInappPaymentRequest__storage_, pointsPay),
+        .offset = (uint32_t)offsetof(GDACreatePayerInappPaymentRequest__storage_, pointsPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "pointsRepay",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappCreatePayerInappPaymentRequest_FieldNumber_PointsRepay,
+        .number = GDACreatePayerInappPaymentRequest_FieldNumber_PointsRepay,
         .hasIndex = -1,
-        .offset = (uint32_t)offsetof(PayerActiveInappCreatePayerInappPaymentRequest__storage_, pointsRepay),
+        .offset = (uint32_t)offsetof(GDACreatePayerInappPaymentRequest__storage_, pointsRepay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "paymentChannel",
-        .dataTypeSpecific.enumDescFunc = COMMONPaymentChannel_EnumDescriptor,
-        .number = PayerActiveInappCreatePayerInappPaymentRequest_FieldNumber_PaymentChannel,
+        .dataTypeSpecific.enumDescFunc = GDAPaymentChannel_EnumDescriptor,
+        .number = GDACreatePayerInappPaymentRequest_FieldNumber_PaymentChannel,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(PayerActiveInappCreatePayerInappPaymentRequest__storage_, paymentChannel),
+        .offset = (uint32_t)offsetof(GDACreatePayerInappPaymentRequest__storage_, paymentChannel),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldHasEnumDescriptor),
         .dataType = GPBDataTypeEnum,
       },
       {
         .name = "payerIp",
         .dataTypeSpecific.className = NULL,
-        .number = PayerActiveInappCreatePayerInappPaymentRequest_FieldNumber_PayerIp,
+        .number = GDACreatePayerInappPaymentRequest_FieldNumber_PayerIp,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(PayerActiveInappCreatePayerInappPaymentRequest__storage_, payerIp),
+        .offset = (uint32_t)offsetof(GDACreatePayerInappPaymentRequest__storage_, payerIp),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PayerActiveInappCreatePayerInappPaymentRequest class]
-                                     rootClass:[PayerActiveInappPaymentInappPayerRoot class]
-                                          file:PayerActiveInappPaymentInappPayerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDACreatePayerInappPaymentRequest class]
+                                     rootClass:[GDAPaymentInappPayerRoot class]
+                                          file:GDAPaymentInappPayerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PayerActiveInappCreatePayerInappPaymentRequest__storage_)
+                                   storageSize:sizeof(GDACreatePayerInappPaymentRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     static const char *oneofs[] = {
       "points",
@@ -756,19 +756,19 @@ typedef struct PayerActiveInappCreatePayerInappPaymentRequest__storage_ {
 
 @end
 
-int32_t PayerActiveInappCreatePayerInappPaymentRequest_PaymentChannel_RawValue(PayerActiveInappCreatePayerInappPaymentRequest *message) {
-  GPBDescriptor *descriptor = [PayerActiveInappCreatePayerInappPaymentRequest descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:PayerActiveInappCreatePayerInappPaymentRequest_FieldNumber_PaymentChannel];
+int32_t GDACreatePayerInappPaymentRequest_PaymentChannel_RawValue(GDACreatePayerInappPaymentRequest *message) {
+  GPBDescriptor *descriptor = [GDACreatePayerInappPaymentRequest descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDACreatePayerInappPaymentRequest_FieldNumber_PaymentChannel];
   return GPBGetMessageInt32Field(message, field);
 }
 
-void SetPayerActiveInappCreatePayerInappPaymentRequest_PaymentChannel_RawValue(PayerActiveInappCreatePayerInappPaymentRequest *message, int32_t value) {
-  GPBDescriptor *descriptor = [PayerActiveInappCreatePayerInappPaymentRequest descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:PayerActiveInappCreatePayerInappPaymentRequest_FieldNumber_PaymentChannel];
+void SetGDACreatePayerInappPaymentRequest_PaymentChannel_RawValue(GDACreatePayerInappPaymentRequest *message, int32_t value) {
+  GPBDescriptor *descriptor = [GDACreatePayerInappPaymentRequest descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDACreatePayerInappPaymentRequest_FieldNumber_PaymentChannel];
   GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
 }
 
-void PayerActiveInappCreatePayerInappPaymentRequest_ClearPointsOneOfCase(PayerActiveInappCreatePayerInappPaymentRequest *message) {
+void GDACreatePayerInappPaymentRequest_ClearPointsOneOfCase(GDACreatePayerInappPaymentRequest *message) {
   GPBDescriptor *descriptor = [message descriptor];
   GPBOneofDescriptor *oneof = [descriptor.oneofs objectAtIndex:0];
   GPBMaybeClearOneof(message, oneof, -1, 0);

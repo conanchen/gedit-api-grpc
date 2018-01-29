@@ -20,40 +20,40 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-#pragma mark - DISTRICTDistrictRoot
+#pragma mark - GDADistrictRoot
 
-@implementation DISTRICTDistrictRoot
+@implementation GDADistrictRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - DISTRICTDistrictRoot_FileDescriptor
+#pragma mark - GDADistrictRoot_FileDescriptor
 
-static GPBFileDescriptor *DISTRICTDistrictRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDADistrictRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.district"
-                                                 objcPrefix:@"DISTRICT"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - DISTRICTUpsertDistrictRequest
+#pragma mark - GDAUpsertDistrictRequest
 
-@implementation DISTRICTUpsertDistrictRequest
+@implementation GDAUpsertDistrictRequest
 
 @dynamic hasDistrict, district;
 
-typedef struct DISTRICTUpsertDistrictRequest__storage_ {
+typedef struct GDAUpsertDistrictRequest__storage_ {
   uint32_t _has_storage_[1];
-  COMMONDistrict *district;
-} DISTRICTUpsertDistrictRequest__storage_;
+  GDADistrict *district;
+} GDAUpsertDistrictRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -63,21 +63,21 @@ typedef struct DISTRICTUpsertDistrictRequest__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "district",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONDistrict),
-        .number = DISTRICTUpsertDistrictRequest_FieldNumber_District,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDADistrict),
+        .number = GDAUpsertDistrictRequest_FieldNumber_District,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(DISTRICTUpsertDistrictRequest__storage_, district),
+        .offset = (uint32_t)offsetof(GDAUpsertDistrictRequest__storage_, district),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[DISTRICTUpsertDistrictRequest class]
-                                     rootClass:[DISTRICTDistrictRoot class]
-                                          file:DISTRICTDistrictRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAUpsertDistrictRequest class]
+                                     rootClass:[GDADistrictRoot class]
+                                          file:GDADistrictRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(DISTRICTUpsertDistrictRequest__storage_)
+                                   storageSize:sizeof(GDAUpsertDistrictRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -87,14 +87,14 @@ typedef struct DISTRICTUpsertDistrictRequest__storage_ {
 
 @end
 
-#pragma mark - DISTRICTGetTopDistrictRequest
+#pragma mark - GDAGetTopDistrictRequest
 
-@implementation DISTRICTGetTopDistrictRequest
+@implementation GDAGetTopDistrictRequest
 
 
-typedef struct DISTRICTGetTopDistrictRequest__storage_ {
+typedef struct GDAGetTopDistrictRequest__storage_ {
   uint32_t _has_storage_[1];
-} DISTRICTGetTopDistrictRequest__storage_;
+} GDAGetTopDistrictRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -102,12 +102,12 @@ typedef struct DISTRICTGetTopDistrictRequest__storage_ {
   static GPBDescriptor *descriptor = nil;
   if (!descriptor) {
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[DISTRICTGetTopDistrictRequest class]
-                                     rootClass:[DISTRICTDistrictRoot class]
-                                          file:DISTRICTDistrictRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAGetTopDistrictRequest class]
+                                     rootClass:[GDADistrictRoot class]
+                                          file:GDADistrictRoot_FileDescriptor()
                                         fields:NULL
                                     fieldCount:0
-                                   storageSize:sizeof(DISTRICTGetTopDistrictRequest__storage_)
+                                   storageSize:sizeof(GDAGetTopDistrictRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -117,18 +117,18 @@ typedef struct DISTRICTGetTopDistrictRequest__storage_ {
 
 @end
 
-#pragma mark - DISTRICTListChildDistrictRequest
+#pragma mark - GDAListChildDistrictRequest
 
-@implementation DISTRICTListChildDistrictRequest
+@implementation GDAListChildDistrictRequest
 
 @dynamic parentId;
 @dynamic size;
 
-typedef struct DISTRICTListChildDistrictRequest__storage_ {
+typedef struct GDAListChildDistrictRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t size;
   int64_t parentId;
-} DISTRICTListChildDistrictRequest__storage_;
+} GDAListChildDistrictRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -139,29 +139,29 @@ typedef struct DISTRICTListChildDistrictRequest__storage_ {
       {
         .name = "parentId",
         .dataTypeSpecific.className = NULL,
-        .number = DISTRICTListChildDistrictRequest_FieldNumber_ParentId,
+        .number = GDAListChildDistrictRequest_FieldNumber_ParentId,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(DISTRICTListChildDistrictRequest__storage_, parentId),
+        .offset = (uint32_t)offsetof(GDAListChildDistrictRequest__storage_, parentId),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
       {
         .name = "size",
         .dataTypeSpecific.className = NULL,
-        .number = DISTRICTListChildDistrictRequest_FieldNumber_Size,
+        .number = GDAListChildDistrictRequest_FieldNumber_Size,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(DISTRICTListChildDistrictRequest__storage_, size),
+        .offset = (uint32_t)offsetof(GDAListChildDistrictRequest__storage_, size),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[DISTRICTListChildDistrictRequest class]
-                                     rootClass:[DISTRICTDistrictRoot class]
-                                          file:DISTRICTDistrictRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListChildDistrictRequest class]
+                                     rootClass:[GDADistrictRoot class]
+                                          file:GDADistrictRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(DISTRICTListChildDistrictRequest__storage_)
+                                   storageSize:sizeof(GDAListChildDistrictRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -176,18 +176,18 @@ typedef struct DISTRICTListChildDistrictRequest__storage_ {
 
 @end
 
-#pragma mark - DISTRICTListDistrictRequest
+#pragma mark - GDAListDistrictRequest
 
-@implementation DISTRICTListDistrictRequest
+@implementation GDAListDistrictRequest
 
 @dynamic page;
 @dynamic size;
 
-typedef struct DISTRICTListDistrictRequest__storage_ {
+typedef struct GDAListDistrictRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t size;
   int64_t page;
-} DISTRICTListDistrictRequest__storage_;
+} GDAListDistrictRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -198,29 +198,29 @@ typedef struct DISTRICTListDistrictRequest__storage_ {
       {
         .name = "page",
         .dataTypeSpecific.className = NULL,
-        .number = DISTRICTListDistrictRequest_FieldNumber_Page,
+        .number = GDAListDistrictRequest_FieldNumber_Page,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(DISTRICTListDistrictRequest__storage_, page),
+        .offset = (uint32_t)offsetof(GDAListDistrictRequest__storage_, page),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
       },
       {
         .name = "size",
         .dataTypeSpecific.className = NULL,
-        .number = DISTRICTListDistrictRequest_FieldNumber_Size,
+        .number = GDAListDistrictRequest_FieldNumber_Size,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(DISTRICTListDistrictRequest__storage_, size),
+        .offset = (uint32_t)offsetof(GDAListDistrictRequest__storage_, size),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[DISTRICTListDistrictRequest class]
-                                     rootClass:[DISTRICTDistrictRoot class]
-                                          file:DISTRICTDistrictRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListDistrictRequest class]
+                                     rootClass:[GDADistrictRoot class]
+                                          file:GDADistrictRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(DISTRICTListDistrictRequest__storage_)
+                                   storageSize:sizeof(GDAListDistrictRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -230,18 +230,18 @@ typedef struct DISTRICTListDistrictRequest__storage_ {
 
 @end
 
-#pragma mark - DISTRICTDistrictResponse
+#pragma mark - GDADistrictResponse
 
-@implementation DISTRICTDistrictResponse
+@implementation GDADistrictResponse
 
 @dynamic hasStatus, status;
 @dynamic hasDistrict, district;
 
-typedef struct DISTRICTDistrictResponse__storage_ {
+typedef struct GDADistrictResponse__storage_ {
   uint32_t _has_storage_[1];
-  COMMONDistrict *district;
-  COMMONStatus *status;
-} DISTRICTDistrictResponse__storage_;
+  GDADistrict *district;
+  GDAStatus *status;
+} GDADistrictResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -251,30 +251,30 @@ typedef struct DISTRICTDistrictResponse__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "district",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONDistrict),
-        .number = DISTRICTDistrictResponse_FieldNumber_District,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDADistrict),
+        .number = GDADistrictResponse_FieldNumber_District,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(DISTRICTDistrictResponse__storage_, district),
+        .offset = (uint32_t)offsetof(GDADistrictResponse__storage_, district),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = DISTRICTDistrictResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDADistrictResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(DISTRICTDistrictResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDADistrictResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[DISTRICTDistrictResponse class]
-                                     rootClass:[DISTRICTDistrictRoot class]
-                                          file:DISTRICTDistrictRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDADistrictResponse class]
+                                     rootClass:[GDADistrictRoot class]
+                                          file:GDADistrictRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(DISTRICTDistrictResponse__storage_)
+                                   storageSize:sizeof(GDADistrictResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;

@@ -27,13 +27,13 @@
 
 CF_EXTERN_C_BEGIN
 
-@class COMMONLocation;
-@class COMMONStatus;
-@class STIDCIntroducership;
+@class GDAIntroducership;
+@class GDALocation;
+@class GDAStatus;
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - STIDCStoreIntroducerRoot
+#pragma mark - GDAStoreIntroducerRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -45,17 +45,17 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface STIDCStoreIntroducerRoot : GPBRootObject
+@interface GDAStoreIntroducerRoot : GPBRootObject
 @end
 
-#pragma mark - STIDCAddIntroducershipRequest
+#pragma mark - GDAAddIntroducershipRequest
 
-typedef GPB_ENUM(STIDCAddIntroducershipRequest_FieldNumber) {
-  STIDCAddIntroducershipRequest_FieldNumber_StoreUuid = 1,
-  STIDCAddIntroducershipRequest_FieldNumber_IntroducerUuid = 3,
+typedef GPB_ENUM(GDAAddIntroducershipRequest_FieldNumber) {
+  GDAAddIntroducershipRequest_FieldNumber_StoreUuid = 1,
+  GDAAddIntroducershipRequest_FieldNumber_IntroducerUuid = 3,
 };
 
-@interface STIDCAddIntroducershipRequest : GPBMessage
+@interface GDAAddIntroducershipRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *storeUuid;
 
@@ -63,15 +63,15 @@ typedef GPB_ENUM(STIDCAddIntroducershipRequest_FieldNumber) {
 
 @end
 
-#pragma mark - STIDCListIntroducershipByStoreRequest
+#pragma mark - GDAListIntroducershipByStoreRequest
 
-typedef GPB_ENUM(STIDCListIntroducershipByStoreRequest_FieldNumber) {
-  STIDCListIntroducershipByStoreRequest_FieldNumber_StoreUuid = 1,
-  STIDCListIntroducershipByStoreRequest_FieldNumber_From = 100,
-  STIDCListIntroducershipByStoreRequest_FieldNumber_Size = 101,
+typedef GPB_ENUM(GDAListIntroducershipByStoreRequest_FieldNumber) {
+  GDAListIntroducershipByStoreRequest_FieldNumber_StoreUuid = 1,
+  GDAListIntroducershipByStoreRequest_FieldNumber_From = 100,
+  GDAListIntroducershipByStoreRequest_FieldNumber_Size = 101,
 };
 
-@interface STIDCListIntroducershipByStoreRequest : GPBMessage
+@interface GDAListIntroducershipByStoreRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *storeUuid;
 
@@ -81,27 +81,27 @@ typedef GPB_ENUM(STIDCListIntroducershipByStoreRequest_FieldNumber) {
 
 @end
 
-#pragma mark - STIDCListMyIntroducedStoreRequest
+#pragma mark - GDAListMyIntroducedStoreRequest
 
-typedef GPB_ENUM(STIDCListMyIntroducedStoreRequest_FieldNumber) {
-  STIDCListMyIntroducedStoreRequest_FieldNumber_LastUpdated = 1,
+typedef GPB_ENUM(GDAListMyIntroducedStoreRequest_FieldNumber) {
+  GDAListMyIntroducedStoreRequest_FieldNumber_LastUpdated = 1,
 };
 
-@interface STIDCListMyIntroducedStoreRequest : GPBMessage
+@interface GDAListMyIntroducedStoreRequest : GPBMessage
 
 @property(nonatomic, readwrite) int64_t lastUpdated;
 
 @end
 
-#pragma mark - STIDCListIntroducershipByIntroducerRequest
+#pragma mark - GDAListIntroducershipByIntroducerRequest
 
-typedef GPB_ENUM(STIDCListIntroducershipByIntroducerRequest_FieldNumber) {
-  STIDCListIntroducershipByIntroducerRequest_FieldNumber_IntroducerUuid = 3,
-  STIDCListIntroducershipByIntroducerRequest_FieldNumber_From = 100,
-  STIDCListIntroducershipByIntroducerRequest_FieldNumber_Size = 101,
+typedef GPB_ENUM(GDAListIntroducershipByIntroducerRequest_FieldNumber) {
+  GDAListIntroducershipByIntroducerRequest_FieldNumber_IntroducerUuid = 3,
+  GDAListIntroducershipByIntroducerRequest_FieldNumber_From = 100,
+  GDAListIntroducershipByIntroducerRequest_FieldNumber_Size = 101,
 };
 
-@interface STIDCListIntroducershipByIntroducerRequest : GPBMessage
+@interface GDAListIntroducershipByIntroducerRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *introducerUuid;
 
@@ -111,21 +111,21 @@ typedef GPB_ENUM(STIDCListIntroducershipByIntroducerRequest_FieldNumber) {
 
 @end
 
-#pragma mark - STIDCIntroducershipResponse
+#pragma mark - GDAIntroducershipResponse
 
-typedef GPB_ENUM(STIDCIntroducershipResponse_FieldNumber) {
-  STIDCIntroducershipResponse_FieldNumber_Introducership = 1,
-  STIDCIntroducershipResponse_FieldNumber_From = 100,
-  STIDCIntroducershipResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAIntroducershipResponse_FieldNumber) {
+  GDAIntroducershipResponse_FieldNumber_Introducership = 1,
+  GDAIntroducershipResponse_FieldNumber_From = 100,
+  GDAIntroducershipResponse_FieldNumber_Status = 999,
 };
 
-@interface STIDCIntroducershipResponse : GPBMessage
+@interface GDAIntroducershipResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
-@property(nonatomic, readwrite, strong, null_resettable) STIDCIntroducership *introducership;
+@property(nonatomic, readwrite, strong, null_resettable) GDAIntroducership *introducership;
 /** Test to see if @c introducership has been set. */
 @property(nonatomic, readwrite) BOOL hasIntroducership;
 
@@ -133,15 +133,15 @@ typedef GPB_ENUM(STIDCIntroducershipResponse_FieldNumber) {
 
 @end
 
-#pragma mark - STIDCBanIntroducershipRequest
+#pragma mark - GDABanIntroducershipRequest
 
-typedef GPB_ENUM(STIDCBanIntroducershipRequest_FieldNumber) {
-  STIDCBanIntroducershipRequest_FieldNumber_IntroducerUuid = 1,
-  STIDCBanIntroducershipRequest_FieldNumber_StoreUuid = 5,
-  STIDCBanIntroducershipRequest_FieldNumber_Active = 7,
+typedef GPB_ENUM(GDABanIntroducershipRequest_FieldNumber) {
+  GDABanIntroducershipRequest_FieldNumber_IntroducerUuid = 1,
+  GDABanIntroducershipRequest_FieldNumber_StoreUuid = 5,
+  GDABanIntroducershipRequest_FieldNumber_Active = 7,
 };
 
-@interface STIDCBanIntroducershipRequest : GPBMessage
+@interface GDABanIntroducershipRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *introducerUuid;
 
@@ -151,20 +151,20 @@ typedef GPB_ENUM(STIDCBanIntroducershipRequest_FieldNumber) {
 
 @end
 
-#pragma mark - STIDCIntroducership
+#pragma mark - GDAIntroducership
 
-typedef GPB_ENUM(STIDCIntroducership_FieldNumber) {
-  STIDCIntroducership_FieldNumber_UserUuid = 1,
-  STIDCIntroducership_FieldNumber_StoreUuid = 5,
-  STIDCIntroducership_FieldNumber_StoreName = 7,
-  STIDCIntroducership_FieldNumber_StoreLogo = 9,
-  STIDCIntroducership_FieldNumber_Location = 11,
-  STIDCIntroducership_FieldNumber_Active = 27,
-  STIDCIntroducership_FieldNumber_Created = 29,
-  STIDCIntroducership_FieldNumber_LastUpdated = 30,
+typedef GPB_ENUM(GDAIntroducership_FieldNumber) {
+  GDAIntroducership_FieldNumber_UserUuid = 1,
+  GDAIntroducership_FieldNumber_StoreUuid = 5,
+  GDAIntroducership_FieldNumber_StoreName = 7,
+  GDAIntroducership_FieldNumber_StoreLogo = 9,
+  GDAIntroducership_FieldNumber_Location = 11,
+  GDAIntroducership_FieldNumber_Active = 27,
+  GDAIntroducership_FieldNumber_Created = 29,
+  GDAIntroducership_FieldNumber_LastUpdated = 30,
 };
 
-@interface STIDCIntroducership : GPBMessage
+@interface GDAIntroducership : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *userUuid;
 
@@ -174,7 +174,7 @@ typedef GPB_ENUM(STIDCIntroducership_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *storeLogo;
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONLocation *location;
+@property(nonatomic, readwrite, strong, null_resettable) GDALocation *location;
 /** Test to see if @c location has been set. */
 @property(nonatomic, readwrite) BOOL hasLocation;
 

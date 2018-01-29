@@ -19,40 +19,40 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-#pragma mark - HLWHelloworldRoot
+#pragma mark - GDAHelloworldRoot
 
-@implementation HLWHelloworldRoot
+@implementation GDAHelloworldRoot
 
 // No extensions in the file and no imports, so no need to generate
 // +extensionRegistry.
 
 @end
 
-#pragma mark - HLWHelloworldRoot_FileDescriptor
+#pragma mark - GDAHelloworldRoot_FileDescriptor
 
-static GPBFileDescriptor *HLWHelloworldRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDAHelloworldRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"helloworld"
-                                                 objcPrefix:@"HLW"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - HLWHelloRequest
+#pragma mark - GDAHelloRequest
 
-@implementation HLWHelloRequest
+@implementation GDAHelloRequest
 
 @dynamic name;
 
-typedef struct HLWHelloRequest__storage_ {
+typedef struct GDAHelloRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *name;
-} HLWHelloRequest__storage_;
+} GDAHelloRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -63,20 +63,20 @@ typedef struct HLWHelloRequest__storage_ {
       {
         .name = "name",
         .dataTypeSpecific.className = NULL,
-        .number = HLWHelloRequest_FieldNumber_Name,
+        .number = GDAHelloRequest_FieldNumber_Name,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(HLWHelloRequest__storage_, name),
+        .offset = (uint32_t)offsetof(GDAHelloRequest__storage_, name),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[HLWHelloRequest class]
-                                     rootClass:[HLWHelloworldRoot class]
-                                          file:HLWHelloworldRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAHelloRequest class]
+                                     rootClass:[GDAHelloworldRoot class]
+                                          file:GDAHelloworldRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(HLWHelloRequest__storage_)
+                                   storageSize:sizeof(GDAHelloRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -86,16 +86,16 @@ typedef struct HLWHelloRequest__storage_ {
 
 @end
 
-#pragma mark - HLWHelloReply
+#pragma mark - GDAHelloReply
 
-@implementation HLWHelloReply
+@implementation GDAHelloReply
 
 @dynamic message;
 
-typedef struct HLWHelloReply__storage_ {
+typedef struct GDAHelloReply__storage_ {
   uint32_t _has_storage_[1];
   NSString *message;
-} HLWHelloReply__storage_;
+} GDAHelloReply__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -106,20 +106,20 @@ typedef struct HLWHelloReply__storage_ {
       {
         .name = "message",
         .dataTypeSpecific.className = NULL,
-        .number = HLWHelloReply_FieldNumber_Message,
+        .number = GDAHelloReply_FieldNumber_Message,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(HLWHelloReply__storage_, message),
+        .offset = (uint32_t)offsetof(GDAHelloReply__storage_, message),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[HLWHelloReply class]
-                                     rootClass:[HLWHelloworldRoot class]
-                                          file:HLWHelloworldRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAHelloReply class]
+                                     rootClass:[GDAHelloworldRoot class]
+                                          file:GDAHelloworldRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(HLWHelloReply__storage_)
+                                   storageSize:sizeof(GDAHelloReply__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;

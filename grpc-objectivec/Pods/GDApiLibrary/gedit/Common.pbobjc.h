@@ -29,86 +29,86 @@ CF_EXTERN_C_BEGIN
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - Enum COMMONPaymentChannel
+#pragma mark - Enum GDAPaymentChannel
 
-typedef GPB_ENUM(COMMONPaymentChannel) {
+typedef GPB_ENUM(GDAPaymentChannel) {
   /**
    * Value used if any message's field encounters a value that is not defined
    * by this enum. The message will also have C functions to get/set the rawValue
    * of the field.
    **/
-  COMMONPaymentChannel_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
-  COMMONPaymentChannel_Alipay = 0,
-  COMMONPaymentChannel_Wechat = 1,
-  COMMONPaymentChannel_Unionpay = 2,
+  GDAPaymentChannel_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
+  GDAPaymentChannel_Alipay = 0,
+  GDAPaymentChannel_Wechat = 1,
+  GDAPaymentChannel_Unionpay = 2,
 };
 
-GPBEnumDescriptor *COMMONPaymentChannel_EnumDescriptor(void);
+GPBEnumDescriptor *GDAPaymentChannel_EnumDescriptor(void);
 
 /**
  * Checks to see if the given value is defined by the enum or was not known at
  * the time this source was generated.
  **/
-BOOL COMMONPaymentChannel_IsValidValue(int32_t value);
+BOOL GDAPaymentChannel_IsValidValue(int32_t value);
 
-#pragma mark - Enum COMMONAccountType
+#pragma mark - Enum GDAAccountType
 
-typedef GPB_ENUM(COMMONAccountType) {
+typedef GPB_ENUM(GDAAccountType) {
   /**
    * Value used if any message's field encounters a value that is not defined
    * by this enum. The message will also have C functions to get/set the rawValue
    * of the field.
    **/
-  COMMONAccountType_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
+  GDAAccountType_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
   /** 现金账户 */
-  COMMONAccountType_Cash = 0,
+  GDAAccountType_Cash = 0,
 
   /** 可消费积分账户 */
-  COMMONAccountType_CurrentPoints = 1,
+  GDAAccountType_CurrentPoints = 1,
 
   /** 可兑换积分账户 */
-  COMMONAccountType_FixedPoints = 2,
+  GDAAccountType_FixedPoints = 2,
 
   /** 红包账户 */
-  COMMONAccountType_Redpack = 3,
+  GDAAccountType_Redpack = 3,
 
   /** 优惠券账户 */
-  COMMONAccountType_Coupon = 4,
+  GDAAccountType_Coupon = 4,
 };
 
-GPBEnumDescriptor *COMMONAccountType_EnumDescriptor(void);
+GPBEnumDescriptor *GDAAccountType_EnumDescriptor(void);
 
 /**
  * Checks to see if the given value is defined by the enum or was not known at
  * the time this source was generated.
  **/
-BOOL COMMONAccountType_IsValidValue(int32_t value);
+BOOL GDAAccountType_IsValidValue(int32_t value);
 
-#pragma mark - Enum COMMONStatus_Code
+#pragma mark - Enum GDAStatus_Code
 
 /**
  * *
  * The set of canonical status codes. If new codes are added over time they must choose
  * a numerical value that does not collide with any previously used value.
  **/
-typedef GPB_ENUM(COMMONStatus_Code) {
+typedef GPB_ENUM(GDAStatus_Code) {
   /**
    * Value used if any message's field encounters a value that is not defined
    * by this enum. The message will also have C functions to get/set the rawValue
    * of the field.
    **/
-  COMMONStatus_Code_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
+  GDAStatus_Code_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
   /**
    * *
    * The operation completed successfully.
    **/
-  COMMONStatus_Code_Ok = 0,
+  GDAStatus_Code_Ok = 0,
 
   /**
    * *
    * The operation was cancelled (typically by the caller).
    **/
-  COMMONStatus_Code_Cancelled = 1,
+  GDAStatus_Code_Cancelled = 1,
 
   /**
    * *
@@ -118,7 +118,7 @@ typedef GPB_ENUM(COMMONStatus_Code) {
    * errors raised by APIs that do not return enough error information
    * may be converted to this error.
    **/
-  COMMONStatus_Code_Unknown = 2,
+  GDAStatus_Code_Unknown = 2,
 
   /**
    * *
@@ -127,7 +127,7 @@ typedef GPB_ENUM(COMMONStatus_Code) {
    * that are problematic regardless of the state of the system
    * (e.g., a malformed file name).
    **/
-  COMMONStatus_Code_InvalidArgument = 3,
+  GDAStatus_Code_InvalidArgument = 3,
 
   /**
    * *
@@ -137,19 +137,19 @@ typedef GPB_ENUM(COMMONStatus_Code) {
    * successful response from a server could have been delayed long
    * enough for the deadline to expire.
    **/
-  COMMONStatus_Code_DeadlineExceeded = 4,
+  GDAStatus_Code_DeadlineExceeded = 4,
 
   /**
    * *
    * Some requested entity (e.g., file or directory) was not found.
    **/
-  COMMONStatus_Code_NotFound = 5,
+  GDAStatus_Code_NotFound = 5,
 
   /**
    * *
    * Some entity that we attempted to create (e.g., file or directory) already exists.
    **/
-  COMMONStatus_Code_AlreadyExists = 6,
+  GDAStatus_Code_AlreadyExists = 6,
 
   /**
    * *
@@ -160,14 +160,14 @@ typedef GPB_ENUM(COMMONStatus_Code) {
    * used if the caller cannot be identified (use UNAUTHENTICATED
    * instead for those errors).
    **/
-  COMMONStatus_Code_PermissionDenied = 7,
+  GDAStatus_Code_PermissionDenied = 7,
 
   /**
    * *
    * Some resource has been exhausted, perhaps a per-user quota, or
    * perhaps the entire file system is out of space.
    **/
-  COMMONStatus_Code_ResourceExhausted = 8,
+  GDAStatus_Code_ResourceExhausted = 8,
 
   /**
    * *
@@ -187,7 +187,7 @@ typedef GPB_ENUM(COMMONStatus_Code) {
    * should be returned since the client should not retry unless
    * they have first fixed up the directory by deleting files from it.
    **/
-  COMMONStatus_Code_FailedPrecondition = 9,
+  GDAStatus_Code_FailedPrecondition = 9,
 
   /**
    * *
@@ -197,7 +197,7 @@ typedef GPB_ENUM(COMMONStatus_Code) {
    * <p>See litmus test above for deciding between FAILED_PRECONDITION,
    * ABORTED, and UNAVAILABLE.
    **/
-  COMMONStatus_Code_Aborted = 10,
+  GDAStatus_Code_Aborted = 10,
 
   /**
    * *
@@ -216,13 +216,13 @@ typedef GPB_ENUM(COMMONStatus_Code) {
    * so that callers who are iterating through
    * a space can easily look for an OUT_OF_RANGE error to detect when they are done.
    **/
-  COMMONStatus_Code_OutOfRange = 11,
+  GDAStatus_Code_OutOfRange = 11,
 
   /**
    * *
    * Operation is not implemented or not supported/enabled in this service.
    **/
-  COMMONStatus_Code_Unimplemented = 12,
+  GDAStatus_Code_Unimplemented = 12,
 
   /**
    * *
@@ -230,7 +230,7 @@ typedef GPB_ENUM(COMMONStatus_Code) {
    * system has been broken.  If you see one of these errors,
    * something is very broken.
    **/
-  COMMONStatus_Code_Internal = 13,
+  GDAStatus_Code_Internal = 13,
 
   /**
    * *
@@ -241,31 +241,31 @@ typedef GPB_ENUM(COMMONStatus_Code) {
    * <p>See litmus test above for deciding between FAILED_PRECONDITION,
    * ABORTED, and UNAVAILABLE.
    **/
-  COMMONStatus_Code_Unavailable = 14,
+  GDAStatus_Code_Unavailable = 14,
 
   /**
    * *
    * Unrecoverable data loss or corruption.
    **/
-  COMMONStatus_Code_DataLoss = 15,
+  GDAStatus_Code_DataLoss = 15,
 
   /**
    * *
    * The request does not have valid authentication credentials for the
    * operation.
    **/
-  COMMONStatus_Code_Unauthenticated = 16,
+  GDAStatus_Code_Unauthenticated = 16,
 };
 
-GPBEnumDescriptor *COMMONStatus_Code_EnumDescriptor(void);
+GPBEnumDescriptor *GDAStatus_Code_EnumDescriptor(void);
 
 /**
  * Checks to see if the given value is defined by the enum or was not known at
  * the time this source was generated.
  **/
-BOOL COMMONStatus_Code_IsValidValue(int32_t value);
+BOOL GDAStatus_Code_IsValidValue(int32_t value);
 
-#pragma mark - COMMONCommonRoot
+#pragma mark - GDACommonRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -277,45 +277,45 @@ BOOL COMMONStatus_Code_IsValidValue(int32_t value);
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface COMMONCommonRoot : GPBRootObject
+@interface GDACommonRoot : GPBRootObject
 @end
 
-#pragma mark - COMMONStatus
+#pragma mark - GDAStatus
 
-typedef GPB_ENUM(COMMONStatus_FieldNumber) {
-  COMMONStatus_FieldNumber_Code = 1,
-  COMMONStatus_FieldNumber_Details = 2,
+typedef GPB_ENUM(GDAStatus_FieldNumber) {
+  GDAStatus_FieldNumber_Code = 1,
+  GDAStatus_FieldNumber_Details = 2,
 };
 
-@interface COMMONStatus : GPBMessage
+@interface GDAStatus : GPBMessage
 
 /** copy from io.grpc.Status.Code */
-@property(nonatomic, readwrite) COMMONStatus_Code code;
+@property(nonatomic, readwrite) GDAStatus_Code code;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *details;
 
 @end
 
 /**
- * Fetches the raw value of a @c COMMONStatus's @c code property, even
+ * Fetches the raw value of a @c GDAStatus's @c code property, even
  * if the value was not defined by the enum at the time the code was generated.
  **/
-int32_t COMMONStatus_Code_RawValue(COMMONStatus *message);
+int32_t GDAStatus_Code_RawValue(GDAStatus *message);
 /**
- * Sets the raw value of an @c COMMONStatus's @c code property, allowing
+ * Sets the raw value of an @c GDAStatus's @c code property, allowing
  * it to be set to a value that was not defined by the enum at the time the code
  * was generated.
  **/
-void SetCOMMONStatus_Code_RawValue(COMMONStatus *message, int32_t value);
+void SetGDAStatus_Code_RawValue(GDAStatus *message, int32_t value);
 
-#pragma mark - COMMONLocation
+#pragma mark - GDALocation
 
-typedef GPB_ENUM(COMMONLocation_FieldNumber) {
-  COMMONLocation_FieldNumber_Lat = 1,
-  COMMONLocation_FieldNumber_Lon = 2,
+typedef GPB_ENUM(GDALocation_FieldNumber) {
+  GDALocation_FieldNumber_Lat = 1,
+  GDALocation_FieldNumber_Lon = 2,
 };
 
-@interface COMMONLocation : GPBMessage
+@interface GDALocation : GPBMessage
 
 @property(nonatomic, readwrite) double lat;
 
@@ -323,13 +323,13 @@ typedef GPB_ENUM(COMMONLocation_FieldNumber) {
 
 @end
 
-#pragma mark - COMMONListString
+#pragma mark - GDAListString
 
-typedef GPB_ENUM(COMMONListString_FieldNumber) {
-  COMMONListString_FieldNumber_StrsArray = 11,
+typedef GPB_ENUM(GDAListString_FieldNumber) {
+  GDAListString_FieldNumber_StrsArray = 11,
 };
 
-@interface COMMONListString : GPBMessage
+@interface GDAListString : GPBMessage
 
 /** 可以用来保存多个图片url、多个电话号码等 */
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *strsArray;
@@ -338,22 +338,22 @@ typedef GPB_ENUM(COMMONListString_FieldNumber) {
 
 @end
 
-#pragma mark - COMMONDistrict
+#pragma mark - GDADistrict
 
-typedef GPB_ENUM(COMMONDistrict_FieldNumber) {
-  COMMONDistrict_FieldNumber_Id_p = 1,
-  COMMONDistrict_FieldNumber_Pid = 2,
-  COMMONDistrict_FieldNumber_Citycode = 11,
-  COMMONDistrict_FieldNumber_Adcode = 12,
-  COMMONDistrict_FieldNumber_Name = 13,
-  COMMONDistrict_FieldNumber_Center = 15,
-  COMMONDistrict_FieldNumber_Level = 16,
+typedef GPB_ENUM(GDADistrict_FieldNumber) {
+  GDADistrict_FieldNumber_Id_p = 1,
+  GDADistrict_FieldNumber_Pid = 2,
+  GDADistrict_FieldNumber_Citycode = 11,
+  GDADistrict_FieldNumber_Adcode = 12,
+  GDADistrict_FieldNumber_Name = 13,
+  GDADistrict_FieldNumber_Center = 15,
+  GDADistrict_FieldNumber_Level = 16,
 };
 
 /**
  * 行政区信息,参考http://lbs.amap.com/api/webservice/guide/api/district
  **/
-@interface COMMONDistrict : GPBMessage
+@interface GDADistrict : GPBMessage
 
 /** 自定义编号，如100000表示中国,110000表示北京，尽量使用adcode的值来填充。 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;

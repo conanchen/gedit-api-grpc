@@ -6,7 +6,7 @@
 #import "gedit/Common.pbobjc.h"
 #import "gedit/payment/PaymentCommon.pbobjc.h"
 
-@implementation PMALIPAYPayerInAlipayApi
+@implementation GDAPayerInAlipayApi
 
 // Designated initializer
 - (instancetype)initWithHost:(NSString *)host {
@@ -30,17 +30,17 @@
 /**
  * only called by me, 顾客扫码收银员的收款码后获取如果支付一定金额
  */
-- (void)prepareWithRequest:(PMALIPAYPreparAlipayPaymentRequest *)request handler:(void(^)(PMALIPAYPrepareAlipayPaymentResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)prepareWithRequest:(GDAPreparAlipayPaymentRequest *)request handler:(void(^)(GDAPrepareAlipayPaymentResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToPrepareWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
 /**
  * only called by me, 顾客扫码收银员的收款码后获取如果支付一定金额
  */
-- (GRPCProtoCall *)RPCToPrepareWithRequest:(PMALIPAYPreparAlipayPaymentRequest *)request handler:(void(^)(PMALIPAYPrepareAlipayPaymentResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToPrepareWithRequest:(GDAPreparAlipayPaymentRequest *)request handler:(void(^)(GDAPrepareAlipayPaymentResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"Prepare"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[PMALIPAYPrepareAlipayPaymentResponse class]
+             responseClass:[GDAPrepareAlipayPaymentResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 #pragma mark Create(CreateAlipayPaymentRequest) returns (PaymentResponse)
@@ -48,17 +48,17 @@
 /**
  * only called by me, 顾客确定付款
  */
-- (void)createWithRequest:(PMALIPAYCreateAlipayPaymentRequest *)request handler:(void(^)(PMCOMMPaymentResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)createWithRequest:(GDACreateAlipayPaymentRequest *)request handler:(void(^)(GDAPaymentResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToCreateWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
 /**
  * only called by me, 顾客确定付款
  */
-- (GRPCProtoCall *)RPCToCreateWithRequest:(PMALIPAYCreateAlipayPaymentRequest *)request handler:(void(^)(PMCOMMPaymentResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToCreateWithRequest:(GDACreateAlipayPaymentRequest *)request handler:(void(^)(GDAPaymentResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"Create"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[PMCOMMPaymentResponse class]
+             responseClass:[GDAPaymentResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 @end

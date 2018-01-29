@@ -5,7 +5,7 @@
 #import <RxLibrary/GRXWriter+Immediate.h>
 #import "gedit/Common.pbobjc.h"
 
-@implementation USRLOGOUTUserLogoutApi
+@implementation GDAUserLogoutApi
 
 // Designated initializer
 - (instancetype)initWithHost:(NSString *)host {
@@ -29,17 +29,17 @@
 /**
  * local
  */
-- (void)logoutWithRequest:(USRLOGOUTLogoutRequest *)request handler:(void(^)(USRLOGOUTLogoutResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)logoutWithRequest:(GDALogoutRequest *)request handler:(void(^)(GDALogoutResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToLogoutWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
 /**
  * local
  */
-- (GRPCProtoCall *)RPCToLogoutWithRequest:(USRLOGOUTLogoutRequest *)request handler:(void(^)(USRLOGOUTLogoutResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToLogoutWithRequest:(GDALogoutRequest *)request handler:(void(^)(GDALogoutResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"Logout"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[USRLOGOUTLogoutResponse class]
+             responseClass:[GDALogoutResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 @end

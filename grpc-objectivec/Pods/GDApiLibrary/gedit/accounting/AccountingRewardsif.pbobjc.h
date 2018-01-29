@@ -27,16 +27,16 @@
 
 CF_EXTERN_C_BEGIN
 
-@class ACCNTIfPaymentCreatedEvent;
-@class ACCNTIfStoreVerifiedEvent;
-@class ACCNTIfUserVerifiedEvent;
-@class ACCNTRewardIfEvent;
-@class COMMONStatus;
-GPB_ENUM_FWD_DECLARE(COMMONPaymentChannel);
+@class GDAIfPaymentCreatedEvent;
+@class GDAIfStoreVerifiedEvent;
+@class GDAIfUserVerifiedEvent;
+@class GDARewardIfEvent;
+@class GDAStatus;
+GPB_ENUM_FWD_DECLARE(GDAPaymentChannel);
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - ACCNTAccountingRewardsifRoot
+#pragma mark - GDAAccountingRewardsifRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -48,70 +48,70 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface ACCNTAccountingRewardsifRoot : GPBRootObject
+@interface GDAAccountingRewardsifRoot : GPBRootObject
 @end
 
-#pragma mark - ACCNTQueryRewardsIfEventRequest
+#pragma mark - GDAQueryRewardsIfEventRequest
 
-typedef GPB_ENUM(ACCNTQueryRewardsIfEventRequest_FieldNumber) {
-  ACCNTQueryRewardsIfEventRequest_FieldNumber_IfPaymentCreatedEvent = 1,
-  ACCNTQueryRewardsIfEventRequest_FieldNumber_IfUserVerifiedEvent = 2,
-  ACCNTQueryRewardsIfEventRequest_FieldNumber_IfStoreCreatedEvent = 3,
+typedef GPB_ENUM(GDAQueryRewardsIfEventRequest_FieldNumber) {
+  GDAQueryRewardsIfEventRequest_FieldNumber_IfPaymentCreatedEvent = 1,
+  GDAQueryRewardsIfEventRequest_FieldNumber_IfUserVerifiedEvent = 2,
+  GDAQueryRewardsIfEventRequest_FieldNumber_IfStoreCreatedEvent = 3,
 };
 
-typedef GPB_ENUM(ACCNTQueryRewardsIfEventRequest_Event_OneOfCase) {
-  ACCNTQueryRewardsIfEventRequest_Event_OneOfCase_GPBUnsetOneOfCase = 0,
-  ACCNTQueryRewardsIfEventRequest_Event_OneOfCase_IfPaymentCreatedEvent = 1,
-  ACCNTQueryRewardsIfEventRequest_Event_OneOfCase_IfUserVerifiedEvent = 2,
-  ACCNTQueryRewardsIfEventRequest_Event_OneOfCase_IfStoreCreatedEvent = 3,
+typedef GPB_ENUM(GDAQueryRewardsIfEventRequest_Event_OneOfCase) {
+  GDAQueryRewardsIfEventRequest_Event_OneOfCase_GPBUnsetOneOfCase = 0,
+  GDAQueryRewardsIfEventRequest_Event_OneOfCase_IfPaymentCreatedEvent = 1,
+  GDAQueryRewardsIfEventRequest_Event_OneOfCase_IfUserVerifiedEvent = 2,
+  GDAQueryRewardsIfEventRequest_Event_OneOfCase_IfStoreCreatedEvent = 3,
 };
 
-@interface ACCNTQueryRewardsIfEventRequest : GPBMessage
+@interface GDAQueryRewardsIfEventRequest : GPBMessage
 
-@property(nonatomic, readonly) ACCNTQueryRewardsIfEventRequest_Event_OneOfCase eventOneOfCase;
+@property(nonatomic, readonly) GDAQueryRewardsIfEventRequest_Event_OneOfCase eventOneOfCase;
 
-@property(nonatomic, readwrite, strong, null_resettable) ACCNTIfPaymentCreatedEvent *ifPaymentCreatedEvent;
+@property(nonatomic, readwrite, strong, null_resettable) GDAIfPaymentCreatedEvent *ifPaymentCreatedEvent;
 
-@property(nonatomic, readwrite, strong, null_resettable) ACCNTIfUserVerifiedEvent *ifUserVerifiedEvent;
+@property(nonatomic, readwrite, strong, null_resettable) GDAIfUserVerifiedEvent *ifUserVerifiedEvent;
 
-@property(nonatomic, readwrite, strong, null_resettable) ACCNTIfStoreVerifiedEvent *ifStoreCreatedEvent;
+@property(nonatomic, readwrite, strong, null_resettable) GDAIfStoreVerifiedEvent *ifStoreCreatedEvent;
 
 @end
 
 /**
  * Clears whatever value was set for the oneof 'event'.
  **/
-void ACCNTQueryRewardsIfEventRequest_ClearEventOneOfCase(ACCNTQueryRewardsIfEventRequest *message);
+void GDAQueryRewardsIfEventRequest_ClearEventOneOfCase(GDAQueryRewardsIfEventRequest *message);
 
-#pragma mark - ACCNTRewardIfEventResponse
+#pragma mark - GDARewardIfEventResponse
 
-typedef GPB_ENUM(ACCNTRewardIfEventResponse_FieldNumber) {
-  ACCNTRewardIfEventResponse_FieldNumber_RewardIfEventArray = 1,
-  ACCNTRewardIfEventResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDARewardIfEventResponse_FieldNumber) {
+  GDARewardIfEventResponse_FieldNumber_RewardIfEventArray = 1,
+  GDARewardIfEventResponse_FieldNumber_Status = 999,
 };
 
-@interface ACCNTRewardIfEventResponse : GPBMessage
+@interface GDARewardIfEventResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<ACCNTRewardIfEvent*> *rewardIfEventArray;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<GDARewardIfEvent*> *rewardIfEventArray;
 /** The number of items in @c rewardIfEventArray without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger rewardIfEventArray_Count;
 
 @end
 
-#pragma mark - ACCNTRewardIfEvent
+#pragma mark - GDARewardIfEvent
 
-typedef GPB_ENUM(ACCNTRewardIfEvent_FieldNumber) {
-  ACCNTRewardIfEvent_FieldNumber_UserUuid = 1,
-  ACCNTRewardIfEvent_FieldNumber_PointsPay = 11,
-  ACCNTRewardIfEvent_FieldNumber_PointsRepay = 12,
-  ACCNTRewardIfEvent_FieldNumber_Comment = 20,
+typedef GPB_ENUM(GDARewardIfEvent_FieldNumber) {
+  GDARewardIfEvent_FieldNumber_UserUuid = 1,
+  GDARewardIfEvent_FieldNumber_PointsPay = 11,
+  GDARewardIfEvent_FieldNumber_PointsRepay = 12,
+  GDARewardIfEvent_FieldNumber_Comment = 20,
 };
 
-@interface ACCNTRewardIfEvent : GPBMessage
+@interface GDARewardIfEvent : GPBMessage
 
 /** 咨询发生某种事件将会给相关的人员的奖励如：积分扣减、奖励、返还、抵扣 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *userUuid;
@@ -126,18 +126,18 @@ typedef GPB_ENUM(ACCNTRewardIfEvent_FieldNumber) {
 
 @end
 
-#pragma mark - ACCNTIfPaymentCreatedEvent
+#pragma mark - GDAIfPaymentCreatedEvent
 
-typedef GPB_ENUM(ACCNTIfPaymentCreatedEvent_FieldNumber) {
-  ACCNTIfPaymentCreatedEvent_FieldNumber_PayerUuid = 11,
-  ACCNTIfPaymentCreatedEvent_FieldNumber_PayeeUuid = 12,
-  ACCNTIfPaymentCreatedEvent_FieldNumber_PayeeStoreUuid = 13,
-  ACCNTIfPaymentCreatedEvent_FieldNumber_PayeeWorkerUuid = 14,
-  ACCNTIfPaymentCreatedEvent_FieldNumber_Shouldpay = 15,
-  ACCNTIfPaymentCreatedEvent_FieldNumber_Channel = 26,
+typedef GPB_ENUM(GDAIfPaymentCreatedEvent_FieldNumber) {
+  GDAIfPaymentCreatedEvent_FieldNumber_PayerUuid = 11,
+  GDAIfPaymentCreatedEvent_FieldNumber_PayeeUuid = 12,
+  GDAIfPaymentCreatedEvent_FieldNumber_PayeeStoreUuid = 13,
+  GDAIfPaymentCreatedEvent_FieldNumber_PayeeWorkerUuid = 14,
+  GDAIfPaymentCreatedEvent_FieldNumber_Shouldpay = 15,
+  GDAIfPaymentCreatedEvent_FieldNumber_Channel = 26,
 };
 
-@interface ACCNTIfPaymentCreatedEvent : GPBMessage
+@interface GDAIfPaymentCreatedEvent : GPBMessage
 
 /** 顾客 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *payerUuid;
@@ -155,41 +155,41 @@ typedef GPB_ENUM(ACCNTIfPaymentCreatedEvent_FieldNumber) {
 @property(nonatomic, readwrite) int32_t shouldpay;
 
 /** 支付通道如支付宝、微信、云闪付 */
-@property(nonatomic, readwrite) enum COMMONPaymentChannel channel;
+@property(nonatomic, readwrite) enum GDAPaymentChannel channel;
 
 @end
 
 /**
- * Fetches the raw value of a @c ACCNTIfPaymentCreatedEvent's @c channel property, even
+ * Fetches the raw value of a @c GDAIfPaymentCreatedEvent's @c channel property, even
  * if the value was not defined by the enum at the time the code was generated.
  **/
-int32_t ACCNTIfPaymentCreatedEvent_Channel_RawValue(ACCNTIfPaymentCreatedEvent *message);
+int32_t GDAIfPaymentCreatedEvent_Channel_RawValue(GDAIfPaymentCreatedEvent *message);
 /**
- * Sets the raw value of an @c ACCNTIfPaymentCreatedEvent's @c channel property, allowing
+ * Sets the raw value of an @c GDAIfPaymentCreatedEvent's @c channel property, allowing
  * it to be set to a value that was not defined by the enum at the time the code
  * was generated.
  **/
-void SetACCNTIfPaymentCreatedEvent_Channel_RawValue(ACCNTIfPaymentCreatedEvent *message, int32_t value);
+void SetGDAIfPaymentCreatedEvent_Channel_RawValue(GDAIfPaymentCreatedEvent *message, int32_t value);
 
-#pragma mark - ACCNTIfUserVerifiedEvent
+#pragma mark - GDAIfUserVerifiedEvent
 
-typedef GPB_ENUM(ACCNTIfUserVerifiedEvent_FieldNumber) {
-  ACCNTIfUserVerifiedEvent_FieldNumber_UserUuid = 11,
+typedef GPB_ENUM(GDAIfUserVerifiedEvent_FieldNumber) {
+  GDAIfUserVerifiedEvent_FieldNumber_UserUuid = 11,
 };
 
-@interface ACCNTIfUserVerifiedEvent : GPBMessage
+@interface GDAIfUserVerifiedEvent : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *userUuid;
 
 @end
 
-#pragma mark - ACCNTIfStoreVerifiedEvent
+#pragma mark - GDAIfStoreVerifiedEvent
 
-typedef GPB_ENUM(ACCNTIfStoreVerifiedEvent_FieldNumber) {
-  ACCNTIfStoreVerifiedEvent_FieldNumber_StoreUuid = 11,
+typedef GPB_ENUM(GDAIfStoreVerifiedEvent_FieldNumber) {
+  GDAIfStoreVerifiedEvent_FieldNumber_StoreUuid = 11,
 };
 
-@interface ACCNTIfStoreVerifiedEvent : GPBMessage
+@interface GDAIfStoreVerifiedEvent : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *storeUuid;
 

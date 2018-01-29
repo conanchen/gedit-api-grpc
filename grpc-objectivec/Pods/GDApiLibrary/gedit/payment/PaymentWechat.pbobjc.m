@@ -21,44 +21,44 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-#pragma mark - PMWECHATPaymentWechatRoot
+#pragma mark - GDAPaymentWechatRoot
 
-@implementation PMWECHATPaymentWechatRoot
+@implementation GDAPaymentWechatRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - PMWECHATPaymentWechatRoot_FileDescriptor
+#pragma mark - GDAPaymentWechatRoot_FileDescriptor
 
-static GPBFileDescriptor *PMWECHATPaymentWechatRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDAPaymentWechatRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.payment"
-                                                 objcPrefix:@"PMWECHAT"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - PMWECHATPrepareWechatPaymentRequest
+#pragma mark - GDAPrepareWechatPaymentRequest
 
-@implementation PMWECHATPrepareWechatPaymentRequest
+@implementation GDAPrepareWechatPaymentRequest
 
 @dynamic payerCode;
 @dynamic payerMobile;
 @dynamic shouldPay;
 
-typedef struct PMWECHATPrepareWechatPaymentRequest__storage_ {
+typedef struct GDAPrepareWechatPaymentRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t shouldPay;
   NSString *payerCode;
   NSString *payerMobile;
-} PMWECHATPrepareWechatPaymentRequest__storage_;
+} GDAPrepareWechatPaymentRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -69,38 +69,38 @@ typedef struct PMWECHATPrepareWechatPaymentRequest__storage_ {
       {
         .name = "payerCode",
         .dataTypeSpecific.className = NULL,
-        .number = PMWECHATPrepareWechatPaymentRequest_FieldNumber_PayerCode,
+        .number = GDAPrepareWechatPaymentRequest_FieldNumber_PayerCode,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PMWECHATPrepareWechatPaymentRequest__storage_, payerCode),
+        .offset = (uint32_t)offsetof(GDAPrepareWechatPaymentRequest__storage_, payerCode),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payerMobile",
         .dataTypeSpecific.className = NULL,
-        .number = PMWECHATPrepareWechatPaymentRequest_FieldNumber_PayerMobile,
+        .number = GDAPrepareWechatPaymentRequest_FieldNumber_PayerMobile,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PMWECHATPrepareWechatPaymentRequest__storage_, payerMobile),
+        .offset = (uint32_t)offsetof(GDAPrepareWechatPaymentRequest__storage_, payerMobile),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "shouldPay",
         .dataTypeSpecific.className = NULL,
-        .number = PMWECHATPrepareWechatPaymentRequest_FieldNumber_ShouldPay,
+        .number = GDAPrepareWechatPaymentRequest_FieldNumber_ShouldPay,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(PMWECHATPrepareWechatPaymentRequest__storage_, shouldPay),
+        .offset = (uint32_t)offsetof(GDAPrepareWechatPaymentRequest__storage_, shouldPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PMWECHATPrepareWechatPaymentRequest class]
-                                     rootClass:[PMWECHATPaymentWechatRoot class]
-                                          file:PMWECHATPaymentWechatRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAPrepareWechatPaymentRequest class]
+                                     rootClass:[GDAPaymentWechatRoot class]
+                                          file:GDAPaymentWechatRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PMWECHATPrepareWechatPaymentRequest__storage_)
+                                   storageSize:sizeof(GDAPrepareWechatPaymentRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -115,9 +115,9 @@ typedef struct PMWECHATPrepareWechatPaymentRequest__storage_ {
 
 @end
 
-#pragma mark - PMWECHATPrepareWechatPaymentResponse
+#pragma mark - GDAPrepareWechatPaymentResponse
 
-@implementation PMWECHATPrepareWechatPaymentResponse
+@implementation GDAPrepareWechatPaymentResponse
 
 @dynamic hasStatus, status;
 @dynamic payerCode;
@@ -126,15 +126,15 @@ typedef struct PMWECHATPrepareWechatPaymentRequest__storage_ {
 @dynamic actualPay;
 @dynamic pointsPay;
 
-typedef struct PMWECHATPrepareWechatPaymentResponse__storage_ {
+typedef struct GDAPrepareWechatPaymentResponse__storage_ {
   uint32_t _has_storage_[1];
   int32_t shouldPay;
   int32_t actualPay;
   int32_t pointsPay;
   NSString *payerCode;
   NSString *payerMobile;
-  COMMONStatus *status;
-} PMWECHATPrepareWechatPaymentResponse__storage_;
+  GDAStatus *status;
+} GDAPrepareWechatPaymentResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -145,65 +145,65 @@ typedef struct PMWECHATPrepareWechatPaymentResponse__storage_ {
       {
         .name = "payerCode",
         .dataTypeSpecific.className = NULL,
-        .number = PMWECHATPrepareWechatPaymentResponse_FieldNumber_PayerCode,
+        .number = GDAPrepareWechatPaymentResponse_FieldNumber_PayerCode,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PMWECHATPrepareWechatPaymentResponse__storage_, payerCode),
+        .offset = (uint32_t)offsetof(GDAPrepareWechatPaymentResponse__storage_, payerCode),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payerMobile",
         .dataTypeSpecific.className = NULL,
-        .number = PMWECHATPrepareWechatPaymentResponse_FieldNumber_PayerMobile,
+        .number = GDAPrepareWechatPaymentResponse_FieldNumber_PayerMobile,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(PMWECHATPrepareWechatPaymentResponse__storage_, payerMobile),
+        .offset = (uint32_t)offsetof(GDAPrepareWechatPaymentResponse__storage_, payerMobile),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "shouldPay",
         .dataTypeSpecific.className = NULL,
-        .number = PMWECHATPrepareWechatPaymentResponse_FieldNumber_ShouldPay,
+        .number = GDAPrepareWechatPaymentResponse_FieldNumber_ShouldPay,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(PMWECHATPrepareWechatPaymentResponse__storage_, shouldPay),
+        .offset = (uint32_t)offsetof(GDAPrepareWechatPaymentResponse__storage_, shouldPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "actualPay",
         .dataTypeSpecific.className = NULL,
-        .number = PMWECHATPrepareWechatPaymentResponse_FieldNumber_ActualPay,
+        .number = GDAPrepareWechatPaymentResponse_FieldNumber_ActualPay,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(PMWECHATPrepareWechatPaymentResponse__storage_, actualPay),
+        .offset = (uint32_t)offsetof(GDAPrepareWechatPaymentResponse__storage_, actualPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "pointsPay",
         .dataTypeSpecific.className = NULL,
-        .number = PMWECHATPrepareWechatPaymentResponse_FieldNumber_PointsPay,
+        .number = GDAPrepareWechatPaymentResponse_FieldNumber_PointsPay,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(PMWECHATPrepareWechatPaymentResponse__storage_, pointsPay),
+        .offset = (uint32_t)offsetof(GDAPrepareWechatPaymentResponse__storage_, pointsPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = PMWECHATPrepareWechatPaymentResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDAPrepareWechatPaymentResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PMWECHATPrepareWechatPaymentResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDAPrepareWechatPaymentResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PMWECHATPrepareWechatPaymentResponse class]
-                                     rootClass:[PMWECHATPaymentWechatRoot class]
-                                          file:PMWECHATPaymentWechatRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAPrepareWechatPaymentResponse class]
+                                     rootClass:[GDAPaymentWechatRoot class]
+                                          file:GDAPaymentWechatRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PMWECHATPrepareWechatPaymentResponse__storage_)
+                                   storageSize:sizeof(GDAPrepareWechatPaymentResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -218,9 +218,9 @@ typedef struct PMWECHATPrepareWechatPaymentResponse__storage_ {
 
 @end
 
-#pragma mark - PMWECHATCreateWechatPaymentRequest
+#pragma mark - GDACreateWechatPaymentRequest
 
-@implementation PMWECHATCreateWechatPaymentRequest
+@implementation GDACreateWechatPaymentRequest
 
 @dynamic payerCode;
 @dynamic payerMobile;
@@ -229,7 +229,7 @@ typedef struct PMWECHATPrepareWechatPaymentResponse__storage_ {
 @dynamic pointsPay;
 @dynamic payeeIp;
 
-typedef struct PMWECHATCreateWechatPaymentRequest__storage_ {
+typedef struct GDACreateWechatPaymentRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t shouldPay;
   int32_t actualPay;
@@ -237,7 +237,7 @@ typedef struct PMWECHATCreateWechatPaymentRequest__storage_ {
   NSString *payerCode;
   NSString *payerMobile;
   NSString *payeeIp;
-} PMWECHATCreateWechatPaymentRequest__storage_;
+} GDACreateWechatPaymentRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -248,65 +248,65 @@ typedef struct PMWECHATCreateWechatPaymentRequest__storage_ {
       {
         .name = "payerCode",
         .dataTypeSpecific.className = NULL,
-        .number = PMWECHATCreateWechatPaymentRequest_FieldNumber_PayerCode,
+        .number = GDACreateWechatPaymentRequest_FieldNumber_PayerCode,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PMWECHATCreateWechatPaymentRequest__storage_, payerCode),
+        .offset = (uint32_t)offsetof(GDACreateWechatPaymentRequest__storage_, payerCode),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payerMobile",
         .dataTypeSpecific.className = NULL,
-        .number = PMWECHATCreateWechatPaymentRequest_FieldNumber_PayerMobile,
+        .number = GDACreateWechatPaymentRequest_FieldNumber_PayerMobile,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PMWECHATCreateWechatPaymentRequest__storage_, payerMobile),
+        .offset = (uint32_t)offsetof(GDACreateWechatPaymentRequest__storage_, payerMobile),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "shouldPay",
         .dataTypeSpecific.className = NULL,
-        .number = PMWECHATCreateWechatPaymentRequest_FieldNumber_ShouldPay,
+        .number = GDACreateWechatPaymentRequest_FieldNumber_ShouldPay,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(PMWECHATCreateWechatPaymentRequest__storage_, shouldPay),
+        .offset = (uint32_t)offsetof(GDACreateWechatPaymentRequest__storage_, shouldPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "actualPay",
         .dataTypeSpecific.className = NULL,
-        .number = PMWECHATCreateWechatPaymentRequest_FieldNumber_ActualPay,
+        .number = GDACreateWechatPaymentRequest_FieldNumber_ActualPay,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(PMWECHATCreateWechatPaymentRequest__storage_, actualPay),
+        .offset = (uint32_t)offsetof(GDACreateWechatPaymentRequest__storage_, actualPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "pointsPay",
         .dataTypeSpecific.className = NULL,
-        .number = PMWECHATCreateWechatPaymentRequest_FieldNumber_PointsPay,
+        .number = GDACreateWechatPaymentRequest_FieldNumber_PointsPay,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(PMWECHATCreateWechatPaymentRequest__storage_, pointsPay),
+        .offset = (uint32_t)offsetof(GDACreateWechatPaymentRequest__storage_, pointsPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "payeeIp",
         .dataTypeSpecific.className = NULL,
-        .number = PMWECHATCreateWechatPaymentRequest_FieldNumber_PayeeIp,
+        .number = GDACreateWechatPaymentRequest_FieldNumber_PayeeIp,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(PMWECHATCreateWechatPaymentRequest__storage_, payeeIp),
+        .offset = (uint32_t)offsetof(GDACreateWechatPaymentRequest__storage_, payeeIp),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PMWECHATCreateWechatPaymentRequest class]
-                                     rootClass:[PMWECHATPaymentWechatRoot class]
-                                          file:PMWECHATPaymentWechatRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDACreateWechatPaymentRequest class]
+                                     rootClass:[GDAPaymentWechatRoot class]
+                                          file:GDAPaymentWechatRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PMWECHATCreateWechatPaymentRequest__storage_)
+                                   storageSize:sizeof(GDACreateWechatPaymentRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =

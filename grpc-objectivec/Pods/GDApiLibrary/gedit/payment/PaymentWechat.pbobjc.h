@@ -27,11 +27,11 @@
 
 CF_EXTERN_C_BEGIN
 
-@class COMMONStatus;
+@class GDAStatus;
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - PMWECHATPaymentWechatRoot
+#pragma mark - GDAPaymentWechatRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -43,18 +43,18 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface PMWECHATPaymentWechatRoot : GPBRootObject
+@interface GDAPaymentWechatRoot : GPBRootObject
 @end
 
-#pragma mark - PMWECHATPrepareWechatPaymentRequest
+#pragma mark - GDAPrepareWechatPaymentRequest
 
-typedef GPB_ENUM(PMWECHATPrepareWechatPaymentRequest_FieldNumber) {
-  PMWECHATPrepareWechatPaymentRequest_FieldNumber_PayerCode = 11,
-  PMWECHATPrepareWechatPaymentRequest_FieldNumber_PayerMobile = 12,
-  PMWECHATPrepareWechatPaymentRequest_FieldNumber_ShouldPay = 15,
+typedef GPB_ENUM(GDAPrepareWechatPaymentRequest_FieldNumber) {
+  GDAPrepareWechatPaymentRequest_FieldNumber_PayerCode = 11,
+  GDAPrepareWechatPaymentRequest_FieldNumber_PayerMobile = 12,
+  GDAPrepareWechatPaymentRequest_FieldNumber_ShouldPay = 15,
 };
 
-@interface PMWECHATPrepareWechatPaymentRequest : GPBMessage
+@interface GDAPrepareWechatPaymentRequest : GPBMessage
 
 /** 顾客的微信付款码 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *payerCode;
@@ -67,20 +67,20 @@ typedef GPB_ENUM(PMWECHATPrepareWechatPaymentRequest_FieldNumber) {
 
 @end
 
-#pragma mark - PMWECHATPrepareWechatPaymentResponse
+#pragma mark - GDAPrepareWechatPaymentResponse
 
-typedef GPB_ENUM(PMWECHATPrepareWechatPaymentResponse_FieldNumber) {
-  PMWECHATPrepareWechatPaymentResponse_FieldNumber_PayerCode = 11,
-  PMWECHATPrepareWechatPaymentResponse_FieldNumber_PayerMobile = 12,
-  PMWECHATPrepareWechatPaymentResponse_FieldNumber_ShouldPay = 15,
-  PMWECHATPrepareWechatPaymentResponse_FieldNumber_ActualPay = 16,
-  PMWECHATPrepareWechatPaymentResponse_FieldNumber_PointsPay = 17,
-  PMWECHATPrepareWechatPaymentResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAPrepareWechatPaymentResponse_FieldNumber) {
+  GDAPrepareWechatPaymentResponse_FieldNumber_PayerCode = 11,
+  GDAPrepareWechatPaymentResponse_FieldNumber_PayerMobile = 12,
+  GDAPrepareWechatPaymentResponse_FieldNumber_ShouldPay = 15,
+  GDAPrepareWechatPaymentResponse_FieldNumber_ActualPay = 16,
+  GDAPrepareWechatPaymentResponse_FieldNumber_PointsPay = 17,
+  GDAPrepareWechatPaymentResponse_FieldNumber_Status = 999,
 };
 
-@interface PMWECHATPrepareWechatPaymentResponse : GPBMessage
+@interface GDAPrepareWechatPaymentResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
@@ -101,21 +101,21 @@ typedef GPB_ENUM(PMWECHATPrepareWechatPaymentResponse_FieldNumber) {
 
 @end
 
-#pragma mark - PMWECHATCreateWechatPaymentRequest
+#pragma mark - GDACreateWechatPaymentRequest
 
-typedef GPB_ENUM(PMWECHATCreateWechatPaymentRequest_FieldNumber) {
-  PMWECHATCreateWechatPaymentRequest_FieldNumber_PayerCode = 11,
-  PMWECHATCreateWechatPaymentRequest_FieldNumber_PayerMobile = 12,
-  PMWECHATCreateWechatPaymentRequest_FieldNumber_ShouldPay = 15,
-  PMWECHATCreateWechatPaymentRequest_FieldNumber_ActualPay = 16,
-  PMWECHATCreateWechatPaymentRequest_FieldNumber_PointsPay = 17,
-  PMWECHATCreateWechatPaymentRequest_FieldNumber_PayeeIp = 18,
+typedef GPB_ENUM(GDACreateWechatPaymentRequest_FieldNumber) {
+  GDACreateWechatPaymentRequest_FieldNumber_PayerCode = 11,
+  GDACreateWechatPaymentRequest_FieldNumber_PayerMobile = 12,
+  GDACreateWechatPaymentRequest_FieldNumber_ShouldPay = 15,
+  GDACreateWechatPaymentRequest_FieldNumber_ActualPay = 16,
+  GDACreateWechatPaymentRequest_FieldNumber_PointsPay = 17,
+  GDACreateWechatPaymentRequest_FieldNumber_PayeeIp = 18,
 };
 
 /**
  * only called by myself，即收银员是我
  **/
-@interface PMWECHATCreateWechatPaymentRequest : GPBMessage
+@interface GDACreateWechatPaymentRequest : GPBMessage
 
 /** 顾客的微信付款码 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *payerCode;

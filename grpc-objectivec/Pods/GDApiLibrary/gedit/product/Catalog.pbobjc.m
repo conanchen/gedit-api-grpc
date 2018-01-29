@@ -20,40 +20,40 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-#pragma mark - PRDCTGCatalogRoot
+#pragma mark - GDACatalogRoot
 
-@implementation PRDCTGCatalogRoot
+@implementation GDACatalogRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - PRDCTGCatalogRoot_FileDescriptor
+#pragma mark - GDACatalogRoot_FileDescriptor
 
-static GPBFileDescriptor *PRDCTGCatalogRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDACatalogRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.product"
-                                                 objcPrefix:@"PRDCTG"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - PRDCTGGetCatalogRequest
+#pragma mark - GDAGetCatalogRequest
 
-@implementation PRDCTGGetCatalogRequest
+@implementation GDAGetCatalogRequest
 
 @dynamic uuid;
 
-typedef struct PRDCTGGetCatalogRequest__storage_ {
+typedef struct GDAGetCatalogRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *uuid;
-} PRDCTGGetCatalogRequest__storage_;
+} GDAGetCatalogRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -64,20 +64,20 @@ typedef struct PRDCTGGetCatalogRequest__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = PRDCTGGetCatalogRequest_FieldNumber_Uuid,
+        .number = GDAGetCatalogRequest_FieldNumber_Uuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PRDCTGGetCatalogRequest__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDAGetCatalogRequest__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PRDCTGGetCatalogRequest class]
-                                     rootClass:[PRDCTGCatalogRoot class]
-                                          file:PRDCTGCatalogRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAGetCatalogRequest class]
+                                     rootClass:[GDACatalogRoot class]
+                                          file:GDACatalogRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PRDCTGGetCatalogRequest__storage_)
+                                   storageSize:sizeof(GDAGetCatalogRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -87,16 +87,16 @@ typedef struct PRDCTGGetCatalogRequest__storage_ {
 
 @end
 
-#pragma mark - PRDCTGListCatalogRequest
+#pragma mark - GDAListCatalogRequest
 
-@implementation PRDCTGListCatalogRequest
+@implementation GDAListCatalogRequest
 
 @dynamic parentUuid;
 
-typedef struct PRDCTGListCatalogRequest__storage_ {
+typedef struct GDAListCatalogRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *parentUuid;
-} PRDCTGListCatalogRequest__storage_;
+} GDAListCatalogRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -107,20 +107,20 @@ typedef struct PRDCTGListCatalogRequest__storage_ {
       {
         .name = "parentUuid",
         .dataTypeSpecific.className = NULL,
-        .number = PRDCTGListCatalogRequest_FieldNumber_ParentUuid,
+        .number = GDAListCatalogRequest_FieldNumber_ParentUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PRDCTGListCatalogRequest__storage_, parentUuid),
+        .offset = (uint32_t)offsetof(GDAListCatalogRequest__storage_, parentUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PRDCTGListCatalogRequest class]
-                                     rootClass:[PRDCTGCatalogRoot class]
-                                          file:PRDCTGCatalogRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListCatalogRequest class]
+                                     rootClass:[GDACatalogRoot class]
+                                          file:GDACatalogRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PRDCTGListCatalogRequest__storage_)
+                                   storageSize:sizeof(GDAListCatalogRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -135,18 +135,18 @@ typedef struct PRDCTGListCatalogRequest__storage_ {
 
 @end
 
-#pragma mark - PRDCTGCatalogResponse
+#pragma mark - GDACatalogResponse
 
-@implementation PRDCTGCatalogResponse
+@implementation GDACatalogResponse
 
 @dynamic hasStatus, status;
 @dynamic hasCatalog, catalog;
 
-typedef struct PRDCTGCatalogResponse__storage_ {
+typedef struct GDACatalogResponse__storage_ {
   uint32_t _has_storage_[1];
-  PRDCTGCatalog *catalog;
-  COMMONStatus *status;
-} PRDCTGCatalogResponse__storage_;
+  GDACatalog *catalog;
+  GDAStatus *status;
+} GDACatalogResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -156,30 +156,30 @@ typedef struct PRDCTGCatalogResponse__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "catalog",
-        .dataTypeSpecific.className = GPBStringifySymbol(PRDCTGCatalog),
-        .number = PRDCTGCatalogResponse_FieldNumber_Catalog,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDACatalog),
+        .number = GDACatalogResponse_FieldNumber_Catalog,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PRDCTGCatalogResponse__storage_, catalog),
+        .offset = (uint32_t)offsetof(GDACatalogResponse__storage_, catalog),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = PRDCTGCatalogResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDACatalogResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PRDCTGCatalogResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDACatalogResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PRDCTGCatalogResponse class]
-                                     rootClass:[PRDCTGCatalogRoot class]
-                                          file:PRDCTGCatalogRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDACatalogResponse class]
+                                     rootClass:[GDACatalogRoot class]
+                                          file:GDACatalogRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PRDCTGCatalogResponse__storage_)
+                                   storageSize:sizeof(GDACatalogResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -189,22 +189,22 @@ typedef struct PRDCTGCatalogResponse__storage_ {
 
 @end
 
-#pragma mark - PRDCTGCatalog
+#pragma mark - GDACatalog
 
-@implementation PRDCTGCatalog
+@implementation GDACatalog
 
 @dynamic uuid;
 @dynamic name;
 @dynamic parentUuid;
 @dynamic iconURL;
 
-typedef struct PRDCTGCatalog__storage_ {
+typedef struct GDACatalog__storage_ {
   uint32_t _has_storage_[1];
   NSString *uuid;
   NSString *name;
   NSString *parentUuid;
   NSString *iconURL;
-} PRDCTGCatalog__storage_;
+} GDACatalog__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -215,47 +215,47 @@ typedef struct PRDCTGCatalog__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = PRDCTGCatalog_FieldNumber_Uuid,
+        .number = GDACatalog_FieldNumber_Uuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PRDCTGCatalog__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDACatalog__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "name",
         .dataTypeSpecific.className = NULL,
-        .number = PRDCTGCatalog_FieldNumber_Name,
+        .number = GDACatalog_FieldNumber_Name,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PRDCTGCatalog__storage_, name),
+        .offset = (uint32_t)offsetof(GDACatalog__storage_, name),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "parentUuid",
         .dataTypeSpecific.className = NULL,
-        .number = PRDCTGCatalog_FieldNumber_ParentUuid,
+        .number = GDACatalog_FieldNumber_ParentUuid,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(PRDCTGCatalog__storage_, parentUuid),
+        .offset = (uint32_t)offsetof(GDACatalog__storage_, parentUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "iconURL",
         .dataTypeSpecific.className = NULL,
-        .number = PRDCTGCatalog_FieldNumber_IconURL,
+        .number = GDACatalog_FieldNumber_IconURL,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(PRDCTGCatalog__storage_, iconURL),
+        .offset = (uint32_t)offsetof(GDACatalog__storage_, iconURL),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PRDCTGCatalog class]
-                                     rootClass:[PRDCTGCatalogRoot class]
-                                          file:PRDCTGCatalogRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDACatalog class]
+                                     rootClass:[GDACatalogRoot class]
+                                          file:GDACatalogRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PRDCTGCatalog__storage_)
+                                   storageSize:sizeof(GDACatalog__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =

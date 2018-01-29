@@ -20,40 +20,40 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-#pragma mark - PMQRYPaymentQueryRoot
+#pragma mark - GDAPaymentQueryRoot
 
-@implementation PMQRYPaymentQueryRoot
+@implementation GDAPaymentQueryRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - PMQRYPaymentQueryRoot_FileDescriptor
+#pragma mark - GDAPaymentQueryRoot_FileDescriptor
 
-static GPBFileDescriptor *PMQRYPaymentQueryRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDAPaymentQueryRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.payment"
-                                                 objcPrefix:@"PMQRY"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - PMQRYGetPaymentRequest
+#pragma mark - GDAGetPaymentRequest
 
-@implementation PMQRYGetPaymentRequest
+@implementation GDAGetPaymentRequest
 
 @dynamic uuid;
 
-typedef struct PMQRYGetPaymentRequest__storage_ {
+typedef struct GDAGetPaymentRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *uuid;
-} PMQRYGetPaymentRequest__storage_;
+} GDAGetPaymentRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -64,20 +64,20 @@ typedef struct PMQRYGetPaymentRequest__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = PMQRYGetPaymentRequest_FieldNumber_Uuid,
+        .number = GDAGetPaymentRequest_FieldNumber_Uuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PMQRYGetPaymentRequest__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDAGetPaymentRequest__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PMQRYGetPaymentRequest class]
-                                     rootClass:[PMQRYPaymentQueryRoot class]
-                                          file:PMQRYPaymentQueryRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAGetPaymentRequest class]
+                                     rootClass:[GDAPaymentQueryRoot class]
+                                          file:GDAPaymentQueryRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PMQRYGetPaymentRequest__storage_)
+                                   storageSize:sizeof(GDAGetPaymentRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -87,9 +87,9 @@ typedef struct PMQRYGetPaymentRequest__storage_ {
 
 @end
 
-#pragma mark - PMQRYListPaymentRequest
+#pragma mark - GDAListPaymentRequest
 
-@implementation PMQRYListPaymentRequest
+@implementation GDAListPaymentRequest
 
 @dynamic payerUuid;
 @dynamic payeePaymentCode;
@@ -100,7 +100,7 @@ typedef struct PMQRYGetPaymentRequest__storage_ {
 @dynamic from;
 @dynamic size;
 
-typedef struct PMQRYListPaymentRequest__storage_ {
+typedef struct GDAListPaymentRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t from;
   int32_t size;
@@ -109,7 +109,7 @@ typedef struct PMQRYListPaymentRequest__storage_ {
   NSString *payeeUuid;
   NSString *payeeStoreUuid;
   NSString *payeeWorkerUuid;
-} PMQRYListPaymentRequest__storage_;
+} GDAListPaymentRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -120,52 +120,52 @@ typedef struct PMQRYListPaymentRequest__storage_ {
       {
         .name = "payerUuid",
         .dataTypeSpecific.className = NULL,
-        .number = PMQRYListPaymentRequest_FieldNumber_PayerUuid,
+        .number = GDAListPaymentRequest_FieldNumber_PayerUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PMQRYListPaymentRequest__storage_, payerUuid),
+        .offset = (uint32_t)offsetof(GDAListPaymentRequest__storage_, payerUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeePaymentCode",
         .dataTypeSpecific.className = NULL,
-        .number = PMQRYListPaymentRequest_FieldNumber_PayeePaymentCode,
+        .number = GDAListPaymentRequest_FieldNumber_PayeePaymentCode,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PMQRYListPaymentRequest__storage_, payeePaymentCode),
+        .offset = (uint32_t)offsetof(GDAListPaymentRequest__storage_, payeePaymentCode),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = PMQRYListPaymentRequest_FieldNumber_PayeeUuid,
+        .number = GDAListPaymentRequest_FieldNumber_PayeeUuid,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(PMQRYListPaymentRequest__storage_, payeeUuid),
+        .offset = (uint32_t)offsetof(GDAListPaymentRequest__storage_, payeeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeStoreUuid",
         .dataTypeSpecific.className = NULL,
-        .number = PMQRYListPaymentRequest_FieldNumber_PayeeStoreUuid,
+        .number = GDAListPaymentRequest_FieldNumber_PayeeStoreUuid,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(PMQRYListPaymentRequest__storage_, payeeStoreUuid),
+        .offset = (uint32_t)offsetof(GDAListPaymentRequest__storage_, payeeStoreUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeWorkerUuid",
         .dataTypeSpecific.className = NULL,
-        .number = PMQRYListPaymentRequest_FieldNumber_PayeeWorkerUuid,
+        .number = GDAListPaymentRequest_FieldNumber_PayeeWorkerUuid,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(PMQRYListPaymentRequest__storage_, payeeWorkerUuid),
+        .offset = (uint32_t)offsetof(GDAListPaymentRequest__storage_, payeeWorkerUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "isAnd",
         .dataTypeSpecific.className = NULL,
-        .number = PMQRYListPaymentRequest_FieldNumber_IsAnd,
+        .number = GDAListPaymentRequest_FieldNumber_IsAnd,
         .hasIndex = 5,
         .offset = 6,  // Stored in _has_storage_ to save space.
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
@@ -174,29 +174,29 @@ typedef struct PMQRYListPaymentRequest__storage_ {
       {
         .name = "from",
         .dataTypeSpecific.className = NULL,
-        .number = PMQRYListPaymentRequest_FieldNumber_From,
+        .number = GDAListPaymentRequest_FieldNumber_From,
         .hasIndex = 7,
-        .offset = (uint32_t)offsetof(PMQRYListPaymentRequest__storage_, from),
+        .offset = (uint32_t)offsetof(GDAListPaymentRequest__storage_, from),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "size",
         .dataTypeSpecific.className = NULL,
-        .number = PMQRYListPaymentRequest_FieldNumber_Size,
+        .number = GDAListPaymentRequest_FieldNumber_Size,
         .hasIndex = 8,
-        .offset = (uint32_t)offsetof(PMQRYListPaymentRequest__storage_, size),
+        .offset = (uint32_t)offsetof(GDAListPaymentRequest__storage_, size),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PMQRYListPaymentRequest class]
-                                     rootClass:[PMQRYPaymentQueryRoot class]
-                                          file:PMQRYPaymentQueryRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListPaymentRequest class]
+                                     rootClass:[GDAPaymentQueryRoot class]
+                                          file:GDAPaymentQueryRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PMQRYListPaymentRequest__storage_)
+                                   storageSize:sizeof(GDAListPaymentRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -211,18 +211,18 @@ typedef struct PMQRYListPaymentRequest__storage_ {
 
 @end
 
-#pragma mark - PMQRYListMyPayerPaymentRequest
+#pragma mark - GDAListMyPayerPaymentRequest
 
-@implementation PMQRYListMyPayerPaymentRequest
+@implementation GDAListMyPayerPaymentRequest
 
 @dynamic from;
 @dynamic size;
 
-typedef struct PMQRYListMyPayerPaymentRequest__storage_ {
+typedef struct GDAListMyPayerPaymentRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t from;
   int32_t size;
-} PMQRYListMyPayerPaymentRequest__storage_;
+} GDAListMyPayerPaymentRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -233,29 +233,29 @@ typedef struct PMQRYListMyPayerPaymentRequest__storage_ {
       {
         .name = "from",
         .dataTypeSpecific.className = NULL,
-        .number = PMQRYListMyPayerPaymentRequest_FieldNumber_From,
+        .number = GDAListMyPayerPaymentRequest_FieldNumber_From,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PMQRYListMyPayerPaymentRequest__storage_, from),
+        .offset = (uint32_t)offsetof(GDAListMyPayerPaymentRequest__storage_, from),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "size",
         .dataTypeSpecific.className = NULL,
-        .number = PMQRYListMyPayerPaymentRequest_FieldNumber_Size,
+        .number = GDAListMyPayerPaymentRequest_FieldNumber_Size,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PMQRYListMyPayerPaymentRequest__storage_, size),
+        .offset = (uint32_t)offsetof(GDAListMyPayerPaymentRequest__storage_, size),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PMQRYListMyPayerPaymentRequest class]
-                                     rootClass:[PMQRYPaymentQueryRoot class]
-                                          file:PMQRYPaymentQueryRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListMyPayerPaymentRequest class]
+                                     rootClass:[GDAPaymentQueryRoot class]
+                                          file:GDAPaymentQueryRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PMQRYListMyPayerPaymentRequest__storage_)
+                                   storageSize:sizeof(GDAListMyPayerPaymentRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -265,18 +265,18 @@ typedef struct PMQRYListMyPayerPaymentRequest__storage_ {
 
 @end
 
-#pragma mark - PMQRYListMyPayeePaymentRequest
+#pragma mark - GDAListMyPayeePaymentRequest
 
-@implementation PMQRYListMyPayeePaymentRequest
+@implementation GDAListMyPayeePaymentRequest
 
 @dynamic from;
 @dynamic size;
 
-typedef struct PMQRYListMyPayeePaymentRequest__storage_ {
+typedef struct GDAListMyPayeePaymentRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t from;
   int32_t size;
-} PMQRYListMyPayeePaymentRequest__storage_;
+} GDAListMyPayeePaymentRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -287,29 +287,29 @@ typedef struct PMQRYListMyPayeePaymentRequest__storage_ {
       {
         .name = "from",
         .dataTypeSpecific.className = NULL,
-        .number = PMQRYListMyPayeePaymentRequest_FieldNumber_From,
+        .number = GDAListMyPayeePaymentRequest_FieldNumber_From,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PMQRYListMyPayeePaymentRequest__storage_, from),
+        .offset = (uint32_t)offsetof(GDAListMyPayeePaymentRequest__storage_, from),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "size",
         .dataTypeSpecific.className = NULL,
-        .number = PMQRYListMyPayeePaymentRequest_FieldNumber_Size,
+        .number = GDAListMyPayeePaymentRequest_FieldNumber_Size,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PMQRYListMyPayeePaymentRequest__storage_, size),
+        .offset = (uint32_t)offsetof(GDAListMyPayeePaymentRequest__storage_, size),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PMQRYListMyPayeePaymentRequest class]
-                                     rootClass:[PMQRYPaymentQueryRoot class]
-                                          file:PMQRYPaymentQueryRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListMyPayeePaymentRequest class]
+                                     rootClass:[GDAPaymentQueryRoot class]
+                                          file:GDAPaymentQueryRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PMQRYListMyPayeePaymentRequest__storage_)
+                                   storageSize:sizeof(GDAListMyPayeePaymentRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;

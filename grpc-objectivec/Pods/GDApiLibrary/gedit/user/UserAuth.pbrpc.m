@@ -5,7 +5,7 @@
 #import <RxLibrary/GRXWriter+Immediate.h>
 #import "gedit/Common.pbobjc.h"
 
-@implementation USRATHUserAuthApi
+@implementation GDAUserAuthApi
 
 // Designated initializer
 - (instancetype)initWithHost:(NSString *)host {
@@ -29,17 +29,17 @@
 /**
  * qq
  */
-- (void)signinQQWithRequest:(USRATHSigninQQRequest *)request handler:(void(^)(USRATHSigninResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)signinQQWithRequest:(GDASigninQQRequest *)request handler:(void(^)(GDASigninResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToSigninQQWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
 /**
  * qq
  */
-- (GRPCProtoCall *)RPCToSigninQQWithRequest:(USRATHSigninQQRequest *)request handler:(void(^)(USRATHSigninResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToSigninQQWithRequest:(GDASigninQQRequest *)request handler:(void(^)(GDASigninResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"SigninQQ"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[USRATHSigninResponse class]
+             responseClass:[GDASigninResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 #pragma mark SigninWechat(SigninWechatRequest) returns (SigninResponse)
@@ -47,17 +47,17 @@
 /**
  * wechat
  */
-- (void)signinWechatWithRequest:(USRATHSigninWechatRequest *)request handler:(void(^)(USRATHSigninResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)signinWechatWithRequest:(GDASigninWechatRequest *)request handler:(void(^)(GDASigninResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToSigninWechatWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
 /**
  * wechat
  */
-- (GRPCProtoCall *)RPCToSigninWechatWithRequest:(USRATHSigninWechatRequest *)request handler:(void(^)(USRATHSigninResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToSigninWechatWithRequest:(GDASigninWechatRequest *)request handler:(void(^)(GDASigninResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"SigninWechat"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[USRATHSigninResponse class]
+             responseClass:[GDASigninResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 #pragma mark SigninWeibo(SigninWeiboRequest) returns (SigninResponse)
@@ -65,17 +65,17 @@
 /**
  * weibo
  */
-- (void)signinWeiboWithRequest:(USRATHSigninWeiboRequest *)request handler:(void(^)(USRATHSigninResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)signinWeiboWithRequest:(GDASigninWeiboRequest *)request handler:(void(^)(GDASigninResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToSigninWeiboWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
 /**
  * weibo
  */
-- (GRPCProtoCall *)RPCToSigninWeiboWithRequest:(USRATHSigninWeiboRequest *)request handler:(void(^)(USRATHSigninResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToSigninWeiboWithRequest:(GDASigninWeiboRequest *)request handler:(void(^)(GDASigninResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"SigninWeibo"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[USRATHSigninResponse class]
+             responseClass:[GDASigninResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 #pragma mark SigninWithPassword(SigninWithPasswordRequest) returns (SigninResponse)
@@ -83,17 +83,17 @@
 /**
  * local
  */
-- (void)signinWithPasswordWithRequest:(USRATHSigninWithPasswordRequest *)request handler:(void(^)(USRATHSigninResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)signinWithPasswordWithRequest:(GDASigninWithPasswordRequest *)request handler:(void(^)(GDASigninResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToSigninWithPasswordWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
 /**
  * local
  */
-- (GRPCProtoCall *)RPCToSigninWithPasswordWithRequest:(USRATHSigninWithPasswordRequest *)request handler:(void(^)(USRATHSigninResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToSigninWithPasswordWithRequest:(GDASigninWithPasswordRequest *)request handler:(void(^)(GDASigninResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"SigninWithPassword"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[USRATHSigninResponse class]
+             responseClass:[GDASigninResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 #pragma mark SigninSmsStep1Question(SmsStep1QuestionRequest) returns (SmsStep1QuestionResponse)
@@ -101,17 +101,17 @@
 /**
  * local
  */
-- (void)signinSmsStep1QuestionWithRequest:(USRATHSmsStep1QuestionRequest *)request handler:(void(^)(USRATHSmsStep1QuestionResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)signinSmsStep1QuestionWithRequest:(GDASmsStep1QuestionRequest *)request handler:(void(^)(GDASmsStep1QuestionResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToSigninSmsStep1QuestionWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
 /**
  * local
  */
-- (GRPCProtoCall *)RPCToSigninSmsStep1QuestionWithRequest:(USRATHSmsStep1QuestionRequest *)request handler:(void(^)(USRATHSmsStep1QuestionResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToSigninSmsStep1QuestionWithRequest:(GDASmsStep1QuestionRequest *)request handler:(void(^)(GDASmsStep1QuestionResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"SigninSmsStep1Question"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[USRATHSmsStep1QuestionResponse class]
+             responseClass:[GDASmsStep1QuestionResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 #pragma mark SigninSmsStep2Answer(SmsStep2AnswerRequest) returns (SmsStep2AnswerResponse)
@@ -119,17 +119,17 @@
 /**
  * local
  */
-- (void)signinSmsStep2AnswerWithRequest:(USRATHSmsStep2AnswerRequest *)request handler:(void(^)(USRATHSmsStep2AnswerResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)signinSmsStep2AnswerWithRequest:(GDASmsStep2AnswerRequest *)request handler:(void(^)(GDASmsStep2AnswerResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToSigninSmsStep2AnswerWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
 /**
  * local
  */
-- (GRPCProtoCall *)RPCToSigninSmsStep2AnswerWithRequest:(USRATHSmsStep2AnswerRequest *)request handler:(void(^)(USRATHSmsStep2AnswerResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToSigninSmsStep2AnswerWithRequest:(GDASmsStep2AnswerRequest *)request handler:(void(^)(GDASmsStep2AnswerResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"SigninSmsStep2Answer"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[USRATHSmsStep2AnswerResponse class]
+             responseClass:[GDASmsStep2AnswerResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 #pragma mark SigninSmsStep3Signin(SmsStep3SigninRequest) returns (SigninResponse)
@@ -137,17 +137,17 @@
 /**
  * local
  */
-- (void)signinSmsStep3SigninWithRequest:(USRATHSmsStep3SigninRequest *)request handler:(void(^)(USRATHSigninResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)signinSmsStep3SigninWithRequest:(GDASmsStep3SigninRequest *)request handler:(void(^)(GDASigninResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToSigninSmsStep3SigninWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
 /**
  * local
  */
-- (GRPCProtoCall *)RPCToSigninSmsStep3SigninWithRequest:(USRATHSmsStep3SigninRequest *)request handler:(void(^)(USRATHSigninResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToSigninSmsStep3SigninWithRequest:(GDASmsStep3SigninRequest *)request handler:(void(^)(GDASigninResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"SigninSmsStep3Signin"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[USRATHSigninResponse class]
+             responseClass:[GDASigninResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 #pragma mark RegisterSmsStep1Question(SmsStep1QuestionRequest) returns (SmsStep1QuestionResponse)
@@ -155,17 +155,17 @@
 /**
  * local
  */
-- (void)registerSmsStep1QuestionWithRequest:(USRATHSmsStep1QuestionRequest *)request handler:(void(^)(USRATHSmsStep1QuestionResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)registerSmsStep1QuestionWithRequest:(GDASmsStep1QuestionRequest *)request handler:(void(^)(GDASmsStep1QuestionResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToRegisterSmsStep1QuestionWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
 /**
  * local
  */
-- (GRPCProtoCall *)RPCToRegisterSmsStep1QuestionWithRequest:(USRATHSmsStep1QuestionRequest *)request handler:(void(^)(USRATHSmsStep1QuestionResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToRegisterSmsStep1QuestionWithRequest:(GDASmsStep1QuestionRequest *)request handler:(void(^)(GDASmsStep1QuestionResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"RegisterSmsStep1Question"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[USRATHSmsStep1QuestionResponse class]
+             responseClass:[GDASmsStep1QuestionResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 #pragma mark RegisterSmsStep2Answer(SmsStep2AnswerRequest) returns (SmsStep2AnswerResponse)
@@ -173,17 +173,17 @@
 /**
  * local
  */
-- (void)registerSmsStep2AnswerWithRequest:(USRATHSmsStep2AnswerRequest *)request handler:(void(^)(USRATHSmsStep2AnswerResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)registerSmsStep2AnswerWithRequest:(GDASmsStep2AnswerRequest *)request handler:(void(^)(GDASmsStep2AnswerResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToRegisterSmsStep2AnswerWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
 /**
  * local
  */
-- (GRPCProtoCall *)RPCToRegisterSmsStep2AnswerWithRequest:(USRATHSmsStep2AnswerRequest *)request handler:(void(^)(USRATHSmsStep2AnswerResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToRegisterSmsStep2AnswerWithRequest:(GDASmsStep2AnswerRequest *)request handler:(void(^)(GDASmsStep2AnswerResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"RegisterSmsStep2Answer"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[USRATHSmsStep2AnswerResponse class]
+             responseClass:[GDASmsStep2AnswerResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 #pragma mark RegisterSmsStep3Register(SmsStep3RegisterRequest) returns (RegisterResponse)
@@ -191,17 +191,17 @@
 /**
  * local
  */
-- (void)registerSmsStep3RegisterWithRequest:(USRATHSmsStep3RegisterRequest *)request handler:(void(^)(USRATHRegisterResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)registerSmsStep3RegisterWithRequest:(GDASmsStep3RegisterRequest *)request handler:(void(^)(GDARegisterResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToRegisterSmsStep3RegisterWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
 /**
  * local
  */
-- (GRPCProtoCall *)RPCToRegisterSmsStep3RegisterWithRequest:(USRATHSmsStep3RegisterRequest *)request handler:(void(^)(USRATHRegisterResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToRegisterSmsStep3RegisterWithRequest:(GDASmsStep3RegisterRequest *)request handler:(void(^)(GDARegisterResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"RegisterSmsStep3Register"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[USRATHRegisterResponse class]
+             responseClass:[GDARegisterResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 @end

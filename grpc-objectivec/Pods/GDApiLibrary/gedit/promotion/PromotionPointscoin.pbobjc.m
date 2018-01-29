@@ -20,33 +20,33 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-#pragma mark - PNTCPRMPromotionPointscoinRoot
+#pragma mark - GDAPromotionPointscoinRoot
 
-@implementation PNTCPRMPromotionPointscoinRoot
+@implementation GDAPromotionPointscoinRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - PNTCPRMPromotionPointscoinRoot_FileDescriptor
+#pragma mark - GDAPromotionPointscoinRoot_FileDescriptor
 
-static GPBFileDescriptor *PNTCPRMPromotionPointscoinRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDAPromotionPointscoinRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.promotion"
-                                                 objcPrefix:@"PNTCPRM"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - PNTCPRMPreparePointsCoinRequest
+#pragma mark - GDAPreparePointsCoinRequest
 
-@implementation PNTCPRMPreparePointsCoinRequest
+@implementation GDAPreparePointsCoinRequest
 
 @dynamic payeeUuid;
 @dynamic payeeStoreUuid;
@@ -55,15 +55,15 @@ static GPBFileDescriptor *PNTCPRMPromotionPointscoinRoot_FileDescriptor(void) {
 @dynamic shouldPay;
 @dynamic channel;
 
-typedef struct PNTCPRMPreparePointsCoinRequest__storage_ {
+typedef struct GDAPreparePointsCoinRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t coinNumber;
   int32_t price;
   int32_t shouldPay;
-  COMMONPaymentChannel channel;
+  GDAPaymentChannel channel;
   NSString *payeeUuid;
   NSString *payeeStoreUuid;
-} PNTCPRMPreparePointsCoinRequest__storage_;
+} GDAPreparePointsCoinRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -74,65 +74,65 @@ typedef struct PNTCPRMPreparePointsCoinRequest__storage_ {
       {
         .name = "payeeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMPreparePointsCoinRequest_FieldNumber_PayeeUuid,
+        .number = GDAPreparePointsCoinRequest_FieldNumber_PayeeUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PNTCPRMPreparePointsCoinRequest__storage_, payeeUuid),
+        .offset = (uint32_t)offsetof(GDAPreparePointsCoinRequest__storage_, payeeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeStoreUuid",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMPreparePointsCoinRequest_FieldNumber_PayeeStoreUuid,
+        .number = GDAPreparePointsCoinRequest_FieldNumber_PayeeStoreUuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PNTCPRMPreparePointsCoinRequest__storage_, payeeStoreUuid),
+        .offset = (uint32_t)offsetof(GDAPreparePointsCoinRequest__storage_, payeeStoreUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "coinNumber",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMPreparePointsCoinRequest_FieldNumber_CoinNumber,
+        .number = GDAPreparePointsCoinRequest_FieldNumber_CoinNumber,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(PNTCPRMPreparePointsCoinRequest__storage_, coinNumber),
+        .offset = (uint32_t)offsetof(GDAPreparePointsCoinRequest__storage_, coinNumber),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "price",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMPreparePointsCoinRequest_FieldNumber_Price,
+        .number = GDAPreparePointsCoinRequest_FieldNumber_Price,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(PNTCPRMPreparePointsCoinRequest__storage_, price),
+        .offset = (uint32_t)offsetof(GDAPreparePointsCoinRequest__storage_, price),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "shouldPay",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMPreparePointsCoinRequest_FieldNumber_ShouldPay,
+        .number = GDAPreparePointsCoinRequest_FieldNumber_ShouldPay,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(PNTCPRMPreparePointsCoinRequest__storage_, shouldPay),
+        .offset = (uint32_t)offsetof(GDAPreparePointsCoinRequest__storage_, shouldPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "channel",
-        .dataTypeSpecific.enumDescFunc = COMMONPaymentChannel_EnumDescriptor,
-        .number = PNTCPRMPreparePointsCoinRequest_FieldNumber_Channel,
+        .dataTypeSpecific.enumDescFunc = GDAPaymentChannel_EnumDescriptor,
+        .number = GDAPreparePointsCoinRequest_FieldNumber_Channel,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(PNTCPRMPreparePointsCoinRequest__storage_, channel),
+        .offset = (uint32_t)offsetof(GDAPreparePointsCoinRequest__storage_, channel),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor),
         .dataType = GPBDataTypeEnum,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PNTCPRMPreparePointsCoinRequest class]
-                                     rootClass:[PNTCPRMPromotionPointscoinRoot class]
-                                          file:PNTCPRMPromotionPointscoinRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAPreparePointsCoinRequest class]
+                                     rootClass:[GDAPromotionPointscoinRoot class]
+                                          file:GDAPromotionPointscoinRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PNTCPRMPreparePointsCoinRequest__storage_)
+                                   storageSize:sizeof(GDAPreparePointsCoinRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -147,21 +147,21 @@ typedef struct PNTCPRMPreparePointsCoinRequest__storage_ {
 
 @end
 
-int32_t PNTCPRMPreparePointsCoinRequest_Channel_RawValue(PNTCPRMPreparePointsCoinRequest *message) {
-  GPBDescriptor *descriptor = [PNTCPRMPreparePointsCoinRequest descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:PNTCPRMPreparePointsCoinRequest_FieldNumber_Channel];
+int32_t GDAPreparePointsCoinRequest_Channel_RawValue(GDAPreparePointsCoinRequest *message) {
+  GPBDescriptor *descriptor = [GDAPreparePointsCoinRequest descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDAPreparePointsCoinRequest_FieldNumber_Channel];
   return GPBGetMessageInt32Field(message, field);
 }
 
-void SetPNTCPRMPreparePointsCoinRequest_Channel_RawValue(PNTCPRMPreparePointsCoinRequest *message, int32_t value) {
-  GPBDescriptor *descriptor = [PNTCPRMPreparePointsCoinRequest descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:PNTCPRMPreparePointsCoinRequest_FieldNumber_Channel];
+void SetGDAPreparePointsCoinRequest_Channel_RawValue(GDAPreparePointsCoinRequest *message, int32_t value) {
+  GPBDescriptor *descriptor = [GDAPreparePointsCoinRequest descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDAPreparePointsCoinRequest_FieldNumber_Channel];
   GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
 }
 
-#pragma mark - PNTCPRMPreparePointsCoinResponse
+#pragma mark - GDAPreparePointsCoinResponse
 
-@implementation PNTCPRMPreparePointsCoinResponse
+@implementation GDAPreparePointsCoinResponse
 
 @dynamic hasStatus, status;
 @dynamic totalCoinsBought;
@@ -169,14 +169,14 @@ void SetPNTCPRMPreparePointsCoinRequest_Channel_RawValue(PNTCPRMPreparePointsCoi
 @dynamic totalCoinsAvailable;
 @dynamic channelOrderUuid;
 
-typedef struct PNTCPRMPreparePointsCoinResponse__storage_ {
+typedef struct GDAPreparePointsCoinResponse__storage_ {
   uint32_t _has_storage_[1];
   int32_t totalCoinsBought;
   int32_t totalCoins;
   int32_t totalCoinsAvailable;
   NSString *channelOrderUuid;
-  COMMONStatus *status;
-} PNTCPRMPreparePointsCoinResponse__storage_;
+  GDAStatus *status;
+} GDAPreparePointsCoinResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -187,56 +187,56 @@ typedef struct PNTCPRMPreparePointsCoinResponse__storage_ {
       {
         .name = "totalCoinsBought",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMPreparePointsCoinResponse_FieldNumber_TotalCoinsBought,
+        .number = GDAPreparePointsCoinResponse_FieldNumber_TotalCoinsBought,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PNTCPRMPreparePointsCoinResponse__storage_, totalCoinsBought),
+        .offset = (uint32_t)offsetof(GDAPreparePointsCoinResponse__storage_, totalCoinsBought),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "totalCoins",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMPreparePointsCoinResponse_FieldNumber_TotalCoins,
+        .number = GDAPreparePointsCoinResponse_FieldNumber_TotalCoins,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(PNTCPRMPreparePointsCoinResponse__storage_, totalCoins),
+        .offset = (uint32_t)offsetof(GDAPreparePointsCoinResponse__storage_, totalCoins),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "totalCoinsAvailable",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMPreparePointsCoinResponse_FieldNumber_TotalCoinsAvailable,
+        .number = GDAPreparePointsCoinResponse_FieldNumber_TotalCoinsAvailable,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(PNTCPRMPreparePointsCoinResponse__storage_, totalCoinsAvailable),
+        .offset = (uint32_t)offsetof(GDAPreparePointsCoinResponse__storage_, totalCoinsAvailable),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "channelOrderUuid",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMPreparePointsCoinResponse_FieldNumber_ChannelOrderUuid,
+        .number = GDAPreparePointsCoinResponse_FieldNumber_ChannelOrderUuid,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(PNTCPRMPreparePointsCoinResponse__storage_, channelOrderUuid),
+        .offset = (uint32_t)offsetof(GDAPreparePointsCoinResponse__storage_, channelOrderUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = PNTCPRMPreparePointsCoinResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDAPreparePointsCoinResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PNTCPRMPreparePointsCoinResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDAPreparePointsCoinResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PNTCPRMPreparePointsCoinResponse class]
-                                     rootClass:[PNTCPRMPromotionPointscoinRoot class]
-                                          file:PNTCPRMPromotionPointscoinRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAPreparePointsCoinResponse class]
+                                     rootClass:[GDAPromotionPointscoinRoot class]
+                                          file:GDAPromotionPointscoinRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PNTCPRMPreparePointsCoinResponse__storage_)
+                                   storageSize:sizeof(GDAPreparePointsCoinResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -251,9 +251,9 @@ typedef struct PNTCPRMPreparePointsCoinResponse__storage_ {
 
 @end
 
-#pragma mark - PNTCPRMBuyPointsCoinRequest
+#pragma mark - GDABuyPointsCoinRequest
 
-@implementation PNTCPRMBuyPointsCoinRequest
+@implementation GDABuyPointsCoinRequest
 
 @dynamic payeeUuid;
 @dynamic payeeStoreUuid;
@@ -264,17 +264,17 @@ typedef struct PNTCPRMPreparePointsCoinResponse__storage_ {
 @dynamic channel;
 @dynamic channelOrderUuid;
 
-typedef struct PNTCPRMBuyPointsCoinRequest__storage_ {
+typedef struct GDABuyPointsCoinRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t coinNumber;
   int32_t price;
   int32_t shouldPay;
   int32_t actualPay;
-  COMMONPaymentChannel channel;
+  GDAPaymentChannel channel;
   NSString *payeeUuid;
   NSString *payeeStoreUuid;
   NSString *channelOrderUuid;
-} PNTCPRMBuyPointsCoinRequest__storage_;
+} GDABuyPointsCoinRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -285,83 +285,83 @@ typedef struct PNTCPRMBuyPointsCoinRequest__storage_ {
       {
         .name = "payeeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMBuyPointsCoinRequest_FieldNumber_PayeeUuid,
+        .number = GDABuyPointsCoinRequest_FieldNumber_PayeeUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PNTCPRMBuyPointsCoinRequest__storage_, payeeUuid),
+        .offset = (uint32_t)offsetof(GDABuyPointsCoinRequest__storage_, payeeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeStoreUuid",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMBuyPointsCoinRequest_FieldNumber_PayeeStoreUuid,
+        .number = GDABuyPointsCoinRequest_FieldNumber_PayeeStoreUuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PNTCPRMBuyPointsCoinRequest__storage_, payeeStoreUuid),
+        .offset = (uint32_t)offsetof(GDABuyPointsCoinRequest__storage_, payeeStoreUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "coinNumber",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMBuyPointsCoinRequest_FieldNumber_CoinNumber,
+        .number = GDABuyPointsCoinRequest_FieldNumber_CoinNumber,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(PNTCPRMBuyPointsCoinRequest__storage_, coinNumber),
+        .offset = (uint32_t)offsetof(GDABuyPointsCoinRequest__storage_, coinNumber),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "price",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMBuyPointsCoinRequest_FieldNumber_Price,
+        .number = GDABuyPointsCoinRequest_FieldNumber_Price,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(PNTCPRMBuyPointsCoinRequest__storage_, price),
+        .offset = (uint32_t)offsetof(GDABuyPointsCoinRequest__storage_, price),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "shouldPay",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMBuyPointsCoinRequest_FieldNumber_ShouldPay,
+        .number = GDABuyPointsCoinRequest_FieldNumber_ShouldPay,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(PNTCPRMBuyPointsCoinRequest__storage_, shouldPay),
+        .offset = (uint32_t)offsetof(GDABuyPointsCoinRequest__storage_, shouldPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "actualPay",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMBuyPointsCoinRequest_FieldNumber_ActualPay,
+        .number = GDABuyPointsCoinRequest_FieldNumber_ActualPay,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(PNTCPRMBuyPointsCoinRequest__storage_, actualPay),
+        .offset = (uint32_t)offsetof(GDABuyPointsCoinRequest__storage_, actualPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "channel",
-        .dataTypeSpecific.enumDescFunc = COMMONPaymentChannel_EnumDescriptor,
-        .number = PNTCPRMBuyPointsCoinRequest_FieldNumber_Channel,
+        .dataTypeSpecific.enumDescFunc = GDAPaymentChannel_EnumDescriptor,
+        .number = GDABuyPointsCoinRequest_FieldNumber_Channel,
         .hasIndex = 6,
-        .offset = (uint32_t)offsetof(PNTCPRMBuyPointsCoinRequest__storage_, channel),
+        .offset = (uint32_t)offsetof(GDABuyPointsCoinRequest__storage_, channel),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor),
         .dataType = GPBDataTypeEnum,
       },
       {
         .name = "channelOrderUuid",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMBuyPointsCoinRequest_FieldNumber_ChannelOrderUuid,
+        .number = GDABuyPointsCoinRequest_FieldNumber_ChannelOrderUuid,
         .hasIndex = 7,
-        .offset = (uint32_t)offsetof(PNTCPRMBuyPointsCoinRequest__storage_, channelOrderUuid),
+        .offset = (uint32_t)offsetof(GDABuyPointsCoinRequest__storage_, channelOrderUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PNTCPRMBuyPointsCoinRequest class]
-                                     rootClass:[PNTCPRMPromotionPointscoinRoot class]
-                                          file:PNTCPRMPromotionPointscoinRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDABuyPointsCoinRequest class]
+                                     rootClass:[GDAPromotionPointscoinRoot class]
+                                          file:GDAPromotionPointscoinRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PNTCPRMBuyPointsCoinRequest__storage_)
+                                   storageSize:sizeof(GDABuyPointsCoinRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -376,21 +376,21 @@ typedef struct PNTCPRMBuyPointsCoinRequest__storage_ {
 
 @end
 
-int32_t PNTCPRMBuyPointsCoinRequest_Channel_RawValue(PNTCPRMBuyPointsCoinRequest *message) {
-  GPBDescriptor *descriptor = [PNTCPRMBuyPointsCoinRequest descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:PNTCPRMBuyPointsCoinRequest_FieldNumber_Channel];
+int32_t GDABuyPointsCoinRequest_Channel_RawValue(GDABuyPointsCoinRequest *message) {
+  GPBDescriptor *descriptor = [GDABuyPointsCoinRequest descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDABuyPointsCoinRequest_FieldNumber_Channel];
   return GPBGetMessageInt32Field(message, field);
 }
 
-void SetPNTCPRMBuyPointsCoinRequest_Channel_RawValue(PNTCPRMBuyPointsCoinRequest *message, int32_t value) {
-  GPBDescriptor *descriptor = [PNTCPRMBuyPointsCoinRequest descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:PNTCPRMBuyPointsCoinRequest_FieldNumber_Channel];
+void SetGDABuyPointsCoinRequest_Channel_RawValue(GDABuyPointsCoinRequest *message, int32_t value) {
+  GPBDescriptor *descriptor = [GDABuyPointsCoinRequest descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDABuyPointsCoinRequest_FieldNumber_Channel];
   GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
 }
 
-#pragma mark - PNTCPRMPointsCoin
+#pragma mark - GDAPointsCoin
 
-@implementation PNTCPRMPointsCoin
+@implementation GDAPointsCoin
 
 @dynamic uuid;
 @dynamic payeeUuid;
@@ -404,20 +404,20 @@ void SetPNTCPRMBuyPointsCoinRequest_Channel_RawValue(PNTCPRMBuyPointsCoinRequest
 @dynamic channelOrderUuid;
 @dynamic created;
 
-typedef struct PNTCPRMPointsCoin__storage_ {
+typedef struct GDAPointsCoin__storage_ {
   uint32_t _has_storage_[1];
   int32_t coinNumber;
   int32_t price;
   int32_t shouldPay;
   int32_t discount;
   int32_t actualPay;
-  COMMONPaymentChannel channel;
+  GDAPaymentChannel channel;
   NSString *uuid;
   NSString *payeeUuid;
   NSString *payeeStoreUuid;
   NSString *channelOrderUuid;
   int64_t created;
-} PNTCPRMPointsCoin__storage_;
+} GDAPointsCoin__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -428,110 +428,110 @@ typedef struct PNTCPRMPointsCoin__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMPointsCoin_FieldNumber_Uuid,
+        .number = GDAPointsCoin_FieldNumber_Uuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PNTCPRMPointsCoin__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDAPointsCoin__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMPointsCoin_FieldNumber_PayeeUuid,
+        .number = GDAPointsCoin_FieldNumber_PayeeUuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PNTCPRMPointsCoin__storage_, payeeUuid),
+        .offset = (uint32_t)offsetof(GDAPointsCoin__storage_, payeeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeStoreUuid",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMPointsCoin_FieldNumber_PayeeStoreUuid,
+        .number = GDAPointsCoin_FieldNumber_PayeeStoreUuid,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(PNTCPRMPointsCoin__storage_, payeeStoreUuid),
+        .offset = (uint32_t)offsetof(GDAPointsCoin__storage_, payeeStoreUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "coinNumber",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMPointsCoin_FieldNumber_CoinNumber,
+        .number = GDAPointsCoin_FieldNumber_CoinNumber,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(PNTCPRMPointsCoin__storage_, coinNumber),
+        .offset = (uint32_t)offsetof(GDAPointsCoin__storage_, coinNumber),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "price",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMPointsCoin_FieldNumber_Price,
+        .number = GDAPointsCoin_FieldNumber_Price,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(PNTCPRMPointsCoin__storage_, price),
+        .offset = (uint32_t)offsetof(GDAPointsCoin__storage_, price),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "shouldPay",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMPointsCoin_FieldNumber_ShouldPay,
+        .number = GDAPointsCoin_FieldNumber_ShouldPay,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(PNTCPRMPointsCoin__storage_, shouldPay),
+        .offset = (uint32_t)offsetof(GDAPointsCoin__storage_, shouldPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "discount",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMPointsCoin_FieldNumber_Discount,
+        .number = GDAPointsCoin_FieldNumber_Discount,
         .hasIndex = 6,
-        .offset = (uint32_t)offsetof(PNTCPRMPointsCoin__storage_, discount),
+        .offset = (uint32_t)offsetof(GDAPointsCoin__storage_, discount),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "actualPay",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMPointsCoin_FieldNumber_ActualPay,
+        .number = GDAPointsCoin_FieldNumber_ActualPay,
         .hasIndex = 7,
-        .offset = (uint32_t)offsetof(PNTCPRMPointsCoin__storage_, actualPay),
+        .offset = (uint32_t)offsetof(GDAPointsCoin__storage_, actualPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "channel",
-        .dataTypeSpecific.enumDescFunc = COMMONPaymentChannel_EnumDescriptor,
-        .number = PNTCPRMPointsCoin_FieldNumber_Channel,
+        .dataTypeSpecific.enumDescFunc = GDAPaymentChannel_EnumDescriptor,
+        .number = GDAPointsCoin_FieldNumber_Channel,
         .hasIndex = 8,
-        .offset = (uint32_t)offsetof(PNTCPRMPointsCoin__storage_, channel),
+        .offset = (uint32_t)offsetof(GDAPointsCoin__storage_, channel),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor),
         .dataType = GPBDataTypeEnum,
       },
       {
         .name = "channelOrderUuid",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMPointsCoin_FieldNumber_ChannelOrderUuid,
+        .number = GDAPointsCoin_FieldNumber_ChannelOrderUuid,
         .hasIndex = 9,
-        .offset = (uint32_t)offsetof(PNTCPRMPointsCoin__storage_, channelOrderUuid),
+        .offset = (uint32_t)offsetof(GDAPointsCoin__storage_, channelOrderUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "created",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMPointsCoin_FieldNumber_Created,
+        .number = GDAPointsCoin_FieldNumber_Created,
         .hasIndex = 10,
-        .offset = (uint32_t)offsetof(PNTCPRMPointsCoin__storage_, created),
+        .offset = (uint32_t)offsetof(GDAPointsCoin__storage_, created),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PNTCPRMPointsCoin class]
-                                     rootClass:[PNTCPRMPromotionPointscoinRoot class]
-                                          file:PNTCPRMPromotionPointscoinRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAPointsCoin class]
+                                     rootClass:[GDAPromotionPointscoinRoot class]
+                                          file:GDAPromotionPointscoinRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PNTCPRMPointsCoin__storage_)
+                                   storageSize:sizeof(GDAPointsCoin__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -546,28 +546,28 @@ typedef struct PNTCPRMPointsCoin__storage_ {
 
 @end
 
-int32_t PNTCPRMPointsCoin_Channel_RawValue(PNTCPRMPointsCoin *message) {
-  GPBDescriptor *descriptor = [PNTCPRMPointsCoin descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:PNTCPRMPointsCoin_FieldNumber_Channel];
+int32_t GDAPointsCoin_Channel_RawValue(GDAPointsCoin *message) {
+  GPBDescriptor *descriptor = [GDAPointsCoin descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDAPointsCoin_FieldNumber_Channel];
   return GPBGetMessageInt32Field(message, field);
 }
 
-void SetPNTCPRMPointsCoin_Channel_RawValue(PNTCPRMPointsCoin *message, int32_t value) {
-  GPBDescriptor *descriptor = [PNTCPRMPointsCoin descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:PNTCPRMPointsCoin_FieldNumber_Channel];
+void SetGDAPointsCoin_Channel_RawValue(GDAPointsCoin *message, int32_t value) {
+  GPBDescriptor *descriptor = [GDAPointsCoin descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDAPointsCoin_FieldNumber_Channel];
   GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
 }
 
-#pragma mark - PNTCPRMListPointsCoinRequest
+#pragma mark - GDAListPointsCoinRequest
 
-@implementation PNTCPRMListPointsCoinRequest
+@implementation GDAListPointsCoinRequest
 
 @dynamic page;
 
-typedef struct PNTCPRMListPointsCoinRequest__storage_ {
+typedef struct GDAListPointsCoinRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t page;
-} PNTCPRMListPointsCoinRequest__storage_;
+} GDAListPointsCoinRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -578,20 +578,20 @@ typedef struct PNTCPRMListPointsCoinRequest__storage_ {
       {
         .name = "page",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMListPointsCoinRequest_FieldNumber_Page,
+        .number = GDAListPointsCoinRequest_FieldNumber_Page,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PNTCPRMListPointsCoinRequest__storage_, page),
+        .offset = (uint32_t)offsetof(GDAListPointsCoinRequest__storage_, page),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PNTCPRMListPointsCoinRequest class]
-                                     rootClass:[PNTCPRMPromotionPointscoinRoot class]
-                                          file:PNTCPRMPromotionPointscoinRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListPointsCoinRequest class]
+                                     rootClass:[GDAPromotionPointscoinRoot class]
+                                          file:GDAPromotionPointscoinRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PNTCPRMListPointsCoinRequest__storage_)
+                                   storageSize:sizeof(GDAListPointsCoinRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -601,16 +601,16 @@ typedef struct PNTCPRMListPointsCoinRequest__storage_ {
 
 @end
 
-#pragma mark - PNTCPRMGetPointsCoinRequest
+#pragma mark - GDAGetPointsCoinRequest
 
-@implementation PNTCPRMGetPointsCoinRequest
+@implementation GDAGetPointsCoinRequest
 
 @dynamic uuid;
 
-typedef struct PNTCPRMGetPointsCoinRequest__storage_ {
+typedef struct GDAGetPointsCoinRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *uuid;
-} PNTCPRMGetPointsCoinRequest__storage_;
+} GDAGetPointsCoinRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -621,20 +621,20 @@ typedef struct PNTCPRMGetPointsCoinRequest__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMGetPointsCoinRequest_FieldNumber_Uuid,
+        .number = GDAGetPointsCoinRequest_FieldNumber_Uuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PNTCPRMGetPointsCoinRequest__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDAGetPointsCoinRequest__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PNTCPRMGetPointsCoinRequest class]
-                                     rootClass:[PNTCPRMPromotionPointscoinRoot class]
-                                          file:PNTCPRMPromotionPointscoinRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAGetPointsCoinRequest class]
+                                     rootClass:[GDAPromotionPointscoinRoot class]
+                                          file:GDAPromotionPointscoinRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PNTCPRMGetPointsCoinRequest__storage_)
+                                   storageSize:sizeof(GDAGetPointsCoinRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -644,16 +644,16 @@ typedef struct PNTCPRMGetPointsCoinRequest__storage_ {
 
 @end
 
-#pragma mark - PNTCPRMSearchPointsCoinRequest
+#pragma mark - GDASearchPointsCoinRequest
 
-@implementation PNTCPRMSearchPointsCoinRequest
+@implementation GDASearchPointsCoinRequest
 
 @dynamic mobile;
 
-typedef struct PNTCPRMSearchPointsCoinRequest__storage_ {
+typedef struct GDASearchPointsCoinRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *mobile;
-} PNTCPRMSearchPointsCoinRequest__storage_;
+} GDASearchPointsCoinRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -664,20 +664,20 @@ typedef struct PNTCPRMSearchPointsCoinRequest__storage_ {
       {
         .name = "mobile",
         .dataTypeSpecific.className = NULL,
-        .number = PNTCPRMSearchPointsCoinRequest_FieldNumber_Mobile,
+        .number = GDASearchPointsCoinRequest_FieldNumber_Mobile,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PNTCPRMSearchPointsCoinRequest__storage_, mobile),
+        .offset = (uint32_t)offsetof(GDASearchPointsCoinRequest__storage_, mobile),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PNTCPRMSearchPointsCoinRequest class]
-                                     rootClass:[PNTCPRMPromotionPointscoinRoot class]
-                                          file:PNTCPRMPromotionPointscoinRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDASearchPointsCoinRequest class]
+                                     rootClass:[GDAPromotionPointscoinRoot class]
+                                          file:GDAPromotionPointscoinRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PNTCPRMSearchPointsCoinRequest__storage_)
+                                   storageSize:sizeof(GDASearchPointsCoinRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -687,18 +687,18 @@ typedef struct PNTCPRMSearchPointsCoinRequest__storage_ {
 
 @end
 
-#pragma mark - PNTCPRMPointsCoinResponse
+#pragma mark - GDAPointsCoinResponse
 
-@implementation PNTCPRMPointsCoinResponse
+@implementation GDAPointsCoinResponse
 
 @dynamic hasStatus, status;
 @dynamic hasPointsCoin, pointsCoin;
 
-typedef struct PNTCPRMPointsCoinResponse__storage_ {
+typedef struct GDAPointsCoinResponse__storage_ {
   uint32_t _has_storage_[1];
-  PNTCPRMPointsCoin *pointsCoin;
-  COMMONStatus *status;
-} PNTCPRMPointsCoinResponse__storage_;
+  GDAPointsCoin *pointsCoin;
+  GDAStatus *status;
+} GDAPointsCoinResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -708,30 +708,30 @@ typedef struct PNTCPRMPointsCoinResponse__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "pointsCoin",
-        .dataTypeSpecific.className = GPBStringifySymbol(PNTCPRMPointsCoin),
-        .number = PNTCPRMPointsCoinResponse_FieldNumber_PointsCoin,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAPointsCoin),
+        .number = GDAPointsCoinResponse_FieldNumber_PointsCoin,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PNTCPRMPointsCoinResponse__storage_, pointsCoin),
+        .offset = (uint32_t)offsetof(GDAPointsCoinResponse__storage_, pointsCoin),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = PNTCPRMPointsCoinResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDAPointsCoinResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PNTCPRMPointsCoinResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDAPointsCoinResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PNTCPRMPointsCoinResponse class]
-                                     rootClass:[PNTCPRMPromotionPointscoinRoot class]
-                                          file:PNTCPRMPromotionPointscoinRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAPointsCoinResponse class]
+                                     rootClass:[GDAPromotionPointscoinRoot class]
+                                          file:GDAPromotionPointscoinRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PNTCPRMPointsCoinResponse__storage_)
+                                   storageSize:sizeof(GDAPointsCoinResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =

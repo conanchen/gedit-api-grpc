@@ -27,13 +27,13 @@
 
 CF_EXTERN_C_BEGIN
 
-@class COMMONStatus;
-@class IVSTPRMInvestPayment;
-GPB_ENUM_FWD_DECLARE(COMMONPaymentChannel);
+@class GDAInvestPayment;
+@class GDAStatus;
+GPB_ENUM_FWD_DECLARE(GDAPaymentChannel);
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - IVSTPRMPromotionInvestpaymentRoot
+#pragma mark - GDAPromotionInvestpaymentRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -45,50 +45,50 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface IVSTPRMPromotionInvestpaymentRoot : GPBRootObject
+@interface GDAPromotionInvestpaymentRoot : GPBRootObject
 @end
 
-#pragma mark - IVSTPRMPreparInvestPaymentRequest
+#pragma mark - GDAPreparInvestPaymentRequest
 
-typedef GPB_ENUM(IVSTPRMPreparInvestPaymentRequest_FieldNumber) {
-  IVSTPRMPreparInvestPaymentRequest_FieldNumber_PayeeUuid = 4,
-  IVSTPRMPreparInvestPaymentRequest_FieldNumber_PayeeStoreUuid = 7,
-  IVSTPRMPreparInvestPaymentRequest_FieldNumber_Channel = 26,
+typedef GPB_ENUM(GDAPreparInvestPaymentRequest_FieldNumber) {
+  GDAPreparInvestPaymentRequest_FieldNumber_PayeeUuid = 4,
+  GDAPreparInvestPaymentRequest_FieldNumber_PayeeStoreUuid = 7,
+  GDAPreparInvestPaymentRequest_FieldNumber_Channel = 26,
 };
 
-@interface IVSTPRMPreparInvestPaymentRequest : GPBMessage
+@interface GDAPreparInvestPaymentRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *payeeUuid;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *payeeStoreUuid;
 
 /** 支付通道如支付宝、微信、云闪付 */
-@property(nonatomic, readwrite) enum COMMONPaymentChannel channel;
+@property(nonatomic, readwrite) enum GDAPaymentChannel channel;
 
 @end
 
 /**
- * Fetches the raw value of a @c IVSTPRMPreparInvestPaymentRequest's @c channel property, even
+ * Fetches the raw value of a @c GDAPreparInvestPaymentRequest's @c channel property, even
  * if the value was not defined by the enum at the time the code was generated.
  **/
-int32_t IVSTPRMPreparInvestPaymentRequest_Channel_RawValue(IVSTPRMPreparInvestPaymentRequest *message);
+int32_t GDAPreparInvestPaymentRequest_Channel_RawValue(GDAPreparInvestPaymentRequest *message);
 /**
- * Sets the raw value of an @c IVSTPRMPreparInvestPaymentRequest's @c channel property, allowing
+ * Sets the raw value of an @c GDAPreparInvestPaymentRequest's @c channel property, allowing
  * it to be set to a value that was not defined by the enum at the time the code
  * was generated.
  **/
-void SetIVSTPRMPreparInvestPaymentRequest_Channel_RawValue(IVSTPRMPreparInvestPaymentRequest *message, int32_t value);
+void SetGDAPreparInvestPaymentRequest_Channel_RawValue(GDAPreparInvestPaymentRequest *message, int32_t value);
 
-#pragma mark - IVSTPRMPrepareInvestPaymentResponse
+#pragma mark - GDAPrepareInvestPaymentResponse
 
-typedef GPB_ENUM(IVSTPRMPrepareInvestPaymentResponse_FieldNumber) {
-  IVSTPRMPrepareInvestPaymentResponse_FieldNumber_ChannelOrderUuid = 27,
-  IVSTPRMPrepareInvestPaymentResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAPrepareInvestPaymentResponse_FieldNumber) {
+  GDAPrepareInvestPaymentResponse_FieldNumber_ChannelOrderUuid = 27,
+  GDAPrepareInvestPaymentResponse_FieldNumber_Status = 999,
 };
 
-@interface IVSTPRMPrepareInvestPaymentResponse : GPBMessage
+@interface GDAPrepareInvestPaymentResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
@@ -97,19 +97,19 @@ typedef GPB_ENUM(IVSTPRMPrepareInvestPaymentResponse_FieldNumber) {
 
 @end
 
-#pragma mark - IVSTPRMAddInvestPaymentRequest
+#pragma mark - GDAAddInvestPaymentRequest
 
-typedef GPB_ENUM(IVSTPRMAddInvestPaymentRequest_FieldNumber) {
-  IVSTPRMAddInvestPaymentRequest_FieldNumber_PayeeUuid = 4,
-  IVSTPRMAddInvestPaymentRequest_FieldNumber_PayeeStoreUuid = 7,
-  IVSTPRMAddInvestPaymentRequest_FieldNumber_ShouldPay = 10,
-  IVSTPRMAddInvestPaymentRequest_FieldNumber_Discount = 13,
-  IVSTPRMAddInvestPaymentRequest_FieldNumber_ActualPay = 16,
-  IVSTPRMAddInvestPaymentRequest_FieldNumber_Channel = 26,
-  IVSTPRMAddInvestPaymentRequest_FieldNumber_ChannelOrderUuid = 27,
+typedef GPB_ENUM(GDAAddInvestPaymentRequest_FieldNumber) {
+  GDAAddInvestPaymentRequest_FieldNumber_PayeeUuid = 4,
+  GDAAddInvestPaymentRequest_FieldNumber_PayeeStoreUuid = 7,
+  GDAAddInvestPaymentRequest_FieldNumber_ShouldPay = 10,
+  GDAAddInvestPaymentRequest_FieldNumber_Discount = 13,
+  GDAAddInvestPaymentRequest_FieldNumber_ActualPay = 16,
+  GDAAddInvestPaymentRequest_FieldNumber_Channel = 26,
+  GDAAddInvestPaymentRequest_FieldNumber_ChannelOrderUuid = 27,
 };
 
-@interface IVSTPRMAddInvestPaymentRequest : GPBMessage
+@interface GDAAddInvestPaymentRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *payeeUuid;
 
@@ -122,7 +122,7 @@ typedef GPB_ENUM(IVSTPRMAddInvestPaymentRequest_FieldNumber) {
 @property(nonatomic, readwrite) int32_t actualPay;
 
 /** 支付通道如支付宝、微信、云闪付 */
-@property(nonatomic, readwrite) enum COMMONPaymentChannel channel;
+@property(nonatomic, readwrite) enum GDAPaymentChannel channel;
 
 /** 预付单编号，可能由支付通道返回的或平台产生的 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *channelOrderUuid;
@@ -130,51 +130,51 @@ typedef GPB_ENUM(IVSTPRMAddInvestPaymentRequest_FieldNumber) {
 @end
 
 /**
- * Fetches the raw value of a @c IVSTPRMAddInvestPaymentRequest's @c channel property, even
+ * Fetches the raw value of a @c GDAAddInvestPaymentRequest's @c channel property, even
  * if the value was not defined by the enum at the time the code was generated.
  **/
-int32_t IVSTPRMAddInvestPaymentRequest_Channel_RawValue(IVSTPRMAddInvestPaymentRequest *message);
+int32_t GDAAddInvestPaymentRequest_Channel_RawValue(GDAAddInvestPaymentRequest *message);
 /**
- * Sets the raw value of an @c IVSTPRMAddInvestPaymentRequest's @c channel property, allowing
+ * Sets the raw value of an @c GDAAddInvestPaymentRequest's @c channel property, allowing
  * it to be set to a value that was not defined by the enum at the time the code
  * was generated.
  **/
-void SetIVSTPRMAddInvestPaymentRequest_Channel_RawValue(IVSTPRMAddInvestPaymentRequest *message, int32_t value);
+void SetGDAAddInvestPaymentRequest_Channel_RawValue(GDAAddInvestPaymentRequest *message, int32_t value);
 
-#pragma mark - IVSTPRMInvestPaymentResponse
+#pragma mark - GDAInvestPaymentResponse
 
-typedef GPB_ENUM(IVSTPRMInvestPaymentResponse_FieldNumber) {
-  IVSTPRMInvestPaymentResponse_FieldNumber_RecordPayment = 1,
-  IVSTPRMInvestPaymentResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAInvestPaymentResponse_FieldNumber) {
+  GDAInvestPaymentResponse_FieldNumber_RecordPayment = 1,
+  GDAInvestPaymentResponse_FieldNumber_Status = 999,
 };
 
-@interface IVSTPRMInvestPaymentResponse : GPBMessage
+@interface GDAInvestPaymentResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
-@property(nonatomic, readwrite, strong, null_resettable) IVSTPRMInvestPayment *recordPayment;
+@property(nonatomic, readwrite, strong, null_resettable) GDAInvestPayment *recordPayment;
 /** Test to see if @c recordPayment has been set. */
 @property(nonatomic, readwrite) BOOL hasRecordPayment;
 
 @end
 
-#pragma mark - IVSTPRMInvestPayment
+#pragma mark - GDAInvestPayment
 
-typedef GPB_ENUM(IVSTPRMInvestPayment_FieldNumber) {
-  IVSTPRMInvestPayment_FieldNumber_Uuid = 1,
-  IVSTPRMInvestPayment_FieldNumber_PayeeUuid = 4,
-  IVSTPRMInvestPayment_FieldNumber_PayeeStoreUuid = 7,
-  IVSTPRMInvestPayment_FieldNumber_ShouldPay = 10,
-  IVSTPRMInvestPayment_FieldNumber_Discount = 13,
-  IVSTPRMInvestPayment_FieldNumber_ActualPay = 16,
-  IVSTPRMInvestPayment_FieldNumber_Channel = 26,
-  IVSTPRMInvestPayment_FieldNumber_ChannelOrderUuid = 27,
-  IVSTPRMInvestPayment_FieldNumber_Created = 60,
+typedef GPB_ENUM(GDAInvestPayment_FieldNumber) {
+  GDAInvestPayment_FieldNumber_Uuid = 1,
+  GDAInvestPayment_FieldNumber_PayeeUuid = 4,
+  GDAInvestPayment_FieldNumber_PayeeStoreUuid = 7,
+  GDAInvestPayment_FieldNumber_ShouldPay = 10,
+  GDAInvestPayment_FieldNumber_Discount = 13,
+  GDAInvestPayment_FieldNumber_ActualPay = 16,
+  GDAInvestPayment_FieldNumber_Channel = 26,
+  GDAInvestPayment_FieldNumber_ChannelOrderUuid = 27,
+  GDAInvestPayment_FieldNumber_Created = 60,
 };
 
-@interface IVSTPRMInvestPayment : GPBMessage
+@interface GDAInvestPayment : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
 
@@ -189,7 +189,7 @@ typedef GPB_ENUM(IVSTPRMInvestPayment_FieldNumber) {
 @property(nonatomic, readwrite) int32_t actualPay;
 
 /** 支付通道如支付宝、微信、云闪付 */
-@property(nonatomic, readwrite) enum COMMONPaymentChannel channel;
+@property(nonatomic, readwrite) enum GDAPaymentChannel channel;
 
 /** 预付单编号，可能由支付通道返回的或平台产生的 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *channelOrderUuid;
@@ -199,48 +199,48 @@ typedef GPB_ENUM(IVSTPRMInvestPayment_FieldNumber) {
 @end
 
 /**
- * Fetches the raw value of a @c IVSTPRMInvestPayment's @c channel property, even
+ * Fetches the raw value of a @c GDAInvestPayment's @c channel property, even
  * if the value was not defined by the enum at the time the code was generated.
  **/
-int32_t IVSTPRMInvestPayment_Channel_RawValue(IVSTPRMInvestPayment *message);
+int32_t GDAInvestPayment_Channel_RawValue(GDAInvestPayment *message);
 /**
- * Sets the raw value of an @c IVSTPRMInvestPayment's @c channel property, allowing
+ * Sets the raw value of an @c GDAInvestPayment's @c channel property, allowing
  * it to be set to a value that was not defined by the enum at the time the code
  * was generated.
  **/
-void SetIVSTPRMInvestPayment_Channel_RawValue(IVSTPRMInvestPayment *message, int32_t value);
+void SetGDAInvestPayment_Channel_RawValue(GDAInvestPayment *message, int32_t value);
 
-#pragma mark - IVSTPRMListInvestPaymentRequest
+#pragma mark - GDAListInvestPaymentRequest
 
-typedef GPB_ENUM(IVSTPRMListInvestPaymentRequest_FieldNumber) {
-  IVSTPRMListInvestPaymentRequest_FieldNumber_Page = 1,
+typedef GPB_ENUM(GDAListInvestPaymentRequest_FieldNumber) {
+  GDAListInvestPaymentRequest_FieldNumber_Page = 1,
 };
 
-@interface IVSTPRMListInvestPaymentRequest : GPBMessage
+@interface GDAListInvestPaymentRequest : GPBMessage
 
 @property(nonatomic, readwrite) int32_t page;
 
 @end
 
-#pragma mark - IVSTPRMGetInvestPaymentRequest
+#pragma mark - GDAGetInvestPaymentRequest
 
-typedef GPB_ENUM(IVSTPRMGetInvestPaymentRequest_FieldNumber) {
-  IVSTPRMGetInvestPaymentRequest_FieldNumber_Uuid = 1,
+typedef GPB_ENUM(GDAGetInvestPaymentRequest_FieldNumber) {
+  GDAGetInvestPaymentRequest_FieldNumber_Uuid = 1,
 };
 
-@interface IVSTPRMGetInvestPaymentRequest : GPBMessage
+@interface GDAGetInvestPaymentRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
 
 @end
 
-#pragma mark - IVSTPRMSearchInvestPaymentRequest
+#pragma mark - GDASearchInvestPaymentRequest
 
-typedef GPB_ENUM(IVSTPRMSearchInvestPaymentRequest_FieldNumber) {
-  IVSTPRMSearchInvestPaymentRequest_FieldNumber_Mobile = 1,
+typedef GPB_ENUM(GDASearchInvestPaymentRequest_FieldNumber) {
+  GDASearchInvestPaymentRequest_FieldNumber_Mobile = 1,
 };
 
-@interface IVSTPRMSearchInvestPaymentRequest : GPBMessage
+@interface GDASearchInvestPaymentRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *mobile;
 

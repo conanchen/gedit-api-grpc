@@ -20,42 +20,42 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-#pragma mark - PMCOMMPaymentCommonRoot
+#pragma mark - GDAPaymentCommonRoot
 
-@implementation PMCOMMPaymentCommonRoot
+@implementation GDAPaymentCommonRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - PMCOMMPaymentCommonRoot_FileDescriptor
+#pragma mark - GDAPaymentCommonRoot_FileDescriptor
 
-static GPBFileDescriptor *PMCOMMPaymentCommonRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDAPaymentCommonRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.payment"
-                                                 objcPrefix:@"PMCOMM"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - PMCOMMPaymentResponse
+#pragma mark - GDAPaymentResponse
 
-@implementation PMCOMMPaymentResponse
+@implementation GDAPaymentResponse
 
 @dynamic hasStatus, status;
 @dynamic hasPayment, payment;
 
-typedef struct PMCOMMPaymentResponse__storage_ {
+typedef struct GDAPaymentResponse__storage_ {
   uint32_t _has_storage_[1];
-  PMCOMMPayment *payment;
-  COMMONStatus *status;
-} PMCOMMPaymentResponse__storage_;
+  GDAPayment *payment;
+  GDAStatus *status;
+} GDAPaymentResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -65,30 +65,30 @@ typedef struct PMCOMMPaymentResponse__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "payment",
-        .dataTypeSpecific.className = GPBStringifySymbol(PMCOMMPayment),
-        .number = PMCOMMPaymentResponse_FieldNumber_Payment,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAPayment),
+        .number = GDAPaymentResponse_FieldNumber_Payment,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PMCOMMPaymentResponse__storage_, payment),
+        .offset = (uint32_t)offsetof(GDAPaymentResponse__storage_, payment),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = PMCOMMPaymentResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDAPaymentResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PMCOMMPaymentResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDAPaymentResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PMCOMMPaymentResponse class]
-                                     rootClass:[PMCOMMPaymentCommonRoot class]
-                                          file:PMCOMMPaymentCommonRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAPaymentResponse class]
+                                     rootClass:[GDAPaymentCommonRoot class]
+                                          file:GDAPaymentCommonRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PMCOMMPaymentResponse__storage_)
+                                   storageSize:sizeof(GDAPaymentResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -98,9 +98,9 @@ typedef struct PMCOMMPaymentResponse__storage_ {
 
 @end
 
-#pragma mark - PMCOMMPayment
+#pragma mark - GDAPayment
 
-@implementation PMCOMMPayment
+@implementation GDAPayment
 
 @dynamic uuid;
 @dynamic payerCode;
@@ -119,14 +119,14 @@ typedef struct PMCOMMPaymentResponse__storage_ {
 @dynamic paymentStatus;
 @dynamic created;
 
-typedef struct PMCOMMPayment__storage_ {
+typedef struct GDAPayment__storage_ {
   uint32_t _has_storage_[1];
   int32_t shouldPay;
   int32_t actualPay;
   int32_t pointsPay;
   int32_t pointsRepay;
-  COMMONPaymentChannel paymentChannel;
-  PMCOMMPayment_PaymentStatus paymentStatus;
+  GDAPaymentChannel paymentChannel;
+  GDAPayment_PaymentStatus paymentStatus;
   NSString *uuid;
   NSString *payerCode;
   NSString *payerUuid;
@@ -136,7 +136,7 @@ typedef struct PMCOMMPayment__storage_ {
   NSString *payeeWorkerUuid;
   NSString *paymentChannelSignature;
   int64_t created;
-} PMCOMMPayment__storage_;
+} GDAPayment__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -147,106 +147,106 @@ typedef struct PMCOMMPayment__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = PMCOMMPayment_FieldNumber_Uuid,
+        .number = GDAPayment_FieldNumber_Uuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PMCOMMPayment__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDAPayment__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payerCode",
         .dataTypeSpecific.className = NULL,
-        .number = PMCOMMPayment_FieldNumber_PayerCode,
+        .number = GDAPayment_FieldNumber_PayerCode,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PMCOMMPayment__storage_, payerCode),
+        .offset = (uint32_t)offsetof(GDAPayment__storage_, payerCode),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payerUuid",
         .dataTypeSpecific.className = NULL,
-        .number = PMCOMMPayment_FieldNumber_PayerUuid,
+        .number = GDAPayment_FieldNumber_PayerUuid,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(PMCOMMPayment__storage_, payerUuid),
+        .offset = (uint32_t)offsetof(GDAPayment__storage_, payerUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeCode",
         .dataTypeSpecific.className = NULL,
-        .number = PMCOMMPayment_FieldNumber_PayeeCode,
+        .number = GDAPayment_FieldNumber_PayeeCode,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(PMCOMMPayment__storage_, payeeCode),
+        .offset = (uint32_t)offsetof(GDAPayment__storage_, payeeCode),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = PMCOMMPayment_FieldNumber_PayeeUuid,
+        .number = GDAPayment_FieldNumber_PayeeUuid,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(PMCOMMPayment__storage_, payeeUuid),
+        .offset = (uint32_t)offsetof(GDAPayment__storage_, payeeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeStoreUuid",
         .dataTypeSpecific.className = NULL,
-        .number = PMCOMMPayment_FieldNumber_PayeeStoreUuid,
+        .number = GDAPayment_FieldNumber_PayeeStoreUuid,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(PMCOMMPayment__storage_, payeeStoreUuid),
+        .offset = (uint32_t)offsetof(GDAPayment__storage_, payeeStoreUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeWorkerUuid",
         .dataTypeSpecific.className = NULL,
-        .number = PMCOMMPayment_FieldNumber_PayeeWorkerUuid,
+        .number = GDAPayment_FieldNumber_PayeeWorkerUuid,
         .hasIndex = 6,
-        .offset = (uint32_t)offsetof(PMCOMMPayment__storage_, payeeWorkerUuid),
+        .offset = (uint32_t)offsetof(GDAPayment__storage_, payeeWorkerUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "shouldPay",
         .dataTypeSpecific.className = NULL,
-        .number = PMCOMMPayment_FieldNumber_ShouldPay,
+        .number = GDAPayment_FieldNumber_ShouldPay,
         .hasIndex = 7,
-        .offset = (uint32_t)offsetof(PMCOMMPayment__storage_, shouldPay),
+        .offset = (uint32_t)offsetof(GDAPayment__storage_, shouldPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "actualPay",
         .dataTypeSpecific.className = NULL,
-        .number = PMCOMMPayment_FieldNumber_ActualPay,
+        .number = GDAPayment_FieldNumber_ActualPay,
         .hasIndex = 8,
-        .offset = (uint32_t)offsetof(PMCOMMPayment__storage_, actualPay),
+        .offset = (uint32_t)offsetof(GDAPayment__storage_, actualPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "pointsPay",
         .dataTypeSpecific.className = NULL,
-        .number = PMCOMMPayment_FieldNumber_PointsPay,
+        .number = GDAPayment_FieldNumber_PointsPay,
         .hasIndex = 9,
-        .offset = (uint32_t)offsetof(PMCOMMPayment__storage_, pointsPay),
+        .offset = (uint32_t)offsetof(GDAPayment__storage_, pointsPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "pointsRepay",
         .dataTypeSpecific.className = NULL,
-        .number = PMCOMMPayment_FieldNumber_PointsRepay,
+        .number = GDAPayment_FieldNumber_PointsRepay,
         .hasIndex = 10,
-        .offset = (uint32_t)offsetof(PMCOMMPayment__storage_, pointsRepay),
+        .offset = (uint32_t)offsetof(GDAPayment__storage_, pointsRepay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "isPointsPay",
         .dataTypeSpecific.className = NULL,
-        .number = PMCOMMPayment_FieldNumber_IsPointsPay,
+        .number = GDAPayment_FieldNumber_IsPointsPay,
         .hasIndex = 11,
         .offset = 12,  // Stored in _has_storage_ to save space.
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
@@ -254,48 +254,48 @@ typedef struct PMCOMMPayment__storage_ {
       },
       {
         .name = "paymentChannel",
-        .dataTypeSpecific.enumDescFunc = COMMONPaymentChannel_EnumDescriptor,
-        .number = PMCOMMPayment_FieldNumber_PaymentChannel,
+        .dataTypeSpecific.enumDescFunc = GDAPaymentChannel_EnumDescriptor,
+        .number = GDAPayment_FieldNumber_PaymentChannel,
         .hasIndex = 13,
-        .offset = (uint32_t)offsetof(PMCOMMPayment__storage_, paymentChannel),
+        .offset = (uint32_t)offsetof(GDAPayment__storage_, paymentChannel),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldHasEnumDescriptor),
         .dataType = GPBDataTypeEnum,
       },
       {
         .name = "paymentChannelSignature",
         .dataTypeSpecific.className = NULL,
-        .number = PMCOMMPayment_FieldNumber_PaymentChannelSignature,
+        .number = GDAPayment_FieldNumber_PaymentChannelSignature,
         .hasIndex = 14,
-        .offset = (uint32_t)offsetof(PMCOMMPayment__storage_, paymentChannelSignature),
+        .offset = (uint32_t)offsetof(GDAPayment__storage_, paymentChannelSignature),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "paymentStatus",
-        .dataTypeSpecific.enumDescFunc = PMCOMMPayment_PaymentStatus_EnumDescriptor,
-        .number = PMCOMMPayment_FieldNumber_PaymentStatus,
+        .dataTypeSpecific.enumDescFunc = GDAPayment_PaymentStatus_EnumDescriptor,
+        .number = GDAPayment_FieldNumber_PaymentStatus,
         .hasIndex = 15,
-        .offset = (uint32_t)offsetof(PMCOMMPayment__storage_, paymentStatus),
+        .offset = (uint32_t)offsetof(GDAPayment__storage_, paymentStatus),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldHasEnumDescriptor),
         .dataType = GPBDataTypeEnum,
       },
       {
         .name = "created",
         .dataTypeSpecific.className = NULL,
-        .number = PMCOMMPayment_FieldNumber_Created,
+        .number = GDAPayment_FieldNumber_Created,
         .hasIndex = 16,
-        .offset = (uint32_t)offsetof(PMCOMMPayment__storage_, created),
+        .offset = (uint32_t)offsetof(GDAPayment__storage_, created),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PMCOMMPayment class]
-                                     rootClass:[PMCOMMPaymentCommonRoot class]
-                                          file:PMCOMMPaymentCommonRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAPayment class]
+                                     rootClass:[GDAPaymentCommonRoot class]
+                                          file:GDAPaymentCommonRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PMCOMMPayment__storage_)
+                                   storageSize:sizeof(GDAPayment__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -311,49 +311,49 @@ typedef struct PMCOMMPayment__storage_ {
 
 @end
 
-int32_t PMCOMMPayment_PaymentChannel_RawValue(PMCOMMPayment *message) {
-  GPBDescriptor *descriptor = [PMCOMMPayment descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:PMCOMMPayment_FieldNumber_PaymentChannel];
+int32_t GDAPayment_PaymentChannel_RawValue(GDAPayment *message) {
+  GPBDescriptor *descriptor = [GDAPayment descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDAPayment_FieldNumber_PaymentChannel];
   return GPBGetMessageInt32Field(message, field);
 }
 
-void SetPMCOMMPayment_PaymentChannel_RawValue(PMCOMMPayment *message, int32_t value) {
-  GPBDescriptor *descriptor = [PMCOMMPayment descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:PMCOMMPayment_FieldNumber_PaymentChannel];
+void SetGDAPayment_PaymentChannel_RawValue(GDAPayment *message, int32_t value) {
+  GPBDescriptor *descriptor = [GDAPayment descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDAPayment_FieldNumber_PaymentChannel];
   GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
 }
 
-int32_t PMCOMMPayment_PaymentStatus_RawValue(PMCOMMPayment *message) {
-  GPBDescriptor *descriptor = [PMCOMMPayment descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:PMCOMMPayment_FieldNumber_PaymentStatus];
+int32_t GDAPayment_PaymentStatus_RawValue(GDAPayment *message) {
+  GPBDescriptor *descriptor = [GDAPayment descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDAPayment_FieldNumber_PaymentStatus];
   return GPBGetMessageInt32Field(message, field);
 }
 
-void SetPMCOMMPayment_PaymentStatus_RawValue(PMCOMMPayment *message, int32_t value) {
-  GPBDescriptor *descriptor = [PMCOMMPayment descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:PMCOMMPayment_FieldNumber_PaymentStatus];
+void SetGDAPayment_PaymentStatus_RawValue(GDAPayment *message, int32_t value) {
+  GPBDescriptor *descriptor = [GDAPayment descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDAPayment_FieldNumber_PaymentStatus];
   GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
 }
 
-#pragma mark - Enum PMCOMMPayment_PaymentStatus
+#pragma mark - Enum GDAPayment_PaymentStatus
 
-GPBEnumDescriptor *PMCOMMPayment_PaymentStatus_EnumDescriptor(void) {
+GPBEnumDescriptor *GDAPayment_PaymentStatus_EnumDescriptor(void) {
   static GPBEnumDescriptor *descriptor = NULL;
   if (!descriptor) {
     static const char *valueNames =
         "New\000Inprogress\000Failed\000Ok\000";
     static const int32_t values[] = {
-        PMCOMMPayment_PaymentStatus_New,
-        PMCOMMPayment_PaymentStatus_Inprogress,
-        PMCOMMPayment_PaymentStatus_Failed,
-        PMCOMMPayment_PaymentStatus_Ok,
+        GDAPayment_PaymentStatus_New,
+        GDAPayment_PaymentStatus_Inprogress,
+        GDAPayment_PaymentStatus_Failed,
+        GDAPayment_PaymentStatus_Ok,
     };
     GPBEnumDescriptor *worker =
-        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(PMCOMMPayment_PaymentStatus)
+        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(GDAPayment_PaymentStatus)
                                        valueNames:valueNames
                                            values:values
                                             count:(uint32_t)(sizeof(values) / sizeof(int32_t))
-                                     enumVerifier:PMCOMMPayment_PaymentStatus_IsValidValue];
+                                     enumVerifier:GDAPayment_PaymentStatus_IsValidValue];
     if (!OSAtomicCompareAndSwapPtrBarrier(nil, worker, (void * volatile *)&descriptor)) {
       [worker release];
     }
@@ -361,12 +361,12 @@ GPBEnumDescriptor *PMCOMMPayment_PaymentStatus_EnumDescriptor(void) {
   return descriptor;
 }
 
-BOOL PMCOMMPayment_PaymentStatus_IsValidValue(int32_t value__) {
+BOOL GDAPayment_PaymentStatus_IsValidValue(int32_t value__) {
   switch (value__) {
-    case PMCOMMPayment_PaymentStatus_New:
-    case PMCOMMPayment_PaymentStatus_Inprogress:
-    case PMCOMMPayment_PaymentStatus_Failed:
-    case PMCOMMPayment_PaymentStatus_Ok:
+    case GDAPayment_PaymentStatus_New:
+    case GDAPayment_PaymentStatus_Inprogress:
+    case GDAPayment_PaymentStatus_Failed:
+    case GDAPayment_PaymentStatus_Ok:
       return YES;
     default:
       return NO;

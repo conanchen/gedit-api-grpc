@@ -27,11 +27,11 @@
 
 CF_EXTERN_C_BEGIN
 
-@class COMMONStatus;
+@class GDAStatus;
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - USRLOGOUTUserLogoutRoot
+#pragma mark - GDAUserLogoutRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -43,24 +43,24 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface USRLOGOUTUserLogoutRoot : GPBRootObject
+@interface GDAUserLogoutRoot : GPBRootObject
 @end
 
-#pragma mark - USRLOGOUTLogoutRequest
+#pragma mark - GDALogoutRequest
 
-@interface USRLOGOUTLogoutRequest : GPBMessage
+@interface GDALogoutRequest : GPBMessage
 
 @end
 
-#pragma mark - USRLOGOUTLogoutResponse
+#pragma mark - GDALogoutResponse
 
-typedef GPB_ENUM(USRLOGOUTLogoutResponse_FieldNumber) {
-  USRLOGOUTLogoutResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDALogoutResponse_FieldNumber) {
+  GDALogoutResponse_FieldNumber_Status = 999,
 };
 
-@interface USRLOGOUTLogoutResponse : GPBMessage
+@interface GDALogoutResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 

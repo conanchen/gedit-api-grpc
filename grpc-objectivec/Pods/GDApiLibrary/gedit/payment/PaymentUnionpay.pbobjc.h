@@ -27,11 +27,11 @@
 
 CF_EXTERN_C_BEGIN
 
-@class COMMONStatus;
+@class GDAStatus;
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - PMUNPAYPaymentUnionpayRoot
+#pragma mark - GDAPaymentUnionpayRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -43,18 +43,18 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface PMUNPAYPaymentUnionpayRoot : GPBRootObject
+@interface GDAPaymentUnionpayRoot : GPBRootObject
 @end
 
-#pragma mark - PMUNPAYPrepareUnionpayPaymentRequest
+#pragma mark - GDAPrepareUnionpayPaymentRequest
 
-typedef GPB_ENUM(PMUNPAYPrepareUnionpayPaymentRequest_FieldNumber) {
-  PMUNPAYPrepareUnionpayPaymentRequest_FieldNumber_PayerCode = 11,
-  PMUNPAYPrepareUnionpayPaymentRequest_FieldNumber_PayerMobile = 12,
-  PMUNPAYPrepareUnionpayPaymentRequest_FieldNumber_ShouldPay = 15,
+typedef GPB_ENUM(GDAPrepareUnionpayPaymentRequest_FieldNumber) {
+  GDAPrepareUnionpayPaymentRequest_FieldNumber_PayerCode = 11,
+  GDAPrepareUnionpayPaymentRequest_FieldNumber_PayerMobile = 12,
+  GDAPrepareUnionpayPaymentRequest_FieldNumber_ShouldPay = 15,
 };
 
-@interface PMUNPAYPrepareUnionpayPaymentRequest : GPBMessage
+@interface GDAPrepareUnionpayPaymentRequest : GPBMessage
 
 /** 顾客的银联付款码 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *payerCode;
@@ -67,20 +67,20 @@ typedef GPB_ENUM(PMUNPAYPrepareUnionpayPaymentRequest_FieldNumber) {
 
 @end
 
-#pragma mark - PMUNPAYPrepareUnionpayPaymentResponse
+#pragma mark - GDAPrepareUnionpayPaymentResponse
 
-typedef GPB_ENUM(PMUNPAYPrepareUnionpayPaymentResponse_FieldNumber) {
-  PMUNPAYPrepareUnionpayPaymentResponse_FieldNumber_PayerCode = 11,
-  PMUNPAYPrepareUnionpayPaymentResponse_FieldNumber_PayerMobile = 12,
-  PMUNPAYPrepareUnionpayPaymentResponse_FieldNumber_ShouldPay = 15,
-  PMUNPAYPrepareUnionpayPaymentResponse_FieldNumber_ActualPay = 16,
-  PMUNPAYPrepareUnionpayPaymentResponse_FieldNumber_PointsPay = 17,
-  PMUNPAYPrepareUnionpayPaymentResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAPrepareUnionpayPaymentResponse_FieldNumber) {
+  GDAPrepareUnionpayPaymentResponse_FieldNumber_PayerCode = 11,
+  GDAPrepareUnionpayPaymentResponse_FieldNumber_PayerMobile = 12,
+  GDAPrepareUnionpayPaymentResponse_FieldNumber_ShouldPay = 15,
+  GDAPrepareUnionpayPaymentResponse_FieldNumber_ActualPay = 16,
+  GDAPrepareUnionpayPaymentResponse_FieldNumber_PointsPay = 17,
+  GDAPrepareUnionpayPaymentResponse_FieldNumber_Status = 999,
 };
 
-@interface PMUNPAYPrepareUnionpayPaymentResponse : GPBMessage
+@interface GDAPrepareUnionpayPaymentResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
@@ -101,21 +101,21 @@ typedef GPB_ENUM(PMUNPAYPrepareUnionpayPaymentResponse_FieldNumber) {
 
 @end
 
-#pragma mark - PMUNPAYCreateUnionpayPaymentRequest
+#pragma mark - GDACreateUnionpayPaymentRequest
 
-typedef GPB_ENUM(PMUNPAYCreateUnionpayPaymentRequest_FieldNumber) {
-  PMUNPAYCreateUnionpayPaymentRequest_FieldNumber_PayerCode = 11,
-  PMUNPAYCreateUnionpayPaymentRequest_FieldNumber_PayerMobile = 12,
-  PMUNPAYCreateUnionpayPaymentRequest_FieldNumber_ShouldPay = 15,
-  PMUNPAYCreateUnionpayPaymentRequest_FieldNumber_ActualPay = 16,
-  PMUNPAYCreateUnionpayPaymentRequest_FieldNumber_PointsPay = 17,
-  PMUNPAYCreateUnionpayPaymentRequest_FieldNumber_PayeeIp = 18,
+typedef GPB_ENUM(GDACreateUnionpayPaymentRequest_FieldNumber) {
+  GDACreateUnionpayPaymentRequest_FieldNumber_PayerCode = 11,
+  GDACreateUnionpayPaymentRequest_FieldNumber_PayerMobile = 12,
+  GDACreateUnionpayPaymentRequest_FieldNumber_ShouldPay = 15,
+  GDACreateUnionpayPaymentRequest_FieldNumber_ActualPay = 16,
+  GDACreateUnionpayPaymentRequest_FieldNumber_PointsPay = 17,
+  GDACreateUnionpayPaymentRequest_FieldNumber_PayeeIp = 18,
 };
 
 /**
  * only called by myself，即收银员是我
  **/
-@interface PMUNPAYCreateUnionpayPaymentRequest : GPBMessage
+@interface GDACreateUnionpayPaymentRequest : GPBMessage
 
 /** 顾客的银联付款码 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *payerCode;

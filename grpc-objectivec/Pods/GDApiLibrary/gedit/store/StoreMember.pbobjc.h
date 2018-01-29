@@ -27,13 +27,13 @@
 
 CF_EXTERN_C_BEGIN
 
-@class COMMONLocation;
-@class COMMONStatus;
-@class STMEMMembership;
+@class GDALocation;
+@class GDAMembership;
+@class GDAStatus;
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - STMEMStoreMemberRoot
+#pragma mark - GDAStoreMemberRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -45,17 +45,17 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface STMEMStoreMemberRoot : GPBRootObject
+@interface GDAStoreMemberRoot : GPBRootObject
 @end
 
-#pragma mark - STMEMAddMembershipRequest
+#pragma mark - GDAAddMembershipRequest
 
-typedef GPB_ENUM(STMEMAddMembershipRequest_FieldNumber) {
-  STMEMAddMembershipRequest_FieldNumber_StoreUuid = 1,
-  STMEMAddMembershipRequest_FieldNumber_UserUuid = 3,
+typedef GPB_ENUM(GDAAddMembershipRequest_FieldNumber) {
+  GDAAddMembershipRequest_FieldNumber_StoreUuid = 1,
+  GDAAddMembershipRequest_FieldNumber_UserUuid = 3,
 };
 
-@interface STMEMAddMembershipRequest : GPBMessage
+@interface GDAAddMembershipRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *storeUuid;
 
@@ -63,30 +63,30 @@ typedef GPB_ENUM(STMEMAddMembershipRequest_FieldNumber) {
 
 @end
 
-#pragma mark - STMEMUpdateMembershipRequest
+#pragma mark - GDAUpdateMembershipRequest
 
-typedef GPB_ENUM(STMEMUpdateMembershipRequest_FieldNumber) {
-  STMEMUpdateMembershipRequest_FieldNumber_UserUuid = 1,
-  STMEMUpdateMembershipRequest_FieldNumber_MemberType = 3,
-  STMEMUpdateMembershipRequest_FieldNumber_StoreUuid = 5,
-  STMEMUpdateMembershipRequest_FieldNumber_StartTime = 9,
-  STMEMUpdateMembershipRequest_FieldNumber_EndTime = 10,
+typedef GPB_ENUM(GDAUpdateMembershipRequest_FieldNumber) {
+  GDAUpdateMembershipRequest_FieldNumber_UserUuid = 1,
+  GDAUpdateMembershipRequest_FieldNumber_MemberType = 3,
+  GDAUpdateMembershipRequest_FieldNumber_StoreUuid = 5,
+  GDAUpdateMembershipRequest_FieldNumber_StartTime = 9,
+  GDAUpdateMembershipRequest_FieldNumber_EndTime = 10,
 };
 
-typedef GPB_ENUM(STMEMUpdateMembershipRequest_Property_OneOfCase) {
-  STMEMUpdateMembershipRequest_Property_OneOfCase_GPBUnsetOneOfCase = 0,
-  STMEMUpdateMembershipRequest_Property_OneOfCase_MemberType = 3,
-  STMEMUpdateMembershipRequest_Property_OneOfCase_StartTime = 9,
-  STMEMUpdateMembershipRequest_Property_OneOfCase_EndTime = 10,
+typedef GPB_ENUM(GDAUpdateMembershipRequest_Property_OneOfCase) {
+  GDAUpdateMembershipRequest_Property_OneOfCase_GPBUnsetOneOfCase = 0,
+  GDAUpdateMembershipRequest_Property_OneOfCase_MemberType = 3,
+  GDAUpdateMembershipRequest_Property_OneOfCase_StartTime = 9,
+  GDAUpdateMembershipRequest_Property_OneOfCase_EndTime = 10,
 };
 
-@interface STMEMUpdateMembershipRequest : GPBMessage
+@interface GDAUpdateMembershipRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *userUuid;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *storeUuid;
 
-@property(nonatomic, readonly) STMEMUpdateMembershipRequest_Property_OneOfCase propertyOneOfCase;
+@property(nonatomic, readonly) GDAUpdateMembershipRequest_Property_OneOfCase propertyOneOfCase;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *memberType;
 
@@ -99,29 +99,29 @@ typedef GPB_ENUM(STMEMUpdateMembershipRequest_Property_OneOfCase) {
 /**
  * Clears whatever value was set for the oneof 'property'.
  **/
-void STMEMUpdateMembershipRequest_ClearPropertyOneOfCase(STMEMUpdateMembershipRequest *message);
+void GDAUpdateMembershipRequest_ClearPropertyOneOfCase(GDAUpdateMembershipRequest *message);
 
-#pragma mark - STMEMListMyMemberStoreRequest
+#pragma mark - GDAListMyMemberStoreRequest
 
-typedef GPB_ENUM(STMEMListMyMemberStoreRequest_FieldNumber) {
-  STMEMListMyMemberStoreRequest_FieldNumber_LastUpdated = 1,
+typedef GPB_ENUM(GDAListMyMemberStoreRequest_FieldNumber) {
+  GDAListMyMemberStoreRequest_FieldNumber_LastUpdated = 1,
 };
 
-@interface STMEMListMyMemberStoreRequest : GPBMessage
+@interface GDAListMyMemberStoreRequest : GPBMessage
 
 @property(nonatomic, readwrite) int64_t lastUpdated;
 
 @end
 
-#pragma mark - STMEMListMembershipByStoreRequest
+#pragma mark - GDAListMembershipByStoreRequest
 
-typedef GPB_ENUM(STMEMListMembershipByStoreRequest_FieldNumber) {
-  STMEMListMembershipByStoreRequest_FieldNumber_StoreUuid = 1,
-  STMEMListMembershipByStoreRequest_FieldNumber_From = 100,
-  STMEMListMembershipByStoreRequest_FieldNumber_Size = 101,
+typedef GPB_ENUM(GDAListMembershipByStoreRequest_FieldNumber) {
+  GDAListMembershipByStoreRequest_FieldNumber_StoreUuid = 1,
+  GDAListMembershipByStoreRequest_FieldNumber_From = 100,
+  GDAListMembershipByStoreRequest_FieldNumber_Size = 101,
 };
 
-@interface STMEMListMembershipByStoreRequest : GPBMessage
+@interface GDAListMembershipByStoreRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *storeUuid;
 
@@ -131,15 +131,15 @@ typedef GPB_ENUM(STMEMListMembershipByStoreRequest_FieldNumber) {
 
 @end
 
-#pragma mark - STMEMListMembershipByMemberRequest
+#pragma mark - GDAListMembershipByMemberRequest
 
-typedef GPB_ENUM(STMEMListMembershipByMemberRequest_FieldNumber) {
-  STMEMListMembershipByMemberRequest_FieldNumber_UserUuid = 3,
-  STMEMListMembershipByMemberRequest_FieldNumber_From = 100,
-  STMEMListMembershipByMemberRequest_FieldNumber_Size = 101,
+typedef GPB_ENUM(GDAListMembershipByMemberRequest_FieldNumber) {
+  GDAListMembershipByMemberRequest_FieldNumber_UserUuid = 3,
+  GDAListMembershipByMemberRequest_FieldNumber_From = 100,
+  GDAListMembershipByMemberRequest_FieldNumber_Size = 101,
 };
 
-@interface STMEMListMembershipByMemberRequest : GPBMessage
+@interface GDAListMembershipByMemberRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *userUuid;
 
@@ -149,21 +149,21 @@ typedef GPB_ENUM(STMEMListMembershipByMemberRequest_FieldNumber) {
 
 @end
 
-#pragma mark - STMEMMembershipResponse
+#pragma mark - GDAMembershipResponse
 
-typedef GPB_ENUM(STMEMMembershipResponse_FieldNumber) {
-  STMEMMembershipResponse_FieldNumber_Membership = 1,
-  STMEMMembershipResponse_FieldNumber_From = 100,
-  STMEMMembershipResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAMembershipResponse_FieldNumber) {
+  GDAMembershipResponse_FieldNumber_Membership = 1,
+  GDAMembershipResponse_FieldNumber_From = 100,
+  GDAMembershipResponse_FieldNumber_Status = 999,
 };
 
-@interface STMEMMembershipResponse : GPBMessage
+@interface GDAMembershipResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
-@property(nonatomic, readwrite, strong, null_resettable) STMEMMembership *membership;
+@property(nonatomic, readwrite, strong, null_resettable) GDAMembership *membership;
 /** Test to see if @c membership has been set. */
 @property(nonatomic, readwrite) BOOL hasMembership;
 
@@ -171,15 +171,15 @@ typedef GPB_ENUM(STMEMMembershipResponse_FieldNumber) {
 
 @end
 
-#pragma mark - STMEMBanMembershipRequest
+#pragma mark - GDABanMembershipRequest
 
-typedef GPB_ENUM(STMEMBanMembershipRequest_FieldNumber) {
-  STMEMBanMembershipRequest_FieldNumber_UserUuid = 1,
-  STMEMBanMembershipRequest_FieldNumber_StoreUuid = 5,
-  STMEMBanMembershipRequest_FieldNumber_Active = 7,
+typedef GPB_ENUM(GDABanMembershipRequest_FieldNumber) {
+  GDABanMembershipRequest_FieldNumber_UserUuid = 1,
+  GDABanMembershipRequest_FieldNumber_StoreUuid = 5,
+  GDABanMembershipRequest_FieldNumber_Active = 7,
 };
 
-@interface STMEMBanMembershipRequest : GPBMessage
+@interface GDABanMembershipRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *userUuid;
 
@@ -189,40 +189,40 @@ typedef GPB_ENUM(STMEMBanMembershipRequest_FieldNumber) {
 
 @end
 
-#pragma mark - STMEMBanMembershipResponse
+#pragma mark - GDABanMembershipResponse
 
-typedef GPB_ENUM(STMEMBanMembershipResponse_FieldNumber) {
-  STMEMBanMembershipResponse_FieldNumber_Membership = 1,
-  STMEMBanMembershipResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDABanMembershipResponse_FieldNumber) {
+  GDABanMembershipResponse_FieldNumber_Membership = 1,
+  GDABanMembershipResponse_FieldNumber_Status = 999,
 };
 
-@interface STMEMBanMembershipResponse : GPBMessage
+@interface GDABanMembershipResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
-@property(nonatomic, readwrite, strong, null_resettable) STMEMMembership *membership;
+@property(nonatomic, readwrite, strong, null_resettable) GDAMembership *membership;
 /** Test to see if @c membership has been set. */
 @property(nonatomic, readwrite) BOOL hasMembership;
 
 @end
 
-#pragma mark - STMEMMembership
+#pragma mark - GDAMembership
 
-typedef GPB_ENUM(STMEMMembership_FieldNumber) {
-  STMEMMembership_FieldNumber_UserUuid = 1,
-  STMEMMembership_FieldNumber_MemberType = 3,
-  STMEMMembership_FieldNumber_StoreUuid = 5,
-  STMEMMembership_FieldNumber_StoreName = 7,
-  STMEMMembership_FieldNumber_StoreLogo = 9,
-  STMEMMembership_FieldNumber_Location = 11,
-  STMEMMembership_FieldNumber_Active = 27,
-  STMEMMembership_FieldNumber_Created = 29,
-  STMEMMembership_FieldNumber_LastUpdated = 30,
+typedef GPB_ENUM(GDAMembership_FieldNumber) {
+  GDAMembership_FieldNumber_UserUuid = 1,
+  GDAMembership_FieldNumber_MemberType = 3,
+  GDAMembership_FieldNumber_StoreUuid = 5,
+  GDAMembership_FieldNumber_StoreName = 7,
+  GDAMembership_FieldNumber_StoreLogo = 9,
+  GDAMembership_FieldNumber_Location = 11,
+  GDAMembership_FieldNumber_Active = 27,
+  GDAMembership_FieldNumber_Created = 29,
+  GDAMembership_FieldNumber_LastUpdated = 30,
 };
 
-@interface STMEMMembership : GPBMessage
+@interface GDAMembership : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *userUuid;
 
@@ -234,7 +234,7 @@ typedef GPB_ENUM(STMEMMembership_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *storeLogo;
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONLocation *location;
+@property(nonatomic, readwrite, strong, null_resettable) GDALocation *location;
 /** Test to see if @c location has been set. */
 @property(nonatomic, readwrite) BOOL hasLocation;
 

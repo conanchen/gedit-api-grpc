@@ -27,14 +27,14 @@
 
 CF_EXTERN_C_BEGIN
 
-@class ACCNTAccount;
-@class ACCNTUserAndAccountType;
-@class COMMONStatus;
-GPB_ENUM_FWD_DECLARE(COMMONAccountType);
+@class GDAAccount;
+@class GDAStatus;
+@class GDAUserAndAccountType;
+GPB_ENUM_FWD_DECLARE(GDAAccountType);
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - ACCNTAccountingAccountRoot
+#pragma mark - GDAAccountingAccountRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -46,74 +46,74 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface ACCNTAccountingAccountRoot : GPBRootObject
+@interface GDAAccountingAccountRoot : GPBRootObject
 @end
 
-#pragma mark - ACCNTUpsertAccountsRequest
+#pragma mark - GDAUpsertAccountsRequest
 
-typedef GPB_ENUM(ACCNTUpsertAccountsRequest_FieldNumber) {
-  ACCNTUpsertAccountsRequest_FieldNumber_UserUuid = 11,
+typedef GPB_ENUM(GDAUpsertAccountsRequest_FieldNumber) {
+  GDAUpsertAccountsRequest_FieldNumber_UserUuid = 11,
 };
 
-@interface ACCNTUpsertAccountsRequest : GPBMessage
+@interface GDAUpsertAccountsRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *userUuid;
 
 @end
 
-#pragma mark - ACCNTListMyAccountRequest
+#pragma mark - GDAListMyAccountRequest
 
-typedef GPB_ENUM(ACCNTListMyAccountRequest_FieldNumber) {
-  ACCNTListMyAccountRequest_FieldNumber_LastUpdated = 1,
+typedef GPB_ENUM(GDAListMyAccountRequest_FieldNumber) {
+  GDAListMyAccountRequest_FieldNumber_LastUpdated = 1,
 };
 
-@interface ACCNTListMyAccountRequest : GPBMessage
+@interface GDAListMyAccountRequest : GPBMessage
 
 @property(nonatomic, readwrite) int64_t lastUpdated;
 
 @end
 
-#pragma mark - ACCNTAccountResponse
+#pragma mark - GDAAccountResponse
 
-typedef GPB_ENUM(ACCNTAccountResponse_FieldNumber) {
-  ACCNTAccountResponse_FieldNumber_Account = 1,
-  ACCNTAccountResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAAccountResponse_FieldNumber) {
+  GDAAccountResponse_FieldNumber_Account = 1,
+  GDAAccountResponse_FieldNumber_Status = 999,
 };
 
-@interface ACCNTAccountResponse : GPBMessage
+@interface GDAAccountResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
-@property(nonatomic, readwrite, strong, null_resettable) ACCNTAccount *account;
+@property(nonatomic, readwrite, strong, null_resettable) GDAAccount *account;
 /** Test to see if @c account has been set. */
 @property(nonatomic, readwrite) BOOL hasAccount;
 
 @end
 
-#pragma mark - ACCNTAccount
+#pragma mark - GDAAccount
 
-typedef GPB_ENUM(ACCNTAccount_FieldNumber) {
-  ACCNTAccount_FieldNumber_Uuid = 11,
-  ACCNTAccount_FieldNumber_UserUuid = 12,
-  ACCNTAccount_FieldNumber_Type = 14,
-  ACCNTAccount_FieldNumber_PreviousBalance = 15,
-  ACCNTAccount_FieldNumber_PreviousDate = 16,
-  ACCNTAccount_FieldNumber_CurrentChanges = 17,
-  ACCNTAccount_FieldNumber_CurrentDate = 18,
-  ACCNTAccount_FieldNumber_CurrentBalance = 19,
-  ACCNTAccount_FieldNumber_Created = 60,
-  ACCNTAccount_FieldNumber_LastUpdated = 61,
+typedef GPB_ENUM(GDAAccount_FieldNumber) {
+  GDAAccount_FieldNumber_Uuid = 11,
+  GDAAccount_FieldNumber_UserUuid = 12,
+  GDAAccount_FieldNumber_Type = 14,
+  GDAAccount_FieldNumber_PreviousBalance = 15,
+  GDAAccount_FieldNumber_PreviousDate = 16,
+  GDAAccount_FieldNumber_CurrentChanges = 17,
+  GDAAccount_FieldNumber_CurrentDate = 18,
+  GDAAccount_FieldNumber_CurrentBalance = 19,
+  GDAAccount_FieldNumber_Created = 60,
+  GDAAccount_FieldNumber_LastUpdated = 61,
 };
 
-@interface ACCNTAccount : GPBMessage
+@interface GDAAccount : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *userUuid;
 
-@property(nonatomic, readwrite) enum COMMONAccountType type;
+@property(nonatomic, readwrite) enum GDAAccountType type;
 
 @property(nonatomic, readwrite) int32_t previousBalance;
 
@@ -132,79 +132,79 @@ typedef GPB_ENUM(ACCNTAccount_FieldNumber) {
 @end
 
 /**
- * Fetches the raw value of a @c ACCNTAccount's @c type property, even
+ * Fetches the raw value of a @c GDAAccount's @c type property, even
  * if the value was not defined by the enum at the time the code was generated.
  **/
-int32_t ACCNTAccount_Type_RawValue(ACCNTAccount *message);
+int32_t GDAAccount_Type_RawValue(GDAAccount *message);
 /**
- * Sets the raw value of an @c ACCNTAccount's @c type property, allowing
+ * Sets the raw value of an @c GDAAccount's @c type property, allowing
  * it to be set to a value that was not defined by the enum at the time the code
  * was generated.
  **/
-void SetACCNTAccount_Type_RawValue(ACCNTAccount *message, int32_t value);
+void SetGDAAccount_Type_RawValue(GDAAccount *message, int32_t value);
 
-#pragma mark - ACCNTGetAccountRequest
+#pragma mark - GDAGetAccountRequest
 
-typedef GPB_ENUM(ACCNTGetAccountRequest_FieldNumber) {
-  ACCNTGetAccountRequest_FieldNumber_Uuid = 1,
+typedef GPB_ENUM(GDAGetAccountRequest_FieldNumber) {
+  GDAGetAccountRequest_FieldNumber_Uuid = 1,
 };
 
-@interface ACCNTGetAccountRequest : GPBMessage
+@interface GDAGetAccountRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
 
 @end
 
-#pragma mark - ACCNTFindAccountRequest
+#pragma mark - GDAFindAccountRequest
 
-typedef GPB_ENUM(ACCNTFindAccountRequest_FieldNumber) {
-  ACCNTFindAccountRequest_FieldNumber_UserAndAccountType = 1,
+typedef GPB_ENUM(GDAFindAccountRequest_FieldNumber) {
+  GDAFindAccountRequest_FieldNumber_UserAndAccountType = 1,
 };
 
-typedef GPB_ENUM(ACCNTFindAccountRequest_Value_OneOfCase) {
-  ACCNTFindAccountRequest_Value_OneOfCase_GPBUnsetOneOfCase = 0,
-  ACCNTFindAccountRequest_Value_OneOfCase_UserAndAccountType = 1,
+typedef GPB_ENUM(GDAFindAccountRequest_Value_OneOfCase) {
+  GDAFindAccountRequest_Value_OneOfCase_GPBUnsetOneOfCase = 0,
+  GDAFindAccountRequest_Value_OneOfCase_UserAndAccountType = 1,
 };
 
-@interface ACCNTFindAccountRequest : GPBMessage
+@interface GDAFindAccountRequest : GPBMessage
 
-@property(nonatomic, readonly) ACCNTFindAccountRequest_Value_OneOfCase valueOneOfCase;
+@property(nonatomic, readonly) GDAFindAccountRequest_Value_OneOfCase valueOneOfCase;
 
-@property(nonatomic, readwrite, strong, null_resettable) ACCNTUserAndAccountType *userAndAccountType;
+@property(nonatomic, readwrite, strong, null_resettable) GDAUserAndAccountType *userAndAccountType;
 
 @end
 
 /**
  * Clears whatever value was set for the oneof 'value'.
  **/
-void ACCNTFindAccountRequest_ClearValueOneOfCase(ACCNTFindAccountRequest *message);
+void GDAFindAccountRequest_ClearValueOneOfCase(GDAFindAccountRequest *message);
 
-#pragma mark - ACCNTUserAndAccountType
+#pragma mark - GDAUserAndAccountType
 
-typedef GPB_ENUM(ACCNTUserAndAccountType_FieldNumber) {
-  ACCNTUserAndAccountType_FieldNumber_UserUuid = 11,
-  ACCNTUserAndAccountType_FieldNumber_Type = 14,
+typedef GPB_ENUM(GDAUserAndAccountType_FieldNumber) {
+  GDAUserAndAccountType_FieldNumber_UserUuid = 11,
+  GDAUserAndAccountType_FieldNumber_Type = 14,
 };
 
-@interface ACCNTUserAndAccountType : GPBMessage
+@interface GDAUserAndAccountType : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *userUuid;
 
-@property(nonatomic, readwrite) enum COMMONAccountType type;
+@property(nonatomic, readwrite) enum GDAAccountType type;
 
 @end
 
 /**
- * Fetches the raw value of a @c ACCNTUserAndAccountType's @c type property, even
+ * Fetches the raw value of a @c GDAUserAndAccountType's @c type property, even
  * if the value was not defined by the enum at the time the code was generated.
  **/
-int32_t ACCNTUserAndAccountType_Type_RawValue(ACCNTUserAndAccountType *message);
+int32_t GDAUserAndAccountType_Type_RawValue(GDAUserAndAccountType *message);
 /**
- * Sets the raw value of an @c ACCNTUserAndAccountType's @c type property, allowing
+ * Sets the raw value of an @c GDAUserAndAccountType's @c type property, allowing
  * it to be set to a value that was not defined by the enum at the time the code
  * was generated.
  **/
-void SetACCNTUserAndAccountType_Type_RawValue(ACCNTUserAndAccountType *message, int32_t value);
+void SetGDAUserAndAccountType_Type_RawValue(GDAUserAndAccountType *message, int32_t value);
 
 NS_ASSUME_NONNULL_END
 

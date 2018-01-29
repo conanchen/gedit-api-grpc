@@ -5,7 +5,7 @@
 #import <RxLibrary/GRXWriter+Immediate.h>
 #import "gedit/payment/PaymentCommon.pbobjc.h"
 
-@implementation PMQRYPaymentQueryApi
+@implementation GDAPaymentQueryApi
 
 // Designated initializer
 - (instancetype)initWithHost:(NSString *)host {
@@ -26,26 +26,26 @@
 
 #pragma mark Get(GetPaymentRequest) returns (PaymentResponse)
 
-- (void)getWithRequest:(PMQRYGetPaymentRequest *)request handler:(void(^)(PMCOMMPaymentResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)getWithRequest:(GDAGetPaymentRequest *)request handler:(void(^)(GDAPaymentResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToGetWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToGetWithRequest:(PMQRYGetPaymentRequest *)request handler:(void(^)(PMCOMMPaymentResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToGetWithRequest:(GDAGetPaymentRequest *)request handler:(void(^)(GDAPaymentResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"Get"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[PMCOMMPaymentResponse class]
+             responseClass:[GDAPaymentResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 #pragma mark List(ListPaymentRequest) returns (stream PaymentResponse)
 
-- (void)listWithRequest:(PMQRYListPaymentRequest *)request eventHandler:(void(^)(BOOL done, PMCOMMPaymentResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (void)listWithRequest:(GDAListPaymentRequest *)request eventHandler:(void(^)(BOOL done, GDAPaymentResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   [[self RPCToListWithRequest:request eventHandler:eventHandler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToListWithRequest:(PMQRYListPaymentRequest *)request eventHandler:(void(^)(BOOL done, PMCOMMPaymentResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (GRPCProtoCall *)RPCToListWithRequest:(GDAListPaymentRequest *)request eventHandler:(void(^)(BOOL done, GDAPaymentResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   return [self RPCToMethod:@"List"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[PMCOMMPaymentResponse class]
+             responseClass:[GDAPaymentResponse class]
         responsesWriteable:[GRXWriteable writeableWithEventHandler:eventHandler]];
 }
 #pragma mark ListMyPayerPayment(ListMyPayerPaymentRequest) returns (stream PaymentResponse)
@@ -53,17 +53,17 @@
 /**
  * only called by me，获取我的付款单
  */
-- (void)listMyPayerPaymentWithRequest:(PMQRYListMyPayerPaymentRequest *)request eventHandler:(void(^)(BOOL done, PMCOMMPaymentResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (void)listMyPayerPaymentWithRequest:(GDAListMyPayerPaymentRequest *)request eventHandler:(void(^)(BOOL done, GDAPaymentResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   [[self RPCToListMyPayerPaymentWithRequest:request eventHandler:eventHandler] start];
 }
 // Returns a not-yet-started RPC object.
 /**
  * only called by me，获取我的付款单
  */
-- (GRPCProtoCall *)RPCToListMyPayerPaymentWithRequest:(PMQRYListMyPayerPaymentRequest *)request eventHandler:(void(^)(BOOL done, PMCOMMPaymentResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (GRPCProtoCall *)RPCToListMyPayerPaymentWithRequest:(GDAListMyPayerPaymentRequest *)request eventHandler:(void(^)(BOOL done, GDAPaymentResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   return [self RPCToMethod:@"ListMyPayerPayment"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[PMCOMMPaymentResponse class]
+             responseClass:[GDAPaymentResponse class]
         responsesWriteable:[GRXWriteable writeableWithEventHandler:eventHandler]];
 }
 #pragma mark ListMyPayeePayment(ListMyPayeePaymentRequest) returns (stream PaymentResponse)
@@ -71,17 +71,17 @@
 /**
  * only called by me，获取我的收款单
  */
-- (void)listMyPayeePaymentWithRequest:(PMQRYListMyPayeePaymentRequest *)request eventHandler:(void(^)(BOOL done, PMCOMMPaymentResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (void)listMyPayeePaymentWithRequest:(GDAListMyPayeePaymentRequest *)request eventHandler:(void(^)(BOOL done, GDAPaymentResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   [[self RPCToListMyPayeePaymentWithRequest:request eventHandler:eventHandler] start];
 }
 // Returns a not-yet-started RPC object.
 /**
  * only called by me，获取我的收款单
  */
-- (GRPCProtoCall *)RPCToListMyPayeePaymentWithRequest:(PMQRYListMyPayeePaymentRequest *)request eventHandler:(void(^)(BOOL done, PMCOMMPaymentResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (GRPCProtoCall *)RPCToListMyPayeePaymentWithRequest:(GDAListMyPayeePaymentRequest *)request eventHandler:(void(^)(BOOL done, GDAPaymentResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   return [self RPCToMethod:@"ListMyPayeePayment"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[PMCOMMPaymentResponse class]
+             responseClass:[GDAPaymentResponse class]
         responsesWriteable:[GRXWriteable writeableWithEventHandler:eventHandler]];
 }
 @end

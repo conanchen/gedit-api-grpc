@@ -27,11 +27,11 @@
 
 CF_EXTERN_C_BEGIN
 
-@class COMMONStatus;
+@class GDAStatus;
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - HELLOHelloRoot
+#pragma mark - GDAHelloRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -43,32 +43,32 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface HELLOHelloRoot : GPBRootObject
+@interface GDAHelloRoot : GPBRootObject
 @end
 
-#pragma mark - HELLOHelloRequest
+#pragma mark - GDAHelloRequest
 
-typedef GPB_ENUM(HELLOHelloRequest_FieldNumber) {
-  HELLOHelloRequest_FieldNumber_Name = 1,
+typedef GPB_ENUM(GDAHelloRequest_FieldNumber) {
+  GDAHelloRequest_FieldNumber_Name = 1,
 };
 
 /**
  * The request message containing the user's name.
  **/
-@interface HELLOHelloRequest : GPBMessage
+@interface GDAHelloRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *name;
 
 @end
 
-#pragma mark - HELLOListHelloRequest
+#pragma mark - GDAListHelloRequest
 
-typedef GPB_ENUM(HELLOListHelloRequest_FieldNumber) {
-  HELLOListHelloRequest_FieldNumber_LastUpdated = 1,
-  HELLOListHelloRequest_FieldNumber_Size = 2,
+typedef GPB_ENUM(GDAListHelloRequest_FieldNumber) {
+  GDAListHelloRequest_FieldNumber_LastUpdated = 1,
+  GDAListHelloRequest_FieldNumber_Size = 2,
 };
 
-@interface HELLOListHelloRequest : GPBMessage
+@interface GDAListHelloRequest : GPBMessage
 
 @property(nonatomic, readwrite) int64_t lastUpdated;
 
@@ -76,22 +76,22 @@ typedef GPB_ENUM(HELLOListHelloRequest_FieldNumber) {
 
 @end
 
-#pragma mark - HELLOHelloReply
+#pragma mark - GDAHelloReply
 
-typedef GPB_ENUM(HELLOHelloReply_FieldNumber) {
-  HELLOHelloReply_FieldNumber_Uuid = 1,
-  HELLOHelloReply_FieldNumber_Message = 2,
-  HELLOHelloReply_FieldNumber_Created = 3,
-  HELLOHelloReply_FieldNumber_LastUpdated = 4,
-  HELLOHelloReply_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAHelloReply_FieldNumber) {
+  GDAHelloReply_FieldNumber_Uuid = 1,
+  GDAHelloReply_FieldNumber_Message = 2,
+  GDAHelloReply_FieldNumber_Created = 3,
+  GDAHelloReply_FieldNumber_LastUpdated = 4,
+  GDAHelloReply_FieldNumber_Status = 999,
 };
 
 /**
  * The response message containing the greetings
  **/
-@interface HELLOHelloReply : GPBMessage
+@interface GDAHelloReply : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 

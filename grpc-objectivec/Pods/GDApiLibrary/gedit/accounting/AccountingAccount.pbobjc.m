@@ -21,40 +21,40 @@
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 #pragma clang diagnostic ignored "-Wdirect-ivar-access"
 
-#pragma mark - ACCNTAccountingAccountRoot
+#pragma mark - GDAAccountingAccountRoot
 
-@implementation ACCNTAccountingAccountRoot
+@implementation GDAAccountingAccountRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - ACCNTAccountingAccountRoot_FileDescriptor
+#pragma mark - GDAAccountingAccountRoot_FileDescriptor
 
-static GPBFileDescriptor *ACCNTAccountingAccountRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDAAccountingAccountRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.accounting"
-                                                 objcPrefix:@"ACCNT"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - ACCNTUpsertAccountsRequest
+#pragma mark - GDAUpsertAccountsRequest
 
-@implementation ACCNTUpsertAccountsRequest
+@implementation GDAUpsertAccountsRequest
 
 @dynamic userUuid;
 
-typedef struct ACCNTUpsertAccountsRequest__storage_ {
+typedef struct GDAUpsertAccountsRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *userUuid;
-} ACCNTUpsertAccountsRequest__storage_;
+} GDAUpsertAccountsRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -65,20 +65,20 @@ typedef struct ACCNTUpsertAccountsRequest__storage_ {
       {
         .name = "userUuid",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTUpsertAccountsRequest_FieldNumber_UserUuid,
+        .number = GDAUpsertAccountsRequest_FieldNumber_UserUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(ACCNTUpsertAccountsRequest__storage_, userUuid),
+        .offset = (uint32_t)offsetof(GDAUpsertAccountsRequest__storage_, userUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTUpsertAccountsRequest class]
-                                     rootClass:[ACCNTAccountingAccountRoot class]
-                                          file:ACCNTAccountingAccountRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAUpsertAccountsRequest class]
+                                     rootClass:[GDAAccountingAccountRoot class]
+                                          file:GDAAccountingAccountRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTUpsertAccountsRequest__storage_)
+                                   storageSize:sizeof(GDAUpsertAccountsRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -93,16 +93,16 @@ typedef struct ACCNTUpsertAccountsRequest__storage_ {
 
 @end
 
-#pragma mark - ACCNTListMyAccountRequest
+#pragma mark - GDAListMyAccountRequest
 
-@implementation ACCNTListMyAccountRequest
+@implementation GDAListMyAccountRequest
 
 @dynamic lastUpdated;
 
-typedef struct ACCNTListMyAccountRequest__storage_ {
+typedef struct GDAListMyAccountRequest__storage_ {
   uint32_t _has_storage_[1];
   int64_t lastUpdated;
-} ACCNTListMyAccountRequest__storage_;
+} GDAListMyAccountRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -113,20 +113,20 @@ typedef struct ACCNTListMyAccountRequest__storage_ {
       {
         .name = "lastUpdated",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTListMyAccountRequest_FieldNumber_LastUpdated,
+        .number = GDAListMyAccountRequest_FieldNumber_LastUpdated,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(ACCNTListMyAccountRequest__storage_, lastUpdated),
+        .offset = (uint32_t)offsetof(GDAListMyAccountRequest__storage_, lastUpdated),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTListMyAccountRequest class]
-                                     rootClass:[ACCNTAccountingAccountRoot class]
-                                          file:ACCNTAccountingAccountRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListMyAccountRequest class]
+                                     rootClass:[GDAAccountingAccountRoot class]
+                                          file:GDAAccountingAccountRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTListMyAccountRequest__storage_)
+                                   storageSize:sizeof(GDAListMyAccountRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -141,18 +141,18 @@ typedef struct ACCNTListMyAccountRequest__storage_ {
 
 @end
 
-#pragma mark - ACCNTAccountResponse
+#pragma mark - GDAAccountResponse
 
-@implementation ACCNTAccountResponse
+@implementation GDAAccountResponse
 
 @dynamic hasStatus, status;
 @dynamic hasAccount, account;
 
-typedef struct ACCNTAccountResponse__storage_ {
+typedef struct GDAAccountResponse__storage_ {
   uint32_t _has_storage_[1];
-  ACCNTAccount *account;
-  COMMONStatus *status;
-} ACCNTAccountResponse__storage_;
+  GDAAccount *account;
+  GDAStatus *status;
+} GDAAccountResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -162,30 +162,30 @@ typedef struct ACCNTAccountResponse__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "account",
-        .dataTypeSpecific.className = GPBStringifySymbol(ACCNTAccount),
-        .number = ACCNTAccountResponse_FieldNumber_Account,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAAccount),
+        .number = GDAAccountResponse_FieldNumber_Account,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(ACCNTAccountResponse__storage_, account),
+        .offset = (uint32_t)offsetof(GDAAccountResponse__storage_, account),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = ACCNTAccountResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDAAccountResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(ACCNTAccountResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDAAccountResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTAccountResponse class]
-                                     rootClass:[ACCNTAccountingAccountRoot class]
-                                          file:ACCNTAccountingAccountRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAAccountResponse class]
+                                     rootClass:[GDAAccountingAccountRoot class]
+                                          file:GDAAccountingAccountRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTAccountResponse__storage_)
+                                   storageSize:sizeof(GDAAccountResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -195,9 +195,9 @@ typedef struct ACCNTAccountResponse__storage_ {
 
 @end
 
-#pragma mark - ACCNTAccount
+#pragma mark - GDAAccount
 
-@implementation ACCNTAccount
+@implementation GDAAccount
 
 @dynamic uuid;
 @dynamic userUuid;
@@ -210,9 +210,9 @@ typedef struct ACCNTAccountResponse__storage_ {
 @dynamic created;
 @dynamic lastUpdated;
 
-typedef struct ACCNTAccount__storage_ {
+typedef struct GDAAccount__storage_ {
   uint32_t _has_storage_[1];
-  COMMONAccountType type;
+  GDAAccountType type;
   int32_t previousBalance;
   int32_t currentChanges;
   int32_t currentBalance;
@@ -222,7 +222,7 @@ typedef struct ACCNTAccount__storage_ {
   int64_t currentDate;
   int64_t created;
   int64_t lastUpdated;
-} ACCNTAccount__storage_;
+} GDAAccount__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -233,101 +233,101 @@ typedef struct ACCNTAccount__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTAccount_FieldNumber_Uuid,
+        .number = GDAAccount_FieldNumber_Uuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(ACCNTAccount__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDAAccount__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "userUuid",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTAccount_FieldNumber_UserUuid,
+        .number = GDAAccount_FieldNumber_UserUuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(ACCNTAccount__storage_, userUuid),
+        .offset = (uint32_t)offsetof(GDAAccount__storage_, userUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "type",
-        .dataTypeSpecific.enumDescFunc = COMMONAccountType_EnumDescriptor,
-        .number = ACCNTAccount_FieldNumber_Type,
+        .dataTypeSpecific.enumDescFunc = GDAAccountType_EnumDescriptor,
+        .number = GDAAccount_FieldNumber_Type,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(ACCNTAccount__storage_, type),
+        .offset = (uint32_t)offsetof(GDAAccount__storage_, type),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor),
         .dataType = GPBDataTypeEnum,
       },
       {
         .name = "previousBalance",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTAccount_FieldNumber_PreviousBalance,
+        .number = GDAAccount_FieldNumber_PreviousBalance,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(ACCNTAccount__storage_, previousBalance),
+        .offset = (uint32_t)offsetof(GDAAccount__storage_, previousBalance),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "previousDate",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTAccount_FieldNumber_PreviousDate,
+        .number = GDAAccount_FieldNumber_PreviousDate,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(ACCNTAccount__storage_, previousDate),
+        .offset = (uint32_t)offsetof(GDAAccount__storage_, previousDate),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
       {
         .name = "currentChanges",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTAccount_FieldNumber_CurrentChanges,
+        .number = GDAAccount_FieldNumber_CurrentChanges,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(ACCNTAccount__storage_, currentChanges),
+        .offset = (uint32_t)offsetof(GDAAccount__storage_, currentChanges),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "currentDate",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTAccount_FieldNumber_CurrentDate,
+        .number = GDAAccount_FieldNumber_CurrentDate,
         .hasIndex = 6,
-        .offset = (uint32_t)offsetof(ACCNTAccount__storage_, currentDate),
+        .offset = (uint32_t)offsetof(GDAAccount__storage_, currentDate),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
       {
         .name = "currentBalance",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTAccount_FieldNumber_CurrentBalance,
+        .number = GDAAccount_FieldNumber_CurrentBalance,
         .hasIndex = 7,
-        .offset = (uint32_t)offsetof(ACCNTAccount__storage_, currentBalance),
+        .offset = (uint32_t)offsetof(GDAAccount__storage_, currentBalance),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "created",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTAccount_FieldNumber_Created,
+        .number = GDAAccount_FieldNumber_Created,
         .hasIndex = 8,
-        .offset = (uint32_t)offsetof(ACCNTAccount__storage_, created),
+        .offset = (uint32_t)offsetof(GDAAccount__storage_, created),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
       },
       {
         .name = "lastUpdated",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTAccount_FieldNumber_LastUpdated,
+        .number = GDAAccount_FieldNumber_LastUpdated,
         .hasIndex = 9,
-        .offset = (uint32_t)offsetof(ACCNTAccount__storage_, lastUpdated),
+        .offset = (uint32_t)offsetof(GDAAccount__storage_, lastUpdated),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTAccount class]
-                                     rootClass:[ACCNTAccountingAccountRoot class]
-                                          file:ACCNTAccountingAccountRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAAccount class]
+                                     rootClass:[GDAAccountingAccountRoot class]
+                                          file:GDAAccountingAccountRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTAccount__storage_)
+                                   storageSize:sizeof(GDAAccount__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -342,28 +342,28 @@ typedef struct ACCNTAccount__storage_ {
 
 @end
 
-int32_t ACCNTAccount_Type_RawValue(ACCNTAccount *message) {
-  GPBDescriptor *descriptor = [ACCNTAccount descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:ACCNTAccount_FieldNumber_Type];
+int32_t GDAAccount_Type_RawValue(GDAAccount *message) {
+  GPBDescriptor *descriptor = [GDAAccount descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDAAccount_FieldNumber_Type];
   return GPBGetMessageInt32Field(message, field);
 }
 
-void SetACCNTAccount_Type_RawValue(ACCNTAccount *message, int32_t value) {
-  GPBDescriptor *descriptor = [ACCNTAccount descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:ACCNTAccount_FieldNumber_Type];
+void SetGDAAccount_Type_RawValue(GDAAccount *message, int32_t value) {
+  GPBDescriptor *descriptor = [GDAAccount descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDAAccount_FieldNumber_Type];
   GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
 }
 
-#pragma mark - ACCNTGetAccountRequest
+#pragma mark - GDAGetAccountRequest
 
-@implementation ACCNTGetAccountRequest
+@implementation GDAGetAccountRequest
 
 @dynamic uuid;
 
-typedef struct ACCNTGetAccountRequest__storage_ {
+typedef struct GDAGetAccountRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *uuid;
-} ACCNTGetAccountRequest__storage_;
+} GDAGetAccountRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -374,20 +374,20 @@ typedef struct ACCNTGetAccountRequest__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTGetAccountRequest_FieldNumber_Uuid,
+        .number = GDAGetAccountRequest_FieldNumber_Uuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(ACCNTGetAccountRequest__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDAGetAccountRequest__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTGetAccountRequest class]
-                                     rootClass:[ACCNTAccountingAccountRoot class]
-                                          file:ACCNTAccountingAccountRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAGetAccountRequest class]
+                                     rootClass:[GDAAccountingAccountRoot class]
+                                          file:GDAAccountingAccountRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTGetAccountRequest__storage_)
+                                   storageSize:sizeof(GDAGetAccountRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -397,17 +397,17 @@ typedef struct ACCNTGetAccountRequest__storage_ {
 
 @end
 
-#pragma mark - ACCNTFindAccountRequest
+#pragma mark - GDAFindAccountRequest
 
-@implementation ACCNTFindAccountRequest
+@implementation GDAFindAccountRequest
 
 @dynamic valueOneOfCase;
 @dynamic userAndAccountType;
 
-typedef struct ACCNTFindAccountRequest__storage_ {
+typedef struct GDAFindAccountRequest__storage_ {
   uint32_t _has_storage_[2];
-  ACCNTUserAndAccountType *userAndAccountType;
-} ACCNTFindAccountRequest__storage_;
+  GDAUserAndAccountType *userAndAccountType;
+} GDAFindAccountRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -417,21 +417,21 @@ typedef struct ACCNTFindAccountRequest__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "userAndAccountType",
-        .dataTypeSpecific.className = GPBStringifySymbol(ACCNTUserAndAccountType),
-        .number = ACCNTFindAccountRequest_FieldNumber_UserAndAccountType,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAUserAndAccountType),
+        .number = GDAFindAccountRequest_FieldNumber_UserAndAccountType,
         .hasIndex = -1,
-        .offset = (uint32_t)offsetof(ACCNTFindAccountRequest__storage_, userAndAccountType),
+        .offset = (uint32_t)offsetof(GDAFindAccountRequest__storage_, userAndAccountType),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTFindAccountRequest class]
-                                     rootClass:[ACCNTAccountingAccountRoot class]
-                                          file:ACCNTAccountingAccountRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAFindAccountRequest class]
+                                     rootClass:[GDAAccountingAccountRoot class]
+                                          file:GDAAccountingAccountRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTFindAccountRequest__storage_)
+                                   storageSize:sizeof(GDAFindAccountRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     static const char *oneofs[] = {
       "value",
@@ -452,23 +452,23 @@ typedef struct ACCNTFindAccountRequest__storage_ {
 
 @end
 
-void ACCNTFindAccountRequest_ClearValueOneOfCase(ACCNTFindAccountRequest *message) {
+void GDAFindAccountRequest_ClearValueOneOfCase(GDAFindAccountRequest *message) {
   GPBDescriptor *descriptor = [message descriptor];
   GPBOneofDescriptor *oneof = [descriptor.oneofs objectAtIndex:0];
   GPBMaybeClearOneof(message, oneof, -1, 0);
 }
-#pragma mark - ACCNTUserAndAccountType
+#pragma mark - GDAUserAndAccountType
 
-@implementation ACCNTUserAndAccountType
+@implementation GDAUserAndAccountType
 
 @dynamic userUuid;
 @dynamic type;
 
-typedef struct ACCNTUserAndAccountType__storage_ {
+typedef struct GDAUserAndAccountType__storage_ {
   uint32_t _has_storage_[1];
-  COMMONAccountType type;
+  GDAAccountType type;
   NSString *userUuid;
-} ACCNTUserAndAccountType__storage_;
+} GDAUserAndAccountType__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -479,29 +479,29 @@ typedef struct ACCNTUserAndAccountType__storage_ {
       {
         .name = "userUuid",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTUserAndAccountType_FieldNumber_UserUuid,
+        .number = GDAUserAndAccountType_FieldNumber_UserUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(ACCNTUserAndAccountType__storage_, userUuid),
+        .offset = (uint32_t)offsetof(GDAUserAndAccountType__storage_, userUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "type",
-        .dataTypeSpecific.enumDescFunc = COMMONAccountType_EnumDescriptor,
-        .number = ACCNTUserAndAccountType_FieldNumber_Type,
+        .dataTypeSpecific.enumDescFunc = GDAAccountType_EnumDescriptor,
+        .number = GDAUserAndAccountType_FieldNumber_Type,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(ACCNTUserAndAccountType__storage_, type),
+        .offset = (uint32_t)offsetof(GDAUserAndAccountType__storage_, type),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor),
         .dataType = GPBDataTypeEnum,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTUserAndAccountType class]
-                                     rootClass:[ACCNTAccountingAccountRoot class]
-                                          file:ACCNTAccountingAccountRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAUserAndAccountType class]
+                                     rootClass:[GDAAccountingAccountRoot class]
+                                          file:GDAAccountingAccountRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTUserAndAccountType__storage_)
+                                   storageSize:sizeof(GDAUserAndAccountType__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -516,15 +516,15 @@ typedef struct ACCNTUserAndAccountType__storage_ {
 
 @end
 
-int32_t ACCNTUserAndAccountType_Type_RawValue(ACCNTUserAndAccountType *message) {
-  GPBDescriptor *descriptor = [ACCNTUserAndAccountType descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:ACCNTUserAndAccountType_FieldNumber_Type];
+int32_t GDAUserAndAccountType_Type_RawValue(GDAUserAndAccountType *message) {
+  GPBDescriptor *descriptor = [GDAUserAndAccountType descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDAUserAndAccountType_FieldNumber_Type];
   return GPBGetMessageInt32Field(message, field);
 }
 
-void SetACCNTUserAndAccountType_Type_RawValue(ACCNTUserAndAccountType *message, int32_t value) {
-  GPBDescriptor *descriptor = [ACCNTUserAndAccountType descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:ACCNTUserAndAccountType_FieldNumber_Type];
+void SetGDAUserAndAccountType_Type_RawValue(GDAUserAndAccountType *message, int32_t value) {
+  GPBDescriptor *descriptor = [GDAUserAndAccountType descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDAUserAndAccountType_FieldNumber_Type];
   GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
 }
 

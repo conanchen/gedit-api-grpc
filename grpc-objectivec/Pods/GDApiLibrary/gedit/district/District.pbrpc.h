@@ -8,11 +8,11 @@
 #import <RxLibrary/GRXWriter.h>
 
 #if GPB_GRPC_FORWARD_DECLARE_MESSAGE_PROTO
-  @class DISTRICTDistrictResponse;
-  @class DISTRICTGetTopDistrictRequest;
-  @class DISTRICTListChildDistrictRequest;
-  @class DISTRICTListDistrictRequest;
-  @class DISTRICTUpsertDistrictRequest;
+  @class GDADistrictResponse;
+  @class GDAGetTopDistrictRequest;
+  @class GDAListChildDistrictRequest;
+  @class GDAListDistrictRequest;
+  @class GDAUpsertDistrictRequest;
 #else
   #import "gedit/Common.pbobjc.h"
 #endif
@@ -20,40 +20,40 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol DISTRICTDistrictApi <NSObject>
+@protocol GDADistrictApi <NSObject>
 
 #pragma mark Upsert(UpsertDistrictRequest) returns (DistrictResponse)
 
 /**
  * Sends a greeting
  */
-- (void)upsertWithRequest:(DISTRICTUpsertDistrictRequest *)request handler:(void(^)(DISTRICTDistrictResponse *_Nullable response, NSError *_Nullable error))handler;
+- (void)upsertWithRequest:(GDAUpsertDistrictRequest *)request handler:(void(^)(GDADistrictResponse *_Nullable response, NSError *_Nullable error))handler;
 
 /**
  * Sends a greeting
  */
-- (GRPCProtoCall *)RPCToUpsertWithRequest:(DISTRICTUpsertDistrictRequest *)request handler:(void(^)(DISTRICTDistrictResponse *_Nullable response, NSError *_Nullable error))handler;
+- (GRPCProtoCall *)RPCToUpsertWithRequest:(GDAUpsertDistrictRequest *)request handler:(void(^)(GDADistrictResponse *_Nullable response, NSError *_Nullable error))handler;
 
 
 #pragma mark GetTop(GetTopDistrictRequest) returns (stream DistrictResponse)
 
-- (void)getTopWithRequest:(DISTRICTGetTopDistrictRequest *)request eventHandler:(void(^)(BOOL done, DISTRICTDistrictResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (void)getTopWithRequest:(GDAGetTopDistrictRequest *)request eventHandler:(void(^)(BOOL done, GDADistrictResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
-- (GRPCProtoCall *)RPCToGetTopWithRequest:(DISTRICTGetTopDistrictRequest *)request eventHandler:(void(^)(BOOL done, DISTRICTDistrictResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (GRPCProtoCall *)RPCToGetTopWithRequest:(GDAGetTopDistrictRequest *)request eventHandler:(void(^)(BOOL done, GDADistrictResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
 
 #pragma mark ListChild(ListChildDistrictRequest) returns (stream DistrictResponse)
 
-- (void)listChildWithRequest:(DISTRICTListChildDistrictRequest *)request eventHandler:(void(^)(BOOL done, DISTRICTDistrictResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (void)listChildWithRequest:(GDAListChildDistrictRequest *)request eventHandler:(void(^)(BOOL done, GDADistrictResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
-- (GRPCProtoCall *)RPCToListChildWithRequest:(DISTRICTListChildDistrictRequest *)request eventHandler:(void(^)(BOOL done, DISTRICTDistrictResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (GRPCProtoCall *)RPCToListChildWithRequest:(GDAListChildDistrictRequest *)request eventHandler:(void(^)(BOOL done, GDADistrictResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
 
 #pragma mark List(ListDistrictRequest) returns (stream DistrictResponse)
 
-- (void)listWithRequest:(DISTRICTListDistrictRequest *)request eventHandler:(void(^)(BOOL done, DISTRICTDistrictResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (void)listWithRequest:(GDAListDistrictRequest *)request eventHandler:(void(^)(BOOL done, GDADistrictResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
-- (GRPCProtoCall *)RPCToListWithRequest:(DISTRICTListDistrictRequest *)request eventHandler:(void(^)(BOOL done, DISTRICTDistrictResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (GRPCProtoCall *)RPCToListWithRequest:(GDAListDistrictRequest *)request eventHandler:(void(^)(BOOL done, GDADistrictResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
 
 @end
@@ -62,7 +62,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Basic service implementation, over gRPC, that only does
  * marshalling and parsing.
  */
-@interface DISTRICTDistrictApi : GRPCProtoService<DISTRICTDistrictApi>
+@interface GDADistrictApi : GRPCProtoService<GDADistrictApi>
 - (instancetype)initWithHost:(NSString *)host NS_DESIGNATED_INITIALIZER;
 + (instancetype)serviceWithHost:(NSString *)host;
 @end

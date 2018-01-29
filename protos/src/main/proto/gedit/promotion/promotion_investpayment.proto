@@ -18,7 +18,7 @@ package gedit.promotion;
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.promotion.investpayment.grpc";
 option java_outer_classname = "InvestPaymentProto";
-option objc_class_prefix = "IVSTPRM";
+option objc_class_prefix = "GDA";
 
 import "gedit/common.proto";
 

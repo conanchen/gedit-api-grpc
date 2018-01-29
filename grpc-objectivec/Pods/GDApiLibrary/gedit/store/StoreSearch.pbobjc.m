@@ -20,33 +20,33 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-#pragma mark - STSCHStoreSearchRoot
+#pragma mark - GDAStoreSearchRoot
 
-@implementation STSCHStoreSearchRoot
+@implementation GDAStoreSearchRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - STSCHStoreSearchRoot_FileDescriptor
+#pragma mark - GDAStoreSearchRoot_FileDescriptor
 
-static GPBFileDescriptor *STSCHStoreSearchRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDAStoreSearchRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.store"
-                                                 objcPrefix:@"STSCH"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - STSCHIndexStoreRequest
+#pragma mark - GDAIndexStoreRequest
 
-@implementation STSCHIndexStoreRequest
+@implementation GDAIndexStoreRequest
 
 @dynamic uuid;
 @dynamic name;
@@ -66,12 +66,12 @@ static GPBFileDescriptor *STSCHStoreSearchRoot_FileDescriptor(void) {
 @dynamic amapProvince;
 @dynamic amapCountry;
 
-typedef struct STSCHIndexStoreRequest__storage_ {
+typedef struct GDAIndexStoreRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *uuid;
   NSString *name;
   NSString *logo;
-  COMMONLocation *location;
+  GDALocation *location;
   NSString *type;
   NSString *desc;
   NSString *amapAdCode;
@@ -85,7 +85,7 @@ typedef struct STSCHIndexStoreRequest__storage_ {
   NSString *amapProvince;
   NSString *amapCountry;
   double pointsRate;
-} STSCHIndexStoreRequest__storage_;
+} GDAIndexStoreRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -96,164 +96,164 @@ typedef struct STSCHIndexStoreRequest__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHIndexStoreRequest_FieldNumber_Uuid,
+        .number = GDAIndexStoreRequest_FieldNumber_Uuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STSCHIndexStoreRequest__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDAIndexStoreRequest__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "name",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHIndexStoreRequest_FieldNumber_Name,
+        .number = GDAIndexStoreRequest_FieldNumber_Name,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STSCHIndexStoreRequest__storage_, name),
+        .offset = (uint32_t)offsetof(GDAIndexStoreRequest__storage_, name),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "logo",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHIndexStoreRequest_FieldNumber_Logo,
+        .number = GDAIndexStoreRequest_FieldNumber_Logo,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(STSCHIndexStoreRequest__storage_, logo),
+        .offset = (uint32_t)offsetof(GDAIndexStoreRequest__storage_, logo),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "location",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONLocation),
-        .number = STSCHIndexStoreRequest_FieldNumber_Location,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDALocation),
+        .number = GDAIndexStoreRequest_FieldNumber_Location,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(STSCHIndexStoreRequest__storage_, location),
+        .offset = (uint32_t)offsetof(GDAIndexStoreRequest__storage_, location),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "type",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHIndexStoreRequest_FieldNumber_Type,
+        .number = GDAIndexStoreRequest_FieldNumber_Type,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(STSCHIndexStoreRequest__storage_, type),
+        .offset = (uint32_t)offsetof(GDAIndexStoreRequest__storage_, type),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "desc",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHIndexStoreRequest_FieldNumber_Desc,
+        .number = GDAIndexStoreRequest_FieldNumber_Desc,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(STSCHIndexStoreRequest__storage_, desc),
+        .offset = (uint32_t)offsetof(GDAIndexStoreRequest__storage_, desc),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "pointsRate",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHIndexStoreRequest_FieldNumber_PointsRate,
+        .number = GDAIndexStoreRequest_FieldNumber_PointsRate,
         .hasIndex = 6,
-        .offset = (uint32_t)offsetof(STSCHIndexStoreRequest__storage_, pointsRate),
+        .offset = (uint32_t)offsetof(GDAIndexStoreRequest__storage_, pointsRate),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeDouble,
       },
       {
         .name = "amapAdCode",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHIndexStoreRequest_FieldNumber_AmapAdCode,
+        .number = GDAIndexStoreRequest_FieldNumber_AmapAdCode,
         .hasIndex = 7,
-        .offset = (uint32_t)offsetof(STSCHIndexStoreRequest__storage_, amapAdCode),
+        .offset = (uint32_t)offsetof(GDAIndexStoreRequest__storage_, amapAdCode),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "amapAoiName",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHIndexStoreRequest_FieldNumber_AmapAoiName,
+        .number = GDAIndexStoreRequest_FieldNumber_AmapAoiName,
         .hasIndex = 8,
-        .offset = (uint32_t)offsetof(STSCHIndexStoreRequest__storage_, amapAoiName),
+        .offset = (uint32_t)offsetof(GDAIndexStoreRequest__storage_, amapAoiName),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "amapBuildingId",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHIndexStoreRequest_FieldNumber_AmapBuildingId,
+        .number = GDAIndexStoreRequest_FieldNumber_AmapBuildingId,
         .hasIndex = 9,
-        .offset = (uint32_t)offsetof(STSCHIndexStoreRequest__storage_, amapBuildingId),
+        .offset = (uint32_t)offsetof(GDAIndexStoreRequest__storage_, amapBuildingId),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "amapStreet",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHIndexStoreRequest_FieldNumber_AmapStreet,
+        .number = GDAIndexStoreRequest_FieldNumber_AmapStreet,
         .hasIndex = 10,
-        .offset = (uint32_t)offsetof(STSCHIndexStoreRequest__storage_, amapStreet),
+        .offset = (uint32_t)offsetof(GDAIndexStoreRequest__storage_, amapStreet),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "amapStreetNum",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHIndexStoreRequest_FieldNumber_AmapStreetNum,
+        .number = GDAIndexStoreRequest_FieldNumber_AmapStreetNum,
         .hasIndex = 11,
-        .offset = (uint32_t)offsetof(STSCHIndexStoreRequest__storage_, amapStreetNum),
+        .offset = (uint32_t)offsetof(GDAIndexStoreRequest__storage_, amapStreetNum),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "amapDistrict",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHIndexStoreRequest_FieldNumber_AmapDistrict,
+        .number = GDAIndexStoreRequest_FieldNumber_AmapDistrict,
         .hasIndex = 12,
-        .offset = (uint32_t)offsetof(STSCHIndexStoreRequest__storage_, amapDistrict),
+        .offset = (uint32_t)offsetof(GDAIndexStoreRequest__storage_, amapDistrict),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "amapCityCode",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHIndexStoreRequest_FieldNumber_AmapCityCode,
+        .number = GDAIndexStoreRequest_FieldNumber_AmapCityCode,
         .hasIndex = 13,
-        .offset = (uint32_t)offsetof(STSCHIndexStoreRequest__storage_, amapCityCode),
+        .offset = (uint32_t)offsetof(GDAIndexStoreRequest__storage_, amapCityCode),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "amapCity",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHIndexStoreRequest_FieldNumber_AmapCity,
+        .number = GDAIndexStoreRequest_FieldNumber_AmapCity,
         .hasIndex = 14,
-        .offset = (uint32_t)offsetof(STSCHIndexStoreRequest__storage_, amapCity),
+        .offset = (uint32_t)offsetof(GDAIndexStoreRequest__storage_, amapCity),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "amapProvince",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHIndexStoreRequest_FieldNumber_AmapProvince,
+        .number = GDAIndexStoreRequest_FieldNumber_AmapProvince,
         .hasIndex = 15,
-        .offset = (uint32_t)offsetof(STSCHIndexStoreRequest__storage_, amapProvince),
+        .offset = (uint32_t)offsetof(GDAIndexStoreRequest__storage_, amapProvince),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "amapCountry",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHIndexStoreRequest_FieldNumber_AmapCountry,
+        .number = GDAIndexStoreRequest_FieldNumber_AmapCountry,
         .hasIndex = 16,
-        .offset = (uint32_t)offsetof(STSCHIndexStoreRequest__storage_, amapCountry),
+        .offset = (uint32_t)offsetof(GDAIndexStoreRequest__storage_, amapCountry),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STSCHIndexStoreRequest class]
-                                     rootClass:[STSCHStoreSearchRoot class]
-                                          file:STSCHStoreSearchRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAIndexStoreRequest class]
+                                     rootClass:[GDAStoreSearchRoot class]
+                                          file:GDAStoreSearchRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STSCHIndexStoreRequest__storage_)
+                                   storageSize:sizeof(GDAIndexStoreRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -268,18 +268,18 @@ typedef struct STSCHIndexStoreRequest__storage_ {
 
 @end
 
-#pragma mark - STSCHIndexStoreResponse
+#pragma mark - GDAIndexStoreResponse
 
-@implementation STSCHIndexStoreResponse
+@implementation GDAIndexStoreResponse
 
 @dynamic hasStatus, status;
 @dynamic uuid;
 
-typedef struct STSCHIndexStoreResponse__storage_ {
+typedef struct GDAIndexStoreResponse__storage_ {
   uint32_t _has_storage_[1];
   NSString *uuid;
-  COMMONStatus *status;
-} STSCHIndexStoreResponse__storage_;
+  GDAStatus *status;
+} GDAIndexStoreResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -290,29 +290,29 @@ typedef struct STSCHIndexStoreResponse__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHIndexStoreResponse_FieldNumber_Uuid,
+        .number = GDAIndexStoreResponse_FieldNumber_Uuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STSCHIndexStoreResponse__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDAIndexStoreResponse__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = STSCHIndexStoreResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDAIndexStoreResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STSCHIndexStoreResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDAIndexStoreResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STSCHIndexStoreResponse class]
-                                     rootClass:[STSCHStoreSearchRoot class]
-                                          file:STSCHStoreSearchRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAIndexStoreResponse class]
+                                     rootClass:[GDAStoreSearchRoot class]
+                                          file:GDAStoreSearchRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STSCHIndexStoreResponse__storage_)
+                                   storageSize:sizeof(GDAIndexStoreResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -322,16 +322,16 @@ typedef struct STSCHIndexStoreResponse__storage_ {
 
 @end
 
-#pragma mark - STSCHDeleteStoreRequest
+#pragma mark - GDADeleteStoreRequest
 
-@implementation STSCHDeleteStoreRequest
+@implementation GDADeleteStoreRequest
 
 @dynamic uuid;
 
-typedef struct STSCHDeleteStoreRequest__storage_ {
+typedef struct GDADeleteStoreRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *uuid;
-} STSCHDeleteStoreRequest__storage_;
+} GDADeleteStoreRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -342,20 +342,20 @@ typedef struct STSCHDeleteStoreRequest__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHDeleteStoreRequest_FieldNumber_Uuid,
+        .number = GDADeleteStoreRequest_FieldNumber_Uuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STSCHDeleteStoreRequest__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDADeleteStoreRequest__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STSCHDeleteStoreRequest class]
-                                     rootClass:[STSCHStoreSearchRoot class]
-                                          file:STSCHStoreSearchRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDADeleteStoreRequest class]
+                                     rootClass:[GDAStoreSearchRoot class]
+                                          file:GDAStoreSearchRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STSCHDeleteStoreRequest__storage_)
+                                   storageSize:sizeof(GDADeleteStoreRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -365,18 +365,18 @@ typedef struct STSCHDeleteStoreRequest__storage_ {
 
 @end
 
-#pragma mark - STSCHDeleteStoreResponse
+#pragma mark - GDADeleteStoreResponse
 
-@implementation STSCHDeleteStoreResponse
+@implementation GDADeleteStoreResponse
 
 @dynamic hasStatus, status;
 @dynamic uuid;
 
-typedef struct STSCHDeleteStoreResponse__storage_ {
+typedef struct GDADeleteStoreResponse__storage_ {
   uint32_t _has_storage_[1];
   NSString *uuid;
-  COMMONStatus *status;
-} STSCHDeleteStoreResponse__storage_;
+  GDAStatus *status;
+} GDADeleteStoreResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -387,29 +387,29 @@ typedef struct STSCHDeleteStoreResponse__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHDeleteStoreResponse_FieldNumber_Uuid,
+        .number = GDADeleteStoreResponse_FieldNumber_Uuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STSCHDeleteStoreResponse__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDADeleteStoreResponse__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = STSCHDeleteStoreResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDADeleteStoreResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STSCHDeleteStoreResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDADeleteStoreResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STSCHDeleteStoreResponse class]
-                                     rootClass:[STSCHStoreSearchRoot class]
-                                          file:STSCHStoreSearchRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDADeleteStoreResponse class]
+                                     rootClass:[GDAStoreSearchRoot class]
+                                          file:GDAStoreSearchRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STSCHDeleteStoreResponse__storage_)
+                                   storageSize:sizeof(GDADeleteStoreResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -419,9 +419,9 @@ typedef struct STSCHDeleteStoreResponse__storage_ {
 
 @end
 
-#pragma mark - STSCHSearchStoreRequest
+#pragma mark - GDASearchStoreRequest
 
-@implementation STSCHSearchStoreRequest
+@implementation GDASearchStoreRequest
 
 @dynamic hasLocation, location;
 @dynamic type;
@@ -429,14 +429,14 @@ typedef struct STSCHDeleteStoreResponse__storage_ {
 @dynamic from;
 @dynamic size;
 
-typedef struct STSCHSearchStoreRequest__storage_ {
+typedef struct GDASearchStoreRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t from;
   int32_t size;
-  COMMONLocation *location;
+  GDALocation *location;
   NSString *type;
   NSString *keyword;
-} STSCHSearchStoreRequest__storage_;
+} GDASearchStoreRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -446,57 +446,57 @@ typedef struct STSCHSearchStoreRequest__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "location",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONLocation),
-        .number = STSCHSearchStoreRequest_FieldNumber_Location,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDALocation),
+        .number = GDASearchStoreRequest_FieldNumber_Location,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STSCHSearchStoreRequest__storage_, location),
+        .offset = (uint32_t)offsetof(GDASearchStoreRequest__storage_, location),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "type",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHSearchStoreRequest_FieldNumber_Type,
+        .number = GDASearchStoreRequest_FieldNumber_Type,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STSCHSearchStoreRequest__storage_, type),
+        .offset = (uint32_t)offsetof(GDASearchStoreRequest__storage_, type),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "keyword",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHSearchStoreRequest_FieldNumber_Keyword,
+        .number = GDASearchStoreRequest_FieldNumber_Keyword,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(STSCHSearchStoreRequest__storage_, keyword),
+        .offset = (uint32_t)offsetof(GDASearchStoreRequest__storage_, keyword),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "from",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHSearchStoreRequest_FieldNumber_From,
+        .number = GDASearchStoreRequest_FieldNumber_From,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(STSCHSearchStoreRequest__storage_, from),
+        .offset = (uint32_t)offsetof(GDASearchStoreRequest__storage_, from),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "size",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHSearchStoreRequest_FieldNumber_Size,
+        .number = GDASearchStoreRequest_FieldNumber_Size,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(STSCHSearchStoreRequest__storage_, size),
+        .offset = (uint32_t)offsetof(GDASearchStoreRequest__storage_, size),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STSCHSearchStoreRequest class]
-                                     rootClass:[STSCHStoreSearchRoot class]
-                                          file:STSCHStoreSearchRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDASearchStoreRequest class]
+                                     rootClass:[GDAStoreSearchRoot class]
+                                          file:GDAStoreSearchRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STSCHSearchStoreRequest__storage_)
+                                   storageSize:sizeof(GDASearchStoreRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -506,9 +506,9 @@ typedef struct STSCHSearchStoreRequest__storage_ {
 
 @end
 
-#pragma mark - STSCHSearchStoreResponse
+#pragma mark - GDASearchStoreResponse
 
-@implementation STSCHSearchStoreResponse
+@implementation GDASearchStoreResponse
 
 @dynamic hasStatus, status;
 @dynamic uuid;
@@ -523,21 +523,21 @@ typedef struct STSCHSearchStoreRequest__storage_ {
 @dynamic amapCity;
 @dynamic from;
 
-typedef struct STSCHSearchStoreResponse__storage_ {
+typedef struct GDASearchStoreResponse__storage_ {
   uint32_t _has_storage_[1];
   int32_t from;
   NSString *uuid;
   NSString *name;
   NSString *logo;
-  COMMONLocation *location;
+  GDALocation *location;
   NSString *type;
   NSString *desc;
   NSString *amapStreet;
   NSString *amapDistrict;
   NSString *amapCity;
-  COMMONStatus *status;
+  GDAStatus *status;
   double pointsRate;
-} STSCHSearchStoreResponse__storage_;
+} GDASearchStoreResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -548,119 +548,119 @@ typedef struct STSCHSearchStoreResponse__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHSearchStoreResponse_FieldNumber_Uuid,
+        .number = GDASearchStoreResponse_FieldNumber_Uuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STSCHSearchStoreResponse__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDASearchStoreResponse__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "name",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHSearchStoreResponse_FieldNumber_Name,
+        .number = GDASearchStoreResponse_FieldNumber_Name,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(STSCHSearchStoreResponse__storage_, name),
+        .offset = (uint32_t)offsetof(GDASearchStoreResponse__storage_, name),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "logo",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHSearchStoreResponse_FieldNumber_Logo,
+        .number = GDASearchStoreResponse_FieldNumber_Logo,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(STSCHSearchStoreResponse__storage_, logo),
+        .offset = (uint32_t)offsetof(GDASearchStoreResponse__storage_, logo),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "location",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONLocation),
-        .number = STSCHSearchStoreResponse_FieldNumber_Location,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDALocation),
+        .number = GDASearchStoreResponse_FieldNumber_Location,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(STSCHSearchStoreResponse__storage_, location),
+        .offset = (uint32_t)offsetof(GDASearchStoreResponse__storage_, location),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "type",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHSearchStoreResponse_FieldNumber_Type,
+        .number = GDASearchStoreResponse_FieldNumber_Type,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(STSCHSearchStoreResponse__storage_, type),
+        .offset = (uint32_t)offsetof(GDASearchStoreResponse__storage_, type),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "desc",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHSearchStoreResponse_FieldNumber_Desc,
+        .number = GDASearchStoreResponse_FieldNumber_Desc,
         .hasIndex = 6,
-        .offset = (uint32_t)offsetof(STSCHSearchStoreResponse__storage_, desc),
+        .offset = (uint32_t)offsetof(GDASearchStoreResponse__storage_, desc),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "pointsRate",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHSearchStoreResponse_FieldNumber_PointsRate,
+        .number = GDASearchStoreResponse_FieldNumber_PointsRate,
         .hasIndex = 7,
-        .offset = (uint32_t)offsetof(STSCHSearchStoreResponse__storage_, pointsRate),
+        .offset = (uint32_t)offsetof(GDASearchStoreResponse__storage_, pointsRate),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeDouble,
       },
       {
         .name = "amapStreet",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHSearchStoreResponse_FieldNumber_AmapStreet,
+        .number = GDASearchStoreResponse_FieldNumber_AmapStreet,
         .hasIndex = 8,
-        .offset = (uint32_t)offsetof(STSCHSearchStoreResponse__storage_, amapStreet),
+        .offset = (uint32_t)offsetof(GDASearchStoreResponse__storage_, amapStreet),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "amapDistrict",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHSearchStoreResponse_FieldNumber_AmapDistrict,
+        .number = GDASearchStoreResponse_FieldNumber_AmapDistrict,
         .hasIndex = 9,
-        .offset = (uint32_t)offsetof(STSCHSearchStoreResponse__storage_, amapDistrict),
+        .offset = (uint32_t)offsetof(GDASearchStoreResponse__storage_, amapDistrict),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "amapCity",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHSearchStoreResponse_FieldNumber_AmapCity,
+        .number = GDASearchStoreResponse_FieldNumber_AmapCity,
         .hasIndex = 10,
-        .offset = (uint32_t)offsetof(STSCHSearchStoreResponse__storage_, amapCity),
+        .offset = (uint32_t)offsetof(GDASearchStoreResponse__storage_, amapCity),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "from",
         .dataTypeSpecific.className = NULL,
-        .number = STSCHSearchStoreResponse_FieldNumber_From,
+        .number = GDASearchStoreResponse_FieldNumber_From,
         .hasIndex = 11,
-        .offset = (uint32_t)offsetof(STSCHSearchStoreResponse__storage_, from),
+        .offset = (uint32_t)offsetof(GDASearchStoreResponse__storage_, from),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = STSCHSearchStoreResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDASearchStoreResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STSCHSearchStoreResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDASearchStoreResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STSCHSearchStoreResponse class]
-                                     rootClass:[STSCHStoreSearchRoot class]
-                                          file:STSCHStoreSearchRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDASearchStoreResponse class]
+                                     rootClass:[GDAStoreSearchRoot class]
+                                          file:GDAStoreSearchRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STSCHSearchStoreResponse__storage_)
+                                   storageSize:sizeof(GDASearchStoreResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =

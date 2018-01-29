@@ -27,12 +27,12 @@
 
 CF_EXTERN_C_BEGIN
 
-@class COMMONStatus;
-@class PRDCTGCatalog;
+@class GDACatalog;
+@class GDAStatus;
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - PRDCTGCatalogRoot
+#pragma mark - GDACatalogRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -44,62 +44,62 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface PRDCTGCatalogRoot : GPBRootObject
+@interface GDACatalogRoot : GPBRootObject
 @end
 
-#pragma mark - PRDCTGGetCatalogRequest
+#pragma mark - GDAGetCatalogRequest
 
-typedef GPB_ENUM(PRDCTGGetCatalogRequest_FieldNumber) {
-  PRDCTGGetCatalogRequest_FieldNumber_Uuid = 1,
+typedef GPB_ENUM(GDAGetCatalogRequest_FieldNumber) {
+  GDAGetCatalogRequest_FieldNumber_Uuid = 1,
 };
 
-@interface PRDCTGGetCatalogRequest : GPBMessage
+@interface GDAGetCatalogRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
 
 @end
 
-#pragma mark - PRDCTGListCatalogRequest
+#pragma mark - GDAListCatalogRequest
 
-typedef GPB_ENUM(PRDCTGListCatalogRequest_FieldNumber) {
-  PRDCTGListCatalogRequest_FieldNumber_ParentUuid = 1,
+typedef GPB_ENUM(GDAListCatalogRequest_FieldNumber) {
+  GDAListCatalogRequest_FieldNumber_ParentUuid = 1,
 };
 
-@interface PRDCTGListCatalogRequest : GPBMessage
+@interface GDAListCatalogRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *parentUuid;
 
 @end
 
-#pragma mark - PRDCTGCatalogResponse
+#pragma mark - GDACatalogResponse
 
-typedef GPB_ENUM(PRDCTGCatalogResponse_FieldNumber) {
-  PRDCTGCatalogResponse_FieldNumber_Catalog = 1,
-  PRDCTGCatalogResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDACatalogResponse_FieldNumber) {
+  GDACatalogResponse_FieldNumber_Catalog = 1,
+  GDACatalogResponse_FieldNumber_Status = 999,
 };
 
-@interface PRDCTGCatalogResponse : GPBMessage
+@interface GDACatalogResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
-@property(nonatomic, readwrite, strong, null_resettable) PRDCTGCatalog *catalog;
+@property(nonatomic, readwrite, strong, null_resettable) GDACatalog *catalog;
 /** Test to see if @c catalog has been set. */
 @property(nonatomic, readwrite) BOOL hasCatalog;
 
 @end
 
-#pragma mark - PRDCTGCatalog
+#pragma mark - GDACatalog
 
-typedef GPB_ENUM(PRDCTGCatalog_FieldNumber) {
-  PRDCTGCatalog_FieldNumber_Uuid = 1,
-  PRDCTGCatalog_FieldNumber_Name = 2,
-  PRDCTGCatalog_FieldNumber_ParentUuid = 3,
-  PRDCTGCatalog_FieldNumber_IconURL = 4,
+typedef GPB_ENUM(GDACatalog_FieldNumber) {
+  GDACatalog_FieldNumber_Uuid = 1,
+  GDACatalog_FieldNumber_Name = 2,
+  GDACatalog_FieldNumber_ParentUuid = 3,
+  GDACatalog_FieldNumber_IconURL = 4,
 };
 
-@interface PRDCTGCatalog : GPBMessage
+@interface GDACatalog : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
 

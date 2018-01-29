@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'C561C28461DBBC24407CB31E'
+               BlueprintIdentifier = 'B86DBDB231926D922D2CFE6C'
                BlueprintName = 'GDApiLibrary'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libGDApiLibrary.a'>

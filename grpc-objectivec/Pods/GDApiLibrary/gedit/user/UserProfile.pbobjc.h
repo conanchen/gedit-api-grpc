@@ -27,13 +27,13 @@
 
 CF_EXTERN_C_BEGIN
 
-@class COMMONListString;
-@class COMMONStatus;
-@class USRPROFUserProfile;
+@class GDAListString;
+@class GDAStatus;
+@class GDAUserProfile;
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - USRPROFUserProfileRoot
+#pragma mark - GDAUserProfileRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -45,19 +45,19 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface USRPROFUserProfileRoot : GPBRootObject
+@interface GDAUserProfileRoot : GPBRootObject
 @end
 
-#pragma mark - USRPROFBanUserResponse
+#pragma mark - GDABanUserResponse
 
-typedef GPB_ENUM(USRPROFBanUserResponse_FieldNumber) {
-  USRPROFBanUserResponse_FieldNumber_Uuid = 1,
-  USRPROFBanUserResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDABanUserResponse_FieldNumber) {
+  GDABanUserResponse_FieldNumber_Uuid = 1,
+  GDABanUserResponse_FieldNumber_Status = 999,
 };
 
-@interface USRPROFBanUserResponse : GPBMessage
+@interface GDABanUserResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
@@ -65,44 +65,44 @@ typedef GPB_ENUM(USRPROFBanUserResponse_FieldNumber) {
 
 @end
 
-#pragma mark - USRPROFGetMyProfileRequest
+#pragma mark - GDAGetMyProfileRequest
 
-@interface USRPROFGetMyProfileRequest : GPBMessage
+@interface GDAGetMyProfileRequest : GPBMessage
 
 @end
 
-#pragma mark - USRPROFListRequest
+#pragma mark - GDAListRequest
 
-typedef GPB_ENUM(USRPROFListRequest_FieldNumber) {
-  USRPROFListRequest_FieldNumber_Page = 1,
+typedef GPB_ENUM(GDAListRequest_FieldNumber) {
+  GDAListRequest_FieldNumber_Page = 1,
 };
 
-@interface USRPROFListRequest : GPBMessage
+@interface GDAListRequest : GPBMessage
 
 @property(nonatomic, readwrite) int32_t page;
 
 @end
 
-#pragma mark - USRPROFGetRequest
+#pragma mark - GDAGetRequest
 
-typedef GPB_ENUM(USRPROFGetRequest_FieldNumber) {
-  USRPROFGetRequest_FieldNumber_Uuid = 1,
+typedef GPB_ENUM(GDAGetRequest_FieldNumber) {
+  GDAGetRequest_FieldNumber_Uuid = 1,
 };
 
-@interface USRPROFGetRequest : GPBMessage
+@interface GDAGetRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
 
 @end
 
-#pragma mark - USRPROFBanUserRequest
+#pragma mark - GDABanUserRequest
 
-typedef GPB_ENUM(USRPROFBanUserRequest_FieldNumber) {
-  USRPROFBanUserRequest_FieldNumber_Uuid = 1,
-  USRPROFBanUserRequest_FieldNumber_Active = 2,
+typedef GPB_ENUM(GDABanUserRequest_FieldNumber) {
+  GDABanUserRequest_FieldNumber_Uuid = 1,
+  GDABanUserRequest_FieldNumber_Active = 2,
 };
 
-@interface USRPROFBanUserRequest : GPBMessage
+@interface GDABanUserRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
 
@@ -110,17 +110,17 @@ typedef GPB_ENUM(USRPROFBanUserRequest_FieldNumber) {
 
 @end
 
-#pragma mark - USRPROFBanResponse
+#pragma mark - GDABanResponse
 
-typedef GPB_ENUM(USRPROFBanResponse_FieldNumber) {
-  USRPROFBanResponse_FieldNumber_Uuid = 1,
-  USRPROFBanResponse_FieldNumber_Active = 2,
-  USRPROFBanResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDABanResponse_FieldNumber) {
+  GDABanResponse_FieldNumber_Uuid = 1,
+  GDABanResponse_FieldNumber_Active = 2,
+  GDABanResponse_FieldNumber_Status = 999,
 };
 
-@interface USRPROFBanResponse : GPBMessage
+@interface GDABanResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
@@ -130,51 +130,51 @@ typedef GPB_ENUM(USRPROFBanResponse_FieldNumber) {
 
 @end
 
-#pragma mark - USRPROFFindByMobileRequest
+#pragma mark - GDAFindByMobileRequest
 
-typedef GPB_ENUM(USRPROFFindByMobileRequest_FieldNumber) {
-  USRPROFFindByMobileRequest_FieldNumber_Mobile = 1,
+typedef GPB_ENUM(GDAFindByMobileRequest_FieldNumber) {
+  GDAFindByMobileRequest_FieldNumber_Mobile = 1,
 };
 
-@interface USRPROFFindByMobileRequest : GPBMessage
+@interface GDAFindByMobileRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *mobile;
 
 @end
 
-#pragma mark - USRPROFUserProfileResponse
+#pragma mark - GDAUserProfileResponse
 
-typedef GPB_ENUM(USRPROFUserProfileResponse_FieldNumber) {
-  USRPROFUserProfileResponse_FieldNumber_UserProfile = 1,
-  USRPROFUserProfileResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAUserProfileResponse_FieldNumber) {
+  GDAUserProfileResponse_FieldNumber_UserProfile = 1,
+  GDAUserProfileResponse_FieldNumber_Status = 999,
 };
 
-@interface USRPROFUserProfileResponse : GPBMessage
+@interface GDAUserProfileResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
-@property(nonatomic, readwrite, strong, null_resettable) USRPROFUserProfile *userProfile;
+@property(nonatomic, readwrite, strong, null_resettable) GDAUserProfile *userProfile;
 /** Test to see if @c userProfile has been set. */
 @property(nonatomic, readwrite) BOOL hasUserProfile;
 
 @end
 
-#pragma mark - USRPROFUserProfile
+#pragma mark - GDAUserProfile
 
-typedef GPB_ENUM(USRPROFUserProfile_FieldNumber) {
-  USRPROFUserProfile_FieldNumber_Uuid = 1,
-  USRPROFUserProfile_FieldNumber_Mobile = 2,
-  USRPROFUserProfile_FieldNumber_Username = 3,
-  USRPROFUserProfile_FieldNumber_Desc = 4,
-  USRPROFUserProfile_FieldNumber_Logo = 5,
-  USRPROFUserProfile_FieldNumber_DistrictUuid = 9,
-  USRPROFUserProfile_FieldNumber_Photos = 11,
-  USRPROFUserProfile_FieldNumber_Active = 59,
+typedef GPB_ENUM(GDAUserProfile_FieldNumber) {
+  GDAUserProfile_FieldNumber_Uuid = 1,
+  GDAUserProfile_FieldNumber_Mobile = 2,
+  GDAUserProfile_FieldNumber_Username = 3,
+  GDAUserProfile_FieldNumber_Desc = 4,
+  GDAUserProfile_FieldNumber_Logo = 5,
+  GDAUserProfile_FieldNumber_DistrictUuid = 9,
+  GDAUserProfile_FieldNumber_Photos = 11,
+  GDAUserProfile_FieldNumber_Active = 59,
 };
 
-@interface USRPROFUserProfile : GPBMessage
+@interface GDAUserProfile : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
 
@@ -188,7 +188,7 @@ typedef GPB_ENUM(USRPROFUserProfile_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *districtUuid;
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONListString *photos;
+@property(nonatomic, readwrite, strong, null_resettable) GDAListString *photos;
 /** Test to see if @c photos has been set. */
 @property(nonatomic, readwrite) BOOL hasPhotos;
 
@@ -196,33 +196,33 @@ typedef GPB_ENUM(USRPROFUserProfile_FieldNumber) {
 
 @end
 
-#pragma mark - USRPROFUpdateMyProfileRequest
+#pragma mark - GDAUpdateMyProfileRequest
 
-typedef GPB_ENUM(USRPROFUpdateMyProfileRequest_FieldNumber) {
-  USRPROFUpdateMyProfileRequest_FieldNumber_Mobile = 2,
-  USRPROFUpdateMyProfileRequest_FieldNumber_Username = 3,
-  USRPROFUpdateMyProfileRequest_FieldNumber_Desc = 4,
-  USRPROFUpdateMyProfileRequest_FieldNumber_Logo = 5,
-  USRPROFUpdateMyProfileRequest_FieldNumber_DistrictUuid = 9,
-  USRPROFUpdateMyProfileRequest_FieldNumber_Photos = 11,
-  USRPROFUpdateMyProfileRequest_FieldNumber_Active = 59,
+typedef GPB_ENUM(GDAUpdateMyProfileRequest_FieldNumber) {
+  GDAUpdateMyProfileRequest_FieldNumber_Mobile = 2,
+  GDAUpdateMyProfileRequest_FieldNumber_Username = 3,
+  GDAUpdateMyProfileRequest_FieldNumber_Desc = 4,
+  GDAUpdateMyProfileRequest_FieldNumber_Logo = 5,
+  GDAUpdateMyProfileRequest_FieldNumber_DistrictUuid = 9,
+  GDAUpdateMyProfileRequest_FieldNumber_Photos = 11,
+  GDAUpdateMyProfileRequest_FieldNumber_Active = 59,
 };
 
-typedef GPB_ENUM(USRPROFUpdateMyProfileRequest_Property_OneOfCase) {
-  USRPROFUpdateMyProfileRequest_Property_OneOfCase_GPBUnsetOneOfCase = 0,
-  USRPROFUpdateMyProfileRequest_Property_OneOfCase_Mobile = 2,
-  USRPROFUpdateMyProfileRequest_Property_OneOfCase_Username = 3,
-  USRPROFUpdateMyProfileRequest_Property_OneOfCase_Desc = 4,
-  USRPROFUpdateMyProfileRequest_Property_OneOfCase_Logo = 5,
-  USRPROFUpdateMyProfileRequest_Property_OneOfCase_DistrictUuid = 9,
-  USRPROFUpdateMyProfileRequest_Property_OneOfCase_Photos = 11,
-  USRPROFUpdateMyProfileRequest_Property_OneOfCase_Active = 59,
+typedef GPB_ENUM(GDAUpdateMyProfileRequest_Property_OneOfCase) {
+  GDAUpdateMyProfileRequest_Property_OneOfCase_GPBUnsetOneOfCase = 0,
+  GDAUpdateMyProfileRequest_Property_OneOfCase_Mobile = 2,
+  GDAUpdateMyProfileRequest_Property_OneOfCase_Username = 3,
+  GDAUpdateMyProfileRequest_Property_OneOfCase_Desc = 4,
+  GDAUpdateMyProfileRequest_Property_OneOfCase_Logo = 5,
+  GDAUpdateMyProfileRequest_Property_OneOfCase_DistrictUuid = 9,
+  GDAUpdateMyProfileRequest_Property_OneOfCase_Photos = 11,
+  GDAUpdateMyProfileRequest_Property_OneOfCase_Active = 59,
 };
 
-@interface USRPROFUpdateMyProfileRequest : GPBMessage
+@interface GDAUpdateMyProfileRequest : GPBMessage
 
 /** 只支持单项修改 */
-@property(nonatomic, readonly) USRPROFUpdateMyProfileRequest_Property_OneOfCase propertyOneOfCase;
+@property(nonatomic, readonly) GDAUpdateMyProfileRequest_Property_OneOfCase propertyOneOfCase;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *mobile;
 
@@ -234,7 +234,7 @@ typedef GPB_ENUM(USRPROFUpdateMyProfileRequest_Property_OneOfCase) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *districtUuid;
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONListString *photos;
+@property(nonatomic, readwrite, strong, null_resettable) GDAListString *photos;
 
 @property(nonatomic, readwrite) BOOL active;
 
@@ -243,17 +243,17 @@ typedef GPB_ENUM(USRPROFUpdateMyProfileRequest_Property_OneOfCase) {
 /**
  * Clears whatever value was set for the oneof 'property'.
  **/
-void USRPROFUpdateMyProfileRequest_ClearPropertyOneOfCase(USRPROFUpdateMyProfileRequest *message);
+void GDAUpdateMyProfileRequest_ClearPropertyOneOfCase(GDAUpdateMyProfileRequest *message);
 
-#pragma mark - USRPROFUpdateMyProfileResponse
+#pragma mark - GDAUpdateMyProfileResponse
 
-typedef GPB_ENUM(USRPROFUpdateMyProfileResponse_FieldNumber) {
-  USRPROFUpdateMyProfileResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAUpdateMyProfileResponse_FieldNumber) {
+  GDAUpdateMyProfileResponse_FieldNumber_Status = 999,
 };
 
-@interface USRPROFUpdateMyProfileResponse : GPBMessage
+@interface GDAUpdateMyProfileResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 

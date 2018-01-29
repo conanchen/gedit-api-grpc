@@ -21,33 +21,33 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-#pragma mark - ACCNTAccountingPostingRoot
+#pragma mark - GDAAccountingPostingRoot
 
-@implementation ACCNTAccountingPostingRoot
+@implementation GDAAccountingPostingRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - ACCNTAccountingPostingRoot_FileDescriptor
+#pragma mark - GDAAccountingPostingRoot_FileDescriptor
 
-static GPBFileDescriptor *ACCNTAccountingPostingRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDAAccountingPostingRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.accounting"
-                                                 objcPrefix:@"ACCNT"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - ACCNTListPostingRequest
+#pragma mark - GDAListPostingRequest
 
-@implementation ACCNTListPostingRequest
+@implementation GDAListPostingRequest
 
 @dynamic userUuid;
 @dynamic accountUuid;
@@ -55,14 +55,14 @@ static GPBFileDescriptor *ACCNTAccountingPostingRoot_FileDescriptor(void) {
 @dynamic from;
 @dynamic size;
 
-typedef struct ACCNTListPostingRequest__storage_ {
+typedef struct GDAListPostingRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t from;
   int32_t size;
   NSString *userUuid;
   NSString *accountUuid;
   NSString *journalUuid;
-} ACCNTListPostingRequest__storage_;
+} GDAListPostingRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -73,56 +73,56 @@ typedef struct ACCNTListPostingRequest__storage_ {
       {
         .name = "userUuid",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTListPostingRequest_FieldNumber_UserUuid,
+        .number = GDAListPostingRequest_FieldNumber_UserUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(ACCNTListPostingRequest__storage_, userUuid),
+        .offset = (uint32_t)offsetof(GDAListPostingRequest__storage_, userUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "accountUuid",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTListPostingRequest_FieldNumber_AccountUuid,
+        .number = GDAListPostingRequest_FieldNumber_AccountUuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(ACCNTListPostingRequest__storage_, accountUuid),
+        .offset = (uint32_t)offsetof(GDAListPostingRequest__storage_, accountUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "journalUuid",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTListPostingRequest_FieldNumber_JournalUuid,
+        .number = GDAListPostingRequest_FieldNumber_JournalUuid,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(ACCNTListPostingRequest__storage_, journalUuid),
+        .offset = (uint32_t)offsetof(GDAListPostingRequest__storage_, journalUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "from",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTListPostingRequest_FieldNumber_From,
+        .number = GDAListPostingRequest_FieldNumber_From,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(ACCNTListPostingRequest__storage_, from),
+        .offset = (uint32_t)offsetof(GDAListPostingRequest__storage_, from),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "size",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTListPostingRequest_FieldNumber_Size,
+        .number = GDAListPostingRequest_FieldNumber_Size,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(ACCNTListPostingRequest__storage_, size),
+        .offset = (uint32_t)offsetof(GDAListPostingRequest__storage_, size),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTListPostingRequest class]
-                                     rootClass:[ACCNTAccountingPostingRoot class]
-                                          file:ACCNTAccountingPostingRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListPostingRequest class]
+                                     rootClass:[GDAAccountingPostingRoot class]
+                                          file:GDAAccountingPostingRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTListPostingRequest__storage_)
+                                   storageSize:sizeof(GDAListPostingRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -137,22 +137,22 @@ typedef struct ACCNTListPostingRequest__storage_ {
 
 @end
 
-#pragma mark - ACCNTListMyPostingRequest
+#pragma mark - GDAListMyPostingRequest
 
-@implementation ACCNTListMyPostingRequest
+@implementation GDAListMyPostingRequest
 
 @dynamic accountUuid;
 @dynamic lastUpdated;
 @dynamic from;
 @dynamic size;
 
-typedef struct ACCNTListMyPostingRequest__storage_ {
+typedef struct GDAListMyPostingRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t from;
   int32_t size;
   NSString *accountUuid;
   int64_t lastUpdated;
-} ACCNTListMyPostingRequest__storage_;
+} GDAListMyPostingRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -163,47 +163,47 @@ typedef struct ACCNTListMyPostingRequest__storage_ {
       {
         .name = "accountUuid",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTListMyPostingRequest_FieldNumber_AccountUuid,
+        .number = GDAListMyPostingRequest_FieldNumber_AccountUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(ACCNTListMyPostingRequest__storage_, accountUuid),
+        .offset = (uint32_t)offsetof(GDAListMyPostingRequest__storage_, accountUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "lastUpdated",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTListMyPostingRequest_FieldNumber_LastUpdated,
+        .number = GDAListMyPostingRequest_FieldNumber_LastUpdated,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(ACCNTListMyPostingRequest__storage_, lastUpdated),
+        .offset = (uint32_t)offsetof(GDAListMyPostingRequest__storage_, lastUpdated),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
       {
         .name = "from",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTListMyPostingRequest_FieldNumber_From,
+        .number = GDAListMyPostingRequest_FieldNumber_From,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(ACCNTListMyPostingRequest__storage_, from),
+        .offset = (uint32_t)offsetof(GDAListMyPostingRequest__storage_, from),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "size",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTListMyPostingRequest_FieldNumber_Size,
+        .number = GDAListMyPostingRequest_FieldNumber_Size,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(ACCNTListMyPostingRequest__storage_, size),
+        .offset = (uint32_t)offsetof(GDAListMyPostingRequest__storage_, size),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTListMyPostingRequest class]
-                                     rootClass:[ACCNTAccountingPostingRoot class]
-                                          file:ACCNTAccountingPostingRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListMyPostingRequest class]
+                                     rootClass:[GDAAccountingPostingRoot class]
+                                          file:GDAAccountingPostingRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTListMyPostingRequest__storage_)
+                                   storageSize:sizeof(GDAListMyPostingRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -218,16 +218,16 @@ typedef struct ACCNTListMyPostingRequest__storage_ {
 
 @end
 
-#pragma mark - ACCNTGetPostingRequest
+#pragma mark - GDAGetPostingRequest
 
-@implementation ACCNTGetPostingRequest
+@implementation GDAGetPostingRequest
 
 @dynamic uuid;
 
-typedef struct ACCNTGetPostingRequest__storage_ {
+typedef struct GDAGetPostingRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *uuid;
-} ACCNTGetPostingRequest__storage_;
+} GDAGetPostingRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -238,20 +238,20 @@ typedef struct ACCNTGetPostingRequest__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTGetPostingRequest_FieldNumber_Uuid,
+        .number = GDAGetPostingRequest_FieldNumber_Uuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(ACCNTGetPostingRequest__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDAGetPostingRequest__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTGetPostingRequest class]
-                                     rootClass:[ACCNTAccountingPostingRoot class]
-                                          file:ACCNTAccountingPostingRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAGetPostingRequest class]
+                                     rootClass:[GDAAccountingPostingRoot class]
+                                          file:GDAAccountingPostingRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTGetPostingRequest__storage_)
+                                   storageSize:sizeof(GDAGetPostingRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -261,18 +261,18 @@ typedef struct ACCNTGetPostingRequest__storage_ {
 
 @end
 
-#pragma mark - ACCNTPostingResponse
+#pragma mark - GDAPostingResponse
 
-@implementation ACCNTPostingResponse
+@implementation GDAPostingResponse
 
 @dynamic hasStatus, status;
 @dynamic hasPosting, posting;
 
-typedef struct ACCNTPostingResponse__storage_ {
+typedef struct GDAPostingResponse__storage_ {
   uint32_t _has_storage_[1];
-  ACCNTPosting *posting;
-  COMMONStatus *status;
-} ACCNTPostingResponse__storage_;
+  GDAPosting *posting;
+  GDAStatus *status;
+} GDAPostingResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -282,30 +282,30 @@ typedef struct ACCNTPostingResponse__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "posting",
-        .dataTypeSpecific.className = GPBStringifySymbol(ACCNTPosting),
-        .number = ACCNTPostingResponse_FieldNumber_Posting,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAPosting),
+        .number = GDAPostingResponse_FieldNumber_Posting,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(ACCNTPostingResponse__storage_, posting),
+        .offset = (uint32_t)offsetof(GDAPostingResponse__storage_, posting),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = ACCNTPostingResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDAPostingResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(ACCNTPostingResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDAPostingResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTPostingResponse class]
-                                     rootClass:[ACCNTAccountingPostingRoot class]
-                                          file:ACCNTAccountingPostingRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAPostingResponse class]
+                                     rootClass:[GDAAccountingPostingRoot class]
+                                          file:GDAAccountingPostingRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTPostingResponse__storage_)
+                                   storageSize:sizeof(GDAPostingResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -315,9 +315,9 @@ typedef struct ACCNTPostingResponse__storage_ {
 
 @end
 
-#pragma mark - ACCNTPosting
+#pragma mark - GDAPosting
 
-@implementation ACCNTPosting
+@implementation GDAPosting
 
 @dynamic uuid;
 @dynamic userUuid;
@@ -327,7 +327,7 @@ typedef struct ACCNTPostingResponse__storage_ {
 @dynamic created;
 @dynamic comment;
 
-typedef struct ACCNTPosting__storage_ {
+typedef struct GDAPosting__storage_ {
   uint32_t _has_storage_[1];
   int32_t amount;
   NSString *uuid;
@@ -336,7 +336,7 @@ typedef struct ACCNTPosting__storage_ {
   NSString *journalUuid;
   NSString *comment;
   int64_t created;
-} ACCNTPosting__storage_;
+} GDAPosting__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -347,74 +347,74 @@ typedef struct ACCNTPosting__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTPosting_FieldNumber_Uuid,
+        .number = GDAPosting_FieldNumber_Uuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(ACCNTPosting__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDAPosting__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "userUuid",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTPosting_FieldNumber_UserUuid,
+        .number = GDAPosting_FieldNumber_UserUuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(ACCNTPosting__storage_, userUuid),
+        .offset = (uint32_t)offsetof(GDAPosting__storage_, userUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "accountUuid",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTPosting_FieldNumber_AccountUuid,
+        .number = GDAPosting_FieldNumber_AccountUuid,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(ACCNTPosting__storage_, accountUuid),
+        .offset = (uint32_t)offsetof(GDAPosting__storage_, accountUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "journalUuid",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTPosting_FieldNumber_JournalUuid,
+        .number = GDAPosting_FieldNumber_JournalUuid,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(ACCNTPosting__storage_, journalUuid),
+        .offset = (uint32_t)offsetof(GDAPosting__storage_, journalUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "amount",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTPosting_FieldNumber_Amount,
+        .number = GDAPosting_FieldNumber_Amount,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(ACCNTPosting__storage_, amount),
+        .offset = (uint32_t)offsetof(GDAPosting__storage_, amount),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "created",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTPosting_FieldNumber_Created,
+        .number = GDAPosting_FieldNumber_Created,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(ACCNTPosting__storage_, created),
+        .offset = (uint32_t)offsetof(GDAPosting__storage_, created),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
       },
       {
         .name = "comment",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTPosting_FieldNumber_Comment,
+        .number = GDAPosting_FieldNumber_Comment,
         .hasIndex = 6,
-        .offset = (uint32_t)offsetof(ACCNTPosting__storage_, comment),
+        .offset = (uint32_t)offsetof(GDAPosting__storage_, comment),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTPosting class]
-                                     rootClass:[ACCNTAccountingPostingRoot class]
-                                          file:ACCNTAccountingPostingRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAPosting class]
+                                     rootClass:[GDAAccountingPostingRoot class]
+                                          file:GDAAccountingPostingRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTPosting__storage_)
+                                   storageSize:sizeof(GDAPosting__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =

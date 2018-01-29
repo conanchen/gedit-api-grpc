@@ -5,7 +5,7 @@ package gedit.hello;
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.hello.grpc";
 option java_outer_classname = "HelloProto";
-option objc_class_prefix = "HELLO";
+option objc_class_prefix = "GDA";
 
 import "gedit/common.proto";
 

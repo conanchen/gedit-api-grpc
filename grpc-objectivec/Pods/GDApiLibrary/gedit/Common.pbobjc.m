@@ -19,48 +19,48 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-#pragma mark - COMMONCommonRoot
+#pragma mark - GDACommonRoot
 
-@implementation COMMONCommonRoot
+@implementation GDACommonRoot
 
 // No extensions in the file and no imports, so no need to generate
 // +extensionRegistry.
 
 @end
 
-#pragma mark - COMMONCommonRoot_FileDescriptor
+#pragma mark - GDACommonRoot_FileDescriptor
 
-static GPBFileDescriptor *COMMONCommonRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDACommonRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit"
-                                                 objcPrefix:@"COMMON"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - Enum COMMONPaymentChannel
+#pragma mark - Enum GDAPaymentChannel
 
-GPBEnumDescriptor *COMMONPaymentChannel_EnumDescriptor(void) {
+GPBEnumDescriptor *GDAPaymentChannel_EnumDescriptor(void) {
   static GPBEnumDescriptor *descriptor = NULL;
   if (!descriptor) {
     static const char *valueNames =
         "Alipay\000Wechat\000Unionpay\000";
     static const int32_t values[] = {
-        COMMONPaymentChannel_Alipay,
-        COMMONPaymentChannel_Wechat,
-        COMMONPaymentChannel_Unionpay,
+        GDAPaymentChannel_Alipay,
+        GDAPaymentChannel_Wechat,
+        GDAPaymentChannel_Unionpay,
     };
     GPBEnumDescriptor *worker =
-        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(COMMONPaymentChannel)
+        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(GDAPaymentChannel)
                                        valueNames:valueNames
                                            values:values
                                             count:(uint32_t)(sizeof(values) / sizeof(int32_t))
-                                     enumVerifier:COMMONPaymentChannel_IsValidValue];
+                                     enumVerifier:GDAPaymentChannel_IsValidValue];
     if (!OSAtomicCompareAndSwapPtrBarrier(nil, worker, (void * volatile *)&descriptor)) {
       [worker release];
     }
@@ -68,38 +68,38 @@ GPBEnumDescriptor *COMMONPaymentChannel_EnumDescriptor(void) {
   return descriptor;
 }
 
-BOOL COMMONPaymentChannel_IsValidValue(int32_t value__) {
+BOOL GDAPaymentChannel_IsValidValue(int32_t value__) {
   switch (value__) {
-    case COMMONPaymentChannel_Alipay:
-    case COMMONPaymentChannel_Wechat:
-    case COMMONPaymentChannel_Unionpay:
+    case GDAPaymentChannel_Alipay:
+    case GDAPaymentChannel_Wechat:
+    case GDAPaymentChannel_Unionpay:
       return YES;
     default:
       return NO;
   }
 }
 
-#pragma mark - Enum COMMONAccountType
+#pragma mark - Enum GDAAccountType
 
-GPBEnumDescriptor *COMMONAccountType_EnumDescriptor(void) {
+GPBEnumDescriptor *GDAAccountType_EnumDescriptor(void) {
   static GPBEnumDescriptor *descriptor = NULL;
   if (!descriptor) {
     static const char *valueNames =
         "Cash\000CurrentPoints\000FixedPoints\000Redpack\000C"
         "oupon\000";
     static const int32_t values[] = {
-        COMMONAccountType_Cash,
-        COMMONAccountType_CurrentPoints,
-        COMMONAccountType_FixedPoints,
-        COMMONAccountType_Redpack,
-        COMMONAccountType_Coupon,
+        GDAAccountType_Cash,
+        GDAAccountType_CurrentPoints,
+        GDAAccountType_FixedPoints,
+        GDAAccountType_Redpack,
+        GDAAccountType_Coupon,
     };
     GPBEnumDescriptor *worker =
-        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(COMMONAccountType)
+        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(GDAAccountType)
                                        valueNames:valueNames
                                            values:values
                                             count:(uint32_t)(sizeof(values) / sizeof(int32_t))
-                                     enumVerifier:COMMONAccountType_IsValidValue];
+                                     enumVerifier:GDAAccountType_IsValidValue];
     if (!OSAtomicCompareAndSwapPtrBarrier(nil, worker, (void * volatile *)&descriptor)) {
       [worker release];
     }
@@ -107,31 +107,31 @@ GPBEnumDescriptor *COMMONAccountType_EnumDescriptor(void) {
   return descriptor;
 }
 
-BOOL COMMONAccountType_IsValidValue(int32_t value__) {
+BOOL GDAAccountType_IsValidValue(int32_t value__) {
   switch (value__) {
-    case COMMONAccountType_Cash:
-    case COMMONAccountType_CurrentPoints:
-    case COMMONAccountType_FixedPoints:
-    case COMMONAccountType_Redpack:
-    case COMMONAccountType_Coupon:
+    case GDAAccountType_Cash:
+    case GDAAccountType_CurrentPoints:
+    case GDAAccountType_FixedPoints:
+    case GDAAccountType_Redpack:
+    case GDAAccountType_Coupon:
       return YES;
     default:
       return NO;
   }
 }
 
-#pragma mark - COMMONStatus
+#pragma mark - GDAStatus
 
-@implementation COMMONStatus
+@implementation GDAStatus
 
 @dynamic code;
 @dynamic details;
 
-typedef struct COMMONStatus__storage_ {
+typedef struct GDAStatus__storage_ {
   uint32_t _has_storage_[1];
-  COMMONStatus_Code code;
+  GDAStatus_Code code;
   NSString *details;
-} COMMONStatus__storage_;
+} GDAStatus__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -141,30 +141,30 @@ typedef struct COMMONStatus__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "code",
-        .dataTypeSpecific.enumDescFunc = COMMONStatus_Code_EnumDescriptor,
-        .number = COMMONStatus_FieldNumber_Code,
+        .dataTypeSpecific.enumDescFunc = GDAStatus_Code_EnumDescriptor,
+        .number = GDAStatus_FieldNumber_Code,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(COMMONStatus__storage_, code),
+        .offset = (uint32_t)offsetof(GDAStatus__storage_, code),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor),
         .dataType = GPBDataTypeEnum,
       },
       {
         .name = "details",
         .dataTypeSpecific.className = NULL,
-        .number = COMMONStatus_FieldNumber_Details,
+        .number = GDAStatus_FieldNumber_Details,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(COMMONStatus__storage_, details),
+        .offset = (uint32_t)offsetof(GDAStatus__storage_, details),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[COMMONStatus class]
-                                     rootClass:[COMMONCommonRoot class]
-                                          file:COMMONCommonRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAStatus class]
+                                     rootClass:[GDACommonRoot class]
+                                          file:GDACommonRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(COMMONStatus__storage_)
+                                   storageSize:sizeof(GDAStatus__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -174,21 +174,21 @@ typedef struct COMMONStatus__storage_ {
 
 @end
 
-int32_t COMMONStatus_Code_RawValue(COMMONStatus *message) {
-  GPBDescriptor *descriptor = [COMMONStatus descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:COMMONStatus_FieldNumber_Code];
+int32_t GDAStatus_Code_RawValue(GDAStatus *message) {
+  GPBDescriptor *descriptor = [GDAStatus descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDAStatus_FieldNumber_Code];
   return GPBGetMessageInt32Field(message, field);
 }
 
-void SetCOMMONStatus_Code_RawValue(COMMONStatus *message, int32_t value) {
-  GPBDescriptor *descriptor = [COMMONStatus descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:COMMONStatus_FieldNumber_Code];
+void SetGDAStatus_Code_RawValue(GDAStatus *message, int32_t value) {
+  GPBDescriptor *descriptor = [GDAStatus descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDAStatus_FieldNumber_Code];
   GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
 }
 
-#pragma mark - Enum COMMONStatus_Code
+#pragma mark - Enum GDAStatus_Code
 
-GPBEnumDescriptor *COMMONStatus_Code_EnumDescriptor(void) {
+GPBEnumDescriptor *GDAStatus_Code_EnumDescriptor(void) {
   static GPBEnumDescriptor *descriptor = NULL;
   if (!descriptor) {
     static const char *valueNames =
@@ -199,30 +199,30 @@ GPBEnumDescriptor *COMMONStatus_Code_EnumDescriptor(void) {
         "ted\000Internal\000Unavailable\000DataLoss\000Unauth"
         "enticated\000";
     static const int32_t values[] = {
-        COMMONStatus_Code_Ok,
-        COMMONStatus_Code_Cancelled,
-        COMMONStatus_Code_Unknown,
-        COMMONStatus_Code_InvalidArgument,
-        COMMONStatus_Code_DeadlineExceeded,
-        COMMONStatus_Code_NotFound,
-        COMMONStatus_Code_AlreadyExists,
-        COMMONStatus_Code_PermissionDenied,
-        COMMONStatus_Code_ResourceExhausted,
-        COMMONStatus_Code_FailedPrecondition,
-        COMMONStatus_Code_Aborted,
-        COMMONStatus_Code_OutOfRange,
-        COMMONStatus_Code_Unimplemented,
-        COMMONStatus_Code_Internal,
-        COMMONStatus_Code_Unavailable,
-        COMMONStatus_Code_DataLoss,
-        COMMONStatus_Code_Unauthenticated,
+        GDAStatus_Code_Ok,
+        GDAStatus_Code_Cancelled,
+        GDAStatus_Code_Unknown,
+        GDAStatus_Code_InvalidArgument,
+        GDAStatus_Code_DeadlineExceeded,
+        GDAStatus_Code_NotFound,
+        GDAStatus_Code_AlreadyExists,
+        GDAStatus_Code_PermissionDenied,
+        GDAStatus_Code_ResourceExhausted,
+        GDAStatus_Code_FailedPrecondition,
+        GDAStatus_Code_Aborted,
+        GDAStatus_Code_OutOfRange,
+        GDAStatus_Code_Unimplemented,
+        GDAStatus_Code_Internal,
+        GDAStatus_Code_Unavailable,
+        GDAStatus_Code_DataLoss,
+        GDAStatus_Code_Unauthenticated,
     };
     GPBEnumDescriptor *worker =
-        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(COMMONStatus_Code)
+        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(GDAStatus_Code)
                                        valueNames:valueNames
                                            values:values
                                             count:(uint32_t)(sizeof(values) / sizeof(int32_t))
-                                     enumVerifier:COMMONStatus_Code_IsValidValue];
+                                     enumVerifier:GDAStatus_Code_IsValidValue];
     if (!OSAtomicCompareAndSwapPtrBarrier(nil, worker, (void * volatile *)&descriptor)) {
       [worker release];
     }
@@ -230,43 +230,43 @@ GPBEnumDescriptor *COMMONStatus_Code_EnumDescriptor(void) {
   return descriptor;
 }
 
-BOOL COMMONStatus_Code_IsValidValue(int32_t value__) {
+BOOL GDAStatus_Code_IsValidValue(int32_t value__) {
   switch (value__) {
-    case COMMONStatus_Code_Ok:
-    case COMMONStatus_Code_Cancelled:
-    case COMMONStatus_Code_Unknown:
-    case COMMONStatus_Code_InvalidArgument:
-    case COMMONStatus_Code_DeadlineExceeded:
-    case COMMONStatus_Code_NotFound:
-    case COMMONStatus_Code_AlreadyExists:
-    case COMMONStatus_Code_PermissionDenied:
-    case COMMONStatus_Code_ResourceExhausted:
-    case COMMONStatus_Code_FailedPrecondition:
-    case COMMONStatus_Code_Aborted:
-    case COMMONStatus_Code_OutOfRange:
-    case COMMONStatus_Code_Unimplemented:
-    case COMMONStatus_Code_Internal:
-    case COMMONStatus_Code_Unavailable:
-    case COMMONStatus_Code_DataLoss:
-    case COMMONStatus_Code_Unauthenticated:
+    case GDAStatus_Code_Ok:
+    case GDAStatus_Code_Cancelled:
+    case GDAStatus_Code_Unknown:
+    case GDAStatus_Code_InvalidArgument:
+    case GDAStatus_Code_DeadlineExceeded:
+    case GDAStatus_Code_NotFound:
+    case GDAStatus_Code_AlreadyExists:
+    case GDAStatus_Code_PermissionDenied:
+    case GDAStatus_Code_ResourceExhausted:
+    case GDAStatus_Code_FailedPrecondition:
+    case GDAStatus_Code_Aborted:
+    case GDAStatus_Code_OutOfRange:
+    case GDAStatus_Code_Unimplemented:
+    case GDAStatus_Code_Internal:
+    case GDAStatus_Code_Unavailable:
+    case GDAStatus_Code_DataLoss:
+    case GDAStatus_Code_Unauthenticated:
       return YES;
     default:
       return NO;
   }
 }
 
-#pragma mark - COMMONLocation
+#pragma mark - GDALocation
 
-@implementation COMMONLocation
+@implementation GDALocation
 
 @dynamic lat;
 @dynamic lon;
 
-typedef struct COMMONLocation__storage_ {
+typedef struct GDALocation__storage_ {
   uint32_t _has_storage_[1];
   double lat;
   double lon;
-} COMMONLocation__storage_;
+} GDALocation__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -277,29 +277,29 @@ typedef struct COMMONLocation__storage_ {
       {
         .name = "lat",
         .dataTypeSpecific.className = NULL,
-        .number = COMMONLocation_FieldNumber_Lat,
+        .number = GDALocation_FieldNumber_Lat,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(COMMONLocation__storage_, lat),
+        .offset = (uint32_t)offsetof(GDALocation__storage_, lat),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeDouble,
       },
       {
         .name = "lon",
         .dataTypeSpecific.className = NULL,
-        .number = COMMONLocation_FieldNumber_Lon,
+        .number = GDALocation_FieldNumber_Lon,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(COMMONLocation__storage_, lon),
+        .offset = (uint32_t)offsetof(GDALocation__storage_, lon),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeDouble,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[COMMONLocation class]
-                                     rootClass:[COMMONCommonRoot class]
-                                          file:COMMONCommonRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDALocation class]
+                                     rootClass:[GDACommonRoot class]
+                                          file:GDACommonRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(COMMONLocation__storage_)
+                                   storageSize:sizeof(GDALocation__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -309,16 +309,16 @@ typedef struct COMMONLocation__storage_ {
 
 @end
 
-#pragma mark - COMMONListString
+#pragma mark - GDAListString
 
-@implementation COMMONListString
+@implementation GDAListString
 
 @dynamic strsArray, strsArray_Count;
 
-typedef struct COMMONListString__storage_ {
+typedef struct GDAListString__storage_ {
   uint32_t _has_storage_[1];
   NSMutableArray *strsArray;
-} COMMONListString__storage_;
+} GDAListString__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -329,20 +329,20 @@ typedef struct COMMONListString__storage_ {
       {
         .name = "strsArray",
         .dataTypeSpecific.className = NULL,
-        .number = COMMONListString_FieldNumber_StrsArray,
+        .number = GDAListString_FieldNumber_StrsArray,
         .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(COMMONListString__storage_, strsArray),
+        .offset = (uint32_t)offsetof(GDAListString__storage_, strsArray),
         .flags = GPBFieldRepeated,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[COMMONListString class]
-                                     rootClass:[COMMONCommonRoot class]
-                                          file:COMMONCommonRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListString class]
+                                     rootClass:[GDACommonRoot class]
+                                          file:GDACommonRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(COMMONListString__storage_)
+                                   storageSize:sizeof(GDAListString__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -352,9 +352,9 @@ typedef struct COMMONListString__storage_ {
 
 @end
 
-#pragma mark - COMMONDistrict
+#pragma mark - GDADistrict
 
-@implementation COMMONDistrict
+@implementation GDADistrict
 
 @dynamic id_p;
 @dynamic pid;
@@ -364,7 +364,7 @@ typedef struct COMMONListString__storage_ {
 @dynamic center;
 @dynamic level;
 
-typedef struct COMMONDistrict__storage_ {
+typedef struct GDADistrict__storage_ {
   uint32_t _has_storage_[1];
   NSString *id_p;
   NSString *pid;
@@ -373,7 +373,7 @@ typedef struct COMMONDistrict__storage_ {
   NSString *name;
   NSString *center;
   NSString *level;
-} COMMONDistrict__storage_;
+} GDADistrict__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -384,74 +384,74 @@ typedef struct COMMONDistrict__storage_ {
       {
         .name = "id_p",
         .dataTypeSpecific.className = NULL,
-        .number = COMMONDistrict_FieldNumber_Id_p,
+        .number = GDADistrict_FieldNumber_Id_p,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(COMMONDistrict__storage_, id_p),
+        .offset = (uint32_t)offsetof(GDADistrict__storage_, id_p),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "pid",
         .dataTypeSpecific.className = NULL,
-        .number = COMMONDistrict_FieldNumber_Pid,
+        .number = GDADistrict_FieldNumber_Pid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(COMMONDistrict__storage_, pid),
+        .offset = (uint32_t)offsetof(GDADistrict__storage_, pid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "citycode",
         .dataTypeSpecific.className = NULL,
-        .number = COMMONDistrict_FieldNumber_Citycode,
+        .number = GDADistrict_FieldNumber_Citycode,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(COMMONDistrict__storage_, citycode),
+        .offset = (uint32_t)offsetof(GDADistrict__storage_, citycode),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "adcode",
         .dataTypeSpecific.className = NULL,
-        .number = COMMONDistrict_FieldNumber_Adcode,
+        .number = GDADistrict_FieldNumber_Adcode,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(COMMONDistrict__storage_, adcode),
+        .offset = (uint32_t)offsetof(GDADistrict__storage_, adcode),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "name",
         .dataTypeSpecific.className = NULL,
-        .number = COMMONDistrict_FieldNumber_Name,
+        .number = GDADistrict_FieldNumber_Name,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(COMMONDistrict__storage_, name),
+        .offset = (uint32_t)offsetof(GDADistrict__storage_, name),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "center",
         .dataTypeSpecific.className = NULL,
-        .number = COMMONDistrict_FieldNumber_Center,
+        .number = GDADistrict_FieldNumber_Center,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(COMMONDistrict__storage_, center),
+        .offset = (uint32_t)offsetof(GDADistrict__storage_, center),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "level",
         .dataTypeSpecific.className = NULL,
-        .number = COMMONDistrict_FieldNumber_Level,
+        .number = GDADistrict_FieldNumber_Level,
         .hasIndex = 6,
-        .offset = (uint32_t)offsetof(COMMONDistrict__storage_, level),
+        .offset = (uint32_t)offsetof(GDADistrict__storage_, level),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[COMMONDistrict class]
-                                     rootClass:[COMMONCommonRoot class]
-                                          file:COMMONCommonRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDADistrict class]
+                                     rootClass:[GDACommonRoot class]
+                                          file:GDACommonRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(COMMONDistrict__storage_)
+                                   storageSize:sizeof(GDADistrict__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;

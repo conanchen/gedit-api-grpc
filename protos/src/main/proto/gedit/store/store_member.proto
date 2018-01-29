@@ -4,7 +4,7 @@ package gedit.store;
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.store.member.grpc";
 option java_outer_classname = "StoreMemberProto";
-option objc_class_prefix = "STMEM";
+option objc_class_prefix = "GDA";
 
 import "gedit/common.proto";
 

@@ -8,9 +8,9 @@
 #import <RxLibrary/GRXWriter.h>
 
 #if GPB_GRPC_FORWARD_DECLARE_MESSAGE_PROTO
-  @class PRDPRDGetProductRequest;
-  @class PRDPRDListProductRequest;
-  @class PRDPRDProductResponse;
+  @class GDAGetProductRequest;
+  @class GDAListProductRequest;
+  @class GDAProductResponse;
 #else
   #import "gedit/Common.pbobjc.h"
 #endif
@@ -18,20 +18,20 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol PRDPRDProductApi <NSObject>
+@protocol GDAProductApi <NSObject>
 
 #pragma mark Get(GetProductRequest) returns (ProductResponse)
 
-- (void)getWithRequest:(PRDPRDGetProductRequest *)request handler:(void(^)(PRDPRDProductResponse *_Nullable response, NSError *_Nullable error))handler;
+- (void)getWithRequest:(GDAGetProductRequest *)request handler:(void(^)(GDAProductResponse *_Nullable response, NSError *_Nullable error))handler;
 
-- (GRPCProtoCall *)RPCToGetWithRequest:(PRDPRDGetProductRequest *)request handler:(void(^)(PRDPRDProductResponse *_Nullable response, NSError *_Nullable error))handler;
+- (GRPCProtoCall *)RPCToGetWithRequest:(GDAGetProductRequest *)request handler:(void(^)(GDAProductResponse *_Nullable response, NSError *_Nullable error))handler;
 
 
 #pragma mark List(ListProductRequest) returns (stream ProductResponse)
 
-- (void)listWithRequest:(PRDPRDListProductRequest *)request eventHandler:(void(^)(BOOL done, PRDPRDProductResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (void)listWithRequest:(GDAListProductRequest *)request eventHandler:(void(^)(BOOL done, GDAProductResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
-- (GRPCProtoCall *)RPCToListWithRequest:(PRDPRDListProductRequest *)request eventHandler:(void(^)(BOOL done, PRDPRDProductResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (GRPCProtoCall *)RPCToListWithRequest:(GDAListProductRequest *)request eventHandler:(void(^)(BOOL done, GDAProductResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
 
 @end
@@ -40,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Basic service implementation, over gRPC, that only does
  * marshalling and parsing.
  */
-@interface PRDPRDProductApi : GRPCProtoService<PRDPRDProductApi>
+@interface GDAProductApi : GRPCProtoService<GDAProductApi>
 - (instancetype)initWithHost:(NSString *)host NS_DESIGNATED_INITIALIZER;
 + (instancetype)serviceWithHost:(NSString *)host;
 @end

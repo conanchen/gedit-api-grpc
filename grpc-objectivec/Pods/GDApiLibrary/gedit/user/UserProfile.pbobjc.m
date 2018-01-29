@@ -21,42 +21,42 @@
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 #pragma clang diagnostic ignored "-Wdirect-ivar-access"
 
-#pragma mark - USRPROFUserProfileRoot
+#pragma mark - GDAUserProfileRoot
 
-@implementation USRPROFUserProfileRoot
+@implementation GDAUserProfileRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - USRPROFUserProfileRoot_FileDescriptor
+#pragma mark - GDAUserProfileRoot_FileDescriptor
 
-static GPBFileDescriptor *USRPROFUserProfileRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDAUserProfileRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.user"
-                                                 objcPrefix:@"USRPROF"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - USRPROFBanUserResponse
+#pragma mark - GDABanUserResponse
 
-@implementation USRPROFBanUserResponse
+@implementation GDABanUserResponse
 
 @dynamic hasStatus, status;
 @dynamic uuid;
 
-typedef struct USRPROFBanUserResponse__storage_ {
+typedef struct GDABanUserResponse__storage_ {
   uint32_t _has_storage_[1];
   NSString *uuid;
-  COMMONStatus *status;
-} USRPROFBanUserResponse__storage_;
+  GDAStatus *status;
+} GDABanUserResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -67,29 +67,29 @@ typedef struct USRPROFBanUserResponse__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = USRPROFBanUserResponse_FieldNumber_Uuid,
+        .number = GDABanUserResponse_FieldNumber_Uuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(USRPROFBanUserResponse__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDABanUserResponse__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = USRPROFBanUserResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDABanUserResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(USRPROFBanUserResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDABanUserResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRPROFBanUserResponse class]
-                                     rootClass:[USRPROFUserProfileRoot class]
-                                          file:USRPROFUserProfileRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDABanUserResponse class]
+                                     rootClass:[GDAUserProfileRoot class]
+                                          file:GDAUserProfileRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(USRPROFBanUserResponse__storage_)
+                                   storageSize:sizeof(GDABanUserResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -99,14 +99,14 @@ typedef struct USRPROFBanUserResponse__storage_ {
 
 @end
 
-#pragma mark - USRPROFGetMyProfileRequest
+#pragma mark - GDAGetMyProfileRequest
 
-@implementation USRPROFGetMyProfileRequest
+@implementation GDAGetMyProfileRequest
 
 
-typedef struct USRPROFGetMyProfileRequest__storage_ {
+typedef struct GDAGetMyProfileRequest__storage_ {
   uint32_t _has_storage_[1];
-} USRPROFGetMyProfileRequest__storage_;
+} GDAGetMyProfileRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -114,12 +114,12 @@ typedef struct USRPROFGetMyProfileRequest__storage_ {
   static GPBDescriptor *descriptor = nil;
   if (!descriptor) {
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRPROFGetMyProfileRequest class]
-                                     rootClass:[USRPROFUserProfileRoot class]
-                                          file:USRPROFUserProfileRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAGetMyProfileRequest class]
+                                     rootClass:[GDAUserProfileRoot class]
+                                          file:GDAUserProfileRoot_FileDescriptor()
                                         fields:NULL
                                     fieldCount:0
-                                   storageSize:sizeof(USRPROFGetMyProfileRequest__storage_)
+                                   storageSize:sizeof(GDAGetMyProfileRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -129,16 +129,16 @@ typedef struct USRPROFGetMyProfileRequest__storage_ {
 
 @end
 
-#pragma mark - USRPROFListRequest
+#pragma mark - GDAListRequest
 
-@implementation USRPROFListRequest
+@implementation GDAListRequest
 
 @dynamic page;
 
-typedef struct USRPROFListRequest__storage_ {
+typedef struct GDAListRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t page;
-} USRPROFListRequest__storage_;
+} GDAListRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -149,20 +149,20 @@ typedef struct USRPROFListRequest__storage_ {
       {
         .name = "page",
         .dataTypeSpecific.className = NULL,
-        .number = USRPROFListRequest_FieldNumber_Page,
+        .number = GDAListRequest_FieldNumber_Page,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(USRPROFListRequest__storage_, page),
+        .offset = (uint32_t)offsetof(GDAListRequest__storage_, page),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRPROFListRequest class]
-                                     rootClass:[USRPROFUserProfileRoot class]
-                                          file:USRPROFUserProfileRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListRequest class]
+                                     rootClass:[GDAUserProfileRoot class]
+                                          file:GDAUserProfileRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(USRPROFListRequest__storage_)
+                                   storageSize:sizeof(GDAListRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -172,16 +172,16 @@ typedef struct USRPROFListRequest__storage_ {
 
 @end
 
-#pragma mark - USRPROFGetRequest
+#pragma mark - GDAGetRequest
 
-@implementation USRPROFGetRequest
+@implementation GDAGetRequest
 
 @dynamic uuid;
 
-typedef struct USRPROFGetRequest__storage_ {
+typedef struct GDAGetRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *uuid;
-} USRPROFGetRequest__storage_;
+} GDAGetRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -192,20 +192,20 @@ typedef struct USRPROFGetRequest__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = USRPROFGetRequest_FieldNumber_Uuid,
+        .number = GDAGetRequest_FieldNumber_Uuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(USRPROFGetRequest__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDAGetRequest__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRPROFGetRequest class]
-                                     rootClass:[USRPROFUserProfileRoot class]
-                                          file:USRPROFUserProfileRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAGetRequest class]
+                                     rootClass:[GDAUserProfileRoot class]
+                                          file:GDAUserProfileRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(USRPROFGetRequest__storage_)
+                                   storageSize:sizeof(GDAGetRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -215,17 +215,17 @@ typedef struct USRPROFGetRequest__storage_ {
 
 @end
 
-#pragma mark - USRPROFBanUserRequest
+#pragma mark - GDABanUserRequest
 
-@implementation USRPROFBanUserRequest
+@implementation GDABanUserRequest
 
 @dynamic uuid;
 @dynamic active;
 
-typedef struct USRPROFBanUserRequest__storage_ {
+typedef struct GDABanUserRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *uuid;
-} USRPROFBanUserRequest__storage_;
+} GDABanUserRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -236,16 +236,16 @@ typedef struct USRPROFBanUserRequest__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = USRPROFBanUserRequest_FieldNumber_Uuid,
+        .number = GDABanUserRequest_FieldNumber_Uuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(USRPROFBanUserRequest__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDABanUserRequest__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "active",
         .dataTypeSpecific.className = NULL,
-        .number = USRPROFBanUserRequest_FieldNumber_Active,
+        .number = GDABanUserRequest_FieldNumber_Active,
         .hasIndex = 1,
         .offset = 2,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
@@ -253,12 +253,12 @@ typedef struct USRPROFBanUserRequest__storage_ {
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRPROFBanUserRequest class]
-                                     rootClass:[USRPROFUserProfileRoot class]
-                                          file:USRPROFUserProfileRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDABanUserRequest class]
+                                     rootClass:[GDAUserProfileRoot class]
+                                          file:GDAUserProfileRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(USRPROFBanUserRequest__storage_)
+                                   storageSize:sizeof(GDABanUserRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -268,19 +268,19 @@ typedef struct USRPROFBanUserRequest__storage_ {
 
 @end
 
-#pragma mark - USRPROFBanResponse
+#pragma mark - GDABanResponse
 
-@implementation USRPROFBanResponse
+@implementation GDABanResponse
 
 @dynamic hasStatus, status;
 @dynamic uuid;
 @dynamic active;
 
-typedef struct USRPROFBanResponse__storage_ {
+typedef struct GDABanResponse__storage_ {
   uint32_t _has_storage_[1];
   NSString *uuid;
-  COMMONStatus *status;
-} USRPROFBanResponse__storage_;
+  GDAStatus *status;
+} GDABanResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -291,16 +291,16 @@ typedef struct USRPROFBanResponse__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = USRPROFBanResponse_FieldNumber_Uuid,
+        .number = GDABanResponse_FieldNumber_Uuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(USRPROFBanResponse__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDABanResponse__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "active",
         .dataTypeSpecific.className = NULL,
-        .number = USRPROFBanResponse_FieldNumber_Active,
+        .number = GDABanResponse_FieldNumber_Active,
         .hasIndex = 2,
         .offset = 3,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
@@ -308,21 +308,21 @@ typedef struct USRPROFBanResponse__storage_ {
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = USRPROFBanResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDABanResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(USRPROFBanResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDABanResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRPROFBanResponse class]
-                                     rootClass:[USRPROFUserProfileRoot class]
-                                          file:USRPROFUserProfileRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDABanResponse class]
+                                     rootClass:[GDAUserProfileRoot class]
+                                          file:GDAUserProfileRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(USRPROFBanResponse__storage_)
+                                   storageSize:sizeof(GDABanResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -332,16 +332,16 @@ typedef struct USRPROFBanResponse__storage_ {
 
 @end
 
-#pragma mark - USRPROFFindByMobileRequest
+#pragma mark - GDAFindByMobileRequest
 
-@implementation USRPROFFindByMobileRequest
+@implementation GDAFindByMobileRequest
 
 @dynamic mobile;
 
-typedef struct USRPROFFindByMobileRequest__storage_ {
+typedef struct GDAFindByMobileRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *mobile;
-} USRPROFFindByMobileRequest__storage_;
+} GDAFindByMobileRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -352,20 +352,20 @@ typedef struct USRPROFFindByMobileRequest__storage_ {
       {
         .name = "mobile",
         .dataTypeSpecific.className = NULL,
-        .number = USRPROFFindByMobileRequest_FieldNumber_Mobile,
+        .number = GDAFindByMobileRequest_FieldNumber_Mobile,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(USRPROFFindByMobileRequest__storage_, mobile),
+        .offset = (uint32_t)offsetof(GDAFindByMobileRequest__storage_, mobile),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRPROFFindByMobileRequest class]
-                                     rootClass:[USRPROFUserProfileRoot class]
-                                          file:USRPROFUserProfileRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAFindByMobileRequest class]
+                                     rootClass:[GDAUserProfileRoot class]
+                                          file:GDAUserProfileRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(USRPROFFindByMobileRequest__storage_)
+                                   storageSize:sizeof(GDAFindByMobileRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -375,18 +375,18 @@ typedef struct USRPROFFindByMobileRequest__storage_ {
 
 @end
 
-#pragma mark - USRPROFUserProfileResponse
+#pragma mark - GDAUserProfileResponse
 
-@implementation USRPROFUserProfileResponse
+@implementation GDAUserProfileResponse
 
 @dynamic hasStatus, status;
 @dynamic hasUserProfile, userProfile;
 
-typedef struct USRPROFUserProfileResponse__storage_ {
+typedef struct GDAUserProfileResponse__storage_ {
   uint32_t _has_storage_[1];
-  USRPROFUserProfile *userProfile;
-  COMMONStatus *status;
-} USRPROFUserProfileResponse__storage_;
+  GDAUserProfile *userProfile;
+  GDAStatus *status;
+} GDAUserProfileResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -396,30 +396,30 @@ typedef struct USRPROFUserProfileResponse__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "userProfile",
-        .dataTypeSpecific.className = GPBStringifySymbol(USRPROFUserProfile),
-        .number = USRPROFUserProfileResponse_FieldNumber_UserProfile,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAUserProfile),
+        .number = GDAUserProfileResponse_FieldNumber_UserProfile,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(USRPROFUserProfileResponse__storage_, userProfile),
+        .offset = (uint32_t)offsetof(GDAUserProfileResponse__storage_, userProfile),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = USRPROFUserProfileResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDAUserProfileResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(USRPROFUserProfileResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDAUserProfileResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRPROFUserProfileResponse class]
-                                     rootClass:[USRPROFUserProfileRoot class]
-                                          file:USRPROFUserProfileRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAUserProfileResponse class]
+                                     rootClass:[GDAUserProfileRoot class]
+                                          file:GDAUserProfileRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(USRPROFUserProfileResponse__storage_)
+                                   storageSize:sizeof(GDAUserProfileResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -434,9 +434,9 @@ typedef struct USRPROFUserProfileResponse__storage_ {
 
 @end
 
-#pragma mark - USRPROFUserProfile
+#pragma mark - GDAUserProfile
 
-@implementation USRPROFUserProfile
+@implementation GDAUserProfile
 
 @dynamic uuid;
 @dynamic mobile;
@@ -447,7 +447,7 @@ typedef struct USRPROFUserProfileResponse__storage_ {
 @dynamic hasPhotos, photos;
 @dynamic active;
 
-typedef struct USRPROFUserProfile__storage_ {
+typedef struct GDAUserProfile__storage_ {
   uint32_t _has_storage_[1];
   NSString *uuid;
   NSString *mobile;
@@ -455,8 +455,8 @@ typedef struct USRPROFUserProfile__storage_ {
   NSString *desc;
   NSString *logo;
   NSString *districtUuid;
-  COMMONListString *photos;
-} USRPROFUserProfile__storage_;
+  GDAListString *photos;
+} GDAUserProfile__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -467,70 +467,70 @@ typedef struct USRPROFUserProfile__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = USRPROFUserProfile_FieldNumber_Uuid,
+        .number = GDAUserProfile_FieldNumber_Uuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(USRPROFUserProfile__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDAUserProfile__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "mobile",
         .dataTypeSpecific.className = NULL,
-        .number = USRPROFUserProfile_FieldNumber_Mobile,
+        .number = GDAUserProfile_FieldNumber_Mobile,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(USRPROFUserProfile__storage_, mobile),
+        .offset = (uint32_t)offsetof(GDAUserProfile__storage_, mobile),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "username",
         .dataTypeSpecific.className = NULL,
-        .number = USRPROFUserProfile_FieldNumber_Username,
+        .number = GDAUserProfile_FieldNumber_Username,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(USRPROFUserProfile__storage_, username),
+        .offset = (uint32_t)offsetof(GDAUserProfile__storage_, username),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "desc",
         .dataTypeSpecific.className = NULL,
-        .number = USRPROFUserProfile_FieldNumber_Desc,
+        .number = GDAUserProfile_FieldNumber_Desc,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(USRPROFUserProfile__storage_, desc),
+        .offset = (uint32_t)offsetof(GDAUserProfile__storage_, desc),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "logo",
         .dataTypeSpecific.className = NULL,
-        .number = USRPROFUserProfile_FieldNumber_Logo,
+        .number = GDAUserProfile_FieldNumber_Logo,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(USRPROFUserProfile__storage_, logo),
+        .offset = (uint32_t)offsetof(GDAUserProfile__storage_, logo),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "districtUuid",
         .dataTypeSpecific.className = NULL,
-        .number = USRPROFUserProfile_FieldNumber_DistrictUuid,
+        .number = GDAUserProfile_FieldNumber_DistrictUuid,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(USRPROFUserProfile__storage_, districtUuid),
+        .offset = (uint32_t)offsetof(GDAUserProfile__storage_, districtUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "photos",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONListString),
-        .number = USRPROFUserProfile_FieldNumber_Photos,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAListString),
+        .number = GDAUserProfile_FieldNumber_Photos,
         .hasIndex = 6,
-        .offset = (uint32_t)offsetof(USRPROFUserProfile__storage_, photos),
+        .offset = (uint32_t)offsetof(GDAUserProfile__storage_, photos),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "active",
         .dataTypeSpecific.className = NULL,
-        .number = USRPROFUserProfile_FieldNumber_Active,
+        .number = GDAUserProfile_FieldNumber_Active,
         .hasIndex = 7,
         .offset = 8,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
@@ -538,12 +538,12 @@ typedef struct USRPROFUserProfile__storage_ {
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRPROFUserProfile class]
-                                     rootClass:[USRPROFUserProfileRoot class]
-                                          file:USRPROFUserProfileRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAUserProfile class]
+                                     rootClass:[GDAUserProfileRoot class]
+                                          file:GDAUserProfileRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(USRPROFUserProfile__storage_)
+                                   storageSize:sizeof(GDAUserProfile__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -558,9 +558,9 @@ typedef struct USRPROFUserProfile__storage_ {
 
 @end
 
-#pragma mark - USRPROFUpdateMyProfileRequest
+#pragma mark - GDAUpdateMyProfileRequest
 
-@implementation USRPROFUpdateMyProfileRequest
+@implementation GDAUpdateMyProfileRequest
 
 @dynamic propertyOneOfCase;
 @dynamic mobile;
@@ -571,15 +571,15 @@ typedef struct USRPROFUserProfile__storage_ {
 @dynamic photos;
 @dynamic active;
 
-typedef struct USRPROFUpdateMyProfileRequest__storage_ {
+typedef struct GDAUpdateMyProfileRequest__storage_ {
   uint32_t _has_storage_[2];
   NSString *mobile;
   NSString *username;
   NSString *desc;
   NSString *logo;
   NSString *districtUuid;
-  COMMONListString *photos;
-} USRPROFUpdateMyProfileRequest__storage_;
+  GDAListString *photos;
+} GDAUpdateMyProfileRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -590,61 +590,61 @@ typedef struct USRPROFUpdateMyProfileRequest__storage_ {
       {
         .name = "mobile",
         .dataTypeSpecific.className = NULL,
-        .number = USRPROFUpdateMyProfileRequest_FieldNumber_Mobile,
+        .number = GDAUpdateMyProfileRequest_FieldNumber_Mobile,
         .hasIndex = -1,
-        .offset = (uint32_t)offsetof(USRPROFUpdateMyProfileRequest__storage_, mobile),
+        .offset = (uint32_t)offsetof(GDAUpdateMyProfileRequest__storage_, mobile),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "username",
         .dataTypeSpecific.className = NULL,
-        .number = USRPROFUpdateMyProfileRequest_FieldNumber_Username,
+        .number = GDAUpdateMyProfileRequest_FieldNumber_Username,
         .hasIndex = -1,
-        .offset = (uint32_t)offsetof(USRPROFUpdateMyProfileRequest__storage_, username),
+        .offset = (uint32_t)offsetof(GDAUpdateMyProfileRequest__storage_, username),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "desc",
         .dataTypeSpecific.className = NULL,
-        .number = USRPROFUpdateMyProfileRequest_FieldNumber_Desc,
+        .number = GDAUpdateMyProfileRequest_FieldNumber_Desc,
         .hasIndex = -1,
-        .offset = (uint32_t)offsetof(USRPROFUpdateMyProfileRequest__storage_, desc),
+        .offset = (uint32_t)offsetof(GDAUpdateMyProfileRequest__storage_, desc),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "logo",
         .dataTypeSpecific.className = NULL,
-        .number = USRPROFUpdateMyProfileRequest_FieldNumber_Logo,
+        .number = GDAUpdateMyProfileRequest_FieldNumber_Logo,
         .hasIndex = -1,
-        .offset = (uint32_t)offsetof(USRPROFUpdateMyProfileRequest__storage_, logo),
+        .offset = (uint32_t)offsetof(GDAUpdateMyProfileRequest__storage_, logo),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "districtUuid",
         .dataTypeSpecific.className = NULL,
-        .number = USRPROFUpdateMyProfileRequest_FieldNumber_DistrictUuid,
+        .number = GDAUpdateMyProfileRequest_FieldNumber_DistrictUuid,
         .hasIndex = -1,
-        .offset = (uint32_t)offsetof(USRPROFUpdateMyProfileRequest__storage_, districtUuid),
+        .offset = (uint32_t)offsetof(GDAUpdateMyProfileRequest__storage_, districtUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "photos",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONListString),
-        .number = USRPROFUpdateMyProfileRequest_FieldNumber_Photos,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAListString),
+        .number = GDAUpdateMyProfileRequest_FieldNumber_Photos,
         .hasIndex = -1,
-        .offset = (uint32_t)offsetof(USRPROFUpdateMyProfileRequest__storage_, photos),
+        .offset = (uint32_t)offsetof(GDAUpdateMyProfileRequest__storage_, photos),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "active",
         .dataTypeSpecific.className = NULL,
-        .number = USRPROFUpdateMyProfileRequest_FieldNumber_Active,
+        .number = GDAUpdateMyProfileRequest_FieldNumber_Active,
         .hasIndex = -1,
         .offset = 0,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
@@ -652,12 +652,12 @@ typedef struct USRPROFUpdateMyProfileRequest__storage_ {
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRPROFUpdateMyProfileRequest class]
-                                     rootClass:[USRPROFUserProfileRoot class]
-                                          file:USRPROFUserProfileRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAUpdateMyProfileRequest class]
+                                     rootClass:[GDAUserProfileRoot class]
+                                          file:GDAUserProfileRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(USRPROFUpdateMyProfileRequest__storage_)
+                                   storageSize:sizeof(GDAUpdateMyProfileRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     static const char *oneofs[] = {
       "property",
@@ -678,21 +678,21 @@ typedef struct USRPROFUpdateMyProfileRequest__storage_ {
 
 @end
 
-void USRPROFUpdateMyProfileRequest_ClearPropertyOneOfCase(USRPROFUpdateMyProfileRequest *message) {
+void GDAUpdateMyProfileRequest_ClearPropertyOneOfCase(GDAUpdateMyProfileRequest *message) {
   GPBDescriptor *descriptor = [message descriptor];
   GPBOneofDescriptor *oneof = [descriptor.oneofs objectAtIndex:0];
   GPBMaybeClearOneof(message, oneof, -1, 0);
 }
-#pragma mark - USRPROFUpdateMyProfileResponse
+#pragma mark - GDAUpdateMyProfileResponse
 
-@implementation USRPROFUpdateMyProfileResponse
+@implementation GDAUpdateMyProfileResponse
 
 @dynamic hasStatus, status;
 
-typedef struct USRPROFUpdateMyProfileResponse__storage_ {
+typedef struct GDAUpdateMyProfileResponse__storage_ {
   uint32_t _has_storage_[1];
-  COMMONStatus *status;
-} USRPROFUpdateMyProfileResponse__storage_;
+  GDAStatus *status;
+} GDAUpdateMyProfileResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -702,21 +702,21 @@ typedef struct USRPROFUpdateMyProfileResponse__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = USRPROFUpdateMyProfileResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDAUpdateMyProfileResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(USRPROFUpdateMyProfileResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDAUpdateMyProfileResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRPROFUpdateMyProfileResponse class]
-                                     rootClass:[USRPROFUserProfileRoot class]
-                                          file:USRPROFUserProfileRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAUpdateMyProfileResponse class]
+                                     rootClass:[GDAUserProfileRoot class]
+                                          file:GDAUserProfileRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(USRPROFUpdateMyProfileResponse__storage_)
+                                   storageSize:sizeof(GDAUpdateMyProfileResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;

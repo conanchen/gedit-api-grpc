@@ -5,7 +5,7 @@
 #import <RxLibrary/GRXWriter+Immediate.h>
 #import "gedit/Common.pbobjc.h"
 
-@implementation PRDCTGCatalogApi
+@implementation GDACatalogApi
 
 // Designated initializer
 - (instancetype)initWithHost:(NSString *)host {
@@ -26,26 +26,26 @@
 
 #pragma mark Get(GetCatalogRequest) returns (CatalogResponse)
 
-- (void)getWithRequest:(PRDCTGGetCatalogRequest *)request handler:(void(^)(PRDCTGCatalogResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)getWithRequest:(GDAGetCatalogRequest *)request handler:(void(^)(GDACatalogResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToGetWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToGetWithRequest:(PRDCTGGetCatalogRequest *)request handler:(void(^)(PRDCTGCatalogResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToGetWithRequest:(GDAGetCatalogRequest *)request handler:(void(^)(GDACatalogResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"Get"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[PRDCTGCatalogResponse class]
+             responseClass:[GDACatalogResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 #pragma mark List(ListCatalogRequest) returns (stream CatalogResponse)
 
-- (void)listWithRequest:(PRDCTGListCatalogRequest *)request eventHandler:(void(^)(BOOL done, PRDCTGCatalogResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (void)listWithRequest:(GDAListCatalogRequest *)request eventHandler:(void(^)(BOOL done, GDACatalogResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   [[self RPCToListWithRequest:request eventHandler:eventHandler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToListWithRequest:(PRDCTGListCatalogRequest *)request eventHandler:(void(^)(BOOL done, PRDCTGCatalogResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (GRPCProtoCall *)RPCToListWithRequest:(GDAListCatalogRequest *)request eventHandler:(void(^)(BOOL done, GDACatalogResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   return [self RPCToMethod:@"List"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[PRDCTGCatalogResponse class]
+             responseClass:[GDACatalogResponse class]
         responsesWriteable:[GRXWriteable writeableWithEventHandler:eventHandler]];
 }
 @end

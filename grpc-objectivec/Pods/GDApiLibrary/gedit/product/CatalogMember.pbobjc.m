@@ -20,40 +20,40 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-#pragma mark - CTGMMBCatalogMemberRoot
+#pragma mark - GDACatalogMemberRoot
 
-@implementation CTGMMBCatalogMemberRoot
+@implementation GDACatalogMemberRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - CTGMMBCatalogMemberRoot_FileDescriptor
+#pragma mark - GDACatalogMemberRoot_FileDescriptor
 
-static GPBFileDescriptor *CTGMMBCatalogMemberRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDACatalogMemberRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.product"
-                                                 objcPrefix:@"CTGMMB"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - CTGMMBGetCatalogMemberRequest
+#pragma mark - GDAGetCatalogMemberRequest
 
-@implementation CTGMMBGetCatalogMemberRequest
+@implementation GDAGetCatalogMemberRequest
 
 @dynamic uuid;
 
-typedef struct CTGMMBGetCatalogMemberRequest__storage_ {
+typedef struct GDAGetCatalogMemberRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *uuid;
-} CTGMMBGetCatalogMemberRequest__storage_;
+} GDAGetCatalogMemberRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -64,20 +64,20 @@ typedef struct CTGMMBGetCatalogMemberRequest__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = CTGMMBGetCatalogMemberRequest_FieldNumber_Uuid,
+        .number = GDAGetCatalogMemberRequest_FieldNumber_Uuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(CTGMMBGetCatalogMemberRequest__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDAGetCatalogMemberRequest__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[CTGMMBGetCatalogMemberRequest class]
-                                     rootClass:[CTGMMBCatalogMemberRoot class]
-                                          file:CTGMMBCatalogMemberRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAGetCatalogMemberRequest class]
+                                     rootClass:[GDACatalogMemberRoot class]
+                                          file:GDACatalogMemberRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(CTGMMBGetCatalogMemberRequest__storage_)
+                                   storageSize:sizeof(GDAGetCatalogMemberRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -87,16 +87,16 @@ typedef struct CTGMMBGetCatalogMemberRequest__storage_ {
 
 @end
 
-#pragma mark - CTGMMBListCatalogMemberRequest
+#pragma mark - GDAListCatalogMemberRequest
 
-@implementation CTGMMBListCatalogMemberRequest
+@implementation GDAListCatalogMemberRequest
 
 @dynamic catalogUuid;
 
-typedef struct CTGMMBListCatalogMemberRequest__storage_ {
+typedef struct GDAListCatalogMemberRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *catalogUuid;
-} CTGMMBListCatalogMemberRequest__storage_;
+} GDAListCatalogMemberRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -107,20 +107,20 @@ typedef struct CTGMMBListCatalogMemberRequest__storage_ {
       {
         .name = "catalogUuid",
         .dataTypeSpecific.className = NULL,
-        .number = CTGMMBListCatalogMemberRequest_FieldNumber_CatalogUuid,
+        .number = GDAListCatalogMemberRequest_FieldNumber_CatalogUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(CTGMMBListCatalogMemberRequest__storage_, catalogUuid),
+        .offset = (uint32_t)offsetof(GDAListCatalogMemberRequest__storage_, catalogUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[CTGMMBListCatalogMemberRequest class]
-                                     rootClass:[CTGMMBCatalogMemberRoot class]
-                                          file:CTGMMBCatalogMemberRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListCatalogMemberRequest class]
+                                     rootClass:[GDACatalogMemberRoot class]
+                                          file:GDACatalogMemberRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(CTGMMBListCatalogMemberRequest__storage_)
+                                   storageSize:sizeof(GDAListCatalogMemberRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -135,18 +135,18 @@ typedef struct CTGMMBListCatalogMemberRequest__storage_ {
 
 @end
 
-#pragma mark - CTGMMBCatalogMemberResponse
+#pragma mark - GDACatalogMemberResponse
 
-@implementation CTGMMBCatalogMemberResponse
+@implementation GDACatalogMemberResponse
 
 @dynamic hasStatus, status;
 @dynamic hasCatalogMember, catalogMember;
 
-typedef struct CTGMMBCatalogMemberResponse__storage_ {
+typedef struct GDACatalogMemberResponse__storage_ {
   uint32_t _has_storage_[1];
-  CTGMMBCatalogMember *catalogMember;
-  COMMONStatus *status;
-} CTGMMBCatalogMemberResponse__storage_;
+  GDACatalogMember *catalogMember;
+  GDAStatus *status;
+} GDACatalogMemberResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -156,30 +156,30 @@ typedef struct CTGMMBCatalogMemberResponse__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "catalogMember",
-        .dataTypeSpecific.className = GPBStringifySymbol(CTGMMBCatalogMember),
-        .number = CTGMMBCatalogMemberResponse_FieldNumber_CatalogMember,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDACatalogMember),
+        .number = GDACatalogMemberResponse_FieldNumber_CatalogMember,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(CTGMMBCatalogMemberResponse__storage_, catalogMember),
+        .offset = (uint32_t)offsetof(GDACatalogMemberResponse__storage_, catalogMember),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = CTGMMBCatalogMemberResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDACatalogMemberResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(CTGMMBCatalogMemberResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDACatalogMemberResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[CTGMMBCatalogMemberResponse class]
-                                     rootClass:[CTGMMBCatalogMemberRoot class]
-                                          file:CTGMMBCatalogMemberRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDACatalogMemberResponse class]
+                                     rootClass:[GDACatalogMemberRoot class]
+                                          file:GDACatalogMemberRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(CTGMMBCatalogMemberResponse__storage_)
+                                   storageSize:sizeof(GDACatalogMemberResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -194,18 +194,18 @@ typedef struct CTGMMBCatalogMemberResponse__storage_ {
 
 @end
 
-#pragma mark - CTGMMBCatalogMember
+#pragma mark - GDACatalogMember
 
-@implementation CTGMMBCatalogMember
+@implementation GDACatalogMember
 
 @dynamic catalogUuid;
 @dynamic productUuid;
 
-typedef struct CTGMMBCatalogMember__storage_ {
+typedef struct GDACatalogMember__storage_ {
   uint32_t _has_storage_[1];
   NSString *catalogUuid;
   NSString *productUuid;
-} CTGMMBCatalogMember__storage_;
+} GDACatalogMember__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -216,29 +216,29 @@ typedef struct CTGMMBCatalogMember__storage_ {
       {
         .name = "catalogUuid",
         .dataTypeSpecific.className = NULL,
-        .number = CTGMMBCatalogMember_FieldNumber_CatalogUuid,
+        .number = GDACatalogMember_FieldNumber_CatalogUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(CTGMMBCatalogMember__storage_, catalogUuid),
+        .offset = (uint32_t)offsetof(GDACatalogMember__storage_, catalogUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "productUuid",
         .dataTypeSpecific.className = NULL,
-        .number = CTGMMBCatalogMember_FieldNumber_ProductUuid,
+        .number = GDACatalogMember_FieldNumber_ProductUuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(CTGMMBCatalogMember__storage_, productUuid),
+        .offset = (uint32_t)offsetof(GDACatalogMember__storage_, productUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[CTGMMBCatalogMember class]
-                                     rootClass:[CTGMMBCatalogMemberRoot class]
-                                          file:CTGMMBCatalogMemberRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDACatalogMember class]
+                                     rootClass:[GDACatalogMemberRoot class]
+                                          file:GDACatalogMemberRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(CTGMMBCatalogMember__storage_)
+                                   storageSize:sizeof(GDACatalogMember__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =

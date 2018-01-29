@@ -27,15 +27,15 @@
 
 CF_EXTERN_C_BEGIN
 
-@class ACCNTJournal;
-@class ACCNTPaymentCreatedEvent;
-@class ACCNTStoreVerifiedEvent;
-@class ACCNTUserVerifiedEvent;
-@class COMMONStatus;
+@class GDAJournal;
+@class GDAPaymentCreatedEvent;
+@class GDAStatus;
+@class GDAStoreVerifiedEvent;
+@class GDAUserVerifiedEvent;
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - ACCNTAccountingJournalRoot
+#pragma mark - GDAAccountingJournalRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -47,49 +47,49 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface ACCNTAccountingJournalRoot : GPBRootObject
+@interface GDAAccountingJournalRoot : GPBRootObject
 @end
 
-#pragma mark - ACCNTUpsertJournalRequest
+#pragma mark - GDAUpsertJournalRequest
 
-typedef GPB_ENUM(ACCNTUpsertJournalRequest_FieldNumber) {
-  ACCNTUpsertJournalRequest_FieldNumber_PaymentCreatedEvent = 1,
-  ACCNTUpsertJournalRequest_FieldNumber_UserVerifiedEvent = 2,
-  ACCNTUpsertJournalRequest_FieldNumber_StoreCreatedEvent = 3,
+typedef GPB_ENUM(GDAUpsertJournalRequest_FieldNumber) {
+  GDAUpsertJournalRequest_FieldNumber_PaymentCreatedEvent = 1,
+  GDAUpsertJournalRequest_FieldNumber_UserVerifiedEvent = 2,
+  GDAUpsertJournalRequest_FieldNumber_StoreCreatedEvent = 3,
 };
 
-typedef GPB_ENUM(ACCNTUpsertJournalRequest_Event_OneOfCase) {
-  ACCNTUpsertJournalRequest_Event_OneOfCase_GPBUnsetOneOfCase = 0,
-  ACCNTUpsertJournalRequest_Event_OneOfCase_PaymentCreatedEvent = 1,
-  ACCNTUpsertJournalRequest_Event_OneOfCase_UserVerifiedEvent = 2,
-  ACCNTUpsertJournalRequest_Event_OneOfCase_StoreCreatedEvent = 3,
+typedef GPB_ENUM(GDAUpsertJournalRequest_Event_OneOfCase) {
+  GDAUpsertJournalRequest_Event_OneOfCase_GPBUnsetOneOfCase = 0,
+  GDAUpsertJournalRequest_Event_OneOfCase_PaymentCreatedEvent = 1,
+  GDAUpsertJournalRequest_Event_OneOfCase_UserVerifiedEvent = 2,
+  GDAUpsertJournalRequest_Event_OneOfCase_StoreCreatedEvent = 3,
 };
 
-@interface ACCNTUpsertJournalRequest : GPBMessage
+@interface GDAUpsertJournalRequest : GPBMessage
 
-@property(nonatomic, readonly) ACCNTUpsertJournalRequest_Event_OneOfCase eventOneOfCase;
+@property(nonatomic, readonly) GDAUpsertJournalRequest_Event_OneOfCase eventOneOfCase;
 
-@property(nonatomic, readwrite, strong, null_resettable) ACCNTPaymentCreatedEvent *paymentCreatedEvent;
+@property(nonatomic, readwrite, strong, null_resettable) GDAPaymentCreatedEvent *paymentCreatedEvent;
 
-@property(nonatomic, readwrite, strong, null_resettable) ACCNTUserVerifiedEvent *userVerifiedEvent;
+@property(nonatomic, readwrite, strong, null_resettable) GDAUserVerifiedEvent *userVerifiedEvent;
 
-@property(nonatomic, readwrite, strong, null_resettable) ACCNTStoreVerifiedEvent *storeCreatedEvent;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStoreVerifiedEvent *storeCreatedEvent;
 
 @end
 
 /**
  * Clears whatever value was set for the oneof 'event'.
  **/
-void ACCNTUpsertJournalRequest_ClearEventOneOfCase(ACCNTUpsertJournalRequest *message);
+void GDAUpsertJournalRequest_ClearEventOneOfCase(GDAUpsertJournalRequest *message);
 
-#pragma mark - ACCNTListJournalRequest
+#pragma mark - GDAListJournalRequest
 
-typedef GPB_ENUM(ACCNTListJournalRequest_FieldNumber) {
-  ACCNTListJournalRequest_FieldNumber_From = 100,
-  ACCNTListJournalRequest_FieldNumber_Size = 101,
+typedef GPB_ENUM(GDAListJournalRequest_FieldNumber) {
+  GDAListJournalRequest_FieldNumber_From = 100,
+  GDAListJournalRequest_FieldNumber_Size = 101,
 };
 
-@interface ACCNTListJournalRequest : GPBMessage
+@interface GDAListJournalRequest : GPBMessage
 
 @property(nonatomic, readwrite) int32_t from;
 
@@ -97,68 +97,68 @@ typedef GPB_ENUM(ACCNTListJournalRequest_FieldNumber) {
 
 @end
 
-#pragma mark - ACCNTGetJournalRequest
+#pragma mark - GDAGetJournalRequest
 
-typedef GPB_ENUM(ACCNTGetJournalRequest_FieldNumber) {
-  ACCNTGetJournalRequest_FieldNumber_Uuid = 1,
+typedef GPB_ENUM(GDAGetJournalRequest_FieldNumber) {
+  GDAGetJournalRequest_FieldNumber_Uuid = 1,
 };
 
-@interface ACCNTGetJournalRequest : GPBMessage
+@interface GDAGetJournalRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
 
 @end
 
-#pragma mark - ACCNTJournalResponse
+#pragma mark - GDAJournalResponse
 
-typedef GPB_ENUM(ACCNTJournalResponse_FieldNumber) {
-  ACCNTJournalResponse_FieldNumber_Journal = 1,
-  ACCNTJournalResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAJournalResponse_FieldNumber) {
+  GDAJournalResponse_FieldNumber_Journal = 1,
+  GDAJournalResponse_FieldNumber_Status = 999,
 };
 
-@interface ACCNTJournalResponse : GPBMessage
+@interface GDAJournalResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
-@property(nonatomic, readwrite, strong, null_resettable) ACCNTJournal *journal;
+@property(nonatomic, readwrite, strong, null_resettable) GDAJournal *journal;
 /** Test to see if @c journal has been set. */
 @property(nonatomic, readwrite) BOOL hasJournal;
 
 @end
 
-#pragma mark - ACCNTJournal
+#pragma mark - GDAJournal
 
-typedef GPB_ENUM(ACCNTJournal_FieldNumber) {
-  ACCNTJournal_FieldNumber_PaymentCreatedEvent = 1,
-  ACCNTJournal_FieldNumber_UserVerifiedEvent = 2,
-  ACCNTJournal_FieldNumber_StoreVerifiedEvent = 3,
-  ACCNTJournal_FieldNumber_Uuid = 11,
-  ACCNTJournal_FieldNumber_Created = 12,
-  ACCNTJournal_FieldNumber_PostingsCreated = 34,
+typedef GPB_ENUM(GDAJournal_FieldNumber) {
+  GDAJournal_FieldNumber_PaymentCreatedEvent = 1,
+  GDAJournal_FieldNumber_UserVerifiedEvent = 2,
+  GDAJournal_FieldNumber_StoreVerifiedEvent = 3,
+  GDAJournal_FieldNumber_Uuid = 11,
+  GDAJournal_FieldNumber_Created = 12,
+  GDAJournal_FieldNumber_PostingsCreated = 34,
 };
 
-typedef GPB_ENUM(ACCNTJournal_Event_OneOfCase) {
-  ACCNTJournal_Event_OneOfCase_GPBUnsetOneOfCase = 0,
-  ACCNTJournal_Event_OneOfCase_PaymentCreatedEvent = 1,
-  ACCNTJournal_Event_OneOfCase_UserVerifiedEvent = 2,
-  ACCNTJournal_Event_OneOfCase_StoreVerifiedEvent = 3,
+typedef GPB_ENUM(GDAJournal_Event_OneOfCase) {
+  GDAJournal_Event_OneOfCase_GPBUnsetOneOfCase = 0,
+  GDAJournal_Event_OneOfCase_PaymentCreatedEvent = 1,
+  GDAJournal_Event_OneOfCase_UserVerifiedEvent = 2,
+  GDAJournal_Event_OneOfCase_StoreVerifiedEvent = 3,
 };
 
-@interface ACCNTJournal : GPBMessage
+@interface GDAJournal : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
 
 @property(nonatomic, readwrite) int64_t created;
 
-@property(nonatomic, readonly) ACCNTJournal_Event_OneOfCase eventOneOfCase;
+@property(nonatomic, readonly) GDAJournal_Event_OneOfCase eventOneOfCase;
 
-@property(nonatomic, readwrite, strong, null_resettable) ACCNTPaymentCreatedEvent *paymentCreatedEvent;
+@property(nonatomic, readwrite, strong, null_resettable) GDAPaymentCreatedEvent *paymentCreatedEvent;
 
-@property(nonatomic, readwrite, strong, null_resettable) ACCNTUserVerifiedEvent *userVerifiedEvent;
+@property(nonatomic, readwrite, strong, null_resettable) GDAUserVerifiedEvent *userVerifiedEvent;
 
-@property(nonatomic, readwrite, strong, null_resettable) ACCNTStoreVerifiedEvent *storeVerifiedEvent;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStoreVerifiedEvent *storeVerifiedEvent;
 
 @property(nonatomic, readwrite) int64_t postingsCreated;
 
@@ -167,7 +167,7 @@ typedef GPB_ENUM(ACCNTJournal_Event_OneOfCase) {
 /**
  * Clears whatever value was set for the oneof 'event'.
  **/
-void ACCNTJournal_ClearEventOneOfCase(ACCNTJournal *message);
+void GDAJournal_ClearEventOneOfCase(GDAJournal *message);
 
 NS_ASSUME_NONNULL_END
 

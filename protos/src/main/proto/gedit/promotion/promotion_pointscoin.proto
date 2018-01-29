@@ -18,7 +18,7 @@ package gedit.promotion;
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.promotion.pointscoin.grpc";
 option java_outer_classname = "PointsCoinProto";
-option objc_class_prefix = "PNTCPRM";
+option objc_class_prefix = "GDA";
 
 import "gedit/common.proto";
 

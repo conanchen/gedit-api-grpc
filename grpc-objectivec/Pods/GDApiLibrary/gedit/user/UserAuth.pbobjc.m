@@ -20,40 +20,40 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-#pragma mark - USRATHUserAuthRoot
+#pragma mark - GDAUserAuthRoot
 
-@implementation USRATHUserAuthRoot
+@implementation GDAUserAuthRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - USRATHUserAuthRoot_FileDescriptor
+#pragma mark - GDAUserAuthRoot_FileDescriptor
 
-static GPBFileDescriptor *USRATHUserAuthRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDAUserAuthRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.user"
-                                                 objcPrefix:@"USRATH"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - USRATHSigninQQRequest
+#pragma mark - GDASigninQQRequest
 
-@implementation USRATHSigninQQRequest
+@implementation GDASigninQQRequest
 
 @dynamic accessToken;
 
-typedef struct USRATHSigninQQRequest__storage_ {
+typedef struct GDASigninQQRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *accessToken;
-} USRATHSigninQQRequest__storage_;
+} GDASigninQQRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -64,20 +64,20 @@ typedef struct USRATHSigninQQRequest__storage_ {
       {
         .name = "accessToken",
         .dataTypeSpecific.className = NULL,
-        .number = USRATHSigninQQRequest_FieldNumber_AccessToken,
+        .number = GDASigninQQRequest_FieldNumber_AccessToken,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(USRATHSigninQQRequest__storage_, accessToken),
+        .offset = (uint32_t)offsetof(GDASigninQQRequest__storage_, accessToken),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRATHSigninQQRequest class]
-                                     rootClass:[USRATHUserAuthRoot class]
-                                          file:USRATHUserAuthRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDASigninQQRequest class]
+                                     rootClass:[GDAUserAuthRoot class]
+                                          file:GDAUserAuthRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(USRATHSigninQQRequest__storage_)
+                                   storageSize:sizeof(GDASigninQQRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -92,16 +92,16 @@ typedef struct USRATHSigninQQRequest__storage_ {
 
 @end
 
-#pragma mark - USRATHSigninWechatRequest
+#pragma mark - GDASigninWechatRequest
 
-@implementation USRATHSigninWechatRequest
+@implementation GDASigninWechatRequest
 
 @dynamic accessToken;
 
-typedef struct USRATHSigninWechatRequest__storage_ {
+typedef struct GDASigninWechatRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *accessToken;
-} USRATHSigninWechatRequest__storage_;
+} GDASigninWechatRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -112,20 +112,20 @@ typedef struct USRATHSigninWechatRequest__storage_ {
       {
         .name = "accessToken",
         .dataTypeSpecific.className = NULL,
-        .number = USRATHSigninWechatRequest_FieldNumber_AccessToken,
+        .number = GDASigninWechatRequest_FieldNumber_AccessToken,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(USRATHSigninWechatRequest__storage_, accessToken),
+        .offset = (uint32_t)offsetof(GDASigninWechatRequest__storage_, accessToken),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRATHSigninWechatRequest class]
-                                     rootClass:[USRATHUserAuthRoot class]
-                                          file:USRATHUserAuthRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDASigninWechatRequest class]
+                                     rootClass:[GDAUserAuthRoot class]
+                                          file:GDAUserAuthRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(USRATHSigninWechatRequest__storage_)
+                                   storageSize:sizeof(GDASigninWechatRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -140,16 +140,16 @@ typedef struct USRATHSigninWechatRequest__storage_ {
 
 @end
 
-#pragma mark - USRATHSigninWeiboRequest
+#pragma mark - GDASigninWeiboRequest
 
-@implementation USRATHSigninWeiboRequest
+@implementation GDASigninWeiboRequest
 
 @dynamic accessToken;
 
-typedef struct USRATHSigninWeiboRequest__storage_ {
+typedef struct GDASigninWeiboRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *accessToken;
-} USRATHSigninWeiboRequest__storage_;
+} GDASigninWeiboRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -160,20 +160,20 @@ typedef struct USRATHSigninWeiboRequest__storage_ {
       {
         .name = "accessToken",
         .dataTypeSpecific.className = NULL,
-        .number = USRATHSigninWeiboRequest_FieldNumber_AccessToken,
+        .number = GDASigninWeiboRequest_FieldNumber_AccessToken,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(USRATHSigninWeiboRequest__storage_, accessToken),
+        .offset = (uint32_t)offsetof(GDASigninWeiboRequest__storage_, accessToken),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRATHSigninWeiboRequest class]
-                                     rootClass:[USRATHUserAuthRoot class]
-                                          file:USRATHUserAuthRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDASigninWeiboRequest class]
+                                     rootClass:[GDAUserAuthRoot class]
+                                          file:GDAUserAuthRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(USRATHSigninWeiboRequest__storage_)
+                                   storageSize:sizeof(GDASigninWeiboRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -188,18 +188,18 @@ typedef struct USRATHSigninWeiboRequest__storage_ {
 
 @end
 
-#pragma mark - USRATHSigninWithPasswordRequest
+#pragma mark - GDASigninWithPasswordRequest
 
-@implementation USRATHSigninWithPasswordRequest
+@implementation GDASigninWithPasswordRequest
 
 @dynamic mobile;
 @dynamic password;
 
-typedef struct USRATHSigninWithPasswordRequest__storage_ {
+typedef struct GDASigninWithPasswordRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *mobile;
   NSString *password;
-} USRATHSigninWithPasswordRequest__storage_;
+} GDASigninWithPasswordRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -210,29 +210,29 @@ typedef struct USRATHSigninWithPasswordRequest__storage_ {
       {
         .name = "mobile",
         .dataTypeSpecific.className = NULL,
-        .number = USRATHSigninWithPasswordRequest_FieldNumber_Mobile,
+        .number = GDASigninWithPasswordRequest_FieldNumber_Mobile,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(USRATHSigninWithPasswordRequest__storage_, mobile),
+        .offset = (uint32_t)offsetof(GDASigninWithPasswordRequest__storage_, mobile),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "password",
         .dataTypeSpecific.className = NULL,
-        .number = USRATHSigninWithPasswordRequest_FieldNumber_Password,
+        .number = GDASigninWithPasswordRequest_FieldNumber_Password,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(USRATHSigninWithPasswordRequest__storage_, password),
+        .offset = (uint32_t)offsetof(GDASigninWithPasswordRequest__storage_, password),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRATHSigninWithPasswordRequest class]
-                                     rootClass:[USRATHUserAuthRoot class]
-                                          file:USRATHUserAuthRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDASigninWithPasswordRequest class]
+                                     rootClass:[GDAUserAuthRoot class]
+                                          file:GDAUserAuthRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(USRATHSigninWithPasswordRequest__storage_)
+                                   storageSize:sizeof(GDASigninWithPasswordRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -242,14 +242,14 @@ typedef struct USRATHSigninWithPasswordRequest__storage_ {
 
 @end
 
-#pragma mark - USRATHSmsStep1QuestionRequest
+#pragma mark - GDASmsStep1QuestionRequest
 
-@implementation USRATHSmsStep1QuestionRequest
+@implementation GDASmsStep1QuestionRequest
 
 
-typedef struct USRATHSmsStep1QuestionRequest__storage_ {
+typedef struct GDASmsStep1QuestionRequest__storage_ {
   uint32_t _has_storage_[1];
-} USRATHSmsStep1QuestionRequest__storage_;
+} GDASmsStep1QuestionRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -257,12 +257,12 @@ typedef struct USRATHSmsStep1QuestionRequest__storage_ {
   static GPBDescriptor *descriptor = nil;
   if (!descriptor) {
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRATHSmsStep1QuestionRequest class]
-                                     rootClass:[USRATHUserAuthRoot class]
-                                          file:USRATHUserAuthRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDASmsStep1QuestionRequest class]
+                                     rootClass:[GDAUserAuthRoot class]
+                                          file:GDAUserAuthRoot_FileDescriptor()
                                         fields:NULL
                                     fieldCount:0
-                                   storageSize:sizeof(USRATHSmsStep1QuestionRequest__storage_)
+                                   storageSize:sizeof(GDASmsStep1QuestionRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -272,20 +272,20 @@ typedef struct USRATHSmsStep1QuestionRequest__storage_ {
 
 @end
 
-#pragma mark - USRATHSmsStep1QuestionResponse
+#pragma mark - GDASmsStep1QuestionResponse
 
-@implementation USRATHSmsStep1QuestionResponse
+@implementation GDASmsStep1QuestionResponse
 
 @dynamic token;
 @dynamic questionTip;
 @dynamic questionArray, questionArray_Count;
 
-typedef struct USRATHSmsStep1QuestionResponse__storage_ {
+typedef struct GDASmsStep1QuestionResponse__storage_ {
   uint32_t _has_storage_[1];
   NSString *token;
   NSString *questionTip;
   NSMutableArray *questionArray;
-} USRATHSmsStep1QuestionResponse__storage_;
+} GDASmsStep1QuestionResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -296,38 +296,38 @@ typedef struct USRATHSmsStep1QuestionResponse__storage_ {
       {
         .name = "token",
         .dataTypeSpecific.className = NULL,
-        .number = USRATHSmsStep1QuestionResponse_FieldNumber_Token,
+        .number = GDASmsStep1QuestionResponse_FieldNumber_Token,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(USRATHSmsStep1QuestionResponse__storage_, token),
+        .offset = (uint32_t)offsetof(GDASmsStep1QuestionResponse__storage_, token),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "questionTip",
         .dataTypeSpecific.className = NULL,
-        .number = USRATHSmsStep1QuestionResponse_FieldNumber_QuestionTip,
+        .number = GDASmsStep1QuestionResponse_FieldNumber_QuestionTip,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(USRATHSmsStep1QuestionResponse__storage_, questionTip),
+        .offset = (uint32_t)offsetof(GDASmsStep1QuestionResponse__storage_, questionTip),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "questionArray",
-        .dataTypeSpecific.className = GPBStringifySymbol(USRATHQuestion),
-        .number = USRATHSmsStep1QuestionResponse_FieldNumber_QuestionArray,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAQuestion),
+        .number = GDASmsStep1QuestionResponse_FieldNumber_QuestionArray,
         .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(USRATHSmsStep1QuestionResponse__storage_, questionArray),
+        .offset = (uint32_t)offsetof(GDASmsStep1QuestionResponse__storage_, questionArray),
         .flags = GPBFieldRepeated,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRATHSmsStep1QuestionResponse class]
-                                     rootClass:[USRATHUserAuthRoot class]
-                                          file:USRATHUserAuthRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDASmsStep1QuestionResponse class]
+                                     rootClass:[GDAUserAuthRoot class]
+                                          file:GDAUserAuthRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(USRATHSmsStep1QuestionResponse__storage_)
+                                   storageSize:sizeof(GDASmsStep1QuestionResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -342,18 +342,18 @@ typedef struct USRATHSmsStep1QuestionResponse__storage_ {
 
 @end
 
-#pragma mark - USRATHQuestion
+#pragma mark - GDAQuestion
 
-@implementation USRATHQuestion
+@implementation GDAQuestion
 
 @dynamic uuid;
 @dynamic image;
 
-typedef struct USRATHQuestion__storage_ {
+typedef struct GDAQuestion__storage_ {
   uint32_t _has_storage_[1];
   NSString *uuid;
   NSString *image;
-} USRATHQuestion__storage_;
+} GDAQuestion__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -364,29 +364,29 @@ typedef struct USRATHQuestion__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = USRATHQuestion_FieldNumber_Uuid,
+        .number = GDAQuestion_FieldNumber_Uuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(USRATHQuestion__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDAQuestion__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "image",
         .dataTypeSpecific.className = NULL,
-        .number = USRATHQuestion_FieldNumber_Image,
+        .number = GDAQuestion_FieldNumber_Image,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(USRATHQuestion__storage_, image),
+        .offset = (uint32_t)offsetof(GDAQuestion__storage_, image),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRATHQuestion class]
-                                     rootClass:[USRATHUserAuthRoot class]
-                                          file:USRATHUserAuthRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAQuestion class]
+                                     rootClass:[GDAUserAuthRoot class]
+                                          file:GDAUserAuthRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(USRATHQuestion__storage_)
+                                   storageSize:sizeof(GDAQuestion__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -396,20 +396,20 @@ typedef struct USRATHQuestion__storage_ {
 
 @end
 
-#pragma mark - USRATHSmsStep2AnswerRequest
+#pragma mark - GDASmsStep2AnswerRequest
 
-@implementation USRATHSmsStep2AnswerRequest
+@implementation GDASmsStep2AnswerRequest
 
 @dynamic mobile;
 @dynamic token;
 @dynamic questionUuidArray, questionUuidArray_Count;
 
-typedef struct USRATHSmsStep2AnswerRequest__storage_ {
+typedef struct GDASmsStep2AnswerRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *mobile;
   NSString *token;
   NSMutableArray *questionUuidArray;
-} USRATHSmsStep2AnswerRequest__storage_;
+} GDASmsStep2AnswerRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -420,38 +420,38 @@ typedef struct USRATHSmsStep2AnswerRequest__storage_ {
       {
         .name = "mobile",
         .dataTypeSpecific.className = NULL,
-        .number = USRATHSmsStep2AnswerRequest_FieldNumber_Mobile,
+        .number = GDASmsStep2AnswerRequest_FieldNumber_Mobile,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(USRATHSmsStep2AnswerRequest__storage_, mobile),
+        .offset = (uint32_t)offsetof(GDASmsStep2AnswerRequest__storage_, mobile),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "token",
         .dataTypeSpecific.className = NULL,
-        .number = USRATHSmsStep2AnswerRequest_FieldNumber_Token,
+        .number = GDASmsStep2AnswerRequest_FieldNumber_Token,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(USRATHSmsStep2AnswerRequest__storage_, token),
+        .offset = (uint32_t)offsetof(GDASmsStep2AnswerRequest__storage_, token),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "questionUuidArray",
         .dataTypeSpecific.className = NULL,
-        .number = USRATHSmsStep2AnswerRequest_FieldNumber_QuestionUuidArray,
+        .number = GDASmsStep2AnswerRequest_FieldNumber_QuestionUuidArray,
         .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(USRATHSmsStep2AnswerRequest__storage_, questionUuidArray),
+        .offset = (uint32_t)offsetof(GDASmsStep2AnswerRequest__storage_, questionUuidArray),
         .flags = (GPBFieldFlags)(GPBFieldRepeated | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRATHSmsStep2AnswerRequest class]
-                                     rootClass:[USRATHUserAuthRoot class]
-                                          file:USRATHUserAuthRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDASmsStep2AnswerRequest class]
+                                     rootClass:[GDAUserAuthRoot class]
+                                          file:GDAUserAuthRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(USRATHSmsStep2AnswerRequest__storage_)
+                                   storageSize:sizeof(GDASmsStep2AnswerRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -466,16 +466,16 @@ typedef struct USRATHSmsStep2AnswerRequest__storage_ {
 
 @end
 
-#pragma mark - USRATHSmsStep2AnswerResponse
+#pragma mark - GDASmsStep2AnswerResponse
 
-@implementation USRATHSmsStep2AnswerResponse
+@implementation GDASmsStep2AnswerResponse
 
 @dynamic hasStatus, status;
 
-typedef struct USRATHSmsStep2AnswerResponse__storage_ {
+typedef struct GDASmsStep2AnswerResponse__storage_ {
   uint32_t _has_storage_[1];
-  COMMONStatus *status;
-} USRATHSmsStep2AnswerResponse__storage_;
+  GDAStatus *status;
+} GDASmsStep2AnswerResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -485,21 +485,21 @@ typedef struct USRATHSmsStep2AnswerResponse__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = USRATHSmsStep2AnswerResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDASmsStep2AnswerResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(USRATHSmsStep2AnswerResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDASmsStep2AnswerResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRATHSmsStep2AnswerResponse class]
-                                     rootClass:[USRATHUserAuthRoot class]
-                                          file:USRATHUserAuthRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDASmsStep2AnswerResponse class]
+                                     rootClass:[GDAUserAuthRoot class]
+                                          file:GDAUserAuthRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(USRATHSmsStep2AnswerResponse__storage_)
+                                   storageSize:sizeof(GDASmsStep2AnswerResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -509,18 +509,18 @@ typedef struct USRATHSmsStep2AnswerResponse__storage_ {
 
 @end
 
-#pragma mark - USRATHSmsStep3SigninRequest
+#pragma mark - GDASmsStep3SigninRequest
 
-@implementation USRATHSmsStep3SigninRequest
+@implementation GDASmsStep3SigninRequest
 
 @dynamic mobile;
 @dynamic smscode;
 
-typedef struct USRATHSmsStep3SigninRequest__storage_ {
+typedef struct GDASmsStep3SigninRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *mobile;
   NSString *smscode;
-} USRATHSmsStep3SigninRequest__storage_;
+} GDASmsStep3SigninRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -531,29 +531,29 @@ typedef struct USRATHSmsStep3SigninRequest__storage_ {
       {
         .name = "mobile",
         .dataTypeSpecific.className = NULL,
-        .number = USRATHSmsStep3SigninRequest_FieldNumber_Mobile,
+        .number = GDASmsStep3SigninRequest_FieldNumber_Mobile,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(USRATHSmsStep3SigninRequest__storage_, mobile),
+        .offset = (uint32_t)offsetof(GDASmsStep3SigninRequest__storage_, mobile),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "smscode",
         .dataTypeSpecific.className = NULL,
-        .number = USRATHSmsStep3SigninRequest_FieldNumber_Smscode,
+        .number = GDASmsStep3SigninRequest_FieldNumber_Smscode,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(USRATHSmsStep3SigninRequest__storage_, smscode),
+        .offset = (uint32_t)offsetof(GDASmsStep3SigninRequest__storage_, smscode),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRATHSmsStep3SigninRequest class]
-                                     rootClass:[USRATHUserAuthRoot class]
-                                          file:USRATHUserAuthRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDASmsStep3SigninRequest class]
+                                     rootClass:[GDAUserAuthRoot class]
+                                          file:GDAUserAuthRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(USRATHSmsStep3SigninRequest__storage_)
+                                   storageSize:sizeof(GDASmsStep3SigninRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -563,20 +563,20 @@ typedef struct USRATHSmsStep3SigninRequest__storage_ {
 
 @end
 
-#pragma mark - USRATHSmsStep3RegisterRequest
+#pragma mark - GDASmsStep3RegisterRequest
 
-@implementation USRATHSmsStep3RegisterRequest
+@implementation GDASmsStep3RegisterRequest
 
 @dynamic mobile;
 @dynamic smscode;
 @dynamic password;
 
-typedef struct USRATHSmsStep3RegisterRequest__storage_ {
+typedef struct GDASmsStep3RegisterRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *mobile;
   NSString *smscode;
   NSString *password;
-} USRATHSmsStep3RegisterRequest__storage_;
+} GDASmsStep3RegisterRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -587,38 +587,38 @@ typedef struct USRATHSmsStep3RegisterRequest__storage_ {
       {
         .name = "mobile",
         .dataTypeSpecific.className = NULL,
-        .number = USRATHSmsStep3RegisterRequest_FieldNumber_Mobile,
+        .number = GDASmsStep3RegisterRequest_FieldNumber_Mobile,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(USRATHSmsStep3RegisterRequest__storage_, mobile),
+        .offset = (uint32_t)offsetof(GDASmsStep3RegisterRequest__storage_, mobile),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "smscode",
         .dataTypeSpecific.className = NULL,
-        .number = USRATHSmsStep3RegisterRequest_FieldNumber_Smscode,
+        .number = GDASmsStep3RegisterRequest_FieldNumber_Smscode,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(USRATHSmsStep3RegisterRequest__storage_, smscode),
+        .offset = (uint32_t)offsetof(GDASmsStep3RegisterRequest__storage_, smscode),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "password",
         .dataTypeSpecific.className = NULL,
-        .number = USRATHSmsStep3RegisterRequest_FieldNumber_Password,
+        .number = GDASmsStep3RegisterRequest_FieldNumber_Password,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(USRATHSmsStep3RegisterRequest__storage_, password),
+        .offset = (uint32_t)offsetof(GDASmsStep3RegisterRequest__storage_, password),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRATHSmsStep3RegisterRequest class]
-                                     rootClass:[USRATHUserAuthRoot class]
-                                          file:USRATHUserAuthRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDASmsStep3RegisterRequest class]
+                                     rootClass:[GDAUserAuthRoot class]
+                                          file:GDAUserAuthRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(USRATHSmsStep3RegisterRequest__storage_)
+                                   storageSize:sizeof(GDASmsStep3RegisterRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -628,20 +628,20 @@ typedef struct USRATHSmsStep3RegisterRequest__storage_ {
 
 @end
 
-#pragma mark - USRATHSigninResponse
+#pragma mark - GDASigninResponse
 
-@implementation USRATHSigninResponse
+@implementation GDASigninResponse
 
 @dynamic hasStatus, status;
 @dynamic accessToken;
 @dynamic expiresIn;
 
-typedef struct USRATHSigninResponse__storage_ {
+typedef struct GDASigninResponse__storage_ {
   uint32_t _has_storage_[1];
   NSString *accessToken;
   NSString *expiresIn;
-  COMMONStatus *status;
-} USRATHSigninResponse__storage_;
+  GDAStatus *status;
+} GDASigninResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -652,38 +652,38 @@ typedef struct USRATHSigninResponse__storage_ {
       {
         .name = "accessToken",
         .dataTypeSpecific.className = NULL,
-        .number = USRATHSigninResponse_FieldNumber_AccessToken,
+        .number = GDASigninResponse_FieldNumber_AccessToken,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(USRATHSigninResponse__storage_, accessToken),
+        .offset = (uint32_t)offsetof(GDASigninResponse__storage_, accessToken),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "expiresIn",
         .dataTypeSpecific.className = NULL,
-        .number = USRATHSigninResponse_FieldNumber_ExpiresIn,
+        .number = GDASigninResponse_FieldNumber_ExpiresIn,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(USRATHSigninResponse__storage_, expiresIn),
+        .offset = (uint32_t)offsetof(GDASigninResponse__storage_, expiresIn),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = USRATHSigninResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDASigninResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(USRATHSigninResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDASigninResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRATHSigninResponse class]
-                                     rootClass:[USRATHUserAuthRoot class]
-                                          file:USRATHUserAuthRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDASigninResponse class]
+                                     rootClass:[GDAUserAuthRoot class]
+                                          file:GDAUserAuthRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(USRATHSigninResponse__storage_)
+                                   storageSize:sizeof(GDASigninResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -698,20 +698,20 @@ typedef struct USRATHSigninResponse__storage_ {
 
 @end
 
-#pragma mark - USRATHRegisterResponse
+#pragma mark - GDARegisterResponse
 
-@implementation USRATHRegisterResponse
+@implementation GDARegisterResponse
 
 @dynamic hasStatus, status;
 @dynamic accessToken;
 @dynamic expiresIn;
 
-typedef struct USRATHRegisterResponse__storage_ {
+typedef struct GDARegisterResponse__storage_ {
   uint32_t _has_storage_[1];
   NSString *accessToken;
   NSString *expiresIn;
-  COMMONStatus *status;
-} USRATHRegisterResponse__storage_;
+  GDAStatus *status;
+} GDARegisterResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -722,38 +722,38 @@ typedef struct USRATHRegisterResponse__storage_ {
       {
         .name = "accessToken",
         .dataTypeSpecific.className = NULL,
-        .number = USRATHRegisterResponse_FieldNumber_AccessToken,
+        .number = GDARegisterResponse_FieldNumber_AccessToken,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(USRATHRegisterResponse__storage_, accessToken),
+        .offset = (uint32_t)offsetof(GDARegisterResponse__storage_, accessToken),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "expiresIn",
         .dataTypeSpecific.className = NULL,
-        .number = USRATHRegisterResponse_FieldNumber_ExpiresIn,
+        .number = GDARegisterResponse_FieldNumber_ExpiresIn,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(USRATHRegisterResponse__storage_, expiresIn),
+        .offset = (uint32_t)offsetof(GDARegisterResponse__storage_, expiresIn),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = USRATHRegisterResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDARegisterResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(USRATHRegisterResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDARegisterResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRATHRegisterResponse class]
-                                     rootClass:[USRATHUserAuthRoot class]
-                                          file:USRATHUserAuthRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDARegisterResponse class]
+                                     rootClass:[GDAUserAuthRoot class]
+                                          file:GDAUserAuthRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(USRATHRegisterResponse__storage_)
+                                   storageSize:sizeof(GDARegisterResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =

@@ -22,45 +22,45 @@
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 #pragma clang diagnostic ignored "-Wdirect-ivar-access"
 
-#pragma mark - ACCNTAccountingJournalRoot
+#pragma mark - GDAAccountingJournalRoot
 
-@implementation ACCNTAccountingJournalRoot
+@implementation GDAAccountingJournalRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - ACCNTAccountingJournalRoot_FileDescriptor
+#pragma mark - GDAAccountingJournalRoot_FileDescriptor
 
-static GPBFileDescriptor *ACCNTAccountingJournalRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDAAccountingJournalRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.accounting"
-                                                 objcPrefix:@"ACCNT"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - ACCNTUpsertJournalRequest
+#pragma mark - GDAUpsertJournalRequest
 
-@implementation ACCNTUpsertJournalRequest
+@implementation GDAUpsertJournalRequest
 
 @dynamic eventOneOfCase;
 @dynamic paymentCreatedEvent;
 @dynamic userVerifiedEvent;
 @dynamic storeCreatedEvent;
 
-typedef struct ACCNTUpsertJournalRequest__storage_ {
+typedef struct GDAUpsertJournalRequest__storage_ {
   uint32_t _has_storage_[2];
-  ACCNTPaymentCreatedEvent *paymentCreatedEvent;
-  ACCNTUserVerifiedEvent *userVerifiedEvent;
-  ACCNTStoreVerifiedEvent *storeCreatedEvent;
-} ACCNTUpsertJournalRequest__storage_;
+  GDAPaymentCreatedEvent *paymentCreatedEvent;
+  GDAUserVerifiedEvent *userVerifiedEvent;
+  GDAStoreVerifiedEvent *storeCreatedEvent;
+} GDAUpsertJournalRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -70,39 +70,39 @@ typedef struct ACCNTUpsertJournalRequest__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "paymentCreatedEvent",
-        .dataTypeSpecific.className = GPBStringifySymbol(ACCNTPaymentCreatedEvent),
-        .number = ACCNTUpsertJournalRequest_FieldNumber_PaymentCreatedEvent,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAPaymentCreatedEvent),
+        .number = GDAUpsertJournalRequest_FieldNumber_PaymentCreatedEvent,
         .hasIndex = -1,
-        .offset = (uint32_t)offsetof(ACCNTUpsertJournalRequest__storage_, paymentCreatedEvent),
+        .offset = (uint32_t)offsetof(GDAUpsertJournalRequest__storage_, paymentCreatedEvent),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "userVerifiedEvent",
-        .dataTypeSpecific.className = GPBStringifySymbol(ACCNTUserVerifiedEvent),
-        .number = ACCNTUpsertJournalRequest_FieldNumber_UserVerifiedEvent,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAUserVerifiedEvent),
+        .number = GDAUpsertJournalRequest_FieldNumber_UserVerifiedEvent,
         .hasIndex = -1,
-        .offset = (uint32_t)offsetof(ACCNTUpsertJournalRequest__storage_, userVerifiedEvent),
+        .offset = (uint32_t)offsetof(GDAUpsertJournalRequest__storage_, userVerifiedEvent),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "storeCreatedEvent",
-        .dataTypeSpecific.className = GPBStringifySymbol(ACCNTStoreVerifiedEvent),
-        .number = ACCNTUpsertJournalRequest_FieldNumber_StoreCreatedEvent,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStoreVerifiedEvent),
+        .number = GDAUpsertJournalRequest_FieldNumber_StoreCreatedEvent,
         .hasIndex = -1,
-        .offset = (uint32_t)offsetof(ACCNTUpsertJournalRequest__storage_, storeCreatedEvent),
+        .offset = (uint32_t)offsetof(GDAUpsertJournalRequest__storage_, storeCreatedEvent),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTUpsertJournalRequest class]
-                                     rootClass:[ACCNTAccountingJournalRoot class]
-                                          file:ACCNTAccountingJournalRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAUpsertJournalRequest class]
+                                     rootClass:[GDAAccountingJournalRoot class]
+                                          file:GDAAccountingJournalRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTUpsertJournalRequest__storage_)
+                                   storageSize:sizeof(GDAUpsertJournalRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     static const char *oneofs[] = {
       "event",
@@ -123,23 +123,23 @@ typedef struct ACCNTUpsertJournalRequest__storage_ {
 
 @end
 
-void ACCNTUpsertJournalRequest_ClearEventOneOfCase(ACCNTUpsertJournalRequest *message) {
+void GDAUpsertJournalRequest_ClearEventOneOfCase(GDAUpsertJournalRequest *message) {
   GPBDescriptor *descriptor = [message descriptor];
   GPBOneofDescriptor *oneof = [descriptor.oneofs objectAtIndex:0];
   GPBMaybeClearOneof(message, oneof, -1, 0);
 }
-#pragma mark - ACCNTListJournalRequest
+#pragma mark - GDAListJournalRequest
 
-@implementation ACCNTListJournalRequest
+@implementation GDAListJournalRequest
 
 @dynamic from;
 @dynamic size;
 
-typedef struct ACCNTListJournalRequest__storage_ {
+typedef struct GDAListJournalRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t from;
   int32_t size;
-} ACCNTListJournalRequest__storage_;
+} GDAListJournalRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -150,29 +150,29 @@ typedef struct ACCNTListJournalRequest__storage_ {
       {
         .name = "from",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTListJournalRequest_FieldNumber_From,
+        .number = GDAListJournalRequest_FieldNumber_From,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(ACCNTListJournalRequest__storage_, from),
+        .offset = (uint32_t)offsetof(GDAListJournalRequest__storage_, from),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "size",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTListJournalRequest_FieldNumber_Size,
+        .number = GDAListJournalRequest_FieldNumber_Size,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(ACCNTListJournalRequest__storage_, size),
+        .offset = (uint32_t)offsetof(GDAListJournalRequest__storage_, size),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTListJournalRequest class]
-                                     rootClass:[ACCNTAccountingJournalRoot class]
-                                          file:ACCNTAccountingJournalRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListJournalRequest class]
+                                     rootClass:[GDAAccountingJournalRoot class]
+                                          file:GDAAccountingJournalRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTListJournalRequest__storage_)
+                                   storageSize:sizeof(GDAListJournalRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -182,16 +182,16 @@ typedef struct ACCNTListJournalRequest__storage_ {
 
 @end
 
-#pragma mark - ACCNTGetJournalRequest
+#pragma mark - GDAGetJournalRequest
 
-@implementation ACCNTGetJournalRequest
+@implementation GDAGetJournalRequest
 
 @dynamic uuid;
 
-typedef struct ACCNTGetJournalRequest__storage_ {
+typedef struct GDAGetJournalRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *uuid;
-} ACCNTGetJournalRequest__storage_;
+} GDAGetJournalRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -202,20 +202,20 @@ typedef struct ACCNTGetJournalRequest__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTGetJournalRequest_FieldNumber_Uuid,
+        .number = GDAGetJournalRequest_FieldNumber_Uuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(ACCNTGetJournalRequest__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDAGetJournalRequest__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTGetJournalRequest class]
-                                     rootClass:[ACCNTAccountingJournalRoot class]
-                                          file:ACCNTAccountingJournalRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAGetJournalRequest class]
+                                     rootClass:[GDAAccountingJournalRoot class]
+                                          file:GDAAccountingJournalRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTGetJournalRequest__storage_)
+                                   storageSize:sizeof(GDAGetJournalRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -225,18 +225,18 @@ typedef struct ACCNTGetJournalRequest__storage_ {
 
 @end
 
-#pragma mark - ACCNTJournalResponse
+#pragma mark - GDAJournalResponse
 
-@implementation ACCNTJournalResponse
+@implementation GDAJournalResponse
 
 @dynamic hasStatus, status;
 @dynamic hasJournal, journal;
 
-typedef struct ACCNTJournalResponse__storage_ {
+typedef struct GDAJournalResponse__storage_ {
   uint32_t _has_storage_[1];
-  ACCNTJournal *journal;
-  COMMONStatus *status;
-} ACCNTJournalResponse__storage_;
+  GDAJournal *journal;
+  GDAStatus *status;
+} GDAJournalResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -246,30 +246,30 @@ typedef struct ACCNTJournalResponse__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "journal",
-        .dataTypeSpecific.className = GPBStringifySymbol(ACCNTJournal),
-        .number = ACCNTJournalResponse_FieldNumber_Journal,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAJournal),
+        .number = GDAJournalResponse_FieldNumber_Journal,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(ACCNTJournalResponse__storage_, journal),
+        .offset = (uint32_t)offsetof(GDAJournalResponse__storage_, journal),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = ACCNTJournalResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDAJournalResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(ACCNTJournalResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDAJournalResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTJournalResponse class]
-                                     rootClass:[ACCNTAccountingJournalRoot class]
-                                          file:ACCNTAccountingJournalRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAJournalResponse class]
+                                     rootClass:[GDAAccountingJournalRoot class]
+                                          file:GDAAccountingJournalRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTJournalResponse__storage_)
+                                   storageSize:sizeof(GDAJournalResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -279,9 +279,9 @@ typedef struct ACCNTJournalResponse__storage_ {
 
 @end
 
-#pragma mark - ACCNTJournal
+#pragma mark - GDAJournal
 
-@implementation ACCNTJournal
+@implementation GDAJournal
 
 @dynamic eventOneOfCase;
 @dynamic uuid;
@@ -291,15 +291,15 @@ typedef struct ACCNTJournalResponse__storage_ {
 @dynamic storeVerifiedEvent;
 @dynamic postingsCreated;
 
-typedef struct ACCNTJournal__storage_ {
+typedef struct GDAJournal__storage_ {
   uint32_t _has_storage_[2];
-  ACCNTPaymentCreatedEvent *paymentCreatedEvent;
-  ACCNTUserVerifiedEvent *userVerifiedEvent;
-  ACCNTStoreVerifiedEvent *storeVerifiedEvent;
+  GDAPaymentCreatedEvent *paymentCreatedEvent;
+  GDAUserVerifiedEvent *userVerifiedEvent;
+  GDAStoreVerifiedEvent *storeVerifiedEvent;
   NSString *uuid;
   int64_t created;
   int64_t postingsCreated;
-} ACCNTJournal__storage_;
+} GDAJournal__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -309,66 +309,66 @@ typedef struct ACCNTJournal__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "paymentCreatedEvent",
-        .dataTypeSpecific.className = GPBStringifySymbol(ACCNTPaymentCreatedEvent),
-        .number = ACCNTJournal_FieldNumber_PaymentCreatedEvent,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAPaymentCreatedEvent),
+        .number = GDAJournal_FieldNumber_PaymentCreatedEvent,
         .hasIndex = -1,
-        .offset = (uint32_t)offsetof(ACCNTJournal__storage_, paymentCreatedEvent),
+        .offset = (uint32_t)offsetof(GDAJournal__storage_, paymentCreatedEvent),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "userVerifiedEvent",
-        .dataTypeSpecific.className = GPBStringifySymbol(ACCNTUserVerifiedEvent),
-        .number = ACCNTJournal_FieldNumber_UserVerifiedEvent,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAUserVerifiedEvent),
+        .number = GDAJournal_FieldNumber_UserVerifiedEvent,
         .hasIndex = -1,
-        .offset = (uint32_t)offsetof(ACCNTJournal__storage_, userVerifiedEvent),
+        .offset = (uint32_t)offsetof(GDAJournal__storage_, userVerifiedEvent),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "storeVerifiedEvent",
-        .dataTypeSpecific.className = GPBStringifySymbol(ACCNTStoreVerifiedEvent),
-        .number = ACCNTJournal_FieldNumber_StoreVerifiedEvent,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStoreVerifiedEvent),
+        .number = GDAJournal_FieldNumber_StoreVerifiedEvent,
         .hasIndex = -1,
-        .offset = (uint32_t)offsetof(ACCNTJournal__storage_, storeVerifiedEvent),
+        .offset = (uint32_t)offsetof(GDAJournal__storage_, storeVerifiedEvent),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTJournal_FieldNumber_Uuid,
+        .number = GDAJournal_FieldNumber_Uuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(ACCNTJournal__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDAJournal__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "created",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTJournal_FieldNumber_Created,
+        .number = GDAJournal_FieldNumber_Created,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(ACCNTJournal__storage_, created),
+        .offset = (uint32_t)offsetof(GDAJournal__storage_, created),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
       },
       {
         .name = "postingsCreated",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTJournal_FieldNumber_PostingsCreated,
+        .number = GDAJournal_FieldNumber_PostingsCreated,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(ACCNTJournal__storage_, postingsCreated),
+        .offset = (uint32_t)offsetof(GDAJournal__storage_, postingsCreated),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTJournal class]
-                                     rootClass:[ACCNTAccountingJournalRoot class]
-                                          file:ACCNTAccountingJournalRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAJournal class]
+                                     rootClass:[GDAAccountingJournalRoot class]
+                                          file:GDAAccountingJournalRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTJournal__storage_)
+                                   storageSize:sizeof(GDAJournal__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     static const char *oneofs[] = {
       "event",
@@ -389,7 +389,7 @@ typedef struct ACCNTJournal__storage_ {
 
 @end
 
-void ACCNTJournal_ClearEventOneOfCase(ACCNTJournal *message) {
+void GDAJournal_ClearEventOneOfCase(GDAJournal *message) {
   GPBDescriptor *descriptor = [message descriptor];
   GPBOneofDescriptor *oneof = [descriptor.oneofs objectAtIndex:0];
   GPBMaybeClearOneof(message, oneof, -1, 0);

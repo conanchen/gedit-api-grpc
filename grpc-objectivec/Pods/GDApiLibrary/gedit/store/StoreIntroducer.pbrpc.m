@@ -5,7 +5,7 @@
 #import <RxLibrary/GRXWriter+Immediate.h>
 #import "gedit/Common.pbobjc.h"
 
-@implementation STIDCStoreIntroducerApi
+@implementation GDAStoreIntroducerApi
 
 // Designated initializer
 - (instancetype)initWithHost:(NSString *)host {
@@ -26,38 +26,38 @@
 
 #pragma mark Add(AddIntroducershipRequest) returns (IntroducershipResponse)
 
-- (void)addWithRequest:(STIDCAddIntroducershipRequest *)request handler:(void(^)(STIDCIntroducershipResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)addWithRequest:(GDAAddIntroducershipRequest *)request handler:(void(^)(GDAIntroducershipResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToAddWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToAddWithRequest:(STIDCAddIntroducershipRequest *)request handler:(void(^)(STIDCIntroducershipResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToAddWithRequest:(GDAAddIntroducershipRequest *)request handler:(void(^)(GDAIntroducershipResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"Add"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[STIDCIntroducershipResponse class]
+             responseClass:[GDAIntroducershipResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 #pragma mark ListByStore(ListIntroducershipByStoreRequest) returns (stream IntroducershipResponse)
 
-- (void)listByStoreWithRequest:(STIDCListIntroducershipByStoreRequest *)request eventHandler:(void(^)(BOOL done, STIDCIntroducershipResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (void)listByStoreWithRequest:(GDAListIntroducershipByStoreRequest *)request eventHandler:(void(^)(BOOL done, GDAIntroducershipResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   [[self RPCToListByStoreWithRequest:request eventHandler:eventHandler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToListByStoreWithRequest:(STIDCListIntroducershipByStoreRequest *)request eventHandler:(void(^)(BOOL done, STIDCIntroducershipResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (GRPCProtoCall *)RPCToListByStoreWithRequest:(GDAListIntroducershipByStoreRequest *)request eventHandler:(void(^)(BOOL done, GDAIntroducershipResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   return [self RPCToMethod:@"ListByStore"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[STIDCIntroducershipResponse class]
+             responseClass:[GDAIntroducershipResponse class]
         responsesWriteable:[GRXWriteable writeableWithEventHandler:eventHandler]];
 }
 #pragma mark ListByIntroducer(ListIntroducershipByIntroducerRequest) returns (stream IntroducershipResponse)
 
-- (void)listByIntroducerWithRequest:(STIDCListIntroducershipByIntroducerRequest *)request eventHandler:(void(^)(BOOL done, STIDCIntroducershipResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (void)listByIntroducerWithRequest:(GDAListIntroducershipByIntroducerRequest *)request eventHandler:(void(^)(BOOL done, GDAIntroducershipResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   [[self RPCToListByIntroducerWithRequest:request eventHandler:eventHandler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToListByIntroducerWithRequest:(STIDCListIntroducershipByIntroducerRequest *)request eventHandler:(void(^)(BOOL done, STIDCIntroducershipResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (GRPCProtoCall *)RPCToListByIntroducerWithRequest:(GDAListIntroducershipByIntroducerRequest *)request eventHandler:(void(^)(BOOL done, GDAIntroducershipResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   return [self RPCToMethod:@"ListByIntroducer"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[STIDCIntroducershipResponse class]
+             responseClass:[GDAIntroducershipResponse class]
         responsesWriteable:[GRXWriteable writeableWithEventHandler:eventHandler]];
 }
 #pragma mark ListMyIntroducedStore(ListMyIntroducedStoreRequest) returns (stream IntroducershipResponse)
@@ -65,29 +65,29 @@
 /**
  * should be only used by me
  */
-- (void)listMyIntroducedStoreWithRequest:(STIDCListMyIntroducedStoreRequest *)request eventHandler:(void(^)(BOOL done, STIDCIntroducershipResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (void)listMyIntroducedStoreWithRequest:(GDAListMyIntroducedStoreRequest *)request eventHandler:(void(^)(BOOL done, GDAIntroducershipResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   [[self RPCToListMyIntroducedStoreWithRequest:request eventHandler:eventHandler] start];
 }
 // Returns a not-yet-started RPC object.
 /**
  * should be only used by me
  */
-- (GRPCProtoCall *)RPCToListMyIntroducedStoreWithRequest:(STIDCListMyIntroducedStoreRequest *)request eventHandler:(void(^)(BOOL done, STIDCIntroducershipResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (GRPCProtoCall *)RPCToListMyIntroducedStoreWithRequest:(GDAListMyIntroducedStoreRequest *)request eventHandler:(void(^)(BOOL done, GDAIntroducershipResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   return [self RPCToMethod:@"ListMyIntroducedStore"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[STIDCIntroducershipResponse class]
+             responseClass:[GDAIntroducershipResponse class]
         responsesWriteable:[GRXWriteable writeableWithEventHandler:eventHandler]];
 }
 #pragma mark Ban(BanIntroducershipRequest) returns (IntroducershipResponse)
 
-- (void)banWithRequest:(STIDCBanIntroducershipRequest *)request handler:(void(^)(STIDCIntroducershipResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)banWithRequest:(GDABanIntroducershipRequest *)request handler:(void(^)(GDAIntroducershipResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToBanWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToBanWithRequest:(STIDCBanIntroducershipRequest *)request handler:(void(^)(STIDCIntroducershipResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToBanWithRequest:(GDABanIntroducershipRequest *)request handler:(void(^)(GDAIntroducershipResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"Ban"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[STIDCIntroducershipResponse class]
+             responseClass:[GDAIntroducershipResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 @end

@@ -8,9 +8,9 @@
 #import <RxLibrary/GRXWriter.h>
 
 #if GPB_GRPC_FORWARD_DECLARE_MESSAGE_PROTO
-  @class HELLOHelloReply;
-  @class HELLOHelloRequest;
-  @class HELLOListHelloRequest;
+  @class GDAHelloReply;
+  @class GDAHelloRequest;
+  @class GDAListHelloRequest;
 #else
   #import "gedit/Common.pbobjc.h"
 #endif
@@ -18,26 +18,26 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol HELLOHello <NSObject>
+@protocol GDAHello <NSObject>
 
 #pragma mark SayHello(HelloRequest) returns (HelloReply)
 
 /**
  * Sends a greeting
  */
-- (void)sayHelloWithRequest:(HELLOHelloRequest *)request handler:(void(^)(HELLOHelloReply *_Nullable response, NSError *_Nullable error))handler;
+- (void)sayHelloWithRequest:(GDAHelloRequest *)request handler:(void(^)(GDAHelloReply *_Nullable response, NSError *_Nullable error))handler;
 
 /**
  * Sends a greeting
  */
-- (GRPCProtoCall *)RPCToSayHelloWithRequest:(HELLOHelloRequest *)request handler:(void(^)(HELLOHelloReply *_Nullable response, NSError *_Nullable error))handler;
+- (GRPCProtoCall *)RPCToSayHelloWithRequest:(GDAHelloRequest *)request handler:(void(^)(GDAHelloReply *_Nullable response, NSError *_Nullable error))handler;
 
 
 #pragma mark ListOldHello(ListHelloRequest) returns (stream HelloReply)
 
-- (void)listOldHelloWithRequest:(HELLOListHelloRequest *)request eventHandler:(void(^)(BOOL done, HELLOHelloReply *_Nullable response, NSError *_Nullable error))eventHandler;
+- (void)listOldHelloWithRequest:(GDAListHelloRequest *)request eventHandler:(void(^)(BOOL done, GDAHelloReply *_Nullable response, NSError *_Nullable error))eventHandler;
 
-- (GRPCProtoCall *)RPCToListOldHelloWithRequest:(HELLOListHelloRequest *)request eventHandler:(void(^)(BOOL done, HELLOHelloReply *_Nullable response, NSError *_Nullable error))eventHandler;
+- (GRPCProtoCall *)RPCToListOldHelloWithRequest:(GDAListHelloRequest *)request eventHandler:(void(^)(BOOL done, GDAHelloReply *_Nullable response, NSError *_Nullable error))eventHandler;
 
 
 @end
@@ -46,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Basic service implementation, over gRPC, that only does
  * marshalling and parsing.
  */
-@interface HELLOHello : GRPCProtoService<HELLOHello>
+@interface GDAHello : GRPCProtoService<GDAHello>
 - (instancetype)initWithHost:(NSString *)host NS_DESIGNATED_INITIALIZER;
 + (instancetype)serviceWithHost:(NSString *)host;
 @end

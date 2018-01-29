@@ -22,45 +22,45 @@
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 #pragma clang diagnostic ignored "-Wdirect-ivar-access"
 
-#pragma mark - ACCNTAccountingRewardsifRoot
+#pragma mark - GDAAccountingRewardsifRoot
 
-@implementation ACCNTAccountingRewardsifRoot
+@implementation GDAAccountingRewardsifRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - ACCNTAccountingRewardsifRoot_FileDescriptor
+#pragma mark - GDAAccountingRewardsifRoot_FileDescriptor
 
-static GPBFileDescriptor *ACCNTAccountingRewardsifRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDAAccountingRewardsifRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.accounting"
-                                                 objcPrefix:@"ACCNT"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - ACCNTQueryRewardsIfEventRequest
+#pragma mark - GDAQueryRewardsIfEventRequest
 
-@implementation ACCNTQueryRewardsIfEventRequest
+@implementation GDAQueryRewardsIfEventRequest
 
 @dynamic eventOneOfCase;
 @dynamic ifPaymentCreatedEvent;
 @dynamic ifUserVerifiedEvent;
 @dynamic ifStoreCreatedEvent;
 
-typedef struct ACCNTQueryRewardsIfEventRequest__storage_ {
+typedef struct GDAQueryRewardsIfEventRequest__storage_ {
   uint32_t _has_storage_[2];
-  ACCNTIfPaymentCreatedEvent *ifPaymentCreatedEvent;
-  ACCNTIfUserVerifiedEvent *ifUserVerifiedEvent;
-  ACCNTIfStoreVerifiedEvent *ifStoreCreatedEvent;
-} ACCNTQueryRewardsIfEventRequest__storage_;
+  GDAIfPaymentCreatedEvent *ifPaymentCreatedEvent;
+  GDAIfUserVerifiedEvent *ifUserVerifiedEvent;
+  GDAIfStoreVerifiedEvent *ifStoreCreatedEvent;
+} GDAQueryRewardsIfEventRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -70,39 +70,39 @@ typedef struct ACCNTQueryRewardsIfEventRequest__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "ifPaymentCreatedEvent",
-        .dataTypeSpecific.className = GPBStringifySymbol(ACCNTIfPaymentCreatedEvent),
-        .number = ACCNTQueryRewardsIfEventRequest_FieldNumber_IfPaymentCreatedEvent,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAIfPaymentCreatedEvent),
+        .number = GDAQueryRewardsIfEventRequest_FieldNumber_IfPaymentCreatedEvent,
         .hasIndex = -1,
-        .offset = (uint32_t)offsetof(ACCNTQueryRewardsIfEventRequest__storage_, ifPaymentCreatedEvent),
+        .offset = (uint32_t)offsetof(GDAQueryRewardsIfEventRequest__storage_, ifPaymentCreatedEvent),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "ifUserVerifiedEvent",
-        .dataTypeSpecific.className = GPBStringifySymbol(ACCNTIfUserVerifiedEvent),
-        .number = ACCNTQueryRewardsIfEventRequest_FieldNumber_IfUserVerifiedEvent,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAIfUserVerifiedEvent),
+        .number = GDAQueryRewardsIfEventRequest_FieldNumber_IfUserVerifiedEvent,
         .hasIndex = -1,
-        .offset = (uint32_t)offsetof(ACCNTQueryRewardsIfEventRequest__storage_, ifUserVerifiedEvent),
+        .offset = (uint32_t)offsetof(GDAQueryRewardsIfEventRequest__storage_, ifUserVerifiedEvent),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "ifStoreCreatedEvent",
-        .dataTypeSpecific.className = GPBStringifySymbol(ACCNTIfStoreVerifiedEvent),
-        .number = ACCNTQueryRewardsIfEventRequest_FieldNumber_IfStoreCreatedEvent,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAIfStoreVerifiedEvent),
+        .number = GDAQueryRewardsIfEventRequest_FieldNumber_IfStoreCreatedEvent,
         .hasIndex = -1,
-        .offset = (uint32_t)offsetof(ACCNTQueryRewardsIfEventRequest__storage_, ifStoreCreatedEvent),
+        .offset = (uint32_t)offsetof(GDAQueryRewardsIfEventRequest__storage_, ifStoreCreatedEvent),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTQueryRewardsIfEventRequest class]
-                                     rootClass:[ACCNTAccountingRewardsifRoot class]
-                                          file:ACCNTAccountingRewardsifRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAQueryRewardsIfEventRequest class]
+                                     rootClass:[GDAAccountingRewardsifRoot class]
+                                          file:GDAAccountingRewardsifRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTQueryRewardsIfEventRequest__storage_)
+                                   storageSize:sizeof(GDAQueryRewardsIfEventRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     static const char *oneofs[] = {
       "event",
@@ -123,23 +123,23 @@ typedef struct ACCNTQueryRewardsIfEventRequest__storage_ {
 
 @end
 
-void ACCNTQueryRewardsIfEventRequest_ClearEventOneOfCase(ACCNTQueryRewardsIfEventRequest *message) {
+void GDAQueryRewardsIfEventRequest_ClearEventOneOfCase(GDAQueryRewardsIfEventRequest *message) {
   GPBDescriptor *descriptor = [message descriptor];
   GPBOneofDescriptor *oneof = [descriptor.oneofs objectAtIndex:0];
   GPBMaybeClearOneof(message, oneof, -1, 0);
 }
-#pragma mark - ACCNTRewardIfEventResponse
+#pragma mark - GDARewardIfEventResponse
 
-@implementation ACCNTRewardIfEventResponse
+@implementation GDARewardIfEventResponse
 
 @dynamic hasStatus, status;
 @dynamic rewardIfEventArray, rewardIfEventArray_Count;
 
-typedef struct ACCNTRewardIfEventResponse__storage_ {
+typedef struct GDARewardIfEventResponse__storage_ {
   uint32_t _has_storage_[1];
   NSMutableArray *rewardIfEventArray;
-  COMMONStatus *status;
-} ACCNTRewardIfEventResponse__storage_;
+  GDAStatus *status;
+} GDARewardIfEventResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -149,30 +149,30 @@ typedef struct ACCNTRewardIfEventResponse__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "rewardIfEventArray",
-        .dataTypeSpecific.className = GPBStringifySymbol(ACCNTRewardIfEvent),
-        .number = ACCNTRewardIfEventResponse_FieldNumber_RewardIfEventArray,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDARewardIfEvent),
+        .number = GDARewardIfEventResponse_FieldNumber_RewardIfEventArray,
         .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(ACCNTRewardIfEventResponse__storage_, rewardIfEventArray),
+        .offset = (uint32_t)offsetof(GDARewardIfEventResponse__storage_, rewardIfEventArray),
         .flags = (GPBFieldFlags)(GPBFieldRepeated | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = ACCNTRewardIfEventResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDARewardIfEventResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(ACCNTRewardIfEventResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDARewardIfEventResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTRewardIfEventResponse class]
-                                     rootClass:[ACCNTAccountingRewardsifRoot class]
-                                          file:ACCNTAccountingRewardsifRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDARewardIfEventResponse class]
+                                     rootClass:[GDAAccountingRewardsifRoot class]
+                                          file:GDAAccountingRewardsifRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTRewardIfEventResponse__storage_)
+                                   storageSize:sizeof(GDARewardIfEventResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -187,22 +187,22 @@ typedef struct ACCNTRewardIfEventResponse__storage_ {
 
 @end
 
-#pragma mark - ACCNTRewardIfEvent
+#pragma mark - GDARewardIfEvent
 
-@implementation ACCNTRewardIfEvent
+@implementation GDARewardIfEvent
 
 @dynamic userUuid;
 @dynamic pointsPay;
 @dynamic pointsRepay;
 @dynamic comment;
 
-typedef struct ACCNTRewardIfEvent__storage_ {
+typedef struct GDARewardIfEvent__storage_ {
   uint32_t _has_storage_[1];
   int32_t pointsPay;
   int32_t pointsRepay;
   NSString *userUuid;
   NSString *comment;
-} ACCNTRewardIfEvent__storage_;
+} GDARewardIfEvent__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -213,47 +213,47 @@ typedef struct ACCNTRewardIfEvent__storage_ {
       {
         .name = "userUuid",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTRewardIfEvent_FieldNumber_UserUuid,
+        .number = GDARewardIfEvent_FieldNumber_UserUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(ACCNTRewardIfEvent__storage_, userUuid),
+        .offset = (uint32_t)offsetof(GDARewardIfEvent__storage_, userUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "pointsPay",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTRewardIfEvent_FieldNumber_PointsPay,
+        .number = GDARewardIfEvent_FieldNumber_PointsPay,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(ACCNTRewardIfEvent__storage_, pointsPay),
+        .offset = (uint32_t)offsetof(GDARewardIfEvent__storage_, pointsPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "pointsRepay",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTRewardIfEvent_FieldNumber_PointsRepay,
+        .number = GDARewardIfEvent_FieldNumber_PointsRepay,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(ACCNTRewardIfEvent__storage_, pointsRepay),
+        .offset = (uint32_t)offsetof(GDARewardIfEvent__storage_, pointsRepay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "comment",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTRewardIfEvent_FieldNumber_Comment,
+        .number = GDARewardIfEvent_FieldNumber_Comment,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(ACCNTRewardIfEvent__storage_, comment),
+        .offset = (uint32_t)offsetof(GDARewardIfEvent__storage_, comment),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTRewardIfEvent class]
-                                     rootClass:[ACCNTAccountingRewardsifRoot class]
-                                          file:ACCNTAccountingRewardsifRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDARewardIfEvent class]
+                                     rootClass:[GDAAccountingRewardsifRoot class]
+                                          file:GDAAccountingRewardsifRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTRewardIfEvent__storage_)
+                                   storageSize:sizeof(GDARewardIfEvent__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -268,9 +268,9 @@ typedef struct ACCNTRewardIfEvent__storage_ {
 
 @end
 
-#pragma mark - ACCNTIfPaymentCreatedEvent
+#pragma mark - GDAIfPaymentCreatedEvent
 
-@implementation ACCNTIfPaymentCreatedEvent
+@implementation GDAIfPaymentCreatedEvent
 
 @dynamic payerUuid;
 @dynamic payeeUuid;
@@ -279,15 +279,15 @@ typedef struct ACCNTRewardIfEvent__storage_ {
 @dynamic shouldpay;
 @dynamic channel;
 
-typedef struct ACCNTIfPaymentCreatedEvent__storage_ {
+typedef struct GDAIfPaymentCreatedEvent__storage_ {
   uint32_t _has_storage_[1];
   int32_t shouldpay;
-  COMMONPaymentChannel channel;
+  GDAPaymentChannel channel;
   NSString *payerUuid;
   NSString *payeeUuid;
   NSString *payeeStoreUuid;
   NSString *payeeWorkerUuid;
-} ACCNTIfPaymentCreatedEvent__storage_;
+} GDAIfPaymentCreatedEvent__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -298,65 +298,65 @@ typedef struct ACCNTIfPaymentCreatedEvent__storage_ {
       {
         .name = "payerUuid",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTIfPaymentCreatedEvent_FieldNumber_PayerUuid,
+        .number = GDAIfPaymentCreatedEvent_FieldNumber_PayerUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(ACCNTIfPaymentCreatedEvent__storage_, payerUuid),
+        .offset = (uint32_t)offsetof(GDAIfPaymentCreatedEvent__storage_, payerUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTIfPaymentCreatedEvent_FieldNumber_PayeeUuid,
+        .number = GDAIfPaymentCreatedEvent_FieldNumber_PayeeUuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(ACCNTIfPaymentCreatedEvent__storage_, payeeUuid),
+        .offset = (uint32_t)offsetof(GDAIfPaymentCreatedEvent__storage_, payeeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeStoreUuid",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTIfPaymentCreatedEvent_FieldNumber_PayeeStoreUuid,
+        .number = GDAIfPaymentCreatedEvent_FieldNumber_PayeeStoreUuid,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(ACCNTIfPaymentCreatedEvent__storage_, payeeStoreUuid),
+        .offset = (uint32_t)offsetof(GDAIfPaymentCreatedEvent__storage_, payeeStoreUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeWorkerUuid",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTIfPaymentCreatedEvent_FieldNumber_PayeeWorkerUuid,
+        .number = GDAIfPaymentCreatedEvent_FieldNumber_PayeeWorkerUuid,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(ACCNTIfPaymentCreatedEvent__storage_, payeeWorkerUuid),
+        .offset = (uint32_t)offsetof(GDAIfPaymentCreatedEvent__storage_, payeeWorkerUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "shouldpay",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTIfPaymentCreatedEvent_FieldNumber_Shouldpay,
+        .number = GDAIfPaymentCreatedEvent_FieldNumber_Shouldpay,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(ACCNTIfPaymentCreatedEvent__storage_, shouldpay),
+        .offset = (uint32_t)offsetof(GDAIfPaymentCreatedEvent__storage_, shouldpay),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "channel",
-        .dataTypeSpecific.enumDescFunc = COMMONPaymentChannel_EnumDescriptor,
-        .number = ACCNTIfPaymentCreatedEvent_FieldNumber_Channel,
+        .dataTypeSpecific.enumDescFunc = GDAPaymentChannel_EnumDescriptor,
+        .number = GDAIfPaymentCreatedEvent_FieldNumber_Channel,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(ACCNTIfPaymentCreatedEvent__storage_, channel),
+        .offset = (uint32_t)offsetof(GDAIfPaymentCreatedEvent__storage_, channel),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor),
         .dataType = GPBDataTypeEnum,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTIfPaymentCreatedEvent class]
-                                     rootClass:[ACCNTAccountingRewardsifRoot class]
-                                          file:ACCNTAccountingRewardsifRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAIfPaymentCreatedEvent class]
+                                     rootClass:[GDAAccountingRewardsifRoot class]
+                                          file:GDAAccountingRewardsifRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTIfPaymentCreatedEvent__storage_)
+                                   storageSize:sizeof(GDAIfPaymentCreatedEvent__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -371,28 +371,28 @@ typedef struct ACCNTIfPaymentCreatedEvent__storage_ {
 
 @end
 
-int32_t ACCNTIfPaymentCreatedEvent_Channel_RawValue(ACCNTIfPaymentCreatedEvent *message) {
-  GPBDescriptor *descriptor = [ACCNTIfPaymentCreatedEvent descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:ACCNTIfPaymentCreatedEvent_FieldNumber_Channel];
+int32_t GDAIfPaymentCreatedEvent_Channel_RawValue(GDAIfPaymentCreatedEvent *message) {
+  GPBDescriptor *descriptor = [GDAIfPaymentCreatedEvent descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDAIfPaymentCreatedEvent_FieldNumber_Channel];
   return GPBGetMessageInt32Field(message, field);
 }
 
-void SetACCNTIfPaymentCreatedEvent_Channel_RawValue(ACCNTIfPaymentCreatedEvent *message, int32_t value) {
-  GPBDescriptor *descriptor = [ACCNTIfPaymentCreatedEvent descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:ACCNTIfPaymentCreatedEvent_FieldNumber_Channel];
+void SetGDAIfPaymentCreatedEvent_Channel_RawValue(GDAIfPaymentCreatedEvent *message, int32_t value) {
+  GPBDescriptor *descriptor = [GDAIfPaymentCreatedEvent descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDAIfPaymentCreatedEvent_FieldNumber_Channel];
   GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
 }
 
-#pragma mark - ACCNTIfUserVerifiedEvent
+#pragma mark - GDAIfUserVerifiedEvent
 
-@implementation ACCNTIfUserVerifiedEvent
+@implementation GDAIfUserVerifiedEvent
 
 @dynamic userUuid;
 
-typedef struct ACCNTIfUserVerifiedEvent__storage_ {
+typedef struct GDAIfUserVerifiedEvent__storage_ {
   uint32_t _has_storage_[1];
   NSString *userUuid;
-} ACCNTIfUserVerifiedEvent__storage_;
+} GDAIfUserVerifiedEvent__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -403,20 +403,20 @@ typedef struct ACCNTIfUserVerifiedEvent__storage_ {
       {
         .name = "userUuid",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTIfUserVerifiedEvent_FieldNumber_UserUuid,
+        .number = GDAIfUserVerifiedEvent_FieldNumber_UserUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(ACCNTIfUserVerifiedEvent__storage_, userUuid),
+        .offset = (uint32_t)offsetof(GDAIfUserVerifiedEvent__storage_, userUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTIfUserVerifiedEvent class]
-                                     rootClass:[ACCNTAccountingRewardsifRoot class]
-                                          file:ACCNTAccountingRewardsifRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAIfUserVerifiedEvent class]
+                                     rootClass:[GDAAccountingRewardsifRoot class]
+                                          file:GDAAccountingRewardsifRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTIfUserVerifiedEvent__storage_)
+                                   storageSize:sizeof(GDAIfUserVerifiedEvent__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -431,16 +431,16 @@ typedef struct ACCNTIfUserVerifiedEvent__storage_ {
 
 @end
 
-#pragma mark - ACCNTIfStoreVerifiedEvent
+#pragma mark - GDAIfStoreVerifiedEvent
 
-@implementation ACCNTIfStoreVerifiedEvent
+@implementation GDAIfStoreVerifiedEvent
 
 @dynamic storeUuid;
 
-typedef struct ACCNTIfStoreVerifiedEvent__storage_ {
+typedef struct GDAIfStoreVerifiedEvent__storage_ {
   uint32_t _has_storage_[1];
   NSString *storeUuid;
-} ACCNTIfStoreVerifiedEvent__storage_;
+} GDAIfStoreVerifiedEvent__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -451,20 +451,20 @@ typedef struct ACCNTIfStoreVerifiedEvent__storage_ {
       {
         .name = "storeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTIfStoreVerifiedEvent_FieldNumber_StoreUuid,
+        .number = GDAIfStoreVerifiedEvent_FieldNumber_StoreUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(ACCNTIfStoreVerifiedEvent__storage_, storeUuid),
+        .offset = (uint32_t)offsetof(GDAIfStoreVerifiedEvent__storage_, storeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTIfStoreVerifiedEvent class]
-                                     rootClass:[ACCNTAccountingRewardsifRoot class]
-                                          file:ACCNTAccountingRewardsifRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAIfStoreVerifiedEvent class]
+                                     rootClass:[GDAAccountingRewardsifRoot class]
+                                          file:GDAAccountingRewardsifRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTIfStoreVerifiedEvent__storage_)
+                                   storageSize:sizeof(GDAIfStoreVerifiedEvent__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =

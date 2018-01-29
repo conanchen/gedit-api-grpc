@@ -20,44 +20,44 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-#pragma mark - IVSTPRMPromotionInvestpaymentRoot
+#pragma mark - GDAPromotionInvestpaymentRoot
 
-@implementation IVSTPRMPromotionInvestpaymentRoot
+@implementation GDAPromotionInvestpaymentRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - IVSTPRMPromotionInvestpaymentRoot_FileDescriptor
+#pragma mark - GDAPromotionInvestpaymentRoot_FileDescriptor
 
-static GPBFileDescriptor *IVSTPRMPromotionInvestpaymentRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDAPromotionInvestpaymentRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.promotion"
-                                                 objcPrefix:@"IVSTPRM"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - IVSTPRMPreparInvestPaymentRequest
+#pragma mark - GDAPreparInvestPaymentRequest
 
-@implementation IVSTPRMPreparInvestPaymentRequest
+@implementation GDAPreparInvestPaymentRequest
 
 @dynamic payeeUuid;
 @dynamic payeeStoreUuid;
 @dynamic channel;
 
-typedef struct IVSTPRMPreparInvestPaymentRequest__storage_ {
+typedef struct GDAPreparInvestPaymentRequest__storage_ {
   uint32_t _has_storage_[1];
-  COMMONPaymentChannel channel;
+  GDAPaymentChannel channel;
   NSString *payeeUuid;
   NSString *payeeStoreUuid;
-} IVSTPRMPreparInvestPaymentRequest__storage_;
+} GDAPreparInvestPaymentRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -68,38 +68,38 @@ typedef struct IVSTPRMPreparInvestPaymentRequest__storage_ {
       {
         .name = "payeeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = IVSTPRMPreparInvestPaymentRequest_FieldNumber_PayeeUuid,
+        .number = GDAPreparInvestPaymentRequest_FieldNumber_PayeeUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(IVSTPRMPreparInvestPaymentRequest__storage_, payeeUuid),
+        .offset = (uint32_t)offsetof(GDAPreparInvestPaymentRequest__storage_, payeeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeStoreUuid",
         .dataTypeSpecific.className = NULL,
-        .number = IVSTPRMPreparInvestPaymentRequest_FieldNumber_PayeeStoreUuid,
+        .number = GDAPreparInvestPaymentRequest_FieldNumber_PayeeStoreUuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(IVSTPRMPreparInvestPaymentRequest__storage_, payeeStoreUuid),
+        .offset = (uint32_t)offsetof(GDAPreparInvestPaymentRequest__storage_, payeeStoreUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "channel",
-        .dataTypeSpecific.enumDescFunc = COMMONPaymentChannel_EnumDescriptor,
-        .number = IVSTPRMPreparInvestPaymentRequest_FieldNumber_Channel,
+        .dataTypeSpecific.enumDescFunc = GDAPaymentChannel_EnumDescriptor,
+        .number = GDAPreparInvestPaymentRequest_FieldNumber_Channel,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(IVSTPRMPreparInvestPaymentRequest__storage_, channel),
+        .offset = (uint32_t)offsetof(GDAPreparInvestPaymentRequest__storage_, channel),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor),
         .dataType = GPBDataTypeEnum,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[IVSTPRMPreparInvestPaymentRequest class]
-                                     rootClass:[IVSTPRMPromotionInvestpaymentRoot class]
-                                          file:IVSTPRMPromotionInvestpaymentRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAPreparInvestPaymentRequest class]
+                                     rootClass:[GDAPromotionInvestpaymentRoot class]
+                                          file:GDAPromotionInvestpaymentRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(IVSTPRMPreparInvestPaymentRequest__storage_)
+                                   storageSize:sizeof(GDAPreparInvestPaymentRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -114,30 +114,30 @@ typedef struct IVSTPRMPreparInvestPaymentRequest__storage_ {
 
 @end
 
-int32_t IVSTPRMPreparInvestPaymentRequest_Channel_RawValue(IVSTPRMPreparInvestPaymentRequest *message) {
-  GPBDescriptor *descriptor = [IVSTPRMPreparInvestPaymentRequest descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:IVSTPRMPreparInvestPaymentRequest_FieldNumber_Channel];
+int32_t GDAPreparInvestPaymentRequest_Channel_RawValue(GDAPreparInvestPaymentRequest *message) {
+  GPBDescriptor *descriptor = [GDAPreparInvestPaymentRequest descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDAPreparInvestPaymentRequest_FieldNumber_Channel];
   return GPBGetMessageInt32Field(message, field);
 }
 
-void SetIVSTPRMPreparInvestPaymentRequest_Channel_RawValue(IVSTPRMPreparInvestPaymentRequest *message, int32_t value) {
-  GPBDescriptor *descriptor = [IVSTPRMPreparInvestPaymentRequest descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:IVSTPRMPreparInvestPaymentRequest_FieldNumber_Channel];
+void SetGDAPreparInvestPaymentRequest_Channel_RawValue(GDAPreparInvestPaymentRequest *message, int32_t value) {
+  GPBDescriptor *descriptor = [GDAPreparInvestPaymentRequest descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDAPreparInvestPaymentRequest_FieldNumber_Channel];
   GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
 }
 
-#pragma mark - IVSTPRMPrepareInvestPaymentResponse
+#pragma mark - GDAPrepareInvestPaymentResponse
 
-@implementation IVSTPRMPrepareInvestPaymentResponse
+@implementation GDAPrepareInvestPaymentResponse
 
 @dynamic hasStatus, status;
 @dynamic channelOrderUuid;
 
-typedef struct IVSTPRMPrepareInvestPaymentResponse__storage_ {
+typedef struct GDAPrepareInvestPaymentResponse__storage_ {
   uint32_t _has_storage_[1];
   NSString *channelOrderUuid;
-  COMMONStatus *status;
-} IVSTPRMPrepareInvestPaymentResponse__storage_;
+  GDAStatus *status;
+} GDAPrepareInvestPaymentResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -148,29 +148,29 @@ typedef struct IVSTPRMPrepareInvestPaymentResponse__storage_ {
       {
         .name = "channelOrderUuid",
         .dataTypeSpecific.className = NULL,
-        .number = IVSTPRMPrepareInvestPaymentResponse_FieldNumber_ChannelOrderUuid,
+        .number = GDAPrepareInvestPaymentResponse_FieldNumber_ChannelOrderUuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(IVSTPRMPrepareInvestPaymentResponse__storage_, channelOrderUuid),
+        .offset = (uint32_t)offsetof(GDAPrepareInvestPaymentResponse__storage_, channelOrderUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = IVSTPRMPrepareInvestPaymentResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDAPrepareInvestPaymentResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(IVSTPRMPrepareInvestPaymentResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDAPrepareInvestPaymentResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[IVSTPRMPrepareInvestPaymentResponse class]
-                                     rootClass:[IVSTPRMPromotionInvestpaymentRoot class]
-                                          file:IVSTPRMPromotionInvestpaymentRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAPrepareInvestPaymentResponse class]
+                                     rootClass:[GDAPromotionInvestpaymentRoot class]
+                                          file:GDAPromotionInvestpaymentRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(IVSTPRMPrepareInvestPaymentResponse__storage_)
+                                   storageSize:sizeof(GDAPrepareInvestPaymentResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -185,9 +185,9 @@ typedef struct IVSTPRMPrepareInvestPaymentResponse__storage_ {
 
 @end
 
-#pragma mark - IVSTPRMAddInvestPaymentRequest
+#pragma mark - GDAAddInvestPaymentRequest
 
-@implementation IVSTPRMAddInvestPaymentRequest
+@implementation GDAAddInvestPaymentRequest
 
 @dynamic payeeUuid;
 @dynamic payeeStoreUuid;
@@ -197,16 +197,16 @@ typedef struct IVSTPRMPrepareInvestPaymentResponse__storage_ {
 @dynamic channel;
 @dynamic channelOrderUuid;
 
-typedef struct IVSTPRMAddInvestPaymentRequest__storage_ {
+typedef struct GDAAddInvestPaymentRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t shouldPay;
   int32_t discount;
   int32_t actualPay;
-  COMMONPaymentChannel channel;
+  GDAPaymentChannel channel;
   NSString *payeeUuid;
   NSString *payeeStoreUuid;
   NSString *channelOrderUuid;
-} IVSTPRMAddInvestPaymentRequest__storage_;
+} GDAAddInvestPaymentRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -217,74 +217,74 @@ typedef struct IVSTPRMAddInvestPaymentRequest__storage_ {
       {
         .name = "payeeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = IVSTPRMAddInvestPaymentRequest_FieldNumber_PayeeUuid,
+        .number = GDAAddInvestPaymentRequest_FieldNumber_PayeeUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(IVSTPRMAddInvestPaymentRequest__storage_, payeeUuid),
+        .offset = (uint32_t)offsetof(GDAAddInvestPaymentRequest__storage_, payeeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeStoreUuid",
         .dataTypeSpecific.className = NULL,
-        .number = IVSTPRMAddInvestPaymentRequest_FieldNumber_PayeeStoreUuid,
+        .number = GDAAddInvestPaymentRequest_FieldNumber_PayeeStoreUuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(IVSTPRMAddInvestPaymentRequest__storage_, payeeStoreUuid),
+        .offset = (uint32_t)offsetof(GDAAddInvestPaymentRequest__storage_, payeeStoreUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "shouldPay",
         .dataTypeSpecific.className = NULL,
-        .number = IVSTPRMAddInvestPaymentRequest_FieldNumber_ShouldPay,
+        .number = GDAAddInvestPaymentRequest_FieldNumber_ShouldPay,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(IVSTPRMAddInvestPaymentRequest__storage_, shouldPay),
+        .offset = (uint32_t)offsetof(GDAAddInvestPaymentRequest__storage_, shouldPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "discount",
         .dataTypeSpecific.className = NULL,
-        .number = IVSTPRMAddInvestPaymentRequest_FieldNumber_Discount,
+        .number = GDAAddInvestPaymentRequest_FieldNumber_Discount,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(IVSTPRMAddInvestPaymentRequest__storage_, discount),
+        .offset = (uint32_t)offsetof(GDAAddInvestPaymentRequest__storage_, discount),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "actualPay",
         .dataTypeSpecific.className = NULL,
-        .number = IVSTPRMAddInvestPaymentRequest_FieldNumber_ActualPay,
+        .number = GDAAddInvestPaymentRequest_FieldNumber_ActualPay,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(IVSTPRMAddInvestPaymentRequest__storage_, actualPay),
+        .offset = (uint32_t)offsetof(GDAAddInvestPaymentRequest__storage_, actualPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "channel",
-        .dataTypeSpecific.enumDescFunc = COMMONPaymentChannel_EnumDescriptor,
-        .number = IVSTPRMAddInvestPaymentRequest_FieldNumber_Channel,
+        .dataTypeSpecific.enumDescFunc = GDAPaymentChannel_EnumDescriptor,
+        .number = GDAAddInvestPaymentRequest_FieldNumber_Channel,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(IVSTPRMAddInvestPaymentRequest__storage_, channel),
+        .offset = (uint32_t)offsetof(GDAAddInvestPaymentRequest__storage_, channel),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor),
         .dataType = GPBDataTypeEnum,
       },
       {
         .name = "channelOrderUuid",
         .dataTypeSpecific.className = NULL,
-        .number = IVSTPRMAddInvestPaymentRequest_FieldNumber_ChannelOrderUuid,
+        .number = GDAAddInvestPaymentRequest_FieldNumber_ChannelOrderUuid,
         .hasIndex = 6,
-        .offset = (uint32_t)offsetof(IVSTPRMAddInvestPaymentRequest__storage_, channelOrderUuid),
+        .offset = (uint32_t)offsetof(GDAAddInvestPaymentRequest__storage_, channelOrderUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[IVSTPRMAddInvestPaymentRequest class]
-                                     rootClass:[IVSTPRMPromotionInvestpaymentRoot class]
-                                          file:IVSTPRMPromotionInvestpaymentRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAAddInvestPaymentRequest class]
+                                     rootClass:[GDAPromotionInvestpaymentRoot class]
+                                          file:GDAPromotionInvestpaymentRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(IVSTPRMAddInvestPaymentRequest__storage_)
+                                   storageSize:sizeof(GDAAddInvestPaymentRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -299,30 +299,30 @@ typedef struct IVSTPRMAddInvestPaymentRequest__storage_ {
 
 @end
 
-int32_t IVSTPRMAddInvestPaymentRequest_Channel_RawValue(IVSTPRMAddInvestPaymentRequest *message) {
-  GPBDescriptor *descriptor = [IVSTPRMAddInvestPaymentRequest descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:IVSTPRMAddInvestPaymentRequest_FieldNumber_Channel];
+int32_t GDAAddInvestPaymentRequest_Channel_RawValue(GDAAddInvestPaymentRequest *message) {
+  GPBDescriptor *descriptor = [GDAAddInvestPaymentRequest descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDAAddInvestPaymentRequest_FieldNumber_Channel];
   return GPBGetMessageInt32Field(message, field);
 }
 
-void SetIVSTPRMAddInvestPaymentRequest_Channel_RawValue(IVSTPRMAddInvestPaymentRequest *message, int32_t value) {
-  GPBDescriptor *descriptor = [IVSTPRMAddInvestPaymentRequest descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:IVSTPRMAddInvestPaymentRequest_FieldNumber_Channel];
+void SetGDAAddInvestPaymentRequest_Channel_RawValue(GDAAddInvestPaymentRequest *message, int32_t value) {
+  GPBDescriptor *descriptor = [GDAAddInvestPaymentRequest descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDAAddInvestPaymentRequest_FieldNumber_Channel];
   GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
 }
 
-#pragma mark - IVSTPRMInvestPaymentResponse
+#pragma mark - GDAInvestPaymentResponse
 
-@implementation IVSTPRMInvestPaymentResponse
+@implementation GDAInvestPaymentResponse
 
 @dynamic hasStatus, status;
 @dynamic hasRecordPayment, recordPayment;
 
-typedef struct IVSTPRMInvestPaymentResponse__storage_ {
+typedef struct GDAInvestPaymentResponse__storage_ {
   uint32_t _has_storage_[1];
-  IVSTPRMInvestPayment *recordPayment;
-  COMMONStatus *status;
-} IVSTPRMInvestPaymentResponse__storage_;
+  GDAInvestPayment *recordPayment;
+  GDAStatus *status;
+} GDAInvestPaymentResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -332,30 +332,30 @@ typedef struct IVSTPRMInvestPaymentResponse__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "recordPayment",
-        .dataTypeSpecific.className = GPBStringifySymbol(IVSTPRMInvestPayment),
-        .number = IVSTPRMInvestPaymentResponse_FieldNumber_RecordPayment,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAInvestPayment),
+        .number = GDAInvestPaymentResponse_FieldNumber_RecordPayment,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(IVSTPRMInvestPaymentResponse__storage_, recordPayment),
+        .offset = (uint32_t)offsetof(GDAInvestPaymentResponse__storage_, recordPayment),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = IVSTPRMInvestPaymentResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDAInvestPaymentResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(IVSTPRMInvestPaymentResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDAInvestPaymentResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[IVSTPRMInvestPaymentResponse class]
-                                     rootClass:[IVSTPRMPromotionInvestpaymentRoot class]
-                                          file:IVSTPRMPromotionInvestpaymentRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAInvestPaymentResponse class]
+                                     rootClass:[GDAPromotionInvestpaymentRoot class]
+                                          file:GDAPromotionInvestpaymentRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(IVSTPRMInvestPaymentResponse__storage_)
+                                   storageSize:sizeof(GDAInvestPaymentResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -370,9 +370,9 @@ typedef struct IVSTPRMInvestPaymentResponse__storage_ {
 
 @end
 
-#pragma mark - IVSTPRMInvestPayment
+#pragma mark - GDAInvestPayment
 
-@implementation IVSTPRMInvestPayment
+@implementation GDAInvestPayment
 
 @dynamic uuid;
 @dynamic payeeUuid;
@@ -384,18 +384,18 @@ typedef struct IVSTPRMInvestPaymentResponse__storage_ {
 @dynamic channelOrderUuid;
 @dynamic created;
 
-typedef struct IVSTPRMInvestPayment__storage_ {
+typedef struct GDAInvestPayment__storage_ {
   uint32_t _has_storage_[1];
   int32_t shouldPay;
   int32_t discount;
   int32_t actualPay;
-  COMMONPaymentChannel channel;
+  GDAPaymentChannel channel;
   NSString *uuid;
   NSString *payeeUuid;
   NSString *payeeStoreUuid;
   NSString *channelOrderUuid;
   int64_t created;
-} IVSTPRMInvestPayment__storage_;
+} GDAInvestPayment__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -406,92 +406,92 @@ typedef struct IVSTPRMInvestPayment__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = IVSTPRMInvestPayment_FieldNumber_Uuid,
+        .number = GDAInvestPayment_FieldNumber_Uuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(IVSTPRMInvestPayment__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDAInvestPayment__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = IVSTPRMInvestPayment_FieldNumber_PayeeUuid,
+        .number = GDAInvestPayment_FieldNumber_PayeeUuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(IVSTPRMInvestPayment__storage_, payeeUuid),
+        .offset = (uint32_t)offsetof(GDAInvestPayment__storage_, payeeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payeeStoreUuid",
         .dataTypeSpecific.className = NULL,
-        .number = IVSTPRMInvestPayment_FieldNumber_PayeeStoreUuid,
+        .number = GDAInvestPayment_FieldNumber_PayeeStoreUuid,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(IVSTPRMInvestPayment__storage_, payeeStoreUuid),
+        .offset = (uint32_t)offsetof(GDAInvestPayment__storage_, payeeStoreUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "shouldPay",
         .dataTypeSpecific.className = NULL,
-        .number = IVSTPRMInvestPayment_FieldNumber_ShouldPay,
+        .number = GDAInvestPayment_FieldNumber_ShouldPay,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(IVSTPRMInvestPayment__storage_, shouldPay),
+        .offset = (uint32_t)offsetof(GDAInvestPayment__storage_, shouldPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "discount",
         .dataTypeSpecific.className = NULL,
-        .number = IVSTPRMInvestPayment_FieldNumber_Discount,
+        .number = GDAInvestPayment_FieldNumber_Discount,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(IVSTPRMInvestPayment__storage_, discount),
+        .offset = (uint32_t)offsetof(GDAInvestPayment__storage_, discount),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "actualPay",
         .dataTypeSpecific.className = NULL,
-        .number = IVSTPRMInvestPayment_FieldNumber_ActualPay,
+        .number = GDAInvestPayment_FieldNumber_ActualPay,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(IVSTPRMInvestPayment__storage_, actualPay),
+        .offset = (uint32_t)offsetof(GDAInvestPayment__storage_, actualPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "channel",
-        .dataTypeSpecific.enumDescFunc = COMMONPaymentChannel_EnumDescriptor,
-        .number = IVSTPRMInvestPayment_FieldNumber_Channel,
+        .dataTypeSpecific.enumDescFunc = GDAPaymentChannel_EnumDescriptor,
+        .number = GDAInvestPayment_FieldNumber_Channel,
         .hasIndex = 6,
-        .offset = (uint32_t)offsetof(IVSTPRMInvestPayment__storage_, channel),
+        .offset = (uint32_t)offsetof(GDAInvestPayment__storage_, channel),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor),
         .dataType = GPBDataTypeEnum,
       },
       {
         .name = "channelOrderUuid",
         .dataTypeSpecific.className = NULL,
-        .number = IVSTPRMInvestPayment_FieldNumber_ChannelOrderUuid,
+        .number = GDAInvestPayment_FieldNumber_ChannelOrderUuid,
         .hasIndex = 7,
-        .offset = (uint32_t)offsetof(IVSTPRMInvestPayment__storage_, channelOrderUuid),
+        .offset = (uint32_t)offsetof(GDAInvestPayment__storage_, channelOrderUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "created",
         .dataTypeSpecific.className = NULL,
-        .number = IVSTPRMInvestPayment_FieldNumber_Created,
+        .number = GDAInvestPayment_FieldNumber_Created,
         .hasIndex = 8,
-        .offset = (uint32_t)offsetof(IVSTPRMInvestPayment__storage_, created),
+        .offset = (uint32_t)offsetof(GDAInvestPayment__storage_, created),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[IVSTPRMInvestPayment class]
-                                     rootClass:[IVSTPRMPromotionInvestpaymentRoot class]
-                                          file:IVSTPRMPromotionInvestpaymentRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAInvestPayment class]
+                                     rootClass:[GDAPromotionInvestpaymentRoot class]
+                                          file:GDAPromotionInvestpaymentRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(IVSTPRMInvestPayment__storage_)
+                                   storageSize:sizeof(GDAInvestPayment__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -506,28 +506,28 @@ typedef struct IVSTPRMInvestPayment__storage_ {
 
 @end
 
-int32_t IVSTPRMInvestPayment_Channel_RawValue(IVSTPRMInvestPayment *message) {
-  GPBDescriptor *descriptor = [IVSTPRMInvestPayment descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:IVSTPRMInvestPayment_FieldNumber_Channel];
+int32_t GDAInvestPayment_Channel_RawValue(GDAInvestPayment *message) {
+  GPBDescriptor *descriptor = [GDAInvestPayment descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDAInvestPayment_FieldNumber_Channel];
   return GPBGetMessageInt32Field(message, field);
 }
 
-void SetIVSTPRMInvestPayment_Channel_RawValue(IVSTPRMInvestPayment *message, int32_t value) {
-  GPBDescriptor *descriptor = [IVSTPRMInvestPayment descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:IVSTPRMInvestPayment_FieldNumber_Channel];
+void SetGDAInvestPayment_Channel_RawValue(GDAInvestPayment *message, int32_t value) {
+  GPBDescriptor *descriptor = [GDAInvestPayment descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:GDAInvestPayment_FieldNumber_Channel];
   GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
 }
 
-#pragma mark - IVSTPRMListInvestPaymentRequest
+#pragma mark - GDAListInvestPaymentRequest
 
-@implementation IVSTPRMListInvestPaymentRequest
+@implementation GDAListInvestPaymentRequest
 
 @dynamic page;
 
-typedef struct IVSTPRMListInvestPaymentRequest__storage_ {
+typedef struct GDAListInvestPaymentRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t page;
-} IVSTPRMListInvestPaymentRequest__storage_;
+} GDAListInvestPaymentRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -538,20 +538,20 @@ typedef struct IVSTPRMListInvestPaymentRequest__storage_ {
       {
         .name = "page",
         .dataTypeSpecific.className = NULL,
-        .number = IVSTPRMListInvestPaymentRequest_FieldNumber_Page,
+        .number = GDAListInvestPaymentRequest_FieldNumber_Page,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(IVSTPRMListInvestPaymentRequest__storage_, page),
+        .offset = (uint32_t)offsetof(GDAListInvestPaymentRequest__storage_, page),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[IVSTPRMListInvestPaymentRequest class]
-                                     rootClass:[IVSTPRMPromotionInvestpaymentRoot class]
-                                          file:IVSTPRMPromotionInvestpaymentRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListInvestPaymentRequest class]
+                                     rootClass:[GDAPromotionInvestpaymentRoot class]
+                                          file:GDAPromotionInvestpaymentRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(IVSTPRMListInvestPaymentRequest__storage_)
+                                   storageSize:sizeof(GDAListInvestPaymentRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -561,16 +561,16 @@ typedef struct IVSTPRMListInvestPaymentRequest__storage_ {
 
 @end
 
-#pragma mark - IVSTPRMGetInvestPaymentRequest
+#pragma mark - GDAGetInvestPaymentRequest
 
-@implementation IVSTPRMGetInvestPaymentRequest
+@implementation GDAGetInvestPaymentRequest
 
 @dynamic uuid;
 
-typedef struct IVSTPRMGetInvestPaymentRequest__storage_ {
+typedef struct GDAGetInvestPaymentRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *uuid;
-} IVSTPRMGetInvestPaymentRequest__storage_;
+} GDAGetInvestPaymentRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -581,20 +581,20 @@ typedef struct IVSTPRMGetInvestPaymentRequest__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = IVSTPRMGetInvestPaymentRequest_FieldNumber_Uuid,
+        .number = GDAGetInvestPaymentRequest_FieldNumber_Uuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(IVSTPRMGetInvestPaymentRequest__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDAGetInvestPaymentRequest__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[IVSTPRMGetInvestPaymentRequest class]
-                                     rootClass:[IVSTPRMPromotionInvestpaymentRoot class]
-                                          file:IVSTPRMPromotionInvestpaymentRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAGetInvestPaymentRequest class]
+                                     rootClass:[GDAPromotionInvestpaymentRoot class]
+                                          file:GDAPromotionInvestpaymentRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(IVSTPRMGetInvestPaymentRequest__storage_)
+                                   storageSize:sizeof(GDAGetInvestPaymentRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -604,16 +604,16 @@ typedef struct IVSTPRMGetInvestPaymentRequest__storage_ {
 
 @end
 
-#pragma mark - IVSTPRMSearchInvestPaymentRequest
+#pragma mark - GDASearchInvestPaymentRequest
 
-@implementation IVSTPRMSearchInvestPaymentRequest
+@implementation GDASearchInvestPaymentRequest
 
 @dynamic mobile;
 
-typedef struct IVSTPRMSearchInvestPaymentRequest__storage_ {
+typedef struct GDASearchInvestPaymentRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *mobile;
-} IVSTPRMSearchInvestPaymentRequest__storage_;
+} GDASearchInvestPaymentRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -624,20 +624,20 @@ typedef struct IVSTPRMSearchInvestPaymentRequest__storage_ {
       {
         .name = "mobile",
         .dataTypeSpecific.className = NULL,
-        .number = IVSTPRMSearchInvestPaymentRequest_FieldNumber_Mobile,
+        .number = GDASearchInvestPaymentRequest_FieldNumber_Mobile,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(IVSTPRMSearchInvestPaymentRequest__storage_, mobile),
+        .offset = (uint32_t)offsetof(GDASearchInvestPaymentRequest__storage_, mobile),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[IVSTPRMSearchInvestPaymentRequest class]
-                                     rootClass:[IVSTPRMPromotionInvestpaymentRoot class]
-                                          file:IVSTPRMPromotionInvestpaymentRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDASearchInvestPaymentRequest class]
+                                     rootClass:[GDAPromotionInvestpaymentRoot class]
+                                          file:GDAPromotionInvestpaymentRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(IVSTPRMSearchInvestPaymentRequest__storage_)
+                                   storageSize:sizeof(GDASearchInvestPaymentRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;

@@ -8,8 +8,8 @@
 #import <RxLibrary/GRXWriter.h>
 
 #if GPB_GRPC_FORWARD_DECLARE_MESSAGE_PROTO
-  @class ACCNTBalanceResponse;
-  @class ACCNTListBalanceRequest;
+  @class GDABalanceResponse;
+  @class GDAListBalanceRequest;
 #else
   #import "gedit/Common.pbobjc.h"
 #endif
@@ -17,13 +17,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol ACCNTAccountingBalanceApi <NSObject>
+@protocol GDAAccountingBalanceApi <NSObject>
 
 #pragma mark ListBalance(ListBalanceRequest) returns (stream BalanceResponse)
 
-- (void)listBalanceWithRequest:(ACCNTListBalanceRequest *)request eventHandler:(void(^)(BOOL done, ACCNTBalanceResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (void)listBalanceWithRequest:(GDAListBalanceRequest *)request eventHandler:(void(^)(BOOL done, GDABalanceResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
-- (GRPCProtoCall *)RPCToListBalanceWithRequest:(ACCNTListBalanceRequest *)request eventHandler:(void(^)(BOOL done, ACCNTBalanceResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (GRPCProtoCall *)RPCToListBalanceWithRequest:(GDAListBalanceRequest *)request eventHandler:(void(^)(BOOL done, GDABalanceResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
 
 @end
@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Basic service implementation, over gRPC, that only does
  * marshalling and parsing.
  */
-@interface ACCNTAccountingBalanceApi : GRPCProtoService<ACCNTAccountingBalanceApi>
+@interface GDAAccountingBalanceApi : GRPCProtoService<GDAAccountingBalanceApi>
 - (instancetype)initWithHost:(NSString *)host NS_DESIGNATED_INITIALIZER;
 + (instancetype)serviceWithHost:(NSString *)host;
 @end

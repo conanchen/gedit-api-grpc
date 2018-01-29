@@ -29,7 +29,7 @@ CF_EXTERN_C_BEGIN
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - PMQRYPaymentQueryRoot
+#pragma mark - GDAPaymentQueryRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -41,36 +41,36 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface PMQRYPaymentQueryRoot : GPBRootObject
+@interface GDAPaymentQueryRoot : GPBRootObject
 @end
 
-#pragma mark - PMQRYGetPaymentRequest
+#pragma mark - GDAGetPaymentRequest
 
-typedef GPB_ENUM(PMQRYGetPaymentRequest_FieldNumber) {
-  PMQRYGetPaymentRequest_FieldNumber_Uuid = 1,
+typedef GPB_ENUM(GDAGetPaymentRequest_FieldNumber) {
+  GDAGetPaymentRequest_FieldNumber_Uuid = 1,
 };
 
-@interface PMQRYGetPaymentRequest : GPBMessage
+@interface GDAGetPaymentRequest : GPBMessage
 
 /** 支付单编号 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
 
 @end
 
-#pragma mark - PMQRYListPaymentRequest
+#pragma mark - GDAListPaymentRequest
 
-typedef GPB_ENUM(PMQRYListPaymentRequest_FieldNumber) {
-  PMQRYListPaymentRequest_FieldNumber_PayerUuid = 10,
-  PMQRYListPaymentRequest_FieldNumber_PayeePaymentCode = 11,
-  PMQRYListPaymentRequest_FieldNumber_PayeeUuid = 12,
-  PMQRYListPaymentRequest_FieldNumber_PayeeStoreUuid = 13,
-  PMQRYListPaymentRequest_FieldNumber_PayeeWorkerUuid = 14,
-  PMQRYListPaymentRequest_FieldNumber_IsAnd = 24,
-  PMQRYListPaymentRequest_FieldNumber_From = 100,
-  PMQRYListPaymentRequest_FieldNumber_Size = 101,
+typedef GPB_ENUM(GDAListPaymentRequest_FieldNumber) {
+  GDAListPaymentRequest_FieldNumber_PayerUuid = 10,
+  GDAListPaymentRequest_FieldNumber_PayeePaymentCode = 11,
+  GDAListPaymentRequest_FieldNumber_PayeeUuid = 12,
+  GDAListPaymentRequest_FieldNumber_PayeeStoreUuid = 13,
+  GDAListPaymentRequest_FieldNumber_PayeeWorkerUuid = 14,
+  GDAListPaymentRequest_FieldNumber_IsAnd = 24,
+  GDAListPaymentRequest_FieldNumber_From = 100,
+  GDAListPaymentRequest_FieldNumber_Size = 101,
 };
 
-@interface PMQRYListPaymentRequest : GPBMessage
+@interface GDAListPaymentRequest : GPBMessage
 
 /** only called by manager */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *payerUuid;
@@ -95,14 +95,14 @@ typedef GPB_ENUM(PMQRYListPaymentRequest_FieldNumber) {
 
 @end
 
-#pragma mark - PMQRYListMyPayerPaymentRequest
+#pragma mark - GDAListMyPayerPaymentRequest
 
-typedef GPB_ENUM(PMQRYListMyPayerPaymentRequest_FieldNumber) {
-  PMQRYListMyPayerPaymentRequest_FieldNumber_From = 100,
-  PMQRYListMyPayerPaymentRequest_FieldNumber_Size = 101,
+typedef GPB_ENUM(GDAListMyPayerPaymentRequest_FieldNumber) {
+  GDAListMyPayerPaymentRequest_FieldNumber_From = 100,
+  GDAListMyPayerPaymentRequest_FieldNumber_Size = 101,
 };
 
-@interface PMQRYListMyPayerPaymentRequest : GPBMessage
+@interface GDAListMyPayerPaymentRequest : GPBMessage
 
 /** only called by myself */
 @property(nonatomic, readwrite) int32_t from;
@@ -111,14 +111,14 @@ typedef GPB_ENUM(PMQRYListMyPayerPaymentRequest_FieldNumber) {
 
 @end
 
-#pragma mark - PMQRYListMyPayeePaymentRequest
+#pragma mark - GDAListMyPayeePaymentRequest
 
-typedef GPB_ENUM(PMQRYListMyPayeePaymentRequest_FieldNumber) {
-  PMQRYListMyPayeePaymentRequest_FieldNumber_From = 100,
-  PMQRYListMyPayeePaymentRequest_FieldNumber_Size = 101,
+typedef GPB_ENUM(GDAListMyPayeePaymentRequest_FieldNumber) {
+  GDAListMyPayeePaymentRequest_FieldNumber_From = 100,
+  GDAListMyPayeePaymentRequest_FieldNumber_Size = 101,
 };
 
-@interface PMQRYListMyPayeePaymentRequest : GPBMessage
+@interface GDAListMyPayeePaymentRequest : GPBMessage
 
 /** only called by myself */
 @property(nonatomic, readwrite) int32_t from;

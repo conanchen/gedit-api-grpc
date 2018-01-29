@@ -8,13 +8,13 @@
 #import <RxLibrary/GRXWriter.h>
 
 #if GPB_GRPC_FORWARD_DECLARE_MESSAGE_PROTO
-  @class STWRKAddWorkershipRequest;
-  @class STWRKBanWorkshipRequest;
-  @class STWRKGetMyCurrentWorkinStoreRequest;
-  @class STWRKListMyWorkinStoreRequest;
-  @class STWRKListWorkshipByStoreRequest;
-  @class STWRKListWorkshipByWorkerRequest;
-  @class STWRKWorkshipResponse;
+  @class GDAAddWorkershipRequest;
+  @class GDABanWorkshipRequest;
+  @class GDAGetMyCurrentWorkinStoreRequest;
+  @class GDAListMyWorkinStoreRequest;
+  @class GDAListWorkshipByStoreRequest;
+  @class GDAListWorkshipByWorkerRequest;
+  @class GDAWorkshipResponse;
 #else
   #import "gedit/Common.pbobjc.h"
 #endif
@@ -22,27 +22,27 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol STWRKStoreWorkerApi <NSObject>
+@protocol GDAStoreWorkerApi <NSObject>
 
 #pragma mark Add(AddWorkershipRequest) returns (WorkshipResponse)
 
-- (void)addWithRequest:(STWRKAddWorkershipRequest *)request handler:(void(^)(STWRKWorkshipResponse *_Nullable response, NSError *_Nullable error))handler;
+- (void)addWithRequest:(GDAAddWorkershipRequest *)request handler:(void(^)(GDAWorkshipResponse *_Nullable response, NSError *_Nullable error))handler;
 
-- (GRPCProtoCall *)RPCToAddWithRequest:(STWRKAddWorkershipRequest *)request handler:(void(^)(STWRKWorkshipResponse *_Nullable response, NSError *_Nullable error))handler;
+- (GRPCProtoCall *)RPCToAddWithRequest:(GDAAddWorkershipRequest *)request handler:(void(^)(GDAWorkshipResponse *_Nullable response, NSError *_Nullable error))handler;
 
 
 #pragma mark ListByStore(ListWorkshipByStoreRequest) returns (stream WorkshipResponse)
 
-- (void)listByStoreWithRequest:(STWRKListWorkshipByStoreRequest *)request eventHandler:(void(^)(BOOL done, STWRKWorkshipResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (void)listByStoreWithRequest:(GDAListWorkshipByStoreRequest *)request eventHandler:(void(^)(BOOL done, GDAWorkshipResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
-- (GRPCProtoCall *)RPCToListByStoreWithRequest:(STWRKListWorkshipByStoreRequest *)request eventHandler:(void(^)(BOOL done, STWRKWorkshipResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (GRPCProtoCall *)RPCToListByStoreWithRequest:(GDAListWorkshipByStoreRequest *)request eventHandler:(void(^)(BOOL done, GDAWorkshipResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
 
 #pragma mark ListByWorker(ListWorkshipByWorkerRequest) returns (stream WorkshipResponse)
 
-- (void)listByWorkerWithRequest:(STWRKListWorkshipByWorkerRequest *)request eventHandler:(void(^)(BOOL done, STWRKWorkshipResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (void)listByWorkerWithRequest:(GDAListWorkshipByWorkerRequest *)request eventHandler:(void(^)(BOOL done, GDAWorkshipResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
-- (GRPCProtoCall *)RPCToListByWorkerWithRequest:(STWRKListWorkshipByWorkerRequest *)request eventHandler:(void(^)(BOOL done, STWRKWorkshipResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (GRPCProtoCall *)RPCToListByWorkerWithRequest:(GDAListWorkshipByWorkerRequest *)request eventHandler:(void(^)(BOOL done, GDAWorkshipResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
 
 #pragma mark ListMyWorkinStore(ListMyWorkinStoreRequest) returns (stream WorkshipResponse)
@@ -50,12 +50,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * should be only used by me
  */
-- (void)listMyWorkinStoreWithRequest:(STWRKListMyWorkinStoreRequest *)request eventHandler:(void(^)(BOOL done, STWRKWorkshipResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (void)listMyWorkinStoreWithRequest:(GDAListMyWorkinStoreRequest *)request eventHandler:(void(^)(BOOL done, GDAWorkshipResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
 /**
  * should be only used by me
  */
-- (GRPCProtoCall *)RPCToListMyWorkinStoreWithRequest:(STWRKListMyWorkinStoreRequest *)request eventHandler:(void(^)(BOOL done, STWRKWorkshipResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (GRPCProtoCall *)RPCToListMyWorkinStoreWithRequest:(GDAListMyWorkinStoreRequest *)request eventHandler:(void(^)(BOOL done, GDAWorkshipResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
 
 #pragma mark GetMyCurrentWorkinStore(GetMyCurrentWorkinStoreRequest) returns (WorkshipResponse)
@@ -63,19 +63,19 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * 收银员app端调用
  */
-- (void)getMyCurrentWorkinStoreWithRequest:(STWRKGetMyCurrentWorkinStoreRequest *)request handler:(void(^)(STWRKWorkshipResponse *_Nullable response, NSError *_Nullable error))handler;
+- (void)getMyCurrentWorkinStoreWithRequest:(GDAGetMyCurrentWorkinStoreRequest *)request handler:(void(^)(GDAWorkshipResponse *_Nullable response, NSError *_Nullable error))handler;
 
 /**
  * 收银员app端调用
  */
-- (GRPCProtoCall *)RPCToGetMyCurrentWorkinStoreWithRequest:(STWRKGetMyCurrentWorkinStoreRequest *)request handler:(void(^)(STWRKWorkshipResponse *_Nullable response, NSError *_Nullable error))handler;
+- (GRPCProtoCall *)RPCToGetMyCurrentWorkinStoreWithRequest:(GDAGetMyCurrentWorkinStoreRequest *)request handler:(void(^)(GDAWorkshipResponse *_Nullable response, NSError *_Nullable error))handler;
 
 
 #pragma mark Ban(BanWorkshipRequest) returns (WorkshipResponse)
 
-- (void)banWithRequest:(STWRKBanWorkshipRequest *)request handler:(void(^)(STWRKWorkshipResponse *_Nullable response, NSError *_Nullable error))handler;
+- (void)banWithRequest:(GDABanWorkshipRequest *)request handler:(void(^)(GDAWorkshipResponse *_Nullable response, NSError *_Nullable error))handler;
 
-- (GRPCProtoCall *)RPCToBanWithRequest:(STWRKBanWorkshipRequest *)request handler:(void(^)(STWRKWorkshipResponse *_Nullable response, NSError *_Nullable error))handler;
+- (GRPCProtoCall *)RPCToBanWithRequest:(GDABanWorkshipRequest *)request handler:(void(^)(GDAWorkshipResponse *_Nullable response, NSError *_Nullable error))handler;
 
 
 @end
@@ -84,7 +84,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Basic service implementation, over gRPC, that only does
  * marshalling and parsing.
  */
-@interface STWRKStoreWorkerApi : GRPCProtoService<STWRKStoreWorkerApi>
+@interface GDAStoreWorkerApi : GRPCProtoService<GDAStoreWorkerApi>
 - (instancetype)initWithHost:(NSString *)host NS_DESIGNATED_INITIALIZER;
 + (instancetype)serviceWithHost:(NSString *)host;
 @end

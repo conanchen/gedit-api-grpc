@@ -20,42 +20,42 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-#pragma mark - STOWNStoreOwnerRoot
+#pragma mark - GDAStoreOwnerRoot
 
-@implementation STOWNStoreOwnerRoot
+@implementation GDAStoreOwnerRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - STOWNStoreOwnerRoot_FileDescriptor
+#pragma mark - GDAStoreOwnerRoot_FileDescriptor
 
-static GPBFileDescriptor *STOWNStoreOwnerRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDAStoreOwnerRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.store"
-                                                 objcPrefix:@"STOWN"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - STOWNTransferOwnershipRequest
+#pragma mark - GDATransferOwnershipRequest
 
-@implementation STOWNTransferOwnershipRequest
+@implementation GDATransferOwnershipRequest
 
 @dynamic storeUuid;
 @dynamic userUuid;
 
-typedef struct STOWNTransferOwnershipRequest__storage_ {
+typedef struct GDATransferOwnershipRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *storeUuid;
   NSString *userUuid;
-} STOWNTransferOwnershipRequest__storage_;
+} GDATransferOwnershipRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -66,29 +66,29 @@ typedef struct STOWNTransferOwnershipRequest__storage_ {
       {
         .name = "storeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STOWNTransferOwnershipRequest_FieldNumber_StoreUuid,
+        .number = GDATransferOwnershipRequest_FieldNumber_StoreUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STOWNTransferOwnershipRequest__storage_, storeUuid),
+        .offset = (uint32_t)offsetof(GDATransferOwnershipRequest__storage_, storeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "userUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STOWNTransferOwnershipRequest_FieldNumber_UserUuid,
+        .number = GDATransferOwnershipRequest_FieldNumber_UserUuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STOWNTransferOwnershipRequest__storage_, userUuid),
+        .offset = (uint32_t)offsetof(GDATransferOwnershipRequest__storage_, userUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STOWNTransferOwnershipRequest class]
-                                     rootClass:[STOWNStoreOwnerRoot class]
-                                          file:STOWNStoreOwnerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDATransferOwnershipRequest class]
+                                     rootClass:[GDAStoreOwnerRoot class]
+                                          file:GDAStoreOwnerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STOWNTransferOwnershipRequest__storage_)
+                                   storageSize:sizeof(GDATransferOwnershipRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -103,20 +103,20 @@ typedef struct STOWNTransferOwnershipRequest__storage_ {
 
 @end
 
-#pragma mark - STOWNListOwnershipByOwnerRequest
+#pragma mark - GDAListOwnershipByOwnerRequest
 
-@implementation STOWNListOwnershipByOwnerRequest
+@implementation GDAListOwnershipByOwnerRequest
 
 @dynamic ownerUuid;
 @dynamic from;
 @dynamic size;
 
-typedef struct STOWNListOwnershipByOwnerRequest__storage_ {
+typedef struct GDAListOwnershipByOwnerRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t from;
   int32_t size;
   NSString *ownerUuid;
-} STOWNListOwnershipByOwnerRequest__storage_;
+} GDAListOwnershipByOwnerRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -127,38 +127,38 @@ typedef struct STOWNListOwnershipByOwnerRequest__storage_ {
       {
         .name = "ownerUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STOWNListOwnershipByOwnerRequest_FieldNumber_OwnerUuid,
+        .number = GDAListOwnershipByOwnerRequest_FieldNumber_OwnerUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STOWNListOwnershipByOwnerRequest__storage_, ownerUuid),
+        .offset = (uint32_t)offsetof(GDAListOwnershipByOwnerRequest__storage_, ownerUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "from",
         .dataTypeSpecific.className = NULL,
-        .number = STOWNListOwnershipByOwnerRequest_FieldNumber_From,
+        .number = GDAListOwnershipByOwnerRequest_FieldNumber_From,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STOWNListOwnershipByOwnerRequest__storage_, from),
+        .offset = (uint32_t)offsetof(GDAListOwnershipByOwnerRequest__storage_, from),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "size",
         .dataTypeSpecific.className = NULL,
-        .number = STOWNListOwnershipByOwnerRequest_FieldNumber_Size,
+        .number = GDAListOwnershipByOwnerRequest_FieldNumber_Size,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(STOWNListOwnershipByOwnerRequest__storage_, size),
+        .offset = (uint32_t)offsetof(GDAListOwnershipByOwnerRequest__storage_, size),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STOWNListOwnershipByOwnerRequest class]
-                                     rootClass:[STOWNStoreOwnerRoot class]
-                                          file:STOWNStoreOwnerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListOwnershipByOwnerRequest class]
+                                     rootClass:[GDAStoreOwnerRoot class]
+                                          file:GDAStoreOwnerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STOWNListOwnershipByOwnerRequest__storage_)
+                                   storageSize:sizeof(GDAListOwnershipByOwnerRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -173,16 +173,16 @@ typedef struct STOWNListOwnershipByOwnerRequest__storage_ {
 
 @end
 
-#pragma mark - STOWNListMyStoreRequest
+#pragma mark - GDAListMyStoreRequest
 
-@implementation STOWNListMyStoreRequest
+@implementation GDAListMyStoreRequest
 
 @dynamic lastUpdated;
 
-typedef struct STOWNListMyStoreRequest__storage_ {
+typedef struct GDAListMyStoreRequest__storage_ {
   uint32_t _has_storage_[1];
   int64_t lastUpdated;
-} STOWNListMyStoreRequest__storage_;
+} GDAListMyStoreRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -193,20 +193,20 @@ typedef struct STOWNListMyStoreRequest__storage_ {
       {
         .name = "lastUpdated",
         .dataTypeSpecific.className = NULL,
-        .number = STOWNListMyStoreRequest_FieldNumber_LastUpdated,
+        .number = GDAListMyStoreRequest_FieldNumber_LastUpdated,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STOWNListMyStoreRequest__storage_, lastUpdated),
+        .offset = (uint32_t)offsetof(GDAListMyStoreRequest__storage_, lastUpdated),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STOWNListMyStoreRequest class]
-                                     rootClass:[STOWNStoreOwnerRoot class]
-                                          file:STOWNStoreOwnerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListMyStoreRequest class]
+                                     rootClass:[GDAStoreOwnerRoot class]
+                                          file:GDAStoreOwnerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STOWNListMyStoreRequest__storage_)
+                                   storageSize:sizeof(GDAListMyStoreRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -221,16 +221,16 @@ typedef struct STOWNListMyStoreRequest__storage_ {
 
 @end
 
-#pragma mark - STOWNFindOwnerByStoreRequest
+#pragma mark - GDAFindOwnerByStoreRequest
 
-@implementation STOWNFindOwnerByStoreRequest
+@implementation GDAFindOwnerByStoreRequest
 
 @dynamic storeUuid;
 
-typedef struct STOWNFindOwnerByStoreRequest__storage_ {
+typedef struct GDAFindOwnerByStoreRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *storeUuid;
-} STOWNFindOwnerByStoreRequest__storage_;
+} GDAFindOwnerByStoreRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -241,20 +241,20 @@ typedef struct STOWNFindOwnerByStoreRequest__storage_ {
       {
         .name = "storeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STOWNFindOwnerByStoreRequest_FieldNumber_StoreUuid,
+        .number = GDAFindOwnerByStoreRequest_FieldNumber_StoreUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STOWNFindOwnerByStoreRequest__storage_, storeUuid),
+        .offset = (uint32_t)offsetof(GDAFindOwnerByStoreRequest__storage_, storeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STOWNFindOwnerByStoreRequest class]
-                                     rootClass:[STOWNStoreOwnerRoot class]
-                                          file:STOWNStoreOwnerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAFindOwnerByStoreRequest class]
+                                     rootClass:[GDAStoreOwnerRoot class]
+                                          file:GDAStoreOwnerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STOWNFindOwnerByStoreRequest__storage_)
+                                   storageSize:sizeof(GDAFindOwnerByStoreRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -269,20 +269,20 @@ typedef struct STOWNFindOwnerByStoreRequest__storage_ {
 
 @end
 
-#pragma mark - STOWNOwnershipResponse
+#pragma mark - GDAOwnershipResponse
 
-@implementation STOWNOwnershipResponse
+@implementation GDAOwnershipResponse
 
 @dynamic hasStatus, status;
 @dynamic hasOwnership, ownership;
 @dynamic from;
 
-typedef struct STOWNOwnershipResponse__storage_ {
+typedef struct GDAOwnershipResponse__storage_ {
   uint32_t _has_storage_[1];
   int32_t from;
-  STOWNOwnership *ownership;
-  COMMONStatus *status;
-} STOWNOwnershipResponse__storage_;
+  GDAOwnership *ownership;
+  GDAStatus *status;
+} GDAOwnershipResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -292,39 +292,39 @@ typedef struct STOWNOwnershipResponse__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "ownership",
-        .dataTypeSpecific.className = GPBStringifySymbol(STOWNOwnership),
-        .number = STOWNOwnershipResponse_FieldNumber_Ownership,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAOwnership),
+        .number = GDAOwnershipResponse_FieldNumber_Ownership,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STOWNOwnershipResponse__storage_, ownership),
+        .offset = (uint32_t)offsetof(GDAOwnershipResponse__storage_, ownership),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "from",
         .dataTypeSpecific.className = NULL,
-        .number = STOWNOwnershipResponse_FieldNumber_From,
+        .number = GDAOwnershipResponse_FieldNumber_From,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(STOWNOwnershipResponse__storage_, from),
+        .offset = (uint32_t)offsetof(GDAOwnershipResponse__storage_, from),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = STOWNOwnershipResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDAOwnershipResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STOWNOwnershipResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDAOwnershipResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STOWNOwnershipResponse class]
-                                     rootClass:[STOWNStoreOwnerRoot class]
-                                          file:STOWNStoreOwnerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAOwnershipResponse class]
+                                     rootClass:[GDAStoreOwnerRoot class]
+                                          file:GDAStoreOwnerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STOWNOwnershipResponse__storage_)
+                                   storageSize:sizeof(GDAOwnershipResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -334,9 +334,9 @@ typedef struct STOWNOwnershipResponse__storage_ {
 
 @end
 
-#pragma mark - STOWNOwnership
+#pragma mark - GDAOwnership
 
-@implementation STOWNOwnership
+@implementation GDAOwnership
 
 @dynamic userUuid;
 @dynamic storeUuid;
@@ -347,16 +347,16 @@ typedef struct STOWNOwnershipResponse__storage_ {
 @dynamic created;
 @dynamic lastUpdated;
 
-typedef struct STOWNOwnership__storage_ {
+typedef struct GDAOwnership__storage_ {
   uint32_t _has_storage_[1];
   NSString *userUuid;
   NSString *storeUuid;
   NSString *storeName;
   NSString *storeLogo;
-  COMMONLocation *location;
+  GDALocation *location;
   int64_t created;
   int64_t lastUpdated;
-} STOWNOwnership__storage_;
+} GDAOwnership__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -367,52 +367,52 @@ typedef struct STOWNOwnership__storage_ {
       {
         .name = "userUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STOWNOwnership_FieldNumber_UserUuid,
+        .number = GDAOwnership_FieldNumber_UserUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STOWNOwnership__storage_, userUuid),
+        .offset = (uint32_t)offsetof(GDAOwnership__storage_, userUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "storeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STOWNOwnership_FieldNumber_StoreUuid,
+        .number = GDAOwnership_FieldNumber_StoreUuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STOWNOwnership__storage_, storeUuid),
+        .offset = (uint32_t)offsetof(GDAOwnership__storage_, storeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "storeName",
         .dataTypeSpecific.className = NULL,
-        .number = STOWNOwnership_FieldNumber_StoreName,
+        .number = GDAOwnership_FieldNumber_StoreName,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(STOWNOwnership__storage_, storeName),
+        .offset = (uint32_t)offsetof(GDAOwnership__storage_, storeName),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "storeLogo",
         .dataTypeSpecific.className = NULL,
-        .number = STOWNOwnership_FieldNumber_StoreLogo,
+        .number = GDAOwnership_FieldNumber_StoreLogo,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(STOWNOwnership__storage_, storeLogo),
+        .offset = (uint32_t)offsetof(GDAOwnership__storage_, storeLogo),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "location",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONLocation),
-        .number = STOWNOwnership_FieldNumber_Location,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDALocation),
+        .number = GDAOwnership_FieldNumber_Location,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(STOWNOwnership__storage_, location),
+        .offset = (uint32_t)offsetof(GDAOwnership__storage_, location),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "active",
         .dataTypeSpecific.className = NULL,
-        .number = STOWNOwnership_FieldNumber_Active,
+        .number = GDAOwnership_FieldNumber_Active,
         .hasIndex = 5,
         .offset = 6,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
@@ -421,29 +421,29 @@ typedef struct STOWNOwnership__storage_ {
       {
         .name = "created",
         .dataTypeSpecific.className = NULL,
-        .number = STOWNOwnership_FieldNumber_Created,
+        .number = GDAOwnership_FieldNumber_Created,
         .hasIndex = 7,
-        .offset = (uint32_t)offsetof(STOWNOwnership__storage_, created),
+        .offset = (uint32_t)offsetof(GDAOwnership__storage_, created),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
       },
       {
         .name = "lastUpdated",
         .dataTypeSpecific.className = NULL,
-        .number = STOWNOwnership_FieldNumber_LastUpdated,
+        .number = GDAOwnership_FieldNumber_LastUpdated,
         .hasIndex = 8,
-        .offset = (uint32_t)offsetof(STOWNOwnership__storage_, lastUpdated),
+        .offset = (uint32_t)offsetof(GDAOwnership__storage_, lastUpdated),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STOWNOwnership class]
-                                     rootClass:[STOWNStoreOwnerRoot class]
-                                          file:STOWNStoreOwnerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAOwnership class]
+                                     rootClass:[GDAStoreOwnerRoot class]
+                                          file:GDAStoreOwnerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STOWNOwnership__storage_)
+                                   storageSize:sizeof(GDAOwnership__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =

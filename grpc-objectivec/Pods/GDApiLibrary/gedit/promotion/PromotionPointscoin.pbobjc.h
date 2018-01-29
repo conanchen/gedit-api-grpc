@@ -27,13 +27,13 @@
 
 CF_EXTERN_C_BEGIN
 
-@class COMMONStatus;
-@class PNTCPRMPointsCoin;
-GPB_ENUM_FWD_DECLARE(COMMONPaymentChannel);
+@class GDAPointsCoin;
+@class GDAStatus;
+GPB_ENUM_FWD_DECLARE(GDAPaymentChannel);
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - PNTCPRMPromotionPointscoinRoot
+#pragma mark - GDAPromotionPointscoinRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -45,21 +45,21 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface PNTCPRMPromotionPointscoinRoot : GPBRootObject
+@interface GDAPromotionPointscoinRoot : GPBRootObject
 @end
 
-#pragma mark - PNTCPRMPreparePointsCoinRequest
+#pragma mark - GDAPreparePointsCoinRequest
 
-typedef GPB_ENUM(PNTCPRMPreparePointsCoinRequest_FieldNumber) {
-  PNTCPRMPreparePointsCoinRequest_FieldNumber_PayeeUuid = 4,
-  PNTCPRMPreparePointsCoinRequest_FieldNumber_PayeeStoreUuid = 7,
-  PNTCPRMPreparePointsCoinRequest_FieldNumber_CoinNumber = 10,
-  PNTCPRMPreparePointsCoinRequest_FieldNumber_Price = 13,
-  PNTCPRMPreparePointsCoinRequest_FieldNumber_ShouldPay = 16,
-  PNTCPRMPreparePointsCoinRequest_FieldNumber_Channel = 26,
+typedef GPB_ENUM(GDAPreparePointsCoinRequest_FieldNumber) {
+  GDAPreparePointsCoinRequest_FieldNumber_PayeeUuid = 4,
+  GDAPreparePointsCoinRequest_FieldNumber_PayeeStoreUuid = 7,
+  GDAPreparePointsCoinRequest_FieldNumber_CoinNumber = 10,
+  GDAPreparePointsCoinRequest_FieldNumber_Price = 13,
+  GDAPreparePointsCoinRequest_FieldNumber_ShouldPay = 16,
+  GDAPreparePointsCoinRequest_FieldNumber_Channel = 26,
 };
 
-@interface PNTCPRMPreparePointsCoinRequest : GPBMessage
+@interface GDAPreparePointsCoinRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *payeeUuid;
 
@@ -72,35 +72,35 @@ typedef GPB_ENUM(PNTCPRMPreparePointsCoinRequest_FieldNumber) {
 @property(nonatomic, readwrite) int32_t shouldPay;
 
 /** 支付通道如支付宝、微信、云闪付 */
-@property(nonatomic, readwrite) enum COMMONPaymentChannel channel;
+@property(nonatomic, readwrite) enum GDAPaymentChannel channel;
 
 @end
 
 /**
- * Fetches the raw value of a @c PNTCPRMPreparePointsCoinRequest's @c channel property, even
+ * Fetches the raw value of a @c GDAPreparePointsCoinRequest's @c channel property, even
  * if the value was not defined by the enum at the time the code was generated.
  **/
-int32_t PNTCPRMPreparePointsCoinRequest_Channel_RawValue(PNTCPRMPreparePointsCoinRequest *message);
+int32_t GDAPreparePointsCoinRequest_Channel_RawValue(GDAPreparePointsCoinRequest *message);
 /**
- * Sets the raw value of an @c PNTCPRMPreparePointsCoinRequest's @c channel property, allowing
+ * Sets the raw value of an @c GDAPreparePointsCoinRequest's @c channel property, allowing
  * it to be set to a value that was not defined by the enum at the time the code
  * was generated.
  **/
-void SetPNTCPRMPreparePointsCoinRequest_Channel_RawValue(PNTCPRMPreparePointsCoinRequest *message, int32_t value);
+void SetGDAPreparePointsCoinRequest_Channel_RawValue(GDAPreparePointsCoinRequest *message, int32_t value);
 
-#pragma mark - PNTCPRMPreparePointsCoinResponse
+#pragma mark - GDAPreparePointsCoinResponse
 
-typedef GPB_ENUM(PNTCPRMPreparePointsCoinResponse_FieldNumber) {
-  PNTCPRMPreparePointsCoinResponse_FieldNumber_TotalCoinsBought = 1,
-  PNTCPRMPreparePointsCoinResponse_FieldNumber_TotalCoins = 2,
-  PNTCPRMPreparePointsCoinResponse_FieldNumber_TotalCoinsAvailable = 3,
-  PNTCPRMPreparePointsCoinResponse_FieldNumber_ChannelOrderUuid = 27,
-  PNTCPRMPreparePointsCoinResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAPreparePointsCoinResponse_FieldNumber) {
+  GDAPreparePointsCoinResponse_FieldNumber_TotalCoinsBought = 1,
+  GDAPreparePointsCoinResponse_FieldNumber_TotalCoins = 2,
+  GDAPreparePointsCoinResponse_FieldNumber_TotalCoinsAvailable = 3,
+  GDAPreparePointsCoinResponse_FieldNumber_ChannelOrderUuid = 27,
+  GDAPreparePointsCoinResponse_FieldNumber_Status = 999,
 };
 
-@interface PNTCPRMPreparePointsCoinResponse : GPBMessage
+@interface GDAPreparePointsCoinResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
@@ -118,20 +118,20 @@ typedef GPB_ENUM(PNTCPRMPreparePointsCoinResponse_FieldNumber) {
 
 @end
 
-#pragma mark - PNTCPRMBuyPointsCoinRequest
+#pragma mark - GDABuyPointsCoinRequest
 
-typedef GPB_ENUM(PNTCPRMBuyPointsCoinRequest_FieldNumber) {
-  PNTCPRMBuyPointsCoinRequest_FieldNumber_PayeeUuid = 4,
-  PNTCPRMBuyPointsCoinRequest_FieldNumber_PayeeStoreUuid = 7,
-  PNTCPRMBuyPointsCoinRequest_FieldNumber_CoinNumber = 8,
-  PNTCPRMBuyPointsCoinRequest_FieldNumber_Price = 9,
-  PNTCPRMBuyPointsCoinRequest_FieldNumber_ShouldPay = 10,
-  PNTCPRMBuyPointsCoinRequest_FieldNumber_ActualPay = 16,
-  PNTCPRMBuyPointsCoinRequest_FieldNumber_Channel = 26,
-  PNTCPRMBuyPointsCoinRequest_FieldNumber_ChannelOrderUuid = 27,
+typedef GPB_ENUM(GDABuyPointsCoinRequest_FieldNumber) {
+  GDABuyPointsCoinRequest_FieldNumber_PayeeUuid = 4,
+  GDABuyPointsCoinRequest_FieldNumber_PayeeStoreUuid = 7,
+  GDABuyPointsCoinRequest_FieldNumber_CoinNumber = 8,
+  GDABuyPointsCoinRequest_FieldNumber_Price = 9,
+  GDABuyPointsCoinRequest_FieldNumber_ShouldPay = 10,
+  GDABuyPointsCoinRequest_FieldNumber_ActualPay = 16,
+  GDABuyPointsCoinRequest_FieldNumber_Channel = 26,
+  GDABuyPointsCoinRequest_FieldNumber_ChannelOrderUuid = 27,
 };
 
-@interface PNTCPRMBuyPointsCoinRequest : GPBMessage
+@interface GDABuyPointsCoinRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *payeeUuid;
 
@@ -146,7 +146,7 @@ typedef GPB_ENUM(PNTCPRMBuyPointsCoinRequest_FieldNumber) {
 @property(nonatomic, readwrite) int32_t actualPay;
 
 /** 支付通道如支付宝、微信、云闪付 */
-@property(nonatomic, readwrite) enum COMMONPaymentChannel channel;
+@property(nonatomic, readwrite) enum GDAPaymentChannel channel;
 
 /** 预付单编号，可能由支付通道返回的或平台产生的 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *channelOrderUuid;
@@ -154,34 +154,34 @@ typedef GPB_ENUM(PNTCPRMBuyPointsCoinRequest_FieldNumber) {
 @end
 
 /**
- * Fetches the raw value of a @c PNTCPRMBuyPointsCoinRequest's @c channel property, even
+ * Fetches the raw value of a @c GDABuyPointsCoinRequest's @c channel property, even
  * if the value was not defined by the enum at the time the code was generated.
  **/
-int32_t PNTCPRMBuyPointsCoinRequest_Channel_RawValue(PNTCPRMBuyPointsCoinRequest *message);
+int32_t GDABuyPointsCoinRequest_Channel_RawValue(GDABuyPointsCoinRequest *message);
 /**
- * Sets the raw value of an @c PNTCPRMBuyPointsCoinRequest's @c channel property, allowing
+ * Sets the raw value of an @c GDABuyPointsCoinRequest's @c channel property, allowing
  * it to be set to a value that was not defined by the enum at the time the code
  * was generated.
  **/
-void SetPNTCPRMBuyPointsCoinRequest_Channel_RawValue(PNTCPRMBuyPointsCoinRequest *message, int32_t value);
+void SetGDABuyPointsCoinRequest_Channel_RawValue(GDABuyPointsCoinRequest *message, int32_t value);
 
-#pragma mark - PNTCPRMPointsCoin
+#pragma mark - GDAPointsCoin
 
-typedef GPB_ENUM(PNTCPRMPointsCoin_FieldNumber) {
-  PNTCPRMPointsCoin_FieldNumber_Uuid = 1,
-  PNTCPRMPointsCoin_FieldNumber_PayeeUuid = 4,
-  PNTCPRMPointsCoin_FieldNumber_PayeeStoreUuid = 7,
-  PNTCPRMPointsCoin_FieldNumber_CoinNumber = 8,
-  PNTCPRMPointsCoin_FieldNumber_Price = 9,
-  PNTCPRMPointsCoin_FieldNumber_ShouldPay = 10,
-  PNTCPRMPointsCoin_FieldNumber_Discount = 13,
-  PNTCPRMPointsCoin_FieldNumber_ActualPay = 16,
-  PNTCPRMPointsCoin_FieldNumber_Channel = 26,
-  PNTCPRMPointsCoin_FieldNumber_ChannelOrderUuid = 27,
-  PNTCPRMPointsCoin_FieldNumber_Created = 60,
+typedef GPB_ENUM(GDAPointsCoin_FieldNumber) {
+  GDAPointsCoin_FieldNumber_Uuid = 1,
+  GDAPointsCoin_FieldNumber_PayeeUuid = 4,
+  GDAPointsCoin_FieldNumber_PayeeStoreUuid = 7,
+  GDAPointsCoin_FieldNumber_CoinNumber = 8,
+  GDAPointsCoin_FieldNumber_Price = 9,
+  GDAPointsCoin_FieldNumber_ShouldPay = 10,
+  GDAPointsCoin_FieldNumber_Discount = 13,
+  GDAPointsCoin_FieldNumber_ActualPay = 16,
+  GDAPointsCoin_FieldNumber_Channel = 26,
+  GDAPointsCoin_FieldNumber_ChannelOrderUuid = 27,
+  GDAPointsCoin_FieldNumber_Created = 60,
 };
 
-@interface PNTCPRMPointsCoin : GPBMessage
+@interface GDAPointsCoin : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
 
@@ -200,7 +200,7 @@ typedef GPB_ENUM(PNTCPRMPointsCoin_FieldNumber) {
 @property(nonatomic, readwrite) int32_t actualPay;
 
 /** 支付通道如支付宝、微信、云闪付 */
-@property(nonatomic, readwrite) enum COMMONPaymentChannel channel;
+@property(nonatomic, readwrite) enum GDAPaymentChannel channel;
 
 /** 预付单编号，可能由支付通道返回的或平台产生的 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *channelOrderUuid;
@@ -210,67 +210,67 @@ typedef GPB_ENUM(PNTCPRMPointsCoin_FieldNumber) {
 @end
 
 /**
- * Fetches the raw value of a @c PNTCPRMPointsCoin's @c channel property, even
+ * Fetches the raw value of a @c GDAPointsCoin's @c channel property, even
  * if the value was not defined by the enum at the time the code was generated.
  **/
-int32_t PNTCPRMPointsCoin_Channel_RawValue(PNTCPRMPointsCoin *message);
+int32_t GDAPointsCoin_Channel_RawValue(GDAPointsCoin *message);
 /**
- * Sets the raw value of an @c PNTCPRMPointsCoin's @c channel property, allowing
+ * Sets the raw value of an @c GDAPointsCoin's @c channel property, allowing
  * it to be set to a value that was not defined by the enum at the time the code
  * was generated.
  **/
-void SetPNTCPRMPointsCoin_Channel_RawValue(PNTCPRMPointsCoin *message, int32_t value);
+void SetGDAPointsCoin_Channel_RawValue(GDAPointsCoin *message, int32_t value);
 
-#pragma mark - PNTCPRMListPointsCoinRequest
+#pragma mark - GDAListPointsCoinRequest
 
-typedef GPB_ENUM(PNTCPRMListPointsCoinRequest_FieldNumber) {
-  PNTCPRMListPointsCoinRequest_FieldNumber_Page = 1,
+typedef GPB_ENUM(GDAListPointsCoinRequest_FieldNumber) {
+  GDAListPointsCoinRequest_FieldNumber_Page = 1,
 };
 
-@interface PNTCPRMListPointsCoinRequest : GPBMessage
+@interface GDAListPointsCoinRequest : GPBMessage
 
 @property(nonatomic, readwrite) int32_t page;
 
 @end
 
-#pragma mark - PNTCPRMGetPointsCoinRequest
+#pragma mark - GDAGetPointsCoinRequest
 
-typedef GPB_ENUM(PNTCPRMGetPointsCoinRequest_FieldNumber) {
-  PNTCPRMGetPointsCoinRequest_FieldNumber_Uuid = 1,
+typedef GPB_ENUM(GDAGetPointsCoinRequest_FieldNumber) {
+  GDAGetPointsCoinRequest_FieldNumber_Uuid = 1,
 };
 
-@interface PNTCPRMGetPointsCoinRequest : GPBMessage
+@interface GDAGetPointsCoinRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
 
 @end
 
-#pragma mark - PNTCPRMSearchPointsCoinRequest
+#pragma mark - GDASearchPointsCoinRequest
 
-typedef GPB_ENUM(PNTCPRMSearchPointsCoinRequest_FieldNumber) {
-  PNTCPRMSearchPointsCoinRequest_FieldNumber_Mobile = 1,
+typedef GPB_ENUM(GDASearchPointsCoinRequest_FieldNumber) {
+  GDASearchPointsCoinRequest_FieldNumber_Mobile = 1,
 };
 
-@interface PNTCPRMSearchPointsCoinRequest : GPBMessage
+@interface GDASearchPointsCoinRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *mobile;
 
 @end
 
-#pragma mark - PNTCPRMPointsCoinResponse
+#pragma mark - GDAPointsCoinResponse
 
-typedef GPB_ENUM(PNTCPRMPointsCoinResponse_FieldNumber) {
-  PNTCPRMPointsCoinResponse_FieldNumber_PointsCoin = 1,
-  PNTCPRMPointsCoinResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAPointsCoinResponse_FieldNumber) {
+  GDAPointsCoinResponse_FieldNumber_PointsCoin = 1,
+  GDAPointsCoinResponse_FieldNumber_Status = 999,
 };
 
-@interface PNTCPRMPointsCoinResponse : GPBMessage
+@interface GDAPointsCoinResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
-@property(nonatomic, readwrite, strong, null_resettable) PNTCPRMPointsCoin *pointsCoin;
+@property(nonatomic, readwrite, strong, null_resettable) GDAPointsCoin *pointsCoin;
 /** Test to see if @c pointsCoin has been set. */
 @property(nonatomic, readwrite) BOOL hasPointsCoin;
 

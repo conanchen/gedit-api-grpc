@@ -8,10 +8,10 @@
 #import <RxLibrary/GRXWriter.h>
 
 #if GPB_GRPC_FORWARD_DECLARE_MESSAGE_PROTO
-  @class ACCNTGetJournalRequest;
-  @class ACCNTJournalResponse;
-  @class ACCNTListJournalRequest;
-  @class ACCNTUpsertJournalRequest;
+  @class GDAGetJournalRequest;
+  @class GDAJournalResponse;
+  @class GDAListJournalRequest;
+  @class GDAUpsertJournalRequest;
 #else
   #import "gedit/Common.pbobjc.h"
   #import "gedit/accounting/AccountingEvent.pbobjc.h"
@@ -20,33 +20,33 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol ACCNTAccountingJournalApi <NSObject>
+@protocol GDAAccountingJournalApi <NSObject>
 
 #pragma mark UpsertJournal(UpsertJournalRequest) returns (JournalResponse)
 
 /**
  * will compute postings at the same time when save Journal
  */
-- (void)upsertJournalWithRequest:(ACCNTUpsertJournalRequest *)request handler:(void(^)(ACCNTJournalResponse *_Nullable response, NSError *_Nullable error))handler;
+- (void)upsertJournalWithRequest:(GDAUpsertJournalRequest *)request handler:(void(^)(GDAJournalResponse *_Nullable response, NSError *_Nullable error))handler;
 
 /**
  * will compute postings at the same time when save Journal
  */
-- (GRPCProtoCall *)RPCToUpsertJournalWithRequest:(ACCNTUpsertJournalRequest *)request handler:(void(^)(ACCNTJournalResponse *_Nullable response, NSError *_Nullable error))handler;
+- (GRPCProtoCall *)RPCToUpsertJournalWithRequest:(GDAUpsertJournalRequest *)request handler:(void(^)(GDAJournalResponse *_Nullable response, NSError *_Nullable error))handler;
 
 
 #pragma mark GetJournal(GetJournalRequest) returns (JournalResponse)
 
-- (void)getJournalWithRequest:(ACCNTGetJournalRequest *)request handler:(void(^)(ACCNTJournalResponse *_Nullable response, NSError *_Nullable error))handler;
+- (void)getJournalWithRequest:(GDAGetJournalRequest *)request handler:(void(^)(GDAJournalResponse *_Nullable response, NSError *_Nullable error))handler;
 
-- (GRPCProtoCall *)RPCToGetJournalWithRequest:(ACCNTGetJournalRequest *)request handler:(void(^)(ACCNTJournalResponse *_Nullable response, NSError *_Nullable error))handler;
+- (GRPCProtoCall *)RPCToGetJournalWithRequest:(GDAGetJournalRequest *)request handler:(void(^)(GDAJournalResponse *_Nullable response, NSError *_Nullable error))handler;
 
 
 #pragma mark ListJournal(ListJournalRequest) returns (stream JournalResponse)
 
-- (void)listJournalWithRequest:(ACCNTListJournalRequest *)request eventHandler:(void(^)(BOOL done, ACCNTJournalResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (void)listJournalWithRequest:(GDAListJournalRequest *)request eventHandler:(void(^)(BOOL done, GDAJournalResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
-- (GRPCProtoCall *)RPCToListJournalWithRequest:(ACCNTListJournalRequest *)request eventHandler:(void(^)(BOOL done, ACCNTJournalResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (GRPCProtoCall *)RPCToListJournalWithRequest:(GDAListJournalRequest *)request eventHandler:(void(^)(BOOL done, GDAJournalResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
 
 @end
@@ -55,7 +55,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Basic service implementation, over gRPC, that only does
  * marshalling and parsing.
  */
-@interface ACCNTAccountingJournalApi : GRPCProtoService<ACCNTAccountingJournalApi>
+@interface GDAAccountingJournalApi : GRPCProtoService<GDAAccountingJournalApi>
 - (instancetype)initWithHost:(NSString *)host NS_DESIGNATED_INITIALIZER;
 + (instancetype)serviceWithHost:(NSString *)host;
 @end

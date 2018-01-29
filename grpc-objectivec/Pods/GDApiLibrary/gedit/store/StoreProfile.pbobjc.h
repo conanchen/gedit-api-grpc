@@ -27,15 +27,15 @@
 
 CF_EXTERN_C_BEGIN
 
-@class COMMONListString;
-@class COMMONLocation;
-@class COMMONStatus;
-@class STPRFStoreProfile;
-@class STPRFWorkingTime;
+@class GDAListString;
+@class GDALocation;
+@class GDAStatus;
+@class GDAStoreProfile;
+@class GDAWorkingTime;
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - STPRFStoreProfileRoot
+#pragma mark - GDAStoreProfileRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -47,29 +47,29 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface STPRFStoreProfileRoot : GPBRootObject
+@interface GDAStoreProfileRoot : GPBRootObject
 @end
 
-#pragma mark - STPRFCreateStoreRequest
+#pragma mark - GDACreateStoreRequest
 
-typedef GPB_ENUM(STPRFCreateStoreRequest_FieldNumber) {
-  STPRFCreateStoreRequest_FieldNumber_Name = 1,
-  STPRFCreateStoreRequest_FieldNumber_DetailAddress = 2,
-  STPRFCreateStoreRequest_FieldNumber_IntroducerMobile = 4,
-  STPRFCreateStoreRequest_FieldNumber_Location = 6,
-  STPRFCreateStoreRequest_FieldNumber_AmapAdCode = 20,
-  STPRFCreateStoreRequest_FieldNumber_AmapAoiName = 21,
-  STPRFCreateStoreRequest_FieldNumber_AmapBuildingId = 22,
-  STPRFCreateStoreRequest_FieldNumber_AmapStreet = 23,
-  STPRFCreateStoreRequest_FieldNumber_AmapStreetNum = 24,
-  STPRFCreateStoreRequest_FieldNumber_AmapDistrict = 25,
-  STPRFCreateStoreRequest_FieldNumber_AmapCityCode = 26,
-  STPRFCreateStoreRequest_FieldNumber_AmapCity = 27,
-  STPRFCreateStoreRequest_FieldNumber_AmapProvince = 28,
-  STPRFCreateStoreRequest_FieldNumber_AmapCountry = 29,
+typedef GPB_ENUM(GDACreateStoreRequest_FieldNumber) {
+  GDACreateStoreRequest_FieldNumber_Name = 1,
+  GDACreateStoreRequest_FieldNumber_DetailAddress = 2,
+  GDACreateStoreRequest_FieldNumber_IntroducerMobile = 4,
+  GDACreateStoreRequest_FieldNumber_Location = 6,
+  GDACreateStoreRequest_FieldNumber_AmapAdCode = 20,
+  GDACreateStoreRequest_FieldNumber_AmapAoiName = 21,
+  GDACreateStoreRequest_FieldNumber_AmapBuildingId = 22,
+  GDACreateStoreRequest_FieldNumber_AmapStreet = 23,
+  GDACreateStoreRequest_FieldNumber_AmapStreetNum = 24,
+  GDACreateStoreRequest_FieldNumber_AmapDistrict = 25,
+  GDACreateStoreRequest_FieldNumber_AmapCityCode = 26,
+  GDACreateStoreRequest_FieldNumber_AmapCity = 27,
+  GDACreateStoreRequest_FieldNumber_AmapProvince = 28,
+  GDACreateStoreRequest_FieldNumber_AmapCountry = 29,
 };
 
-@interface STPRFCreateStoreRequest : GPBMessage
+@interface GDACreateStoreRequest : GPBMessage
 
 /** 创建店铺需提供 名称、详细地址、店推手机号、地理位置，其他内容通过单项修改完善 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *name;
@@ -80,7 +80,7 @@ typedef GPB_ENUM(STPRFCreateStoreRequest_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *introducerMobile;
 
 /** 调用高德sdk自动获取 */
-@property(nonatomic, readwrite, strong, null_resettable) COMMONLocation *location;
+@property(nonatomic, readwrite, strong, null_resettable) GDALocation *location;
 /** Test to see if @c location has been set. */
 @property(nonatomic, readwrite) BOOL hasLocation;
 
@@ -110,18 +110,18 @@ typedef GPB_ENUM(STPRFCreateStoreRequest_FieldNumber) {
 
 @end
 
-#pragma mark - STPRFCreateStoreResponse
+#pragma mark - GDACreateStoreResponse
 
-typedef GPB_ENUM(STPRFCreateStoreResponse_FieldNumber) {
-  STPRFCreateStoreResponse_FieldNumber_Uuid = 1,
-  STPRFCreateStoreResponse_FieldNumber_Name = 2,
-  STPRFCreateStoreResponse_FieldNumber_OwnerUuid = 3,
-  STPRFCreateStoreResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDACreateStoreResponse_FieldNumber) {
+  GDACreateStoreResponse_FieldNumber_Uuid = 1,
+  GDACreateStoreResponse_FieldNumber_Name = 2,
+  GDACreateStoreResponse_FieldNumber_OwnerUuid = 3,
+  GDACreateStoreResponse_FieldNumber_Status = 999,
 };
 
-@interface STPRFCreateStoreResponse : GPBMessage
+@interface GDACreateStoreResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
@@ -134,18 +134,18 @@ typedef GPB_ENUM(STPRFCreateStoreResponse_FieldNumber) {
 
 @end
 
-#pragma mark - STPRFUpsertWithAampPoiRequest
+#pragma mark - GDAUpsertWithAampPoiRequest
 
-typedef GPB_ENUM(STPRFUpsertWithAampPoiRequest_FieldNumber) {
-  STPRFUpsertWithAampPoiRequest_FieldNumber_Id_p = 1,
-  STPRFUpsertWithAampPoiRequest_FieldNumber_Name = 2,
-  STPRFUpsertWithAampPoiRequest_FieldNumber_Address = 3,
-  STPRFUpsertWithAampPoiRequest_FieldNumber_Location = 4,
-  STPRFUpsertWithAampPoiRequest_FieldNumber_Tel = 5,
-  STPRFUpsertWithAampPoiRequest_FieldNumber_Adcode = 6,
+typedef GPB_ENUM(GDAUpsertWithAampPoiRequest_FieldNumber) {
+  GDAUpsertWithAampPoiRequest_FieldNumber_Id_p = 1,
+  GDAUpsertWithAampPoiRequest_FieldNumber_Name = 2,
+  GDAUpsertWithAampPoiRequest_FieldNumber_Address = 3,
+  GDAUpsertWithAampPoiRequest_FieldNumber_Location = 4,
+  GDAUpsertWithAampPoiRequest_FieldNumber_Tel = 5,
+  GDAUpsertWithAampPoiRequest_FieldNumber_Adcode = 6,
 };
 
-@interface STPRFUpsertWithAampPoiRequest : GPBMessage
+@interface GDAUpsertWithAampPoiRequest : GPBMessage
 
 /** e.g. "id": "B000A7I1TH", 对应StoreProfile.amapPoiId */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
@@ -157,7 +157,7 @@ typedef GPB_ENUM(STPRFUpsertWithAampPoiRequest_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *address;
 
 /** 高德经纬度：e.g."location": "116.408056,39.902387", */
-@property(nonatomic, readwrite, strong, null_resettable) COMMONLocation *location;
+@property(nonatomic, readwrite, strong, null_resettable) GDALocation *location;
 /** Test to see if @c location has been set. */
 @property(nonatomic, readwrite) BOOL hasLocation;
 
@@ -169,16 +169,16 @@ typedef GPB_ENUM(STPRFUpsertWithAampPoiRequest_FieldNumber) {
 
 @end
 
-#pragma mark - STPRFUpsertWithAampPoiResponse
+#pragma mark - GDAUpsertWithAampPoiResponse
 
-typedef GPB_ENUM(STPRFUpsertWithAampPoiResponse_FieldNumber) {
-  STPRFUpsertWithAampPoiResponse_FieldNumber_Uuid = 1,
-  STPRFUpsertWithAampPoiResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAUpsertWithAampPoiResponse_FieldNumber) {
+  GDAUpsertWithAampPoiResponse_FieldNumber_Uuid = 1,
+  GDAUpsertWithAampPoiResponse_FieldNumber_Status = 999,
 };
 
-@interface STPRFUpsertWithAampPoiResponse : GPBMessage
+@interface GDAUpsertWithAampPoiResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
@@ -187,53 +187,53 @@ typedef GPB_ENUM(STPRFUpsertWithAampPoiResponse_FieldNumber) {
 
 @end
 
-#pragma mark - STPRFUpdateStoreRequest
+#pragma mark - GDAUpdateStoreRequest
 
-typedef GPB_ENUM(STPRFUpdateStoreRequest_FieldNumber) {
-  STPRFUpdateStoreRequest_FieldNumber_Uuid = 1,
-  STPRFUpdateStoreRequest_FieldNumber_Name = 2,
-  STPRFUpdateStoreRequest_FieldNumber_Logo = 3,
-  STPRFUpdateStoreRequest_FieldNumber_Location = 4,
-  STPRFUpdateStoreRequest_FieldNumber_Type = 6,
-  STPRFUpdateStoreRequest_FieldNumber_Desc = 7,
-  STPRFUpdateStoreRequest_FieldNumber_PointsRate = 8,
-  STPRFUpdateStoreRequest_FieldNumber_DistrictUuid = 9,
-  STPRFUpdateStoreRequest_FieldNumber_DetailAddress = 10,
-  STPRFUpdateStoreRequest_FieldNumber_Photos = 11,
-  STPRFUpdateStoreRequest_FieldNumber_Tels = 12,
-  STPRFUpdateStoreRequest_FieldNumber_WorkingTime = 13,
-  STPRFUpdateStoreRequest_FieldNumber_Active = 59,
+typedef GPB_ENUM(GDAUpdateStoreRequest_FieldNumber) {
+  GDAUpdateStoreRequest_FieldNumber_Uuid = 1,
+  GDAUpdateStoreRequest_FieldNumber_Name = 2,
+  GDAUpdateStoreRequest_FieldNumber_Logo = 3,
+  GDAUpdateStoreRequest_FieldNumber_Location = 4,
+  GDAUpdateStoreRequest_FieldNumber_Type = 6,
+  GDAUpdateStoreRequest_FieldNumber_Desc = 7,
+  GDAUpdateStoreRequest_FieldNumber_PointsRate = 8,
+  GDAUpdateStoreRequest_FieldNumber_DistrictUuid = 9,
+  GDAUpdateStoreRequest_FieldNumber_DetailAddress = 10,
+  GDAUpdateStoreRequest_FieldNumber_Photos = 11,
+  GDAUpdateStoreRequest_FieldNumber_Tels = 12,
+  GDAUpdateStoreRequest_FieldNumber_WorkingTime = 13,
+  GDAUpdateStoreRequest_FieldNumber_Active = 59,
 };
 
-typedef GPB_ENUM(STPRFUpdateStoreRequest_Property_OneOfCase) {
-  STPRFUpdateStoreRequest_Property_OneOfCase_GPBUnsetOneOfCase = 0,
-  STPRFUpdateStoreRequest_Property_OneOfCase_Name = 2,
-  STPRFUpdateStoreRequest_Property_OneOfCase_Logo = 3,
-  STPRFUpdateStoreRequest_Property_OneOfCase_Location = 4,
-  STPRFUpdateStoreRequest_Property_OneOfCase_Type = 6,
-  STPRFUpdateStoreRequest_Property_OneOfCase_Desc = 7,
-  STPRFUpdateStoreRequest_Property_OneOfCase_PointsRate = 8,
-  STPRFUpdateStoreRequest_Property_OneOfCase_DistrictUuid = 9,
-  STPRFUpdateStoreRequest_Property_OneOfCase_DetailAddress = 10,
-  STPRFUpdateStoreRequest_Property_OneOfCase_Photos = 11,
-  STPRFUpdateStoreRequest_Property_OneOfCase_Tels = 12,
-  STPRFUpdateStoreRequest_Property_OneOfCase_WorkingTime = 13,
-  STPRFUpdateStoreRequest_Property_OneOfCase_Active = 59,
+typedef GPB_ENUM(GDAUpdateStoreRequest_Property_OneOfCase) {
+  GDAUpdateStoreRequest_Property_OneOfCase_GPBUnsetOneOfCase = 0,
+  GDAUpdateStoreRequest_Property_OneOfCase_Name = 2,
+  GDAUpdateStoreRequest_Property_OneOfCase_Logo = 3,
+  GDAUpdateStoreRequest_Property_OneOfCase_Location = 4,
+  GDAUpdateStoreRequest_Property_OneOfCase_Type = 6,
+  GDAUpdateStoreRequest_Property_OneOfCase_Desc = 7,
+  GDAUpdateStoreRequest_Property_OneOfCase_PointsRate = 8,
+  GDAUpdateStoreRequest_Property_OneOfCase_DistrictUuid = 9,
+  GDAUpdateStoreRequest_Property_OneOfCase_DetailAddress = 10,
+  GDAUpdateStoreRequest_Property_OneOfCase_Photos = 11,
+  GDAUpdateStoreRequest_Property_OneOfCase_Tels = 12,
+  GDAUpdateStoreRequest_Property_OneOfCase_WorkingTime = 13,
+  GDAUpdateStoreRequest_Property_OneOfCase_Active = 59,
 };
 
-@interface STPRFUpdateStoreRequest : GPBMessage
+@interface GDAUpdateStoreRequest : GPBMessage
 
 /** store uuid */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
 
 /** 只支持单项修改 */
-@property(nonatomic, readonly) STPRFUpdateStoreRequest_Property_OneOfCase propertyOneOfCase;
+@property(nonatomic, readonly) GDAUpdateStoreRequest_Property_OneOfCase propertyOneOfCase;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *name;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *logo;
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONLocation *location;
+@property(nonatomic, readwrite, strong, null_resettable) GDALocation *location;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *type;
 
@@ -247,11 +247,11 @@ typedef GPB_ENUM(STPRFUpdateStoreRequest_Property_OneOfCase) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *detailAddress;
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONListString *photos;
+@property(nonatomic, readwrite, strong, null_resettable) GDAListString *photos;
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONListString *tels;
+@property(nonatomic, readwrite, strong, null_resettable) GDAListString *tels;
 
-@property(nonatomic, readwrite, strong, null_resettable) STPRFWorkingTime *workingTime;
+@property(nonatomic, readwrite, strong, null_resettable) GDAWorkingTime *workingTime;
 
 @property(nonatomic, readwrite) BOOL active;
 
@@ -260,16 +260,16 @@ typedef GPB_ENUM(STPRFUpdateStoreRequest_Property_OneOfCase) {
 /**
  * Clears whatever value was set for the oneof 'property'.
  **/
-void STPRFUpdateStoreRequest_ClearPropertyOneOfCase(STPRFUpdateStoreRequest *message);
+void GDAUpdateStoreRequest_ClearPropertyOneOfCase(GDAUpdateStoreRequest *message);
 
-#pragma mark - STPRFWorkingTime
+#pragma mark - GDAWorkingTime
 
-typedef GPB_ENUM(STPRFWorkingTime_FieldNumber) {
-  STPRFWorkingTime_FieldNumber_Start = 1,
-  STPRFWorkingTime_FieldNumber_End = 2,
+typedef GPB_ENUM(GDAWorkingTime_FieldNumber) {
+  GDAWorkingTime_FieldNumber_Start = 1,
+  GDAWorkingTime_FieldNumber_End = 2,
 };
 
-@interface STPRFWorkingTime : GPBMessage
+@interface GDAWorkingTime : GPBMessage
 
 @property(nonatomic, readwrite) int64_t start;
 
@@ -277,17 +277,17 @@ typedef GPB_ENUM(STPRFWorkingTime_FieldNumber) {
 
 @end
 
-#pragma mark - STPRFUpdateStoreResponse
+#pragma mark - GDAUpdateStoreResponse
 
-typedef GPB_ENUM(STPRFUpdateStoreResponse_FieldNumber) {
-  STPRFUpdateStoreResponse_FieldNumber_Uuid = 1,
-  STPRFUpdateStoreResponse_FieldNumber_LastUpdated = 2,
-  STPRFUpdateStoreResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAUpdateStoreResponse_FieldNumber) {
+  GDAUpdateStoreResponse_FieldNumber_Uuid = 1,
+  GDAUpdateStoreResponse_FieldNumber_LastUpdated = 2,
+  GDAUpdateStoreResponse_FieldNumber_Status = 999,
 };
 
-@interface STPRFUpdateStoreResponse : GPBMessage
+@interface GDAUpdateStoreResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
@@ -299,14 +299,14 @@ typedef GPB_ENUM(STPRFUpdateStoreResponse_FieldNumber) {
 
 @end
 
-#pragma mark - STPRFGetStoreRequest
+#pragma mark - GDAGetStoreRequest
 
-typedef GPB_ENUM(STPRFGetStoreRequest_FieldNumber) {
-  STPRFGetStoreRequest_FieldNumber_Uuid = 1,
-  STPRFGetStoreRequest_FieldNumber_LastUpdated = 2,
+typedef GPB_ENUM(GDAGetStoreRequest_FieldNumber) {
+  GDAGetStoreRequest_FieldNumber_Uuid = 1,
+  GDAGetStoreRequest_FieldNumber_LastUpdated = 2,
 };
 
-@interface STPRFGetStoreRequest : GPBMessage
+@interface GDAGetStoreRequest : GPBMessage
 
 /** store uuid */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
@@ -315,15 +315,15 @@ typedef GPB_ENUM(STPRFGetStoreRequest_FieldNumber) {
 
 @end
 
-#pragma mark - STPRFListStoreRequest
+#pragma mark - GDAListStoreRequest
 
-typedef GPB_ENUM(STPRFListStoreRequest_FieldNumber) {
-  STPRFListStoreRequest_FieldNumber_Type = 3,
-  STPRFListStoreRequest_FieldNumber_From = 100,
-  STPRFListStoreRequest_FieldNumber_Size = 101,
+typedef GPB_ENUM(GDAListStoreRequest_FieldNumber) {
+  GDAListStoreRequest_FieldNumber_Type = 3,
+  GDAListStoreRequest_FieldNumber_From = 100,
+  GDAListStoreRequest_FieldNumber_Size = 101,
 };
 
-@interface STPRFListStoreRequest : GPBMessage
+@interface GDAListStoreRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *type;
 
@@ -333,15 +333,15 @@ typedef GPB_ENUM(STPRFListStoreRequest_FieldNumber) {
 
 @end
 
-#pragma mark - STPRFFindByNameRequest
+#pragma mark - GDAFindByNameRequest
 
-typedef GPB_ENUM(STPRFFindByNameRequest_FieldNumber) {
-  STPRFFindByNameRequest_FieldNumber_Name = 1,
-  STPRFFindByNameRequest_FieldNumber_From = 2,
-  STPRFFindByNameRequest_FieldNumber_Size = 3,
+typedef GPB_ENUM(GDAFindByNameRequest_FieldNumber) {
+  GDAFindByNameRequest_FieldNumber_Name = 1,
+  GDAFindByNameRequest_FieldNumber_From = 2,
+  GDAFindByNameRequest_FieldNumber_Size = 3,
 };
 
-@interface STPRFFindByNameRequest : GPBMessage
+@interface GDAFindByNameRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *name;
 
@@ -351,56 +351,56 @@ typedef GPB_ENUM(STPRFFindByNameRequest_FieldNumber) {
 
 @end
 
-#pragma mark - STPRFStoreProfileResponse
+#pragma mark - GDAStoreProfileResponse
 
-typedef GPB_ENUM(STPRFStoreProfileResponse_FieldNumber) {
-  STPRFStoreProfileResponse_FieldNumber_StoreProfile = 1,
-  STPRFStoreProfileResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAStoreProfileResponse_FieldNumber) {
+  GDAStoreProfileResponse_FieldNumber_StoreProfile = 1,
+  GDAStoreProfileResponse_FieldNumber_Status = 999,
 };
 
-@interface STPRFStoreProfileResponse : GPBMessage
+@interface GDAStoreProfileResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
-@property(nonatomic, readwrite, strong, null_resettable) STPRFStoreProfile *storeProfile;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStoreProfile *storeProfile;
 /** Test to see if @c storeProfile has been set. */
 @property(nonatomic, readwrite) BOOL hasStoreProfile;
 
 @end
 
-#pragma mark - STPRFStoreProfile
+#pragma mark - GDAStoreProfile
 
-typedef GPB_ENUM(STPRFStoreProfile_FieldNumber) {
-  STPRFStoreProfile_FieldNumber_Uuid = 1,
-  STPRFStoreProfile_FieldNumber_Name = 2,
-  STPRFStoreProfile_FieldNumber_Logo = 3,
-  STPRFStoreProfile_FieldNumber_Location = 4,
-  STPRFStoreProfile_FieldNumber_Type = 6,
-  STPRFStoreProfile_FieldNumber_Desc = 7,
-  STPRFStoreProfile_FieldNumber_PointsRate = 8,
-  STPRFStoreProfile_FieldNumber_DistrictUuid = 9,
-  STPRFStoreProfile_FieldNumber_DetailAddress = 10,
-  STPRFStoreProfile_FieldNumber_Photos = 11,
-  STPRFStoreProfile_FieldNumber_IntroducerUuid = 12,
-  STPRFStoreProfile_FieldNumber_Tels = 13,
-  STPRFStoreProfile_FieldNumber_AmapAdCode = 20,
-  STPRFStoreProfile_FieldNumber_AmapAoiName = 21,
-  STPRFStoreProfile_FieldNumber_AmapBuildingId = 22,
-  STPRFStoreProfile_FieldNumber_AmapStreet = 23,
-  STPRFStoreProfile_FieldNumber_AmapStreetNum = 24,
-  STPRFStoreProfile_FieldNumber_AmapDistrict = 25,
-  STPRFStoreProfile_FieldNumber_AmapCityCode = 26,
-  STPRFStoreProfile_FieldNumber_AmapCity = 27,
-  STPRFStoreProfile_FieldNumber_AmapProvince = 28,
-  STPRFStoreProfile_FieldNumber_AmapCountry = 29,
-  STPRFStoreProfile_FieldNumber_AmapPoiId = 30,
-  STPRFStoreProfile_FieldNumber_Active = 59,
-  STPRFStoreProfile_FieldNumber_From = 100,
+typedef GPB_ENUM(GDAStoreProfile_FieldNumber) {
+  GDAStoreProfile_FieldNumber_Uuid = 1,
+  GDAStoreProfile_FieldNumber_Name = 2,
+  GDAStoreProfile_FieldNumber_Logo = 3,
+  GDAStoreProfile_FieldNumber_Location = 4,
+  GDAStoreProfile_FieldNumber_Type = 6,
+  GDAStoreProfile_FieldNumber_Desc = 7,
+  GDAStoreProfile_FieldNumber_PointsRate = 8,
+  GDAStoreProfile_FieldNumber_DistrictUuid = 9,
+  GDAStoreProfile_FieldNumber_DetailAddress = 10,
+  GDAStoreProfile_FieldNumber_Photos = 11,
+  GDAStoreProfile_FieldNumber_IntroducerUuid = 12,
+  GDAStoreProfile_FieldNumber_Tels = 13,
+  GDAStoreProfile_FieldNumber_AmapAdCode = 20,
+  GDAStoreProfile_FieldNumber_AmapAoiName = 21,
+  GDAStoreProfile_FieldNumber_AmapBuildingId = 22,
+  GDAStoreProfile_FieldNumber_AmapStreet = 23,
+  GDAStoreProfile_FieldNumber_AmapStreetNum = 24,
+  GDAStoreProfile_FieldNumber_AmapDistrict = 25,
+  GDAStoreProfile_FieldNumber_AmapCityCode = 26,
+  GDAStoreProfile_FieldNumber_AmapCity = 27,
+  GDAStoreProfile_FieldNumber_AmapProvince = 28,
+  GDAStoreProfile_FieldNumber_AmapCountry = 29,
+  GDAStoreProfile_FieldNumber_AmapPoiId = 30,
+  GDAStoreProfile_FieldNumber_Active = 59,
+  GDAStoreProfile_FieldNumber_From = 100,
 };
 
-@interface STPRFStoreProfile : GPBMessage
+@interface GDAStoreProfile : GPBMessage
 
 /** store uuid */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
@@ -409,7 +409,7 @@ typedef GPB_ENUM(STPRFStoreProfile_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *logo;
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONLocation *location;
+@property(nonatomic, readwrite, strong, null_resettable) GDALocation *location;
 /** Test to see if @c location has been set. */
 @property(nonatomic, readwrite) BOOL hasLocation;
 
@@ -424,13 +424,13 @@ typedef GPB_ENUM(STPRFStoreProfile_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *detailAddress;
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONListString *photos;
+@property(nonatomic, readwrite, strong, null_resettable) GDAListString *photos;
 /** Test to see if @c photos has been set. */
 @property(nonatomic, readwrite) BOOL hasPhotos;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *introducerUuid;
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONListString *tels;
+@property(nonatomic, readwrite, strong, null_resettable) GDAListString *tels;
 /** Test to see if @c tels has been set. */
 @property(nonatomic, readwrite) BOOL hasTels;
 
@@ -463,14 +463,14 @@ typedef GPB_ENUM(STPRFStoreProfile_FieldNumber) {
 
 @end
 
-#pragma mark - STPRFBanStoreRequest
+#pragma mark - GDABanStoreRequest
 
-typedef GPB_ENUM(STPRFBanStoreRequest_FieldNumber) {
-  STPRFBanStoreRequest_FieldNumber_Uuid = 1,
-  STPRFBanStoreRequest_FieldNumber_Active = 2,
+typedef GPB_ENUM(GDABanStoreRequest_FieldNumber) {
+  GDABanStoreRequest_FieldNumber_Uuid = 1,
+  GDABanStoreRequest_FieldNumber_Active = 2,
 };
 
-@interface STPRFBanStoreRequest : GPBMessage
+@interface GDABanStoreRequest : GPBMessage
 
 /** store uuid */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
@@ -479,17 +479,17 @@ typedef GPB_ENUM(STPRFBanStoreRequest_FieldNumber) {
 
 @end
 
-#pragma mark - STPRFBanStoreResponse
+#pragma mark - GDABanStoreResponse
 
-typedef GPB_ENUM(STPRFBanStoreResponse_FieldNumber) {
-  STPRFBanStoreResponse_FieldNumber_Uuid = 1,
-  STPRFBanStoreResponse_FieldNumber_Active = 2,
-  STPRFBanStoreResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDABanStoreResponse_FieldNumber) {
+  GDABanStoreResponse_FieldNumber_Uuid = 1,
+  GDABanStoreResponse_FieldNumber_Active = 2,
+  GDABanStoreResponse_FieldNumber_Status = 999,
 };
 
-@interface STPRFBanStoreResponse : GPBMessage
+@interface GDABanStoreResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 

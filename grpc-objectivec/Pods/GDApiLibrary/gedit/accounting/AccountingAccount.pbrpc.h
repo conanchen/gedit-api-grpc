@@ -8,11 +8,11 @@
 #import <RxLibrary/GRXWriter.h>
 
 #if GPB_GRPC_FORWARD_DECLARE_MESSAGE_PROTO
-  @class ACCNTAccountResponse;
-  @class ACCNTFindAccountRequest;
-  @class ACCNTGetAccountRequest;
-  @class ACCNTListMyAccountRequest;
-  @class ACCNTUpsertAccountsRequest;
+  @class GDAAccountResponse;
+  @class GDAFindAccountRequest;
+  @class GDAGetAccountRequest;
+  @class GDAListMyAccountRequest;
+  @class GDAUpsertAccountsRequest;
 #else
   #import "gedit/Common.pbobjc.h"
 #endif
@@ -20,34 +20,34 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol ACCNTAccountingAccountApi <NSObject>
+@protocol GDAAccountingAccountApi <NSObject>
 
 #pragma mark UpsertAccounts(UpsertAccountsRequest) returns (stream AccountResponse)
 
-- (void)upsertAccountsWithRequest:(ACCNTUpsertAccountsRequest *)request eventHandler:(void(^)(BOOL done, ACCNTAccountResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (void)upsertAccountsWithRequest:(GDAUpsertAccountsRequest *)request eventHandler:(void(^)(BOOL done, GDAAccountResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
-- (GRPCProtoCall *)RPCToUpsertAccountsWithRequest:(ACCNTUpsertAccountsRequest *)request eventHandler:(void(^)(BOOL done, ACCNTAccountResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (GRPCProtoCall *)RPCToUpsertAccountsWithRequest:(GDAUpsertAccountsRequest *)request eventHandler:(void(^)(BOOL done, GDAAccountResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
 
 #pragma mark GetAccount(GetAccountRequest) returns (AccountResponse)
 
-- (void)getAccountWithRequest:(ACCNTGetAccountRequest *)request handler:(void(^)(ACCNTAccountResponse *_Nullable response, NSError *_Nullable error))handler;
+- (void)getAccountWithRequest:(GDAGetAccountRequest *)request handler:(void(^)(GDAAccountResponse *_Nullable response, NSError *_Nullable error))handler;
 
-- (GRPCProtoCall *)RPCToGetAccountWithRequest:(ACCNTGetAccountRequest *)request handler:(void(^)(ACCNTAccountResponse *_Nullable response, NSError *_Nullable error))handler;
+- (GRPCProtoCall *)RPCToGetAccountWithRequest:(GDAGetAccountRequest *)request handler:(void(^)(GDAAccountResponse *_Nullable response, NSError *_Nullable error))handler;
 
 
 #pragma mark FindAccountBy(FindAccountRequest) returns (AccountResponse)
 
-- (void)findAccountByWithRequest:(ACCNTFindAccountRequest *)request handler:(void(^)(ACCNTAccountResponse *_Nullable response, NSError *_Nullable error))handler;
+- (void)findAccountByWithRequest:(GDAFindAccountRequest *)request handler:(void(^)(GDAAccountResponse *_Nullable response, NSError *_Nullable error))handler;
 
-- (GRPCProtoCall *)RPCToFindAccountByWithRequest:(ACCNTFindAccountRequest *)request handler:(void(^)(ACCNTAccountResponse *_Nullable response, NSError *_Nullable error))handler;
+- (GRPCProtoCall *)RPCToFindAccountByWithRequest:(GDAFindAccountRequest *)request handler:(void(^)(GDAAccountResponse *_Nullable response, NSError *_Nullable error))handler;
 
 
 #pragma mark ListMyAccount(ListMyAccountRequest) returns (stream AccountResponse)
 
-- (void)listMyAccountWithRequest:(ACCNTListMyAccountRequest *)request eventHandler:(void(^)(BOOL done, ACCNTAccountResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (void)listMyAccountWithRequest:(GDAListMyAccountRequest *)request eventHandler:(void(^)(BOOL done, GDAAccountResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
-- (GRPCProtoCall *)RPCToListMyAccountWithRequest:(ACCNTListMyAccountRequest *)request eventHandler:(void(^)(BOOL done, ACCNTAccountResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (GRPCProtoCall *)RPCToListMyAccountWithRequest:(GDAListMyAccountRequest *)request eventHandler:(void(^)(BOOL done, GDAAccountResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
 
 @end
@@ -56,7 +56,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Basic service implementation, over gRPC, that only does
  * marshalling and parsing.
  */
-@interface ACCNTAccountingAccountApi : GRPCProtoService<ACCNTAccountingAccountApi>
+@interface GDAAccountingAccountApi : GRPCProtoService<GDAAccountingAccountApi>
 - (instancetype)initWithHost:(NSString *)host NS_DESIGNATED_INITIALIZER;
 + (instancetype)serviceWithHost:(NSString *)host;
 @end

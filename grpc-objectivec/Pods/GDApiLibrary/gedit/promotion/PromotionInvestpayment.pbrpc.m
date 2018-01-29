@@ -5,7 +5,7 @@
 #import <RxLibrary/GRXWriter+Immediate.h>
 #import "gedit/Common.pbobjc.h"
 
-@implementation IVSTPRMInvestPaymentApi
+@implementation GDAInvestPaymentApi
 
 // Designated initializer
 - (instancetype)initWithHost:(NSString *)host {
@@ -26,62 +26,62 @@
 
 #pragma mark Prepare(PreparInvestPaymentRequest) returns (PrepareInvestPaymentResponse)
 
-- (void)prepareWithRequest:(IVSTPRMPreparInvestPaymentRequest *)request handler:(void(^)(IVSTPRMPrepareInvestPaymentResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)prepareWithRequest:(GDAPreparInvestPaymentRequest *)request handler:(void(^)(GDAPrepareInvestPaymentResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToPrepareWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToPrepareWithRequest:(IVSTPRMPreparInvestPaymentRequest *)request handler:(void(^)(IVSTPRMPrepareInvestPaymentResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToPrepareWithRequest:(GDAPreparInvestPaymentRequest *)request handler:(void(^)(GDAPrepareInvestPaymentResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"Prepare"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[IVSTPRMPrepareInvestPaymentResponse class]
+             responseClass:[GDAPrepareInvestPaymentResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 #pragma mark Add(AddInvestPaymentRequest) returns (InvestPaymentResponse)
 
-- (void)addWithRequest:(IVSTPRMAddInvestPaymentRequest *)request handler:(void(^)(IVSTPRMInvestPaymentResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)addWithRequest:(GDAAddInvestPaymentRequest *)request handler:(void(^)(GDAInvestPaymentResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToAddWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToAddWithRequest:(IVSTPRMAddInvestPaymentRequest *)request handler:(void(^)(IVSTPRMInvestPaymentResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToAddWithRequest:(GDAAddInvestPaymentRequest *)request handler:(void(^)(GDAInvestPaymentResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"Add"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[IVSTPRMInvestPaymentResponse class]
+             responseClass:[GDAInvestPaymentResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 #pragma mark Get(GetInvestPaymentRequest) returns (InvestPaymentResponse)
 
-- (void)getWithRequest:(IVSTPRMGetInvestPaymentRequest *)request handler:(void(^)(IVSTPRMInvestPaymentResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)getWithRequest:(GDAGetInvestPaymentRequest *)request handler:(void(^)(GDAInvestPaymentResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToGetWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToGetWithRequest:(IVSTPRMGetInvestPaymentRequest *)request handler:(void(^)(IVSTPRMInvestPaymentResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToGetWithRequest:(GDAGetInvestPaymentRequest *)request handler:(void(^)(GDAInvestPaymentResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"Get"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[IVSTPRMInvestPaymentResponse class]
+             responseClass:[GDAInvestPaymentResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 #pragma mark Search(SearchInvestPaymentRequest) returns (stream InvestPaymentResponse)
 
-- (void)searchWithRequest:(IVSTPRMSearchInvestPaymentRequest *)request eventHandler:(void(^)(BOOL done, IVSTPRMInvestPaymentResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (void)searchWithRequest:(GDASearchInvestPaymentRequest *)request eventHandler:(void(^)(BOOL done, GDAInvestPaymentResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   [[self RPCToSearchWithRequest:request eventHandler:eventHandler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToSearchWithRequest:(IVSTPRMSearchInvestPaymentRequest *)request eventHandler:(void(^)(BOOL done, IVSTPRMInvestPaymentResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (GRPCProtoCall *)RPCToSearchWithRequest:(GDASearchInvestPaymentRequest *)request eventHandler:(void(^)(BOOL done, GDAInvestPaymentResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   return [self RPCToMethod:@"Search"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[IVSTPRMInvestPaymentResponse class]
+             responseClass:[GDAInvestPaymentResponse class]
         responsesWriteable:[GRXWriteable writeableWithEventHandler:eventHandler]];
 }
 #pragma mark List(ListInvestPaymentRequest) returns (stream InvestPaymentResponse)
 
-- (void)listWithRequest:(IVSTPRMListInvestPaymentRequest *)request eventHandler:(void(^)(BOOL done, IVSTPRMInvestPaymentResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (void)listWithRequest:(GDAListInvestPaymentRequest *)request eventHandler:(void(^)(BOOL done, GDAInvestPaymentResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   [[self RPCToListWithRequest:request eventHandler:eventHandler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToListWithRequest:(IVSTPRMListInvestPaymentRequest *)request eventHandler:(void(^)(BOOL done, IVSTPRMInvestPaymentResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (GRPCProtoCall *)RPCToListWithRequest:(GDAListInvestPaymentRequest *)request eventHandler:(void(^)(BOOL done, GDAInvestPaymentResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   return [self RPCToMethod:@"List"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[IVSTPRMInvestPaymentResponse class]
+             responseClass:[GDAInvestPaymentResponse class]
         responsesWriteable:[GRXWriteable writeableWithEventHandler:eventHandler]];
 }
 @end

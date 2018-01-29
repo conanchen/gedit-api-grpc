@@ -14,7 +14,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol ACCNTAccountingEventApi <NSObject>
+@protocol GDAAccountingEventApi <NSObject>
 
 @end
 
@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Basic service implementation, over gRPC, that only does
  * marshalling and parsing.
  */
-@interface ACCNTAccountingEventApi : GRPCProtoService<ACCNTAccountingEventApi>
+@interface GDAAccountingEventApi : GRPCProtoService<GDAAccountingEventApi>
 - (instancetype)initWithHost:(NSString *)host NS_DESIGNATED_INITIALIZER;
 + (instancetype)serviceWithHost:(NSString *)host;
 @end

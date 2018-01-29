@@ -5,7 +5,7 @@
 #import <RxLibrary/GRXWriter+Immediate.h>
 #import "gedit/Common.pbobjc.h"
 
-@implementation USRFANSUserFansApi
+@implementation GDAUserFansApi
 
 // Designated initializer
 - (instancetype)initWithHost:(NSString *)host {
@@ -26,38 +26,38 @@
 
 #pragma mark Add(AddFanshipRequest) returns (FanshipResponse)
 
-- (void)addWithRequest:(USRFANSAddFanshipRequest *)request handler:(void(^)(USRFANSFanshipResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)addWithRequest:(GDAAddFanshipRequest *)request handler:(void(^)(GDAFanshipResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToAddWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToAddWithRequest:(USRFANSAddFanshipRequest *)request handler:(void(^)(USRFANSFanshipResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToAddWithRequest:(GDAAddFanshipRequest *)request handler:(void(^)(GDAFanshipResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"Add"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[USRFANSFanshipResponse class]
+             responseClass:[GDAFanshipResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 #pragma mark FindParent(FindParentFanshipRequest) returns (FanshipResponse)
 
-- (void)findParentWithRequest:(USRFANSFindParentFanshipRequest *)request handler:(void(^)(USRFANSFanshipResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)findParentWithRequest:(GDAFindParentFanshipRequest *)request handler:(void(^)(GDAFanshipResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToFindParentWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToFindParentWithRequest:(USRFANSFindParentFanshipRequest *)request handler:(void(^)(USRFANSFanshipResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToFindParentWithRequest:(GDAFindParentFanshipRequest *)request handler:(void(^)(GDAFanshipResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"FindParent"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[USRFANSFanshipResponse class]
+             responseClass:[GDAFanshipResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 #pragma mark ListChild(ListChildFanshipRequest) returns (stream FanshipResponse)
 
-- (void)listChildWithRequest:(USRFANSListChildFanshipRequest *)request eventHandler:(void(^)(BOOL done, USRFANSFanshipResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (void)listChildWithRequest:(GDAListChildFanshipRequest *)request eventHandler:(void(^)(BOOL done, GDAFanshipResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   [[self RPCToListChildWithRequest:request eventHandler:eventHandler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToListChildWithRequest:(USRFANSListChildFanshipRequest *)request eventHandler:(void(^)(BOOL done, USRFANSFanshipResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (GRPCProtoCall *)RPCToListChildWithRequest:(GDAListChildFanshipRequest *)request eventHandler:(void(^)(BOOL done, GDAFanshipResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   return [self RPCToMethod:@"ListChild"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[USRFANSFanshipResponse class]
+             responseClass:[GDAFanshipResponse class]
         responsesWriteable:[GRXWriteable writeableWithEventHandler:eventHandler]];
 }
 #pragma mark ListMyFan(ListMyFanRequest) returns (stream FanshipResponse)
@@ -65,17 +65,17 @@
 /**
  * should be only used by me
  */
-- (void)listMyFanWithRequest:(USRFANSListMyFanRequest *)request eventHandler:(void(^)(BOOL done, USRFANSFanshipResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (void)listMyFanWithRequest:(GDAListMyFanRequest *)request eventHandler:(void(^)(BOOL done, GDAFanshipResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   [[self RPCToListMyFanWithRequest:request eventHandler:eventHandler] start];
 }
 // Returns a not-yet-started RPC object.
 /**
  * should be only used by me
  */
-- (GRPCProtoCall *)RPCToListMyFanWithRequest:(USRFANSListMyFanRequest *)request eventHandler:(void(^)(BOOL done, USRFANSFanshipResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (GRPCProtoCall *)RPCToListMyFanWithRequest:(GDAListMyFanRequest *)request eventHandler:(void(^)(BOOL done, GDAFanshipResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   return [self RPCToMethod:@"ListMyFan"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[USRFANSFanshipResponse class]
+             responseClass:[GDAFanshipResponse class]
         responsesWriteable:[GRXWriteable writeableWithEventHandler:eventHandler]];
 }
 @end

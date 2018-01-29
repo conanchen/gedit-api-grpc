@@ -27,12 +27,12 @@
 
 CF_EXTERN_C_BEGIN
 
-@class COMMONDistrict;
-@class COMMONStatus;
+@class GDADistrict;
+@class GDAStatus;
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - DISTRICTDistrictRoot
+#pragma mark - GDADistrictRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -44,40 +44,40 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface DISTRICTDistrictRoot : GPBRootObject
+@interface GDADistrictRoot : GPBRootObject
 @end
 
-#pragma mark - DISTRICTUpsertDistrictRequest
+#pragma mark - GDAUpsertDistrictRequest
 
-typedef GPB_ENUM(DISTRICTUpsertDistrictRequest_FieldNumber) {
-  DISTRICTUpsertDistrictRequest_FieldNumber_District = 1,
+typedef GPB_ENUM(GDAUpsertDistrictRequest_FieldNumber) {
+  GDAUpsertDistrictRequest_FieldNumber_District = 1,
 };
 
 /**
  * The request message containing the user's name.
  **/
-@interface DISTRICTUpsertDistrictRequest : GPBMessage
+@interface GDAUpsertDistrictRequest : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONDistrict *district;
+@property(nonatomic, readwrite, strong, null_resettable) GDADistrict *district;
 /** Test to see if @c district has been set. */
 @property(nonatomic, readwrite) BOOL hasDistrict;
 
 @end
 
-#pragma mark - DISTRICTGetTopDistrictRequest
+#pragma mark - GDAGetTopDistrictRequest
 
-@interface DISTRICTGetTopDistrictRequest : GPBMessage
+@interface GDAGetTopDistrictRequest : GPBMessage
 
 @end
 
-#pragma mark - DISTRICTListChildDistrictRequest
+#pragma mark - GDAListChildDistrictRequest
 
-typedef GPB_ENUM(DISTRICTListChildDistrictRequest_FieldNumber) {
-  DISTRICTListChildDistrictRequest_FieldNumber_ParentId = 1,
-  DISTRICTListChildDistrictRequest_FieldNumber_Size = 2,
+typedef GPB_ENUM(GDAListChildDistrictRequest_FieldNumber) {
+  GDAListChildDistrictRequest_FieldNumber_ParentId = 1,
+  GDAListChildDistrictRequest_FieldNumber_Size = 2,
 };
 
-@interface DISTRICTListChildDistrictRequest : GPBMessage
+@interface GDAListChildDistrictRequest : GPBMessage
 
 @property(nonatomic, readwrite) int64_t parentId;
 
@@ -85,14 +85,14 @@ typedef GPB_ENUM(DISTRICTListChildDistrictRequest_FieldNumber) {
 
 @end
 
-#pragma mark - DISTRICTListDistrictRequest
+#pragma mark - GDAListDistrictRequest
 
-typedef GPB_ENUM(DISTRICTListDistrictRequest_FieldNumber) {
-  DISTRICTListDistrictRequest_FieldNumber_Page = 1,
-  DISTRICTListDistrictRequest_FieldNumber_Size = 2,
+typedef GPB_ENUM(GDAListDistrictRequest_FieldNumber) {
+  GDAListDistrictRequest_FieldNumber_Page = 1,
+  GDAListDistrictRequest_FieldNumber_Size = 2,
 };
 
-@interface DISTRICTListDistrictRequest : GPBMessage
+@interface GDAListDistrictRequest : GPBMessage
 
 @property(nonatomic, readwrite) int64_t page;
 
@@ -100,23 +100,23 @@ typedef GPB_ENUM(DISTRICTListDistrictRequest_FieldNumber) {
 
 @end
 
-#pragma mark - DISTRICTDistrictResponse
+#pragma mark - GDADistrictResponse
 
-typedef GPB_ENUM(DISTRICTDistrictResponse_FieldNumber) {
-  DISTRICTDistrictResponse_FieldNumber_District = 1,
-  DISTRICTDistrictResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDADistrictResponse_FieldNumber) {
+  GDADistrictResponse_FieldNumber_District = 1,
+  GDADistrictResponse_FieldNumber_Status = 999,
 };
 
 /**
  * The response message containing the greetings
  **/
-@interface DISTRICTDistrictResponse : GPBMessage
+@interface GDADistrictResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONDistrict *district;
+@property(nonatomic, readwrite, strong, null_resettable) GDADistrict *district;
 /** Test to see if @c district has been set. */
 @property(nonatomic, readwrite) BOOL hasDistrict;
 

@@ -27,12 +27,12 @@
 
 CF_EXTERN_C_BEGIN
 
-@class COMMONStatus;
-@class USRFANSFanship;
+@class GDAFanship;
+@class GDAStatus;
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - USRFANSUserFansRoot
+#pragma mark - GDAUserFansRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -44,42 +44,42 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface USRFANSUserFansRoot : GPBRootObject
+@interface GDAUserFansRoot : GPBRootObject
 @end
 
-#pragma mark - USRFANSAddFanshipRequest
+#pragma mark - GDAAddFanshipRequest
 
-typedef GPB_ENUM(USRFANSAddFanshipRequest_FieldNumber) {
-  USRFANSAddFanshipRequest_FieldNumber_FanUuid = 1,
+typedef GPB_ENUM(GDAAddFanshipRequest_FieldNumber) {
+  GDAAddFanshipRequest_FieldNumber_FanUuid = 1,
 };
 
-@interface USRFANSAddFanshipRequest : GPBMessage
+@interface GDAAddFanshipRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *fanUuid;
 
 @end
 
-#pragma mark - USRFANSFindParentFanshipRequest
+#pragma mark - GDAFindParentFanshipRequest
 
-typedef GPB_ENUM(USRFANSFindParentFanshipRequest_FieldNumber) {
-  USRFANSFindParentFanshipRequest_FieldNumber_FanUuid = 1,
+typedef GPB_ENUM(GDAFindParentFanshipRequest_FieldNumber) {
+  GDAFindParentFanshipRequest_FieldNumber_FanUuid = 1,
 };
 
-@interface USRFANSFindParentFanshipRequest : GPBMessage
+@interface GDAFindParentFanshipRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *fanUuid;
 
 @end
 
-#pragma mark - USRFANSListChildFanshipRequest
+#pragma mark - GDAListChildFanshipRequest
 
-typedef GPB_ENUM(USRFANSListChildFanshipRequest_FieldNumber) {
-  USRFANSListChildFanshipRequest_FieldNumber_ParentUuid = 1,
-  USRFANSListChildFanshipRequest_FieldNumber_From = 100,
-  USRFANSListChildFanshipRequest_FieldNumber_Size = 101,
+typedef GPB_ENUM(GDAListChildFanshipRequest_FieldNumber) {
+  GDAListChildFanshipRequest_FieldNumber_ParentUuid = 1,
+  GDAListChildFanshipRequest_FieldNumber_From = 100,
+  GDAListChildFanshipRequest_FieldNumber_Size = 101,
 };
 
-@interface USRFANSListChildFanshipRequest : GPBMessage
+@interface GDAListChildFanshipRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *parentUuid;
 
@@ -89,48 +89,51 @@ typedef GPB_ENUM(USRFANSListChildFanshipRequest_FieldNumber) {
 
 @end
 
-#pragma mark - USRFANSListMyFanRequest
+#pragma mark - GDAListMyFanRequest
 
-typedef GPB_ENUM(USRFANSListMyFanRequest_FieldNumber) {
-  USRFANSListMyFanRequest_FieldNumber_LastUpdated = 1,
+typedef GPB_ENUM(GDAListMyFanRequest_FieldNumber) {
+  GDAListMyFanRequest_FieldNumber_LastUpdated = 1,
 };
 
-@interface USRFANSListMyFanRequest : GPBMessage
+@interface GDAListMyFanRequest : GPBMessage
 
 @property(nonatomic, readwrite) int64_t lastUpdated;
 
 @end
 
-#pragma mark - USRFANSFanshipResponse
+#pragma mark - GDAFanshipResponse
 
-typedef GPB_ENUM(USRFANSFanshipResponse_FieldNumber) {
-  USRFANSFanshipResponse_FieldNumber_Fanship = 1,
-  USRFANSFanshipResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAFanshipResponse_FieldNumber) {
+  GDAFanshipResponse_FieldNumber_Fanship = 1,
+  GDAFanshipResponse_FieldNumber_Status = 999,
 };
 
-@interface USRFANSFanshipResponse : GPBMessage
+@interface GDAFanshipResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
-@property(nonatomic, readwrite, strong, null_resettable) USRFANSFanship *fanship;
+@property(nonatomic, readwrite, strong, null_resettable) GDAFanship *fanship;
 /** Test to see if @c fanship has been set. */
 @property(nonatomic, readwrite) BOOL hasFanship;
 
 @end
 
-#pragma mark - USRFANSFanship
+#pragma mark - GDAFanship
 
-typedef GPB_ENUM(USRFANSFanship_FieldNumber) {
-  USRFANSFanship_FieldNumber_ParentUuid = 1,
-  USRFANSFanship_FieldNumber_FanUuid = 2,
-  USRFANSFanship_FieldNumber_FanName = 3,
-  USRFANSFanship_FieldNumber_Created = 4,
-  USRFANSFanship_FieldNumber_ParentName = 11,
+typedef GPB_ENUM(GDAFanship_FieldNumber) {
+  GDAFanship_FieldNumber_ParentUuid = 1,
+  GDAFanship_FieldNumber_FanUuid = 2,
+  GDAFanship_FieldNumber_FanName = 3,
+  GDAFanship_FieldNumber_Created = 4,
+  GDAFanship_FieldNumber_ParentName = 11,
+  GDAFanship_FieldNumber_From = 100,
 };
 
-@interface USRFANSFanship : GPBMessage
+@interface GDAFanship : GPBMessage
+
+@property(nonatomic, readwrite) int32_t from;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *parentUuid;
 

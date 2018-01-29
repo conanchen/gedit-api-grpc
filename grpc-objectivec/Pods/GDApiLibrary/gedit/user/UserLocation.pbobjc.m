@@ -20,42 +20,42 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-#pragma mark - USRLOCUserLocationRoot
+#pragma mark - GDAUserLocationRoot
 
-@implementation USRLOCUserLocationRoot
+@implementation GDAUserLocationRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - USRLOCUserLocationRoot_FileDescriptor
+#pragma mark - GDAUserLocationRoot_FileDescriptor
 
-static GPBFileDescriptor *USRLOCUserLocationRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDAUserLocationRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.user"
-                                                 objcPrefix:@"USRLOC"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - USRLOCUpdateMyLocationRequest
+#pragma mark - GDAUpdateMyLocationRequest
 
-@implementation USRLOCUpdateMyLocationRequest
+@implementation GDAUpdateMyLocationRequest
 
 @dynamic lat;
 @dynamic lon;
 
-typedef struct USRLOCUpdateMyLocationRequest__storage_ {
+typedef struct GDAUpdateMyLocationRequest__storage_ {
   uint32_t _has_storage_[1];
   double lat;
   double lon;
-} USRLOCUpdateMyLocationRequest__storage_;
+} GDAUpdateMyLocationRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -66,29 +66,29 @@ typedef struct USRLOCUpdateMyLocationRequest__storage_ {
       {
         .name = "lat",
         .dataTypeSpecific.className = NULL,
-        .number = USRLOCUpdateMyLocationRequest_FieldNumber_Lat,
+        .number = GDAUpdateMyLocationRequest_FieldNumber_Lat,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(USRLOCUpdateMyLocationRequest__storage_, lat),
+        .offset = (uint32_t)offsetof(GDAUpdateMyLocationRequest__storage_, lat),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeDouble,
       },
       {
         .name = "lon",
         .dataTypeSpecific.className = NULL,
-        .number = USRLOCUpdateMyLocationRequest_FieldNumber_Lon,
+        .number = GDAUpdateMyLocationRequest_FieldNumber_Lon,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(USRLOCUpdateMyLocationRequest__storage_, lon),
+        .offset = (uint32_t)offsetof(GDAUpdateMyLocationRequest__storage_, lon),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeDouble,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRLOCUpdateMyLocationRequest class]
-                                     rootClass:[USRLOCUserLocationRoot class]
-                                          file:USRLOCUserLocationRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAUpdateMyLocationRequest class]
+                                     rootClass:[GDAUserLocationRoot class]
+                                          file:GDAUserLocationRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(USRLOCUpdateMyLocationRequest__storage_)
+                                   storageSize:sizeof(GDAUpdateMyLocationRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -98,16 +98,16 @@ typedef struct USRLOCUpdateMyLocationRequest__storage_ {
 
 @end
 
-#pragma mark - USRLOCUpdateMyLocationResponse
+#pragma mark - GDAUpdateMyLocationResponse
 
-@implementation USRLOCUpdateMyLocationResponse
+@implementation GDAUpdateMyLocationResponse
 
 @dynamic hasStatus, status;
 
-typedef struct USRLOCUpdateMyLocationResponse__storage_ {
+typedef struct GDAUpdateMyLocationResponse__storage_ {
   uint32_t _has_storage_[1];
-  COMMONStatus *status;
-} USRLOCUpdateMyLocationResponse__storage_;
+  GDAStatus *status;
+} GDAUpdateMyLocationResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -117,21 +117,21 @@ typedef struct USRLOCUpdateMyLocationResponse__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = USRLOCUpdateMyLocationResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDAUpdateMyLocationResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(USRLOCUpdateMyLocationResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDAUpdateMyLocationResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[USRLOCUpdateMyLocationResponse class]
-                                     rootClass:[USRLOCUserLocationRoot class]
-                                          file:USRLOCUserLocationRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAUpdateMyLocationResponse class]
+                                     rootClass:[GDAUserLocationRoot class]
+                                          file:GDAUserLocationRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(USRLOCUpdateMyLocationResponse__storage_)
+                                   storageSize:sizeof(GDAUpdateMyLocationResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;

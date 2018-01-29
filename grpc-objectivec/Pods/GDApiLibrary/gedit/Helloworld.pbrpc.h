@@ -8,27 +8,27 @@
 #import <RxLibrary/GRXWriter.h>
 
 #if GPB_GRPC_FORWARD_DECLARE_MESSAGE_PROTO
-  @class HLWHelloReply;
-  @class HLWHelloRequest;
+  @class GDAHelloReply;
+  @class GDAHelloRequest;
 #else
 #endif
 
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol HLWGreeter <NSObject>
+@protocol GDAGreeter <NSObject>
 
 #pragma mark SayHello(HelloRequest) returns (HelloReply)
 
 /**
  * Sends a greeting
  */
-- (void)sayHelloWithRequest:(HLWHelloRequest *)request handler:(void(^)(HLWHelloReply *_Nullable response, NSError *_Nullable error))handler;
+- (void)sayHelloWithRequest:(GDAHelloRequest *)request handler:(void(^)(GDAHelloReply *_Nullable response, NSError *_Nullable error))handler;
 
 /**
  * Sends a greeting
  */
-- (GRPCProtoCall *)RPCToSayHelloWithRequest:(HLWHelloRequest *)request handler:(void(^)(HLWHelloReply *_Nullable response, NSError *_Nullable error))handler;
+- (GRPCProtoCall *)RPCToSayHelloWithRequest:(GDAHelloRequest *)request handler:(void(^)(GDAHelloReply *_Nullable response, NSError *_Nullable error))handler;
 
 
 @end
@@ -37,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Basic service implementation, over gRPC, that only does
  * marshalling and parsing.
  */
-@interface HLWGreeter : GRPCProtoService<HLWGreeter>
+@interface GDAGreeter : GRPCProtoService<GDAGreeter>
 - (instancetype)initWithHost:(NSString *)host NS_DESIGNATED_INITIALIZER;
 + (instancetype)serviceWithHost:(NSString *)host;
 @end

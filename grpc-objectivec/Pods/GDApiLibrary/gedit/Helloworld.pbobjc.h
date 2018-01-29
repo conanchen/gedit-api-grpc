@@ -29,7 +29,7 @@ CF_EXTERN_C_BEGIN
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - HLWHelloworldRoot
+#pragma mark - GDAHelloworldRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -41,34 +41,34 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface HLWHelloworldRoot : GPBRootObject
+@interface GDAHelloworldRoot : GPBRootObject
 @end
 
-#pragma mark - HLWHelloRequest
+#pragma mark - GDAHelloRequest
 
-typedef GPB_ENUM(HLWHelloRequest_FieldNumber) {
-  HLWHelloRequest_FieldNumber_Name = 1,
+typedef GPB_ENUM(GDAHelloRequest_FieldNumber) {
+  GDAHelloRequest_FieldNumber_Name = 1,
 };
 
 /**
  * The request message containing the user's name.
  **/
-@interface HLWHelloRequest : GPBMessage
+@interface GDAHelloRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *name;
 
 @end
 
-#pragma mark - HLWHelloReply
+#pragma mark - GDAHelloReply
 
-typedef GPB_ENUM(HLWHelloReply_FieldNumber) {
-  HLWHelloReply_FieldNumber_Message = 1,
+typedef GPB_ENUM(GDAHelloReply_FieldNumber) {
+  GDAHelloReply_FieldNumber_Message = 1,
 };
 
 /**
  * The response message containing the greetings
  **/
-@interface HLWHelloReply : GPBMessage
+@interface GDAHelloReply : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *message;
 

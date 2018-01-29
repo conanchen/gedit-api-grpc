@@ -20,42 +20,42 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-#pragma mark - STWRKStoreWorkerRoot
+#pragma mark - GDAStoreWorkerRoot
 
-@implementation STWRKStoreWorkerRoot
+@implementation GDAStoreWorkerRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - STWRKStoreWorkerRoot_FileDescriptor
+#pragma mark - GDAStoreWorkerRoot_FileDescriptor
 
-static GPBFileDescriptor *STWRKStoreWorkerRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDAStoreWorkerRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.store"
-                                                 objcPrefix:@"STWRK"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - STWRKAddWorkershipRequest
+#pragma mark - GDAAddWorkershipRequest
 
-@implementation STWRKAddWorkershipRequest
+@implementation GDAAddWorkershipRequest
 
 @dynamic storeUuid;
 @dynamic workerUuid;
 
-typedef struct STWRKAddWorkershipRequest__storage_ {
+typedef struct GDAAddWorkershipRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *storeUuid;
   NSString *workerUuid;
-} STWRKAddWorkershipRequest__storage_;
+} GDAAddWorkershipRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -66,29 +66,29 @@ typedef struct STWRKAddWorkershipRequest__storage_ {
       {
         .name = "storeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STWRKAddWorkershipRequest_FieldNumber_StoreUuid,
+        .number = GDAAddWorkershipRequest_FieldNumber_StoreUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STWRKAddWorkershipRequest__storage_, storeUuid),
+        .offset = (uint32_t)offsetof(GDAAddWorkershipRequest__storage_, storeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "workerUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STWRKAddWorkershipRequest_FieldNumber_WorkerUuid,
+        .number = GDAAddWorkershipRequest_FieldNumber_WorkerUuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STWRKAddWorkershipRequest__storage_, workerUuid),
+        .offset = (uint32_t)offsetof(GDAAddWorkershipRequest__storage_, workerUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STWRKAddWorkershipRequest class]
-                                     rootClass:[STWRKStoreWorkerRoot class]
-                                          file:STWRKStoreWorkerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAAddWorkershipRequest class]
+                                     rootClass:[GDAStoreWorkerRoot class]
+                                          file:GDAStoreWorkerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STWRKAddWorkershipRequest__storage_)
+                                   storageSize:sizeof(GDAAddWorkershipRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -103,20 +103,20 @@ typedef struct STWRKAddWorkershipRequest__storage_ {
 
 @end
 
-#pragma mark - STWRKListWorkshipByStoreRequest
+#pragma mark - GDAListWorkshipByStoreRequest
 
-@implementation STWRKListWorkshipByStoreRequest
+@implementation GDAListWorkshipByStoreRequest
 
 @dynamic storeUuid;
 @dynamic from;
 @dynamic size;
 
-typedef struct STWRKListWorkshipByStoreRequest__storage_ {
+typedef struct GDAListWorkshipByStoreRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t from;
   int32_t size;
   NSString *storeUuid;
-} STWRKListWorkshipByStoreRequest__storage_;
+} GDAListWorkshipByStoreRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -127,38 +127,38 @@ typedef struct STWRKListWorkshipByStoreRequest__storage_ {
       {
         .name = "storeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STWRKListWorkshipByStoreRequest_FieldNumber_StoreUuid,
+        .number = GDAListWorkshipByStoreRequest_FieldNumber_StoreUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STWRKListWorkshipByStoreRequest__storage_, storeUuid),
+        .offset = (uint32_t)offsetof(GDAListWorkshipByStoreRequest__storage_, storeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "from",
         .dataTypeSpecific.className = NULL,
-        .number = STWRKListWorkshipByStoreRequest_FieldNumber_From,
+        .number = GDAListWorkshipByStoreRequest_FieldNumber_From,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STWRKListWorkshipByStoreRequest__storage_, from),
+        .offset = (uint32_t)offsetof(GDAListWorkshipByStoreRequest__storage_, from),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "size",
         .dataTypeSpecific.className = NULL,
-        .number = STWRKListWorkshipByStoreRequest_FieldNumber_Size,
+        .number = GDAListWorkshipByStoreRequest_FieldNumber_Size,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(STWRKListWorkshipByStoreRequest__storage_, size),
+        .offset = (uint32_t)offsetof(GDAListWorkshipByStoreRequest__storage_, size),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STWRKListWorkshipByStoreRequest class]
-                                     rootClass:[STWRKStoreWorkerRoot class]
-                                          file:STWRKStoreWorkerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListWorkshipByStoreRequest class]
+                                     rootClass:[GDAStoreWorkerRoot class]
+                                          file:GDAStoreWorkerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STWRKListWorkshipByStoreRequest__storage_)
+                                   storageSize:sizeof(GDAListWorkshipByStoreRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -173,16 +173,16 @@ typedef struct STWRKListWorkshipByStoreRequest__storage_ {
 
 @end
 
-#pragma mark - STWRKListMyWorkinStoreRequest
+#pragma mark - GDAListMyWorkinStoreRequest
 
-@implementation STWRKListMyWorkinStoreRequest
+@implementation GDAListMyWorkinStoreRequest
 
 @dynamic lastUpdated;
 
-typedef struct STWRKListMyWorkinStoreRequest__storage_ {
+typedef struct GDAListMyWorkinStoreRequest__storage_ {
   uint32_t _has_storage_[1];
   int64_t lastUpdated;
-} STWRKListMyWorkinStoreRequest__storage_;
+} GDAListMyWorkinStoreRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -193,20 +193,20 @@ typedef struct STWRKListMyWorkinStoreRequest__storage_ {
       {
         .name = "lastUpdated",
         .dataTypeSpecific.className = NULL,
-        .number = STWRKListMyWorkinStoreRequest_FieldNumber_LastUpdated,
+        .number = GDAListMyWorkinStoreRequest_FieldNumber_LastUpdated,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STWRKListMyWorkinStoreRequest__storage_, lastUpdated),
+        .offset = (uint32_t)offsetof(GDAListMyWorkinStoreRequest__storage_, lastUpdated),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STWRKListMyWorkinStoreRequest class]
-                                     rootClass:[STWRKStoreWorkerRoot class]
-                                          file:STWRKStoreWorkerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListMyWorkinStoreRequest class]
+                                     rootClass:[GDAStoreWorkerRoot class]
+                                          file:GDAStoreWorkerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STWRKListMyWorkinStoreRequest__storage_)
+                                   storageSize:sizeof(GDAListMyWorkinStoreRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -221,14 +221,14 @@ typedef struct STWRKListMyWorkinStoreRequest__storage_ {
 
 @end
 
-#pragma mark - STWRKGetMyCurrentWorkinStoreRequest
+#pragma mark - GDAGetMyCurrentWorkinStoreRequest
 
-@implementation STWRKGetMyCurrentWorkinStoreRequest
+@implementation GDAGetMyCurrentWorkinStoreRequest
 
 
-typedef struct STWRKGetMyCurrentWorkinStoreRequest__storage_ {
+typedef struct GDAGetMyCurrentWorkinStoreRequest__storage_ {
   uint32_t _has_storage_[1];
-} STWRKGetMyCurrentWorkinStoreRequest__storage_;
+} GDAGetMyCurrentWorkinStoreRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -236,12 +236,12 @@ typedef struct STWRKGetMyCurrentWorkinStoreRequest__storage_ {
   static GPBDescriptor *descriptor = nil;
   if (!descriptor) {
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STWRKGetMyCurrentWorkinStoreRequest class]
-                                     rootClass:[STWRKStoreWorkerRoot class]
-                                          file:STWRKStoreWorkerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAGetMyCurrentWorkinStoreRequest class]
+                                     rootClass:[GDAStoreWorkerRoot class]
+                                          file:GDAStoreWorkerRoot_FileDescriptor()
                                         fields:NULL
                                     fieldCount:0
-                                   storageSize:sizeof(STWRKGetMyCurrentWorkinStoreRequest__storage_)
+                                   storageSize:sizeof(GDAGetMyCurrentWorkinStoreRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -251,20 +251,20 @@ typedef struct STWRKGetMyCurrentWorkinStoreRequest__storage_ {
 
 @end
 
-#pragma mark - STWRKListWorkshipByWorkerRequest
+#pragma mark - GDAListWorkshipByWorkerRequest
 
-@implementation STWRKListWorkshipByWorkerRequest
+@implementation GDAListWorkshipByWorkerRequest
 
 @dynamic workerUuid;
 @dynamic from;
 @dynamic size;
 
-typedef struct STWRKListWorkshipByWorkerRequest__storage_ {
+typedef struct GDAListWorkshipByWorkerRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t from;
   int32_t size;
   NSString *workerUuid;
-} STWRKListWorkshipByWorkerRequest__storage_;
+} GDAListWorkshipByWorkerRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -275,38 +275,38 @@ typedef struct STWRKListWorkshipByWorkerRequest__storage_ {
       {
         .name = "workerUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STWRKListWorkshipByWorkerRequest_FieldNumber_WorkerUuid,
+        .number = GDAListWorkshipByWorkerRequest_FieldNumber_WorkerUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STWRKListWorkshipByWorkerRequest__storage_, workerUuid),
+        .offset = (uint32_t)offsetof(GDAListWorkshipByWorkerRequest__storage_, workerUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "from",
         .dataTypeSpecific.className = NULL,
-        .number = STWRKListWorkshipByWorkerRequest_FieldNumber_From,
+        .number = GDAListWorkshipByWorkerRequest_FieldNumber_From,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STWRKListWorkshipByWorkerRequest__storage_, from),
+        .offset = (uint32_t)offsetof(GDAListWorkshipByWorkerRequest__storage_, from),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "size",
         .dataTypeSpecific.className = NULL,
-        .number = STWRKListWorkshipByWorkerRequest_FieldNumber_Size,
+        .number = GDAListWorkshipByWorkerRequest_FieldNumber_Size,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(STWRKListWorkshipByWorkerRequest__storage_, size),
+        .offset = (uint32_t)offsetof(GDAListWorkshipByWorkerRequest__storage_, size),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STWRKListWorkshipByWorkerRequest class]
-                                     rootClass:[STWRKStoreWorkerRoot class]
-                                          file:STWRKStoreWorkerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListWorkshipByWorkerRequest class]
+                                     rootClass:[GDAStoreWorkerRoot class]
+                                          file:GDAStoreWorkerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STWRKListWorkshipByWorkerRequest__storage_)
+                                   storageSize:sizeof(GDAListWorkshipByWorkerRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -321,20 +321,20 @@ typedef struct STWRKListWorkshipByWorkerRequest__storage_ {
 
 @end
 
-#pragma mark - STWRKWorkshipResponse
+#pragma mark - GDAWorkshipResponse
 
-@implementation STWRKWorkshipResponse
+@implementation GDAWorkshipResponse
 
 @dynamic hasStatus, status;
 @dynamic hasOwnership, ownership;
 @dynamic from;
 
-typedef struct STWRKWorkshipResponse__storage_ {
+typedef struct GDAWorkshipResponse__storage_ {
   uint32_t _has_storage_[1];
   int32_t from;
-  STWRKWorkship *ownership;
-  COMMONStatus *status;
-} STWRKWorkshipResponse__storage_;
+  GDAWorkship *ownership;
+  GDAStatus *status;
+} GDAWorkshipResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -344,39 +344,39 @@ typedef struct STWRKWorkshipResponse__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "ownership",
-        .dataTypeSpecific.className = GPBStringifySymbol(STWRKWorkship),
-        .number = STWRKWorkshipResponse_FieldNumber_Ownership,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAWorkship),
+        .number = GDAWorkshipResponse_FieldNumber_Ownership,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STWRKWorkshipResponse__storage_, ownership),
+        .offset = (uint32_t)offsetof(GDAWorkshipResponse__storage_, ownership),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "from",
         .dataTypeSpecific.className = NULL,
-        .number = STWRKWorkshipResponse_FieldNumber_From,
+        .number = GDAWorkshipResponse_FieldNumber_From,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(STWRKWorkshipResponse__storage_, from),
+        .offset = (uint32_t)offsetof(GDAWorkshipResponse__storage_, from),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = STWRKWorkshipResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDAWorkshipResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STWRKWorkshipResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDAWorkshipResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STWRKWorkshipResponse class]
-                                     rootClass:[STWRKStoreWorkerRoot class]
-                                          file:STWRKStoreWorkerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAWorkshipResponse class]
+                                     rootClass:[GDAStoreWorkerRoot class]
+                                          file:GDAStoreWorkerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STWRKWorkshipResponse__storage_)
+                                   storageSize:sizeof(GDAWorkshipResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -386,19 +386,19 @@ typedef struct STWRKWorkshipResponse__storage_ {
 
 @end
 
-#pragma mark - STWRKBanWorkshipRequest
+#pragma mark - GDABanWorkshipRequest
 
-@implementation STWRKBanWorkshipRequest
+@implementation GDABanWorkshipRequest
 
 @dynamic workerUuid;
 @dynamic storeUuid;
 @dynamic active;
 
-typedef struct STWRKBanWorkshipRequest__storage_ {
+typedef struct GDABanWorkshipRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *workerUuid;
   NSString *storeUuid;
-} STWRKBanWorkshipRequest__storage_;
+} GDABanWorkshipRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -409,25 +409,25 @@ typedef struct STWRKBanWorkshipRequest__storage_ {
       {
         .name = "workerUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STWRKBanWorkshipRequest_FieldNumber_WorkerUuid,
+        .number = GDABanWorkshipRequest_FieldNumber_WorkerUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STWRKBanWorkshipRequest__storage_, workerUuid),
+        .offset = (uint32_t)offsetof(GDABanWorkshipRequest__storage_, workerUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "storeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STWRKBanWorkshipRequest_FieldNumber_StoreUuid,
+        .number = GDABanWorkshipRequest_FieldNumber_StoreUuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STWRKBanWorkshipRequest__storage_, storeUuid),
+        .offset = (uint32_t)offsetof(GDABanWorkshipRequest__storage_, storeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "active",
         .dataTypeSpecific.className = NULL,
-        .number = STWRKBanWorkshipRequest_FieldNumber_Active,
+        .number = GDABanWorkshipRequest_FieldNumber_Active,
         .hasIndex = 2,
         .offset = 3,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
@@ -435,12 +435,12 @@ typedef struct STWRKBanWorkshipRequest__storage_ {
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STWRKBanWorkshipRequest class]
-                                     rootClass:[STWRKStoreWorkerRoot class]
-                                          file:STWRKStoreWorkerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDABanWorkshipRequest class]
+                                     rootClass:[GDAStoreWorkerRoot class]
+                                          file:GDAStoreWorkerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STWRKBanWorkshipRequest__storage_)
+                                   storageSize:sizeof(GDABanWorkshipRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -455,9 +455,9 @@ typedef struct STWRKBanWorkshipRequest__storage_ {
 
 @end
 
-#pragma mark - STWRKWorkship
+#pragma mark - GDAWorkship
 
-@implementation STWRKWorkship
+@implementation GDAWorkship
 
 @dynamic uuid;
 @dynamic userUuid;
@@ -471,7 +471,7 @@ typedef struct STWRKBanWorkshipRequest__storage_ {
 @dynamic created;
 @dynamic lastUpdated;
 
-typedef struct STWRKWorkship__storage_ {
+typedef struct GDAWorkship__storage_ {
   uint32_t _has_storage_[1];
   NSString *uuid;
   NSString *userUuid;
@@ -480,10 +480,10 @@ typedef struct STWRKWorkship__storage_ {
   NSString *userLogo;
   NSString *storeName;
   NSString *storeLogo;
-  COMMONLocation *location;
+  GDALocation *location;
   int64_t created;
   int64_t lastUpdated;
-} STWRKWorkship__storage_;
+} GDAWorkship__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -494,79 +494,79 @@ typedef struct STWRKWorkship__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = STWRKWorkship_FieldNumber_Uuid,
+        .number = GDAWorkship_FieldNumber_Uuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(STWRKWorkship__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDAWorkship__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "userUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STWRKWorkship_FieldNumber_UserUuid,
+        .number = GDAWorkship_FieldNumber_UserUuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(STWRKWorkship__storage_, userUuid),
+        .offset = (uint32_t)offsetof(GDAWorkship__storage_, userUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "storeUuid",
         .dataTypeSpecific.className = NULL,
-        .number = STWRKWorkship_FieldNumber_StoreUuid,
+        .number = GDAWorkship_FieldNumber_StoreUuid,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(STWRKWorkship__storage_, storeUuid),
+        .offset = (uint32_t)offsetof(GDAWorkship__storage_, storeUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "userName",
         .dataTypeSpecific.className = NULL,
-        .number = STWRKWorkship_FieldNumber_UserName,
+        .number = GDAWorkship_FieldNumber_UserName,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(STWRKWorkship__storage_, userName),
+        .offset = (uint32_t)offsetof(GDAWorkship__storage_, userName),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "userLogo",
         .dataTypeSpecific.className = NULL,
-        .number = STWRKWorkship_FieldNumber_UserLogo,
+        .number = GDAWorkship_FieldNumber_UserLogo,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(STWRKWorkship__storage_, userLogo),
+        .offset = (uint32_t)offsetof(GDAWorkship__storage_, userLogo),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "storeName",
         .dataTypeSpecific.className = NULL,
-        .number = STWRKWorkship_FieldNumber_StoreName,
+        .number = GDAWorkship_FieldNumber_StoreName,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(STWRKWorkship__storage_, storeName),
+        .offset = (uint32_t)offsetof(GDAWorkship__storage_, storeName),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "storeLogo",
         .dataTypeSpecific.className = NULL,
-        .number = STWRKWorkship_FieldNumber_StoreLogo,
+        .number = GDAWorkship_FieldNumber_StoreLogo,
         .hasIndex = 6,
-        .offset = (uint32_t)offsetof(STWRKWorkship__storage_, storeLogo),
+        .offset = (uint32_t)offsetof(GDAWorkship__storage_, storeLogo),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "location",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONLocation),
-        .number = STWRKWorkship_FieldNumber_Location,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDALocation),
+        .number = GDAWorkship_FieldNumber_Location,
         .hasIndex = 7,
-        .offset = (uint32_t)offsetof(STWRKWorkship__storage_, location),
+        .offset = (uint32_t)offsetof(GDAWorkship__storage_, location),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "active",
         .dataTypeSpecific.className = NULL,
-        .number = STWRKWorkship_FieldNumber_Active,
+        .number = GDAWorkship_FieldNumber_Active,
         .hasIndex = 8,
         .offset = 9,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
@@ -575,29 +575,29 @@ typedef struct STWRKWorkship__storage_ {
       {
         .name = "created",
         .dataTypeSpecific.className = NULL,
-        .number = STWRKWorkship_FieldNumber_Created,
+        .number = GDAWorkship_FieldNumber_Created,
         .hasIndex = 10,
-        .offset = (uint32_t)offsetof(STWRKWorkship__storage_, created),
+        .offset = (uint32_t)offsetof(GDAWorkship__storage_, created),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
       },
       {
         .name = "lastUpdated",
         .dataTypeSpecific.className = NULL,
-        .number = STWRKWorkship_FieldNumber_LastUpdated,
+        .number = GDAWorkship_FieldNumber_LastUpdated,
         .hasIndex = 11,
-        .offset = (uint32_t)offsetof(STWRKWorkship__storage_, lastUpdated),
+        .offset = (uint32_t)offsetof(GDAWorkship__storage_, lastUpdated),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[STWRKWorkship class]
-                                     rootClass:[STWRKStoreWorkerRoot class]
-                                          file:STWRKStoreWorkerRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAWorkship class]
+                                     rootClass:[GDAStoreWorkerRoot class]
+                                          file:GDAStoreWorkerRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(STWRKWorkship__storage_)
+                                   storageSize:sizeof(GDAWorkship__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =

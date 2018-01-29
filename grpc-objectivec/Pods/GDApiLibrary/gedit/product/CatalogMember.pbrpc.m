@@ -5,7 +5,7 @@
 #import <RxLibrary/GRXWriter+Immediate.h>
 #import "gedit/Common.pbobjc.h"
 
-@implementation CTGMMBCatalogMemberApi
+@implementation GDACatalogMemberApi
 
 // Designated initializer
 - (instancetype)initWithHost:(NSString *)host {
@@ -26,26 +26,26 @@
 
 #pragma mark Get(GetCatalogMemberRequest) returns (CatalogMemberResponse)
 
-- (void)getWithRequest:(CTGMMBGetCatalogMemberRequest *)request handler:(void(^)(CTGMMBCatalogMemberResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)getWithRequest:(GDAGetCatalogMemberRequest *)request handler:(void(^)(GDACatalogMemberResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToGetWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToGetWithRequest:(CTGMMBGetCatalogMemberRequest *)request handler:(void(^)(CTGMMBCatalogMemberResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToGetWithRequest:(GDAGetCatalogMemberRequest *)request handler:(void(^)(GDACatalogMemberResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"Get"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[CTGMMBCatalogMemberResponse class]
+             responseClass:[GDACatalogMemberResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 #pragma mark List(ListCatalogMemberRequest) returns (stream CatalogMemberResponse)
 
-- (void)listWithRequest:(CTGMMBListCatalogMemberRequest *)request eventHandler:(void(^)(BOOL done, CTGMMBCatalogMemberResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (void)listWithRequest:(GDAListCatalogMemberRequest *)request eventHandler:(void(^)(BOOL done, GDACatalogMemberResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   [[self RPCToListWithRequest:request eventHandler:eventHandler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToListWithRequest:(CTGMMBListCatalogMemberRequest *)request eventHandler:(void(^)(BOOL done, CTGMMBCatalogMemberResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (GRPCProtoCall *)RPCToListWithRequest:(GDAListCatalogMemberRequest *)request eventHandler:(void(^)(BOOL done, GDACatalogMemberResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   return [self RPCToMethod:@"List"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[CTGMMBCatalogMemberResponse class]
+             responseClass:[GDACatalogMemberResponse class]
         responsesWriteable:[GRXWriteable writeableWithEventHandler:eventHandler]];
 }
 @end

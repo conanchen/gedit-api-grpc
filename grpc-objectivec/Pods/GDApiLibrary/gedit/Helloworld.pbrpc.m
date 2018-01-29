@@ -4,7 +4,7 @@
 #import <ProtoRPC/ProtoRPC.h>
 #import <RxLibrary/GRXWriter+Immediate.h>
 
-@implementation HLWGreeter
+@implementation GDAGreeter
 
 // Designated initializer
 - (instancetype)initWithHost:(NSString *)host {
@@ -28,17 +28,17 @@
 /**
  * Sends a greeting
  */
-- (void)sayHelloWithRequest:(HLWHelloRequest *)request handler:(void(^)(HLWHelloReply *_Nullable response, NSError *_Nullable error))handler{
+- (void)sayHelloWithRequest:(GDAHelloRequest *)request handler:(void(^)(GDAHelloReply *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToSayHelloWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
 /**
  * Sends a greeting
  */
-- (GRPCProtoCall *)RPCToSayHelloWithRequest:(HLWHelloRequest *)request handler:(void(^)(HLWHelloReply *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToSayHelloWithRequest:(GDAHelloRequest *)request handler:(void(^)(GDAHelloReply *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"SayHello"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[HLWHelloReply class]
+             responseClass:[GDAHelloReply class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 @end

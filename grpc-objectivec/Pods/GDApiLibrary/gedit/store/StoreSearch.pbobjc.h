@@ -27,12 +27,12 @@
 
 CF_EXTERN_C_BEGIN
 
-@class COMMONLocation;
-@class COMMONStatus;
+@class GDALocation;
+@class GDAStatus;
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - STSCHStoreSearchRoot
+#pragma mark - GDAStoreSearchRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -44,32 +44,32 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface STSCHStoreSearchRoot : GPBRootObject
+@interface GDAStoreSearchRoot : GPBRootObject
 @end
 
-#pragma mark - STSCHIndexStoreRequest
+#pragma mark - GDAIndexStoreRequest
 
-typedef GPB_ENUM(STSCHIndexStoreRequest_FieldNumber) {
-  STSCHIndexStoreRequest_FieldNumber_Uuid = 1,
-  STSCHIndexStoreRequest_FieldNumber_Name = 2,
-  STSCHIndexStoreRequest_FieldNumber_Logo = 3,
-  STSCHIndexStoreRequest_FieldNumber_Location = 4,
-  STSCHIndexStoreRequest_FieldNumber_Type = 6,
-  STSCHIndexStoreRequest_FieldNumber_Desc = 7,
-  STSCHIndexStoreRequest_FieldNumber_PointsRate = 8,
-  STSCHIndexStoreRequest_FieldNumber_AmapAdCode = 20,
-  STSCHIndexStoreRequest_FieldNumber_AmapAoiName = 21,
-  STSCHIndexStoreRequest_FieldNumber_AmapBuildingId = 22,
-  STSCHIndexStoreRequest_FieldNumber_AmapStreet = 23,
-  STSCHIndexStoreRequest_FieldNumber_AmapStreetNum = 24,
-  STSCHIndexStoreRequest_FieldNumber_AmapDistrict = 25,
-  STSCHIndexStoreRequest_FieldNumber_AmapCityCode = 26,
-  STSCHIndexStoreRequest_FieldNumber_AmapCity = 27,
-  STSCHIndexStoreRequest_FieldNumber_AmapProvince = 28,
-  STSCHIndexStoreRequest_FieldNumber_AmapCountry = 29,
+typedef GPB_ENUM(GDAIndexStoreRequest_FieldNumber) {
+  GDAIndexStoreRequest_FieldNumber_Uuid = 1,
+  GDAIndexStoreRequest_FieldNumber_Name = 2,
+  GDAIndexStoreRequest_FieldNumber_Logo = 3,
+  GDAIndexStoreRequest_FieldNumber_Location = 4,
+  GDAIndexStoreRequest_FieldNumber_Type = 6,
+  GDAIndexStoreRequest_FieldNumber_Desc = 7,
+  GDAIndexStoreRequest_FieldNumber_PointsRate = 8,
+  GDAIndexStoreRequest_FieldNumber_AmapAdCode = 20,
+  GDAIndexStoreRequest_FieldNumber_AmapAoiName = 21,
+  GDAIndexStoreRequest_FieldNumber_AmapBuildingId = 22,
+  GDAIndexStoreRequest_FieldNumber_AmapStreet = 23,
+  GDAIndexStoreRequest_FieldNumber_AmapStreetNum = 24,
+  GDAIndexStoreRequest_FieldNumber_AmapDistrict = 25,
+  GDAIndexStoreRequest_FieldNumber_AmapCityCode = 26,
+  GDAIndexStoreRequest_FieldNumber_AmapCity = 27,
+  GDAIndexStoreRequest_FieldNumber_AmapProvince = 28,
+  GDAIndexStoreRequest_FieldNumber_AmapCountry = 29,
 };
 
-@interface STSCHIndexStoreRequest : GPBMessage
+@interface GDAIndexStoreRequest : GPBMessage
 
 /** store uuid */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
@@ -78,7 +78,7 @@ typedef GPB_ENUM(STSCHIndexStoreRequest_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *logo;
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONLocation *location;
+@property(nonatomic, readwrite, strong, null_resettable) GDALocation *location;
 /** Test to see if @c location has been set. */
 @property(nonatomic, readwrite) BOOL hasLocation;
 
@@ -114,16 +114,16 @@ typedef GPB_ENUM(STSCHIndexStoreRequest_FieldNumber) {
 
 @end
 
-#pragma mark - STSCHIndexStoreResponse
+#pragma mark - GDAIndexStoreResponse
 
-typedef GPB_ENUM(STSCHIndexStoreResponse_FieldNumber) {
-  STSCHIndexStoreResponse_FieldNumber_Uuid = 1,
-  STSCHIndexStoreResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAIndexStoreResponse_FieldNumber) {
+  GDAIndexStoreResponse_FieldNumber_Uuid = 1,
+  GDAIndexStoreResponse_FieldNumber_Status = 999,
 };
 
-@interface STSCHIndexStoreResponse : GPBMessage
+@interface GDAIndexStoreResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
@@ -132,29 +132,29 @@ typedef GPB_ENUM(STSCHIndexStoreResponse_FieldNumber) {
 
 @end
 
-#pragma mark - STSCHDeleteStoreRequest
+#pragma mark - GDADeleteStoreRequest
 
-typedef GPB_ENUM(STSCHDeleteStoreRequest_FieldNumber) {
-  STSCHDeleteStoreRequest_FieldNumber_Uuid = 1,
+typedef GPB_ENUM(GDADeleteStoreRequest_FieldNumber) {
+  GDADeleteStoreRequest_FieldNumber_Uuid = 1,
 };
 
-@interface STSCHDeleteStoreRequest : GPBMessage
+@interface GDADeleteStoreRequest : GPBMessage
 
 /** store uuid */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
 
 @end
 
-#pragma mark - STSCHDeleteStoreResponse
+#pragma mark - GDADeleteStoreResponse
 
-typedef GPB_ENUM(STSCHDeleteStoreResponse_FieldNumber) {
-  STSCHDeleteStoreResponse_FieldNumber_Uuid = 1,
-  STSCHDeleteStoreResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDADeleteStoreResponse_FieldNumber) {
+  GDADeleteStoreResponse_FieldNumber_Uuid = 1,
+  GDADeleteStoreResponse_FieldNumber_Status = 999,
 };
 
-@interface STSCHDeleteStoreResponse : GPBMessage
+@interface GDADeleteStoreResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
@@ -163,19 +163,19 @@ typedef GPB_ENUM(STSCHDeleteStoreResponse_FieldNumber) {
 
 @end
 
-#pragma mark - STSCHSearchStoreRequest
+#pragma mark - GDASearchStoreRequest
 
-typedef GPB_ENUM(STSCHSearchStoreRequest_FieldNumber) {
-  STSCHSearchStoreRequest_FieldNumber_Location = 1,
-  STSCHSearchStoreRequest_FieldNumber_Type = 3,
-  STSCHSearchStoreRequest_FieldNumber_Keyword = 4,
-  STSCHSearchStoreRequest_FieldNumber_From = 100,
-  STSCHSearchStoreRequest_FieldNumber_Size = 101,
+typedef GPB_ENUM(GDASearchStoreRequest_FieldNumber) {
+  GDASearchStoreRequest_FieldNumber_Location = 1,
+  GDASearchStoreRequest_FieldNumber_Type = 3,
+  GDASearchStoreRequest_FieldNumber_Keyword = 4,
+  GDASearchStoreRequest_FieldNumber_From = 100,
+  GDASearchStoreRequest_FieldNumber_Size = 101,
 };
 
-@interface STSCHSearchStoreRequest : GPBMessage
+@interface GDASearchStoreRequest : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONLocation *location;
+@property(nonatomic, readwrite, strong, null_resettable) GDALocation *location;
 /** Test to see if @c location has been set. */
 @property(nonatomic, readwrite) BOOL hasLocation;
 
@@ -190,26 +190,26 @@ typedef GPB_ENUM(STSCHSearchStoreRequest_FieldNumber) {
 
 @end
 
-#pragma mark - STSCHSearchStoreResponse
+#pragma mark - GDASearchStoreResponse
 
-typedef GPB_ENUM(STSCHSearchStoreResponse_FieldNumber) {
-  STSCHSearchStoreResponse_FieldNumber_Uuid = 1,
-  STSCHSearchStoreResponse_FieldNumber_Name = 2,
-  STSCHSearchStoreResponse_FieldNumber_Logo = 3,
-  STSCHSearchStoreResponse_FieldNumber_Location = 4,
-  STSCHSearchStoreResponse_FieldNumber_Type = 6,
-  STSCHSearchStoreResponse_FieldNumber_Desc = 7,
-  STSCHSearchStoreResponse_FieldNumber_PointsRate = 8,
-  STSCHSearchStoreResponse_FieldNumber_AmapStreet = 23,
-  STSCHSearchStoreResponse_FieldNumber_AmapDistrict = 25,
-  STSCHSearchStoreResponse_FieldNumber_AmapCity = 27,
-  STSCHSearchStoreResponse_FieldNumber_From = 100,
-  STSCHSearchStoreResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDASearchStoreResponse_FieldNumber) {
+  GDASearchStoreResponse_FieldNumber_Uuid = 1,
+  GDASearchStoreResponse_FieldNumber_Name = 2,
+  GDASearchStoreResponse_FieldNumber_Logo = 3,
+  GDASearchStoreResponse_FieldNumber_Location = 4,
+  GDASearchStoreResponse_FieldNumber_Type = 6,
+  GDASearchStoreResponse_FieldNumber_Desc = 7,
+  GDASearchStoreResponse_FieldNumber_PointsRate = 8,
+  GDASearchStoreResponse_FieldNumber_AmapStreet = 23,
+  GDASearchStoreResponse_FieldNumber_AmapDistrict = 25,
+  GDASearchStoreResponse_FieldNumber_AmapCity = 27,
+  GDASearchStoreResponse_FieldNumber_From = 100,
+  GDASearchStoreResponse_FieldNumber_Status = 999,
 };
 
-@interface STSCHSearchStoreResponse : GPBMessage
+@interface GDASearchStoreResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
@@ -220,7 +220,7 @@ typedef GPB_ENUM(STSCHSearchStoreResponse_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *logo;
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONLocation *location;
+@property(nonatomic, readwrite, strong, null_resettable) GDALocation *location;
 /** Test to see if @c location has been set. */
 @property(nonatomic, readwrite) BOOL hasLocation;
 

@@ -27,13 +27,13 @@
 
 CF_EXTERN_C_BEGIN
 
-@class COMMONLocation;
-@class COMMONStatus;
-@class STWRKWorkship;
+@class GDALocation;
+@class GDAStatus;
+@class GDAWorkship;
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - STWRKStoreWorkerRoot
+#pragma mark - GDAStoreWorkerRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -45,17 +45,17 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface STWRKStoreWorkerRoot : GPBRootObject
+@interface GDAStoreWorkerRoot : GPBRootObject
 @end
 
-#pragma mark - STWRKAddWorkershipRequest
+#pragma mark - GDAAddWorkershipRequest
 
-typedef GPB_ENUM(STWRKAddWorkershipRequest_FieldNumber) {
-  STWRKAddWorkershipRequest_FieldNumber_StoreUuid = 1,
-  STWRKAddWorkershipRequest_FieldNumber_WorkerUuid = 3,
+typedef GPB_ENUM(GDAAddWorkershipRequest_FieldNumber) {
+  GDAAddWorkershipRequest_FieldNumber_StoreUuid = 1,
+  GDAAddWorkershipRequest_FieldNumber_WorkerUuid = 3,
 };
 
-@interface STWRKAddWorkershipRequest : GPBMessage
+@interface GDAAddWorkershipRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *storeUuid;
 
@@ -63,15 +63,15 @@ typedef GPB_ENUM(STWRKAddWorkershipRequest_FieldNumber) {
 
 @end
 
-#pragma mark - STWRKListWorkshipByStoreRequest
+#pragma mark - GDAListWorkshipByStoreRequest
 
-typedef GPB_ENUM(STWRKListWorkshipByStoreRequest_FieldNumber) {
-  STWRKListWorkshipByStoreRequest_FieldNumber_StoreUuid = 1,
-  STWRKListWorkshipByStoreRequest_FieldNumber_From = 100,
-  STWRKListWorkshipByStoreRequest_FieldNumber_Size = 101,
+typedef GPB_ENUM(GDAListWorkshipByStoreRequest_FieldNumber) {
+  GDAListWorkshipByStoreRequest_FieldNumber_StoreUuid = 1,
+  GDAListWorkshipByStoreRequest_FieldNumber_From = 100,
+  GDAListWorkshipByStoreRequest_FieldNumber_Size = 101,
 };
 
-@interface STWRKListWorkshipByStoreRequest : GPBMessage
+@interface GDAListWorkshipByStoreRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *storeUuid;
 
@@ -81,33 +81,33 @@ typedef GPB_ENUM(STWRKListWorkshipByStoreRequest_FieldNumber) {
 
 @end
 
-#pragma mark - STWRKListMyWorkinStoreRequest
+#pragma mark - GDAListMyWorkinStoreRequest
 
-typedef GPB_ENUM(STWRKListMyWorkinStoreRequest_FieldNumber) {
-  STWRKListMyWorkinStoreRequest_FieldNumber_LastUpdated = 1,
+typedef GPB_ENUM(GDAListMyWorkinStoreRequest_FieldNumber) {
+  GDAListMyWorkinStoreRequest_FieldNumber_LastUpdated = 1,
 };
 
-@interface STWRKListMyWorkinStoreRequest : GPBMessage
+@interface GDAListMyWorkinStoreRequest : GPBMessage
 
 @property(nonatomic, readwrite) int64_t lastUpdated;
 
 @end
 
-#pragma mark - STWRKGetMyCurrentWorkinStoreRequest
+#pragma mark - GDAGetMyCurrentWorkinStoreRequest
 
-@interface STWRKGetMyCurrentWorkinStoreRequest : GPBMessage
+@interface GDAGetMyCurrentWorkinStoreRequest : GPBMessage
 
 @end
 
-#pragma mark - STWRKListWorkshipByWorkerRequest
+#pragma mark - GDAListWorkshipByWorkerRequest
 
-typedef GPB_ENUM(STWRKListWorkshipByWorkerRequest_FieldNumber) {
-  STWRKListWorkshipByWorkerRequest_FieldNumber_WorkerUuid = 3,
-  STWRKListWorkshipByWorkerRequest_FieldNumber_From = 100,
-  STWRKListWorkshipByWorkerRequest_FieldNumber_Size = 101,
+typedef GPB_ENUM(GDAListWorkshipByWorkerRequest_FieldNumber) {
+  GDAListWorkshipByWorkerRequest_FieldNumber_WorkerUuid = 3,
+  GDAListWorkshipByWorkerRequest_FieldNumber_From = 100,
+  GDAListWorkshipByWorkerRequest_FieldNumber_Size = 101,
 };
 
-@interface STWRKListWorkshipByWorkerRequest : GPBMessage
+@interface GDAListWorkshipByWorkerRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *workerUuid;
 
@@ -117,21 +117,21 @@ typedef GPB_ENUM(STWRKListWorkshipByWorkerRequest_FieldNumber) {
 
 @end
 
-#pragma mark - STWRKWorkshipResponse
+#pragma mark - GDAWorkshipResponse
 
-typedef GPB_ENUM(STWRKWorkshipResponse_FieldNumber) {
-  STWRKWorkshipResponse_FieldNumber_Ownership = 1,
-  STWRKWorkshipResponse_FieldNumber_From = 100,
-  STWRKWorkshipResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAWorkshipResponse_FieldNumber) {
+  GDAWorkshipResponse_FieldNumber_Ownership = 1,
+  GDAWorkshipResponse_FieldNumber_From = 100,
+  GDAWorkshipResponse_FieldNumber_Status = 999,
 };
 
-@interface STWRKWorkshipResponse : GPBMessage
+@interface GDAWorkshipResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
-@property(nonatomic, readwrite, strong, null_resettable) STWRKWorkship *ownership;
+@property(nonatomic, readwrite, strong, null_resettable) GDAWorkship *ownership;
 /** Test to see if @c ownership has been set. */
 @property(nonatomic, readwrite) BOOL hasOwnership;
 
@@ -139,15 +139,15 @@ typedef GPB_ENUM(STWRKWorkshipResponse_FieldNumber) {
 
 @end
 
-#pragma mark - STWRKBanWorkshipRequest
+#pragma mark - GDABanWorkshipRequest
 
-typedef GPB_ENUM(STWRKBanWorkshipRequest_FieldNumber) {
-  STWRKBanWorkshipRequest_FieldNumber_WorkerUuid = 1,
-  STWRKBanWorkshipRequest_FieldNumber_StoreUuid = 5,
-  STWRKBanWorkshipRequest_FieldNumber_Active = 7,
+typedef GPB_ENUM(GDABanWorkshipRequest_FieldNumber) {
+  GDABanWorkshipRequest_FieldNumber_WorkerUuid = 1,
+  GDABanWorkshipRequest_FieldNumber_StoreUuid = 5,
+  GDABanWorkshipRequest_FieldNumber_Active = 7,
 };
 
-@interface STWRKBanWorkshipRequest : GPBMessage
+@interface GDABanWorkshipRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *workerUuid;
 
@@ -157,23 +157,23 @@ typedef GPB_ENUM(STWRKBanWorkshipRequest_FieldNumber) {
 
 @end
 
-#pragma mark - STWRKWorkship
+#pragma mark - GDAWorkship
 
-typedef GPB_ENUM(STWRKWorkship_FieldNumber) {
-  STWRKWorkship_FieldNumber_Uuid = 1,
-  STWRKWorkship_FieldNumber_UserUuid = 3,
-  STWRKWorkship_FieldNumber_StoreUuid = 5,
-  STWRKWorkship_FieldNumber_UserName = 7,
-  STWRKWorkship_FieldNumber_UserLogo = 9,
-  STWRKWorkship_FieldNumber_StoreName = 12,
-  STWRKWorkship_FieldNumber_StoreLogo = 15,
-  STWRKWorkship_FieldNumber_Location = 18,
-  STWRKWorkship_FieldNumber_Active = 27,
-  STWRKWorkship_FieldNumber_Created = 29,
-  STWRKWorkship_FieldNumber_LastUpdated = 30,
+typedef GPB_ENUM(GDAWorkship_FieldNumber) {
+  GDAWorkship_FieldNumber_Uuid = 1,
+  GDAWorkship_FieldNumber_UserUuid = 3,
+  GDAWorkship_FieldNumber_StoreUuid = 5,
+  GDAWorkship_FieldNumber_UserName = 7,
+  GDAWorkship_FieldNumber_UserLogo = 9,
+  GDAWorkship_FieldNumber_StoreName = 12,
+  GDAWorkship_FieldNumber_StoreLogo = 15,
+  GDAWorkship_FieldNumber_Location = 18,
+  GDAWorkship_FieldNumber_Active = 27,
+  GDAWorkship_FieldNumber_Created = 29,
+  GDAWorkship_FieldNumber_LastUpdated = 30,
 };
 
-@interface STWRKWorkship : GPBMessage
+@interface GDAWorkship : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
 
@@ -189,7 +189,7 @@ typedef GPB_ENUM(STWRKWorkship_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *storeLogo;
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONLocation *location;
+@property(nonatomic, readwrite, strong, null_resettable) GDALocation *location;
 /** Test to see if @c location has been set. */
 @property(nonatomic, readwrite) BOOL hasLocation;
 

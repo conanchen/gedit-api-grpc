@@ -18,7 +18,7 @@ package gedit.payment;
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.payment.common.grpc";
 option java_outer_classname = "PaymentCommonProto";
-option objc_class_prefix = "PMCOMM";
+option objc_class_prefix = "GDA";
 
 import "gedit/common.proto";
 

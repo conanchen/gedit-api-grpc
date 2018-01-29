@@ -8,8 +8,8 @@
 #import <RxLibrary/GRXWriter.h>
 
 #if GPB_GRPC_FORWARD_DECLARE_MESSAGE_PROTO
-  @class USRLOCUpdateMyLocationRequest;
-  @class USRLOCUpdateMyLocationResponse;
+  @class GDAUpdateMyLocationRequest;
+  @class GDAUpdateMyLocationResponse;
 #else
   #import "gedit/Common.pbobjc.h"
 #endif
@@ -17,13 +17,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol USRLOCUserLocationApi <NSObject>
+@protocol GDAUserLocationApi <NSObject>
 
 #pragma mark UpdateMyLocation(UpdateMyLocationRequest) returns (UpdateMyLocationResponse)
 
-- (void)updateMyLocationWithRequest:(USRLOCUpdateMyLocationRequest *)request handler:(void(^)(USRLOCUpdateMyLocationResponse *_Nullable response, NSError *_Nullable error))handler;
+- (void)updateMyLocationWithRequest:(GDAUpdateMyLocationRequest *)request handler:(void(^)(GDAUpdateMyLocationResponse *_Nullable response, NSError *_Nullable error))handler;
 
-- (GRPCProtoCall *)RPCToUpdateMyLocationWithRequest:(USRLOCUpdateMyLocationRequest *)request handler:(void(^)(USRLOCUpdateMyLocationResponse *_Nullable response, NSError *_Nullable error))handler;
+- (GRPCProtoCall *)RPCToUpdateMyLocationWithRequest:(GDAUpdateMyLocationRequest *)request handler:(void(^)(GDAUpdateMyLocationResponse *_Nullable response, NSError *_Nullable error))handler;
 
 
 @end
@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Basic service implementation, over gRPC, that only does
  * marshalling and parsing.
  */
-@interface USRLOCUserLocationApi : GRPCProtoService<USRLOCUserLocationApi>
+@interface GDAUserLocationApi : GRPCProtoService<GDAUserLocationApi>
 - (instancetype)initWithHost:(NSString *)host NS_DESIGNATED_INITIALIZER;
 + (instancetype)serviceWithHost:(NSString *)host;
 @end

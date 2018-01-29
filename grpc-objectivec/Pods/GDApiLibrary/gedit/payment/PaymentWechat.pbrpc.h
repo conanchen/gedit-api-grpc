@@ -8,10 +8,10 @@
 #import <RxLibrary/GRXWriter.h>
 
 #if GPB_GRPC_FORWARD_DECLARE_MESSAGE_PROTO
-  @class PMCOMMPaymentResponse;
-  @class PMWECHATCreateWechatPaymentRequest;
-  @class PMWECHATPrepareWechatPaymentRequest;
-  @class PMWECHATPrepareWechatPaymentResponse;
+  @class GDACreateWechatPaymentRequest;
+  @class GDAPaymentResponse;
+  @class GDAPrepareWechatPaymentRequest;
+  @class GDAPrepareWechatPaymentResponse;
 #else
   #import "gedit/Common.pbobjc.h"
   #import "gedit/payment/PaymentCommon.pbobjc.h"
@@ -20,19 +20,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol PMWECHATPayerInWechatApi <NSObject>
+@protocol GDAPayerInWechatApi <NSObject>
 
 #pragma mark Prepare(PrepareWechatPaymentRequest) returns (PrepareWechatPaymentResponse)
 
 /**
  * only called by me, 顾客扫码收银员的收款码后获取如果支付一定金额
  */
-- (void)prepareWithRequest:(PMWECHATPrepareWechatPaymentRequest *)request handler:(void(^)(PMWECHATPrepareWechatPaymentResponse *_Nullable response, NSError *_Nullable error))handler;
+- (void)prepareWithRequest:(GDAPrepareWechatPaymentRequest *)request handler:(void(^)(GDAPrepareWechatPaymentResponse *_Nullable response, NSError *_Nullable error))handler;
 
 /**
  * only called by me, 顾客扫码收银员的收款码后获取如果支付一定金额
  */
-- (GRPCProtoCall *)RPCToPrepareWithRequest:(PMWECHATPrepareWechatPaymentRequest *)request handler:(void(^)(PMWECHATPrepareWechatPaymentResponse *_Nullable response, NSError *_Nullable error))handler;
+- (GRPCProtoCall *)RPCToPrepareWithRequest:(GDAPrepareWechatPaymentRequest *)request handler:(void(^)(GDAPrepareWechatPaymentResponse *_Nullable response, NSError *_Nullable error))handler;
 
 
 #pragma mark Create(CreateWechatPaymentRequest) returns (PaymentResponse)
@@ -40,12 +40,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * only called by me, 顾客确定付款
  */
-- (void)createWithRequest:(PMWECHATCreateWechatPaymentRequest *)request handler:(void(^)(PMCOMMPaymentResponse *_Nullable response, NSError *_Nullable error))handler;
+- (void)createWithRequest:(GDACreateWechatPaymentRequest *)request handler:(void(^)(GDAPaymentResponse *_Nullable response, NSError *_Nullable error))handler;
 
 /**
  * only called by me, 顾客确定付款
  */
-- (GRPCProtoCall *)RPCToCreateWithRequest:(PMWECHATCreateWechatPaymentRequest *)request handler:(void(^)(PMCOMMPaymentResponse *_Nullable response, NSError *_Nullable error))handler;
+- (GRPCProtoCall *)RPCToCreateWithRequest:(GDACreateWechatPaymentRequest *)request handler:(void(^)(GDAPaymentResponse *_Nullable response, NSError *_Nullable error))handler;
 
 
 @end
@@ -54,7 +54,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Basic service implementation, over gRPC, that only does
  * marshalling and parsing.
  */
-@interface PMWECHATPayerInWechatApi : GRPCProtoService<PMWECHATPayerInWechatApi>
+@interface GDAPayerInWechatApi : GRPCProtoService<GDAPayerInWechatApi>
 - (instancetype)initWithHost:(NSString *)host NS_DESIGNATED_INITIALIZER;
 + (instancetype)serviceWithHost:(NSString *)host;
 @end

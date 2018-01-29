@@ -27,12 +27,12 @@
 
 CF_EXTERN_C_BEGIN
 
-@class COMMONStatus;
-@class PRDPRDProduct;
+@class GDAProduct;
+@class GDAStatus;
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - PRDPRDProductRoot
+#pragma mark - GDAProductRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -44,61 +44,61 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface PRDPRDProductRoot : GPBRootObject
+@interface GDAProductRoot : GPBRootObject
 @end
 
-#pragma mark - PRDPRDGetProductRequest
+#pragma mark - GDAGetProductRequest
 
-typedef GPB_ENUM(PRDPRDGetProductRequest_FieldNumber) {
-  PRDPRDGetProductRequest_FieldNumber_Uuid = 1,
+typedef GPB_ENUM(GDAGetProductRequest_FieldNumber) {
+  GDAGetProductRequest_FieldNumber_Uuid = 1,
 };
 
-@interface PRDPRDGetProductRequest : GPBMessage
+@interface GDAGetProductRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
 
 @end
 
-#pragma mark - PRDPRDListProductRequest
+#pragma mark - GDAListProductRequest
 
-typedef GPB_ENUM(PRDPRDListProductRequest_FieldNumber) {
-  PRDPRDListProductRequest_FieldNumber_ParentUuid = 1,
+typedef GPB_ENUM(GDAListProductRequest_FieldNumber) {
+  GDAListProductRequest_FieldNumber_ParentUuid = 1,
 };
 
-@interface PRDPRDListProductRequest : GPBMessage
+@interface GDAListProductRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *parentUuid;
 
 @end
 
-#pragma mark - PRDPRDProductResponse
+#pragma mark - GDAProductResponse
 
-typedef GPB_ENUM(PRDPRDProductResponse_FieldNumber) {
-  PRDPRDProductResponse_FieldNumber_Product = 1,
-  PRDPRDProductResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAProductResponse_FieldNumber) {
+  GDAProductResponse_FieldNumber_Product = 1,
+  GDAProductResponse_FieldNumber_Status = 999,
 };
 
-@interface PRDPRDProductResponse : GPBMessage
+@interface GDAProductResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
-@property(nonatomic, readwrite, strong, null_resettable) PRDPRDProduct *product;
+@property(nonatomic, readwrite, strong, null_resettable) GDAProduct *product;
 /** Test to see if @c product has been set. */
 @property(nonatomic, readwrite) BOOL hasProduct;
 
 @end
 
-#pragma mark - PRDPRDProduct
+#pragma mark - GDAProduct
 
-typedef GPB_ENUM(PRDPRDProduct_FieldNumber) {
-  PRDPRDProduct_FieldNumber_Uuid = 1,
-  PRDPRDProduct_FieldNumber_Name = 2,
-  PRDPRDProduct_FieldNumber_IconURL = 3,
+typedef GPB_ENUM(GDAProduct_FieldNumber) {
+  GDAProduct_FieldNumber_Uuid = 1,
+  GDAProduct_FieldNumber_Name = 2,
+  GDAProduct_FieldNumber_IconURL = 3,
 };
 
-@interface PRDPRDProduct : GPBMessage
+@interface GDAProduct : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
 

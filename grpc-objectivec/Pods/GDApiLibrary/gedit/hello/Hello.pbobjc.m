@@ -20,40 +20,40 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-#pragma mark - HELLOHelloRoot
+#pragma mark - GDAHelloRoot
 
-@implementation HELLOHelloRoot
+@implementation GDAHelloRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - HELLOHelloRoot_FileDescriptor
+#pragma mark - GDAHelloRoot_FileDescriptor
 
-static GPBFileDescriptor *HELLOHelloRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDAHelloRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.hello"
-                                                 objcPrefix:@"HELLO"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - HELLOHelloRequest
+#pragma mark - GDAHelloRequest
 
-@implementation HELLOHelloRequest
+@implementation GDAHelloRequest
 
 @dynamic name;
 
-typedef struct HELLOHelloRequest__storage_ {
+typedef struct GDAHelloRequest__storage_ {
   uint32_t _has_storage_[1];
   NSString *name;
-} HELLOHelloRequest__storage_;
+} GDAHelloRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -64,20 +64,20 @@ typedef struct HELLOHelloRequest__storage_ {
       {
         .name = "name",
         .dataTypeSpecific.className = NULL,
-        .number = HELLOHelloRequest_FieldNumber_Name,
+        .number = GDAHelloRequest_FieldNumber_Name,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(HELLOHelloRequest__storage_, name),
+        .offset = (uint32_t)offsetof(GDAHelloRequest__storage_, name),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[HELLOHelloRequest class]
-                                     rootClass:[HELLOHelloRoot class]
-                                          file:HELLOHelloRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAHelloRequest class]
+                                     rootClass:[GDAHelloRoot class]
+                                          file:GDAHelloRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(HELLOHelloRequest__storage_)
+                                   storageSize:sizeof(GDAHelloRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -87,18 +87,18 @@ typedef struct HELLOHelloRequest__storage_ {
 
 @end
 
-#pragma mark - HELLOListHelloRequest
+#pragma mark - GDAListHelloRequest
 
-@implementation HELLOListHelloRequest
+@implementation GDAListHelloRequest
 
 @dynamic lastUpdated;
 @dynamic size;
 
-typedef struct HELLOListHelloRequest__storage_ {
+typedef struct GDAListHelloRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t size;
   int64_t lastUpdated;
-} HELLOListHelloRequest__storage_;
+} GDAListHelloRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -109,29 +109,29 @@ typedef struct HELLOListHelloRequest__storage_ {
       {
         .name = "lastUpdated",
         .dataTypeSpecific.className = NULL,
-        .number = HELLOListHelloRequest_FieldNumber_LastUpdated,
+        .number = GDAListHelloRequest_FieldNumber_LastUpdated,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(HELLOListHelloRequest__storage_, lastUpdated),
+        .offset = (uint32_t)offsetof(GDAListHelloRequest__storage_, lastUpdated),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
       {
         .name = "size",
         .dataTypeSpecific.className = NULL,
-        .number = HELLOListHelloRequest_FieldNumber_Size,
+        .number = GDAListHelloRequest_FieldNumber_Size,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(HELLOListHelloRequest__storage_, size),
+        .offset = (uint32_t)offsetof(GDAListHelloRequest__storage_, size),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[HELLOListHelloRequest class]
-                                     rootClass:[HELLOHelloRoot class]
-                                          file:HELLOHelloRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListHelloRequest class]
+                                     rootClass:[GDAHelloRoot class]
+                                          file:GDAHelloRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(HELLOListHelloRequest__storage_)
+                                   storageSize:sizeof(GDAListHelloRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -146,9 +146,9 @@ typedef struct HELLOListHelloRequest__storage_ {
 
 @end
 
-#pragma mark - HELLOHelloReply
+#pragma mark - GDAHelloReply
 
-@implementation HELLOHelloReply
+@implementation GDAHelloReply
 
 @dynamic hasStatus, status;
 @dynamic uuid;
@@ -156,14 +156,14 @@ typedef struct HELLOListHelloRequest__storage_ {
 @dynamic created;
 @dynamic lastUpdated;
 
-typedef struct HELLOHelloReply__storage_ {
+typedef struct GDAHelloReply__storage_ {
   uint32_t _has_storage_[1];
   NSString *uuid;
   NSString *message;
-  COMMONStatus *status;
+  GDAStatus *status;
   int64_t created;
   int64_t lastUpdated;
-} HELLOHelloReply__storage_;
+} GDAHelloReply__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -174,56 +174,56 @@ typedef struct HELLOHelloReply__storage_ {
       {
         .name = "uuid",
         .dataTypeSpecific.className = NULL,
-        .number = HELLOHelloReply_FieldNumber_Uuid,
+        .number = GDAHelloReply_FieldNumber_Uuid,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(HELLOHelloReply__storage_, uuid),
+        .offset = (uint32_t)offsetof(GDAHelloReply__storage_, uuid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "message",
         .dataTypeSpecific.className = NULL,
-        .number = HELLOHelloReply_FieldNumber_Message,
+        .number = GDAHelloReply_FieldNumber_Message,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(HELLOHelloReply__storage_, message),
+        .offset = (uint32_t)offsetof(GDAHelloReply__storage_, message),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "created",
         .dataTypeSpecific.className = NULL,
-        .number = HELLOHelloReply_FieldNumber_Created,
+        .number = GDAHelloReply_FieldNumber_Created,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(HELLOHelloReply__storage_, created),
+        .offset = (uint32_t)offsetof(GDAHelloReply__storage_, created),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
       },
       {
         .name = "lastUpdated",
         .dataTypeSpecific.className = NULL,
-        .number = HELLOHelloReply_FieldNumber_LastUpdated,
+        .number = GDAHelloReply_FieldNumber_LastUpdated,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(HELLOHelloReply__storage_, lastUpdated),
+        .offset = (uint32_t)offsetof(GDAHelloReply__storage_, lastUpdated),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = HELLOHelloReply_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDAHelloReply_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(HELLOHelloReply__storage_, status),
+        .offset = (uint32_t)offsetof(GDAHelloReply__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[HELLOHelloReply class]
-                                     rootClass:[HELLOHelloRoot class]
-                                          file:HELLOHelloRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAHelloReply class]
+                                     rootClass:[GDAHelloRoot class]
+                                          file:GDAHelloRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(HELLOHelloReply__storage_)
+                                   storageSize:sizeof(GDAHelloReply__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =

@@ -5,7 +5,7 @@
 #import <RxLibrary/GRXWriter+Immediate.h>
 #import "gedit/Common.pbobjc.h"
 
-@implementation DISTRICTDistrictApi
+@implementation GDADistrictApi
 
 // Designated initializer
 - (instancetype)initWithHost:(NSString *)host {
@@ -29,53 +29,53 @@
 /**
  * Sends a greeting
  */
-- (void)upsertWithRequest:(DISTRICTUpsertDistrictRequest *)request handler:(void(^)(DISTRICTDistrictResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)upsertWithRequest:(GDAUpsertDistrictRequest *)request handler:(void(^)(GDADistrictResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToUpsertWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
 /**
  * Sends a greeting
  */
-- (GRPCProtoCall *)RPCToUpsertWithRequest:(DISTRICTUpsertDistrictRequest *)request handler:(void(^)(DISTRICTDistrictResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToUpsertWithRequest:(GDAUpsertDistrictRequest *)request handler:(void(^)(GDADistrictResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"Upsert"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[DISTRICTDistrictResponse class]
+             responseClass:[GDADistrictResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 #pragma mark GetTop(GetTopDistrictRequest) returns (stream DistrictResponse)
 
-- (void)getTopWithRequest:(DISTRICTGetTopDistrictRequest *)request eventHandler:(void(^)(BOOL done, DISTRICTDistrictResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (void)getTopWithRequest:(GDAGetTopDistrictRequest *)request eventHandler:(void(^)(BOOL done, GDADistrictResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   [[self RPCToGetTopWithRequest:request eventHandler:eventHandler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToGetTopWithRequest:(DISTRICTGetTopDistrictRequest *)request eventHandler:(void(^)(BOOL done, DISTRICTDistrictResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (GRPCProtoCall *)RPCToGetTopWithRequest:(GDAGetTopDistrictRequest *)request eventHandler:(void(^)(BOOL done, GDADistrictResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   return [self RPCToMethod:@"GetTop"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[DISTRICTDistrictResponse class]
+             responseClass:[GDADistrictResponse class]
         responsesWriteable:[GRXWriteable writeableWithEventHandler:eventHandler]];
 }
 #pragma mark ListChild(ListChildDistrictRequest) returns (stream DistrictResponse)
 
-- (void)listChildWithRequest:(DISTRICTListChildDistrictRequest *)request eventHandler:(void(^)(BOOL done, DISTRICTDistrictResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (void)listChildWithRequest:(GDAListChildDistrictRequest *)request eventHandler:(void(^)(BOOL done, GDADistrictResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   [[self RPCToListChildWithRequest:request eventHandler:eventHandler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToListChildWithRequest:(DISTRICTListChildDistrictRequest *)request eventHandler:(void(^)(BOOL done, DISTRICTDistrictResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (GRPCProtoCall *)RPCToListChildWithRequest:(GDAListChildDistrictRequest *)request eventHandler:(void(^)(BOOL done, GDADistrictResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   return [self RPCToMethod:@"ListChild"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[DISTRICTDistrictResponse class]
+             responseClass:[GDADistrictResponse class]
         responsesWriteable:[GRXWriteable writeableWithEventHandler:eventHandler]];
 }
 #pragma mark List(ListDistrictRequest) returns (stream DistrictResponse)
 
-- (void)listWithRequest:(DISTRICTListDistrictRequest *)request eventHandler:(void(^)(BOOL done, DISTRICTDistrictResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (void)listWithRequest:(GDAListDistrictRequest *)request eventHandler:(void(^)(BOOL done, GDADistrictResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   [[self RPCToListWithRequest:request eventHandler:eventHandler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToListWithRequest:(DISTRICTListDistrictRequest *)request eventHandler:(void(^)(BOOL done, DISTRICTDistrictResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (GRPCProtoCall *)RPCToListWithRequest:(GDAListDistrictRequest *)request eventHandler:(void(^)(BOOL done, GDADistrictResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   return [self RPCToMethod:@"List"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[DISTRICTDistrictResponse class]
+             responseClass:[GDADistrictResponse class]
         responsesWriteable:[GRXWriteable writeableWithEventHandler:eventHandler]];
 }
 @end

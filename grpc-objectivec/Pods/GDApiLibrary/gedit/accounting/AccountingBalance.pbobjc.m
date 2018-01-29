@@ -20,44 +20,44 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-#pragma mark - ACCNTAccountingBalanceRoot
+#pragma mark - GDAAccountingBalanceRoot
 
-@implementation ACCNTAccountingBalanceRoot
+@implementation GDAAccountingBalanceRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - ACCNTAccountingBalanceRoot_FileDescriptor
+#pragma mark - GDAAccountingBalanceRoot_FileDescriptor
 
-static GPBFileDescriptor *ACCNTAccountingBalanceRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDAAccountingBalanceRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.accounting"
-                                                 objcPrefix:@"ACCNT"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - ACCNTListBalanceRequest
+#pragma mark - GDAListBalanceRequest
 
-@implementation ACCNTListBalanceRequest
+@implementation GDAListBalanceRequest
 
 @dynamic accountUuid;
 @dynamic from;
 @dynamic size;
 
-typedef struct ACCNTListBalanceRequest__storage_ {
+typedef struct GDAListBalanceRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t from;
   int32_t size;
   NSString *accountUuid;
-} ACCNTListBalanceRequest__storage_;
+} GDAListBalanceRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -68,38 +68,38 @@ typedef struct ACCNTListBalanceRequest__storage_ {
       {
         .name = "accountUuid",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTListBalanceRequest_FieldNumber_AccountUuid,
+        .number = GDAListBalanceRequest_FieldNumber_AccountUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(ACCNTListBalanceRequest__storage_, accountUuid),
+        .offset = (uint32_t)offsetof(GDAListBalanceRequest__storage_, accountUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "from",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTListBalanceRequest_FieldNumber_From,
+        .number = GDAListBalanceRequest_FieldNumber_From,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(ACCNTListBalanceRequest__storage_, from),
+        .offset = (uint32_t)offsetof(GDAListBalanceRequest__storage_, from),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "size",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTListBalanceRequest_FieldNumber_Size,
+        .number = GDAListBalanceRequest_FieldNumber_Size,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(ACCNTListBalanceRequest__storage_, size),
+        .offset = (uint32_t)offsetof(GDAListBalanceRequest__storage_, size),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTListBalanceRequest class]
-                                     rootClass:[ACCNTAccountingBalanceRoot class]
-                                          file:ACCNTAccountingBalanceRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAListBalanceRequest class]
+                                     rootClass:[GDAAccountingBalanceRoot class]
+                                          file:GDAAccountingBalanceRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTListBalanceRequest__storage_)
+                                   storageSize:sizeof(GDAListBalanceRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -114,18 +114,18 @@ typedef struct ACCNTListBalanceRequest__storage_ {
 
 @end
 
-#pragma mark - ACCNTBalanceResponse
+#pragma mark - GDABalanceResponse
 
-@implementation ACCNTBalanceResponse
+@implementation GDABalanceResponse
 
 @dynamic hasStatus, status;
 @dynamic hasBalance, balance;
 
-typedef struct ACCNTBalanceResponse__storage_ {
+typedef struct GDABalanceResponse__storage_ {
   uint32_t _has_storage_[1];
-  ACCNTBalance *balance;
-  COMMONStatus *status;
-} ACCNTBalanceResponse__storage_;
+  GDABalance *balance;
+  GDAStatus *status;
+} GDABalanceResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -135,30 +135,30 @@ typedef struct ACCNTBalanceResponse__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "balance",
-        .dataTypeSpecific.className = GPBStringifySymbol(ACCNTBalance),
-        .number = ACCNTBalanceResponse_FieldNumber_Balance,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDABalance),
+        .number = GDABalanceResponse_FieldNumber_Balance,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(ACCNTBalanceResponse__storage_, balance),
+        .offset = (uint32_t)offsetof(GDABalanceResponse__storage_, balance),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = ACCNTBalanceResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDABalanceResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(ACCNTBalanceResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDABalanceResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTBalanceResponse class]
-                                     rootClass:[ACCNTAccountingBalanceRoot class]
-                                          file:ACCNTAccountingBalanceRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDABalanceResponse class]
+                                     rootClass:[GDAAccountingBalanceRoot class]
+                                          file:GDAAccountingBalanceRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTBalanceResponse__storage_)
+                                   storageSize:sizeof(GDABalanceResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -168,9 +168,9 @@ typedef struct ACCNTBalanceResponse__storage_ {
 
 @end
 
-#pragma mark - ACCNTBalance
+#pragma mark - GDABalance
 
-@implementation ACCNTBalance
+@implementation GDABalance
 
 @dynamic accountUuid;
 @dynamic previousBalance;
@@ -179,7 +179,7 @@ typedef struct ACCNTBalanceResponse__storage_ {
 @dynamic currentDate;
 @dynamic currentBalance;
 
-typedef struct ACCNTBalance__storage_ {
+typedef struct GDABalance__storage_ {
   uint32_t _has_storage_[1];
   int32_t previousBalance;
   int32_t currentChanges;
@@ -187,7 +187,7 @@ typedef struct ACCNTBalance__storage_ {
   NSString *accountUuid;
   int64_t previousDate;
   int64_t currentDate;
-} ACCNTBalance__storage_;
+} GDABalance__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -198,65 +198,65 @@ typedef struct ACCNTBalance__storage_ {
       {
         .name = "accountUuid",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTBalance_FieldNumber_AccountUuid,
+        .number = GDABalance_FieldNumber_AccountUuid,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(ACCNTBalance__storage_, accountUuid),
+        .offset = (uint32_t)offsetof(GDABalance__storage_, accountUuid),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "previousBalance",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTBalance_FieldNumber_PreviousBalance,
+        .number = GDABalance_FieldNumber_PreviousBalance,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(ACCNTBalance__storage_, previousBalance),
+        .offset = (uint32_t)offsetof(GDABalance__storage_, previousBalance),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "previousDate",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTBalance_FieldNumber_PreviousDate,
+        .number = GDABalance_FieldNumber_PreviousDate,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(ACCNTBalance__storage_, previousDate),
+        .offset = (uint32_t)offsetof(GDABalance__storage_, previousDate),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
       {
         .name = "currentChanges",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTBalance_FieldNumber_CurrentChanges,
+        .number = GDABalance_FieldNumber_CurrentChanges,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(ACCNTBalance__storage_, currentChanges),
+        .offset = (uint32_t)offsetof(GDABalance__storage_, currentChanges),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "currentDate",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTBalance_FieldNumber_CurrentDate,
+        .number = GDABalance_FieldNumber_CurrentDate,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(ACCNTBalance__storage_, currentDate),
+        .offset = (uint32_t)offsetof(GDABalance__storage_, currentDate),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
       {
         .name = "currentBalance",
         .dataTypeSpecific.className = NULL,
-        .number = ACCNTBalance_FieldNumber_CurrentBalance,
+        .number = GDABalance_FieldNumber_CurrentBalance,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(ACCNTBalance__storage_, currentBalance),
+        .offset = (uint32_t)offsetof(GDABalance__storage_, currentBalance),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ACCNTBalance class]
-                                     rootClass:[ACCNTAccountingBalanceRoot class]
-                                          file:ACCNTAccountingBalanceRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDABalance class]
+                                     rootClass:[GDAAccountingBalanceRoot class]
+                                          file:GDAAccountingBalanceRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ACCNTBalance__storage_)
+                                   storageSize:sizeof(GDABalance__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =

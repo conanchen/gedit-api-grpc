@@ -27,12 +27,12 @@
 
 CF_EXTERN_C_BEGIN
 
-@class ACCNTPosting;
-@class COMMONStatus;
+@class GDAPosting;
+@class GDAStatus;
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - ACCNTAccountingPostingRoot
+#pragma mark - GDAAccountingPostingRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -44,20 +44,20 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface ACCNTAccountingPostingRoot : GPBRootObject
+@interface GDAAccountingPostingRoot : GPBRootObject
 @end
 
-#pragma mark - ACCNTListPostingRequest
+#pragma mark - GDAListPostingRequest
 
-typedef GPB_ENUM(ACCNTListPostingRequest_FieldNumber) {
-  ACCNTListPostingRequest_FieldNumber_UserUuid = 11,
-  ACCNTListPostingRequest_FieldNumber_AccountUuid = 12,
-  ACCNTListPostingRequest_FieldNumber_JournalUuid = 13,
-  ACCNTListPostingRequest_FieldNumber_From = 100,
-  ACCNTListPostingRequest_FieldNumber_Size = 101,
+typedef GPB_ENUM(GDAListPostingRequest_FieldNumber) {
+  GDAListPostingRequest_FieldNumber_UserUuid = 11,
+  GDAListPostingRequest_FieldNumber_AccountUuid = 12,
+  GDAListPostingRequest_FieldNumber_JournalUuid = 13,
+  GDAListPostingRequest_FieldNumber_From = 100,
+  GDAListPostingRequest_FieldNumber_Size = 101,
 };
 
-@interface ACCNTListPostingRequest : GPBMessage
+@interface GDAListPostingRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *userUuid;
 
@@ -73,16 +73,16 @@ typedef GPB_ENUM(ACCNTListPostingRequest_FieldNumber) {
 
 @end
 
-#pragma mark - ACCNTListMyPostingRequest
+#pragma mark - GDAListMyPostingRequest
 
-typedef GPB_ENUM(ACCNTListMyPostingRequest_FieldNumber) {
-  ACCNTListMyPostingRequest_FieldNumber_AccountUuid = 12,
-  ACCNTListMyPostingRequest_FieldNumber_LastUpdated = 13,
-  ACCNTListMyPostingRequest_FieldNumber_From = 100,
-  ACCNTListMyPostingRequest_FieldNumber_Size = 101,
+typedef GPB_ENUM(GDAListMyPostingRequest_FieldNumber) {
+  GDAListMyPostingRequest_FieldNumber_AccountUuid = 12,
+  GDAListMyPostingRequest_FieldNumber_LastUpdated = 13,
+  GDAListMyPostingRequest_FieldNumber_From = 100,
+  GDAListMyPostingRequest_FieldNumber_Size = 101,
 };
 
-@interface ACCNTListMyPostingRequest : GPBMessage
+@interface GDAListMyPostingRequest : GPBMessage
 
 /** optional */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *accountUuid;
@@ -95,50 +95,50 @@ typedef GPB_ENUM(ACCNTListMyPostingRequest_FieldNumber) {
 
 @end
 
-#pragma mark - ACCNTGetPostingRequest
+#pragma mark - GDAGetPostingRequest
 
-typedef GPB_ENUM(ACCNTGetPostingRequest_FieldNumber) {
-  ACCNTGetPostingRequest_FieldNumber_Uuid = 1,
+typedef GPB_ENUM(GDAGetPostingRequest_FieldNumber) {
+  GDAGetPostingRequest_FieldNumber_Uuid = 1,
 };
 
-@interface ACCNTGetPostingRequest : GPBMessage
+@interface GDAGetPostingRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
 
 @end
 
-#pragma mark - ACCNTPostingResponse
+#pragma mark - GDAPostingResponse
 
-typedef GPB_ENUM(ACCNTPostingResponse_FieldNumber) {
-  ACCNTPostingResponse_FieldNumber_Posting = 1,
-  ACCNTPostingResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDAPostingResponse_FieldNumber) {
+  GDAPostingResponse_FieldNumber_Posting = 1,
+  GDAPostingResponse_FieldNumber_Status = 999,
 };
 
-@interface ACCNTPostingResponse : GPBMessage
+@interface GDAPostingResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
-@property(nonatomic, readwrite, strong, null_resettable) ACCNTPosting *posting;
+@property(nonatomic, readwrite, strong, null_resettable) GDAPosting *posting;
 /** Test to see if @c posting has been set. */
 @property(nonatomic, readwrite) BOOL hasPosting;
 
 @end
 
-#pragma mark - ACCNTPosting
+#pragma mark - GDAPosting
 
-typedef GPB_ENUM(ACCNTPosting_FieldNumber) {
-  ACCNTPosting_FieldNumber_Uuid = 1,
-  ACCNTPosting_FieldNumber_UserUuid = 11,
-  ACCNTPosting_FieldNumber_AccountUuid = 12,
-  ACCNTPosting_FieldNumber_JournalUuid = 13,
-  ACCNTPosting_FieldNumber_Amount = 14,
-  ACCNTPosting_FieldNumber_Created = 15,
-  ACCNTPosting_FieldNumber_Comment = 16,
+typedef GPB_ENUM(GDAPosting_FieldNumber) {
+  GDAPosting_FieldNumber_Uuid = 1,
+  GDAPosting_FieldNumber_UserUuid = 11,
+  GDAPosting_FieldNumber_AccountUuid = 12,
+  GDAPosting_FieldNumber_JournalUuid = 13,
+  GDAPosting_FieldNumber_Amount = 14,
+  GDAPosting_FieldNumber_Created = 15,
+  GDAPosting_FieldNumber_Comment = 16,
 };
 
-@interface ACCNTPosting : GPBMessage
+@interface GDAPosting : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
 

@@ -21,44 +21,44 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-#pragma mark - PMUNPAYPaymentUnionpayRoot
+#pragma mark - GDAPaymentUnionpayRoot
 
-@implementation PMUNPAYPaymentUnionpayRoot
+@implementation GDAPaymentUnionpayRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - PMUNPAYPaymentUnionpayRoot_FileDescriptor
+#pragma mark - GDAPaymentUnionpayRoot_FileDescriptor
 
-static GPBFileDescriptor *PMUNPAYPaymentUnionpayRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDAPaymentUnionpayRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.payment"
-                                                 objcPrefix:@"PMUNPAY"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - PMUNPAYPrepareUnionpayPaymentRequest
+#pragma mark - GDAPrepareUnionpayPaymentRequest
 
-@implementation PMUNPAYPrepareUnionpayPaymentRequest
+@implementation GDAPrepareUnionpayPaymentRequest
 
 @dynamic payerCode;
 @dynamic payerMobile;
 @dynamic shouldPay;
 
-typedef struct PMUNPAYPrepareUnionpayPaymentRequest__storage_ {
+typedef struct GDAPrepareUnionpayPaymentRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t shouldPay;
   NSString *payerCode;
   NSString *payerMobile;
-} PMUNPAYPrepareUnionpayPaymentRequest__storage_;
+} GDAPrepareUnionpayPaymentRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -69,38 +69,38 @@ typedef struct PMUNPAYPrepareUnionpayPaymentRequest__storage_ {
       {
         .name = "payerCode",
         .dataTypeSpecific.className = NULL,
-        .number = PMUNPAYPrepareUnionpayPaymentRequest_FieldNumber_PayerCode,
+        .number = GDAPrepareUnionpayPaymentRequest_FieldNumber_PayerCode,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PMUNPAYPrepareUnionpayPaymentRequest__storage_, payerCode),
+        .offset = (uint32_t)offsetof(GDAPrepareUnionpayPaymentRequest__storage_, payerCode),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payerMobile",
         .dataTypeSpecific.className = NULL,
-        .number = PMUNPAYPrepareUnionpayPaymentRequest_FieldNumber_PayerMobile,
+        .number = GDAPrepareUnionpayPaymentRequest_FieldNumber_PayerMobile,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PMUNPAYPrepareUnionpayPaymentRequest__storage_, payerMobile),
+        .offset = (uint32_t)offsetof(GDAPrepareUnionpayPaymentRequest__storage_, payerMobile),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "shouldPay",
         .dataTypeSpecific.className = NULL,
-        .number = PMUNPAYPrepareUnionpayPaymentRequest_FieldNumber_ShouldPay,
+        .number = GDAPrepareUnionpayPaymentRequest_FieldNumber_ShouldPay,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(PMUNPAYPrepareUnionpayPaymentRequest__storage_, shouldPay),
+        .offset = (uint32_t)offsetof(GDAPrepareUnionpayPaymentRequest__storage_, shouldPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PMUNPAYPrepareUnionpayPaymentRequest class]
-                                     rootClass:[PMUNPAYPaymentUnionpayRoot class]
-                                          file:PMUNPAYPaymentUnionpayRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAPrepareUnionpayPaymentRequest class]
+                                     rootClass:[GDAPaymentUnionpayRoot class]
+                                          file:GDAPaymentUnionpayRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PMUNPAYPrepareUnionpayPaymentRequest__storage_)
+                                   storageSize:sizeof(GDAPrepareUnionpayPaymentRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -115,9 +115,9 @@ typedef struct PMUNPAYPrepareUnionpayPaymentRequest__storage_ {
 
 @end
 
-#pragma mark - PMUNPAYPrepareUnionpayPaymentResponse
+#pragma mark - GDAPrepareUnionpayPaymentResponse
 
-@implementation PMUNPAYPrepareUnionpayPaymentResponse
+@implementation GDAPrepareUnionpayPaymentResponse
 
 @dynamic hasStatus, status;
 @dynamic payerCode;
@@ -126,15 +126,15 @@ typedef struct PMUNPAYPrepareUnionpayPaymentRequest__storage_ {
 @dynamic actualPay;
 @dynamic pointsPay;
 
-typedef struct PMUNPAYPrepareUnionpayPaymentResponse__storage_ {
+typedef struct GDAPrepareUnionpayPaymentResponse__storage_ {
   uint32_t _has_storage_[1];
   int32_t shouldPay;
   int32_t actualPay;
   int32_t pointsPay;
   NSString *payerCode;
   NSString *payerMobile;
-  COMMONStatus *status;
-} PMUNPAYPrepareUnionpayPaymentResponse__storage_;
+  GDAStatus *status;
+} GDAPrepareUnionpayPaymentResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -145,65 +145,65 @@ typedef struct PMUNPAYPrepareUnionpayPaymentResponse__storage_ {
       {
         .name = "payerCode",
         .dataTypeSpecific.className = NULL,
-        .number = PMUNPAYPrepareUnionpayPaymentResponse_FieldNumber_PayerCode,
+        .number = GDAPrepareUnionpayPaymentResponse_FieldNumber_PayerCode,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PMUNPAYPrepareUnionpayPaymentResponse__storage_, payerCode),
+        .offset = (uint32_t)offsetof(GDAPrepareUnionpayPaymentResponse__storage_, payerCode),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payerMobile",
         .dataTypeSpecific.className = NULL,
-        .number = PMUNPAYPrepareUnionpayPaymentResponse_FieldNumber_PayerMobile,
+        .number = GDAPrepareUnionpayPaymentResponse_FieldNumber_PayerMobile,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(PMUNPAYPrepareUnionpayPaymentResponse__storage_, payerMobile),
+        .offset = (uint32_t)offsetof(GDAPrepareUnionpayPaymentResponse__storage_, payerMobile),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "shouldPay",
         .dataTypeSpecific.className = NULL,
-        .number = PMUNPAYPrepareUnionpayPaymentResponse_FieldNumber_ShouldPay,
+        .number = GDAPrepareUnionpayPaymentResponse_FieldNumber_ShouldPay,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(PMUNPAYPrepareUnionpayPaymentResponse__storage_, shouldPay),
+        .offset = (uint32_t)offsetof(GDAPrepareUnionpayPaymentResponse__storage_, shouldPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "actualPay",
         .dataTypeSpecific.className = NULL,
-        .number = PMUNPAYPrepareUnionpayPaymentResponse_FieldNumber_ActualPay,
+        .number = GDAPrepareUnionpayPaymentResponse_FieldNumber_ActualPay,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(PMUNPAYPrepareUnionpayPaymentResponse__storage_, actualPay),
+        .offset = (uint32_t)offsetof(GDAPrepareUnionpayPaymentResponse__storage_, actualPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "pointsPay",
         .dataTypeSpecific.className = NULL,
-        .number = PMUNPAYPrepareUnionpayPaymentResponse_FieldNumber_PointsPay,
+        .number = GDAPrepareUnionpayPaymentResponse_FieldNumber_PointsPay,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(PMUNPAYPrepareUnionpayPaymentResponse__storage_, pointsPay),
+        .offset = (uint32_t)offsetof(GDAPrepareUnionpayPaymentResponse__storage_, pointsPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = PMUNPAYPrepareUnionpayPaymentResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDAPrepareUnionpayPaymentResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PMUNPAYPrepareUnionpayPaymentResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDAPrepareUnionpayPaymentResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PMUNPAYPrepareUnionpayPaymentResponse class]
-                                     rootClass:[PMUNPAYPaymentUnionpayRoot class]
-                                          file:PMUNPAYPaymentUnionpayRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAPrepareUnionpayPaymentResponse class]
+                                     rootClass:[GDAPaymentUnionpayRoot class]
+                                          file:GDAPaymentUnionpayRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PMUNPAYPrepareUnionpayPaymentResponse__storage_)
+                                   storageSize:sizeof(GDAPrepareUnionpayPaymentResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -218,9 +218,9 @@ typedef struct PMUNPAYPrepareUnionpayPaymentResponse__storage_ {
 
 @end
 
-#pragma mark - PMUNPAYCreateUnionpayPaymentRequest
+#pragma mark - GDACreateUnionpayPaymentRequest
 
-@implementation PMUNPAYCreateUnionpayPaymentRequest
+@implementation GDACreateUnionpayPaymentRequest
 
 @dynamic payerCode;
 @dynamic payerMobile;
@@ -229,7 +229,7 @@ typedef struct PMUNPAYPrepareUnionpayPaymentResponse__storage_ {
 @dynamic pointsPay;
 @dynamic payeeIp;
 
-typedef struct PMUNPAYCreateUnionpayPaymentRequest__storage_ {
+typedef struct GDACreateUnionpayPaymentRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t shouldPay;
   int32_t actualPay;
@@ -237,7 +237,7 @@ typedef struct PMUNPAYCreateUnionpayPaymentRequest__storage_ {
   NSString *payerCode;
   NSString *payerMobile;
   NSString *payeeIp;
-} PMUNPAYCreateUnionpayPaymentRequest__storage_;
+} GDACreateUnionpayPaymentRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -248,65 +248,65 @@ typedef struct PMUNPAYCreateUnionpayPaymentRequest__storage_ {
       {
         .name = "payerCode",
         .dataTypeSpecific.className = NULL,
-        .number = PMUNPAYCreateUnionpayPaymentRequest_FieldNumber_PayerCode,
+        .number = GDACreateUnionpayPaymentRequest_FieldNumber_PayerCode,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PMUNPAYCreateUnionpayPaymentRequest__storage_, payerCode),
+        .offset = (uint32_t)offsetof(GDACreateUnionpayPaymentRequest__storage_, payerCode),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payerMobile",
         .dataTypeSpecific.className = NULL,
-        .number = PMUNPAYCreateUnionpayPaymentRequest_FieldNumber_PayerMobile,
+        .number = GDACreateUnionpayPaymentRequest_FieldNumber_PayerMobile,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PMUNPAYCreateUnionpayPaymentRequest__storage_, payerMobile),
+        .offset = (uint32_t)offsetof(GDACreateUnionpayPaymentRequest__storage_, payerMobile),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "shouldPay",
         .dataTypeSpecific.className = NULL,
-        .number = PMUNPAYCreateUnionpayPaymentRequest_FieldNumber_ShouldPay,
+        .number = GDACreateUnionpayPaymentRequest_FieldNumber_ShouldPay,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(PMUNPAYCreateUnionpayPaymentRequest__storage_, shouldPay),
+        .offset = (uint32_t)offsetof(GDACreateUnionpayPaymentRequest__storage_, shouldPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "actualPay",
         .dataTypeSpecific.className = NULL,
-        .number = PMUNPAYCreateUnionpayPaymentRequest_FieldNumber_ActualPay,
+        .number = GDACreateUnionpayPaymentRequest_FieldNumber_ActualPay,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(PMUNPAYCreateUnionpayPaymentRequest__storage_, actualPay),
+        .offset = (uint32_t)offsetof(GDACreateUnionpayPaymentRequest__storage_, actualPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "pointsPay",
         .dataTypeSpecific.className = NULL,
-        .number = PMUNPAYCreateUnionpayPaymentRequest_FieldNumber_PointsPay,
+        .number = GDACreateUnionpayPaymentRequest_FieldNumber_PointsPay,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(PMUNPAYCreateUnionpayPaymentRequest__storage_, pointsPay),
+        .offset = (uint32_t)offsetof(GDACreateUnionpayPaymentRequest__storage_, pointsPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "payeeIp",
         .dataTypeSpecific.className = NULL,
-        .number = PMUNPAYCreateUnionpayPaymentRequest_FieldNumber_PayeeIp,
+        .number = GDACreateUnionpayPaymentRequest_FieldNumber_PayeeIp,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(PMUNPAYCreateUnionpayPaymentRequest__storage_, payeeIp),
+        .offset = (uint32_t)offsetof(GDACreateUnionpayPaymentRequest__storage_, payeeIp),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PMUNPAYCreateUnionpayPaymentRequest class]
-                                     rootClass:[PMUNPAYPaymentUnionpayRoot class]
-                                          file:PMUNPAYPaymentUnionpayRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDACreateUnionpayPaymentRequest class]
+                                     rootClass:[GDAPaymentUnionpayRoot class]
+                                          file:GDAPaymentUnionpayRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PMUNPAYCreateUnionpayPaymentRequest__storage_)
+                                   storageSize:sizeof(GDACreateUnionpayPaymentRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =

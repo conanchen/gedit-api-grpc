@@ -29,7 +29,7 @@ CF_EXTERN_C_BEGIN
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - ACCNTAccountingEventRoot
+#pragma mark - GDAAccountingEventRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -41,32 +41,32 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface ACCNTAccountingEventRoot : GPBRootObject
+@interface GDAAccountingEventRoot : GPBRootObject
 @end
 
-#pragma mark - ACCNTPaymentCreatedEvent
+#pragma mark - GDAPaymentCreatedEvent
 
-typedef GPB_ENUM(ACCNTPaymentCreatedEvent_FieldNumber) {
-  ACCNTPaymentCreatedEvent_FieldNumber_Uuid = 1,
-  ACCNTPaymentCreatedEvent_FieldNumber_PayerUuid = 11,
-  ACCNTPaymentCreatedEvent_FieldNumber_PayeeUuid = 12,
-  ACCNTPaymentCreatedEvent_FieldNumber_PayeeStoreUuid = 13,
-  ACCNTPaymentCreatedEvent_FieldNumber_PayeeWorkerUuid = 14,
-  ACCNTPaymentCreatedEvent_FieldNumber_ShouldPay = 15,
-  ACCNTPaymentCreatedEvent_FieldNumber_ActualPay = 16,
-  ACCNTPaymentCreatedEvent_FieldNumber_PointsPay = 17,
-  ACCNTPaymentCreatedEvent_FieldNumber_PointsRepay = 18,
-  ACCNTPaymentCreatedEvent_FieldNumber_Channel = 26,
-  ACCNTPaymentCreatedEvent_FieldNumber_Created = 27,
+typedef GPB_ENUM(GDAPaymentCreatedEvent_FieldNumber) {
+  GDAPaymentCreatedEvent_FieldNumber_Uuid = 1,
+  GDAPaymentCreatedEvent_FieldNumber_PayerUuid = 11,
+  GDAPaymentCreatedEvent_FieldNumber_PayeeUuid = 12,
+  GDAPaymentCreatedEvent_FieldNumber_PayeeStoreUuid = 13,
+  GDAPaymentCreatedEvent_FieldNumber_PayeeWorkerUuid = 14,
+  GDAPaymentCreatedEvent_FieldNumber_ShouldPay = 15,
+  GDAPaymentCreatedEvent_FieldNumber_ActualPay = 16,
+  GDAPaymentCreatedEvent_FieldNumber_PointsPay = 17,
+  GDAPaymentCreatedEvent_FieldNumber_PointsRepay = 18,
+  GDAPaymentCreatedEvent_FieldNumber_Channel = 26,
+  GDAPaymentCreatedEvent_FieldNumber_Created = 27,
 };
 
-typedef GPB_ENUM(ACCNTPaymentCreatedEvent_Points_OneOfCase) {
-  ACCNTPaymentCreatedEvent_Points_OneOfCase_GPBUnsetOneOfCase = 0,
-  ACCNTPaymentCreatedEvent_Points_OneOfCase_PointsPay = 17,
-  ACCNTPaymentCreatedEvent_Points_OneOfCase_PointsRepay = 18,
+typedef GPB_ENUM(GDAPaymentCreatedEvent_Points_OneOfCase) {
+  GDAPaymentCreatedEvent_Points_OneOfCase_GPBUnsetOneOfCase = 0,
+  GDAPaymentCreatedEvent_Points_OneOfCase_PointsPay = 17,
+  GDAPaymentCreatedEvent_Points_OneOfCase_PointsRepay = 18,
 };
 
-@interface ACCNTPaymentCreatedEvent : GPBMessage
+@interface GDAPaymentCreatedEvent : GPBMessage
 
 /** uuid unique */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
@@ -87,7 +87,7 @@ typedef GPB_ENUM(ACCNTPaymentCreatedEvent_Points_OneOfCase) {
 /** 实付金额 */
 @property(nonatomic, readwrite) int32_t actualPay;
 
-@property(nonatomic, readonly) ACCNTPaymentCreatedEvent_Points_OneOfCase pointsOneOfCase;
+@property(nonatomic, readonly) GDAPaymentCreatedEvent_Points_OneOfCase pointsOneOfCase;
 
 /** 实付积分代替金额 */
 @property(nonatomic, readwrite) int32_t pointsPay;
@@ -105,17 +105,17 @@ typedef GPB_ENUM(ACCNTPaymentCreatedEvent_Points_OneOfCase) {
 /**
  * Clears whatever value was set for the oneof 'points'.
  **/
-void ACCNTPaymentCreatedEvent_ClearPointsOneOfCase(ACCNTPaymentCreatedEvent *message);
+void GDAPaymentCreatedEvent_ClearPointsOneOfCase(GDAPaymentCreatedEvent *message);
 
-#pragma mark - ACCNTUserVerifiedEvent
+#pragma mark - GDAUserVerifiedEvent
 
-typedef GPB_ENUM(ACCNTUserVerifiedEvent_FieldNumber) {
-  ACCNTUserVerifiedEvent_FieldNumber_UserUuid = 11,
-  ACCNTUserVerifiedEvent_FieldNumber_IntroducerUuid = 12,
-  ACCNTUserVerifiedEvent_FieldNumber_Created = 14,
+typedef GPB_ENUM(GDAUserVerifiedEvent_FieldNumber) {
+  GDAUserVerifiedEvent_FieldNumber_UserUuid = 11,
+  GDAUserVerifiedEvent_FieldNumber_IntroducerUuid = 12,
+  GDAUserVerifiedEvent_FieldNumber_Created = 14,
 };
 
-@interface ACCNTUserVerifiedEvent : GPBMessage
+@interface GDAUserVerifiedEvent : GPBMessage
 
 /** userUuid+introducerUuid unique */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *userUuid;
@@ -126,16 +126,16 @@ typedef GPB_ENUM(ACCNTUserVerifiedEvent_FieldNumber) {
 
 @end
 
-#pragma mark - ACCNTStoreVerifiedEvent
+#pragma mark - GDAStoreVerifiedEvent
 
-typedef GPB_ENUM(ACCNTStoreVerifiedEvent_FieldNumber) {
-  ACCNTStoreVerifiedEvent_FieldNumber_StoreUuid = 11,
-  ACCNTStoreVerifiedEvent_FieldNumber_IntroducerUuid = 12,
-  ACCNTStoreVerifiedEvent_FieldNumber_StoreOwnerUuid = 13,
-  ACCNTStoreVerifiedEvent_FieldNumber_Created = 14,
+typedef GPB_ENUM(GDAStoreVerifiedEvent_FieldNumber) {
+  GDAStoreVerifiedEvent_FieldNumber_StoreUuid = 11,
+  GDAStoreVerifiedEvent_FieldNumber_IntroducerUuid = 12,
+  GDAStoreVerifiedEvent_FieldNumber_StoreOwnerUuid = 13,
+  GDAStoreVerifiedEvent_FieldNumber_Created = 14,
 };
 
-@interface ACCNTStoreVerifiedEvent : GPBMessage
+@interface GDAStoreVerifiedEvent : GPBMessage
 
 /** storeUuid+introducerUuid unique */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *storeUuid;

@@ -6,7 +6,7 @@
 #import "gedit/Common.pbobjc.h"
 #import "gedit/accounting/AccountingEvent.pbobjc.h"
 
-@implementation ACCNTAccountingRewardsIfEventApi
+@implementation GDAAccountingRewardsIfEventApi
 
 // Designated initializer
 - (instancetype)initWithHost:(NSString *)host {
@@ -30,17 +30,17 @@
 /**
  * 咨询发生某种事件将会给相关的人员的奖励如：积分扣减、奖励、返还、抵扣
  */
-- (void)queryRewardsIfEventWithRequest:(ACCNTQueryRewardsIfEventRequest *)request eventHandler:(void(^)(BOOL done, ACCNTRewardIfEventResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (void)queryRewardsIfEventWithRequest:(GDAQueryRewardsIfEventRequest *)request eventHandler:(void(^)(BOOL done, GDARewardIfEventResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   [[self RPCToQueryRewardsIfEventWithRequest:request eventHandler:eventHandler] start];
 }
 // Returns a not-yet-started RPC object.
 /**
  * 咨询发生某种事件将会给相关的人员的奖励如：积分扣减、奖励、返还、抵扣
  */
-- (GRPCProtoCall *)RPCToQueryRewardsIfEventWithRequest:(ACCNTQueryRewardsIfEventRequest *)request eventHandler:(void(^)(BOOL done, ACCNTRewardIfEventResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (GRPCProtoCall *)RPCToQueryRewardsIfEventWithRequest:(GDAQueryRewardsIfEventRequest *)request eventHandler:(void(^)(BOOL done, GDARewardIfEventResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   return [self RPCToMethod:@"QueryRewardsIfEvent"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[ACCNTRewardIfEventResponse class]
+             responseClass:[GDARewardIfEventResponse class]
         responsesWriteable:[GRXWriteable writeableWithEventHandler:eventHandler]];
 }
 @end

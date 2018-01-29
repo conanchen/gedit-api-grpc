@@ -27,12 +27,12 @@
 
 CF_EXTERN_C_BEGIN
 
-@class COMMONStatus;
-@class CTGMMBCatalogMember;
+@class GDACatalogMember;
+@class GDAStatus;
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - CTGMMBCatalogMemberRoot
+#pragma mark - GDACatalogMemberRoot
 
 /**
  * Exposes the extension registry for this file.
@@ -44,60 +44,60 @@ NS_ASSUME_NONNULL_BEGIN
  * which is a @c GPBExtensionRegistry that includes all the extensions defined by
  * this file and all files that it depends on.
  **/
-@interface CTGMMBCatalogMemberRoot : GPBRootObject
+@interface GDACatalogMemberRoot : GPBRootObject
 @end
 
-#pragma mark - CTGMMBGetCatalogMemberRequest
+#pragma mark - GDAGetCatalogMemberRequest
 
-typedef GPB_ENUM(CTGMMBGetCatalogMemberRequest_FieldNumber) {
-  CTGMMBGetCatalogMemberRequest_FieldNumber_Uuid = 1,
+typedef GPB_ENUM(GDAGetCatalogMemberRequest_FieldNumber) {
+  GDAGetCatalogMemberRequest_FieldNumber_Uuid = 1,
 };
 
-@interface CTGMMBGetCatalogMemberRequest : GPBMessage
+@interface GDAGetCatalogMemberRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
 
 @end
 
-#pragma mark - CTGMMBListCatalogMemberRequest
+#pragma mark - GDAListCatalogMemberRequest
 
-typedef GPB_ENUM(CTGMMBListCatalogMemberRequest_FieldNumber) {
-  CTGMMBListCatalogMemberRequest_FieldNumber_CatalogUuid = 1,
+typedef GPB_ENUM(GDAListCatalogMemberRequest_FieldNumber) {
+  GDAListCatalogMemberRequest_FieldNumber_CatalogUuid = 1,
 };
 
-@interface CTGMMBListCatalogMemberRequest : GPBMessage
+@interface GDAListCatalogMemberRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *catalogUuid;
 
 @end
 
-#pragma mark - CTGMMBCatalogMemberResponse
+#pragma mark - GDACatalogMemberResponse
 
-typedef GPB_ENUM(CTGMMBCatalogMemberResponse_FieldNumber) {
-  CTGMMBCatalogMemberResponse_FieldNumber_CatalogMember = 1,
-  CTGMMBCatalogMemberResponse_FieldNumber_Status = 999,
+typedef GPB_ENUM(GDACatalogMemberResponse_FieldNumber) {
+  GDACatalogMemberResponse_FieldNumber_CatalogMember = 1,
+  GDACatalogMemberResponse_FieldNumber_Status = 999,
 };
 
-@interface CTGMMBCatalogMemberResponse : GPBMessage
+@interface GDACatalogMemberResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) COMMONStatus *status;
+@property(nonatomic, readwrite, strong, null_resettable) GDAStatus *status;
 /** Test to see if @c status has been set. */
 @property(nonatomic, readwrite) BOOL hasStatus;
 
-@property(nonatomic, readwrite, strong, null_resettable) CTGMMBCatalogMember *catalogMember;
+@property(nonatomic, readwrite, strong, null_resettable) GDACatalogMember *catalogMember;
 /** Test to see if @c catalogMember has been set. */
 @property(nonatomic, readwrite) BOOL hasCatalogMember;
 
 @end
 
-#pragma mark - CTGMMBCatalogMember
+#pragma mark - GDACatalogMember
 
-typedef GPB_ENUM(CTGMMBCatalogMember_FieldNumber) {
-  CTGMMBCatalogMember_FieldNumber_CatalogUuid = 1,
-  CTGMMBCatalogMember_FieldNumber_ProductUuid = 2,
+typedef GPB_ENUM(GDACatalogMember_FieldNumber) {
+  GDACatalogMember_FieldNumber_CatalogUuid = 1,
+  GDACatalogMember_FieldNumber_ProductUuid = 2,
 };
 
-@interface CTGMMBCatalogMember : GPBMessage
+@interface GDACatalogMember : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *catalogUuid;
 

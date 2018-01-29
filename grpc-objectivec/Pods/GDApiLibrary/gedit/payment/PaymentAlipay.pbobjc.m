@@ -21,44 +21,44 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-#pragma mark - PMALIPAYPaymentAlipayRoot
+#pragma mark - GDAPaymentAlipayRoot
 
-@implementation PMALIPAYPaymentAlipayRoot
+@implementation GDAPaymentAlipayRoot
 
 // No extensions in the file and none of the imports (direct or indirect)
 // defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
-#pragma mark - PMALIPAYPaymentAlipayRoot_FileDescriptor
+#pragma mark - GDAPaymentAlipayRoot_FileDescriptor
 
-static GPBFileDescriptor *PMALIPAYPaymentAlipayRoot_FileDescriptor(void) {
+static GPBFileDescriptor *GDAPaymentAlipayRoot_FileDescriptor(void) {
   // This is called by +initialize so there is no need to worry
   // about thread safety of the singleton.
   static GPBFileDescriptor *descriptor = NULL;
   if (!descriptor) {
     GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@"gedit.payment"
-                                                 objcPrefix:@"PMALIPAY"
+                                                 objcPrefix:@"GDA"
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
 
-#pragma mark - PMALIPAYPreparAlipayPaymentRequest
+#pragma mark - GDAPreparAlipayPaymentRequest
 
-@implementation PMALIPAYPreparAlipayPaymentRequest
+@implementation GDAPreparAlipayPaymentRequest
 
 @dynamic payerCode;
 @dynamic payerMobile;
 @dynamic shouldPay;
 
-typedef struct PMALIPAYPreparAlipayPaymentRequest__storage_ {
+typedef struct GDAPreparAlipayPaymentRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t shouldPay;
   NSString *payerCode;
   NSString *payerMobile;
-} PMALIPAYPreparAlipayPaymentRequest__storage_;
+} GDAPreparAlipayPaymentRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -69,38 +69,38 @@ typedef struct PMALIPAYPreparAlipayPaymentRequest__storage_ {
       {
         .name = "payerCode",
         .dataTypeSpecific.className = NULL,
-        .number = PMALIPAYPreparAlipayPaymentRequest_FieldNumber_PayerCode,
+        .number = GDAPreparAlipayPaymentRequest_FieldNumber_PayerCode,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PMALIPAYPreparAlipayPaymentRequest__storage_, payerCode),
+        .offset = (uint32_t)offsetof(GDAPreparAlipayPaymentRequest__storage_, payerCode),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payerMobile",
         .dataTypeSpecific.className = NULL,
-        .number = PMALIPAYPreparAlipayPaymentRequest_FieldNumber_PayerMobile,
+        .number = GDAPreparAlipayPaymentRequest_FieldNumber_PayerMobile,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PMALIPAYPreparAlipayPaymentRequest__storage_, payerMobile),
+        .offset = (uint32_t)offsetof(GDAPreparAlipayPaymentRequest__storage_, payerMobile),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "shouldPay",
         .dataTypeSpecific.className = NULL,
-        .number = PMALIPAYPreparAlipayPaymentRequest_FieldNumber_ShouldPay,
+        .number = GDAPreparAlipayPaymentRequest_FieldNumber_ShouldPay,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(PMALIPAYPreparAlipayPaymentRequest__storage_, shouldPay),
+        .offset = (uint32_t)offsetof(GDAPreparAlipayPaymentRequest__storage_, shouldPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PMALIPAYPreparAlipayPaymentRequest class]
-                                     rootClass:[PMALIPAYPaymentAlipayRoot class]
-                                          file:PMALIPAYPaymentAlipayRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAPreparAlipayPaymentRequest class]
+                                     rootClass:[GDAPaymentAlipayRoot class]
+                                          file:GDAPaymentAlipayRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PMALIPAYPreparAlipayPaymentRequest__storage_)
+                                   storageSize:sizeof(GDAPreparAlipayPaymentRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -115,9 +115,9 @@ typedef struct PMALIPAYPreparAlipayPaymentRequest__storage_ {
 
 @end
 
-#pragma mark - PMALIPAYPrepareAlipayPaymentResponse
+#pragma mark - GDAPrepareAlipayPaymentResponse
 
-@implementation PMALIPAYPrepareAlipayPaymentResponse
+@implementation GDAPrepareAlipayPaymentResponse
 
 @dynamic hasStatus, status;
 @dynamic payerCode;
@@ -126,15 +126,15 @@ typedef struct PMALIPAYPreparAlipayPaymentRequest__storage_ {
 @dynamic actualPay;
 @dynamic pointsPay;
 
-typedef struct PMALIPAYPrepareAlipayPaymentResponse__storage_ {
+typedef struct GDAPrepareAlipayPaymentResponse__storage_ {
   uint32_t _has_storage_[1];
   int32_t shouldPay;
   int32_t actualPay;
   int32_t pointsPay;
   NSString *payerCode;
   NSString *payerMobile;
-  COMMONStatus *status;
-} PMALIPAYPrepareAlipayPaymentResponse__storage_;
+  GDAStatus *status;
+} GDAPrepareAlipayPaymentResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -145,65 +145,65 @@ typedef struct PMALIPAYPrepareAlipayPaymentResponse__storage_ {
       {
         .name = "payerCode",
         .dataTypeSpecific.className = NULL,
-        .number = PMALIPAYPrepareAlipayPaymentResponse_FieldNumber_PayerCode,
+        .number = GDAPrepareAlipayPaymentResponse_FieldNumber_PayerCode,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PMALIPAYPrepareAlipayPaymentResponse__storage_, payerCode),
+        .offset = (uint32_t)offsetof(GDAPrepareAlipayPaymentResponse__storage_, payerCode),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payerMobile",
         .dataTypeSpecific.className = NULL,
-        .number = PMALIPAYPrepareAlipayPaymentResponse_FieldNumber_PayerMobile,
+        .number = GDAPrepareAlipayPaymentResponse_FieldNumber_PayerMobile,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(PMALIPAYPrepareAlipayPaymentResponse__storage_, payerMobile),
+        .offset = (uint32_t)offsetof(GDAPrepareAlipayPaymentResponse__storage_, payerMobile),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "shouldPay",
         .dataTypeSpecific.className = NULL,
-        .number = PMALIPAYPrepareAlipayPaymentResponse_FieldNumber_ShouldPay,
+        .number = GDAPrepareAlipayPaymentResponse_FieldNumber_ShouldPay,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(PMALIPAYPrepareAlipayPaymentResponse__storage_, shouldPay),
+        .offset = (uint32_t)offsetof(GDAPrepareAlipayPaymentResponse__storage_, shouldPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "actualPay",
         .dataTypeSpecific.className = NULL,
-        .number = PMALIPAYPrepareAlipayPaymentResponse_FieldNumber_ActualPay,
+        .number = GDAPrepareAlipayPaymentResponse_FieldNumber_ActualPay,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(PMALIPAYPrepareAlipayPaymentResponse__storage_, actualPay),
+        .offset = (uint32_t)offsetof(GDAPrepareAlipayPaymentResponse__storage_, actualPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "pointsPay",
         .dataTypeSpecific.className = NULL,
-        .number = PMALIPAYPrepareAlipayPaymentResponse_FieldNumber_PointsPay,
+        .number = GDAPrepareAlipayPaymentResponse_FieldNumber_PointsPay,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(PMALIPAYPrepareAlipayPaymentResponse__storage_, pointsPay),
+        .offset = (uint32_t)offsetof(GDAPrepareAlipayPaymentResponse__storage_, pointsPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "status",
-        .dataTypeSpecific.className = GPBStringifySymbol(COMMONStatus),
-        .number = PMALIPAYPrepareAlipayPaymentResponse_FieldNumber_Status,
+        .dataTypeSpecific.className = GPBStringifySymbol(GDAStatus),
+        .number = GDAPrepareAlipayPaymentResponse_FieldNumber_Status,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PMALIPAYPrepareAlipayPaymentResponse__storage_, status),
+        .offset = (uint32_t)offsetof(GDAPrepareAlipayPaymentResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PMALIPAYPrepareAlipayPaymentResponse class]
-                                     rootClass:[PMALIPAYPaymentAlipayRoot class]
-                                          file:PMALIPAYPaymentAlipayRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDAPrepareAlipayPaymentResponse class]
+                                     rootClass:[GDAPaymentAlipayRoot class]
+                                          file:GDAPaymentAlipayRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PMALIPAYPrepareAlipayPaymentResponse__storage_)
+                                   storageSize:sizeof(GDAPrepareAlipayPaymentResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -218,9 +218,9 @@ typedef struct PMALIPAYPrepareAlipayPaymentResponse__storage_ {
 
 @end
 
-#pragma mark - PMALIPAYCreateAlipayPaymentRequest
+#pragma mark - GDACreateAlipayPaymentRequest
 
-@implementation PMALIPAYCreateAlipayPaymentRequest
+@implementation GDACreateAlipayPaymentRequest
 
 @dynamic payerCode;
 @dynamic payerMobile;
@@ -229,7 +229,7 @@ typedef struct PMALIPAYPrepareAlipayPaymentResponse__storage_ {
 @dynamic pointsPay;
 @dynamic payeeIp;
 
-typedef struct PMALIPAYCreateAlipayPaymentRequest__storage_ {
+typedef struct GDACreateAlipayPaymentRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t shouldPay;
   int32_t actualPay;
@@ -237,7 +237,7 @@ typedef struct PMALIPAYCreateAlipayPaymentRequest__storage_ {
   NSString *payerCode;
   NSString *payerMobile;
   NSString *payeeIp;
-} PMALIPAYCreateAlipayPaymentRequest__storage_;
+} GDACreateAlipayPaymentRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -248,65 +248,65 @@ typedef struct PMALIPAYCreateAlipayPaymentRequest__storage_ {
       {
         .name = "payerCode",
         .dataTypeSpecific.className = NULL,
-        .number = PMALIPAYCreateAlipayPaymentRequest_FieldNumber_PayerCode,
+        .number = GDACreateAlipayPaymentRequest_FieldNumber_PayerCode,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PMALIPAYCreateAlipayPaymentRequest__storage_, payerCode),
+        .offset = (uint32_t)offsetof(GDACreateAlipayPaymentRequest__storage_, payerCode),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "payerMobile",
         .dataTypeSpecific.className = NULL,
-        .number = PMALIPAYCreateAlipayPaymentRequest_FieldNumber_PayerMobile,
+        .number = GDACreateAlipayPaymentRequest_FieldNumber_PayerMobile,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(PMALIPAYCreateAlipayPaymentRequest__storage_, payerMobile),
+        .offset = (uint32_t)offsetof(GDACreateAlipayPaymentRequest__storage_, payerMobile),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "shouldPay",
         .dataTypeSpecific.className = NULL,
-        .number = PMALIPAYCreateAlipayPaymentRequest_FieldNumber_ShouldPay,
+        .number = GDACreateAlipayPaymentRequest_FieldNumber_ShouldPay,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(PMALIPAYCreateAlipayPaymentRequest__storage_, shouldPay),
+        .offset = (uint32_t)offsetof(GDACreateAlipayPaymentRequest__storage_, shouldPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "actualPay",
         .dataTypeSpecific.className = NULL,
-        .number = PMALIPAYCreateAlipayPaymentRequest_FieldNumber_ActualPay,
+        .number = GDACreateAlipayPaymentRequest_FieldNumber_ActualPay,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(PMALIPAYCreateAlipayPaymentRequest__storage_, actualPay),
+        .offset = (uint32_t)offsetof(GDACreateAlipayPaymentRequest__storage_, actualPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "pointsPay",
         .dataTypeSpecific.className = NULL,
-        .number = PMALIPAYCreateAlipayPaymentRequest_FieldNumber_PointsPay,
+        .number = GDACreateAlipayPaymentRequest_FieldNumber_PointsPay,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(PMALIPAYCreateAlipayPaymentRequest__storage_, pointsPay),
+        .offset = (uint32_t)offsetof(GDACreateAlipayPaymentRequest__storage_, pointsPay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "payeeIp",
         .dataTypeSpecific.className = NULL,
-        .number = PMALIPAYCreateAlipayPaymentRequest_FieldNumber_PayeeIp,
+        .number = GDACreateAlipayPaymentRequest_FieldNumber_PayeeIp,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(PMALIPAYCreateAlipayPaymentRequest__storage_, payeeIp),
+        .offset = (uint32_t)offsetof(GDACreateAlipayPaymentRequest__storage_, payeeIp),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PMALIPAYCreateAlipayPaymentRequest class]
-                                     rootClass:[PMALIPAYPaymentAlipayRoot class]
-                                          file:PMALIPAYPaymentAlipayRoot_FileDescriptor()
+        [GPBDescriptor allocDescriptorForClass:[GDACreateAlipayPaymentRequest class]
+                                     rootClass:[GDAPaymentAlipayRoot class]
+                                          file:GDAPaymentAlipayRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PMALIPAYCreateAlipayPaymentRequest__storage_)
+                                   storageSize:sizeof(GDACreateAlipayPaymentRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =

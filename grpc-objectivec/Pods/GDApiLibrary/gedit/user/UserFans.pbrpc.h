@@ -8,11 +8,11 @@
 #import <RxLibrary/GRXWriter.h>
 
 #if GPB_GRPC_FORWARD_DECLARE_MESSAGE_PROTO
-  @class USRFANSAddFanshipRequest;
-  @class USRFANSFanshipResponse;
-  @class USRFANSFindParentFanshipRequest;
-  @class USRFANSListChildFanshipRequest;
-  @class USRFANSListMyFanRequest;
+  @class GDAAddFanshipRequest;
+  @class GDAFanshipResponse;
+  @class GDAFindParentFanshipRequest;
+  @class GDAListChildFanshipRequest;
+  @class GDAListMyFanRequest;
 #else
   #import "gedit/Common.pbobjc.h"
 #endif
@@ -20,27 +20,27 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol USRFANSUserFansApi <NSObject>
+@protocol GDAUserFansApi <NSObject>
 
 #pragma mark Add(AddFanshipRequest) returns (FanshipResponse)
 
-- (void)addWithRequest:(USRFANSAddFanshipRequest *)request handler:(void(^)(USRFANSFanshipResponse *_Nullable response, NSError *_Nullable error))handler;
+- (void)addWithRequest:(GDAAddFanshipRequest *)request handler:(void(^)(GDAFanshipResponse *_Nullable response, NSError *_Nullable error))handler;
 
-- (GRPCProtoCall *)RPCToAddWithRequest:(USRFANSAddFanshipRequest *)request handler:(void(^)(USRFANSFanshipResponse *_Nullable response, NSError *_Nullable error))handler;
+- (GRPCProtoCall *)RPCToAddWithRequest:(GDAAddFanshipRequest *)request handler:(void(^)(GDAFanshipResponse *_Nullable response, NSError *_Nullable error))handler;
 
 
 #pragma mark FindParent(FindParentFanshipRequest) returns (FanshipResponse)
 
-- (void)findParentWithRequest:(USRFANSFindParentFanshipRequest *)request handler:(void(^)(USRFANSFanshipResponse *_Nullable response, NSError *_Nullable error))handler;
+- (void)findParentWithRequest:(GDAFindParentFanshipRequest *)request handler:(void(^)(GDAFanshipResponse *_Nullable response, NSError *_Nullable error))handler;
 
-- (GRPCProtoCall *)RPCToFindParentWithRequest:(USRFANSFindParentFanshipRequest *)request handler:(void(^)(USRFANSFanshipResponse *_Nullable response, NSError *_Nullable error))handler;
+- (GRPCProtoCall *)RPCToFindParentWithRequest:(GDAFindParentFanshipRequest *)request handler:(void(^)(GDAFanshipResponse *_Nullable response, NSError *_Nullable error))handler;
 
 
 #pragma mark ListChild(ListChildFanshipRequest) returns (stream FanshipResponse)
 
-- (void)listChildWithRequest:(USRFANSListChildFanshipRequest *)request eventHandler:(void(^)(BOOL done, USRFANSFanshipResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (void)listChildWithRequest:(GDAListChildFanshipRequest *)request eventHandler:(void(^)(BOOL done, GDAFanshipResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
-- (GRPCProtoCall *)RPCToListChildWithRequest:(USRFANSListChildFanshipRequest *)request eventHandler:(void(^)(BOOL done, USRFANSFanshipResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (GRPCProtoCall *)RPCToListChildWithRequest:(GDAListChildFanshipRequest *)request eventHandler:(void(^)(BOOL done, GDAFanshipResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
 
 #pragma mark ListMyFan(ListMyFanRequest) returns (stream FanshipResponse)
@@ -48,12 +48,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * should be only used by me
  */
-- (void)listMyFanWithRequest:(USRFANSListMyFanRequest *)request eventHandler:(void(^)(BOOL done, USRFANSFanshipResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (void)listMyFanWithRequest:(GDAListMyFanRequest *)request eventHandler:(void(^)(BOOL done, GDAFanshipResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
 /**
  * should be only used by me
  */
-- (GRPCProtoCall *)RPCToListMyFanWithRequest:(USRFANSListMyFanRequest *)request eventHandler:(void(^)(BOOL done, USRFANSFanshipResponse *_Nullable response, NSError *_Nullable error))eventHandler;
+- (GRPCProtoCall *)RPCToListMyFanWithRequest:(GDAListMyFanRequest *)request eventHandler:(void(^)(BOOL done, GDAFanshipResponse *_Nullable response, NSError *_Nullable error))eventHandler;
 
 
 @end
@@ -62,7 +62,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Basic service implementation, over gRPC, that only does
  * marshalling and parsing.
  */
-@interface USRFANSUserFansApi : GRPCProtoService<USRFANSUserFansApi>
+@interface GDAUserFansApi : GRPCProtoService<GDAUserFansApi>
 - (instancetype)initWithHost:(NSString *)host NS_DESIGNATED_INITIALIZER;
 + (instancetype)serviceWithHost:(NSString *)host;
 @end

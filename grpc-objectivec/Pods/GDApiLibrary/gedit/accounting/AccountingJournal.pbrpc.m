@@ -6,7 +6,7 @@
 #import "gedit/Common.pbobjc.h"
 #import "gedit/accounting/AccountingEvent.pbobjc.h"
 
-@implementation ACCNTAccountingJournalApi
+@implementation GDAAccountingJournalApi
 
 // Designated initializer
 - (instancetype)initWithHost:(NSString *)host {
@@ -30,41 +30,41 @@
 /**
  * will compute postings at the same time when save Journal
  */
-- (void)upsertJournalWithRequest:(ACCNTUpsertJournalRequest *)request handler:(void(^)(ACCNTJournalResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)upsertJournalWithRequest:(GDAUpsertJournalRequest *)request handler:(void(^)(GDAJournalResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToUpsertJournalWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
 /**
  * will compute postings at the same time when save Journal
  */
-- (GRPCProtoCall *)RPCToUpsertJournalWithRequest:(ACCNTUpsertJournalRequest *)request handler:(void(^)(ACCNTJournalResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToUpsertJournalWithRequest:(GDAUpsertJournalRequest *)request handler:(void(^)(GDAJournalResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"UpsertJournal"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[ACCNTJournalResponse class]
+             responseClass:[GDAJournalResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 #pragma mark GetJournal(GetJournalRequest) returns (JournalResponse)
 
-- (void)getJournalWithRequest:(ACCNTGetJournalRequest *)request handler:(void(^)(ACCNTJournalResponse *_Nullable response, NSError *_Nullable error))handler{
+- (void)getJournalWithRequest:(GDAGetJournalRequest *)request handler:(void(^)(GDAJournalResponse *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToGetJournalWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToGetJournalWithRequest:(ACCNTGetJournalRequest *)request handler:(void(^)(ACCNTJournalResponse *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToGetJournalWithRequest:(GDAGetJournalRequest *)request handler:(void(^)(GDAJournalResponse *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"GetJournal"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[ACCNTJournalResponse class]
+             responseClass:[GDAJournalResponse class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 #pragma mark ListJournal(ListJournalRequest) returns (stream JournalResponse)
 
-- (void)listJournalWithRequest:(ACCNTListJournalRequest *)request eventHandler:(void(^)(BOOL done, ACCNTJournalResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (void)listJournalWithRequest:(GDAListJournalRequest *)request eventHandler:(void(^)(BOOL done, GDAJournalResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   [[self RPCToListJournalWithRequest:request eventHandler:eventHandler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToListJournalWithRequest:(ACCNTListJournalRequest *)request eventHandler:(void(^)(BOOL done, ACCNTJournalResponse *_Nullable response, NSError *_Nullable error))eventHandler{
+- (GRPCProtoCall *)RPCToListJournalWithRequest:(GDAListJournalRequest *)request eventHandler:(void(^)(BOOL done, GDAJournalResponse *_Nullable response, NSError *_Nullable error))eventHandler{
   return [self RPCToMethod:@"ListJournal"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[ACCNTJournalResponse class]
+             responseClass:[GDAJournalResponse class]
         responsesWriteable:[GRXWriteable writeableWithEventHandler:eventHandler]];
 }
 @end

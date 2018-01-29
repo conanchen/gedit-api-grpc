@@ -5,7 +5,7 @@
 #import <RxLibrary/GRXWriter+Immediate.h>
 #import "gedit/Common.pbobjc.h"
 
-@implementation HELLOHello
+@implementation GDAHello
 
 // Designated initializer
 - (instancetype)initWithHost:(NSString *)host {
@@ -29,29 +29,29 @@
 /**
  * Sends a greeting
  */
-- (void)sayHelloWithRequest:(HELLOHelloRequest *)request handler:(void(^)(HELLOHelloReply *_Nullable response, NSError *_Nullable error))handler{
+- (void)sayHelloWithRequest:(GDAHelloRequest *)request handler:(void(^)(GDAHelloReply *_Nullable response, NSError *_Nullable error))handler{
   [[self RPCToSayHelloWithRequest:request handler:handler] start];
 }
 // Returns a not-yet-started RPC object.
 /**
  * Sends a greeting
  */
-- (GRPCProtoCall *)RPCToSayHelloWithRequest:(HELLOHelloRequest *)request handler:(void(^)(HELLOHelloReply *_Nullable response, NSError *_Nullable error))handler{
+- (GRPCProtoCall *)RPCToSayHelloWithRequest:(GDAHelloRequest *)request handler:(void(^)(GDAHelloReply *_Nullable response, NSError *_Nullable error))handler{
   return [self RPCToMethod:@"SayHello"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[HELLOHelloReply class]
+             responseClass:[GDAHelloReply class]
         responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
 }
 #pragma mark ListOldHello(ListHelloRequest) returns (stream HelloReply)
 
-- (void)listOldHelloWithRequest:(HELLOListHelloRequest *)request eventHandler:(void(^)(BOOL done, HELLOHelloReply *_Nullable response, NSError *_Nullable error))eventHandler{
+- (void)listOldHelloWithRequest:(GDAListHelloRequest *)request eventHandler:(void(^)(BOOL done, GDAHelloReply *_Nullable response, NSError *_Nullable error))eventHandler{
   [[self RPCToListOldHelloWithRequest:request eventHandler:eventHandler] start];
 }
 // Returns a not-yet-started RPC object.
-- (GRPCProtoCall *)RPCToListOldHelloWithRequest:(HELLOListHelloRequest *)request eventHandler:(void(^)(BOOL done, HELLOHelloReply *_Nullable response, NSError *_Nullable error))eventHandler{
+- (GRPCProtoCall *)RPCToListOldHelloWithRequest:(GDAListHelloRequest *)request eventHandler:(void(^)(BOOL done, GDAHelloReply *_Nullable response, NSError *_Nullable error))eventHandler{
   return [self RPCToMethod:@"ListOldHello"
             requestsWriter:[GRXWriter writerWithValue:request]
-             responseClass:[HELLOHelloReply class]
+             responseClass:[GDAHelloReply class]
         responsesWriteable:[GRXWriteable writeableWithEventHandler:eventHandler]];
 }
 @end
