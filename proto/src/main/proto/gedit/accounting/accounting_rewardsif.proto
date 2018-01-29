@@ -62,9 +62,11 @@ message RewardIfEvent {
 message IfPaymentCreatedEvent {
 
     string payerUuid = 11; //顾客
+
     string payeeUuid = 12; //收款店主
     string payeeStoreUuid = 13; //收款店铺
     string payeeWorkerUuid = 14; //店员
+
     int32 shouldpay = 15; //应付金额
 
     PaymentChannel channel = 26; //支付通道如支付宝、微信、云闪付
