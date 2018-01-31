@@ -17,10 +17,12 @@ service StoreWorkerApi {
     }
 
     rpc ListByWorker (ListWorkshipByWorkerRequest) returns (stream WorkshipResponse) {
+        //根据员工uuid查找该员工工作的店铺
     }
 
     rpc ListMyWorkinStore (ListMyWorkinStoreRequest) returns (stream WorkshipResponse) {
         //should be only used by me
+        //查找我工作的店铺
     }
 
     rpc GetMyCurrentWorkinStore(GetMyCurrentWorkinStoreRequest) returns(WorkshipResponse){
