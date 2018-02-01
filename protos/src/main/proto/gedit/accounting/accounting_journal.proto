@@ -29,7 +29,6 @@ import "gedit/accounting/accounting_event.proto";
 service AccountingJournalApi {
 
     rpc UpsertJournal (UpsertJournalRequest) returns (JournalResponse) {
-        //will compute postings at the same time when save Journal
     }
 
     rpc GetJournal (GetJournalRequest) returns (JournalResponse) {

@@ -39,8 +39,34 @@ service AccountingAccountApi {
     rpc ListMyAccount (ListMyAccountRequest) returns (stream AccountResponse) {
     }
 
+    rpc LockPoints (LockPointsRequest) returns (LockPointsResponse) {
+        //暂时锁住顾客可消费积分账户中的一定积分数,同一个paymentUuid只有一个对应的锁定，可以锁定多次，只有最后一次有效
+    }
+
+    rpc UnlockPoints (UnlockPointsRequest) returns (UnlockPointsResponse) {
+        //解锁paymentUuid对应的积分锁定，可以解锁多次，如果已解锁，则直接返回成功解锁状态
+        //真正积分扣除在清算PaymentCreatedEvent的时候处理
+    }
 }
 
+message LockPointsRequest {
+    string payerUuid = 1;
+    string paymentUuid = 2;
+    int32 pointsAmount = 3;
+}
+
+message LockPointsResponse {
+    Status status = 1;
+}
+
+message UnlockPointsRequest {
+    string payerUuid = 1;
+    string paymentUuid = 2;
+}
+
+message UnlockPointsResponse {
+    Status status = 1;
+}
 
 message UpsertAccountsRequest {
     string userUuid = 11;
