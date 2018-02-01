@@ -40,6 +40,10 @@ service PayerActiveInappApi {
     rpc Create (CreatePayerInappPaymentRequest) returns (PaymentResponse) {
         //only called by me, 顾客确定付款
     }
+
+    rpc Cancel (CancelPayerInappPaymentRequest) returns (PaymentResponse) {
+        //only called by me, 顾客确定付款
+    }
     //顾客主扫模式----END 收银员收款出示二维码    <------------> 顾客扫码付款 交互API
 }
 
@@ -120,4 +124,8 @@ message CreatePayerInappPaymentRequest {
     PaymentChannel paymentChannel = 26; //支付通道如支付宝、微信、云闪付
     string payerIp = 30; //顾客客户端的实际ip地址
 
+}
+
+message CancelPayerInappPaymentRequest{
+    string paymentUuid = 1;
 }
