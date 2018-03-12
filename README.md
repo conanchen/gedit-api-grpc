@@ -1,7 +1,7 @@
 
 version master
-
-# Step 1. Add the JitPack repository to your build file
+# For JAVA or Android Application 
+## Step 1. Add the JitPack repository to your build file
 Add it in your root build.gradle at the end of repositories:
 ```gradle
 allprojects {
@@ -12,8 +12,8 @@ allprojects {
 }
 ```
 	
-# Step 2. Add the dependency
-## For Public Android APP
+## Step 2. Add the dependency
+### For Public Android APP
 
 ```gradle
 dependencies {
@@ -21,7 +21,7 @@ dependencies {
 }
 ```
 		
-## For Java Application(Client or Server)
+### For Java Application(Client or Server)
     
 ```gradle
 dependencies {
@@ -29,7 +29,7 @@ dependencies {
 }
 ```
 	
-# Building ahead of time
+## Building ahead of time
 You can also build snapshots on each commit if you add GitHub Webhooks.
 
 To add, head to repository Settings -> Webhooks & Services -> Add webhook.
@@ -40,11 +40,12 @@ Content type: application/json
 
 The webhook will trigger a build for branches that you have previously used with JitPack. So make sure you have requested master-SNAPSHOT from JitPack before adding a webhook.
 
-# objectc install
+# For Objectc IOS Application
+## objectc install
 $ git config --global http.proxy http://127.0.0.1:50312
 $ pod install
 
-# 本地开启VPN后，Gt也需要设置代理，才能正常略过GFW，访问goole code等网站
+## 本地开启VPN后，Gt也需要设置代理，才能正常略过GFW，访问goole code等网站
   git config --global http.proxy http://127.0.0.1:50312
   git config --global https.proxy https://127.0.0.1:50312
   git config --global http.proxy 'socks5://127.0.0.1:50311' 
@@ -55,8 +56,8 @@ $ pod install
   git config --global --unset https.proxy
   
   
-# [Create and Distribute Private Libraries with Cocoapods](https://medium.com/@shahabejaz/create-and-distribute-private-libraries-with-cocoapods-5b6507b57a03)
-## Step 1: Create your [gedit-specs](https://github.com/conanchen/gedit-specs.git) Podspec Repository on Github  
+## [Create and Distribute Private Libraries with Cocoapods](https://medium.com/@shahabejaz/create-and-distribute-private-libraries-with-cocoapods-5b6507b57a03)
+### Step 1: Create your [gedit-specs](https://github.com/conanchen/gedit-specs.git) Podspec Repository on Github  
 ```
  echo “# gedit-specs” >> README.md
  git init
@@ -65,13 +66,13 @@ $ pod install
  git remote add origin https://github.com/conanchen/gedit-specs.git
  git push -u origin master
 ```
-## Step 2: Add your [gedit-specs](https://github.com/conanchen/gedit-specs.git) Private Podspec Repository to your CocoaPods Installation
+### Step 2: Add your [gedit-specs](https://github.com/conanchen/gedit-specs.git) Private Podspec Repository to your CocoaPods Installation
 ```
 pod repo add gedit-specs https://github.com/conanchen/gedit-specs.git
 cd ~/.cocoapods/repos/gedit-specs
 pod repo lint .
 ```
-## Step 4: Generate [GDApiLibrary] Pod Project under folder grpc-objectivec of [gedit-api-grpc](https://github.com/conanchen/gedit-api-grpc) repo
+### Step 4: Generate [GDApiLibrary] Pod Project under folder grpc-objectivec of [gedit-api-grpc](https://github.com/conanchen/gedit-api-grpc) repo
 ```
 cd ~/gedit/gedit-api-grpc
 mkdir grpc-objectivec
@@ -91,7 +92,7 @@ GDApiLibrary passed validation.
 ConandeMacBook-Pro:GDApiLibrary conanchen$
 ```
 
-## Step5: Add code to project
+### Step5: Add code to project
 ```
 cd GDApiLibrary/GDApiLibrary/Classes/
 vi AKGitViewControllers.h
@@ -132,15 +133,15 @@ vi AKGitViewControllers.m
  
 @end
 ```
-## Step6: Test Added Code
+### Step6: Test Added Code
 If any issues there (like file not found from the pod) then use the pod install command to update the code with that example project. because we have added some files in pod.
 ```
 pod install
 ```
 Test your example is working or not.
 
-## Step7: Make your Pod [GDApiLibrary] Available in Public
-### Step 7a: Tagging
+### Step7: Make your Pod [GDApiLibrary] Available in Public
+#### Step 7a: Tagging
 ```
 cd ~/gedit/gedit-api-grpc/grpc-objectivec/GDApiLibrary
 git tag ‘0.0.1’
@@ -167,7 +168,7 @@ GDApiLibrary.podspec passed validation.
 
 ConandeMacBook-Pro:GDApiLibrary conanchen$
 ```
-### Step 7b: Push to Spec Repo, refer to step 1
+#### Step 7b: Push to Spec Repo, refer to step 1
 ```
 ConandeMacBook-Pro:GDApiLibrary conanchen$ pod repo push gedit-specs GDApiLibrary.podspec
 
@@ -186,21 +187,21 @@ Pushing the `gedit-specs' repo
 
 ConandeMacBook-Pro:GDApiLibrary conanchen$
 ```
-### Step 7c: Now you can see that this pod repo is referenced in your spec repo (as shown below).
+#### Step 7c: Now you can see that this pod repo is referenced in your spec repo (as shown below).
 ```
 ConandeMacBook-Pro:GDApiLibrary conanchen$ cd ~/.cocoapods/repos/gedit-specs/GDApiLibrary/
 ConandeMacBook-Pro:GDApiLibrary conanchen$ ls
 0.0.1
 ConandeMacBook-Pro:GDApiLibrary conanchen$
 ```
-## Step 8: Share It with Your Team
-### Step 8a: Ask teammembers to add the private repo [gedit-specs] to their local Cocoapods installation with the command:
+### Step 8: Share It with Your Team
+#### Step 8a: Ask teammembers to add the private repo [gedit-specs] to their local Cocoapods installation with the command:
 
 ```
 pod repo add gedit-specs https://github.com/conanchen/gedit-specs.git
 
 ```
-### Step 8b: edit Podfile
+#### Step 8b: edit Podfile
 ```
 source 'https://github.com/conanchen/gedit-specs.git'
 
@@ -208,8 +209,10 @@ target 'GDApiLibrary_Example' do
     pod 'GDApiLibrary', '~> 0.0.1' 
 ...
 ```
-# Congratulations!
-
+## Congratulations!
+```
+成功发布POD Library Of Jedit Grpc API
+```
 
 # Pagination
 ## [Paginating Real-Time Data with Cursor Based Pagination](https://www.sitepoint.com/paginating-real-time-data-cursor-based-pagination/)
