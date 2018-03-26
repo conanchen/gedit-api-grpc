@@ -1,7 +1,6 @@
 syntax = "proto3";
 package gedit.hello;
 
-
 option java_multiple_files = true;
 option java_package = "com.github.conanchen.gedit.hello.grpc";
 option java_outer_classname = "HelloProto";
@@ -21,7 +20,8 @@ service Hello {
 
 // The request message containing the user's name.
 message HelloRequest {
-    string name = 1;
+    string nameaaa = 1;
+    int32 age =2;
 }
 
 message ListHelloRequest {
@@ -37,5 +37,3 @@ message HelloReply {
     int64 created =3 ;
     int64 lastUpdated = 4;
 }
-
-
